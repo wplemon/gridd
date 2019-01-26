@@ -198,7 +198,7 @@ function gridd_get_grid_default_value() {
 			],
 		],
 		'gridTemplate' => [
-			'rows'    => [ 'auto', 'auto', 'auto', 'auto' ],
+			'rows'    => [ 'auto', '3.5em', 'auto', 'auto' ],
 			'columns' => [ 'auto', '350px' ],
 		],
 	];
