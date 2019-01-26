@@ -1,0 +1,55 @@
+@import "../mixins";
+
+.comment-list {
+	list-style: none;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+
+	.children {
+		list-style: none;
+		list-style-type: none;
+	}
+
+	.pingback {
+		font-size: 0.85rem;
+		border-bottom: 1px solid #ededed;
+
+		.edit-link {
+			font-size: 0.75rem;
+		}
+	}
+
+	.edit-link {
+		float: right;
+	}
+}
+
+.comment-meta {
+	.comment-metadata {
+		font-size: calc(1em / var(--gridd-typo-scale));
+	}
+}
+
+.comment-body {
+	padding: 1em 0;
+	margin-bottom: 1em;
+	border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.comment-content {
+	word-wrap: break-word;
+
+	a {
+		word-wrap: break-word;
+	}
+}
+
+.bypostauthor {
+	display: block;
+}
+
+a.comment-reply-link {
+	@include button();
+	display: inline-block;
+}

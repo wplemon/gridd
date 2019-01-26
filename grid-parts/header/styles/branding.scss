@@ -1,0 +1,68 @@
+.gridd-tp-header_branding.gridd-tp {
+	background-color: var(--gridd-branding-bg);
+	display: flex;
+	width: 100%;
+	padding: var(--gridd-branding-padding);
+	justify-content: var(--gridd-branding-horizontal-align);
+	align-items: var(--gridd-branding-vertical-align);
+
+	&.inline {
+		.site-title {
+			padding-left: var(--gridd-branding-elements-padding);
+			padding-right: var(--gridd-branding-elements-padding);
+		}
+	}
+
+	&.vertical {
+		flex-wrap: wrap;
+
+		>* {
+			display: flex;
+			width: 100%;
+			justify-content: var(--gridd-branding-horizontal-align);
+		}
+
+		.site-title {
+			padding-top: var(--gridd-branding-elements-padding);
+			padding-bottom: var(--gridd-branding-elements-padding);
+		}
+	}
+
+	.site-title,
+	.site-description {
+		margin: 0;
+	}
+
+	.site-title {
+		line-height: 1;
+
+		a {
+			text-decoration: none;
+		}
+	}
+
+	a {
+		&:hover {
+			outline: none;
+		}
+
+		&:focus {
+			background: transparent;
+			outline: none;
+		}
+	}
+
+	.custom-logo-link {
+		max-width: var(--gridd-logo-max-width);
+		line-height: 0;
+		max-height: 100%;
+		display: block;
+
+		img {
+			width: auto;
+			height: auto;
+			max-height: 100%;
+			max-width: 100%;
+		}
+	}
+}

@@ -1,0 +1,38 @@
+{
+  "name": "gridd-theme",
+  "version": "1.0.0",
+  "author": "wplemon.com team",
+  "description": "WordPress Theme",
+  "homepage": "https://wplemon.com",
+  "license": "GPL2",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/wplemon/gridd"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/wplemon/gridd/issues"
+  },
+  "licenses": [
+    {
+      "type": "GPL2",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-sass": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-po2mo": "*",
+    "grunt-postcss": "*",
+    "grunt-wp-i18n": "*",
+    "postcss-clean": "*",
+    "postcss-cssnext": "*"
+  }
+}

@@ -1,0 +1,15 @@
+.site-main .sticky {
+  display: block;
+  padding: 1em;
+  position: relative;
+  z-index: 1; }
+  .site-main .sticky:before {
+    content: " ";
+    background: var(--gridd-links-color);
+    opacity: .1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; }

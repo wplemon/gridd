@@ -1,0 +1,98 @@
+@import "../mixins";
+
+.comment-content .wp-smiley,
+.entry-content .wp-smiley,
+.page-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+// Make sure embeds and iframes fit their containers.
+
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+.wp-block-embed.alignwide.is-type-video {
+	iframe {
+		width: 100%;
+	}
+}
+
+.wp-caption,
+.wp-block-image {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+	background-color: rgba(128, 128, 128, .1);
+	padding-bottom: 0.5em;
+	color: var(--gridd-text-color);
+	font-size: calc(1em / var(--gridd-typo-scale));
+
+	img[class*="wp-image-"] {
+		@include center-block;
+	}
+
+	.wp-caption-text {
+		margin: 0.8075em 0;
+	}
+}
+
+.wp-block-image figcaption {
+	padding: 1em;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+.gallery {
+	margin-bottom: 1.5em;
+	display: -ms-grid;
+	display: grid;
+	grid-gap: 0.5em;
+
+	// Loops to enumerate the classes for gallery columns.
+	@for $i from 2 through 9 {
+		&.gallery-columns-#{$i} {
+			-ms-grid-columns: repeat(#{$i}, 1fr);
+			grid-template-columns: repeat(#{$i}, 1fr);
+		}
+	}
+}
+
+.gallery-item {
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+	justify-content: center;
+	margin: 0;
+
+	.gallery-icon {
+		width: 100%;
+	}
+
+	img {
+		width: 100%;
+	}
+
+	.gallery-caption {
+		font-size: 0.85em;
+		width: 100%;
+	}
+}
+
+.gallery-caption {
+	display: block;
+}
+
+.wp-block-cover {
+	.wp-block-cover-text {
+		font-size: calc(var(--gridd-typo-scale) * 1em);
+	}
+}

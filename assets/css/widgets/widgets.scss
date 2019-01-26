@@ -1,0 +1,11 @@
+.widget-area {
+	width: 100%;
+}
+
+.widget {
+	margin: 0 0 1.5em;
+
+	select {
+		max-width: 100%; // Make sure select elements fit in widgets.
+	}
+}

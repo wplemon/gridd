@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACC,0BAAG;EACF,UAAU,EAAE,IAAI;EAChB,eAAe,EAAE,IAAI;EACrB,OAAO,EAAE,CAAC;EACV,MAAM,EAAE,CAAC;AAGV,0BAAG;EACF,aAAa,EAAE,4BAAwB;EACvC,OAAO,EAAE,OAAO;EAEhB,qCAAa;IACZ,aAAa,EAAE,IAAI",
+"sources": ["widget-recent-comments.scss"],
+"names": [],
+"file": "widget-recent-comments.css"
+}

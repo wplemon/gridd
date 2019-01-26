@@ -1,0 +1,111 @@
+// We use the "ID" (all caps) as a placeholder.
+// The ID will be replaced by the actual navigation-ID via PHP
+// when the style is included inline in the document.
+.gridd-tp-sidebar_1 .widget_nav_menu {
+	.gridd-navigation {
+		justify-content: flex-start;
+
+		li {
+
+			&.current-menu-item,
+			&.current-page-item,
+			&.current_page_item,
+			&.current-page-ancestor,
+			&.current-menu-ancestor,
+			&.current-menu-parent,
+			&.current-page-parent,
+			&.current_page_parent,
+			&.current_page_ancestor {
+
+				>a,
+				>a:visited {
+					color: var(--gridd-sidebar-ID-bg);
+					background: var(--gridd-sidebar-ID-links-color);
+				}
+
+				.gridd-toggle {
+					color: var(--gridd-sidebar-ID-links-color);
+					background: var(--gridd-sidebar-ID-links-color);
+
+					svg {
+						fill: var(--gridd-sidebar-ID-bg);
+					}
+				}
+			}
+
+			&.menu-item-has-children,
+			&.page_item_has_children {
+				>a {
+					padding-right: .5em;
+					width: calc(100% - 2em - 0.01px);
+				}
+			}
+		}
+
+		a,
+		a:visited {
+			padding: 0.618em 1em;
+			color: var(--gridd-sidebar-ID-color);
+
+			&:hover,
+			&:focus,
+			&.focus,
+			&.toggled-on {
+				color: var(--gridd-sidebar-ID-bg);
+				background: var(--gridd-sidebar-ID-links-color);
+
+				~.gridd-toggle {
+					background: var(--gridd-sidebar-ID-links-color);
+
+					svg {
+						fill: var(--gridd-sidebar-ID-bg);
+					}
+				}
+			}
+		}
+
+		.gridd-toggle {
+			color: var(--gridd-sidebar-ID-color);
+			padding: 0 .5em;
+
+			svg {
+				fill: var(--gridd-sidebar-ID-color);
+			}
+
+			&:hover,
+			&:focus,
+			&.focus,
+			&.toggled-on {
+				background: var(--gridd-sidebar-ID-links-color);
+
+				svg {
+					fill: var(--gridd-sidebar-ID-bg);
+				}
+			}
+
+			&.toggled-on {
+				background: var(--gridd-sidebar-ID-links-color);
+
+				svg {
+					fill: var(--gridd-sidebar-ID-bg);
+				}
+
+				+ul {
+					li {
+
+						&.menu-item-has-children,
+						&.page_item_has_children {
+							>a {
+								width: calc(100% - 2em - 0.01px);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.gridd-toggle-navigation {
+		display: none;
+	}
+}

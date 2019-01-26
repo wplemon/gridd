@@ -1,0 +1,14 @@
+.gridd-tp-header.gridd-tp {
+	display: flex;
+	justify-content: center;
+	overflow: visible;
+	z-index: 1000;
+	background-color: var(--gridd-header-bg);
+	box-shadow: var(--gridd-header-box-shadow);
+
+	> .inner {
+		width: 100%;
+		max-width: var(--gridd-header-max-width);
+		grid-gap: var(--gridd-header-grid-gap);
+	}
+}

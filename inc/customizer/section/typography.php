@@ -1,0 +1,242 @@
+<?php
+/**
+ * Customizer Typography Options.
+ *
+ * @package Gridd
+ */
+
+if ( ! class_exists( 'Kirki' ) ) {
+	return;
+}
+
+/**
+ * Add the Theme-Options panel.
+ */
+gridd_add_customizer_section(
+	'gridd_typography',
+	[
+		'title'       => esc_attr__( 'Typography & Links', 'gridd' ),
+		'description' => sprintf(
+			'<div class="gridd-section-description">%1$s%2$s</div>',
+			( ! Gridd::is_pro() ) ? '<div class="gridd-go-plus">' . __( '<a href="https://wplemon.com/gridd-plus" rel="nofollow" target="_blank">Upgrade to <strong>plus</strong></a> for extra options in this section: Automatic WCAG-compliant colors suggestion, typography-scale presets and links decoration.', 'gridd' ) . '</div>' : '',
+			'<div class="gridd-docs"><a href="https://wplemon.com/documentation/gridd/typography/" target="_blank" rel="noopener noreferrer nofollow">' . esc_html__( 'Learn more about these settings', 'gridd' ) . '</a></div>'
+		),
+		'priority'    => 20,
+		'panel'       => 'gridd_options',
+	]
+);
+
+/**
+ * Body typography.
+ */
+gridd_add_customizer_field(
+	[
+		'type'        => 'typography',
+		'settings'    => 'gridd_body_typography',
+		'label'       => esc_html__( 'Body Typography', 'gridd' ),
+		'description' => esc_html__( 'Edit the main typography settings for your site.', 'gridd' ),
+		'tooltip'     => esc_html__( 'The font-size selected here will affect all other elements on your site proportionally', 'gridd' ),
+		'section'     => 'gridd_typography',
+		'priority'    => 10,
+		'default'     => [
+			'font-family' => 'Noto Serif',
+			'variant'     => 'regular',
+		],
+		'transport'   => 'auto',
+		'output'      => [
+			[
+				'element' => 'body',
+			],
+			[
+				'element' => '.edit-post-visual-editor.editor-styles-wrapper',
+				'context' => [ 'editor' ],
+			],
+		],
+		'choices'     => [
+			'fonts' => [
+				'google' => [ 'popularity' ],
+			],
+		],
+	]
+);
+
+/**
+ * Headers typography.
+ */
+gridd_add_customizer_field(
+	[
+		'type'        => 'typography',
+		'settings'    => 'gridd_headers_typography',
+		'label'       => esc_html__( 'Headers Typography', 'gridd' ),
+		'description' => esc_html__( 'Edit the font-family and font-weight of your document\'s headers.', 'gridd' ),
+		'section'     => 'gridd_typography',
+		'priority'    => 20,
+		'default'     => [
+			'font-family' => 'Noto Serif',
+			'variant'     => '700',
+		],
+		'transport'   => 'auto',
+		'output'      => [
+			[
+				'element' => 'h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,.site-title',
+			],
+			[
+				'context' => [ 'editor' ],
+				'element' => [
+					'.editor-post-title__block .editor-post-title__input',
+					'.wp-block-heading h1',
+					'.wp-block-heading h2',
+					'.wp-block-heading h3',
+					'.wp-block-heading h4',
+					'.wp-block-heading h5',
+					'.wp-block-heading h6',
+				],
+			],
+		],
+		'choices'     => [
+			'fonts' => [
+				'google' => [ 'popularity' ],
+			],
+		],
+	]
+);
+
+/**
+ * Focus on content-background control.
+ */
+gridd_add_customizer_field(
+	[
+		'settings' => 'gridd_logo_focus_on_content_background_control',
+		'type'     => 'custom',
+		'label'    => 'Looking for the text-color and typography options?',
+		'section'  => 'gridd_typography',
+		'priority' => 25,
+		'default'  => '<div style="margin-bottom:1em;"><button class="button-gridd-focus global-focus button button-primary button-large" data-context="control" data-focus="gridd_grid_content_background_color">' . esc_html__( 'Click here to edit the content background-color', 'gridd' ) . '</button></div>',
+	]
+);
+
+gridd_add_customizer_field(
+	[
+		'type'        => 'kirki-wcag-tc',
+		'settings'    => 'gridd_text_color',
+		'label'       => esc_attr__( 'Text Color', 'gridd' ),
+		'description' => gridd()->customizer->get_text( 'a11y-textcolor-description' ),
+		'tooltip'     => gridd()->customizer->get_text( 'a11y-textcolor-tooltip' ),
+		'section'     => 'gridd_typography',
+		'priority'    => 30,
+		'default'     => '#000000',
+		'css_vars'    => '--gridd-text-color',
+		'transport'   => 'postMessage',
+		'choices'     => [
+			'setting' => 'gridd_grid_content_background_color',
+		],
+	]
+);
+
+gridd_add_customizer_field(
+	[
+		'settings'    => 'gridd_links_color',
+		'type'        => 'kirki-wcag-lc',
+		'label'       => esc_attr__( 'Links Color', 'gridd' ),
+		'description' => esc_html__( 'Select the color for your links.', 'gridd' ),
+		'section'     => 'gridd_typography',
+		'transport'   => 'postMessage',
+		'priority'    => 50,
+		'choices'     => [
+			'alpha' => false,
+		],
+		'default'     => '#0f5e97',
+		'choices'     => [
+			'backgroundColor' => 'gridd_grid_content_background_color',
+			'textColor'       => 'gridd_text_color',
+		],
+		'css_vars'    => '--gridd-links-color',
+	]
+);
+
+gridd_add_customizer_field(
+	[
+		'settings'    => 'gridd_links_hover_color',
+		'type'        => 'kirki-wcag-lc',
+		'label'       => esc_attr__( 'Links Hover Color', 'gridd' ),
+		'description' => esc_html__( 'Select the colors for your links on hover.', 'gridd' ),
+		'section'     => 'gridd_typography',
+		'transport'   => 'postMessage',
+		'priority'    => 60,
+		'choices'     => [
+			'alpha' => false,
+		],
+		'default'     => '#541cfc',
+		'css_vars'    => '--gridd-links-hover-color',
+		'choices'     => [
+			'backgroundColor' => 'gridd_grid_content_background_color',
+			'textColor'       => 'gridd_text_color',
+		],
+	]
+);
+
+/**
+ * Body typography.
+ */
+gridd_add_customizer_field(
+	[
+		'type'        => 'slider',
+		'settings'    => 'gridd_body_font_size',
+		'label'       => esc_html__( 'Body Font-Size', 'gridd' ),
+		'description' => esc_html__( 'We recommend you a font-size greater than 18px to ensure greater readability.', 'gridd' ),
+		'section'     => 'gridd_typography',
+		'default'     => 18,
+		'priority'    => 70,
+		'transport'   => 'postMessage',
+		'css_vars'    => [ '--gridd-font-size', '$px' ],
+		'choices'     => [
+			'min'    => 13,
+			'max'    => 40,
+			'step'   => 1,
+			'suffix' => 'px',
+		],
+	]
+);
+
+gridd_add_customizer_field(
+	[
+		'type'        => 'slider',
+		'settings'    => 'gridd_fluid_typography_ratio',
+		'label'       => esc_html__( 'Fluid typography Ratio', 'gridd' ),
+		'description' => esc_html__( 'Larger values will increase the font-size more on bigger screens. Set to 0 if you don\'t want the font-size to change depending on the screen-size.', 'gridd' ),
+		/* translators: "Read this article" link. */
+		'tooltip'     => sprintf( esc_html__( 'Need more Information? %s', 'gridd' ), '<a href="https://wplemon.com/documentation/gridd/typography/fluid-responsive-typography/" target="_blank">' . esc_html__( 'Read this article.', 'gridd' ) ),
+		'section'     => 'gridd_typography',
+		'default'     => 0.25,
+		'priority'    => 80,
+		'transport'   => 'postMessage',
+		'css_vars'    => '--gridd-typo-ratio',
+		'choices'     => [
+			'min'  => 0,
+			'max'  => 1,
+			'step' => .001,
+		],
+	]
+);
+
+/**
+ * Type Scale
+ */
+gridd_add_customizer_field(
+	[
+		'settings'    => 'gridd_type_scale',
+		'type'        => 'slider',
+		'label'       => esc_attr__( 'Headers Size Scale', 'gridd' ),
+		'description' => esc_attr__( 'Controls the size relations between your headers and your main typography font-size.', 'gridd' ),
+		'section'     => 'gridd_typography',
+		'default'     => '1.333',
+		'choices'     => [
+			'min'  => 1,
+			'max'  => 2,
+			'step' => 0.001,
+		],
+		'transport'   => 'postMessage',
+		'css_vars'    => '--gridd-typo-scale',
+		'priority'    => 100,
+	]
+);

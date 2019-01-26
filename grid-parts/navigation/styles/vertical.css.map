@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAKC,uBAAO;EACN,WAAW,EAAE,UAAU;AAIvB,wBAAO;EACN,gBAAgB,EAAE,8BAA8B;AAQhD,8FAAG;EACF,KAAK,EAAE,6DAA6D",
+"sources": ["vertical.scss"],
+"names": [],
+"file": "vertical.css"
+}

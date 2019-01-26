@@ -1,0 +1,30 @@
+// We use the "ID" (all caps) as a placeholder.
+// The ID will be replaced by the actual sidebar-ID via PHP
+// when the style is included inline in the document.
+.gridd-tp-footer_sidebar_ID {
+	background-color: var(--gridd-footer-sidebar-ID-bg);
+	padding: var(--gridd-footer-padding);
+	flex-direction: column;
+	justify-content: flex-start;
+
+	.widget,
+	.wp-caption {
+		width: 100%;
+		color: var(--gridd-footer-sidebar-ID-color);
+	}
+
+	h1, h2, h3, h4, h5, h6,
+	.h1, .h2, .h3, .h4, .h5,
+	.h6 {
+		color: var(--gridd-footer-sidebar-ID-color);
+	}
+
+	a,
+	a:visited {
+		color: var(--gridd-footer-sidebar-ID-links-color);
+
+		&:focus {
+			color: var(--gridd-footer-sidebar-ID-links-color);
+		}
+	}
+}

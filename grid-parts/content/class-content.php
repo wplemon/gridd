@@ -1,0 +1,162 @@
+<?php
+/**
+ * Gridd Content grid-part
+ *
+ * @package Gridd
+ */
+
+namespace Gridd\Grid_Part;
+
+use Gridd\Grid_Part;
+use Gridd\Style;
+
+/**
+ * The Gridd\Grid_Part\Content object.
+ *
+ * @since 1.0
+ */
+class Content extends Grid_Part {
+
+	/**
+	 * The grid-part ID.
+	 *
+	 * @access protected
+	 * @since 1.0
+	 * @var string
+	 */
+	protected $id = 'content';
+
+	/**
+	 * An array of files to include.
+	 *
+	 * @access protected
+	 * @since 1.0
+	 * @var array
+	 */
+	protected $include_files = [
+		'customizer.php',
+	];
+
+	/**
+	 * The path to this directory..
+	 *
+	 * @access protected
+	 * @since 1.0
+	 * @var string
+	 */
+	protected $dir = __DIR__;
+
+	/**
+	 * Hooks & extra operations.
+	 *
+	 * @access public
+	 * @since 1.0
+	 * @return void
+	 */
+	public function init() {
+
+		// Use priority: 9 so that it runs before wpautop.
+		add_filter( 'the_content', [ $this, 'post_formats_extras' ], 9 );
+
+		// Add script.
+		add_filter( 'gridd_footer_inline_script_paths', [ $this, 'footer_inline_script_paths' ] );
+	}
+
+	/**
+	 * Returns the grid-part definition.
+	 *
+	 * @access protected
+	 * @since 1.0
+	 * @return void
+	 */
+	protected function set_part() {
+		$this->part = [
+			'label'    => esc_attr__( 'Content', 'gridd' ),
+			'id'       => 'content',
+			'color'    => '#00A0D2',
+			'priority' => 100,
+		];
+	}
+
+	/**
+	 * Add a content-filter for post-formats.
+	 *
+	 * @access public
+	 * @since 1.0
+	 * @param string $content The post-content.
+	 * @return string
+	 */
+	public function post_formats_extras( $content ) {
+		if ( ! is_singular() ) {
+
+			// Add infinity sign to aside, status & link post-formats..
+			if ( has_post_format( 'aside' ) || has_post_format( 'status' ) || has_post_format( 'link' ) ) {
+				$content .= '<a class="to-infinity-and-beyond" href="' . get_permalink() . '">&#8734;</a>';
+			}
+			return $content;
+		}
+
+		// Make sure "quote" post-formats use a blockquote.
+		if ( has_post_format( 'quote' ) ) {
+
+			// Match any <blockquote> elements.
+			preg_match( '/<blockquote.*?>/', $content, $matches );
+
+			// If no <blockquote> elements were found, wrap the entire content in one.
+			if ( empty( $matches ) ) {
+				$content = "<blockquote>{$content}</blockquote>";
+			}
+		}
+
+		return $content;
+	}
+
+	/**
+	 * Prints the styles.
+	 *
+	 * @static
+	 * @access public
+	 * @since 1.0
+	 * @return void
+	 */
+	public static function print_styles() {
+		$style   = Style::get_instance( 'grid-part/content' );
+		$padding = get_theme_mod(
+			'gridd_grid_content_padding',
+			[
+				'top'    => 0,
+				'bottom' => 0,
+				'left'   => '20px',
+				'right'  => '20px',
+			]
+		);
+		$style->add_vars(
+			[
+				'--gridd-content-padding-top'    => $padding['top'],
+				'--gridd-content-padding-bottom' => $padding['bottom'],
+				'--gridd-content-padding-right'  => $padding['right'],
+				'--gridd-content-padding-right'  => $padding['right'],
+				'--gridd-content-max-width'      => get_theme_mod( 'gridd_grid_content_max_width', '45em' ),
+				'--gridd-content-bg'             => get_theme_mod( 'gridd_grid_content_background_color', '#ffffff' ),
+			]
+		);
+		$style->add_file( get_theme_file_path( 'grid-parts/content/styles/default.min.css' ) );
+		$style->add_string( '@media only screen and (min-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '800px' ) . '){' );
+		$style->add_file( get_theme_file_path( 'grid-parts/content/styles/large.min.css' ) );
+		$style->add_string( '}' );
+		$style->the_css( 'gridd-inline-css-content' );
+	}
+
+	/**
+	 * Adds the script to the footer.
+	 *
+	 * @access public
+	 * @since 1.0
+	 * @param array $paths Paths to scripts we want to load.
+	 * @return array
+	 */
+	public function footer_inline_script_paths( $paths ) {
+		$paths[] = __DIR__ . '/script.min.js';
+		return $paths;
+	}
+}

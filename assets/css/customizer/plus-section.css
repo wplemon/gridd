@@ -1,0 +1,10 @@
+#customize-controls .control-section-gridd_plus .accordion-section-title:hover, #customize-controls .control-section-gridd_plus .accordion-section-title:focus {
+  background-color: #fff; }
+
+.control-section-gridd_plus .accordion-section-title .button {
+  margin-top: -4px;
+  font-weight: 400;
+  margin-left: 8px; }
+  .rtl .control-section-gridd_plus .accordion-section-title .button {
+    margin-left: 0;
+    margin-right: 8px; }

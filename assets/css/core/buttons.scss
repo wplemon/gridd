@@ -1,0 +1,8 @@
+@import "../mixins";
+
+.button,
+a.button,
+a.button:visited,
+input[type=submit] {
+	@include button();
+}

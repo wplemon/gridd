@@ -1,0 +1,17 @@
+{
+    "name": "wplemon/gridd",
+    "type": "wordpress-theme",
+    "description": "Gridd WordPress theme",
+    "homepage": "https://wplemon.com",
+    "license": "GPLv2 or later",
+    "require": {
+        "php": ">=7",
+        "composer/installers": "~1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*",
+        "dealerdirect/phpcodesniffer-composer-installer": "*",
+        "wp-coding-standards/wpcs": "*",
+        "wptrt/wpthemereview": "*"
+    }
+}

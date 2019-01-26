@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,kBAAmB;EAClB,MAAM,EAAE,GAAG",
+"sources": ["inline-icons.scss"],
+"names": [],
+"file": "inline-icons.css"
+}

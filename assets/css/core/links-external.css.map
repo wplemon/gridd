@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAME,mEAAQ;EACP,OAAO,EAAE,8RAA0M",
+"sources": ["links-external.scss"],
+"names": [],
+"file": "links-external.css"
+}

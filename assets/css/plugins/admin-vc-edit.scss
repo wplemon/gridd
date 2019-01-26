@@ -1,0 +1,69 @@
+@import "vc-vars";
+
+.vc_add-element-container .wpb-content-layouts {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	grid-gap: 10px;
+
+	li {
+		height: 100%;
+		background: none;
+		filter: grayscale(96%);
+		width: 100%;
+		border: 1px solid #dedede;
+
+		a {
+			color: #333;
+			font-size: 1rem;
+			padding: 7px 7px 7px 50px;
+
+			.vc_element-description {
+				font-size: 12px;
+				margin-top: 6px;
+				color: #444;
+			}
+		}
+
+		&:hover {
+			border-color: #000;
+			filter: none;
+
+			a {
+				color: #111;
+			}
+		}
+	}
+}
+
+.vc_general.vc_ui-tabs-line .vc_ui-tabs-line-trigger {
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
+.vc_ui-panel-header-container {
+	background-color: #333;
+}
+
+.vc_navbar {
+	background-color: $blue;
+}
+
+.vc_btn-primary,
+a.vc_btn-primary,
+button.vc_btn-primary {
+	background-color: $blueSecondary;
+}
+
+.vc_css-editor {
+	.vc_settings {
+		select {
+			height: auto;
+			width: 100%;
+			padding: 5px;
+		}
+	}
+}
+
+.vc_ui-search-box input[type="search"] {
+	border-radius: 0;
+}

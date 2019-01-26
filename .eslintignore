@@ -1,0 +1,5 @@
+**/*.min.js
+**/**/*.min.js
+**/**/**/*.min.js
+assets/js/vendor
+vendor/

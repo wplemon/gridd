@@ -1,0 +1,27 @@
+{
+	"name"        : "justintadlock/hybrid-breadcrumbs",
+	"description" : "A powerful breadcrumb script for inclusion with WordPress themes.",
+	"keywords"    : [ "wordpress" ],
+	"homepage"    : "https://github.com/justintadlock/hybrid-breadcrumbs",
+	"license"     : "GPL-2.0-or-later",
+	"authors"     : [
+		{
+			"name"     : "Justin Tadlock",
+			"email"    : "justintadlock@gmail.com",
+			"homepage" : "https://themehybrid.com",
+			"role"     : "Developer"
+		}
+	],
+	"support"     : {
+		"issues" : "https://github.com/justintadlock/hybrid-breadcrumbs/issues",
+		"forum"  : "https://themehybrid.com/board/topics"
+	},
+	"autoload"    : {
+		"psr-4" : {
+			"Hybrid\\Breadcrumbs\\" : "src/"
+		}
+	},
+	"require"     : {
+		"php" : ">=5.6"
+	}
+}

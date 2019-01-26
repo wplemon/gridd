@@ -1,0 +1,93 @@
+@import "vc-vars";
+
+.site-main .entry-content.vc-main-sortable-container {
+	> .vc_element,
+	> .vc_welcome,
+	> #vc_no-content-helper {
+		max-width: 100%;
+		padding-left: 0;
+		padding-right: 0;
+
+		> .vc_row {
+			margin-left: auto;
+			margin-right: auto;
+			max-width: var(--gridd-content-max-width);
+		}
+	}
+}
+
+// Color tweaks for slightly better a11y.
+.compose-mode {
+	.vc_controls {
+		> .vc_controls-cc {
+			background-color: $green;
+		}
+	}
+
+	.vc_element-name {
+		.vc_btn-content {
+			font-size: 13px !important;
+		}
+	}
+
+	.vc_control-btn,
+	.vc_child-element-move,
+	.vc_element-move {
+		.vc_btn-content {
+			&:hover {
+				background-color: darken($green, 10%);
+			}
+		}
+	}
+
+	.vc_controls-column,
+	.vc_controls-container,
+	.vc_controls-row {
+		> div {
+			.vc_control-btn .vc_btn-content,
+			.vc_btn-content {
+				background-color: $orange;
+				border-color: $orange;
+
+				&:hover {
+					background-color: darken($orange, 10%);
+					border-color: darken($orange, 10%);
+				}
+			}
+
+			> .vc_parent {
+				.vc_control-btn {
+					.vc_btn-content {
+						background-color: $blue;
+						border-color: $blue;
+
+						&:hover {
+							background-color: darken($blue, 10%);
+							border-color: darken($blue, 10%);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.vc_control-btn-append {
+		&:before {
+			border-bottom-color: $orange;
+		}
+	}
+}
+
+.vc_add-element-not-empty-button {
+	background-color: $purple;
+
+	&:hover {
+		background-color: darken($purple, 10%);
+	}
+}
+
+.vc_btn-primary,
+a.vc_btn-primary,
+button.vc_btn-primary {
+	background-color: $blueSecondary;
+}

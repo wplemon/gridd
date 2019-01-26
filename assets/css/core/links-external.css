@@ -1,0 +1,2 @@
+a[href*="//"]:not([href*=SITE_URL]):after, a[target="_blank"]:after {
+  content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M21%2013v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035%204-6.977%207.07%202.828%202.828%206.977-7.07%204.125%204.172v-11z%22%2F%3E%3C%2Fsvg%3E"); }

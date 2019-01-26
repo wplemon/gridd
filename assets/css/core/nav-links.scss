@@ -1,0 +1,46 @@
+@import "../functions";
+
+.main-nav-wrapper {
+	position: relative;
+	min-height: 2.75rem;
+}
+
+.navigation.post-navigation {
+	border-radius: 0;
+}
+
+.nav-links {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	font-size: 1em;
+	padding: 1em 0;
+
+	a {
+		display: block;
+	}
+
+	.nav-next,
+	.nav-previous {
+		display: flex;
+	}
+
+	.nav-next:after,
+	.nav-previous:before {
+		vertical-align: middle;
+		color: var(--gridd-links-color);
+		width: 1em;
+		height: 100%;
+		display: inline-block;
+	}
+
+	.nav-previous:before {
+		content: inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg>');
+		padding-right: 0.5em;
+	}
+
+	.nav-next:after {
+		content: inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z"/></svg>');
+		padding-left: 0.5em;
+	}
+}

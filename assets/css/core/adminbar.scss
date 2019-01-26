@@ -1,0 +1,27 @@
+.admin-bar {
+
+	.gridd-tp.gridd-sticky {
+		top: 32px;
+
+		@media screen and (max-width: 782px) {
+			top: 46px;
+		}
+
+		@media screen and (max-width: 600px) {
+			top: 0;
+		}
+	}
+
+	#wpadminbar {
+		@media screen and (max-width: 600px) {
+			top: -46px;
+		}
+	}
+
+	#gridd-handheld-search-wrapper,
+	#gridd-handheld-widget-area-wrapper,
+	#gridd-handheld-menu-wrapper,
+	#gridd-handheld-cart-wrapper {
+		max-height: calc(100vh - 86px);
+	}
+}

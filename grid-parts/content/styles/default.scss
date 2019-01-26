@@ -1,0 +1,97 @@
+.site-main {
+	padding: var(--gridd-content-padding-top) var(--gridd-content-padding-right) var(--gridd-content-padding-bottom) var(--gridd-content-padding-left);
+
+	header,
+	footer,
+	.gridd-contain {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: var(--gridd-content-max-width-calculated);
+	}
+
+	>* {
+		margin: auto;
+		max-width: var(--gridd-content-max-width-calculated);
+	}
+
+	>article {
+		margin: auto;
+		padding-left: 0;
+		padding-right: 0;
+		padding-bottom: 1em;
+		max-width: 100%;
+	}
+
+	.entry-header,
+	.entry-footer,
+	.gridd-contain,
+	.entry-content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		>* {
+			width: 100%;
+			align-self: center;
+			max-width: var(--gridd-content-max-width-calculated);
+		}
+
+		.alignwide,
+		.alignfull {
+			max-width: calc(100% + var(--gridd-content-padding-left) + var(--gridd-content-padding-right));
+			width: calc(100% + var(--gridd-content-padding-left) + var(--gridd-content-padding-right));
+			margin-left: calc(0px - var(--gridd-content-padding-left));
+			margin-right: calc(0px - var(--gridd-content-padding-right));
+
+			img {
+				width: 100%;
+			}
+		}
+
+		.alignwide {
+			max-width: calc(var(--gridd-content-max-width-calculated) + 25%);
+		}
+	}
+}
+
+.gridd-tp-content {
+	background-color: var(--gridd-content-bg);
+
+	.wp-block-columns {
+		display: -ms-grid;
+		display: grid;
+		grid-template-columns: 1fr;
+		-ms-grid-columns: 1fr;
+
+		&.has-2-columns,
+		&.has-3-columns {
+			grid-template-columns: 1fr;
+			-ms-grid-columns: 1fr;
+		}
+
+		&.has-4-columns,
+		&.has-5-columns {
+			@media only screen and (min-width: 600px) {
+				grid-template-columns: 1fr 1fr;
+				-ms-grid-columns: 1fr 1fr;
+			}
+		}
+
+		&.has-6-columns {
+			@media only screen and (min-width: 960px) {
+				grid-template-columns: 1fr 1fr 1fr;
+				-ms-grid-columns: 1fr 1fr 1fr;
+			}
+		}
+
+		&.alignfull {
+			padding-left: var(--gridd-content-padding-left);
+			padding-right: var(--gridd-content-padding-right);
+		}
+
+		.wp-block-column {
+			margin: 0;
+			padding: 1em;
+		}
+	}
+}

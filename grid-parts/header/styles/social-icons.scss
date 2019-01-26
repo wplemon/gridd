@@ -1,0 +1,19 @@
+.gridd-tp-social_media.gridd-tp {
+	background-color: var(--gridd-header-social-icons-bg);
+	align-items: center;
+	justify-content: var(--gridd-header-social-icons-text-align);
+
+	a {
+		display: block;
+		max-width: var(--gridd-header-social-icons-size);
+		padding: var(--gridd-header-social-icons-padding);
+		box-sizing: content-box;
+		line-height: 1;
+		color: var(--gridd-header-social-icons-color);
+	}
+
+	svg {
+		fill: var(--gridd-header-social-icons-color);
+		max-width: var(--gridd-header-social-icons-size);
+	}
+}

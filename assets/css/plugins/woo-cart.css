@@ -1,0 +1,16 @@
+.woocommerce #content table.cart td.actions .coupon,
+.woocommerce table.cart td.actions .coupon,
+.woocommerce-page #content table.cart td.actions .coupon,
+.woocommerce-page table.cart td.actions .coupon {
+  display: -ms-flexbox;
+  display: flex; }
+  .woocommerce #content table.cart td.actions .coupon input,
+  .woocommerce table.cart td.actions .coupon input,
+  .woocommerce-page #content table.cart td.actions .coupon input,
+  .woocommerce-page table.cart td.actions .coupon input {
+    width: auto; }
+    .woocommerce #content table.cart td.actions .coupon input.input-text + .button,
+    .woocommerce table.cart td.actions .coupon input.input-text + .button,
+    .woocommerce-page #content table.cart td.actions .coupon input.input-text + .button,
+    .woocommerce-page table.cart td.actions .coupon input.input-text + .button {
+      width: 100%; }

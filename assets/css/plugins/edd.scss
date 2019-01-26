@@ -1,0 +1,156 @@
+.gridd-archive-downloads,
+.edd_downloads_list {
+	display:-ms-grid;
+	display: grid;
+	-ms-grid-columns: repeat(auto-fit, minmax(var(--gridd-edd-grid-min-col-width), 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(var(--gridd-edd-grid-min-col-width), 1fr));
+	grid-gap: var(--gridd-edd-grid-gap);
+	padding-bottom: 3em;
+
+	// &.edd_download_columns {
+	// 	&_1 {
+	// 		-ms-grid-columns: 1fr;
+	// 		grid-template-columns: 1fr;
+	// 	}
+	// 	&_2 {
+	// 		-ms-grid-columns: 1fr 1fr;
+	// 		grid-template-columns: 1fr 1fr;
+	// 	}
+	// 	&_3 {
+	// 		-ms-grid-columns: 1fr 1fr 1fr;
+	// 		grid-template-columns: 1fr 1fr 1fr;
+	// 	}
+	// 	&_4 {
+	// 		-ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+	// 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	// 	}
+	// 	&_5 {
+	// 		-ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+	// 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+	// 	}
+	// }
+
+	.type-download,
+	.edd_download {
+		margin: 0;
+		display: flex;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		background: rgba(0,0,0,.03);
+		border-radius: 0;
+		overflow: hidden;
+
+		.entry-header {
+			padding-left: 0;
+			padding-right: 0;
+
+			.entry-title {
+				padding-left: var(--gridd-edd-grid-inner-padding);
+				padding-right: var(--gridd-edd-grid-inner-padding);
+			}
+		}
+
+		.entry-content {
+			align-self: flex-end;
+			width: 100%;
+			margin-bottom: 1em;
+			padding: var(--gridd-edd-grid-inner-padding);
+
+			> *:not(.button) {
+				padding-left: 0 !important;
+				padding-right: 0 !important;
+			}
+		}
+	}
+
+	.edd_download_inner {
+		padding: var(--gridd-edd-grid-inner-padding);
+		width: 100%;
+
+		.edd_download_image {
+			margin-left: calc(0px - var(--gridd-edd-grid-inner-padding));
+			margin-right: calc(0px - var(--gridd-edd-grid-inner-padding));
+			margin-top: calc(0px - var(--gridd-edd-grid-inner-padding));
+
+			> a {
+				display: block;
+				width: 100%;
+
+				> img {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+.edd_download_image {
+	a {
+		&:hover,
+		&:active,
+		&:focus {
+			filter: none;
+		}
+	}
+}
+
+.edd-table {
+	th {
+		text-align: left;
+	}
+}
+
+#edd_purchase_form {
+	> fieldset {
+		padding: 1.5em;
+
+		> legend {
+			font-size: calc(1em * var(--gridd-typo-scale));
+			padding: 0 .7em;
+		}
+
+		> p {
+			display:-ms-grid;
+			display: grid;
+		}
+
+		.edd-description {
+			font-size: calc(1em / var(--gridd-typo-scale));
+		}
+	}
+}
+
+.edd_price_options {
+	margin-bottom: 1em;
+
+	ul {
+		list-style: none;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.edd_purchase_submit_wrapper {
+	display: flex;
+}
+
+#edd_download_pagination {
+	> * {
+		padding: .5em 1em;
+		margin: 0 .5em;
+		border-radius: 0;
+		background: rgba(0,0,0,.03);
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}

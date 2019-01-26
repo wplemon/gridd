@@ -1,0 +1,245 @@
+// Control CSS.
+
+.gridd-grid-builder {
+	position: relative;
+}
+
+.customize-control-gridd_grid {
+	margin: 2em 0;
+
+	.grid-whatis {
+		grid-row: 2 / 3;
+		grid-column: 2 / 3;
+		padding: 0;
+	}
+
+	// The grid wrapper for everything.
+	.gridd-grid-builder-grids-wrapper {
+		display:-ms-grid;
+		display: grid;
+		grid-template-columns: 1fr 46px;
+		grid-gap: 7px;
+
+		&.whatis {
+			.gridd-grid-builder-columns,
+			.gridd-grid-builder-rows {
+				input {
+					display: none;
+				}
+				.whatis {
+					display: block;
+				}
+			}
+		}
+	}
+
+	// The add/remove row/column buttons.
+	.map-builder-actions {
+		grid-column: 1 / 3;
+		grid-row: 1 / 2;
+
+		.dashicons {
+			vertical-align: middle;
+		}
+	}
+
+	.gridd-grid-builder-columns,
+	.gridd-grid-builder-rows {
+		input,
+		.whatis {
+			background: none;
+			box-shadow: none;
+			border: 1px dotted #999;
+			text-align: center;
+			padding: 3px;
+			font-size: 12px;
+
+			&:active,
+			&:focus,
+			&:hover {
+				background: #fff;
+			}
+		}
+		.whatis {
+			display: none;
+		}
+	}
+
+	// The columns width inputs wrapper.
+	.gridd-grid-builder-columns {
+		grid-column: 1 / 2;
+		grid-row: 2 / 3;
+		display: grid;
+		grid-gap: 0;
+	}
+	// The rows width inputs wrapper.
+	.gridd-grid-builder-rows {
+		grid-column: 2 / 3;
+		grid-row: 3 / 4;
+		display: grid;
+		grid-gap: 0;
+		padding-bottom: 30px;
+
+		input {
+			height: 65px;
+		}
+	}
+
+	.gridd-grid-builder-grids {
+		display: grid;
+		grid-column: 1 / 2;
+		position: relative;
+		overflow: visible;
+
+		.gridd-grid-selectable,
+		.gridd-grid-selected {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+		}
+
+		.gridd-grid-selectable {
+			grid-column-start: 1;
+			grid-column-end: 2;
+			grid-row-start: 1;
+			grid-row-end: 2;
+		}
+	}
+}
+
+.gridd-grid-selectable,
+.gridd-grid-selected {
+	display: grid;
+	grid-template-rows: repeat(auto-fit, 65px);
+}
+
+.gridd-grid-selectable {
+	button {
+		display: block;
+		height: 65px;
+		border: 1px dotted rgba(0,0,0,.25);
+		background-color: #f2f2f2;
+		border-radius: 0;
+		box-shadow: none;
+
+		&:focus {
+			outline: none;
+		}
+
+		&.ds-selected {
+			background-color: rgba(0,0,0,.25);
+			background-image: linear-gradient(135deg, rgba(0,0,0,.5) 10%, transparent 10%, transparent 50%, rgba(0,0,0,.5) 50%, rgba(0,0,0,.5) 60%, transparent 60%, transparent 100%);
+			background-size: 5px 5px;
+		}
+	}
+}
+
+.grid-selected-part {
+	display: flex;
+	z-index: 1;
+
+	&.editing {
+		z-index: 0;
+	}
+
+	.inner {
+		box-shadow: inset 0px 1px 10px 0px rgba(0,0,0,0.2);
+		color: #fff;
+		justify-content: center;
+		display: flex;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		word-break: break-word;
+		// border-radius: 3px;
+		position: relative;
+		// font-size: 10px;
+		// WIP
+		// background-color: #666 !important;
+		&:hover {
+			.actions {
+				display: block;
+			}
+		}
+
+		.actions {
+			display: none;
+			position: absolute;
+			top: 0;
+			right: 0;
+
+			.add,
+			.delete,
+			.edit,
+			.resize {
+				background: rgba(255, 255, 255, 0.83);
+				border: none;
+				padding: 4px;
+
+				.dashicons {
+					font-size: 16px;
+					width: 16px;
+					height: 16px;
+				}
+			}
+
+			.edit {
+				color: #000;
+			}
+
+			.delete {
+				color: #DC3232;
+			}
+		}
+	}
+}
+
+.gridd-grid-part-selector {
+	z-index: 10;
+	// background-image: linear-gradient(135deg, #fff 10%, rgba(255,255,255,.7) 10%, rgba(255,255,255,.7) 50%, #fff 50%, #fff 60%, rgba(255,255,255,.7) 60%, rgba(255,255,255,.7) 100%);
+	// background-size: 3px 3px;
+	background: rgb(238, 238, 238);
+	border: 1px solid #ccc;
+	padding: 12px;
+
+	.grid-part-select {
+		background: #fff;
+		color: #333;
+		border: 1px solid #aaa;
+		border-radius: 3px;
+		margin: 20px 0;
+		text-align: center;
+
+		&:disabled {
+			background: #eee;
+			color: #999;
+		}
+	}
+}
+
+.gridd-grid-selected {
+	&.editing {
+		.grid-selected-part {
+			z-index: 0;
+		}
+	}
+}
+
+.template-part-advanced-options {
+	button.edit-part-options-done {
+		display: block;
+		width: 100%;
+		font-size: 1.1em;
+		text-align: center;
+		line-height: 2em;
+		margin: 1em 0;
+	}
+}
+
+.gridd-focus-link-wrapper {
+	padding: 1em;
+	display: block;
+	background: #fff;
+	margin-top: 1em;
+}

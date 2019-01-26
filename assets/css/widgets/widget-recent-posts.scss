@@ -1,0 +1,25 @@
+.widget_recent_entries {
+	ul {
+		list-style: none;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		padding: .25em 0;
+		border-bottom: 1px solid rgba(0,0,0,.1);
+
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+
+	&.widget a {
+		text-decoration: none;
+	}
+
+	.post-date {
+		font-size: calc(1em / var(--gridd-typo-scale));
+	}
+}

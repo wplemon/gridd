@@ -1,0 +1,35 @@
+.button,
+a.button,
+a.button:visited,
+input[type=submit] {
+  border: 2px solid #222;
+  color: #fff;
+  background-color: #222;
+  text-decoration: none !important;
+  border-radius: 0;
+  padding: .35em 1.25em;
+  transition: all 150ms ease-in-out; }
+  .button:active, .button:hover,
+  a.button:active,
+  a.button:hover,
+  a.button:visited:active,
+  a.button:visited:hover,
+  input[type=submit]:active,
+  input[type=submit]:hover {
+    cursor: default;
+    outline: none;
+    text-decoration: none; }
+  .button:active, .button:focus, .button:hover,
+  a.button:active,
+  a.button:focus,
+  a.button:hover,
+  a.button:visited:active,
+  a.button:visited:focus,
+  a.button:visited:hover,
+  input[type=submit]:active,
+  input[type=submit]:focus,
+  input[type=submit]:hover {
+    color: #fff;
+    border-color: #333;
+    background: #333;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23); }

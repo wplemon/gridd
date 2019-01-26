@@ -1,0 +1,32 @@
+.widget_rss {
+	> ul {
+		list-style: none;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+
+		> li {
+			padding: 1em 0;
+			border-bottom: 1px solid rgba(0,0,0,.1);
+
+			&:first-child {
+				padding-top: 0;
+			}
+
+			&:last-child {
+				border-bottom: none;
+				padding-bottom: 0;
+			}
+
+			> a.rsswidget {
+				font-size: calc(var(--gridd-typo-scale) * 1em);
+			}
+
+			> .rss-date,
+			> cite {
+				font-size: calc(1em / var(--gridd-typo-scale));
+				display: block;
+			}
+		}
+	}
+}

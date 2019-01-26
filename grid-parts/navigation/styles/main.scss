@@ -1,0 +1,140 @@
+// We use the "ID" (all caps) as a placeholder.
+// The ID will be replaced by the actual navigation-ID via PHP
+// when the style is included inline in the document.
+.gridd-tp-nav_ID {
+	background-color: var(--gridd-nav-ID-bg);
+	overflow: visible;
+	font-size: var(--gridd-nav-ID-font-size);
+
+	.inner {
+		padding: var(--gridd-nav-ID-padding);
+		width: 100%;
+		position: relative;
+		display: flex;
+	}
+
+	nav {
+		width: 100%;
+	}
+
+	.gridd-nav-horizontal {
+		display: flex;
+		align-items: center;
+
+		>* {
+			width: 100%;
+		}
+	}
+
+	.gridd-navigation {
+		justify-content: var(--gridd-nav-ID-justify);
+
+		ul {
+			background-color: var(--gridd-nav-ID-submenu-bg);
+		}
+
+
+		li {
+
+			&.current-menu-item,
+			&.current-page-item,
+			&.current_page_item,
+			&.current-page-ancestor,
+			&.current-menu-ancestor,
+			&.current-menu-parent,
+			&.current-page-parent,
+			&.current_page_parent,
+			&.current_page_ancestor {
+
+				>a,
+				>a:visited {
+					color: var(--gridd-nav-ID-accent-color);
+					background: var(--gridd-nav-ID-accent-bg);
+				}
+
+				.gridd-toggle {
+					color: var(--gridd-nav-ID-accent-color);
+					background: var(--gridd-nav-ID-accent-bg);
+
+					svg {
+						fill: var(--gridd-nav-ID-accent-color);
+					}
+				}
+			}
+
+			&.menu-item-has-children,
+			&.page_item_has_children {
+				>a {
+					padding-right: calc(var(--gridd-nav-ID-items-padding) / 2);
+				}
+			}
+		}
+
+		a,
+		a:visited {
+			padding: calc(var(--gridd-nav-ID-items-padding) / 1.618) var(--gridd-nav-ID-items-padding);
+			color: var(--gridd-nav-ID-color);
+
+			&:hover,
+			&:focus,
+			&.focus,
+			&.toggled-on {
+				color: var(--gridd-nav-ID-accent-color);
+				background: var(--gridd-nav-ID-accent-bg);
+
+				~.gridd-toggle {
+					background: var(--gridd-nav-ID-accent-bg);
+
+					svg {
+						fill: var(--gridd-nav-ID-accent-color);
+					}
+				}
+			}
+		}
+
+		.gridd-toggle {
+			color: var(--gridd-nav-ID-color);
+			padding: 0 calc(var(--gridd-nav-ID-items-padding) / 2);
+
+			svg {
+				fill: var(--gridd-nav-ID-color);
+			}
+
+			&:hover,
+			&:focus,
+			&.focus,
+			&.toggled-on {
+				color: var(--gridd-nav-ID-accent-color);
+				background: var(--gridd-nav-ID-accent-bg);
+
+				svg {
+					fill: var(--gridd-nav-ID-accent-color);
+				}
+			}
+
+			&.toggled-on {
+				background: var(--gridd-nav-ID-accent-bg);
+
+				svg {
+					fill: var(--gridd-nav-ID-accent-color);
+				}
+
+				+ul {
+					li {
+
+						&.menu-item-has-children,
+						&.page_item_has_children {
+							>a {
+								width: calc(100% - var(--gridd-nav-ID-items-padding) - 1em - 0.01px);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.gridd-toggle-navigation {
+		display: none;
+	}
+}
