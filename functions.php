@@ -20,6 +20,13 @@ use Gridd\Widget_Output_Filters;
 require_once get_template_directory() . '/inc/gridd.php';
 
 /**
+ * If Kirki isn't loaded as a plugin, load the included version.
+ */
+if ( ! class_exists( 'Kirki' ) ) {
+	require_once get_template_directory() . '/inc/kirki/kirki.php';
+}
+
+/**
  * The Gridd Autoloader.
  *
  * @param string $class The fully-qualified class name.
@@ -243,13 +250,6 @@ function gridd_get_template_theme_mods_blacklist() {
 	];
 	return apply_filters( 'gridd_template_blacklist_settings', $blacklist );
 }
-
-/**
- * TGMPA
- *
- * @since 1.0
- */
-require_once get_parent_theme_file_path( '/inc/tgmpa-config.php' );
 
 // Init AMP Support.
 new AMP();
