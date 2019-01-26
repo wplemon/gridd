@@ -19,7 +19,7 @@ gridd_add_customizer_section(
 		/* translators: The grid-part label. */
 		'title'       => sprintf( esc_attr__( '%s Options', 'gridd' ), esc_html__( 'Header Contact Info', 'gridd' ) ),
 		'description' => '<div class="gridd-section-description">%1$s%2$s</div><div class="gridd-docs"><a href="https://wplemon.com/documentation/gridd/grid-parts/header/" target="_blank" rel="noopener noreferrer nofollow">' . esc_html__( 'Learn more about these settings', 'gridd' ) . '</a></div></div>',
-		'section'     => 'gridd_grid',
+		'section'     => 'gridd_grid_part_details_header',
 		'priority'    => 20,
 	]
 );
