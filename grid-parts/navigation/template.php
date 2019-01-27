@@ -16,10 +16,11 @@ $style = Style::get_instance( "grid-part/navigation/$id" );
 $style->add_string( Navigation::get_global_styles() );
 $style->add_file( get_theme_file_path( 'grid-parts/navigation/styles/main.min.css' ) );
 
+$responsive_mode       = get_theme_mod( "gridd_grid_nav_{$id}_responsive_behavior", 'desktop-normal-mobile-hidden' );
 $added_vertical_styles = false;
 
 // Check if we need to add desktop styles.
-if ( 'always' !== get_theme_mod( "gridd_grid_nav_{$id}_collapse_to_icon", 'mobile' ) ) {
+if ( false !== strpos( $responsive_mode, 'desktop-normal' ) ) {
 
 	// Check if we need to add the vertical styles.
 	if ( get_theme_mod( "gridd_grid_nav_{$id}_vertical", false ) ) {
@@ -29,10 +30,10 @@ if ( 'always' !== get_theme_mod( "gridd_grid_nav_{$id}_collapse_to_icon", 'mobil
 }
 
 // Add collapsed styles if needed.
-if ( 'never' !== get_theme_mod( "gridd_grid_nav_{$id}_collapse_to_icon", 'mobile' ) ) {
+if ( false !== strpos( $responsive_mode, 'icon' ) ) {
 
 	// Add the media-query.
-	if ( 'mobile' === get_theme_mod( "gridd_grid_nav_{$id}_collapse_to_icon", 'mobile' ) ) {
+	if ( false !== strpos( $responsive_mode, 'desktop-normal' ) ) {
 		$style->add_string( '@media only screen and (max-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '800px' ) . '){' );
 	}
 
@@ -43,9 +44,14 @@ if ( 'never' !== get_theme_mod( "gridd_grid_nav_{$id}_collapse_to_icon", 'mobile
 	}
 
 	// Close the media-query.
-	if ( 'mobile' === get_theme_mod( "gridd_grid_nav_{$id}_collapse_to_icon", 'mobile' ) ) {
+	if ( false !== strpos( $responsive_mode, 'desktop-normal' ) ) {
 		$style->add_string( '}' );
 	}
+}
+
+// Hide on mobile.
+if ( false !== strpos( $responsive_mode, 'mobile-hidden' ) ) {
+	$style->add_string( '@media only screen and (max-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '800px' ) . '){.gridd-tp-nav_' . $id . '.gridd-mobile-hidden{display:none;}}' );
 }
 
 // Replace ID with $id.
@@ -76,9 +82,12 @@ if ( class_exists( 'ariColor' ) ) {
 $classes = [
 	'gridd-tp',
 	"gridd-tp-nav_$id",
-	'gridd-menu-collapse-' . get_theme_mod( "gridd_grid_nav_{$id}_collapse_to_icon", 'mobile' ),
 	'gridd-menu-collapse-position-' . get_theme_mod( "gridd_grid_nav_{$id}_expand_icon_position", 'center-right' ),
 ];
+$responsive_mode_parts = explode( ' ', $responsive_mode );
+foreach ( $responsive_mode_parts as $responsive_mode_part ) {
+	$classes[] = 'gridd-' . $responsive_mode_part;
+}
 ?>
 
 <div class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
@@ -89,7 +98,7 @@ $classes = [
 	$style->the_css( 'gridd-inline-css-navigation-' . $id );
 	?>
 	<div class="inner">
-		<?php if ( 'never' !== get_theme_mod( "gridd_grid_nav_{$id}_collapse_to_icon", 'mobile' ) ) : ?>
+		<?php if ( false !== strpos( $responsive_mode, 'icon' ) ) : ?>
 			<?php
 			/**
 			 * Add the toggle button.

@@ -215,8 +215,6 @@ class Scripts {
 	 */
 	public function inline_styles() {
 
-		$breakpoint = get_theme_mod( 'gridd_mobile_breakpoint', '800px' );
-
 		$style = Style::get_instance( 'main-styles' );
 
 		// Add blocks styles from wp-core.
