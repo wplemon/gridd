@@ -314,3 +314,21 @@ add_filter(
 		return $args;
 	}
 );
+
+/**
+ * Utility function to get the contents of a non-executable file as plain text.
+ *
+ * @since 1.0
+ * @param string $path     The file path.
+ * @param bool   $absolute Set to true if we have an absolute path instead of relative to the theme root.
+ * @return string          The file contents or empty string if no file was found.
+ */
+function gridd_get_file_contents( $path, $absolute = false ) {
+	ob_start();
+	if ( $absolute && file_exists( $path ) ) {
+		include $path;
+	} else {
+		include locate_template( $path, true, false );
+	}
+	return ob_get_clean();
+}

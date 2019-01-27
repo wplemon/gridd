@@ -155,7 +155,7 @@ class Navigation extends Grid_Part {
 			return '';
 		}
 		self::$global_styles_already_included = true;
-		return \file_get_contents( get_theme_file_path( 'grid-parts/navigation/styles/global.min.css' ) ); // phpcs:ignore WordPress.WP.AlternativeFunctions
+		return gridd_get_file_contents( 'grid-parts/navigation/styles/global.min.css' );
 	}
 
 

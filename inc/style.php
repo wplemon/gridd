@@ -126,7 +126,7 @@ class Style {
 			$this->css .= "\r\n\r\n/* GRIDD DEBUG MODE. CSS FROM FILE: {$path} */\r\n";
 		}
 		if ( file_exists( $path ) ) {
-			$this->css .= \file_get_contents( $path );
+			$this->css .= gridd_get_file_contents( $path, true );
 		}
 	}
 
