@@ -12,3 +12,6 @@ a:visited {
   a:focus,
   a:visited:focus {
     outline: thin dashed; }
+
+.entry-title a {
+  text-decoration: none; }
