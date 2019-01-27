@@ -78,7 +78,7 @@ function gridd_nav_customizer_options( $id ) {
 			'transport'       => 'postMessage',
 			'choices'         => [
 				'never'  => esc_html__( 'Never', 'gridd' ),
-				'mobile' => esc_html__( 'Small Screens', 'gridd' ),
+				'mobile' => esc_html__( 'Mobile', 'gridd' ),
 				'always' => esc_html__( 'Always', 'gridd' ),
 			],
 			'partial_refresh' => [
