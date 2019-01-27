@@ -40,10 +40,10 @@
       .gridd-tp-nav_ID .gridd-navigation li.current-menu-item .gridd-toggle svg, .gridd-tp-nav_ID .gridd-navigation li.current-page-item .gridd-toggle svg, .gridd-tp-nav_ID .gridd-navigation li.current_page_item .gridd-toggle svg, .gridd-tp-nav_ID .gridd-navigation li.current-page-ancestor .gridd-toggle svg, .gridd-tp-nav_ID .gridd-navigation li.current-menu-ancestor .gridd-toggle svg, .gridd-tp-nav_ID .gridd-navigation li.current-menu-parent .gridd-toggle svg, .gridd-tp-nav_ID .gridd-navigation li.current-page-parent .gridd-toggle svg, .gridd-tp-nav_ID .gridd-navigation li.current_page_parent .gridd-toggle svg, .gridd-tp-nav_ID .gridd-navigation li.current_page_ancestor .gridd-toggle svg {
         fill: var(--gridd-nav-ID-accent-color); }
     .gridd-tp-nav_ID .gridd-navigation li.menu-item-has-children > a, .gridd-tp-nav_ID .gridd-navigation li.page_item_has_children > a {
-      padding-right: calc(var(--gridd-nav-ID-items-padding) / 2); }
+      padding-right: .5em; }
     .gridd-tp-nav_ID .gridd-navigation a,
     .gridd-tp-nav_ID .gridd-navigation a:visited {
-      padding: calc(var(--gridd-nav-ID-items-padding) / 1.618) var(--gridd-nav-ID-items-padding);
+      padding: 0.618em 1em;
       color: var(--gridd-nav-ID-color); }
       .gridd-tp-nav_ID .gridd-navigation a:hover, .gridd-tp-nav_ID .gridd-navigation a:focus, .gridd-tp-nav_ID .gridd-navigation a.focus, .gridd-tp-nav_ID .gridd-navigation a.toggled-on,
       .gridd-tp-nav_ID .gridd-navigation a:visited:hover,
@@ -66,7 +66,7 @@
             fill: var(--gridd-nav-ID-accent-color); }
     .gridd-tp-nav_ID .gridd-navigation .gridd-toggle {
       color: var(--gridd-nav-ID-color);
-      padding: 0 calc(var(--gridd-nav-ID-items-padding) / 2); }
+      padding: 0 .5em; }
       .gridd-tp-nav_ID .gridd-navigation .gridd-toggle svg {
         fill: var(--gridd-nav-ID-color); }
       .gridd-tp-nav_ID .gridd-navigation .gridd-toggle:hover, .gridd-tp-nav_ID .gridd-navigation .gridd-toggle:focus, .gridd-tp-nav_ID .gridd-navigation .gridd-toggle.focus, .gridd-tp-nav_ID .gridd-navigation .gridd-toggle.toggled-on {
@@ -79,6 +79,6 @@
         .gridd-tp-nav_ID .gridd-navigation .gridd-toggle.toggled-on svg {
           fill: var(--gridd-nav-ID-accent-color); }
         .gridd-tp-nav_ID .gridd-navigation .gridd-toggle.toggled-on + ul li.menu-item-has-children > a, .gridd-tp-nav_ID .gridd-navigation .gridd-toggle.toggled-on + ul li.page_item_has_children > a {
-          width: calc(100% - var(--gridd-nav-ID-items-padding) - 1em - 0.01px); }
+          width: calc(100% - 2em - 0.01px); }
   .gridd-tp-nav_ID .gridd-toggle-navigation {
     display: none; }

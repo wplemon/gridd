@@ -61,9 +61,6 @@ class WooCommerce {
 		// AJAX Cart.
 		add_filter( 'woocommerce_add_to_cart_fragments', [ $this, 'cart_link_fragment' ] );
 
-		// Menu Cart.
-		add_filter( 'wp_nav_menu_items', [ $this, 'wp_nav_menu_items' ], 10, 2 );
-
 		// Remove Breadcrumbs.
 		add_action( 'init', [ $this, 'remove_breadcrumbs' ] );
 
@@ -285,43 +282,6 @@ class WooCommerce {
 			</li>
 		</ul>
 		<?php
-	}
-
-	/**
-	 * Add cart menu-item.
-	 *
-	 * @access public
-	 * @since 1.0
-	 * @param string $items The menu items.
-	 * @param object $args  The menu.
-	 * @return string
-	 */
-	public function wp_nav_menu_items( $items, $args ) {
-		$show_in_primary_nav   = ( 'menu-primary' === $args->theme_location && get_theme_mod( 'gridd_grid_nav-primary_woo_cart', true ) );
-		$show_in_secondary_nav = ( 'menu-secondary' === $args->theme_location && get_theme_mod( 'gridd_grid_nav-secondary_woo_cart', false ) );
-		$is_cart               = ( function_exists( 'is_cart' ) && is_cart() );
-		$is_checkout           = ( ( function_exists( 'is_checkout' ) && is_checkout() ) || ( function_exists( 'is_checkout_pay_page' ) && is_checkout_pay_page() ) );
-
-		if ( ! $is_cart && ! $is_checkout && ( $show_in_primary_nav || $show_in_secondary_nav ) ) {
-			ob_start();
-
-			// Add the link.
-			$this->cart_link();
-
-			// Add the widget.
-			echo '<ul id="nav-primary-cart" class="sub-menu">';
-			the_widget(
-				'WC_Widget_Cart',
-				[
-					'title' => '',
-				]
-			);
-			echo '</ul>';
-
-			// Print the item.
-			$items .= '<li class="menu-item menu-item-has-children nav-cart">' . ob_get_clean() . '</li>';
-		}
-		return $items;
 	}
 
 	/**

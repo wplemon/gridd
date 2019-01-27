@@ -65,14 +65,14 @@
 			&.menu-item-has-children,
 			&.page_item_has_children {
 				>a {
-					padding-right: calc(var(--gridd-nav-ID-items-padding) / 2);
+					padding-right: .5em;
 				}
 			}
 		}
 
 		a,
 		a:visited {
-			padding: calc(var(--gridd-nav-ID-items-padding) / 1.618) var(--gridd-nav-ID-items-padding);
+			padding: 0.618em 1em;
 			color: var(--gridd-nav-ID-color);
 
 			&:hover,
@@ -94,7 +94,7 @@
 
 		.gridd-toggle {
 			color: var(--gridd-nav-ID-color);
-			padding: 0 calc(var(--gridd-nav-ID-items-padding) / 2);
+			padding: 0 .5em;
 
 			svg {
 				fill: var(--gridd-nav-ID-color);
@@ -125,7 +125,7 @@
 						&.menu-item-has-children,
 						&.page_item_has_children {
 							>a {
-								width: calc(100% - var(--gridd-nav-ID-items-padding) - 1em - 0.01px);
+								width: calc(100% - 2em - 0.01px);
 							}
 						}
 					}

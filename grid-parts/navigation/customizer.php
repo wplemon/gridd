@@ -6,6 +6,7 @@
  */
 
 use Gridd\Grid_Part\Navigation;
+use Gridd\AMP;
 
 /**
  * Register the menus.
@@ -46,7 +47,7 @@ function gridd_nav_customizer_options( $id ) {
 			),
 			'description' => sprintf(
 				'<div class="gridd-section-description">%1$s%2$s</div>',
-				( ! Gridd::is_pro() ) ? '<div class="gridd-go-plus">' . __( '<a href="https://wplemon.com/gridd-plus" rel="nofollow" target="_blank">Upgrade to <strong>plus</strong></a> for automatic WCAG-compliant colors suggestion on this section.', 'gridd' ) . '</div>' : '',
+				( ! Gridd::is_pro() ) ? '<div class="gridd-go-plus">' . __( '<a href="https://wplemon.com/gridd-plus" rel="nofollow" target="_blank">Upgrade to <strong>plus</strong></a> for automatic WCAG-compliant colors suggestion on this section and additional options for font-sizes and WooCommerce cart on your menu.', 'gridd' ) . '</div>' : '',
 				'<div class="gridd-docs"><a href="https://wplemon.com/documentation/gridd/grid-parts/navigation/" target="_blank" rel="noopener noreferrer nofollow">' . esc_html__( 'Learn more about these settings', 'gridd' ) . '</a></div>'
 			),
 			'section'     => 'gridd_grid',
@@ -68,7 +69,7 @@ function gridd_nav_customizer_options( $id ) {
 
 	gridd_add_customizer_field(
 		[
-			'type'            => 'radio',
+			'type'            => 'radio-buttonset',
 			'settings'        => "gridd_grid_nav_{$id}_collapse_to_icon",
 			'label'           => esc_html__( 'Mobile Menu Mode', 'gridd' ),
 			'description'     => esc_html__( 'Select when this menu should collapse to an icon.', 'gridd' ),
@@ -77,7 +78,7 @@ function gridd_nav_customizer_options( $id ) {
 			'transport'       => 'postMessage',
 			'choices'         => [
 				'never'  => esc_html__( 'Never', 'gridd' ),
-				'mobile' => esc_html__( 'Only on Mobile', 'gridd' ),
+				'mobile' => esc_html__( 'Small Screens', 'gridd' ),
 				'always' => esc_html__( 'Always', 'gridd' ),
 			],
 			'partial_refresh' => [
@@ -90,6 +91,15 @@ function gridd_nav_customizer_options( $id ) {
 						 * because we need to pass the $id var to the template.
 						 */
 						include get_theme_file_path( 'grid-parts/navigation/template.php' );
+						/**
+						 * Due to the partial refresh, JS listeners no longer work for the menu.
+						 * We need to re-inject the JS here to make previews work after the partial refresh.
+						 */
+						if ( ! AMP::is_active() ) {
+							echo '<script>';
+							include get_theme_file_path( 'assets/js/nav.min.js' );
+							echo '<script>';
+						}
 					},
 				],
 			],
@@ -106,46 +116,6 @@ function gridd_nav_customizer_options( $id ) {
 			'default'     => '1em',
 			'transport'   => 'postMessage',
 			'css_vars'    => "--gridd-nav-$id-padding",
-		]
-	);
-
-	gridd_add_customizer_field(
-		[
-			'type'        => 'slider',
-			'settings'    => "gridd_grid_nav_{$id}_font_size",
-			'label'       => esc_html__( 'Menu Font Size', 'gridd' ),
-			'description' => esc_html__( 'The font-size of the menu in relation to the body font-size.', 'gridd' ),
-			'tooltip'     => gridd()->customizer->get_text( 'related-font-size' ),
-			'section'     => "gridd_grid_part_details_nav_$id",
-			'default'     => 1,
-			'transport'   => 'postMessage',
-			'css_vars'    => [ "--gridd-nav-$id-font-size", '$em' ],
-			'choices'     => [
-				'min'    => 0.5,
-				'max'    => 2.5,
-				'step'   => 0.01,
-				'suffix' => 'em',
-			],
-		]
-	);
-
-	gridd_add_customizer_field(
-		[
-			'type'        => 'slider',
-			'settings'    => "gridd_grid_nav_{$id}_items_padding",
-			'label'       => esc_html__( 'Items Padding', 'gridd' ),
-			'description' => esc_html__( 'The inner padding for menu items.', 'gridd' ),
-			'tooltip'     => gridd()->customizer->get_text( 'related-font-size' ),
-			'section'     => "gridd_grid_part_details_nav_$id",
-			'default'     => 1,
-			'transport'   => 'postMessage',
-			'css_vars'    => [ "--gridd-nav-$id-items-padding", '$em' ],
-			'choices'     => [
-				'min'    => 0.2,
-				'max'    => 3,
-				'step'   => 0.01,
-				'suffix' => 'em',
-			],
 		]
 	);
 
@@ -239,6 +209,15 @@ function gridd_nav_customizer_options( $id ) {
 						 * because we need to pass the $id var to the template.
 						 */
 						include get_theme_file_path( 'grid-parts/navigation/template.php' );
+						/**
+						 * Due to the partial refresh, JS listeners no longer work for the menu.
+						 * We need to re-inject the JS here to make previews work after the partial refresh.
+						 */
+						if ( ! AMP::is_active() ) {
+							echo '<script>';
+							include get_theme_file_path( 'assets/js/nav.min.js' );
+							echo '<script>';
+						}
 					},
 				],
 			],
@@ -307,6 +286,15 @@ function gridd_nav_customizer_options( $id ) {
 						 * because we need to pass the $id var to the template.
 						 */
 						include get_theme_file_path( 'grid-parts/navigation/template.php' );
+						/**
+						 * Due to the partial refresh, JS listeners no longer work for the menu.
+						 * We need to re-inject the JS here to make previews work after the partial refresh.
+						 */
+						if ( ! AMP::is_active() ) {
+							echo '<script>';
+							include get_theme_file_path( 'assets/js/nav.min.js' );
+							echo '<script>';
+						}
 					},
 				],
 			],
@@ -318,6 +306,7 @@ function gridd_nav_customizer_options( $id ) {
 			'type'            => 'radio-buttonset',
 			'settings'        => "gridd_grid_nav_{$id}_expand_icon_position",
 			'label'           => esc_html__( 'Expand Icon Position', 'gridd' ),
+			'description'     => esc_html__( 'Changes the position of the collapsed-menu icon inside the area.', 'gridd' ),
 			'section'         => "gridd_grid_part_details_nav_$id",
 			'default'         => 'center-right',
 			'transport'       => 'refresh',
@@ -350,62 +339,18 @@ function gridd_nav_customizer_options( $id ) {
 						 * because we need to pass the $id var to the template.
 						 */
 						include get_theme_file_path( 'grid-parts/navigation/template.php' );
+						/**
+						 * Due to the partial refresh, JS listeners no longer work for the menu.
+						 * We need to re-inject the JS here to make previews work after the partial refresh.
+						 */
+						if ( ! AMP::is_active() ) {
+							echo '<script>';
+							include get_theme_file_path( 'assets/js/nav.min.js' );
+							echo '<script>';
+						}
 					},
 				],
 			],
 		]
 	);
-
-	gridd_add_customizer_field(
-		[
-			'type'            => 'slider',
-			'settings'        => "gridd_grid_nav_{$id}_collapse_icon_size",
-			'label'           => esc_html__( 'Collapse Icon Size', 'gridd' ),
-			'section'         => "gridd_grid_part_details_nav_$id",
-			'default'         => 1,
-			'transport'       => 'postMessage',
-			'choices'         => [
-				'min'    => .75,
-				'max'    => 3,
-				'step'   => .01,
-				'suffix' => 'em',
-			],
-			'css_vars'        => [ "--gridd-nav-$id-collapsed-icon-size", '$em' ],
-			'active_callback' => [
-				[
-					'setting'  => "gridd_grid_nav_{$id}_collapse_to_icon",
-					'value'    => 'never',
-					'operator' => '!==',
-				],
-			],
-		]
-	);
-
-	if ( class_exists( 'WooCommerce' ) ) {
-		gridd_add_customizer_field(
-			[
-				'type'            => 'switch',
-				'settings'        => "gridd_grid_nav_{$id}_woo_cart",
-				'label'           => esc_html__( 'Show WooCommerce Cart', 'gridd' ),
-				'description'     => __( 'If enabled, the cart will be added as a dropdown at the end of the menu.', 'gridd' ),
-				'section'         => "gridd_grid_part_details_nav_$id",
-				'default'         => 1 === $id,
-				'transport'       => 'auto',
-				'transport'       => 'postMessage',
-				'partial_refresh' => [
-					"gridd_grid_nav_{$id}_woo_cart_template" => [
-						'selector'            => ".gridd-tp-nav_{$id}",
-						'container_inclusive' => true,
-						'render_callback'     => function() use ( $id ) {
-							/**
-							 * We use include( get_theme_file_path() ) here
-							 * because we need to pass the $id var to the template.
-							 */
-							include get_theme_file_path( 'grid-parts/navigation/template.php' );
-						},
-					],
-				],
-			]
-		);
-	}
 }

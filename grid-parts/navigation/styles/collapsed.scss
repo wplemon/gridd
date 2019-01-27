@@ -20,15 +20,15 @@
 	.gridd-toggle-navigation {
 		display: flex;
 		background-color: var(--gridd-nav-ID-bg);
-		padding: var(--gridd-nav-ID-items-padding);
+		padding: 1em;
 		border: none;
-		width: var(--gridd-nav-ID-collapsed-icon-size);
-		height: var(--gridd-nav-ID-collapsed-icon-size);
+		width: 1em;
+		height: 1em;
 		box-sizing: content-box;
 		border-radius: 0;
 
 		svg {
-			width: var(--gridd-nav-ID-collapsed-icon-size);
+			width: 1em;
 			fill: var(--gridd-nav-ID-color);
 		}
 
@@ -142,7 +142,7 @@
 
 			nav {
 				right: 0; // IE11
-				// transform: translateX(calc(-100% + var(--gridd-nav-ID-collapsed-icon-size) + 2 * var(--gridd-nav-ID-items-padding)));
+				// transform: translateX(calc(-100% + 1em + 2 * 1em));
 			}
 		}
 	}

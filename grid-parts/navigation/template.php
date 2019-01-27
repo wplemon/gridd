@@ -57,7 +57,6 @@ $style->add_vars(
 		"--gridd-nav-$id-bg"                  => get_theme_mod( "gridd_grid_nav_{$id}_bg_color", '#ffffff' ),
 		"--gridd-nav-$id-font-size"           => get_theme_mod( "gridd_grid_nav_{$id}_font_size", 1 ) . 'em',
 		"--gridd-nav-$id-padding"             => get_theme_mod( "gridd_grid_nav_{$id}_padding", '1em' ),
-		"--gridd-nav-$id-items-padding"       => get_theme_mod( "gridd_grid_nav_{$id}_items_padding", 1 ) . 'em',
 		"--gridd-nav-$id-justify"             => get_theme_mod( "gridd_grid_nav_{$id}_justify_content", 'center' ),
 		"--gridd-nav-$id-accent-color"        => get_theme_mod( "gridd_grid_nav_{$id}_accent_color", '#ffffff' ),
 		"--gridd-nav-$id-accent-bg"           => get_theme_mod( "gridd_grid_nav_{$id}_accent_bg_color", '#0f5e97' ),
