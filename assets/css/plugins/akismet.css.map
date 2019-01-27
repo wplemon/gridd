@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,oCAAqC;EACpC,SAAS,EAAE,mCAAmC",
-"sources": ["akismet.scss"],
-"names": [],
-"file": "akismet.css"
-}

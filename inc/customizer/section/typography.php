@@ -15,7 +15,7 @@ if ( ! class_exists( 'Kirki' ) ) {
 gridd_add_customizer_section(
 	'gridd_typography',
 	[
-		'title'       => esc_attr__( 'Typography & Links', 'gridd' ),
+		'title'       => esc_html__( 'Typography & Links', 'gridd' ),
 		'description' => sprintf(
 			'<div class="gridd-section-description">%1$s%2$s</div>',
 			( ! Gridd::is_pro() ) ? '<div class="gridd-go-plus">' . __( '<a href="https://wplemon.com/gridd-plus" rel="nofollow" target="_blank">Upgrade to <strong>plus</strong></a> for extra options in this section: Automatic WCAG-compliant colors suggestion, typography-scales and links decoration.', 'gridd' ) . '</div>' : '',
@@ -34,8 +34,7 @@ gridd_add_customizer_field(
 		'type'        => 'typography',
 		'settings'    => 'gridd_body_typography',
 		'label'       => esc_html__( 'Body Typography', 'gridd' ),
-		'description' => esc_html__( 'Edit the main typography settings for your site.', 'gridd' ),
-		'tooltip'     => esc_html__( 'The font-size selected here will affect all other elements on your site proportionally', 'gridd' ),
+		'description' => esc_html__( 'Edit the font-family used for the body of your site. This applies to all text except the headers which have a separate setting.', 'gridd' ),
 		'section'     => 'gridd_typography',
 		'priority'    => 10,
 		'default'     => [
@@ -68,7 +67,7 @@ gridd_add_customizer_field(
 		'type'        => 'typography',
 		'settings'    => 'gridd_headers_typography',
 		'label'       => esc_html__( 'Headers Typography', 'gridd' ),
-		'description' => esc_html__( 'Edit the font-family and font-weight of your document\'s headers.', 'gridd' ),
+		'description' => esc_html__( 'Edit the font-family used for all headers on your site.', 'gridd' ),
 		'section'     => 'gridd_typography',
 		'priority'    => 20,
 		'default'     => [
@@ -101,27 +100,12 @@ gridd_add_customizer_field(
 	]
 );
 
-/**
- * Focus on content-background control.
- */
-gridd_add_customizer_field(
-	[
-		'settings' => 'gridd_logo_focus_on_content_background_control',
-		'type'     => 'custom',
-		'label'    => 'Looking for the text-color and typography options?',
-		'section'  => 'gridd_typography',
-		'priority' => 25,
-		'default'  => '<div style="margin-bottom:1em;"><button class="button-gridd-focus global-focus button button-primary button-large" data-context="control" data-focus="gridd_grid_content_background_color">' . esc_html__( 'Click here to edit the content background-color', 'gridd' ) . '</button></div>',
-	]
-);
-
 gridd_add_customizer_field(
 	[
 		'type'        => 'kirki-wcag-tc',
 		'settings'    => 'gridd_text_color',
-		'label'       => esc_attr__( 'Text Color', 'gridd' ),
-		'description' => gridd()->customizer->get_text( 'a11y-textcolor-description' ),
-		'tooltip'     => gridd()->customizer->get_text( 'a11y-textcolor-tooltip' ),
+		'label'       => esc_html__( 'Text Color', 'gridd' ),
+		'description' => esc_html__( 'Select the color used for your text. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
 		'section'     => 'gridd_typography',
 		'priority'    => 30,
 		'default'     => '#000000',
@@ -137,7 +121,7 @@ gridd_add_customizer_field(
 	[
 		'settings'    => 'gridd_links_color',
 		'type'        => 'kirki-wcag-lc',
-		'label'       => esc_attr__( 'Links Color', 'gridd' ),
+		'label'       => esc_html__( 'Links Color', 'gridd' ),
 		'description' => esc_html__( 'Select the color for your links.', 'gridd' ),
 		'section'     => 'gridd_typography',
 		'transport'   => 'postMessage',
@@ -158,7 +142,7 @@ gridd_add_customizer_field(
 	[
 		'settings'    => 'gridd_links_hover_color',
 		'type'        => 'kirki-wcag-lc',
-		'label'       => esc_attr__( 'Links Hover Color', 'gridd' ),
+		'label'       => esc_html__( 'Links Hover Color', 'gridd' ),
 		'description' => esc_html__( 'Select the colors for your links on hover.', 'gridd' ),
 		'section'     => 'gridd_typography',
 		'transport'   => 'postMessage',
@@ -183,7 +167,7 @@ gridd_add_customizer_field(
 		'type'        => 'slider',
 		'settings'    => 'gridd_body_font_size',
 		'label'       => esc_html__( 'Body Font-Size', 'gridd' ),
-		'description' => esc_html__( 'We recommend you a font-size greater than 18px to ensure greater readability.', 'gridd' ),
+		'description' => esc_html__( 'Choose the main font-size for your content. We recommend you a font-size greater than 18px to ensure greater readability.', 'gridd' ),
 		'section'     => 'gridd_typography',
 		'default'     => 18,
 		'priority'    => 70,
@@ -203,7 +187,7 @@ gridd_add_customizer_field(
 		'type'        => 'slider',
 		'settings'    => 'gridd_fluid_typography_ratio',
 		'label'       => esc_html__( 'Fluid typography Ratio', 'gridd' ),
-		'description' => esc_html__( 'Larger values will increase the font-size more on bigger screens. Set to 0 if you don\'t want the font-size to change depending on the screen-size.', 'gridd' ),
+		'description' => esc_html__( 'Defines by how much your font-size will change depending on the screen-size. Larger values will increase the font-size more on bigger screens. Set to 0 if you do not want the font-size to change depending on the screen-size.', 'gridd' ),
 		/* translators: "Read this article" link. */
 		'tooltip'     => sprintf( esc_html__( 'Need more Information? %s', 'gridd' ), '<a href="https://wplemon.com/documentation/gridd/typography/fluid-responsive-typography/" target="_blank">' . esc_html__( 'Read this article.', 'gridd' ) ),
 		'section'     => 'gridd_typography',

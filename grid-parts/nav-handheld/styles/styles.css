@@ -54,13 +54,11 @@ body {
     width: 20px;
     height: 20px; }
   .gridd-nav-handheld-btn[aria-expanded=true] + #gridd-handheld-search-wrapper,
-  .gridd-nav-handheld-btn[aria-expanded=true] + #gridd-handheld-widget-area-wrapper,
   .gridd-nav-handheld-btn[aria-expanded=true] + #gridd-handheld-menu-wrapper,
   .gridd-nav-handheld-btn[aria-expanded=true] + #gridd-handheld-cart-wrapper {
     display: block; }
 
 #gridd-handheld-search-wrapper,
-#gridd-handheld-widget-area-wrapper,
 #gridd-handheld-menu-wrapper,
 #gridd-handheld-cart-wrapper {
   display: none;
@@ -79,7 +77,6 @@ body {
   box-shadow: 0 -10px 15px 0 rgba(0, 0, 0, .12);
   padding: 12px; }
   #gridd-handheld-search-wrapper.expanded,
-  #gridd-handheld-widget-area-wrapper.expanded,
   #gridd-handheld-menu-wrapper.expanded,
   #gridd-handheld-cart-wrapper.expanded {
     display: -ms-flexbox;
@@ -96,10 +93,6 @@ body {
     height: 100%; }
     #gridd-handheld-search-wrapper .search-form input {
       border-bottom: none; }
-
-#gridd-handheld-widget-area-wrapper .widget {
-  width: 100%;
-  padding: 1em; }
 
 #gridd-handheld-woo-cart {
   position: relative; }

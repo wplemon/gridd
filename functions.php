@@ -21,7 +21,7 @@ if ( version_compare( PHP_VERSION, '5.6.0' ) < 0 ) {
 	 */
 	function gridd_admin_notice_php_version() {
 		echo '<div class="notice notice-error"><p style="font-size:16px">';
-		_e( '<strong>ERROR</strong>: The Gridd Theme requires a PHP version greater than 5.6. Please visit <a href="https://wordpress.org/support/update-php/" rel="nofollow">this link</a> for instructions on how to update your PHP version, or switch to a different theme.', 'gridd' );
+		_e( '<strong>ERROR</strong>: The Gridd Theme requires a PHP version greater than 5.6. Please visit <a href="https://wordpress.org/support/update-php/" rel="nofollow">this link</a> for instructions on how to update your PHP version, or switch to a different theme.', 'gridd' ); // phpcs:ignore WordPress.Security.EscapeOutput
 		echo '</p></div>';
 	}
 	add_action( 'admin_notices', 'gridd_admin_notice_php_version' );

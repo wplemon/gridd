@@ -65,7 +65,6 @@ body {
 	&[aria-expanded=true] {
 
 		+#gridd-handheld-search-wrapper,
-		+#gridd-handheld-widget-area-wrapper,
 		+#gridd-handheld-menu-wrapper,
 		+#gridd-handheld-cart-wrapper {
 			display: block;
@@ -74,7 +73,6 @@ body {
 }
 
 #gridd-handheld-search-wrapper,
-#gridd-handheld-widget-area-wrapper,
 #gridd-handheld-menu-wrapper,
 #gridd-handheld-cart-wrapper {
 	display: none;
@@ -108,13 +106,6 @@ body {
 		input {
 			border-bottom: none;
 		}
-	}
-}
-
-#gridd-handheld-widget-area-wrapper {
-	.widget {
-		width: 100%;
-		padding: 1em;
 	}
 }
 

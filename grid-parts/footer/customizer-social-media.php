@@ -14,7 +14,7 @@ gridd_add_customizer_section(
 	'gridd_grid_part_details_footer_social_media',
 	[
 		/* translators: The grid-part label. */
-		'title'       => sprintf( esc_attr__( '%s Options', 'gridd' ), esc_html__( 'Footer Contact Info', 'gridd' ) ),
+		'title'       => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Footer Contact Info', 'gridd' ) ),
 		'section'     => 'gridd_grid_part_details_footer',
 		'description' => '<div class="gridd-section-description"><div class="gridd-docs"><a href="https://wplemon.com/documentation/gridd/grid-parts/footer/" target="_blank" rel="noopener noreferrer nofollow">' . esc_html__( 'Learn more about these settings', 'gridd' ) . '</a></div></div>',
 		'priority'    => 20,
@@ -25,9 +25,10 @@ gridd_add_customizer_field(
 	[
 		'type'            => 'repeater',
 		'settings'        => 'gridd_grid_part_details_footer_social_icons',
-		'label'           => esc_attr__( 'Social Media Links', 'gridd' ),
+		'label'           => esc_html__( 'Social Media Links', 'gridd' ),
+		'description'     => esc_html__( 'Add, remove and reorder your social links.', 'gridd' ),
 		'section'         => 'gridd_grid_part_details_footer_social_media',
-		'default'         => Footer::get_social_icons_default_value(),
+		'default'         => [],
 		'row_label'       => [
 			'type'  => 'field',
 			'field' => 'icon',
@@ -35,15 +36,17 @@ gridd_add_customizer_field(
 		'button_label'    => esc_html__( 'Add Icon', 'gridd' ),
 		'fields'          => [
 			'icon' => [
-				'type'    => 'select',
-				'label'   => esc_attr__( 'Select Icon', 'gridd' ),
-				'default' => '',
-				'choices' => gridd_social_icons_svg( 'keys_only' ),
+				'type'        => 'select',
+				'label'       => esc_html__( 'Select Icon', 'gridd' ),
+				'description' => esc_html__( 'Choose a social-network to add its icon.', 'gridd' ),
+				'default'     => '',
+				'choices'     => gridd_social_icons_svg( 'keys_only' ),
 			],
 			'url'  => [
-				'type'    => 'text',
-				'label'   => esc_attr__( 'Link URL', 'gridd' ),
-				'default' => '',
+				'type'        => 'text',
+				'label'       => esc_html__( 'Link URL', 'gridd' ),
+				'description' => esc_html__( 'Enter the URL for your profile/page on the social network.', 'gridd' ),
+				'default'     => '',
 			],
 		],
 		'transport'       => 'postMessage',
@@ -63,8 +66,8 @@ gridd_add_customizer_field(
 	[
 		'type'        => 'slider',
 		'settings'    => 'gridd_grid_part_details_footer_social_icons_size',
-		'label'       => esc_attr__( 'Size', 'gridd' ),
-		'description' => esc_html__( 'Controls the size for social-media icons.', 'gridd' ),
+		'label'       => esc_html__( 'Size', 'gridd' ),
+		'description' => esc_html__( 'Change the size of your social-media icons.', 'gridd' ),
 		'section'     => 'gridd_grid_part_details_footer_social_media',
 		'default'     => 1,
 		'transport'   => 'postMessage',
@@ -82,8 +85,8 @@ gridd_add_customizer_field(
 	[
 		'type'        => 'slider',
 		'settings'    => 'gridd_grid_part_details_footer_social_icons_padding',
-		'label'       => esc_attr__( 'Padding', 'gridd' ),
-		'description' => esc_html__( 'Controls the padding for social-media icons.', 'gridd' ),
+		'label'       => esc_html__( 'Padding', 'gridd' ),
+		'description' => esc_html__( 'Change the padding for your social-media icons. Controls how large the clickable area will be, and also the spacing between icons.', 'gridd' ),
 		'section'     => 'gridd_grid_part_details_footer_social_media',
 		'default'     => .5,
 		'transport'   => 'postMessage',
@@ -101,7 +104,7 @@ gridd_add_customizer_field(
 	[
 		'type'      => 'color',
 		'settings'  => 'gridd_grid_part_details_footer_social_icons_background_color',
-		'label'     => esc_attr__( 'Background Color', 'gridd' ),
+		'label'     => esc_html__( 'Background Color', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_footer_social_media',
 		'default'   => '#ffffff',
 		'transport' => 'postMessage',
@@ -116,7 +119,7 @@ gridd_add_customizer_field(
 	[
 		'type'      => 'color',
 		'settings'  => 'gridd_grid_part_details_footer_social_icons_icons_color',
-		'label'     => esc_attr__( 'Icons Color', 'gridd' ),
+		'label'     => esc_html__( 'Icons Color', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_footer_social_media',
 		'default'   => '#000000',
 		'transport' => 'postMessage',
@@ -131,10 +134,10 @@ gridd_add_customizer_field(
 	[
 		'type'        => 'radio-buttonset',
 		'settings'    => 'gridd_grid_part_details_footer_social_icons_icons_text_align',
-		'label'       => esc_attr__( 'Text Align', 'gridd' ),
+		'label'       => esc_html__( 'Icons Alignment', 'gridd' ),
 		'description' => esc_html__( 'Select how the icons will be aligned.', 'gridd' ),
 		'section'     => 'gridd_grid_part_details_footer_social_media',
-		'default'     => 'right',
+		'default'     => 'flex-end',
 		'transport'   => 'postMessage',
 		'css_vars'    => '--gridd-footer-social-icons-text-align',
 		'choices'     => [

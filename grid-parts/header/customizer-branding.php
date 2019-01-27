@@ -20,12 +20,11 @@ gridd_add_customizer_section(
  */
 gridd_add_customizer_field(
 	[
-		'settings' => 'gridd_logo_focus_on_grid_part_section',
+		'settings' => 'gridd_logo_focus_on_core_section',
 		'type'     => 'custom',
 		'label'    => '',
-		'section'  => 'title_tagline',
-		'priority' => 1,
-		'default'  => '<div style="margin-bottom:1em;"><button class="button-gridd-focus global-focus button button-primary button-large" data-context="section" data-focus="gridd_grid_part_details_header_branding">' . esc_html__( 'Click here to edit the branding grid-part', 'gridd' ) . '</button></div>',
+		'section'  => 'gridd_grid_part_details_header_branding',
+		'default'  => '<div style="margin-bottom:1em;"><button class="button-gridd-focus global-focus button button button-large" data-context="section" data-focus="title_tagline">' . esc_html__( 'Click here to edit your site identity', 'gridd' ) . '</button></div>',
 	]
 );
 
@@ -34,14 +33,43 @@ gridd_add_customizer_field(
  */
 gridd_add_customizer_field(
 	[
-		'settings' => 'gridd_logo_focus_on_core_section',
+		'settings' => 'gridd_logo_focus_on_grid_part_section',
 		'type'     => 'custom',
 		'label'    => '',
-		'section'  => 'gridd_grid_part_details_header_branding',
-		'default'  => '<div style="margin-bottom:1em;"><button class="button-gridd-focus global-focus button button-primary button-large" data-context="section" data-focus="title_tagline">' . esc_html__( 'Click here to edit your site identity', 'gridd' ) . '</button></div>',
+		'section'  => 'title_tagline',
+		'priority' => 1,
+		'default'  => '<div style="margin-bottom:1em;"><button class="button-gridd-focus global-focus button button button-large" data-context="section" data-focus="gridd_grid_part_details_header_branding">' . esc_html__( 'Click here to edit the branding grid-part', 'gridd' ) . '</button></div>',
 	]
 );
 
+gridd_add_customizer_field(
+	[
+		'type'        => 'color',
+		'settings'    => 'gridd_grid_header_branding_background_color',
+		'label'       => esc_html__( 'Background Color', 'gridd' ),
+		'description' => esc_html__( 'Select the background color for this grid-part.', 'gridd' ),
+		'section'     => 'gridd_grid_part_details_header_branding',
+		'default'     => '#ffffff',
+		'transport'   => 'postMessage',
+		'css_vars'    => '--gridd-branding-bg',
+		'choices'     => [
+			'alpha' => true,
+		],
+	]
+);
+
+gridd_add_customizer_field(
+	[
+		'type'        => 'text',
+		'settings'    => 'gridd_grid_header_branding_padding',
+		'label'       => esc_html__( 'Padding', 'gridd' ),
+		'description' => __( 'The padding for this grid-part. For details on how padding works, please refer to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
+		'section'     => 'gridd_grid_part_details_header_branding',
+		'default'     => '0.5em',
+		'transport'   => 'postMessage',
+		'css_vars'    => '--gridd-branding-padding',
+	]
+);
 
 gridd_add_customizer_field(
 	[
@@ -173,35 +201,6 @@ gridd_add_customizer_field(
 			'suffix' => 'em',
 		],
 		'active_callback' => 'display_header_text',
-	]
-);
-
-gridd_add_customizer_field(
-	[
-		'type'        => 'color',
-		'settings'    => 'gridd_grid_header_branding_background_color',
-		'label'       => esc_html__( 'Background Color', 'gridd' ),
-		'description' => '',
-		'section'     => 'gridd_grid_part_details_header_branding',
-		'default'     => '#ffffff',
-		'transport'   => 'postMessage',
-		'css_vars'    => '--gridd-branding-bg',
-		'choices'     => [
-			'alpha' => true,
-		],
-	]
-);
-
-gridd_add_customizer_field(
-	[
-		'type'        => 'text',
-		'settings'    => 'gridd_grid_header_branding_padding',
-		'label'       => esc_html__( 'Padding', 'gridd' ),
-		'description' => '',
-		'section'     => 'gridd_grid_part_details_header_branding',
-		'default'     => '0.5em',
-		'transport'   => 'postMessage',
-		'css_vars'    => '--gridd-branding-padding',
 	]
 );
 

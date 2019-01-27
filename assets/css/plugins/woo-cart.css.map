@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAMG;;;+CAAQ;EACP,OAAO,EAAE,IAAI;EAEb;;;uDAAM;IACL,KAAK,EAAE,IAAI;IAGV;;;8EAAU;MACT,KAAK,EAAE,IAAI",
-"sources": ["woo-cart.scss"],
-"names": [],
-"file": "woo-cart.css"
-}

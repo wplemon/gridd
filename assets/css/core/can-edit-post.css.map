@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AACC,YAAE;EACD,OAAO,EAAE,YAAY;EACrB,OAAO,EAAE,KAAK;EACd,SAAS,EAAE,KAAK",
-"sources": ["can-edit-post.scss"],
-"names": [],
-"file": "can-edit-post.css"
-}

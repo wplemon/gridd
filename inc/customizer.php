@@ -222,50 +222,14 @@ class Customizer {
 	 */
 	public function get_text( $context, $params = [] ) {
 		switch ( $context ) {
-			case 'padding':
-				return sprintf(
-					/* translators: link with the text "this article on the Mozilla CSS-reference docs". */
-					esc_html__( 'For details on how padding works, please refer to %s.', 'gridd' ),
-					'<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank">' . esc_html__( 'this article on the Mozilla CSS-reference docs', 'gridd' ) . '</a>'
-				);
-
 			case 'related-font-size':
 				return esc_html__( 'The font-size defined here is in relation to the global font-size defined in your typography options.', 'gridd' );
-
-			case 'grid-part-max-width':
-				return sprintf(
-					/* translators: %1$s, %2$s, %3$s are all examples of valid CSS values. */
-					esc_html__( 'The maximum width that the contents of this grid-part can use. Use any valid CSS value like %1$s, %2$s or %3$s.', 'gridd' ),
-					'<code>50em</code>',
-					'<code>800px</code>',
-					'<code>100%</code>'
-				);
-
-			case 'grid-gap-description':
-				return esc_html__( 'Adds a gap between your grid-parts, both horizontally and vertically. This can be particularly useful if you want them to look separate.', 'gridd' );
 
 			case 'grid-gap-tooltip':
 				return esc_html__( 'If you have a background-color defined for this grid, then that color will be visible through these gaps which creates a unique appearance since each grid-part looks separate.', 'gridd' );
 
 			case 'vertical-alignment':
 				return esc_html__( 'If the container for this grid-part is taller than its contents, you can use this option to vertically align the contents inside theie parent container.', 'gridd' );
-
-			case 'sticky-description':
-				return esc_html__( 'If set to "On", this grid-part will stick to the top of the page when users scroll-down.', 'gridd' );
-
-			case 'sticky-tooltip':
-				return __( 'Please make sure there is only 1 sticky part in your templates. Using multiple sticky elements may lead to unexpected results if used improperly. <a href="#" target="_blank">Read this article</a> for more details on how the sticky feature works and how to properly use it on your website', 'gridd' );
-
-			case 'a11y-textcolor-description':
-				return esc_html__( 'Select from a list of colors that ensure accessibility compliance with the selected background color. Colors on the top provide more contrast than colors lower in the list.', 'gridd' );
-
-			case 'a11y-textcolor-tooltip':
-				return sprintf(
-
-					/* translators: The link properties. */
-					__( 'Want to learn more about how these colors are selected based on the chosen background color? <a %1$s>Read this post</a>.', 'gridd' ),
-					'href="https://wplemon.com" target="_blank"'
-				);
 
 			default:
 				return '';

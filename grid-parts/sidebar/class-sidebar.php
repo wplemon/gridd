@@ -92,7 +92,7 @@ class Sidebar extends Grid_Part {
 			$parts[] = [
 				/* translators: The number of the navigation. */
 				'label'    => $label,
-				'color'    => '#' . str_pad( dechex( wp_rand( 0, 100 ) ), 2, '0', STR_PAD_LEFT ) . str_pad( dechex( wp_rand( 0, 100 ) ), 2, '0', STR_PAD_LEFT ) . str_pad( dechex( wp_rand( 0, 100 ) ), 2, '0', STR_PAD_LEFT ),
+				'color'    => 'hsl(' . ( 27 * $i + 150 ) . ',55%,40%)',
 				'priority' => 200 + $i,
 				'id'       => "sidebar_$i",
 			];

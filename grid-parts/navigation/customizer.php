@@ -40,7 +40,7 @@ function gridd_nav_customizer_options( $id ) {
 		[
 			'title'       => sprintf(
 				/* translators: The grid-part label. */
-				esc_attr__( '%s Options', 'gridd' ),
+				esc_html__( '%s Options', 'gridd' ),
 				/* translators: The navigation number. */
 				sprintf( esc_html__( 'Navigation %d', 'gridd' ), absint( $id ) )
 			),
@@ -62,7 +62,7 @@ function gridd_nav_customizer_options( $id ) {
 			'type'     => 'custom',
 			'label'    => esc_html__( 'Looking for your menu items?', 'gridd' ),
 			'section'  => "gridd_grid_part_details_nav_$id",
-			'default'  => '<div style="margin-bottom:1em;"><button class="button-gridd-focus global-focus button button-primary button-large" data-context="section" data-focus="menu_locations">' . esc_html__( 'Click here to edit your menus', 'gridd' ) . '</button></div>',
+			'default'  => '<div style="margin-bottom:1em;"><button class="button-gridd-focus global-focus button button button-large" data-context="section" data-focus="menu_locations">' . esc_html__( 'Click here to edit your menus', 'gridd' ) . '</button></div>',
 		]
 	);
 
@@ -70,7 +70,7 @@ function gridd_nav_customizer_options( $id ) {
 		[
 			'type'            => 'radio',
 			'settings'        => "gridd_grid_nav_{$id}_collapse_to_icon",
-			'label'           => esc_attr__( 'Mobile Menu Mode', 'gridd' ),
+			'label'           => esc_html__( 'Mobile Menu Mode', 'gridd' ),
 			'description'     => esc_html__( 'Select when this menu should collapse to an icon.', 'gridd' ),
 			'section'         => "gridd_grid_part_details_nav_$id",
 			'default'         => 'mobile',
@@ -100,9 +100,8 @@ function gridd_nav_customizer_options( $id ) {
 		[
 			'type'        => 'dimension',
 			'settings'    => "gridd_grid_nav_{$id}_padding",
-			'label'       => esc_attr__( 'Padding', 'gridd' ),
-			'description' => esc_html__( 'Inner padding for this grid-part. Use any valid CSS value.', 'gridd' ),
-			'tooltip'     => gridd()->customizer->get_text( 'padding' ),
+			'label'       => esc_html__( 'Padding', 'gridd' ),
+			'description' => __( 'Inner padding for this grid-part. Use any valid CSS value. For details on how padding works, please refer to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
 			'section'     => "gridd_grid_part_details_nav_$id",
 			'default'     => '1em',
 			'transport'   => 'postMessage',
@@ -170,8 +169,7 @@ function gridd_nav_customizer_options( $id ) {
 		[
 			'type'        => 'kirki-wcag-tc',
 			'label'       => esc_html__( 'Items Color', 'gridd' ),
-			'description' => esc_html__( 'Controls the color of menu items.', 'gridd' ) . '<br>' . gridd()->customizer->get_text( 'a11y-textcolor-description' ),
-			'tooltip'     => gridd()->customizer->get_text( 'a11y-textcolor-tooltip' ),
+			'description' => esc_html__( 'Select the color used for your menu items. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
 			'settings'    => "gridd_grid_nav_{$id}_items_color",
 			'section'     => "gridd_grid_part_details_nav_$id",
 			'choices'     => [
@@ -203,8 +201,7 @@ function gridd_nav_customizer_options( $id ) {
 		[
 			'type'        => 'kirki-wcag-tc',
 			'label'       => esc_html__( 'Accent Items Color', 'gridd' ),
-			'description' => esc_html__( 'Controls the text color for menu items on hover, as well as for the currently active menu-item. Applies to both parent and child (dropdown) menu items.', 'gridd' ) . '<br>' . gridd()->customizer->get_text( 'a11y-textcolor-description' ),
-			'tooltip'     => gridd()->customizer->get_text( 'a11y-textcolor-tooltip' ),
+			'description' => esc_html__( 'Select the color used for your menu items on hover, as well as for the currently active menu-item. Applies to both parent and child (dropdown) menu items. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
 			'settings'    => "gridd_grid_nav_{$id}_accent_color",
 			'section'     => "gridd_grid_part_details_nav_$id",
 			'choices'     => [
@@ -220,7 +217,7 @@ function gridd_nav_customizer_options( $id ) {
 		[
 			'type'            => 'checkbox',
 			'settings'        => "gridd_grid_nav_{$id}_vertical",
-			'label'           => esc_attr__( 'Enable Vertical Menu Mode', 'gridd' ),
+			'label'           => esc_html__( 'Enable Vertical Menu Mode', 'gridd' ),
 			'description'     => esc_html__( 'If your layout is column-based and you want a vertical side-navigation enable this option.', 'gridd' ),
 			'section'         => "gridd_grid_part_details_nav_$id",
 			'default'         => false,
@@ -250,9 +247,9 @@ function gridd_nav_customizer_options( $id ) {
 
 	gridd_add_customizer_field(
 		[
-			'type'            => 'radio-image',
+			'type'            => 'radio-buttonset',
 			'settings'        => "gridd_grid_nav_{$id}_justify_content",
-			'label'           => esc_attr__( 'Justify Items', 'gridd' ),
+			'label'           => esc_html__( 'Justify Items', 'gridd' ),
 			'description'     => esc_html__( 'Choose how menu items will be spread horizontally inside the menu container.', 'gridd' ),
 			'tooltip'         => esc_html__( 'This helps distribute extra free space left over when all the items on a line have reached their maximum size. It also exerts some control over the alignment of items when they overflow the line.', 'gridd' ),
 			'section'         => "gridd_grid_part_details_nav_$id",
@@ -272,30 +269,12 @@ function gridd_nav_customizer_options( $id ) {
 				],
 			],
 			'choices'         => [
-				'flex-start'    => [
-					'src' => get_template_directory_uri() . '/assets/images/justify-content/start.png',
-					'alt' => esc_html__( 'Start', 'gridd' ),
-				],
-				'flex-end'      => [
-					'src' => get_template_directory_uri() . '/assets/images/justify-content/end.png',
-					'alt' => esc_html__( 'End', 'gridd' ),
-				],
-				'center'        => [
-					'src' => get_template_directory_uri() . '/assets/images/justify-content/center.png',
-					'alt' => esc_html__( 'Center', 'gridd' ),
-				],
-				'space-between' => [
-					'src' => get_template_directory_uri() . '/assets/images/justify-content/space-between.png',
-					'alt' => esc_html__( 'Space Between', 'gridd' ),
-				],
-				'space-around'  => [
-					'src' => get_template_directory_uri() . '/assets/images/justify-content/space-around.png',
-					'alt' => esc_html__( 'Space Around', 'gridd' ),
-				],
-				'space-evenly'  => [
-					'src' => get_template_directory_uri() . '/assets/images/justify-content/space-evenly.png',
-					'alt' => esc_html__( 'Space Evenly', 'gridd' ),
-				],
+				'flex-start'    => '<span class="gridd-flexbox-svg-option" title="' . esc_attr__( 'Start', 'gridd' ) . '"><span class="screen-reader-text">' . esc_html__( 'Start', 'gridd' ) . '</span>' . file_get_contents( get_template_directory() . '/assets/images/flexbox/justify-content-flex-start.svg' ) . '</span>',
+				'flex-end'      => '<span class="gridd-flexbox-svg-option" title="' . esc_attr__( 'End', 'gridd' ) . '"><span class="screen-reader-text">' . esc_html__( 'End', 'gridd' ) . '</span>' . file_get_contents( get_template_directory() . '/assets/images/flexbox/justify-content-flex-end.svg' ) . '</span>',
+				'center'        => '<span class="gridd-flexbox-svg-option" title="' . esc_attr__( 'Center', 'gridd' ) . '"><span class="screen-reader-text">' . esc_html__( 'Center', 'gridd' ) . '</span>' . file_get_contents( get_template_directory() . '/assets/images/flexbox/justify-content-center.svg' ) . '</span>',
+				'space-between' => '<span class="gridd-flexbox-svg-option" title="' . esc_attr__( 'Space Between', 'gridd' ) . '"><span class="screen-reader-text">' . esc_html__( 'Space Between', 'gridd' ) . '</span>' . file_get_contents( get_template_directory() . '/assets/images/flexbox/justify-content-space-between.svg' ) . '</span>',
+				'space-around'  => '<span class="gridd-flexbox-svg-option" title="' . esc_attr__( 'Space Around', 'gridd' ) . '"><span class="screen-reader-text">' . esc_html__( 'Space Around', 'gridd' ) . '</span>' . file_get_contents( get_template_directory() . '/assets/images/flexbox/justify-content-space-around.svg' ) . '</span>',
+				'space-evenly'  => '<span class="gridd-flexbox-svg-option" title="' . esc_attr__( 'Space Evenly', 'gridd' ) . '"><span class="screen-reader-text">' . esc_html__( 'Space Evenly', 'gridd' ) . '</span>' . file_get_contents( get_template_directory() . '/assets/images/flexbox/justify-content-space-evenly.svg' ) . '</span>',
 			],
 		]
 	);
@@ -304,7 +283,7 @@ function gridd_nav_customizer_options( $id ) {
 		[
 			'type'            => 'radio-buttonset',
 			'settings'        => "gridd_grid_nav_{$id}_expand_icon",
-			'label'           => esc_attr__( 'Expand Icon', 'gridd' ),
+			'label'           => esc_html__( 'Expand Icon', 'gridd' ),
 			'description'     => esc_html__( 'Select the icon that should be used to expand the navigation.', 'gridd' ),
 			'section'         => "gridd_grid_part_details_nav_$id",
 			'default'         => 'plus-5',
@@ -338,7 +317,7 @@ function gridd_nav_customizer_options( $id ) {
 		[
 			'type'            => 'radio-buttonset',
 			'settings'        => "gridd_grid_nav_{$id}_expand_icon_position",
-			'label'           => esc_attr__( 'Expand Icon Position', 'gridd' ),
+			'label'           => esc_html__( 'Expand Icon Position', 'gridd' ),
 			'section'         => "gridd_grid_part_details_nav_$id",
 			'default'         => 'center-right',
 			'transport'       => 'refresh',
@@ -381,7 +360,7 @@ function gridd_nav_customizer_options( $id ) {
 		[
 			'type'            => 'slider',
 			'settings'        => "gridd_grid_nav_{$id}_collapse_icon_size",
-			'label'           => esc_attr__( 'Collapse Icon Size', 'gridd' ),
+			'label'           => esc_html__( 'Collapse Icon Size', 'gridd' ),
 			'section'         => "gridd_grid_part_details_nav_$id",
 			'default'         => 1,
 			'transport'       => 'postMessage',
@@ -407,7 +386,7 @@ function gridd_nav_customizer_options( $id ) {
 			[
 				'type'            => 'switch',
 				'settings'        => "gridd_grid_nav_{$id}_woo_cart",
-				'label'           => esc_attr__( 'Show WooCommerce Cart', 'gridd' ),
+				'label'           => esc_html__( 'Show WooCommerce Cart', 'gridd' ),
 				'description'     => __( 'If enabled, the cart will be added as a dropdown at the end of the menu.', 'gridd' ),
 				'section'         => "gridd_grid_part_details_nav_$id",
 				'default'         => 1 === $id,

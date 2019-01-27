@@ -16,7 +16,7 @@ if ( ! class_exists( 'Easy_Digital_Downloads' ) ) {
 gridd_add_customizer_panel(
 	'gridd_edd',
 	[
-		'title'    => esc_attr__( 'Easy Digital Downloads', 'gridd' ),
+		'title'    => esc_html__( 'Easy Digital Downloads', 'gridd' ),
 		'priority' => 30,
 		'panel'    => 'gridd_options',
 	]
@@ -25,7 +25,7 @@ gridd_add_customizer_panel(
 gridd_add_customizer_section(
 	'gridd_edd_grid',
 	[
-		'title'       => esc_attr__( 'Product Grid', 'gridd' ),
+		'title'       => esc_html__( 'Product Grid', 'gridd' ),
 		'panel'       => 'gridd_edd',
 		'description' => '<a href="https://wplemon.com/documentation/gridd/grid-parts/edd/" target="_blank" rel="noopener noreferrer nofollow">' . esc_html__( 'Learn more about these settings', 'gridd' ),
 	]
@@ -35,7 +35,7 @@ gridd_add_customizer_field(
 	[
 		'type'        => 'slider',
 		'settings'    => 'gridd_edd_grid_min_col_width',
-		'label'       => esc_attr__( 'Minimum Column Width', 'gridd' ),
+		'label'       => esc_html__( 'Minimum Column Width', 'gridd' ),
 		'description' => esc_html__( 'Define the minimum width that each item in a grid can have. The columns and rows will be auto-calculated using this value.', 'gridd' ),
 		'section'     => 'gridd_edd_grid',
 		'default'     => 320,
@@ -54,7 +54,7 @@ gridd_add_customizer_field(
 	[
 		'type'        => 'slider',
 		'settings'    => 'gridd_edd_archive_grid_gap',
-		'label'       => esc_attr__( 'Gap', 'gridd' ),
+		'label'       => esc_html__( 'Gap', 'gridd' ),
 		'description' => esc_html__( 'The gap between grid items. Use any valid CSS value.', 'gridd' ),
 		'section'     => 'gridd_edd_grid',
 		'default'     => 20,
@@ -73,7 +73,7 @@ gridd_add_customizer_field(
 	[
 		'type'      => 'slider',
 		'settings'  => 'gridd_edd_product_grid_inner_padding',
-		'label'     => esc_attr__( 'Grid Items Inner Padding', 'gridd' ),
+		'label'     => esc_html__( 'Grid Items Inner Padding', 'gridd' ),
 		'section'   => 'gridd_edd_grid',
 		'default'   => 20,
 		'transport' => 'postMessage',

@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAEC,iCAAuB;EACtB,GAAG,EAAE,IAAI;EAET,oCAAqC;IAHtC,iCAAuB;MAIrB,GAAG,EAAE,IAAI;EAGV,oCAAqC;IAPtC,iCAAuB;MAQrB,GAAG,EAAE,CAAC;AAKP,oCAAqC;EADtC,sBAAY;IAEV,GAAG,EAAE,KAAK;AAIZ;;;uCAG6B;EAC5B,UAAU,EAAE,kBAAkB",
-"sources": ["adminbar.scss"],
-"names": [],
-"file": "adminbar.css"
-}

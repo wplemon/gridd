@@ -103,7 +103,7 @@ if ( ! class_exists( 'Kirki' ) ) {
 gridd_add_customizer_panel(
 	'gridd_options',
 	[
-		'title'    => esc_attr__( 'Theme Options', 'gridd' ),
+		'title'    => esc_html__( 'Theme Options', 'gridd' ),
 		'priority' => 1,
 	]
 );

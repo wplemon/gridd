@@ -86,7 +86,7 @@ gridd_add_customizer_field(
 		'type'              => 'gridd_grid',
 		'grid-part'         => 'header',
 		'label'             => esc_html__( 'Grid Settings', 'gridd' ),
-		'description'       => __( 'Edit settings for the grid. For more information and documentation on how the grid works, please read <a href="https://wplemon.com/documentation/gridd/the-grid-control/" target="_blank">this article</a>.', 'gridd' ),
+		'description'       => __( 'Edit settings for your footer grid. For more information and documentation on how the grid works, please read <a href="https://wplemon.com/documentation/gridd/the-grid-control/" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
 		'default'           => Header::get_grid_defaults(),
 		'choices'           => [
 			'parts' => $header_grid_parts,
@@ -109,8 +109,8 @@ gridd_add_customizer_field(
 	[
 		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_header_max_width',
-		'label'       => esc_attr__( 'Max-Width', 'gridd' ),
-		'description' => gridd()->customizer->get_text( 'grid-part-max-width' ),
+		'label'       => esc_html__( 'Max-Width', 'gridd' ),
+		'description' => __( 'The maximum width that the contents of this grid-part can use. Use any valid CSS value like <code>50em</code>, <code>800px</code> or <code>100%</code>.', 'gridd' ),
 		'section'     => 'gridd_grid_part_details_header',
 		'default'     => '',
 		'css_vars'    => '--gridd-header-max-width',
@@ -122,8 +122,8 @@ gridd_add_customizer_field(
 	[
 		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_header_grid_gap',
-		'label'       => esc_attr__( 'Grid Gap', 'gridd' ),
-		'description' => gridd()->customizer->get_text( 'grid-gap-description' ),
+		'label'       => esc_html__( 'Grid Gap', 'gridd' ),
+		'description' => __( 'Adds a gap between your grid-parts, both horizontally and vertically. For more information please read <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
 		'tooltip'     => esc_html__( 'If you have a background-color or background-image defined for your header, then these will be visible through these gaps which creates a unique appearance since each grid-part looks separate.', 'gridd' ),
 		'section'     => 'gridd_grid_part_details_header',
 		'default'     => '0',
@@ -134,17 +134,18 @@ gridd_add_customizer_field(
 
 gridd_add_customizer_field(
 	[
-		'type'      => 'color',
-		'settings'  => 'gridd_grid_part_details_header_background_color',
-		'label'     => esc_attr__( 'Background', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_header',
-		'default'   => '#ffffff',
-		'transport' => 'postMessage',
-		'css_vars'  => '--gridd-header-bg',
-		'choices'   => [
+		'type'        => 'color',
+		'settings'    => 'gridd_grid_part_details_header_background_color',
+		'label'       => esc_html__( 'Background Color', 'gridd' ),
+		'description' => esc_html__( 'Choose a background color for the header. Individual grid-parts can override this by setting their own background color for their area. If you are using a grid-gap the color defined here will be visible between grid-parts.', 'gridd' ),
+		'section'     => 'gridd_grid_part_details_header',
+		'default'     => '#ffffff',
+		'transport'   => 'postMessage',
+		'css_vars'    => '--gridd-header-bg',
+		'choices'     => [
 			'alpha' => true,
 		],
-		'priority'  => 70,
+		'priority'    => 70,
 	]
 );
 
@@ -175,9 +176,8 @@ gridd_add_customizer_field(
 	[
 		'type'        => 'toggle',
 		'settings'    => 'gridd_header_sticky',
-		'label'       => esc_attr__( 'Sticky', 'gridd' ),
-		'description' => gridd()->customizer->get_text( 'sticky-description' ),
-		'tooltip'     => gridd()->customizer->get_text( 'sticky-tooltip' ),
+		'label'       => esc_html__( 'Sticky on Large Devices', 'gridd' ),
+		'description' => esc_html__( 'Enable to stick this area to the top of the page when users scroll-down on devices larger than the breakpoint you defined in your main grid.', 'gridd' ),
 		'section'     => 'gridd_grid_part_details_header',
 		'default'     => false,
 		'transport'   => 'refresh',
@@ -190,9 +190,8 @@ gridd_add_customizer_field(
 	[
 		'type'            => 'toggle',
 		'settings'        => 'gridd_header_sticky_mobile',
-		'label'           => esc_attr__( 'Sticky (Mobile)', 'gridd' ),
-		'description'     => gridd()->customizer->get_text( 'sticky-description' ),
-		'tooltip'         => gridd()->customizer->get_text( 'sticky-tooltip' ),
+		'label'           => esc_html__( 'Sticky on Small Devices', 'gridd' ),
+		'description'     => esc_html__( 'Enable to stick this area to the top of the page when users scroll-down on devices smaller than the breakpoint you defined in your main grid.', 'gridd' ),
 		'section'         => 'gridd_grid_part_details_header',
 		'default'         => false,
 		'transport'       => 'refresh',

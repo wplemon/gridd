@@ -30,7 +30,7 @@ function gridd_sidebar_customizer_options( $id ) {
 		"gridd_grid_part_details_sidebar_$id",
 		[
 			/* translators: The grid-part label. */
-			'title'       => sprintf( esc_attr__( '%s Advanced Options', 'gridd' ), $label ),
+			'title'       => sprintf( esc_html__( '%s Advanced Options', 'gridd' ), $label ),
 			'description' => sprintf(
 				'<div class="gridd-section-description">%1$s%2$s</div>',
 				( ! Gridd::is_pro() ) ? '<div class="gridd-go-plus">' . __( '<a href="https://wplemon.com/gridd-plus" rel="nofollow" target="_blank">Upgrade to <strong>plus</strong></a> for automatic WCAG-compliant colors suggestion and independent font-size on this section.', 'gridd' ) . '</div>' : '',
@@ -49,7 +49,7 @@ function gridd_sidebar_customizer_options( $id ) {
 			'type'     => 'custom',
 			'label'    => '',
 			'section'  => "gridd_grid_part_details_sidebar_$id",
-			'default'  => '<div style="margin-bottom:1em;"><button class="button-gridd-focus global-focus button button-primary button-large" data-context="section" data-focus="sidebar-widgets-' . "sidebar-{$id}" . '">' . esc_html__( 'Click here to edit your widgets', 'gridd' ) . '</button></div>',
+			'default'  => '<div style="margin-bottom:1em;"><button class="button-gridd-focus global-focus button button button-large" data-context="section" data-focus="sidebar-widgets-' . "sidebar-{$id}" . '">' . esc_html__( 'Click here to edit your widgets', 'gridd' ) . '</button></div>',
 		]
 	);
 
@@ -57,7 +57,7 @@ function gridd_sidebar_customizer_options( $id ) {
 		[
 			'type'        => 'color',
 			'settings'    => "gridd_grid_sidebar_{$id}_background_color",
-			'label'       => esc_attr__( 'Background Color', 'gridd' ),
+			'label'       => esc_html__( 'Background Color', 'gridd' ),
 			'description' => '',
 			'section'     => "gridd_grid_part_details_sidebar_$id",
 			'default'     => '#ffffff',
@@ -83,9 +83,8 @@ function gridd_sidebar_customizer_options( $id ) {
 		[
 			'type'        => 'kirki-wcag-tc',
 			'settings'    => "gridd_grid_sidebar_{$id}_color",
-			'label'       => esc_attr__( 'Text Color', 'gridd' ),
-			'description' => gridd()->customizer->get_text( 'a11y-textcolor-description' ),
-			'tooltip'     => gridd()->customizer->get_text( 'a11y-textcolor-tooltip' ),
+			'label'       => esc_html__( 'Text Color', 'gridd' ),
+			'description' => esc_html__( 'Select the color used for your text. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
 			'section'     => "gridd_grid_part_details_sidebar_$id",
 			'default'     => '#000000',
 			'priority'    => 20,
@@ -107,7 +106,7 @@ function gridd_sidebar_customizer_options( $id ) {
 		[
 			'type'        => 'kirki-wcag-lc',
 			'settings'    => "gridd_grid_sidebar_{$id}_links_color",
-			'label'       => esc_attr__( 'Links Color', 'gridd' ),
+			'label'       => esc_html__( 'Links Color', 'gridd' ),
 			'description' => '',
 			'section'     => "gridd_grid_part_details_sidebar_$id",
 			'default'     => '#0f5e97',
@@ -141,7 +140,7 @@ function gridd_sidebar_customizer_options( $id ) {
 		[
 			'type'        => 'text',
 			'settings'    => "gridd_grid_sidebar_{$id}_padding",
-			'label'       => esc_attr__( 'Padding', 'gridd' ),
+			'label'       => esc_html__( 'Padding', 'gridd' ),
 			'description' => '',
 			'section'     => "gridd_grid_part_details_sidebar_$id",
 			'priority'    => 40,
@@ -161,7 +160,7 @@ function gridd_sidebar_customizer_options( $id ) {
 		[
 			'type'        => 'text',
 			'settings'    => "gridd_grid_sidebar_{$id}_widgets_margin",
-			'label'       => esc_attr__( 'Margin between widgets', 'gridd' ),
+			'label'       => esc_html__( 'Margin between widgets', 'gridd' ),
 			'description' => '',
 			'section'     => "gridd_grid_part_details_sidebar_$id",
 			'priority'    => 43,

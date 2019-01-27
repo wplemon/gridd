@@ -131,31 +131,6 @@ class Footer extends Grid_Part {
 	}
 
 	/**
-	 * Get default value for the social media repeater.
-	 *
-	 * @static
-	 * @access public
-	 * @since 1.0
-	 * @return array
-	 */
-	public static function get_social_icons_default_value() {
-		return [
-			[
-				'icon' => 'facebook',
-				'url'  => 'https://www.facebook.com/wplemon/',
-			],
-			[
-				'icon' => 'twitter',
-				'url'  => 'https://twitter.com/wp_lemon',
-			],
-			[
-				'icon' => 'gitlab',
-				'url'  => 'https://gitlab.com/wplemon',
-			],
-		];
-	}
-
-	/**
 	 * Register the sidebars.
 	 *
 	 * @access public

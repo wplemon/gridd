@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,sCAAuC;EACtC,YAAY,EAAE,CAAC;EACf,aAAa,EAAE,CAAC;EAChB,WAAW,EAAE,CAAC;EACd,YAAY,EAAE,CAAC;EACf,SAAS,EAAE,IAAI;EACf,KAAK,EAAE,IAAI;;AAGZ,6BAA8B;EAC7B,WAAW,EAAE,6CAA6C;EAC1D,YAAY,EAAE,8CAA8C",
-"sources": ["elementor.scss"],
-"names": [],
-"file": "elementor.css"
-}

@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,mBAAoB;EACnB,MAAM,EAAE,CAAC",
-"sources": ["widget-image.scss"],
-"names": [],
-"file": "widget-image.css"
-}

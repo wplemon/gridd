@@ -132,3 +132,9 @@ h3.gridd-customizer-section-title {
     padding: 8px 12px; }
   .gridd-section-description .gridd-go-plus + .gridd-docs {
     border-top: 1px solid #f7f7f7; }
+
+.gridd-flexbox-svg-option svg {
+  max-width: 100%;
+  max-height: 35px; }
+  .switch-input:checked .gridd-flexbox-svg-option svg {
+    fill: #fff; }

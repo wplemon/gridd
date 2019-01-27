@@ -13,7 +13,7 @@ gridd_add_customizer_field(
 	[
 		'type'        => 'dimension',
 		'settings'    => 'gridd_woocommerce_product_catalog_min_width',
-		'label'       => esc_attr__( 'Products min-width', 'gridd' ),
+		'label'       => esc_html__( 'Products min-width', 'gridd' ),
 		'description' => '',
 		'section'     => 'woocommerce_product_catalog',
 		'transport'   => 'auto',
@@ -26,7 +26,7 @@ gridd_add_customizer_field(
 	[
 		'type'        => 'slider',
 		'settings'    => 'gridd_woocommerce_product_catalog_per_page',
-		'label'       => esc_attr__( 'Products per-page', 'gridd' ),
+		'label'       => esc_html__( 'Products per-page', 'gridd' ),
 		'description' => '',
 		'section'     => 'woocommerce_product_catalog',
 		'default'     => 12,

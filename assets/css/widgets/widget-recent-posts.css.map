@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AACC,yBAAG;EACF,UAAU,EAAE,IAAI;EAChB,eAAe,EAAE,IAAI;EACrB,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;AAGX,yBAAG;EACF,OAAO,EAAE,OAAO;EAChB,aAAa,EAAE,4BAAwB;EAEvC,oCAAa;IACZ,aAAa,EAAE,IAAI;AAIrB,+BAAW;EACV,eAAe,EAAE,IAAI;AAGtB,iCAAW;EACV,SAAS,EAAE,mCAAmC",
-"sources": ["widget-recent-posts.scss"],
-"names": [],
-"file": "widget-recent-posts.css"
-}

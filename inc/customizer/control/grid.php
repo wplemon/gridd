@@ -72,25 +72,19 @@ class Grid extends \Kirki_Control_Base {
 	protected function render_content() {
 		$grid_parts = $this->choices['parts'];
 		$value      = $this->value();
-		// Sort parts by priority.
-		usort(
-			$grid_parts,
-			function( $a, $b ) {
-				if ( isset( $a['priority'] ) && isset( $b['priority'] ) ) {
-					return ( $a['priority'] > $b['priority'] ) ? 1 : -1;
-				}
-				return ( isset( $a['priority'] ) ) ? 1 : -1;
-			}
-		);
+		// Sort parts alphabetically.
+		usort( $grid_parts, function ($a, $b ) {
+			return strcmp( $a['label'], $b['label'] );
+		} );
 		?>
 		<!-- Label. -->
 		<span class="customize-control-title">
-			<?php echo esc_html( $this->label ); ?>
+			<?php echo $this->label; // phpcs:ignore WordPress.Security.EscapeOutput ?>
 		</span>
 
 		<!-- Description. -->
 		<span class="description customize-control-description">
-			<?php echo esc_html( $this->description ); ?>
+			<?php echo $this->description; // phpcs:ignore WordPress.Security.EscapeOutput ?>
 		</span>
 
 		<!-- Grid Builder. -->

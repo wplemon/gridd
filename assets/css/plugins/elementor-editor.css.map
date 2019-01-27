@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,QAAS;EACR,QAAQ,EAAE,OAAO",
-"sources": ["elementor-editor.scss"],
-"names": [],
-"file": "elementor-editor.css"
-}

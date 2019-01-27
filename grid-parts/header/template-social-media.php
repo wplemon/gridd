@@ -9,7 +9,7 @@
 use Gridd\Grid_Part\Header;
 use Gridd\Style;
 
-$setting = get_theme_mod( 'gridd_grid_part_details_social_icons', Header::social_icons_default_value() );
+$setting = get_theme_mod( 'gridd_grid_part_details_social_icons', [] );
 if ( ! function_exists( 'gridd_social_icons_svg' ) ) {
 
 	// Include Social Icons Definitions.

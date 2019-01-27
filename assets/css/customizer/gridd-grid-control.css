@@ -100,6 +100,10 @@
   display: -ms-flexbox;
   display: flex;
   z-index: 1; }
+  .grid-selected-part .part-label-wrapper {
+    padding: 7px;
+    font-size: 12px;
+    text-shadow: 0 0 2px #000; }
   .grid-selected-part.editing {
     z-index: 0; }
   .grid-selected-part .inner {

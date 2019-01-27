@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAEA,gBAAiB;EAChB,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,SAAS;EAErB,uBAAS;IACR,OAAO,EAAE,irBAA+hB;IACxiB,WAAW,EAAE,CAAC;IACd,SAAS,EAAE,KAAK;IAChB,OAAO,EAAE,KAAK;;AAad;;;;;;;;;;0BAAiB;EAChB,OAAO,EAAE,CAAC",
-"sources": ["anchor-links.scss"],
-"names": [],
-"file": "anchor-links.css"
-}

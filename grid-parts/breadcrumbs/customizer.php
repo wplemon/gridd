@@ -9,7 +9,7 @@ gridd_add_customizer_section(
 	'gridd_grid_part_details_breadcrumbs',
 	[
 		/* translators: The grid-part label. */
-		'title'       => sprintf( esc_attr__( '%s Options', 'gridd' ), esc_html__( 'Breadcrumbs', 'gridd' ) ),
+		'title'       => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Breadcrumbs', 'gridd' ) ),
 		'section'     => 'gridd_grid',
 		'description' => sprintf(
 			'<div class="gridd-section-description">%1$s%2$s</div>',
@@ -24,9 +24,8 @@ gridd_add_customizer_field(
 	[
 		'type'        => 'text',
 		'settings'    => 'gridd_grid_breadcrumbs_padding',
-		'label'       => esc_attr__( 'Padding', 'gridd' ),
-		'description' => esc_html__( 'Inner padding for this grid-part. Use any valid CSS value.', 'gridd' ),
-		'tooltip'     => gridd()->customizer->get_text( 'padding' ),
+		'label'       => esc_html__( 'Padding', 'gridd' ),
+		'description' => __( 'Inner padding for this grid-part. Use any valid CSS value. For details on how padding works, please refer to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
 		'section'     => 'gridd_grid_part_details_breadcrumbs',
 		'default'     => '1em',
 		'transport'   => 'postMessage',
@@ -38,8 +37,8 @@ gridd_add_customizer_field(
 	[
 		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_breadcrumbs_max_width',
-		'label'       => esc_attr__( 'Max-Width', 'gridd' ),
-		'description' => gridd()->customizer->get_text( 'grid-part-max-width' ),
+		'label'       => esc_html__( 'Max-Width', 'gridd' ),
+		'description' => __( 'The maximum width that the contents of this grid-part can use. Use any valid CSS value like <code>50em</code>, <code>800px</code> or <code>100%</code>.', 'gridd' ),
 		'section'     => 'gridd_grid_part_details_breadcrumbs',
 		'default'     => '',
 		'css_vars'    => '--gridd-breadcrumbs-max-width',
@@ -51,9 +50,8 @@ gridd_add_customizer_field(
 	[
 		'type'        => 'slider',
 		'settings'    => 'gridd_grid_breadcrumbs_font_size',
-		'label'       => esc_attr__( 'Font Size', 'gridd' ),
-		'description' => esc_html__( 'Controls the font-size for your breadcrumbs.', 'gridd' ),
-		'tooltip'     => gridd()->customizer->get_text( 'related-font-size' ),
+		'label'       => esc_html__( 'Font Size', 'gridd' ),
+		'description' => esc_html__( 'Controls the font-size for your breadcrumbs. This value is relevant to the body font-size, so a value of 1em will have the same size as your content.', 'gridd' ),
 		'section'     => 'gridd_grid_part_details_breadcrumbs',
 		'default'     => 1,
 		'transport'   => 'postMessage',
@@ -71,8 +69,8 @@ gridd_add_customizer_field(
 	[
 		'type'        => 'color',
 		'settings'    => 'gridd_grid_breadcrumbs_background_color',
-		'label'       => esc_attr__( 'Background Color', 'gridd' ),
-		'description' => esc_html__( 'Set the background-color for this grid-part.', 'gridd' ),
+		'label'       => esc_html__( 'Background Color', 'gridd' ),
+		'description' => esc_html__( 'Select the background-color for this grid-part.', 'gridd' ),
 		'section'     => 'gridd_grid_part_details_breadcrumbs',
 		'default'     => '#ffffff',
 		'transport'   => 'postMessage',
@@ -87,9 +85,8 @@ gridd_add_customizer_field(
 	[
 		'type'        => 'kirki-wcag-tc',
 		'settings'    => 'gridd_grid_breadcrumbs_color',
-		'label'       => esc_attr__( 'Text Color', 'gridd' ),
-		'description' => gridd()->customizer->get_text( 'a11y-textcolor-description' ),
-		'tooltip'     => gridd()->customizer->get_text( 'a11y-textcolor-tooltip' ),
+		'label'       => esc_html__( 'Text Color', 'gridd' ),
+		'description' => esc_html__( 'Select the color used for your text. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
 		'section'     => 'gridd_grid_part_details_breadcrumbs',
 		'css_vars'    => '--gridd-breadcrumbs-color',
 		'default'     => '#000000',
@@ -102,9 +99,9 @@ gridd_add_customizer_field(
 
 gridd_add_customizer_field(
 	[
-		'type'        => 'radio',
+		'type'        => 'radio-buttonset',
 		'settings'    => 'gridd_grid_breadcrumbs_text_align',
-		'label'       => esc_attr__( 'Alignment', 'gridd' ),
+		'label'       => esc_html__( 'Alignment', 'gridd' ),
 		'description' => esc_html__( 'Select if you want your breadcrumbs aligned to the left, right, or centered.', 'gridd' ),
 		'tooltip'     => esc_html__( 'Please note that this option does not change the order of your breadcrumbs, only their alignment inside their container.', 'gridd' ),
 		'section'     => 'gridd_grid_part_details_breadcrumbs',

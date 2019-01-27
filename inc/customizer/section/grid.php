@@ -16,7 +16,7 @@ $grid_parts = Grid_Parts::get_instance()->get_parts();
 gridd_add_customizer_section(
 	'gridd_grid',
 	[
-		'title'       => esc_attr__( 'Grid', 'gridd' ),
+		'title'       => esc_html__( 'Grid', 'gridd' ),
 		'priority'    => 22,
 		'description' => sprintf(
 			'<div class="gridd-section-description">%1$s%2$s</div>',
@@ -57,7 +57,7 @@ gridd_add_customizer_field(
 		'settings'    => 'gridd_mobile_breakpoint',
 		'label'       => esc_html__( 'Mobile Breakpoint', 'gridd' ),
 		'description' => esc_html__( 'The breakpoint that separates mobile views from desktop views. Use a valid CSS unit.', 'gridd' ),
-		'tooltip'     => __( 'It is good practice to change the layout in smaller devices in order to accomodate for their viewport size. You can use this setting to change the threshold at which your layouts will change. If you want to change the loading order of grid-parts for your mobile users you can do so using the "Grid Parts Order" setting below.', 'gridd' ),
+		'tooltip'     => __( 'Screen sizes below the breakpoint defined will get a stacked view instead of grid.', 'gridd' ),
 		'section'     => 'gridd_grid',
 		'default'     => '800px',
 	]
@@ -67,9 +67,8 @@ gridd_add_customizer_field(
 	[
 		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_gap',
-		'label'       => esc_attr__( 'Grid Container Gap', 'gridd' ),
-		'description' => gridd()->customizer->get_text( 'grid-gap-description' ),
-		'tooltip'     => esc_html__( 'If you have a background-color defined for your site, then that color will be visible through these gaps which creates a unique appearance since each grid-part looks separate.', 'gridd' ),
+		'label'       => esc_html__( 'Grid Container Gap', 'gridd' ),
+		'description' => __( 'Adds a gap between your grid-parts, both horizontally and vertically. For more information please read <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
 		'section'     => 'gridd_grid',
 		'default'     => '0',
 		'transport'   => 'auto',
@@ -86,7 +85,7 @@ gridd_add_customizer_field(
 	[
 		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_max_width',
-		'label'       => esc_attr__( 'Grid Container max-width', 'gridd' ),
+		'label'       => esc_html__( 'Grid Container max-width', 'gridd' ),
 		'description' => esc_html__( 'The maximum width for this grid.', 'gridd' ),
 		'tooltip'     => esc_html__( 'By setting the max-width to something other than 100% you get a boxed layout.', 'gridd' ),
 		'section'     => 'gridd_grid',

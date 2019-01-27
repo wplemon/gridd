@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AACC,eAAG;EACF,UAAU,EAAE,IAAI;EAChB,eAAe,EAAE,IAAI;EACrB,OAAO,EAAE,CAAC;EACV,MAAM,EAAE,CAAC;AAGV,eAAG;EACF,aAAa,EAAE,4BAAwB;EAEvC,iBAAE;IACD,eAAe,EAAE,IAAI;EAGtB,0BAAa;IACZ,aAAa,EAAE,IAAI;AAIrB,cAAE;EACD,OAAO,EAAE,KAAK;EACd,OAAO,EAAE,OAAO",
-"sources": ["widget-meta.scss"],
-"names": [],
-"file": "widget-meta.css"
-}
