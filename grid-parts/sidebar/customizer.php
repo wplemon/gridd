@@ -33,7 +33,7 @@ function gridd_sidebar_customizer_options( $id ) {
 			'title'       => sprintf( esc_html__( '%s Advanced Options', 'gridd' ), $label ),
 			'description' => sprintf(
 				'<div class="gridd-section-description">%1$s%2$s</div>',
-				( ! Gridd::is_pro() ) ? '<div class="gridd-go-plus">' . __( '<a href="https://wplemon.com/gridd-plus" rel="nofollow" target="_blank">Upgrade to <strong>plus</strong></a> for automatic WCAG-compliant colors suggestion and independent font-size on this section.', 'gridd' ) . '</div>' : '',
+				( ! Gridd::is_plus_active() ) ? '<div class="gridd-go-plus">' . __( '<a href="https://wplemon.com/gridd-plus" rel="nofollow" target="_blank">Upgrade to <strong>plus</strong></a> for automatic WCAG-compliant colors suggestion and independent font-size on this section.', 'gridd' ) . '</div>' : '',
 				'<div class="gridd-docs"><a href="https://wplemon.com/documentation/gridd/grid-parts/widget-area/" target="_blank" rel="noopener noreferrer nofollow">' . esc_html__( 'Learn more about these settings', 'gridd' ) . '</a></div>'
 			),
 			'section'     => 'gridd_grid',

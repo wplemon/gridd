@@ -43,7 +43,7 @@ class Customizer {
 		add_action( 'customize_preview_init', [ $this, 'preview_customizer_scripts' ] );
 		add_action( 'after_setup_theme', [ $this, 'setup_grid_filters' ] );
 
-		if ( ! Gridd::is_pro() ) {
+		if ( ! Gridd::is_plus_active() ) {
 			add_action( 'customize_controls_enqueue_scripts', [ $this, 'plus_section_scripts' ], 0 );
 			add_action( 'customize_register', [ $this, 'plus_section' ], 99 );
 		}
@@ -245,7 +245,7 @@ class Customizer {
 	 * @return void
 	 */
 	public function plus_section( $manager ) {
-		if ( Gridd::is_pro() ) {
+		if ( Gridd::is_plus_active() ) {
 			return;
 		}
 		require_once 'section-plus.php';

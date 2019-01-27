@@ -294,7 +294,7 @@ class Gridd {
 	 * @since 1.0
 	 * @return bool
 	 */
-	public static function is_pro() {
+	public static function is_plus_active() {
 		return ( function_exists( 'gridd_pro' ) );
 	}
 }

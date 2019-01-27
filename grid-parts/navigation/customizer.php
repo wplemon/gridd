@@ -47,7 +47,7 @@ function gridd_nav_customizer_options( $id ) {
 			),
 			'description' => sprintf(
 				'<div class="gridd-section-description">%1$s%2$s</div>',
-				( ! Gridd::is_pro() ) ? '<div class="gridd-go-plus">' . __( '<a href="https://wplemon.com/gridd-plus" rel="nofollow" target="_blank">Upgrade to <strong>plus</strong></a> for automatic WCAG-compliant colors suggestion on this section and additional options for font-sizes and WooCommerce cart on your menu.', 'gridd' ) . '</div>' : '',
+				( ! Gridd::is_plus_active() ) ? '<div class="gridd-go-plus">' . __( '<a href="https://wplemon.com/gridd-plus" rel="nofollow" target="_blank">Upgrade to <strong>plus</strong></a> for automatic WCAG-compliant colors suggestion on this section and additional options for font-sizes and WooCommerce cart on your menu.', 'gridd' ) . '</div>' : '',
 				'<div class="gridd-docs"><a href="https://wplemon.com/documentation/gridd/grid-parts/navigation/" target="_blank" rel="noopener noreferrer nofollow">' . esc_html__( 'Learn more about these settings', 'gridd' ) . '</a></div>'
 			),
 			'section'     => 'gridd_grid',

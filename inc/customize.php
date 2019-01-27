@@ -41,7 +41,7 @@ function gridd_add_customizer_field( $args ) {
 		return;
 	}
 
-	if ( ! Gridd::is_pro() ) {
+	if ( ! Gridd::is_plus_active() ) {
 		if ( ! empty( $args['type'] ) ) {
 			if ( 'kirki-wcag-tc' === $args['type'] || 'kirki-wcag-lc' === $args['type'] ) {
 				$args['type'] = 'color';
