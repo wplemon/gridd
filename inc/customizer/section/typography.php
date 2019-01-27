@@ -18,7 +18,7 @@ gridd_add_customizer_section(
 		'title'       => esc_attr__( 'Typography & Links', 'gridd' ),
 		'description' => sprintf(
 			'<div class="gridd-section-description">%1$s%2$s</div>',
-			( ! Gridd::is_pro() ) ? '<div class="gridd-go-plus">' . __( '<a href="https://wplemon.com/gridd-plus" rel="nofollow" target="_blank">Upgrade to <strong>plus</strong></a> for extra options in this section: Automatic WCAG-compliant colors suggestion, typography-scale presets and links decoration.', 'gridd' ) . '</div>' : '',
+			( ! Gridd::is_pro() ) ? '<div class="gridd-go-plus">' . __( '<a href="https://wplemon.com/gridd-plus" rel="nofollow" target="_blank">Upgrade to <strong>plus</strong></a> for extra options in this section: Automatic WCAG-compliant colors suggestion, typography-scales and links decoration.', 'gridd' ) . '</div>' : '',
 			'<div class="gridd-docs"><a href="https://wplemon.com/documentation/gridd/typography/" target="_blank" rel="noopener noreferrer nofollow">' . esc_html__( 'Learn more about these settings', 'gridd' ) . '</a></div>'
 		),
 		'priority'    => 20,
@@ -216,27 +216,5 @@ gridd_add_customizer_field(
 			'max'  => 1,
 			'step' => .001,
 		],
-	]
-);
-
-/**
- * Type Scale
- */
-gridd_add_customizer_field(
-	[
-		'settings'    => 'gridd_type_scale',
-		'type'        => 'slider',
-		'label'       => esc_attr__( 'Headers Size Scale', 'gridd' ),
-		'description' => esc_attr__( 'Controls the size relations between your headers and your main typography font-size.', 'gridd' ),
-		'section'     => 'gridd_typography',
-		'default'     => '1.333',
-		'choices'     => [
-			'min'  => 1,
-			'max'  => 2,
-			'step' => 0.001,
-		],
-		'transport'   => 'postMessage',
-		'css_vars'    => '--gridd-typo-scale',
-		'priority'    => 100,
 	]
 );
