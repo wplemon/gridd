@@ -58,6 +58,10 @@
     .edit-post-visual-editor.editor-styles-wrapper a:focus,
     .edit-post-visual-editor.editor-styles-wrapper a:visited:focus {
       outline: thin dashed; }
+  .block-editor .edit-post-visual-editor.editor-styles-wrapper .wp-block[data-align="wide"],
+  .edit-post-visual-editor.editor-styles-wrapper .wp-block[data-align="wide"] {
+    width: calc(var(--gridd-content-max-width-calculated) + 25%);
+    max-width: 100%; }
   .block-editor .edit-post-visual-editor.editor-styles-wrapper .wp-caption,
   .block-editor .edit-post-visual-editor.editor-styles-wrapper .wp-block-image figcaption,
   .edit-post-visual-editor.editor-styles-wrapper .wp-caption,
@@ -65,7 +69,6 @@
     margin-bottom: 1.5em;
     max-width: 100%;
     width: 100%;
-    font-size: 0.85em;
     background-color: rgba(128, 128, 128, .1);
     padding-bottom: 0.5em;
     color: var(--gridd-text-color);

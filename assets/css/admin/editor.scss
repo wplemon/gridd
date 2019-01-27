@@ -60,12 +60,18 @@
 		}
 	}
 
+	.wp-block {
+		&[data-align="wide"] {
+			width: calc(var(--gridd-content-max-width-calculated) + 25%);
+			max-width: 100%;
+		}	
+	}
+
 	.wp-caption,
 	.wp-block-image figcaption {
 		margin-bottom: 1.5em;
 		max-width: 100%;
 		width: 100%;
-		font-size: 0.85em;
 		background-color: rgba(128, 128, 128, .1);
 		padding-bottom: 0.5em;
 		color: var(--gridd-text-color);
