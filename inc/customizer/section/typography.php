@@ -172,7 +172,10 @@ gridd_add_customizer_field(
 		'default'     => 18,
 		'priority'    => 70,
 		'transport'   => 'postMessage',
-		'css_vars'    => [ '--gridd-font-size', '$px' ],
+		'css_vars'    => [
+			[ '--gridd-font-size', '$px' ],
+			Gridd::is_pro() ? [] : [ '--gridd-typo-scale', '1.333' ],
+		],
 		'choices'     => [
 			'min'    => 13,
 			'max'    => 40,
