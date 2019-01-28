@@ -154,11 +154,13 @@ foreach ( $responsive_mode_parts as $responsive_mode_part ) {
 					]
 				);
 				?>
-			<?php else : ?>
-				<?php
-				/* translators: The navigation number. */
-				printf( esc_html__( 'Please assign a menu to the "Navigation %d" menu.', 'gridd' ), absint( $id ) );
-				?>
+			<?php elseif ( current_user_can( 'edit_theme_options' ) ) : ?>
+				<div style="background:#FFEBEE;border:1px solid #EF9A9A;color:#B71C1C;font-size:14px;padding:12px;text-align:center;">
+					<?php
+					/* translators: The navigation number. */
+					printf( esc_html__( 'Please assign a menu to the "Navigation %d" menu.', 'gridd' ), absint( $id ) );
+					?>
+				</div>
 			<?php endif; ?>
 		</nav>
 	</div>
