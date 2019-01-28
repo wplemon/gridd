@@ -30,6 +30,38 @@ class Customizer {
 	public static $grid_controls = [];
 
 	/**
+	 * An array of background to text color setting automations.
+	 *
+	 * @static
+	 * @since 1.0
+	 * @var array
+	 */
+	public static $auto_text_color = [
+		'gridd_grid_content_background_color'                          => 'gridd_text_color',
+		'gridd_grid_breadcrumbs_background_color'                      => 'gridd_grid_breadcrumbs_color',
+		'gridd_grid_part_details_header_contact_info_background_color' => 'gridd_grid_part_details_header_contact_info_text_color',
+		'gridd_grid_footer_copyright_bg_color]'                        => 'gridd_grid_footer_copyright_color',
+		'gridd_grid_footer_sidebar_1_bg_color'                         => 'gridd_grid_footer_sidebar_1_color',
+		'gridd_grid_footer_sidebar_2_bg_color'                         => 'gridd_grid_footer_sidebar_2_color',
+		'gridd_grid_footer_sidebar_3_bg_color'                         => 'gridd_grid_footer_sidebar_3_color',
+		'gridd_grid_footer_sidebar_4_bg_color'                         => 'gridd_grid_footer_sidebar_4_color',
+		'gridd_grid_footer_sidebar_5_bg_color'                         => 'gridd_grid_footer_sidebar_5_color',
+		'gridd_grid_footer_sidebar_6_bg_color'                         => 'gridd_grid_footer_sidebar_6_color',
+		'gridd_grid_nav_1_bg_color'                                    => 'gridd_grid_nav_1_items_color',
+		'gridd_grid_nav_2_bg_color'                                    => 'gridd_grid_nav_2_items_color',
+		'gridd_grid_nav_3_bg_color'                                    => 'gridd_grid_nav_3_items_color',
+		'gridd_grid_nav_4_bg_color'                                    => 'gridd_grid_nav_4_items_color',
+		'gridd_grid_nav_5_bg_color'                                    => 'gridd_grid_nav_5_items_color',
+		'gridd_grid_nav_6_bg_color'                                    => 'gridd_grid_nav_6_items_color',
+		'gridd_grid_sidebar_1_background_color'                        => 'gridd_grid_sidebar_1_color',
+		'gridd_grid_sidebar_2_background_color'                        => 'gridd_grid_sidebar_2_color',
+		'gridd_grid_sidebar_3_background_color'                        => 'gridd_grid_sidebar_3_color',
+		'gridd_grid_sidebar_4_background_color'                        => 'gridd_grid_sidebar_4_color',
+		'gridd_grid_sidebar_5_background_color'                        => 'gridd_grid_sidebar_5_color',
+		'gridd_grid_sidebar_6_background_color'                        => 'gridd_grid_sidebar_6_color',
+	];
+
+	/**
 	 * Constructor.
 	 *
 	 * @access public
@@ -176,6 +208,9 @@ class Customizer {
 	public function customize_controls_print_styles() {
 		echo '<style id="gridd-customizer-styles">';
 		include get_template_directory() . '/assets/css/customizer/customizer.css';
+		foreach ( array_values( self::$auto_text_color ) as $item ) {
+			echo ( Gridd::is_plus_active() ) ?: '#customize-control-' . esc_attr( $item ) . '{display:none!important;}';
+		}
 		echo '</style>';
 	}
 
@@ -207,7 +242,15 @@ class Customizer {
 	 * @return void
 	 */
 	public function preview_customizer_scripts() {
-		wp_enqueue_script( 'gridd-customizer-preview-script', get_theme_file_uri( '/assets/js/customizer.js' ), [ 'jquery', 'customize-preview', 'jquery-color' ], time(), true );
+		wp_enqueue_script( 'wcagcolors', get_template_directory_uri() . '/assets/js/wcagColors.js', [], '1.0', false );
+		wp_enqueue_script( 'gridd-customizer-preview-script', get_theme_file_uri( '/assets/js/customizer.js' ), [ 'jquery', 'customize-preview', 'jquery-color', 'wcagcolors' ], time(), true );
+		wp_localize_script(
+			'gridd-customizer-preview-script',
+			'griddCustomizerVars',
+			array(
+				'autoText' => self::$auto_text_color,
+			)
+		);
 	}
 
 	/**

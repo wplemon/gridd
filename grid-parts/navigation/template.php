@@ -79,7 +79,7 @@ if ( class_exists( 'ariColor' ) ) {
 		]
 	);
 }
-$classes = [
+$classes               = [
 	'gridd-tp',
 	"gridd-tp-nav_$id",
 	'gridd-menu-collapse-position-' . get_theme_mod( "gridd_grid_nav_{$id}_expand_icon_position", 'center-right' ),

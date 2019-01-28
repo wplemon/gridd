@@ -70,17 +70,17 @@ function gridd_nav_customizer_options( $id ) {
 
 	gridd_add_customizer_field(
 		[
-			'type'            => 'radio',
-			'settings'        => "gridd_grid_nav_{$id}_responsive_behavior",
-			'label'           => esc_html__( 'Responsive Behavior', 'gridd' ),
-			'description'     => sprintf(
+			'type'        => 'radio',
+			'settings'    => "gridd_grid_nav_{$id}_responsive_behavior",
+			'label'       => esc_html__( 'Responsive Behavior', 'gridd' ),
+			'description' => sprintf(
 				/* translators: The link properies. */
 				__( 'Select how this navigation should behave in smaller screens. We recommend you hide navigations on mobile and instead use the <a%s>separate mobile-navigation menu</a>.', 'gridd' ),
 				' href="#" class="button-gridd-focus global-focus" data-context="section" data-focus="gridd_grid_part_details_nav-handheld"'
 			),
-			'section'         => "gridd_grid_part_details_nav_$id",
-			'default'         => 'desktop-normal-mobile-hidden',
-			'choices'         => [
+			'section'     => "gridd_grid_part_details_nav_$id",
+			'default'     => 'desktop-normal-mobile-hidden',
+			'choices'     => [
 				'desktop-normal mobile-normal' => esc_html__( 'Always visible', 'gridd' ),
 				'desktop-normal mobile-icon'   => esc_html__( 'Collapse to icon on mobile', 'gridd' ),
 				'desktop-icon mobile-icon'     => esc_html__( 'Always collapsed', 'gridd' ),

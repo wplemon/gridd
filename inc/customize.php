@@ -44,7 +44,8 @@ function gridd_add_customizer_field( $args ) {
 	if ( ! Gridd::is_plus_active() ) {
 		if ( ! empty( $args['type'] ) ) {
 			if ( 'kirki-wcag-tc' === $args['type'] || 'kirki-wcag-lc' === $args['type'] ) {
-				$args['type'] = 'color';
+				// No need to init a colorpicker if the setting is automated.
+				$args['type'] = ( ! in_array( $args['settings'], array_values( Customizer::$auto_text_color ), true ) ) ? 'hidden' : 'color';
 			}
 		}
 	}

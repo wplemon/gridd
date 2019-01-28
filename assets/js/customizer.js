@@ -80,6 +80,22 @@
 			}
 		});
 	});
+
+	/**
+	 * Automate text-color.
+	 *
+	 * We're using a proxy hidden control because the plus version
+	 * includes a premium control for colorpickers which allows WCAG-compliant colors to be selected by the user.
+	 * In the free version of the theme we're automatically picking either white or black
+	 * depending on their background-color selection.
+	 */
+	_.each( griddCustomizerVars.autoText, function( textColor, backgroundColor ) {
+		wp.customize( backgroundColor, function( value ) {
+			value.bind( function( to ) {
+				window.parent.window.wp.customize.control( textColor ).setting.set( griddGetContrastColor( to ) );
+			});
+		});
+	});
 } ( jQuery ) );
 
 /**
@@ -90,17 +106,6 @@
  * @returns {string} - Text color (hex).
  */
 function griddGetContrastColor( bg ) {
-	var red, green, blue, yiq;
-	bg = bg.replace( '#', '' );
-	if ( 3 === bg.length ) {
-		bg = bg.substr( 0, 1 ) + bg.substr( 0, 1 ) + bg.substr( 1, 1 ) + bg.substr( 1, 1 ) + bg.substr( 2, 1 ) + bg.substr( 2, 1 );
-	}
-
-	red   = parseInt( bg.substr( 0, 2 ), 16 );
-	green = parseInt( bg.substr( 2, 2 ), 16 );
-	blue  = parseInt( bg.substr( 4, 2 ), 16 );
-
-	// See https://en.wikipedia.org/wiki/YIQ.
-	yiq = ( ( red * 299 ) + ( green * 587 ) + ( blue * 114 ) ) / 1000;
-	return ( 128 <= yiq ) ? '#000000' : '#ffffff';
+	var color = wcagColors.getColorProperties( bg );
+	return wcagColors.getContrast( color.lum, 1 ) > wcagColors.getContrast( color.lum, 0 ) ? '#ffffff' : '#000000';
 }
