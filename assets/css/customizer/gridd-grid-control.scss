@@ -106,6 +106,37 @@
 			grid-row-end: 2;
 		}
 	}
+
+	&.fixed-position {
+		position: fixed;
+		top: 19px;
+		left: 0;
+		width: 100%;
+		padding: 20px;
+		background: #fff;
+		// max-width: 660px;
+		z-index: 99999;
+		border: 1px solid #ccc;
+		box-sizing: border-box;
+		height: 100%;
+		max-height: calc(100vh - 45px);
+		overflow-y: scroll;
+	}
+
+	.gridd-grid-zoom-in {
+		background: none;
+		border: none;
+		border-radius: 0;
+		box-shadow: none;
+		padding-right: 0;
+		padding-left: 5px;
+		// float: right;
+
+		svg {
+			height: 26px;
+			fill: #826eb4;
+		}
+	}
 }
 
 .gridd-grid-selectable,

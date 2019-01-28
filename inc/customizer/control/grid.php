@@ -104,10 +104,14 @@ class Grid extends \Kirki_Control_Base {
 				<div class="gridd-grid-builder-grids-wrapper">
 					<!-- Add action buttons. -->
 					<div class="map-builder-actions">
-						<button class="button button-secondary button add-column"><?php esc_html_e( '+ Column', 'gridd' ); ?></button>
-						<button class="button button-secondary button remove-column"><?php esc_html_e( '- Column', 'gridd' ); ?></button>
-						<button class="button button-secondary button add-row"><?php esc_html_e( '+ Row', 'gridd' ); ?></button>
-						<button class="button button-secondary button remove-row"><?php esc_html_e( '- Row', 'gridd' ); ?></button>
+						<button class="button button-secondary add-column"><?php esc_html_e( '+ Column', 'gridd' ); ?></button>
+						<button class="button button-secondary remove-column"><?php esc_html_e( '- Column', 'gridd' ); ?></button>
+						<button class="button button-secondary add-row"><?php esc_html_e( '+ Row', 'gridd' ); ?></button>
+						<button class="button button-secondary remove-row"><?php esc_html_e( '- Row', 'gridd' ); ?></button>
+						<button class="button button-secondary gridd-grid-zoom-in" title="<?php esc_attr( 'Zoom In', 'gridd' ); ?>">
+							<span class="screen-reader-text"><?php esc_html( 'Zoom In', 'gridd' ); ?></span>
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M6.426 10.668l-3.547-3.547-2.879 2.879v-10h10l-2.879 2.879 3.547 3.547-4.242 4.242zm11.148 2.664l3.547 3.547 2.879-2.879v10h-10l2.879-2.879-3.547-3.547 4.242-4.242zm-6.906 4.242l-3.547 3.547 2.879 2.879h-10v-10l2.879 2.879 3.547-3.547 4.242 4.242zm2.664-11.148l3.547-3.547-2.879-2.879h10v10l-2.879-2.879-3.547 3.547-4.242-4.242z"/></svg>
+						</button>
 					</div>
 
 					<button class="grid-whatis"><span class="dashicons dashicons-editor-help"></span></button>

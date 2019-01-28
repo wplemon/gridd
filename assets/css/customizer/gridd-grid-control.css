@@ -76,6 +76,29 @@
       grid-column-end: 2;
       grid-row-start: 1;
       grid-row-end: 2; }
+  .customize-control-gridd_grid.fixed-position {
+    position: fixed;
+    top: 19px;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: #fff;
+    z-index: 99999;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    height: 100%;
+    max-height: calc(100vh - 45px);
+    overflow-y: scroll; }
+  .customize-control-gridd_grid .gridd-grid-zoom-in {
+    background: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding-right: 0;
+    padding-left: 5px; }
+    .customize-control-gridd_grid .gridd-grid-zoom-in svg {
+      height: 26px;
+      fill: #826eb4; }
 
 .gridd-grid-selectable,
 .gridd-grid-selected {

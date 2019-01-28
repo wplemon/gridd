@@ -87,6 +87,12 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 			control.removeRow();
 			e.preventDefault();
 		});
+
+		// Toggle zoom.
+		control.container.find( '.gridd-grid-zoom-in' ).on( 'click', function( e ) {
+			control.container.toggleClass( 'fixed-position' );
+			e.preventDefault();
+		});
 	},
 
 	/**
