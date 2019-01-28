@@ -25,14 +25,14 @@ gridd_add_customizer_section(
 $footer_grid_parts = [
 	[
 		'label'    => esc_html__( 'Copyright Area', 'gridd' ),
-		'color'    => '#DC3232',
+		'color'    => [ '#A5D6A7', '#000' ],
 		'priority' => 100,
 		'hidden'   => false,
 		'id'       => 'footer_copyright',
 	],
 	[
 		'label'    => esc_html__( 'Social Media', 'gridd' ),
-		'color'    => '#0996c3',
+		'color'    => [ '#8BC34A', '#000' ],
 		'priority' => 200,
 		'hidden'   => false,
 		'id'       => 'footer_social_media',
@@ -44,7 +44,7 @@ for ( $i = 1; $i <= $sidebars_nr; $i++ ) {
 	$footer_grid_parts[] = [
 		/* translators: The widget-area number. */
 		'label'    => sprintf( esc_html__( 'Footer Widget Area %d', 'gridd' ), absint( $i ) ),
-		'color'    => 'hsl(' . ( 55 * $i - 55 ) . ',57%,45%)',
+		'color'    => [ 'hsl(' . ( 55 * $i - 55 ) . ',57%,75%)', '#000' ],
 		'priority' => 8 + $i * 2,
 		'hidden'   => false,
 		'class'    => "footer_sidebar_$i",

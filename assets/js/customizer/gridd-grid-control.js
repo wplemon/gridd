@@ -387,7 +387,7 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 			});
 
 			partHTML  = '<div class="grid-selected-part selected-part-' + id + '" style="grid-row-start:' + minRow + ';grid-row-end:' + maxRow + ';grid-column-start:' + minCol + ';grid-column-end:' + maxCol + ';">';
-			partHTML += '<span class="inner" style="background-color:' + control.getPartAttr( id, 'color' ) + '">';
+			partHTML += '<span class="inner" style="background-color:' + control.getPartAttr( id, 'color' )[0] + ';color:' + control.getPartAttr( id, 'color' )[1] + ';">';
 			partHTML += '<span class="part-label-wrapper">' + control.getPartAttr( id, 'label' ) + '</span>';
 			partHTML += control.getActionsHTML( id );
 			partHTML += '</span>';

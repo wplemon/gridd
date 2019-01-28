@@ -60,7 +60,7 @@ class Footer extends Grid_Part {
 	protected function set_part() {
 		$this->part = [
 			'label'    => esc_html__( 'Footer', 'gridd' ),
-			'color'    => '#46B450',
+			'color'    => [ '#1565C0', '#fff' ],
 			'priority' => 1000,
 			'id'       => 'footer',
 			'grid'     => 'gridd_footer_grid',

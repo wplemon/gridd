@@ -66,7 +66,7 @@ class Revolution_Slider extends Grid_Part {
 	protected function set_part() {
 		$this->part = [
 			'label'    => esc_html__( 'Revolution Slider', 'gridd' ),
-			'color'    => '#4EAE71',
+			'color'    => [ '#EF6C00', '#000' ],
 			'priority' => 200,
 			'id'       => 'revolution-slider',
 		];

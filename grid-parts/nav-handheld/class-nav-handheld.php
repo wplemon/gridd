@@ -67,7 +67,7 @@ class Nav_Handheld extends Grid_Part {
 	protected function set_part() {
 		$this->part = [
 			'label'    => esc_html__( 'Mobile Navigation', 'gridd' ),
-			'color'    => '#FFB900',
+			'color'    => [ '#FFB900', '#fff' ],
 			'priority' => 50,
 			'id'       => 'nav-handheld',
 			'hidden'   => true,

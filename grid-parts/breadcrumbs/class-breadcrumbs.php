@@ -71,7 +71,7 @@ class Breadcrumbs extends Grid_Part {
 	protected function set_part() {
 		$this->part = [
 			'label'    => esc_html__( 'Breadcrumbs', 'gridd' ),
-			'color'    => '#7E57C2',
+			'color'    => [ '#B39DDB', '#000' ],
 			'priority' => 60,
 			'hidden'   => false,
 			'id'       => $this->id,

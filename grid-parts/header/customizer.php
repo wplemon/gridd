@@ -49,7 +49,7 @@ add_action(
 
 $header_grid_parts[] = [
 	'label'    => esc_html__( 'Branding', 'gridd' ),
-	'color'    => '#DC3232',
+	'color'    => [ '#FFEB3B', '#000' ],
 	'priority' => 0,
 	'hidden'   => false,
 	'id'       => 'header_branding',
@@ -57,7 +57,7 @@ $header_grid_parts[] = [
 
 $header_grid_parts[] = [
 	'label'    => esc_html__( 'Search', 'gridd' ),
-	'color'    => '#7b5e7b',
+	'color'    => [ '#CFD8DC', '#000' ],
 	'priority' => 200,
 	'hidden'   => false,
 	'id'       => 'header_search',
@@ -65,7 +65,7 @@ $header_grid_parts[] = [
 
 $header_grid_parts[] = [
 	'label'    => esc_html__( 'Contact Information', 'gridd' ),
-	'color'    => '#093A3E',
+	'color'    => [ '#D4E157', '#000' ],
 	'priority' => 1000,
 	'hidden'   => false,
 	'id'       => 'header_contact_info',
@@ -73,7 +73,7 @@ $header_grid_parts[] = [
 
 $header_grid_parts[] = [
 	'label'    => esc_html__( 'Social Media', 'gridd' ),
-	'color'    => '#0996c3',
+	'color'    => [ '#009688', '#fff' ],
 	'priority' => 2000,
 	'hidden'   => false,
 	'id'       => 'social_media',

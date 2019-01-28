@@ -60,7 +60,7 @@ class Header extends Grid_Part {
 	protected function set_part() {
 		$this->part = [
 			'label'    => esc_html__( 'Header', 'gridd' ),
-			'color'    => '#bf2f2f',
+			'color'    => [ '#AD1457', '#fff' ],
 			'priority' => 0,
 			'id'       => $this->id,
 			'grid'     => 'gridd_header_grid',

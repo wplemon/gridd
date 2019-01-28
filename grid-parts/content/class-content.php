@@ -73,7 +73,7 @@ class Content extends Grid_Part {
 		$this->part = [
 			'label'    => esc_attr__( 'Content', 'gridd' ),
 			'id'       => 'content',
-			'color'    => '#00A0D2',
+			'color'    => [ '#fff', '#000' ],
 			'priority' => 100,
 		];
 	}

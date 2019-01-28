@@ -113,7 +113,7 @@ class Navigation extends Grid_Part {
 			$parts[] = [
 				/* translators: The number of the navigation. */
 				'label'    => sprintf( esc_html__( 'Navigation %d', 'gridd' ), absint( $i ) ),
-				'color'    => '#46B450',
+				'color'    => [ '#0277BD', '#fff' ],
 				'priority' => 30,
 				'id'       => "nav_$i",
 			];
