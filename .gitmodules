@@ -1,6 +1,0 @@
-[submodule "grid-parts/breadcrumbs/hybrid-breadcrumbs"]
-	path = grid-parts/breadcrumbs/hybrid-breadcrumbs
-	url = https://github.com/justintadlock/hybrid-breadcrumbs
-[submodule "inc/kirki"]
-	path = inc/kirki
-	url = https://github.com/aristath/kirki
