@@ -9,6 +9,7 @@
 // }
 
 #customize-controls {
+
 	#sub-accordion-section-gridd_grid,
 	#sub-accordion-section-gridd_grid_part_details_header,
 	#sub-accordion-section-gridd_grid_part_details_footer {
@@ -22,6 +23,7 @@
 						background: #dedede !important;
 					}
 				}
+
 				&.control-section-kirki-nested {
 					h3.accordion-section-title {
 						display: none;
@@ -30,6 +32,7 @@
 			}
 		}
 	}
+
 	.customize-section-description-container.section-meta {
 		.dashicons {
 			display: none;
@@ -48,11 +51,11 @@
 }
 
 .customize-control-kirki-radio-buttonset .buttonset {
-	display:-ms-grid;
+	display: -ms-grid;
 	display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-    border-radius: 4px;
-    overflow: hidden;
+	grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+	border-radius: 4px;
+	overflow: hidden;
 	grid-gap: 2px;
 }
 
@@ -62,18 +65,18 @@
 }
 
 #input_gridd_grid_nav-primary_justify_content {
-	display:-ms-grid;
+	display: -ms-grid;
 	display: grid;
 	grid-gap: 1em;
 	grid-template-columns: 1fr 1fr;
 
-	> label {
+	>label {
 		display: block;
 		flex-wrap: wrap;
 		padding: 5px;
 		border: 1px solid #ccc;
 
-		> * {
+		>* {
 			width: 100%;
 			order: 2;
 		}
@@ -89,10 +92,11 @@
 	img {
 		height: 40px;
 	}
+
 	input {
 		&:checked {
-			+ label {
-				box-shadow: 0 0 5px 2px rgba(0,0,0,.25);
+			+label {
+				box-shadow: 0 0 5px 2px rgba(0, 0, 0, .25);
 				border: 1px solid #3498DB;
 			}
 		}
@@ -102,12 +106,12 @@
 .customize-control-kirki-dimensions {
 	.wrapper {
 		.control {
-			display:-ms-grid;
+			display: -ms-grid;
 			display: grid;
 			grid-template-columns: 1fr 1fr 1fr 1fr;
 			grid-gap: 12px;
 
-			> div {
+			>div {
 				width: 100%;
 			}
 		}
@@ -122,7 +126,7 @@
 		}
 	}
 
-	.switch-input:checked + .switch-label {
+	.switch-input:checked+.switch-label {
 		svg {
 			fill: #fff;
 		}
@@ -137,7 +141,7 @@ h3.gridd-customizer-section-title {
 	text-transform: uppercase;
 }
 
-.customize-control-kirki-radio-image  {
+.customize-control-kirki-radio-image {
 	label {
 		width: 50%;
 
@@ -161,7 +165,7 @@ h3.gridd-customizer-section-title {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 
-	> label {
+	>label {
 		line-height: 2.5em;
 	}
 }
@@ -186,7 +190,7 @@ h3.gridd-customizer-section-title {
 		padding: 8px 12px;
 	}
 
-	.gridd-go-plus + .gridd-docs {
+	.gridd-go-plus+.gridd-docs {
 		border-top: 1px solid #f7f7f7;
 	}
 }
@@ -199,5 +203,14 @@ h3.gridd-customizer-section-title {
 		.switch-input:checked & {
 			fill: #fff;
 		}
+	}
+}
+
+.customize-control {
+	border-bottom: 1px solid #e2e2e2;
+	padding-bottom: 12px;
+
+	&:last-child {
+		border-bottom: none;
 	}
 }

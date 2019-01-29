@@ -110,7 +110,8 @@ gridd_add_customizer_field(
 		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_header_max_width',
 		'label'       => esc_html__( 'Max-Width', 'gridd' ),
-		'description' => __( 'The maximum width that the contents of this grid-part can use. Use any valid CSS value like <code>50em</code>, <code>800px</code> or <code>100%</code>.', 'gridd' ),
+		'description' => esc_html__( 'The maximum width that the contents of this grid-part can use.', 'gridd' ),
+		'description' => __( 'Use any valid CSS value like <code>50em</code>, <code>800px</code> or <code>100%</code>.', 'gridd' ),
 		'section'     => 'gridd_grid_part_details_header',
 		'default'     => '',
 		'css_vars'    => '--gridd-header-max-width',
@@ -134,33 +135,33 @@ gridd_add_customizer_field(
 
 gridd_add_customizer_field(
 	[
-		'type'        => 'color',
-		'settings'    => 'gridd_grid_part_details_header_background_color',
-		'label'       => esc_html__( 'Background Color', 'gridd' ),
-		'description' => esc_html__( 'Choose a background color for the header. Individual grid-parts can override this by setting their own background color for their area. If you are using a grid-gap the color defined here will be visible between grid-parts.', 'gridd' ),
-		'section'     => 'gridd_grid_part_details_header',
-		'default'     => '#ffffff',
-		'transport'   => 'postMessage',
-		'css_vars'    => '--gridd-header-bg',
-		'choices'     => [
+		'type'      => 'color',
+		'settings'  => 'gridd_grid_part_details_header_background_color',
+		'label'     => esc_html__( 'Background Color', 'gridd' ),
+		'tooltip'   => esc_html__( 'Choose a background color for the header. Individual grid-parts can override this by setting their own background color for their area. If you are using a grid-gap the color defined here will be visible between grid-parts.', 'gridd' ),
+		'section'   => 'gridd_grid_part_details_header',
+		'default'   => '#ffffff',
+		'transport' => 'postMessage',
+		'css_vars'  => '--gridd-header-bg',
+		'choices'   => [
 			'alpha' => true,
 		],
-		'priority'    => 70,
+		'priority'  => 70,
 	]
 );
 
 gridd_add_customizer_field(
 	[
-		'type'        => 'radio',
-		'settings'    => 'gridd_grid_header_box_shadow',
-		'label'       => esc_html__( 'Drop Shadow Intensity', 'gridd' ),
-		'description' => esc_html__( 'Set to "None" if you want to disable the shadow for this grid-part, or increase the intensity for a more dramatic effect.', 'gridd' ),
-		'section'     => 'gridd_grid_part_details_header',
-		'default'     => '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
-		'transport'   => 'postMessage',
-		'css_vars'    => '--gridd-header-box-shadow',
-		'priority'    => 200,
-		'choices'     => [
+		'type'      => 'radio',
+		'settings'  => 'gridd_grid_header_box_shadow',
+		'label'     => esc_html__( 'Drop Shadow Intensity', 'gridd' ),
+		'tooltip'   => esc_html__( 'Set to "None" if you want to disable the shadow for this grid-part, or increase the intensity for a more dramatic effect.', 'gridd' ),
+		'section'   => 'gridd_grid_part_details_header',
+		'default'   => '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
+		'transport' => 'postMessage',
+		'css_vars'  => '--gridd-header-box-shadow',
+		'priority'  => 200,
+		'choices'   => [
 			'none' => esc_html__( 'None', 'gridd' ),
 			'0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)' => esc_html__( 'Extra Light', 'gridd' ),
 			'0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)' => esc_html__( 'Light', 'gridd' ),
@@ -168,21 +169,21 @@ gridd_add_customizer_field(
 			'0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)' => esc_html__( 'Heavy', 'gridd' ),
 			'0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)' => esc_html__( 'Extra Heavy', 'gridd' ),
 		],
-		'priority'    => 90,
+		'priority'  => 90,
 	]
 );
 
 gridd_add_customizer_field(
 	[
-		'type'        => 'toggle',
-		'settings'    => 'gridd_header_sticky',
-		'label'       => esc_html__( 'Sticky on Large Devices', 'gridd' ),
-		'description' => esc_html__( 'Enable to stick this area to the top of the page when users scroll-down on devices larger than the breakpoint you defined in your main grid.', 'gridd' ),
-		'section'     => 'gridd_grid_part_details_header',
-		'default'     => false,
-		'transport'   => 'refresh',
-		'priority'    => 300,
-		'priority'    => 91,
+		'type'      => 'toggle',
+		'settings'  => 'gridd_header_sticky',
+		'label'     => esc_html__( 'Sticky on Large Devices', 'gridd' ),
+		'tooltip'   => esc_html__( 'Enable to stick this area to the top of the page when users scroll-down on devices larger than the breakpoint you defined in your main grid.', 'gridd' ),
+		'section'   => 'gridd_grid_part_details_header',
+		'default'   => false,
+		'transport' => 'refresh',
+		'priority'  => 300,
+		'priority'  => 91,
 	]
 );
 
@@ -191,7 +192,7 @@ gridd_add_customizer_field(
 		'type'            => 'toggle',
 		'settings'        => 'gridd_header_sticky_mobile',
 		'label'           => esc_html__( 'Sticky on Small Devices', 'gridd' ),
-		'description'     => esc_html__( 'Enable to stick this area to the top of the page when users scroll-down on devices smaller than the breakpoint you defined in your main grid.', 'gridd' ),
+		'tooltip'         => esc_html__( 'Enable to stick this area to the top of the page when users scroll-down on devices smaller than the breakpoint you defined in your main grid.', 'gridd' ),
 		'section'         => 'gridd_grid_part_details_header',
 		'default'         => false,
 		'transport'       => 'refresh',

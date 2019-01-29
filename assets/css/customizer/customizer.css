@@ -132,3 +132,9 @@ h3.gridd-customizer-section-title {
   max-height: 35px; }
   .switch-input:checked .gridd-flexbox-svg-option svg {
     fill: #fff; }
+
+.customize-control {
+  border-bottom: 1px solid #e2e2e2;
+  padding-bottom: 12px; }
+  .customize-control:last-child {
+    border-bottom: none; }

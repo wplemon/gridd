@@ -44,15 +44,15 @@ gridd_add_customizer_field(
 
 gridd_add_customizer_field(
 	[
-		'type'        => 'color',
-		'settings'    => 'gridd_grid_header_branding_background_color',
-		'label'       => esc_html__( 'Background Color', 'gridd' ),
-		'description' => esc_html__( 'Select the background color for this grid-part.', 'gridd' ),
-		'section'     => 'gridd_grid_part_details_header_branding',
-		'default'     => '#ffffff',
-		'transport'   => 'postMessage',
-		'css_vars'    => '--gridd-branding-bg',
-		'choices'     => [
+		'type'      => 'color',
+		'settings'  => 'gridd_grid_header_branding_background_color',
+		'label'     => esc_html__( 'Background Color', 'gridd' ),
+		// 'description' => esc_html__( 'Select the background color for this grid-part.', 'gridd' ),
+		'section'   => 'gridd_grid_part_details_header_branding',
+		'default'   => '#ffffff',
+		'transport' => 'postMessage',
+		'css_vars'  => '--gridd-branding-bg',
+		'choices'   => [
 			'alpha' => true,
 		],
 	]
@@ -60,14 +60,14 @@ gridd_add_customizer_field(
 
 gridd_add_customizer_field(
 	[
-		'type'        => 'text',
-		'settings'    => 'gridd_grid_header_branding_padding',
-		'label'       => esc_html__( 'Padding', 'gridd' ),
-		'description' => __( 'The padding for this grid-part. For details on how padding works, please refer to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
-		'section'     => 'gridd_grid_part_details_header_branding',
-		'default'     => '0.5em',
-		'transport'   => 'postMessage',
-		'css_vars'    => '--gridd-branding-padding',
+		'type'      => 'text',
+		'settings'  => 'gridd_grid_header_branding_padding',
+		'label'     => esc_html__( 'Padding', 'gridd' ),
+		'tooltip'   => __( 'For details on how padding works, please refer to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
+		'section'   => 'gridd_grid_part_details_header_branding',
+		'default'   => '0.5em',
+		'transport' => 'postMessage',
+		'css_vars'  => '--gridd-branding-padding',
 	]
 );
 
@@ -101,7 +101,7 @@ gridd_add_customizer_field(
 		'settings'        => 'gridd_branding_sitename_typography',
 		'type'            => 'typography',
 		'label'           => esc_html__( 'Site-Title Typography', 'gridd' ),
-		'description'     => esc_html__( 'Please select typography settings for your site-title.', 'gridd' ),
+		// 'description'     => esc_html__( 'Please select typography settings for your site-title.', 'gridd' ),
 		'section'         => 'gridd_grid_part_details_header_branding',
 		'default'         => [
 			'font-family' => 'Noto Serif',
@@ -139,7 +139,7 @@ gridd_add_customizer_field(
 		'settings'        => 'gridd_branding_tagline_typography',
 		'type'            => 'typography',
 		'label'           => esc_html__( 'Tagline Typography', 'gridd' ),
-		'description'     => esc_html__( 'Please select typography settings for your tagline.', 'gridd' ),
+		// 'description'     => esc_html__( 'Please select typography settings for your tagline.', 'gridd' ),
 		'section'         => 'gridd_grid_part_details_header_branding',
 		'default'         => [
 			'font-family' => 'Noto Serif',
@@ -189,7 +189,7 @@ gridd_add_customizer_field(
 		'settings'        => 'gridd_branding_inline_spacing',
 		'type'            => 'slider',
 		'label'           => esc_html__( 'Spacing between elements', 'gridd' ),
-		'description'     => esc_html__( 'This value is relevant to the site-title font-size.', 'gridd' ),
+		'tooltip'         => esc_html__( 'This value is relevant to the site-title font-size.', 'gridd' ),
 		'section'         => 'gridd_grid_part_details_header_branding',
 		'default'         => .5,
 		'transport'       => 'postMessage',
@@ -206,16 +206,16 @@ gridd_add_customizer_field(
 
 gridd_add_customizer_field(
 	[
-		'type'        => 'radio-buttonset',
-		'settings'    => 'gridd_grid_header_branding_horizontal_align',
-		'label'       => esc_html__( 'Horizontal Alignment', 'gridd' ),
-		'description' => esc_html__( 'Choose the horizontal alignment for your branding', 'gridd' ),
-		'section'     => 'gridd_grid_part_details_header_branding',
-		'default'     => 'left',
-		'transport'   => 'auto',
-		'css_vars'    => '--gridd-branding-horizontal-align',
-		'transport'   => 'postMessage',
-		'choices'     => [
+		'type'      => 'radio-buttonset',
+		'settings'  => 'gridd_grid_header_branding_horizontal_align',
+		'label'     => esc_html__( 'Horizontal Alignment', 'gridd' ),
+		// 'description' => esc_html__( 'Choose the horizontal alignment for your branding', 'gridd' ),
+		'section'   => 'gridd_grid_part_details_header_branding',
+		'default'   => 'left',
+		'transport' => 'auto',
+		'css_vars'  => '--gridd-branding-horizontal-align',
+		'transport' => 'postMessage',
+		'choices'   => [
 			'left'   => esc_html__( 'Left', 'gridd' ),
 			'center' => esc_html__( 'Center', 'gridd' ),
 			'right'  => esc_html__( 'Right', 'gridd' ),
@@ -225,16 +225,16 @@ gridd_add_customizer_field(
 
 gridd_add_customizer_field(
 	[
-		'type'        => 'radio-buttonset',
-		'settings'    => 'gridd_grid_header_branding_vertical_align',
-		'label'       => esc_html__( 'Vertical Alignment', 'gridd' ),
-		'description' => esc_html__( 'Choose the vertical alignment for your branding', 'gridd' ),
-		'section'     => 'gridd_grid_part_details_header_branding',
-		'default'     => 'center',
-		'transport'   => 'auto',
-		'css_vars'    => '--gridd-branding-vertical-align',
-		'transport'   => 'postMessage',
-		'choices'     => [
+		'type'      => 'radio-buttonset',
+		'settings'  => 'gridd_grid_header_branding_vertical_align',
+		'label'     => esc_html__( 'Vertical Alignment', 'gridd' ),
+		// 'description' => esc_html__( 'Choose the vertical alignment for your branding', 'gridd' ),
+		'section'   => 'gridd_grid_part_details_header_branding',
+		'default'   => 'center',
+		'transport' => 'auto',
+		'css_vars'  => '--gridd-branding-vertical-align',
+		'transport' => 'postMessage',
+		'choices'   => [
 			'flex-start' => esc_html__( 'Top', 'gridd' ),
 			'center'     => esc_html__( 'Center', 'gridd' ),
 			'flex-end'   => esc_html__( 'Bottom', 'gridd' ),

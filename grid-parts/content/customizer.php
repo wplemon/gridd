@@ -21,7 +21,8 @@ gridd_add_customizer_field(
 		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_content_max_width',
 		'label'       => esc_html__( 'Max-Width', 'gridd' ),
-		'description' => __( 'The maximum width that the contents of this grid-part can use. Use any valid CSS value like <code>50em</code>, <code>800px</code> or <code>100%</code>.', 'gridd' ),
+		'description' => esc_html__( 'The maximum width that the contents of this grid-part can use.', 'gridd' ),
+		'description' => __( 'Use any valid CSS value like <code>50em</code>, <code>800px</code> or <code>100%</code>.', 'gridd' ),
 		'section'     => 'gridd_grid_part_details_content',
 		'default'     => '45em',
 		'css_vars'    => '--gridd-content-max-width',
@@ -32,40 +33,40 @@ gridd_add_customizer_field(
 
 gridd_add_customizer_field(
 	[
-		'type'        => 'dimensions',
-		'settings'    => 'gridd_grid_content_padding',
-		'label'       => esc_html__( 'Container Padding', 'gridd' ),
-		'description' => esc_html__( 'Please enter values for the content area\'s padding.', 'gridd' ),
-		'section'     => 'gridd_grid_part_details_content',
-		'default'     => [
+		'type'      => 'dimensions',
+		'settings'  => 'gridd_grid_content_padding',
+		'label'     => esc_html__( 'Container Padding', 'gridd' ),
+		// 'description' => esc_html__( 'Please enter values for the content area\'s padding.', 'gridd' ),
+		'section'   => 'gridd_grid_part_details_content',
+		'default'   => [
 			'top'    => '0px',
 			'bottom' => '0px',
 			'left'   => '20px',
 			'right'  => '20px',
 		],
-		'css_vars'    => [
+		'css_vars'  => [
 			[ '--gridd-content-padding-top', '$', 'top' ],
 			[ '--gridd-content-padding-bottom', '$', 'bottom' ],
 			[ '--gridd-content-padding-left', '$', 'left' ],
 			[ '--gridd-content-padding-right', '$', 'right' ],
 		],
-		'transport'   => 'postMessage',
-		'priority'    => 15,
+		'transport' => 'postMessage',
+		'priority'  => 15,
 	]
 );
 
 gridd_add_customizer_field(
 	[
-		'type'        => 'color',
-		'settings'    => 'gridd_grid_content_background_color',
-		'label'       => esc_html__( 'Background Color', 'gridd' ),
-		'description' => esc_html__( 'Background Color for the content area. Always prefer light backgrounds with dark text for increased accessibility', 'gridd' ),
-		'section'     => 'gridd_grid_part_details_content',
-		'default'     => '#ffffff',
-		'css_vars'    => '--gridd-content-bg',
-		'transport'   => 'postMessage',
-		'priority'    => 30,
-		'choices'     => [
+		'type'      => 'color',
+		'settings'  => 'gridd_grid_content_background_color',
+		'label'     => esc_html__( 'Background Color', 'gridd' ),
+		'tooltip'   => esc_html__( 'Always prefer light backgrounds with dark text for increased accessibility', 'gridd' ),
+		'section'   => 'gridd_grid_part_details_content',
+		'default'   => '#ffffff',
+		'css_vars'  => '--gridd-content-bg',
+		'transport' => 'postMessage',
+		'priority'  => 30,
+		'choices'   => [
 			'alpha' => true,
 		],
 	]

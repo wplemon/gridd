@@ -37,15 +37,20 @@ add_filter(
  * @return void
  */
 function gridd_add_customizer_field( $args ) {
+	global $wp_customize;
 	if ( ! class_exists( 'Kirki' ) ) {
 		return;
 	}
 
-	if ( ! Gridd::is_plus_active() ) {
+	if ( ! Gridd::is_plus_active() && $wp_customize ) {
 		if ( ! empty( $args['type'] ) ) {
 			if ( 'kirki-wcag-tc' === $args['type'] || 'kirki-wcag-lc' === $args['type'] ) {
 				// No need to init a colorpicker if the setting is automated.
-				$args['type'] = ( ! in_array( $args['settings'], array_values( Customizer::$auto_text_color ), true ) ) ? 'hidden' : 'color';
+				$args['type'] = 'color';
+				if ( ! in_array( $args['settings'], array_values( Customizer::$auto_text_color ), true ) ) {
+					$args['type']            = 'hidden';
+					$args['active_callback'] = '__return_false';
+				}
 			}
 		}
 	}

@@ -67,15 +67,15 @@ gridd_add_customizer_field(
 
 gridd_add_customizer_field(
 	[
-		'type'        => 'slider',
-		'settings'    => 'gridd_grid_part_details_social_icons_size',
-		'label'       => esc_html__( 'Size', 'gridd' ),
-		'description' => esc_html__( 'Change the size of your social-media icons.', 'gridd' ),
-		'section'     => 'gridd_grid_part_details_social_media',
-		'default'     => 1,
-		'transport'   => 'postMessage',
-		'css_vars'    => [ '--gridd-header-social-icons-size', '$em' ],
-		'choices'     => [
+		'type'      => 'slider',
+		'settings'  => 'gridd_grid_part_details_social_icons_size',
+		'label'     => esc_html__( 'Size', 'gridd' ),
+		// 'description' => esc_html__( 'Change the size of your social-media icons.', 'gridd' ),
+		'section'   => 'gridd_grid_part_details_social_media',
+		'default'   => 1,
+		'transport' => 'postMessage',
+		'css_vars'  => [ '--gridd-header-social-icons-size', '$em' ],
+		'choices'   => [
 			'min'    => .3,
 			'max'    => 3,
 			'step'   => .01,
@@ -86,15 +86,15 @@ gridd_add_customizer_field(
 
 gridd_add_customizer_field(
 	[
-		'type'        => 'slider',
-		'settings'    => 'gridd_grid_part_details_social_icons_padding',
-		'label'       => esc_html__( 'Padding', 'gridd' ),
-		'description' => esc_html__( 'Change the padding for your social-media icons. Controls how large the clickable area will be, and also the spacing between icons.', 'gridd' ),
-		'section'     => 'gridd_grid_part_details_social_media',
-		'default'     => .5,
-		'transport'   => 'postMessage',
-		'css_vars'    => [ '--gridd-header-social-icons-padding', '$em' ],
-		'choices'     => [
+		'type'      => 'slider',
+		'settings'  => 'gridd_grid_part_details_social_icons_padding',
+		'label'     => esc_html__( 'Padding', 'gridd' ),
+		'tooltip'   => esc_html__( 'Change the padding for your social-media icons. Controls how large the clickable area will be, and also the spacing between icons.', 'gridd' ),
+		'section'   => 'gridd_grid_part_details_social_media',
+		'default'   => .5,
+		'transport' => 'postMessage',
+		'css_vars'  => [ '--gridd-header-social-icons-padding', '$em' ],
+		'choices'   => [
 			'min'    => 0,
 			'max'    => 2,
 			'step'   => .01,
@@ -135,15 +135,15 @@ gridd_add_customizer_field(
 
 gridd_add_customizer_field(
 	[
-		'type'        => 'radio-buttonset',
-		'settings'    => 'gridd_grid_part_details_social_icons_icons_text_align',
-		'label'       => esc_html__( 'Icons Alignment', 'gridd' ),
-		'description' => esc_html__( 'Select how the icons will be aligned.', 'gridd' ),
-		'section'     => 'gridd_grid_part_details_social_media',
-		'default'     => 'flex-end',
-		'transport'   => 'postMessage',
-		'css_vars'    => '--gridd-header-social-icons-text-align',
-		'choices'     => [
+		'type'      => 'radio-buttonset',
+		'settings'  => 'gridd_grid_part_details_social_icons_icons_text_align',
+		'label'     => esc_html__( 'Icons Alignment', 'gridd' ),
+		// 'description' => esc_html__( 'Select how the icons will be aligned.', 'gridd' ),
+		'section'   => 'gridd_grid_part_details_social_media',
+		'default'   => 'flex-end',
+		'transport' => 'postMessage',
+		'css_vars'  => '--gridd-header-social-icons-text-align',
+		'choices'   => [
 			'flex-start' => esc_html__( 'Left', 'gridd' ),
 			'center'     => esc_html__( 'Center', 'gridd' ),
 			'flex-end'   => esc_html__( 'Right', 'gridd' ),

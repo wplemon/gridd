@@ -27,7 +27,7 @@ gridd_add_customizer_field(
 		'type'            => 'select',
 		'settings'        => 'gridd_grid_layerslider_slider',
 		'label'           => esc_html__( 'Choose Slider', 'gridd' ),
-		'description'     => esc_html__( 'Select the slider you want to assign to this area.', 'gridd' ),
+		// 'description'     => esc_html__( 'Select the slider you want to assign to this area.', 'gridd' ),
 		'section'         => 'gridd_grid_part_details_layer-slider',
 		'default'         => '',
 		'priority'        => 10,
