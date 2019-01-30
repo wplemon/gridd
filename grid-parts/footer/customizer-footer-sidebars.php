@@ -47,7 +47,6 @@ function gridd_add_footer_widget_area_options( $id ) {
 			'type'      => 'color',
 			'settings'  => "gridd_grid_footer_sidebar_{$id}_bg_color",
 			'label'     => esc_html__( 'Background Color', 'gridd' ),
-			// 'description' => esc_html__( 'Choose a background color for this widget-area.', 'gridd' ),
 			'section'   => "gridd_grid_part_details_footer_sidebar_$id",
 			'default'   => '#ffffff',
 			'transport' => 'postMessage',
@@ -64,7 +63,6 @@ function gridd_add_footer_widget_area_options( $id ) {
 			'type'      => 'kirki-wcag-tc',
 			'settings'  => "gridd_grid_footer_sidebar_{$id}_color",
 			'label'     => esc_html__( 'Text Color', 'gridd' ),
-			// 'description' => esc_html__( 'Select the color used for your text. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
 			'section'   => "gridd_grid_part_details_footer_sidebar_$id",
 			'default'   => '#000000',
 			'transport' => 'postMessage',
@@ -78,10 +76,9 @@ function gridd_add_footer_widget_area_options( $id ) {
 	// Links Color.
 	gridd_add_customizer_field(
 		[
-			'type'      => 'kirki-wcag-lc',
+			'type'      => 'gridd-kirki-wcag-lc',
 			'settings'  => "gridd_grid_footer_sidebar_{$id}_links_color",
 			'label'     => esc_html__( 'Links Color', 'gridd' ),
-			// 'description' => esc_html__( 'The color for links in this widget-area.', 'gridd' ),
 			'section'   => "gridd_grid_part_details_footer_sidebar_$id",
 			'default'   => '#0f5e97',
 			'transport' => 'postMessage',

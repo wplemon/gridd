@@ -51,7 +51,6 @@ gridd_add_customizer_field(
 		'type'      => 'color',
 		'settings'  => 'gridd_grid_footer_copyright_bg_color',
 		'label'     => esc_html__( 'Copyright area background-color', 'gridd' ),
-		// 'description' => esc_html__( 'Select the background color for your copyright area.', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_footer_copyright',
 		'default'   => '#ffffff',
 		'transport' => 'postMessage',
@@ -68,7 +67,6 @@ gridd_add_customizer_field(
 		'type'      => 'kirki-wcag-tc',
 		'settings'  => 'gridd_grid_footer_copyright_color',
 		'label'     => esc_html__( 'Copyright Text Color', 'gridd' ),
-		// 'description' => esc_html__( 'Select the color used for your text. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_footer_copyright',
 		'default'   => '#000000',
 		'transport' => 'postMessage',
@@ -82,10 +80,9 @@ gridd_add_customizer_field(
 
 gridd_add_customizer_field(
 	[
-		'type'      => 'kirki-wcag-lc',
+		'type'      => 'gridd-kirki-wcag-lc',
 		'settings'  => 'gridd_grid_footer_copyright_links_color',
 		'label'     => esc_html__( 'Copyright Links Color', 'gridd' ),
-		// 'description' => esc_html__( 'The color of any links included in the copyright area. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_footer_copyright',
 		'default'   => '#0f5e97',
 		'transport' => 'postMessage',
@@ -123,7 +120,6 @@ gridd_add_customizer_field(
 		'type'      => 'radio-buttonset',
 		'settings'  => 'gridd_grid_footer_copyright_text_align',
 		'label'     => esc_html__( 'Text Alignment', 'gridd' ),
-		// 'description' => esc_html__( 'Select if the copyright text will be aligned to the left, center or right.', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_footer_copyright',
 		'default'   => 'left',
 		'transport' => 'postMessage',

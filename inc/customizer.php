@@ -242,8 +242,8 @@ class Customizer {
 	 * @return void
 	 */
 	public function preview_customizer_scripts() {
-		wp_enqueue_script( 'wcagcolors', get_template_directory_uri() . '/assets/js/wcagColors.js', [], '1.0', false );
-		wp_enqueue_script( 'gridd-customizer-preview-script', get_theme_file_uri( '/assets/js/customizer.js' ), [ 'jquery', 'customize-preview', 'jquery-color', 'wcagcolors' ], time(), true );
+		wp_enqueue_script( 'wcag_colors', get_template_directory_uri() . '/assets/js/wcagColors.js', [], '1.0', false );
+		wp_enqueue_script( 'gridd-customizer-preview-script', get_theme_file_uri( '/assets/js/customizer.js' ), [ 'jquery', 'customize-preview', 'jquery-color', 'wcag_colors' ], time(), true );
 		wp_localize_script(
 			'gridd-customizer-preview-script',
 			'griddCustomizerVars',

@@ -8,6 +8,7 @@
 use Gridd\Customizer;
 use Gridd\Customizer\Template;
 use Gridd\Customizer\Control\Grid;
+use Gridd\Customizer\Control\Kirki_WCAG_Link_Color;
 
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
@@ -25,9 +26,29 @@ add_filter(
 	'kirki_control_types',
 	function( $controls ) {
 		$controls['gridd_grid'] = 'Gridd\Customizer\Control\Grid';
+		if ( ! class_exists( 'Gridd\Customizer\Control\Kirki_WCAG_Link_Color' ) ) {
+			require_once get_template_directory() . '/inc/customizer/control/class-kirki-wcag-link-color.php';
+		}
+		$controls['gridd-kirki-wcag-lc'] = 'Gridd\Customizer\Control\Kirki_WCAG_Link_Color';
 		return $controls;
 	}
 );
+
+/**
+ * Registers the control type and make it eligible for
+ * JS templating in the Customizer.
+ *
+ * @since 1.0
+ * @param object $wp_customize The Customizer object.
+ * @return void
+ */
+function gridd_kirki_wcag_link_color_register_control_type( $wp_customize ) {
+	if ( ! class_exists( 'Gridd\Customizer\Control\Kirki_WCAG_Link_Color' ) ) {
+		require_once get_template_directory() . '/inc/customizer/control/class-kirki-wcag-link-color.php';
+	}
+	$wp_customize->register_control_type( 'Gridd\Customizer\Control\Kirki_WCAG_Link_Color' );
+}
+add_action( 'customize_register', 'gridd_kirki_wcag_link_color_register_control_type' );
 
 /**
  * Proxy function for Kirki.
@@ -44,7 +65,7 @@ function gridd_add_customizer_field( $args ) {
 
 	if ( ! Gridd::is_plus_active() && $wp_customize ) {
 		if ( ! empty( $args['type'] ) ) {
-			if ( 'kirki-wcag-tc' === $args['type'] || 'kirki-wcag-lc' === $args['type'] ) {
+			if ( 'kirki-wcag-tc' === $args['type'] ) {
 				// No need to init a colorpicker if the setting is automated.
 				$args['type'] = 'color';
 				if ( ! in_array( $args['settings'], array_values( Customizer::$auto_text_color ), true ) ) {

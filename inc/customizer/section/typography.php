@@ -119,10 +119,10 @@ gridd_add_customizer_field(
 
 gridd_add_customizer_field(
 	[
-		'settings'    => 'gridd_links_color',
-		'type'        => 'kirki-wcag-lc',
+		'settings'    => 'gridd_links_color_preset',
+		'type'        => 'gridd-kirki-wcag-lc',
 		'label'       => esc_html__( 'Links Color', 'gridd' ),
-		'description' => esc_html__( 'Select the color for your links.', 'gridd' ),
+		'description' => esc_html__( 'Select the hue for you links. The color will be auto-calculated to ensure maximum readability according to WCAG.', 'gridd' ),
 		'section'     => 'gridd_typography',
 		'transport'   => 'postMessage',
 		'priority'    => 50,
@@ -140,19 +140,18 @@ gridd_add_customizer_field(
 
 gridd_add_customizer_field(
 	[
-		'settings'    => 'gridd_links_hover_color',
-		'type'        => 'kirki-wcag-lc',
-		'label'       => esc_html__( 'Links Hover Color', 'gridd' ),
-		'description' => esc_html__( 'Select the colors for your links on hover.', 'gridd' ),
-		'section'     => 'gridd_typography',
-		'transport'   => 'postMessage',
-		'priority'    => 60,
-		'choices'     => [
+		'settings'  => 'gridd_links_hover_color',
+		'type'      => 'gridd-kirki-wcag-lc',
+		'label'     => esc_html__( 'Links Hover Color', 'gridd' ),
+		'section'   => 'gridd_typography',
+		'transport' => 'postMessage',
+		'priority'  => 60,
+		'choices'   => [
 			'alpha' => false,
 		],
-		'default'     => '#541cfc',
-		'css_vars'    => '--gridd-links-hover-color',
-		'choices'     => [
+		'default'   => '#541cfc',
+		'css_vars'  => '--gridd-links-hover-color',
+		'choices'   => [
 			'backgroundColor' => 'gridd_grid_content_background_color',
 			'textColor'       => 'gridd_text_color',
 		],

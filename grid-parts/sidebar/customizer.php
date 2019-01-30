@@ -104,7 +104,7 @@ function gridd_sidebar_customizer_options( $id ) {
 
 	gridd_add_customizer_field(
 		[
-			'type'        => 'kirki-wcag-lc',
+			'type'        => 'gridd-kirki-wcag-lc',
 			'settings'    => "gridd_grid_sidebar_{$id}_links_color",
 			'label'       => esc_html__( 'Links Color', 'gridd' ),
 			'description' => esc_html__( 'Select the color used for your links. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
