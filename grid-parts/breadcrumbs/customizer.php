@@ -22,6 +22,21 @@ gridd_add_customizer_section(
 
 gridd_add_customizer_field(
 	[
+		'type'            => 'checkbox',
+		'settings'        => 'gridd_grid_breadcrumbs_show_on_front',
+		'label'           => esc_html__( 'Show on Frontpage', 'gridd' ),
+		// 'description' => esc_html__( 'Select the color used for your text. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
+		'section'         => 'gridd_grid_part_details_breadcrumbs',
+		'default'         => false,
+		'transport'       => 'refresh',
+		'active_callback' => function() {
+			return is_front_page() || is_home();
+		},
+	]
+);
+
+gridd_add_customizer_field(
+	[
 		'type'        => 'text',
 		'settings'    => 'gridd_grid_breadcrumbs_padding',
 		'label'       => esc_html__( 'Padding', 'gridd' ),
