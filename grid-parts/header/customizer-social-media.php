@@ -6,6 +6,7 @@
  */
 
 use Gridd\Grid_Part\Header;
+use Gridd\Customizer;
 
 if ( ! function_exists( 'gridd_social_icons_svg' ) ) {
 
@@ -19,7 +20,7 @@ gridd_add_customizer_section(
 		/* translators: The grid-part label. */
 		'title'       => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Header Contact Info', 'gridd' ) ),
 		'section'     => 'gridd_grid_part_details_header',
-		'description' => '<div class="gridd-section-description">%1$s%2$s</div><div class="gridd-docs"><a href="https://wplemon.com/documentation/gridd/grid-parts/header/" target="_blank" rel="noopener noreferrer nofollow">' . esc_html__( 'Learn more about these settings', 'gridd' ) . '</a></div></div>',
+		'description' => Customizer::section_description( false, 'https://wplemon.com/documentation/gridd/grid-parts/header/' ),
 		'priority'    => 20,
 	]
 );

@@ -12,10 +12,9 @@ gridd_add_customizer_section(
 	'gridd_grid_part_details_footer',
 	[
 		'title'       => esc_html__( 'Footer', 'gridd' ),
-		'description' => sprintf(
-			'<div class="gridd-section-description">%1$s%2$s</div>',
-			( ! Gridd::is_plus_active() ) ? '<div class="gridd-go-plus">' . __( '<a href="https://wplemon.com/gridd-plus" rel="nofollow" target="_blank">Upgrade to <strong>plus</strong></a> for a separate grid for mobile devices.', 'gridd' ) . '</div>' : '',
-			'<div class="gridd-docs"><a href="https://wplemon.com/documentation/gridd/grid-parts/footer/" target="_blank" rel="noopener noreferrer nofollow">' . esc_html__( 'Learn more about these settings', 'gridd' ) . '</a></div>'
+		'description' => Customizer::section_description(
+			__( '<a href="https://wplemon.com/gridd-plus" rel="nofollow" target="_blank">Upgrade to <strong>plus</strong></a> for a separate grid for mobile devices.', 'gridd' ),
+			'https://wplemon.com/documentation/gridd/grid-parts/footer/'
 		),
 		'priority'    => 25,
 		'panel'       => 'gridd_options',

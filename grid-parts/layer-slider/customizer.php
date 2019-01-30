@@ -5,12 +5,14 @@
  * @package Gridd
  */
 
+use Gridd\Customizer;
+
 gridd_add_customizer_section(
 	'gridd_grid_part_details_layer-slider',
 	[
 		/* translators: The grid-part label. */
 		'title'       => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Layer Slider', 'gridd' ) ),
-		'description' => '<div class="gridd-section-description">%1$s%2$s</div><div class="gridd-docs"><a href="https://wplemon.com/documentation/gridd/grid-parts/layer-slider/" target="_blank" rel="noopener noreferrer nofollow">' . esc_html__( 'Learn more about these settings', 'gridd' ) . '</a></div></div>',
+		'description' => Customizer::section_description( false, 'https://wplemon.com/documentation/gridd/grid-parts/layer-slider/' ),
 		'panel'       => 'gridd_options',
 	]
 );

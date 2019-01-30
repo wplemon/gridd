@@ -309,4 +309,28 @@ class Customizer {
 			)
 		);
 	}
+
+	/**
+	 * Helper method to avoid writing the same code over and over and over and over again.
+	 *
+	 * @static
+	 * @access public
+	 * @since 1.0
+	 * @param string $plus The Additional features available in Gridd Plus.
+	 * @param string $docs A link to the docs for this section.
+	 * @return string      The final HTML.
+	 */
+	public static function section_description( $plus, $docs ) {
+		$html  = '';
+		$html .= ( $plus || $docs ) ? '<div class="gridd-section-description">' : '';
+		if ( $plus && ! Gridd::is_plus_active() ) {
+			$html .= '<div class="gridd-go-plus">' . $plus . '</div>';
+		}
+		if ( $docs ) {
+			$html .= '<div class="gridd-docs"><a href="' . $docs . '" target="_blank" rel="noopener noreferrer nofollow">' . esc_html__( 'Learn more about these settings', 'gridd' ) . '</a></div>';
+		}
+		$html .= ( $plus || $docs ) ? '</div>' : '';
+
+		return $html;
+	}
 }

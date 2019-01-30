@@ -5,16 +5,17 @@
  * @package Gridd
  */
 
+use Gridd\Customizer;
+
 gridd_add_customizer_section(
 	'gridd_grid_part_details_breadcrumbs',
 	[
 		/* translators: The grid-part label. */
 		'title'       => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Breadcrumbs', 'gridd' ) ),
 		'section'     => 'gridd_grid',
-		'description' => sprintf(
-			'<div class="gridd-section-description">%1$s%2$s</div>',
-			( ! Gridd::is_plus_active() ) ? '<div class="gridd-go-plus">' . __( '<a href="https://wplemon.com/gridd-plus" rel="nofollow" target="_blank">Upgrade to <strong>plus</strong></a> for extra options in this section: Automatic WCAG-compliant colors suggestion and spacing between breadcrumbs.', 'gridd' ) . '</div>' : '',
-			'<div class="gridd-docs"><a href="https://wplemon.com/documentation/gridd/grid-parts/breadcrumbs/" target="_blank" rel="noopener noreferrer nofollow">' . esc_html__( 'Learn more about these settings', 'gridd' ) . '</a></div>'
+		'description' => Customizer::section_description(
+			__( '<a href="https://wplemon.com/gridd-plus" rel="nofollow" target="_blank">Upgrade to <strong>plus</strong></a> for extra options in this section: Automatic WCAG-compliant colors suggestion and spacing between breadcrumbs.', 'gridd' ),
+			'https://wplemon.com/documentation/gridd/grid-parts/breadcrumbs/'
 		),
 		'priority'    => 20,
 	]

@@ -6,6 +6,7 @@
  */
 
 use Gridd\Grid_Part\Footer;
+use Gridd\Customizer;
 
 // Include Social Icons Definitions.
 require_once get_template_directory() . '/inc/social-icons.php';
@@ -16,7 +17,7 @@ gridd_add_customizer_section(
 		/* translators: The grid-part label. */
 		'title'       => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Footer Contact Info', 'gridd' ) ),
 		'section'     => 'gridd_grid_part_details_footer',
-		'description' => '<div class="gridd-section-description"><div class="gridd-docs"><a href="https://wplemon.com/documentation/gridd/grid-parts/footer/" target="_blank" rel="noopener noreferrer nofollow">' . esc_html__( 'Learn more about these settings', 'gridd' ) . '</a></div></div>',
+		'description' => Customizer::section_description( false, 'https://wplemon.com/documentation/gridd/grid-parts/footer/' ),
 		'priority'    => 20,
 	]
 );

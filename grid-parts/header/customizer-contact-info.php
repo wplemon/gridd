@@ -6,16 +6,16 @@
  */
 
 use Gridd\Grid_Part\Header;
+use Gridd\Customizer;
 
 gridd_add_customizer_section(
 	'gridd_grid_part_details_header_contact_info',
 	[
 		/* translators: The grid-part label. */
 		'title'       => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Header Contact Info', 'gridd' ) ),
-		'description' => sprintf(
-			'<div class="gridd-section-description">%1$s%2$s</div>',
-			( ! Gridd::is_plus_active() ) ? '<div class="gridd-go-plus">' . __( '<a href="https://wplemon.com/gridd-plus" rel="nofollow" target="_blank">Upgrade to <strong>plus</strong></a> for automatic WCAG-compliant colors suggestion on this section.', 'gridd' ) . '</div>' : '',
-			'<div class="gridd-docs"><a href="https://wplemon.com/documentation/gridd/grid-parts/header/" target="_blank" rel="noopener noreferrer nofollow">' . esc_html__( 'Learn more about these settings', 'gridd' ) . '</a></div>'
+		'description' => Customizer::section_description(
+			__( '<a href="https://wplemon.com/gridd-plus" rel="nofollow" target="_blank">Upgrade to <strong>plus</strong></a> for automatic WCAG-compliant colors suggestion on this section.', 'gridd' ),
+			'https://wplemon.com/documentation/gridd/grid-parts/header/'
 		),
 		'section'     => 'gridd_grid_part_details_header',
 		'priority'    => 20,

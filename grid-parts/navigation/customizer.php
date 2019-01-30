@@ -8,6 +8,7 @@
 // phpcs:disable Squiz.Commenting.InlineComment.SpacingBefore
 use Gridd\Grid_Part\Navigation;
 use Gridd\AMP;
+use Gridd\Customizer;
 
 /**
  * Register the menus.
@@ -46,10 +47,9 @@ function gridd_nav_customizer_options( $id ) {
 				/* translators: The navigation number. */
 				sprintf( esc_html__( 'Navigation %d', 'gridd' ), absint( $id ) )
 			),
-			'description' => sprintf(
-				'<div class="gridd-section-description">%1$s%2$s</div>',
-				( ! Gridd::is_plus_active() ) ? '<div class="gridd-go-plus">' . __( '<a href="https://wplemon.com/gridd-plus" rel="nofollow" target="_blank">Upgrade to <strong>plus</strong></a> for automatic WCAG-compliant colors suggestion on this section and additional options for font-sizes and WooCommerce cart on your menu.', 'gridd' ) . '</div>' : '',
-				'<div class="gridd-docs"><a href="https://wplemon.com/documentation/gridd/grid-parts/navigation/" target="_blank" rel="noopener noreferrer nofollow">' . esc_html__( 'Learn more about these settings', 'gridd' ) . '</a></div>'
+			'description' => Customizer::section_description(
+				__( '<a href="https://wplemon.com/gridd-plus" rel="nofollow" target="_blank">Upgrade to <strong>plus</strong></a> for automatic WCAG-compliant colors suggestion on this section and additional options for font-sizes and WooCommerce cart on your menu.', 'gridd' ),
+				'https://wplemon.com/documentation/gridd/grid-parts/navigation/'
 			),
 			'section'     => 'gridd_grid',
 		]
