@@ -88,5 +88,23 @@
 				});
 			}
 		});
+
+		// Check if Plus descriptions are minimized.
+		if ( griddTemplatePreviewScript.plusDismissed ) {
+			jQuery( '.gridd-section-description .notice-dismiss' ).remove();
+		}
+
+		// Dismiss/Minimize Plus descriptions on sections.
+		jQuery( '.gridd-section-description .gridd-go-plus' ).on( 'click', function( e ) {
+			e.preventDefault();
+
+			// Make an AJAX call to minimize the Plus descriptions.
+			jQuery.post( ajaxurl, {
+				action: 'gridd_minimize_plus_descriptions',
+				security: griddTemplatePreviewScript.nonce
+			}, function() {
+				jQuery( '.gridd-section-description .gridd-go-plus' ).remove();
+			});
+		});
 	});
 }() );

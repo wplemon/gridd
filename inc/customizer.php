@@ -74,6 +74,7 @@ class Customizer {
 		add_action( 'customize_controls_print_scripts', [ $this, 'extra_customizer_scripts' ], 9999 );
 		add_action( 'customize_preview_init', [ $this, 'preview_customizer_scripts' ] );
 		add_action( 'after_setup_theme', [ $this, 'setup_grid_filters' ] );
+		add_action( 'wp_ajax_gridd_minimize_plus_descriptions', array( $this, 'dismiss_customizer_section_descriptions' ) );
 
 		if ( ! Gridd::is_plus_active() ) {
 			add_action( 'customize_controls_enqueue_scripts', [ $this, 'plus_section_scripts' ], 0 );
@@ -227,9 +228,10 @@ class Customizer {
 			'gridd-customizer-script',
 			'griddTemplatePreviewScript',
 			[
-				'nonce'       => wp_create_nonce( 'gridd-template-preview' ),
-				'ajax_url'    => admin_url( 'admin-ajax.php' ),
-				'nestedGrids' => Grid_Parts::get_instance()->get_grids(),
+				'nonce'         => wp_create_nonce( 'gridd-template-preview' ),
+				'ajax_url'      => admin_url( 'admin-ajax.php' ),
+				'nestedGrids'   => Grid_Parts::get_instance()->get_grids(),
+				'plusDismissed' => self::is_minimized( 'plus-descriptions' ),
 			]
 		);
 	}
@@ -324,7 +326,8 @@ class Customizer {
 		$html  = '';
 		$html .= ( $plus || $docs ) ? '<div class="gridd-section-description">' : '';
 		if ( $plus && ! Gridd::is_plus_active() ) {
-			$html .= '<div class="gridd-go-plus">' . $plus . '</div>';
+			$button = '<button type="button" class="notice-dismiss"><span class="screen-reader-text">' . esc_html__( 'Dismiss', 'gridd' ) . '</span></button>';
+			$html  .= '<div class="gridd-go-plus"><div class="description">' . $plus . '</div>' . $button . '</div>';
 		}
 		if ( $docs ) {
 			$html .= '<div class="gridd-docs"><a href="' . $docs . '" target="_blank" rel="noopener noreferrer nofollow">' . esc_html__( 'Learn more about these settings', 'gridd' ) . '</a></div>';
@@ -332,5 +335,31 @@ class Customizer {
 		$html .= ( $plus || $docs ) ? '</div>' : '';
 
 		return $html;
+	}
+
+	/**
+	 * Minimize (soft-dismiss) customizer Plus promos in section descriptions & the help links.
+	 *
+	 * @access public
+	 * @since 1.0
+	 * @return void
+	 */
+	public function dismiss_customizer_section_descriptions() {
+		check_ajax_referer( 'gridd-template-preview', 'security' );
+		set_theme_mod( 'gridd_customizer_section_descriptions_minimized', true );
+		error_log( print_r( $_POST, true ) );
+	}
+
+	/**
+	 * Check if we've minimized the plus promos/section.
+	 *
+	 * @static
+	 * @access public
+	 * @since 1.0
+	 * @param string $context What we want to check (plus|help).
+	 * @return bool
+	 */
+	public static function is_minimized( $context ) {
+		return get_theme_mod( 'gridd_customizer_section_descriptions_minimized' );
 	}
 }

@@ -190,8 +190,32 @@ h3.gridd-customizer-section-title {
 		padding: 8px 12px;
 	}
 
+	.gridd-go-plus {
+		display: flex;
+		align-items: flex-start;
+
+		.description {
+			width: 100%;
+		}
+
+		.gridd-plus-descriptions-minimized & {
+			display: none;
+		}
+	}
+
 	.gridd-go-plus+.gridd-docs {
 		border-top: 1px solid #f7f7f7;
+	}
+
+	.notice-dismiss {
+		position: relative;
+		margin-right: -12px;
+		padding: 2px;
+		opacity: .5;
+
+		&:hover {
+			opacity: 1;
+		}
 	}
 }
 

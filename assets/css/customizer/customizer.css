@@ -124,8 +124,24 @@ h3.gridd-customizer-section-title {
   .gridd-section-description .gridd-go-plus,
   .gridd-section-description .gridd-docs {
     padding: 8px 12px; }
+  .gridd-section-description .gridd-go-plus {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+        align-items: flex-start; }
+    .gridd-section-description .gridd-go-plus .description {
+      width: 100%; }
+    .gridd-plus-descriptions-minimized .gridd-section-description .gridd-go-plus {
+      display: none; }
   .gridd-section-description .gridd-go-plus + .gridd-docs {
     border-top: 1px solid #f7f7f7; }
+  .gridd-section-description .notice-dismiss {
+    position: relative;
+    margin-right: -12px;
+    padding: 2px;
+    opacity: .5; }
+    .gridd-section-description .notice-dismiss:hover {
+      opacity: 1; }
 
 .gridd-flexbox-svg-option svg {
   max-width: 100%;
