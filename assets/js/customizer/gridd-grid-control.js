@@ -65,25 +65,25 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 		var control = this;
 
 		// Add column.
-		control.container.find( '.button.add-column' ).click( function( e ) {
+		control.container.find( '.button.add-column' ).on( 'click', function( e ) {
 			control.addColumn();
 			e.preventDefault();
 		});
 
 		// Remove Column.
-		control.container.find( '.button.remove-column' ).click( function( e ) {
+		control.container.find( '.button.remove-column' ).on( 'click', function( e ) {
 			control.removeColumn();
 			e.preventDefault();
 		});
 
 		// Add row.
-		control.container.find( '.button.add-row' ).click( function( e ) {
+		control.container.find( '.button.add-row' ).on( 'click', function( e ) {
 			control.addRow();
 			e.preventDefault();
 		});
 
 		// Remove Row.
-		control.container.find( '.button.remove-row' ).click( function( e ) {
+		control.container.find( '.button.remove-row' ).on( 'click', function( e ) {
 			control.removeRow();
 			e.preventDefault();
 		});
@@ -265,7 +265,7 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 		});
 
 		// Prevent page-refresh when a cell is clicked.
-		control.container.find( '.gridd-grid-selectable-cell' ).click( function( e ) {
+		control.container.find( '.gridd-grid-selectable-cell' ).on( 'click', function( e ) {
 			e.preventDefault();
 		});
 
@@ -427,7 +427,7 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 		var control = this;
 
 		// Focus on section.
-		control.container.find( '.button-gridd-focus' ).click( function( e ) {
+		control.container.find( '.button-gridd-focus' ).on( 'click', function( e ) {
 			var part      = jQuery( this ).data( 'part' ),
 				sectionID = 'gridd_grid_part_details_' + part;
 
@@ -507,7 +507,7 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 		});
 
 		// When we click on the cancel button hide the grid-part selector and clear the selection.
-		control.container.find( '.gridd-grid-part-selector-cancel' ).click( function( e ) {
+		control.container.find( '.gridd-grid-part-selector-cancel' ).on( 'click', function( e ) {
 			control.container.find( '.gridd-grid-part-selector' ).css( 'display', 'none' );
 			control.dragSelect.clearSelection();
 			e.preventDefault();
@@ -524,14 +524,14 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 		var control  = this,
 			allCells = document.getElementsByClassName( 'gridd-grid-selectable-cell' );
 
-		control.container.find( '.grid-selected-part' ).click( function( e ) {
+		control.container.find( '.grid-selected-part' ).on( 'click', function( e ) {
 			if ( jQuery( e.target ).hasClass( 'edit' ) || jQuery( e.target ).hasClass( 'resize' ) || jQuery( e.target ).hasClass( 'delete' ) ) {
 				return;
 			}
-			jQuery( e.currentTarget ).find( '.actions .resize' ).click();
+			jQuery( e.currentTarget ).find( '.actions .resize' ).on( 'click',);
 		});
 
-		control.container.find( '.grid-selected-part .actions .resize' ).click( function( e ) {
+		control.container.find( '.grid-selected-part .actions .resize' ).on( 'click', function( e ) {
 
 			var selectables = [],
 
@@ -565,7 +565,7 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 			control.dragSelect.setSelection( selectables );
 		});
 
-		control.container.find( '.edit-part-options-done' ).click( function( e ) {
+		control.container.find( '.edit-part-options-done' ).on( 'click', function( e ) {
 
 			// Unset the editingPart var.
 			control.editingPart = '';
@@ -590,7 +590,7 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 	triggerPartDeleteButton: function() {
 		var control  = this;
 
-		control.container.find( '.grid-selected-part .actions .delete' ).click( function( e ) {
+		control.container.find( '.grid-selected-part .actions .delete' ).on( 'click', function( e ) {
 
 			// Get the part-ID.
 			var id = jQuery( this ).data( 'part' );
