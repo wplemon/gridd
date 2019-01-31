@@ -15,7 +15,7 @@ gridd_add_customizer_section(
 		'title'       => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Header Contact Info', 'gridd' ) ),
 		'description' => Customizer::section_description(
 			__( '<a href="https://wplemon.com/gridd-plus" rel="nofollow" target="_blank">Upgrade to <strong>plus</strong></a> for automatic WCAG-compliant colors suggestion on this section.', 'gridd' ),
-			'https://wplemon.com/documentation/gridd/grid-parts/header/'
+			'https://wplemon.com/documentation/gridd/grid-parts/header/contact-info/'
 		),
 		'section'     => 'gridd_grid_part_details_header',
 		'priority'    => 20,
