@@ -16,7 +16,7 @@ $style = Style::get_instance( "grid-part/navigation/$id" );
 $style->add_string( Navigation::get_global_styles() );
 $style->add_file( get_theme_file_path( 'grid-parts/navigation/styles/main.min.css' ) );
 
-$responsive_mode       = get_theme_mod( "gridd_grid_nav_{$id}_responsive_behavior", 'desktop-normal-mobile-hidden' );
+$responsive_mode       = get_theme_mod( "gridd_grid_nav_{$id}_responsive_behavior", 'desktop-normal mobile-hidden' );
 $added_vertical_styles = false;
 
 // Check if we need to add desktop styles.
