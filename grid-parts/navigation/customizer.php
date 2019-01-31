@@ -79,7 +79,7 @@ function gridd_nav_customizer_options( $id ) {
 				' href="#" class="button-gridd-focus global-focus" data-context="section" data-focus="gridd_grid_part_details_nav-handheld"'
 			),
 			'section'     => "gridd_grid_part_details_nav_$id",
-			'default'     => 'desktop-normal-mobile-hidden',
+			'default'     => 'desktop-normal mobile-hidden',
 			'choices'     => [
 				'desktop-normal mobile-normal' => esc_html__( 'Always visible', 'gridd' ),
 				'desktop-normal mobile-icon'   => esc_html__( 'Collapse to icon on mobile', 'gridd' ),
