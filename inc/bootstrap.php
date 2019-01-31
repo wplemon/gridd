@@ -328,7 +328,7 @@ function gridd_get_file_contents( $path, $absolute = false ) {
 	if ( $absolute && file_exists( $path ) ) {
 		include $path;
 	} else {
-		include locate_template( $path, true, false );
+		include locate_template( $path, false, false );
 	}
 	return ob_get_clean();
 }
