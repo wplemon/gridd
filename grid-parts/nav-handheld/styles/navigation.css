@@ -61,3 +61,7 @@
       background: var(--gridd-links-color); }
       .gridd-hanheld-nav-popup-wrapper .gridd-toggle:hover svg, .gridd-hanheld-nav-popup-wrapper .gridd-toggle:focus svg, .gridd-hanheld-nav-popup-wrapper .gridd-toggle.focus svg, .gridd-hanheld-nav-popup-wrapper .gridd-toggle.toggled-on svg {
         fill: var(--gridd-content-bg); }
+
+#nav-handheld {
+  max-height: calc(100vh - 66px);
+  overflow-y: scroll; }

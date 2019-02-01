@@ -87,7 +87,7 @@ body {
 	align-items: flex-end;
 	overflow-y: scroll;
 	box-shadow: 0 -10px 15px 0 rgba(0,0,0,.12);
-	padding: 12px;
+	padding: 12px 12px 0 12px;
 	
 	&.expanded {
 		display: flex;
