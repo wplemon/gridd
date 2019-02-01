@@ -11,7 +11,6 @@ namespace Gridd;
 
 use Gridd;
 use Gridd\Grid_Parts;
-use Gridd\Section_Plus;
 
 /**
  * Extra methods and actions for the customizer.
@@ -75,11 +74,6 @@ class Customizer {
 		add_action( 'customize_preview_init', [ $this, 'preview_customizer_scripts' ] );
 		add_action( 'after_setup_theme', [ $this, 'setup_grid_filters' ] );
 		add_action( 'wp_ajax_gridd_minimize_plus_descriptions', array( $this, 'dismiss_customizer_section_descriptions' ) );
-
-		if ( ! Gridd::is_plus_active() ) {
-			add_action( 'customize_controls_enqueue_scripts', [ $this, 'plus_section_scripts' ], 0 );
-			add_action( 'customize_register', [ $this, 'plus_section' ], 99 );
-		}
 	}
 
 	/**
@@ -279,37 +273,6 @@ class Customizer {
 			default:
 				return '';
 		}
-	}
-
-	/**
-	 * Sets up the customizer section for upgrade-to-plus feature.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @param WP_Customize_Manager $manager The WP_Customize_Manager object.
-	 * @return void
-	 */
-	public function plus_section( $manager ) {
-		if ( Gridd::is_plus_active() ) {
-			return;
-		}
-		require_once 'section-plus.php';
-		// Register custom section type.
-		$manager->register_section_type( 'Gridd\Section_Plus' );
-
-		// Register section.
-		$manager->add_section(
-			new Section_Plus(
-				$manager,
-				'gridd_plus',
-				[
-					'title'        => esc_html__( 'Gridd Plus', 'gridd' ),
-					'button_label' => esc_html__( 'Get Plus', 'gridd' ),
-					'button_url'   => 'https://wplemon.com/gridd',
-					'priority'     => -999,
-				]
-			)
-		);
 	}
 
 	/**

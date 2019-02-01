@@ -136,6 +136,23 @@ gridd_add_customizer_panel(
 );
 
 /**
+ * Add "Get Plus" section.
+ *
+ * @since 1.0
+ */
+if ( ! Gridd::is_plus_active() ) {
+	gridd_add_customizer_section(
+		'gridd_get_plus',
+		[
+			'title'       => esc_html__( 'Premium Features & Support', 'gridd' ),
+			'button_text' => esc_html__( 'Get Plus', 'gridd' ),
+			'button_url'  => 'https://wplemon.com/gridd',
+			'priority'    => -999,
+			'type'        => 'link',
+		]
+	);
+}
+/**
  * Render the site title for the selective refresh partial.
  *
  * @return void
