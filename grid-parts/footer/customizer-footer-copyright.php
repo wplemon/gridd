@@ -14,8 +14,12 @@ gridd_add_customizer_section(
 		/* translators: The grid-part label. */
 		'title'       => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Copyright Area', 'gridd' ) ),
 		'description' => Customizer::section_description(
-			__( '<a href="https://wplemon.com/gridd-plus" rel="nofollow" target="_blank">Upgrade to <strong>plus</strong></a> for automatic WCAG-compliant colors suggestion on this section.', 'gridd' ),
-			'https://wplemon.com/documentation/gridd/grid-parts/footer/'
+			[
+				'plus' => [
+					esc_html__( 'Selecting from an array of WCAG-compliant colors for text', 'gridd' ),
+				],
+				'docs' => 'https://wplemon.com/documentation/gridd/grid-parts/footer/',
+			]
 		),
 		'section'     => 'gridd_grid_part_details_footer',
 	]

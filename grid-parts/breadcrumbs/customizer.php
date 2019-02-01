@@ -14,8 +14,13 @@ gridd_add_customizer_section(
 		'title'       => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Breadcrumbs', 'gridd' ) ),
 		'section'     => 'gridd_grid',
 		'description' => Customizer::section_description(
-			__( '<a href="https://wplemon.com/gridd-plus" rel="nofollow" target="_blank">Upgrade to <strong>plus</strong></a> for extra options in this section: Automatic WCAG-compliant colors suggestion and spacing between breadcrumbs.', 'gridd' ),
-			'https://wplemon.com/documentation/gridd/grid-parts/breadcrumbs/'
+			[
+				'plus' => [
+					esc_html__( 'Selecting from an array of WCAG-compliant colors for text', 'gridd' ),
+					esc_html__( 'Adjustable pacing between breadcrumbs.', 'gridd' ),
+				],
+				'docs' => 'https://wplemon.com/documentation/gridd/grid-parts/breadcrumbs/',
+			]
 		),
 		'priority'    => 20,
 	]

@@ -89,22 +89,17 @@
 			}
 		});
 
-		// Check if Plus descriptions are minimized.
-		if ( griddTemplatePreviewScript.plusDismissed ) {
-			jQuery( '.gridd-section-description .notice-dismiss' ).remove();
-		}
+		// Handle clicking on the section-description buttons.
+		jQuery( 'button.gridd-section-description-trigger' ).on( 'click', function( e ) {
+			var context = jQuery( this ).data( 'context' ),
+				popup   = jQuery( this ).parent().find( '.gridd-section-description[data-context="' + context + '"]' );
 
-		// Dismiss/Minimize Plus descriptions on sections.
-		jQuery( '.gridd-section-description .gridd-go-plus' ).on( 'click', function( e ) {
+			if ( 'true' === popup.attr( 'aria-expanded' ) || true === popup.attr( 'aria-expanded' ) ) {
+				popup.attr( 'aria-expanded', false );
+			} else {
+				popup.attr( 'aria-expanded', true );
+			}
 			e.preventDefault();
-
-			// Make an AJAX call to minimize the Plus descriptions.
-			jQuery.post( ajaxurl, {
-				action: 'gridd_minimize_plus_descriptions',
-				security: griddTemplatePreviewScript.nonce
-			}, function() {
-				jQuery( '.gridd-section-description .gridd-go-plus' ).remove();
-			});
 		});
 	});
 }() );

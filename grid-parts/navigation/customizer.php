@@ -48,8 +48,15 @@ function gridd_nav_customizer_options( $id ) {
 				sprintf( esc_html__( 'Navigation %d', 'gridd' ), absint( $id ) )
 			),
 			'description' => Customizer::section_description(
-				__( '<a href="https://wplemon.com/gridd-plus" rel="nofollow" target="_blank">Upgrade to <strong>plus</strong></a> for automatic WCAG-compliant colors suggestion on this section and additional options for font-sizes and WooCommerce cart on your menu.', 'gridd' ),
-				'https://wplemon.com/documentation/gridd/grid-parts/navigation/'
+				[
+					'plus' => [
+						esc_html__( 'Selecting from an array of WCAG-compliant colors for text', 'gridd' ),
+						esc_html__( 'WooCommerce Cart inside the navigation', 'gridd' ),
+						esc_html__( 'font-size adjustments', 'gridd' ),
+					],
+					'tip'  => '<p>' . esc_html__( 'Try to keep your horizontal navigation as short as possible and avoid hierarchical menus.', 'gridd' ) . '</p>' . '<p>' . esc_html__( 'Verical menus provide a better user experience for hierarchical (nested) menus.', 'gridd' ) . '</p>',
+					'docs' => 'https://wplemon.com/documentation/gridd/grid-parts/navigation/',
+				]
 			),
 			'section'     => 'gridd_grid',
 		]

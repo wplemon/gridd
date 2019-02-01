@@ -73,7 +73,6 @@ class Customizer {
 		add_action( 'customize_controls_print_scripts', [ $this, 'extra_customizer_scripts' ], 9999 );
 		add_action( 'customize_preview_init', [ $this, 'preview_customizer_scripts' ] );
 		add_action( 'after_setup_theme', [ $this, 'setup_grid_filters' ] );
-		add_action( 'wp_ajax_gridd_minimize_plus_descriptions', array( $this, 'dismiss_customizer_section_descriptions' ) );
 	}
 
 	/**
@@ -225,7 +224,6 @@ class Customizer {
 				'nonce'         => wp_create_nonce( 'gridd-template-preview' ),
 				'ajax_url'      => admin_url( 'admin-ajax.php' ),
 				'nestedGrids'   => Grid_Parts::get_instance()->get_grids(),
-				'plusDismissed' => self::is_minimized( 'plus-descriptions' ),
 			]
 		);
 	}
@@ -281,48 +279,42 @@ class Customizer {
 	 * @static
 	 * @access public
 	 * @since 1.0
-	 * @param string $plus The Additional features available in Gridd Plus.
-	 * @param string $docs A link to the docs for this section.
+	 * @param array  $args The arguments [pro=>[''], docs=>'', tip=>''].
 	 * @return string      The final HTML.
 	 */
-	public static function section_description( $plus, $docs ) {
-		$html  = '';
-		$html .= ( $plus || $docs ) ? '<div class="gridd-section-description">' : '';
-		if ( $plus && ! Gridd::is_plus_active() ) {
-			$button = '<button type="button" class="notice-dismiss"><span class="screen-reader-text">' . esc_html__( 'Dismiss', 'gridd' ) . '</span></button>';
-			$html  .= '<div class="gridd-go-plus"><div class="description">' . $plus . '</div>' . $button . '</div>';
+	public static function section_description( $args ) {
+		$boxes   = '';
+		$buttons = '';
+		$args    = wp_parse_args(
+			$args,
+			[
+				'plus' => false,
+				'docs' => false,
+				'tip'  => false,
+			]
+		);
+
+		if ( $args['plus'] && ! Gridd::is_plus_active() ) {
+			$buttons .= '<button class="gridd-section-description-trigger gridd-plus" data-context="gridd-plus">' . esc_html__( 'Plus Features', 'gridd' ) . '</button>';
+
+			$boxes .= '<div class="gridd-section-description" aria-expanded="false" data-context="gridd-plus">';
+			$boxes .= __( '<a href="https://wplemon.com/gridd-plus" rel="noopener noreferrer nofollow" target="_blank">Upgrade to Plus</a> for extra options:', 'gridd' );
+			$boxes .= '<ul>';
+			foreach ( $args['plus'] as $feature ) {
+				$boxes .= '<li>' . $feature . '</li>';
+			}
+			$boxes .= '</ul>';
 		}
-		if ( $docs ) {
-			$html .= '<div class="gridd-docs"><a href="' . $docs . '" target="_blank" rel="noopener noreferrer nofollow">' . esc_html__( 'Learn more about these settings', 'gridd' ) . '</a></div>';
+		
+		if ( $args['tip'] ) {
+			$buttons .= '<button class="gridd-section-description-trigger gridd-tip" data-context="gridd-tip">' . esc_html__( 'Tip', 'gridd' ) . '</button>';
+			$boxes   .= '<div class="gridd-section-description" aria-expanded="false" data-context="gridd-tip">' . $args['tip'] . '</div>';
 		}
-		$html .= ( $plus || $docs ) ? '</div>' : '';
 
-		return $html;
-	}
+		if ( $args['docs'] ) {
+			$buttons .= '<a href="' . $args['docs'] . '" target="_blank" rel="noopener noreferrer nofollow" class="gridd-section-description-trigger gridd-docs" data-context="gridd-docs">' . esc_html__( 'Documentation', 'gridd' ) . '</a>';
+		}
 
-	/**
-	 * Minimize (soft-dismiss) customizer Plus promos in section descriptions & the help links.
-	 *
-	 * @access public
-	 * @since 1.0
-	 * @return void
-	 */
-	public function dismiss_customizer_section_descriptions() {
-		check_ajax_referer( 'gridd-template-preview', 'security' );
-		set_theme_mod( 'gridd_customizer_section_descriptions_minimized', true );
-		error_log( print_r( $_POST, true ) );
-	}
-
-	/**
-	 * Check if we've minimized the plus promos/section.
-	 *
-	 * @static
-	 * @access public
-	 * @since 1.0
-	 * @param string $context What we want to check (plus|help).
-	 * @return bool
-	 */
-	public static function is_minimized( $context ) {
-		return get_theme_mod( 'gridd_customizer_section_descriptions_minimized' );
+		return '<div class="gridd-section-description-wrapper">' . $buttons . $boxes . '</div>';
 	}
 }

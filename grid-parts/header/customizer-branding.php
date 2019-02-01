@@ -12,7 +12,11 @@ gridd_add_customizer_section(
 	[
 		/* translators: The grid-part label. */
 		'title'       => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Site Branding', 'gridd' ) ),
-		'description' => Customizer::section_description( false, 'https://wplemon.com/documentation/gridd/grid-parts/header/branding/' ),
+		'description' => Customizer::section_description(
+			[
+				'docs' => 'https://wplemon.com/documentation/gridd/grid-parts/header/branding/',
+			]
+		),
 		'section'     => 'gridd_grid_part_details_header',
 	]
 );

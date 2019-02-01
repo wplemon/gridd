@@ -1,12 +1,9 @@
-// Adjust customizer sidebar width
-// $sidebar-width: 400px;
-// .wp-full-overlay-sidebar {
-// 	min-width: $sidebar-width;
-// }
-
-// .wp-full-overlay.expanded {
-// 	margin-left: $sidebar-width;
-// }
+$red: #dc3232;
+$orange: #f56e28;
+$yellow: #ffb900;
+$green: #46B450;
+$medium-blue: #00a0d2;
+$purple: #826eb4;
 
 #customize-controls {
 
@@ -180,41 +177,42 @@ h3.gridd-customizer-section-title {
 	}
 }
 
-.gridd-section-description {
-	margin: -22px -12px 0 -12px;
-	padding: 8px 0;
-	background: #fff;
+.gridd-section-description-wrapper {
+	margin-top: -10px;
+	.gridd-section-description-trigger {
+		display: inline-block;
+		border: 1px solid rgba(0, 0, 0, .1);
+		border-radius: 3px;
+		text-decoration: none;
+		color: #fff;
+		background: #000;
+		margin-right: .5em;
+		padding: 3px 6px;
+		font-size: 12px;
+		line-height: 1;
 
-	.gridd-go-plus,
-	.gridd-docs {
-		padding: 8px 12px;
-	}
-
-	.gridd-go-plus {
-		display: flex;
-		align-items: flex-start;
-
-		.description {
-			width: 100%;
+		&.gridd-plus {
+			background: $purple;
 		}
 
-		.gridd-plus-descriptions-minimized & {
-			display: none;
+		&.gridd-docs {
+			background: $green;
+		}
+
+		&.gridd-tip {
+			background: $medium-blue;
 		}
 	}
 
-	.gridd-go-plus+.gridd-docs {
-		border-top: 1px solid #f7f7f7;
-	}
-
-	.notice-dismiss {
-		position: relative;
+	.gridd-section-description {
+		display: none;
+		margin-left: -12px;
 		margin-right: -12px;
-		padding: 2px;
-		opacity: .5;
+		padding: 12px;
+		background: #fff;
 
-		&:hover {
-			opacity: 1;
+		&[aria-expanded=true] {
+			display: block;
 		}
 	}
 }

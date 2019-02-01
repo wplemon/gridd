@@ -19,8 +19,15 @@ gridd_add_customizer_section(
 	[
 		'title'       => esc_html__( 'Typography & Links', 'gridd' ),
 		'description' => Customizer::section_description(
-			__( '<a href="https://wplemon.com/gridd-plus" rel="nofollow" target="_blank">Upgrade to <strong>plus</strong></a> for extra options in this section: Automatic WCAG-compliant colors suggestion, typography-scales and links decoration.', 'gridd' ),
-			'https://wplemon.com/documentation/gridd/typography/'
+			[
+				'plus' => [
+					esc_html__( 'Selecting from an array of WCAG-compliant colors for text', 'gridd' ),
+					esc_html__( 'Selecting from an array of WCAG-compliant colors for links', 'gridd' ),
+					esc_html__( 'Adjustable typography scale for headers-size', 'gridd' ),
+					esc_html__( 'Links decoration (underlined/not-underlined) for links & headers separately.', 'gridd' ),
+				],
+				'docs' => 'https://wplemon.com/documentation/gridd/typography/',
+			]
 		),
 		'priority'    => 20,
 		'panel'       => 'gridd_options',

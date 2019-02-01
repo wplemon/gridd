@@ -34,8 +34,13 @@ function gridd_add_footer_widget_area_options( $id ) {
 				sprintf( esc_html__( 'Footer Sidebar %d', 'gridd' ), absint( $id ) )
 			),
 			'description' => Customizer::section_description(
-				__( '<a href="https://wplemon.com/gridd-plus" rel="nofollow" target="_blank">Upgrade to <strong>plus</strong></a> for automatic WCAG-compliant colors suggestion for your text and links on this section.', 'gridd' ),
-				'https://wplemon.com/documentation/gridd/grid-parts/footer/'
+				[
+					'plus' => [
+						esc_html__( 'Selecting from an array of WCAG-compliant colors for text', 'gridd' ),
+						esc_html__( 'Selecting from an array of WCAG-compliant colors for links', 'gridd' ),
+					],
+					'docs' => 'https://wplemon.com/documentation/gridd/grid-parts/footer/',
+				]
 			),
 			'section'     => 'gridd_grid_part_details_footer',
 		]

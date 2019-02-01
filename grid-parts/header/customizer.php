@@ -14,8 +14,12 @@ gridd_add_customizer_section(
 	[
 		'title'       => esc_html__( 'Header', 'gridd' ),
 		'description' => Customizer::section_description(
-			__( '<a href="https://wplemon.com/gridd-plus" rel="nofollow" target="_blank">Upgrade to <strong>plus</strong></a> for a separate grid for mobile devices.', 'gridd' ),
-			'https://wplemon.com/documentation/gridd/grid-parts/header/'
+			[
+				'plus' => [
+					esc_html__( 'Separate grid for mobile devices', 'gridd' ),
+				],
+				'docs' => 'https://wplemon.com/documentation/gridd/grid-parts/header/',
+			]
 		),
 		'priority'    => 24,
 		'panel'       => 'gridd_options',

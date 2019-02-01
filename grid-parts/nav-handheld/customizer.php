@@ -12,8 +12,12 @@ gridd_add_customizer_section(
 	[
 		'title'       => esc_html__( 'Mobile Navigation', 'gridd' ),
 		'description' => Customizer::section_description(
-			__( '<a href="https://wplemon.com/gridd-plus" rel="nofollow" target="_blank">Upgrade to <strong>plus</strong></a> to add a custom widget-area as a new menu item in mobile navigation.', 'gridd' ),
-			'https://wplemon.com/documentation/gridd/grid-parts/mobile-navigation/'
+			[
+				'plus' =>[
+					esc_html__( 'Additional item: axpandable widget-area with custom icon', 'gridd' ),
+				],
+				'docs' => 'https://wplemon.com/documentation/gridd/grid-parts/mobile-navigation/',
+			]
 		),
 		'priority'    => 26,
 		'panel'       => 'gridd_options',
