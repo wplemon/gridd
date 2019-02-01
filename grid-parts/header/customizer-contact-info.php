@@ -45,7 +45,6 @@ gridd_add_customizer_field(
 		'type'      => 'color',
 		'settings'  => 'gridd_grid_part_details_header_contact_info_background_color',
 		'label'     => esc_html__( 'Background Color', 'gridd' ),
-		// 'description' => esc_html__( 'Select a background color for this grid-part.', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_header_contact_info',
 		'default'   => '#ffffff',
 		'transport' => 'postMessage',
@@ -60,7 +59,6 @@ gridd_add_customizer_field(
 	[
 		'type'      => 'kirki-wcag-tc',
 		'label'     => esc_html__( 'Text Color', 'gridd' ),
-		// 'description' => esc_html__( 'Select the color used for your text. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
 		'settings'  => 'gridd_grid_part_details_header_contact_info_text_color',
 		'section'   => 'gridd_grid_part_details_header_contact_info',
 		'choices'   => [
@@ -110,7 +108,6 @@ gridd_add_customizer_field(
 		'type'      => 'radio-buttonset',
 		'settings'  => 'gridd_grid_part_details_header_contact_text_align',
 		'label'     => esc_html__( 'Text Align', 'gridd' ),
-		// 'description' => esc_html__( 'Select how the text will be aligned.', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_header_contact_info',
 		'default'   => 'flex-start',
 		'transport' => 'postMessage',

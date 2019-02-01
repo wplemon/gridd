@@ -38,7 +38,6 @@ gridd_add_customizer_field(
 		'type'      => 'dimensions',
 		'settings'  => 'gridd_grid_content_padding',
 		'label'     => esc_html__( 'Container Padding', 'gridd' ),
-		// 'description' => esc_html__( 'Please enter values for the content area\'s padding.', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_content',
 		'default'   => [
 			'top'    => '0px',

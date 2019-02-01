@@ -27,7 +27,6 @@ gridd_add_customizer_field(
 		'type'     => 'slider',
 		'settings' => 'gridd_woocommerce_product_catalog_per_page',
 		'label'    => esc_html__( 'Products per page', 'gridd' ),
-		// 'description' => esc_html__( 'The number of products displayed on each page.', 'gridd' ),
 		'section'  => 'woocommerce_product_catalog',
 		'default'  => 12,
 		'choices'  => [

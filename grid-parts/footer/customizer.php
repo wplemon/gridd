@@ -160,7 +160,6 @@ gridd_add_customizer_field(
 		'type'            => 'color',
 		'settings'        => 'gridd_grid_footer_border_top_color',
 		'label'           => esc_html__( 'Top Border Color', 'gridd' ),
-		// 'description'     => esc_html__( 'Choose a color for the top border.', 'gridd' ),
 		'section'         => 'gridd_grid_part_details_footer',
 		'default'         => 'rgba(0,0,0,.1)',
 		'priority'        => 60,
