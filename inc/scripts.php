@@ -223,7 +223,7 @@ class Scripts {
 
 		$style->add_vars(
 			[
-				'--gridd-typo-scale'        => get_theme_mod( 'gridd_type_scale', 1.333 ),
+				'--gridd-typo-scale'        => get_theme_mod( 'gridd_type_scale', 1.26 ),
 				'--gridd-text-color'        => get_theme_mod( 'gridd_text_color', '#000000' ),
 				'--gridd-links-color'       => get_theme_mod( 'gridd_links_color', '#0f5e97' ),
 				'--gridd-font-size'         => get_theme_mod( 'gridd_body_font_size', 18 ) . 'px',
@@ -380,7 +380,7 @@ class Scripts {
 
 		$style->add_vars(
 			[
-				'--gridd-typo-scale'  => get_theme_mod( 'gridd_type_scale', 1.333 ),
+				'--gridd-typo-scale'  => get_theme_mod( 'gridd_type_scale', 1.26 ),
 				'--gridd-links-color' => get_theme_mod( 'gridd_links_color', '#0f5e97' ),
 			]
 		);

@@ -100,7 +100,7 @@ class WooCommerce {
 		$style->add_vars(
 			[
 				'--gridd-woo-catalog-product-min-width' => get_theme_mod( 'gridd_woocommerce_product_catalog_min_width', '250px' ),
-				'--gridd-typo-scale'                    => get_theme_mod( 'gridd_type_scale', 1.333 ),
+				'--gridd-typo-scale'                    => get_theme_mod( 'gridd_type_scale', 1.26 ),
 				'--gridd-text-color'                    => get_theme_mod( 'gridd_text_color', '#000000' ),
 				'--gridd-links-color'                   => get_theme_mod( 'gridd_links_color', '#005ea5' ),
 				'--gridd-links-hover-color'             => get_theme_mod( 'gridd_links_hover_color', '#2900a3' ),

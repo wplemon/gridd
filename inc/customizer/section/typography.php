@@ -23,7 +23,7 @@ gridd_add_customizer_section(
 				'plus' => [
 					esc_html__( 'Selecting from an array of WCAG-compliant colors for text', 'gridd' ),
 					esc_html__( 'Selecting from an array of WCAG-compliant colors for links', 'gridd' ),
-					esc_html__( 'Adjustable typography scale for headers-size', 'gridd' ),
+					esc_html__( 'Adjustable typography scales', 'gridd' ),
 					esc_html__( 'Links decoration (underlined/not-underlined) for links & headers separately.', 'gridd' ),
 				],
 				'docs' => 'https://wplemon.com/documentation/gridd/typography/',
@@ -133,7 +133,7 @@ gridd_add_customizer_field(
 		'description' => esc_html__( 'Select the hue for you links. The color will be auto-calculated to ensure maximum readability according to WCAG.', 'gridd' ),
 		'section'     => 'gridd_typography',
 		'transport'   => 'postMessage',
-		'priority'    => 50,
+		'priority'    => 40,
 		'choices'     => [
 			'alpha' => false,
 		],
@@ -153,7 +153,7 @@ gridd_add_customizer_field(
 		'label'     => esc_html__( 'Links Hover Color', 'gridd' ),
 		'section'   => 'gridd_typography',
 		'transport' => 'postMessage',
-		'priority'  => 60,
+		'priority'  => 50,
 		'choices'   => [
 			'alpha' => false,
 		],
@@ -177,14 +177,9 @@ gridd_add_customizer_field(
 		'description' => esc_html__( 'Choose the main font-size for your content. We recommend you a font-size greater than 18px to ensure greater readability.', 'gridd' ),
 		'section'     => 'gridd_typography',
 		'default'     => 18,
-		'priority'    => 70,
+		'priority'    => 60,
 		'transport'   => 'postMessage',
-		'css_vars'    => [
-			Gridd::is_plus_active() ? [ '--gridd-font-size', '$px' ] : [
-				[ '--gridd-font-size', '$px' ],
-				[ '--gridd-typo-scale', '1.333' ],
-			],
-		],
+		'css_vars'    => [ '--gridd-font-size', '$px' ],
 		'choices'     => [
 			'min'    => 13,
 			'max'    => 40,
@@ -204,7 +199,7 @@ gridd_add_customizer_field(
 		'tooltip'     => sprintf( esc_html__( 'Need more Information? %s', 'gridd' ), '<a href="https://wplemon.com/documentation/gridd/typography/fluid-responsive-typography/" target="_blank">' . esc_html__( 'Read this article.', 'gridd' ) ),
 		'section'     => 'gridd_typography',
 		'default'     => 0.25,
-		'priority'    => 80,
+		'priority'    => 70,
 		'transport'   => 'postMessage',
 		'css_vars'    => '--gridd-typo-ratio',
 		'choices'     => [
@@ -212,5 +207,30 @@ gridd_add_customizer_field(
 			'max'  => 1,
 			'step' => .001,
 		],
+	]
+);
+
+/**
+ * Type Scale
+ */
+gridd_add_customizer_field(
+	[
+		'settings'    => 'gridd_type_scale',
+		'type'        => 'radio',
+		'label'       => esc_attr__( 'Typography Scale', 'gridd' ),
+		'description' => esc_attr__( 'Controls the size relations between your headers and your main typography font-size.', 'gridd' ),
+		'section'     => 'gridd_typography',
+		'default'     => '1.26',
+		'transport'   => 'postMessage',
+		'css_vars'    => '--gridd-typo-scale',
+		'choices'     => [
+			/* Translators: Numeric representation of the scale. */
+			'1.149' => sprintf( esc_attr__( '%s - Musical Pentatonic (classic)', 'gridd' ), '1.149' ),
+			/* Translators: Numeric representation of the scale. */
+			'1.26'  => sprintf( esc_attr__( '%s - Musical Tritonic', 'gridd' ), '1.26' ),
+			/* Translators: Numeric representation of the scale. */
+			'1.333' => sprintf( esc_attr__( '%s - Perfect Fourth', 'gridd' ), '1.333' ),
+		],
+		'priority'    => 80,
 	]
 );
