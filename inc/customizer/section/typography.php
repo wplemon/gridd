@@ -127,8 +127,8 @@ gridd_add_customizer_field(
 
 gridd_add_customizer_field(
 	[
-		'settings'    => 'gridd_links_color_preset',
-		'type'        => 'gridd-kirki-wcag-lc',
+		'settings'    => 'gridd_links_color',
+		'type'        => 'gridd-wcag-lc',
 		'label'       => esc_html__( 'Links Color', 'gridd' ),
 		'description' => esc_html__( 'Select the hue for you links. The color will be auto-calculated to ensure maximum readability according to WCAG.', 'gridd' ),
 		'section'     => 'gridd_typography',
@@ -149,7 +149,7 @@ gridd_add_customizer_field(
 gridd_add_customizer_field(
 	[
 		'settings'  => 'gridd_links_hover_color',
-		'type'      => 'gridd-kirki-wcag-lc',
+		'type'      => 'gridd-wcag-lc',
 		'label'     => esc_html__( 'Links Hover Color', 'gridd' ),
 		'section'   => 'gridd_typography',
 		'transport' => 'postMessage',

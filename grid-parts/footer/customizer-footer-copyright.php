@@ -85,7 +85,7 @@ gridd_add_customizer_field(
 
 gridd_add_customizer_field(
 	[
-		'type'      => 'gridd-kirki-wcag-lc',
+		'type'      => 'gridd-wcag-lc',
 		'settings'  => 'gridd_grid_footer_copyright_links_color',
 		'label'     => esc_html__( 'Copyright Links Color', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_footer_copyright',

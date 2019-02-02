@@ -9,7 +9,7 @@
  * @license GPL2.0
  */
 /* global wcagColors */
-wp.customize.controlConstructor['gridd-kirki-wcag-lc'] = wp.customize.Control.extend({
+wp.customize.controlConstructor['gridd-wcag-lc'] = wp.customize.Control.extend({
 
 	/**
 	 * The selected hue.

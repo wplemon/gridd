@@ -23,7 +23,7 @@ class Kirki_WCAG_Link_Color extends \WP_Customize_Control {
 	 * @access public
 	 * @var string
 	 */
-	public $type = 'gridd-kirki-wcag-lc';
+	public $type = 'gridd-wcag-lc';
 
 	/**
 	 * Used to automatically generate all CSS output.

@@ -29,7 +29,7 @@ add_filter(
 		if ( ! class_exists( 'Gridd\Customizer\Control\Kirki_WCAG_Link_Color' ) ) {
 			require_once get_template_directory() . '/inc/customizer/control/class-kirki-wcag-link-color.php';
 		}
-		$controls['gridd-kirki-wcag-lc'] = 'Gridd\Customizer\Control\Kirki_WCAG_Link_Color';
+		$controls['gridd-wcag-lc'] = 'Gridd\Customizer\Control\Kirki_WCAG_Link_Color';
 		return $controls;
 	}
 );

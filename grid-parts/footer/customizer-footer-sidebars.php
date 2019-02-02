@@ -81,7 +81,7 @@ function gridd_add_footer_widget_area_options( $id ) {
 	// Links Color.
 	gridd_add_customizer_field(
 		[
-			'type'      => 'gridd-kirki-wcag-lc',
+			'type'      => 'gridd-wcag-lc',
 			'settings'  => "gridd_grid_footer_sidebar_{$id}_links_color",
 			'label'     => esc_html__( 'Links Color', 'gridd' ),
 			'section'   => "gridd_grid_part_details_footer_sidebar_$id",
