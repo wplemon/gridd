@@ -108,23 +108,3 @@ body {
 		}
 	}
 }
-
-#gridd-handheld-woo-cart {
-	position: relative;
-
-	>button {
-		>.label {
-			.count {
-				position: absolute;
-				top: 6px;
-				min-width: 1.7em;
-				left: calc(50% + 4px);
-				font-size: 10px;
-				color: #fff;
-				background: #dc3232;
-				border-radius: 10px;
-				padding: 0;
-			}
-		}
-	}
-}

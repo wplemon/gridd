@@ -13,7 +13,7 @@ gridd_add_customizer_section(
 		'title'       => esc_html__( 'Mobile Navigation', 'gridd' ),
 		'description' => Customizer::section_description(
 			[
-				'plus' =>[
+				'plus' => [
 					esc_html__( 'Additional item: axpandable widget-area with custom icon', 'gridd' ),
 				],
 				'docs' => 'https://wplemon.com/documentation/gridd/grid-parts/mobile-navigation/',
@@ -30,11 +30,6 @@ $parts = [
 	'home'   => esc_html__( 'Home', 'gridd' ),
 	'search' => esc_html__( 'Search', 'gridd' ),
 ];
-
-// If WooCommerce is installed, add another item for the Cart.
-if ( class_exists( 'WooCommerce' ) ) {
-	$parts['woo-cart'] = esc_html__( 'Cart', 'gridd' );
-}
 
 gridd_add_customizer_field(
 	[
@@ -64,7 +59,7 @@ gridd_add_customizer_field(
 		'label'           => esc_html__( 'Mobile Navigation active parts & order', 'gridd' ),
 		'description'     => esc_html__( 'Enable and disable parts of the mobile navigation, and reorder them at will.', 'gridd' ),
 		'section'         => 'gridd_grid_part_details_nav-handheld',
-		'default'         => class_exists( 'WooCommerce' ) ? [ 'menu', 'home', 'search', 'woo-cart' ] : [ 'menu', 'home', 'search' ],
+		'default'         => [ 'menu', 'home', 'search' ],
 		'choices'         => $parts,
 		'transport'       => 'postMessage',
 		'partial_refresh' => [
