@@ -41,6 +41,7 @@ gridd_add_customizer_field(
 		'label'             => esc_html__( 'Grid Settings', 'gridd' ),
 		'description'       => __( 'Edit settings for the grid. For more information and documentation on how the grid works, please read <a href="https://wplemon.com/documentation/gridd/the-grid-control/" target="_blank">this article</a>.', 'gridd' ),
 		'default'           => gridd_get_grid_default_value(),
+		'priority'          => 10,
 		'sanitize_callback' => [ gridd()->customizer, 'sanitize_gridd_grid' ],
 		'choices'           => [
 			'parts'     => Grid_Parts::get_instance()->get_parts(),
@@ -57,6 +58,7 @@ gridd_add_customizer_field(
 		'description' => esc_html__( 'The breakpoint that separates mobile views from desktop views. Use a valid CSS unit.', 'gridd' ),
 		'tooltip'     => __( 'Screen sizes below the breakpoint defined will get a stacked view instead of grid.', 'gridd' ),
 		'section'     => 'gridd_grid',
+		'priority'    => 20,
 		'default'     => '800px',
 	]
 );
@@ -71,6 +73,7 @@ gridd_add_customizer_field(
 		'section'     => 'gridd_grid',
 		'default'     => '0',
 		'transport'   => 'auto',
+		'priority'    => 30,
 		'output'      => [
 			[
 				'element'  => '.gridd-site-wrapper',
@@ -89,6 +92,7 @@ gridd_add_customizer_field(
 		'tooltip'     => esc_html__( 'By setting the max-width to something other than 100% you can build a boxed layout.', 'gridd' ),
 		'section'     => 'gridd_grid',
 		'default'     => '',
+		'priority'    => 40,
 		'transport'   => 'postMessage',
 		'css_vars'    => '--gridd-grid-max-width',
 	]
