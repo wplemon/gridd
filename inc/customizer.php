@@ -39,7 +39,7 @@ class Customizer {
 		'gridd_grid_content_background_color'                          => 'gridd_text_color',
 		'gridd_grid_breadcrumbs_background_color'                      => 'gridd_grid_breadcrumbs_color',
 		'gridd_grid_part_details_header_contact_info_background_color' => 'gridd_grid_part_details_header_contact_info_text_color',
-		'gridd_grid_footer_copyright_bg_color]'                        => 'gridd_grid_footer_copyright_color',
+		'gridd_grid_footer_copyright_bg_color'                         => 'gridd_grid_footer_copyright_color',
 		'gridd_grid_footer_sidebar_1_bg_color'                         => 'gridd_grid_footer_sidebar_1_color',
 		'gridd_grid_footer_sidebar_2_bg_color'                         => 'gridd_grid_footer_sidebar_2_color',
 		'gridd_grid_footer_sidebar_3_bg_color'                         => 'gridd_grid_footer_sidebar_3_color',
