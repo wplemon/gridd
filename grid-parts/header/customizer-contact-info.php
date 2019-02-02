@@ -61,7 +61,7 @@ gridd_add_customizer_field(
 
 gridd_add_customizer_field(
 	[
-		'type'      => 'kirki-wcag-tc',
+		'type'      => 'gridd-wcag-tc',
 		'label'     => esc_html__( 'Text Color', 'gridd' ),
 		'settings'  => 'gridd_grid_part_details_header_contact_info_text_color',
 		'section'   => 'gridd_grid_part_details_header_contact_info',

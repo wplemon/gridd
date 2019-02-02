@@ -150,7 +150,7 @@ function gridd_nav_customizer_options( $id ) {
 
 	gridd_add_customizer_field(
 		[
-			'type'        => 'kirki-wcag-tc',
+			'type'        => 'gridd-wcag-tc',
 			'label'       => esc_html__( 'Items Color', 'gridd' ),
 			'description' => esc_html__( 'Select the color used for your menu items. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
 			'settings'    => "gridd_grid_nav_{$id}_items_color",
@@ -182,7 +182,7 @@ function gridd_nav_customizer_options( $id ) {
 
 	gridd_add_customizer_field(
 		[
-			'type'        => 'kirki-wcag-tc',
+			'type'        => 'gridd-wcag-tc',
 			'label'       => esc_html__( 'Accent Items Color', 'gridd' ),
 			'description' => esc_html__( 'Select the color used for your menu items on hover, as well as for the currently active menu-item. Applies to both parent and child (dropdown) menu items. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
 			'settings'    => "gridd_grid_nav_{$id}_accent_color",

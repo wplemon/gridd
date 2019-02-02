@@ -104,7 +104,7 @@ gridd_add_customizer_field(
 
 gridd_add_customizer_field(
 	[
-		'type'      => 'kirki-wcag-tc',
+		'type'      => 'gridd-wcag-tc',
 		'settings'  => 'gridd_grid_breadcrumbs_color',
 		'label'     => esc_html__( 'Text Color', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_breadcrumbs',

@@ -63,20 +63,17 @@ function gridd_add_customizer_field( $args ) {
 		return;
 	}
 
-	if ( ! Gridd::is_plus_active() && $wp_customize ) {
-		if ( ! empty( $args['type'] ) ) {
-			if ( 'kirki-wcag-tc' === $args['type'] ) {
-				// No need to init a colorpicker if the setting is automated.
-				$args['type'] = 'color';
-				if ( ! in_array( $args['settings'], array_values( Customizer::$auto_text_color ), true ) ) {
-					$args['type']            = 'hidden';
-					$args['active_callback'] = '__return_false';
-				}
-			}
+	$args = apply_filters( 'gridd_field_args', $args );
+
+	if ( 'gridd-wcag-tc' === $args['type'] ) {
+		// No need to init a colorpicker if the setting is automated.
+		$args['type'] = 'color';
+		if ( in_array( $args['settings'], array_values( Customizer::$auto_text_color ), true ) ) {
+			$args['type']            = 'hidden';
+			$args['active_callback'] = '__return_false';
 		}
 	}
 
-	$args = apply_filters( 'gridd_field_args', $args );
 	Kirki::add_field( 'gridd', $args );
 	if ( 'gridd_grid' === $args['type'] ) {
 		Customizer::$grid_controls[ $args['settings'] ] = $args;

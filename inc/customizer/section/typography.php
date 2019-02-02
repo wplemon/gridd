@@ -110,7 +110,7 @@ gridd_add_customizer_field(
 
 gridd_add_customizer_field(
 	[
-		'type'        => 'kirki-wcag-tc',
+		'type'        => 'gridd-wcag-tc',
 		'settings'    => 'gridd_text_color',
 		'label'       => esc_html__( 'Text Color', 'gridd' ),
 		'description' => esc_html__( 'Select the color used for your text. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),

@@ -65,7 +65,7 @@ function gridd_add_footer_widget_area_options( $id ) {
 	// Text Color.
 	gridd_add_customizer_field(
 		[
-			'type'      => 'kirki-wcag-tc',
+			'type'      => 'gridd-wcag-tc',
 			'settings'  => "gridd_grid_footer_sidebar_{$id}_color",
 			'label'     => esc_html__( 'Text Color', 'gridd' ),
 			'section'   => "gridd_grid_part_details_footer_sidebar_$id",

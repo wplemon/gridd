@@ -202,9 +202,6 @@ class Customizer {
 	public function customize_controls_print_styles() {
 		echo '<style id="gridd-customizer-styles">';
 		include get_template_directory() . '/assets/css/customizer/customizer.css';
-		foreach ( array_values( self::$auto_text_color ) as $item ) {
-			echo ( Gridd::is_plus_active() ) ?: '#customize-control-' . esc_attr( $item ) . '{display:none!important;}';
-		}
 		echo '</style>';
 	}
 
