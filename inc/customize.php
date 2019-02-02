@@ -141,8 +141,8 @@ if ( ! Gridd::is_plus_active() ) {
 	gridd_add_customizer_section(
 		'gridd_get_plus',
 		[
-			'title'       => esc_html__( 'Premium Features & Support', 'gridd' ),
-			'button_text' => esc_html__( 'Get Plus', 'gridd' ),
+			'title'       => esc_html__( 'Gridd Plus', 'gridd' ),
+			'button_text' => esc_html__( 'Go Premium', 'gridd' ),
 			'button_url'  => 'https://wplemon.com/gridd',
 			'priority'    => -999,
 			'type'        => 'link',
