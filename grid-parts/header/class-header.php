@@ -9,6 +9,7 @@ namespace Gridd\Grid_Part;
 
 use Gridd\Grid;
 use Gridd\Grid_Part;
+use Gridd\Grid_Parts;
 
 /**
  * The Gridd\Grid_Part\Breadcrumbs object.
@@ -162,5 +163,59 @@ class Header extends Grid_Part {
 		$html = \preg_replace( '/width="[0-9]*"/', '', $html );
 		$html = \preg_replace( '/height="[0-9]*"/', '', $html );
 		return $html;
+	}
+
+	/**
+	 * Get an array of grid-parts for the header.
+	 *
+	 * @static
+	 * @access public
+	 * @since 1.0
+	 * @return array
+	 */
+	public static function get_header_grid_parts() {
+		$header_grid_parts = Grid_Parts::get_instance()->get_parts();
+
+		// Remove parts that are not valid in this sub-grid.
+		$parts_to_remove = [ 'content', 'header', 'footer', 'nav-handheld', 'nested-grid-1', 'nested-grid-2', 'nested-grid-3', 'nested-grid-4' ];
+		foreach ( $header_grid_parts as $key => $part ) {
+			if ( isset( $part['id'] ) && in_array( $part['id'], $parts_to_remove, true ) ) {
+				unset( $header_grid_parts[ $key ] );
+			}
+		}
+
+		$header_grid_parts[] = [
+			'label'    => esc_html__( 'Branding', 'gridd' ),
+			'color'    => [ '#FFEB3B', '#000' ],
+			'priority' => 0,
+			'hidden'   => false,
+			'id'       => 'header_branding',
+		];
+
+		$header_grid_parts[] = [
+			'label'    => esc_html__( 'Search', 'gridd' ),
+			'color'    => [ '#CFD8DC', '#000' ],
+			'priority' => 200,
+			'hidden'   => false,
+			'id'       => 'header_search',
+		];
+
+		$header_grid_parts[] = [
+			'label'    => esc_html__( 'Contact Information', 'gridd' ),
+			'color'    => [ '#D4E157', '#000' ],
+			'priority' => 1000,
+			'hidden'   => false,
+			'id'       => 'header_contact_info',
+		];
+
+		$header_grid_parts[] = [
+			'label'    => esc_html__( 'Social Media', 'gridd' ),
+			'color'    => [ '#009688', '#fff' ],
+			'priority' => 2000,
+			'hidden'   => false,
+			'id'       => 'social_media',
+		];
+
+		return apply_filters( 'gridd_header_grid_parts', $header_grid_parts );
 	}
 }

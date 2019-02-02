@@ -54,7 +54,7 @@ function gridd_nav_customizer_options( $id ) {
 						esc_html__( 'WooCommerce Cart inside the navigation', 'gridd' ),
 						esc_html__( 'font-size adjustments', 'gridd' ),
 					],
-					'tip'  => '<p>' . esc_html__( 'Try to keep your horizontal navigation as short as possible and avoid hierarchical menus.', 'gridd' ) . '</p>' . '<p>' . esc_html__( 'Verical menus provide a better user experience for hierarchical (nested) menus.', 'gridd' ) . '</p>',
+					'tip'  => '<p>' . esc_html__( 'Try to keep your horizontal navigation as short as possible and avoid hierarchical menus.', 'gridd' ) . '</p><p>' . esc_html__( 'Verical menus provide a better user experience for hierarchical (nested) menus.', 'gridd' ) . '</p>',
 					'docs' => 'https://wplemon.com/documentation/gridd/grid-parts/navigation/',
 				]
 			),

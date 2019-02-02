@@ -180,8 +180,10 @@ gridd_add_customizer_field(
 		'priority'    => 70,
 		'transport'   => 'postMessage',
 		'css_vars'    => [
-			[ '--gridd-font-size', '$px' ],
-			Gridd::is_plus_active() ? [] : [ '--gridd-typo-scale', '1.333' ],
+			Gridd::is_plus_active() ? [ '--gridd-font-size', '$px' ] : [
+				[ '--gridd-font-size', '$px' ],
+				[ '--gridd-typo-scale', '1.333' ],
+			],
 		],
 		'choices'     => [
 			'min'    => 13,

@@ -26,16 +26,6 @@ gridd_add_customizer_section(
 	]
 );
 
-$header_grid_parts = Grid_Parts::get_instance()->get_parts();
-
-// Remove parts that are not valid in this sub-grid.
-$parts_to_remove = [ 'content', 'header', 'footer', 'nav-handheld', 'nested-grid-1', 'nested-grid-2', 'nested-grid-3', 'nested-grid-4' ];
-foreach ( $header_grid_parts as $key => $part ) {
-	if ( isset( $part['id'] ) && in_array( $part['id'], $parts_to_remove, true ) ) {
-		unset( $header_grid_parts[ $key ] );
-	}
-}
-
 /**
  * Remove header-textcolor control.
  * We have separate controls for title & subtitle so this one is not necessary.
@@ -51,38 +41,6 @@ add_action(
 	}
 );
 
-$header_grid_parts[] = [
-	'label'    => esc_html__( 'Branding', 'gridd' ),
-	'color'    => [ '#FFEB3B', '#000' ],
-	'priority' => 0,
-	'hidden'   => false,
-	'id'       => 'header_branding',
-];
-
-$header_grid_parts[] = [
-	'label'    => esc_html__( 'Search', 'gridd' ),
-	'color'    => [ '#CFD8DC', '#000' ],
-	'priority' => 200,
-	'hidden'   => false,
-	'id'       => 'header_search',
-];
-
-$header_grid_parts[] = [
-	'label'    => esc_html__( 'Contact Information', 'gridd' ),
-	'color'    => [ '#D4E157', '#000' ],
-	'priority' => 1000,
-	'hidden'   => false,
-	'id'       => 'header_contact_info',
-];
-
-$header_grid_parts[] = [
-	'label'    => esc_html__( 'Social Media', 'gridd' ),
-	'color'    => [ '#009688', '#fff' ],
-	'priority' => 2000,
-	'hidden'   => false,
-	'id'       => 'social_media',
-];
-
 gridd_add_customizer_field(
 	[
 		'settings'          => 'gridd_header_grid',
@@ -93,7 +51,7 @@ gridd_add_customizer_field(
 		'description'       => __( 'Edit settings for your footer grid. For more information and documentation on how the grid works, please read <a href="https://wplemon.com/documentation/gridd/the-grid-control/" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
 		'default'           => Header::get_grid_defaults(),
 		'choices'           => [
-			'parts' => $header_grid_parts,
+			'parts' => Header::get_header_grid_parts(),
 		],
 		'sanitize_callback' => [ gridd()->customizer, 'sanitize_gridd_grid' ],
 		'transport'         => 'postMessage',

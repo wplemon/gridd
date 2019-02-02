@@ -25,36 +25,6 @@ gridd_add_customizer_section(
 	]
 );
 
-$footer_grid_parts = [
-	[
-		'label'    => esc_html__( 'Copyright Area', 'gridd' ),
-		'color'    => [ '#A5D6A7', '#000' ],
-		'priority' => 100,
-		'hidden'   => false,
-		'id'       => 'footer_copyright',
-	],
-	[
-		'label'    => esc_html__( 'Social Media', 'gridd' ),
-		'color'    => [ '#8BC34A', '#000' ],
-		'priority' => 200,
-		'hidden'   => false,
-		'id'       => 'footer_social_media',
-	],
-];
-
-$sidebars_nr = Footer::get_number_of_sidebars();
-for ( $i = 1; $i <= $sidebars_nr; $i++ ) {
-	$footer_grid_parts[] = [
-		/* translators: The widget-area number. */
-		'label'    => sprintf( esc_html__( 'Footer Widget Area %d', 'gridd' ), absint( $i ) ),
-		'color'    => [ 'hsl(' . ( 55 * $i - 55 ) . ',57%,75%)', '#000' ],
-		'priority' => 8 + $i * 2,
-		'hidden'   => false,
-		'class'    => "footer_sidebar_$i",
-		'id'       => "footer_sidebar_$i",
-	];
-}
-
 gridd_add_customizer_field(
 	[
 		'settings'          => 'gridd_footer_grid',
@@ -65,7 +35,7 @@ gridd_add_customizer_field(
 		'description'       => __( 'Edit settings for your footer grid. For more information and documentation on how the grid works, please read <a href="https://wplemon.com/documentation/gridd/the-grid-control/" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
 		'default'           => Footer::get_grid_defaults(),
 		'choices'           => [
-			'parts' => $footer_grid_parts,
+			'parts' => Footer::get_footer_grid_parts(),
 		],
 		'sanitize_callback' => [ gridd()->customizer, 'sanitize_gridd_grid' ],
 		'transport'         => 'postMessage',

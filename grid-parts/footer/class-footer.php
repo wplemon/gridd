@@ -180,4 +180,46 @@ class Footer extends Grid_Part {
 	public static function get_number_of_sidebars() {
 		return apply_filters( 'gridd_get_number_footer_sidebars', 6 );
 	}
+
+	/**
+	 * Get an array of grid-parts for the footer.
+	 *
+	 * @static
+	 * @access public
+	 * @since 1.0
+	 * @return array
+	 */
+	public static function get_footer_grid_parts() {
+		$footer_grid_parts = [
+			[
+				'label'    => esc_html__( 'Copyright Area', 'gridd' ),
+				'color'    => [ '#A5D6A7', '#000' ],
+				'priority' => 100,
+				'hidden'   => false,
+				'id'       => 'footer_copyright',
+			],
+			[
+				'label'    => esc_html__( 'Social Media', 'gridd' ),
+				'color'    => [ '#8BC34A', '#000' ],
+				'priority' => 200,
+				'hidden'   => false,
+				'id'       => 'footer_social_media',
+			],
+		];
+
+		$sidebars_nr = self::get_number_of_sidebars();
+		for ( $i = 1; $i <= $sidebars_nr; $i++ ) {
+			$footer_grid_parts[] = [
+				/* translators: The widget-area number. */
+				'label'    => sprintf( esc_html__( 'Footer Widget Area %d', 'gridd' ), absint( $i ) ),
+				'color'    => [ 'hsl(' . ( 55 * $i - 55 ) . ',57%,75%)', '#000' ],
+				'priority' => 8 + $i * 2,
+				'hidden'   => false,
+				'class'    => "footer_sidebar_$i",
+				'id'       => "footer_sidebar_$i",
+			];
+		}
+
+		return apply_filters( 'gridd_footer_grid_parts', $footer_grid_parts );
+	}
 }
