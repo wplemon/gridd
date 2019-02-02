@@ -46,13 +46,6 @@ gridd_add_customizer_field(
 			'parts'     => Grid_Parts::get_instance()->get_parts(),
 			'duplicate' => 'gridd_grid_mobile',
 		],
-		'active_callback'   => [
-			[
-				'setting'  => 'gridd_global_grid_toggle',
-				'operator' => '===',
-				'value'    => 'desktop',
-			],
-		],
 	]
 );
 
