@@ -56,6 +56,7 @@ gridd_add_customizer_field(
 		],
 		'sanitize_callback' => [ gridd()->customizer, 'sanitize_gridd_grid' ],
 		'transport'         => 'postMessage',
+		'priority'          => 10,
 		'partial_refresh'   => [
 			'gridd_header_grid_part_renderer' => [
 				'selector'            => '.gridd-tp.gridd-tp-header',
@@ -77,6 +78,7 @@ gridd_add_customizer_field(
 		'description' => __( 'Use any valid CSS value like <code>50em</code>, <code>800px</code> or <code>100%</code>.', 'gridd' ),
 		'section'     => 'gridd_grid_part_details_header',
 		'default'     => '',
+		'priority'    => 20,
 		'css_vars'    => '--gridd-header-max-width',
 		'transport'   => 'postMessage',
 	]
@@ -91,6 +93,7 @@ gridd_add_customizer_field(
 		'tooltip'     => esc_html__( 'If you have a background-color or background-image defined for your header, then these will be visible through these gaps which creates a unique appearance since each grid-part looks separate.', 'gridd' ),
 		'section'     => 'gridd_grid_part_details_header',
 		'default'     => '0',
+		'priority'    => 30,
 		'css_vars'    => '--gridd-header-grid-gap',
 		'transport'   => 'postMessage',
 	]
@@ -105,6 +108,7 @@ gridd_add_customizer_field(
 		'section'   => 'gridd_grid_part_details_header',
 		'default'   => '#ffffff',
 		'transport' => 'postMessage',
+		'priority'    => 40,
 		'css_vars'  => '--gridd-header-bg',
 		'choices'   => [
 			'alpha' => true,
@@ -123,7 +127,7 @@ gridd_add_customizer_field(
 		'default'   => '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
 		'transport' => 'postMessage',
 		'css_vars'  => '--gridd-header-box-shadow',
-		'priority'  => 200,
+		'priority'  => 50,
 		'choices'   => [
 			'none' => esc_html__( 'None', 'gridd' ),
 			'0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)' => esc_html__( 'Extra Light', 'gridd' ),
@@ -132,7 +136,6 @@ gridd_add_customizer_field(
 			'0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)' => esc_html__( 'Heavy', 'gridd' ),
 			'0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)' => esc_html__( 'Extra Heavy', 'gridd' ),
 		],
-		'priority'  => 90,
 	]
 );
 
@@ -145,8 +148,7 @@ gridd_add_customizer_field(
 		'section'   => 'gridd_grid_part_details_header',
 		'default'   => false,
 		'transport' => 'refresh',
-		'priority'  => 300,
-		'priority'  => 91,
+		'priority'  => 60,
 	]
 );
 
@@ -159,7 +161,7 @@ gridd_add_customizer_field(
 		'section'         => 'gridd_grid_part_details_header',
 		'default'         => false,
 		'transport'       => 'refresh',
-		'priority'        => 300,
+		'priority'        => 61,
 		'active_callback' => [
 			[
 				'setting'  => 'gridd_header_sticky',
@@ -167,6 +169,5 @@ gridd_add_customizer_field(
 				'value'    => true,
 			],
 		],
-		'priority'        => 91,
 	]
 );
