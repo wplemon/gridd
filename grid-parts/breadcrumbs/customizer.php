@@ -14,6 +14,7 @@ gridd_add_customizer_section(
 		'title'       => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Breadcrumbs', 'gridd' ) ),
 		'section'     => 'gridd_grid',
 		'description' => Customizer::section_description(
+			'gridd_grid_part_details_breadcrumbs',
 			[
 				'plus' => [
 					esc_html__( 'Selecting from an array of WCAG-compliant colors for text', 'gridd' ),

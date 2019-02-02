@@ -13,6 +13,7 @@ gridd_add_customizer_section(
 	[
 		'title'       => esc_html__( 'Footer', 'gridd' ),
 		'description' => Customizer::section_description(
+			'gridd_grid_part_details_footer',
 			[
 				'plus' => [
 					esc_html__( 'Separate grid for mobile devices', 'gridd' ),

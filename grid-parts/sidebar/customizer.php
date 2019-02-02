@@ -33,6 +33,7 @@ function gridd_sidebar_customizer_options( $id ) {
 			/* translators: The grid-part label. */
 			'title'       => sprintf( esc_html__( '%s Advanced Options', 'gridd' ), $label ),
 			'description' => Customizer::section_description(
+				"gridd_grid_part_details_sidebar_$id",
 				[
 					'plus' => [
 						esc_html__( 'Selecting from an array of WCAG-compliant colors for text', 'gridd' ),

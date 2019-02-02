@@ -48,6 +48,7 @@ function gridd_nav_customizer_options( $id ) {
 				sprintf( esc_html__( 'Navigation %d', 'gridd' ), absint( $id ) )
 			),
 			'description' => Customizer::section_description(
+				"gridd_grid_part_details_nav_$id",
 				[
 					'plus' => [
 						esc_html__( 'Selecting from an array of WCAG-compliant colors for text', 'gridd' ),

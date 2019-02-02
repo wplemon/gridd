@@ -19,12 +19,12 @@ gridd_add_customizer_section(
 	[
 		'title'       => esc_html__( 'Typography & Links', 'gridd' ),
 		'description' => Customizer::section_description(
+			'gridd_typography',
 			[
 				'plus' => [
-					esc_html__( 'Selecting from an array of WCAG-compliant colors for text', 'gridd' ),
-					esc_html__( 'Selecting from an array of WCAG-compliant colors for links', 'gridd' ),
+					esc_html__( 'Selecting from an array of WCAG-compliant colors for text, headers and links', 'gridd' ),
 					esc_html__( 'Adjustable typography scales', 'gridd' ),
-					esc_html__( 'Links decoration (underlined/not-underlined) for links & headers separately.', 'gridd' ),
+					esc_html__( 'Links decoration (underlined/not-underlined) for content and headers separately.', 'gridd' ),
 				],
 				'docs' => 'https://wplemon.com/documentation/gridd/typography/',
 			]
@@ -223,6 +223,7 @@ gridd_add_customizer_field(
 		'default'     => '1.26',
 		'transport'   => 'postMessage',
 		'css_vars'    => '--gridd-typo-scale',
+		'priority'    => 80,
 		'choices'     => [
 			/* Translators: Numeric representation of the scale. */
 			'1.149' => sprintf( esc_attr__( '%s - Musical Pentatonic (classic)', 'gridd' ), '1.149' ),

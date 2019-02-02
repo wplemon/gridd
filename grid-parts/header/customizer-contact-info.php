@@ -14,6 +14,7 @@ gridd_add_customizer_section(
 		/* translators: The grid-part label. */
 		'title'       => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Header Contact Info', 'gridd' ) ),
 		'description' => Customizer::section_description(
+			'gridd_grid_part_details_header_contact_info',
 			[
 				'plus' => [
 					esc_html__( 'Selecting from an array of WCAG-compliant colors for text', 'gridd' ),

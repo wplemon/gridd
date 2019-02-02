@@ -12,6 +12,7 @@ gridd_add_customizer_section(
 	[
 		'title'       => esc_html__( 'Mobile Navigation', 'gridd' ),
 		'description' => Customizer::section_description(
+			'gridd_grid_part_details_nav-handheld',
 			[
 				'plus' => [
 					esc_html__( 'Additional item: axpandable widget-area with custom icon', 'gridd' ),

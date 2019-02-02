@@ -34,6 +34,7 @@ function gridd_add_footer_widget_area_options( $id ) {
 				sprintf( esc_html__( 'Footer Sidebar %d', 'gridd' ), absint( $id ) )
 			),
 			'description' => Customizer::section_description(
+				"gridd_grid_part_details_footer_sidebar_$id",
 				[
 					'plus' => [
 						esc_html__( 'Selecting from an array of WCAG-compliant colors for text', 'gridd' ),

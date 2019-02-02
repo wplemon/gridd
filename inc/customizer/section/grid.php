@@ -20,6 +20,7 @@ gridd_add_customizer_section(
 		'title'       => esc_html__( 'Grid', 'gridd' ),
 		'priority'    => 22,
 		'description' => Customizer::section_description(
+			'gridd_grid',
 			[
 				'plus' => [
 					esc_html__( 'Separate grid for mobile devices.', 'gridd' ),

@@ -21,6 +21,7 @@ gridd_add_customizer_section(
 		'title'       => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Header Contact Info', 'gridd' ) ),
 		'section'     => 'gridd_grid_part_details_header',
 		'description' => Customizer::section_description(
+			'gridd_grid_part_details_social_media',
 			[
 				'docs' => 'https://wplemon.com/documentation/gridd/grid-parts/header/social-media/',
 			]

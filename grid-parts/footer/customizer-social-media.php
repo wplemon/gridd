@@ -18,6 +18,7 @@ gridd_add_customizer_section(
 		'title'       => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Footer Contact Info', 'gridd' ) ),
 		'section'     => 'gridd_grid_part_details_footer',
 		'description' => Customizer::section_description(
+			'gridd_grid_part_details_footer_social_media',
 			[
 				'docs' => 'https://wplemon.com/documentation/gridd/grid-parts/footer/',
 			]

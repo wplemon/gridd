@@ -276,10 +276,13 @@ class Customizer {
 	 * @static
 	 * @access public
 	 * @since 1.0
+	 * @param string $id   The section-ID.
 	 * @param array  $args The arguments [pro=>[''], docs=>'', tip=>''].
 	 * @return string      The final HTML.
 	 */
-	public static function section_description( $args ) {
+	public static function section_description( $id, $args ) {
+		$args = apply_filters( 'gridd_section_description', $args, $id );
+
 		$boxes   = '';
 		$buttons = '';
 		$args    = wp_parse_args(
@@ -291,7 +294,7 @@ class Customizer {
 			]
 		);
 
-		if ( $args['plus'] && ! Gridd::is_plus_active() ) {
+		if ( $args['plus'] ) {
 			$buttons .= '<button class="gridd-section-description-trigger gridd-plus" data-context="gridd-plus">' . esc_html__( 'Plus Features', 'gridd' ) . '</button>';
 
 			$boxes .= '<div class="gridd-section-description" aria-expanded="false" data-context="gridd-plus">';

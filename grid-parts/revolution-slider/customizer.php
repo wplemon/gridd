@@ -13,6 +13,7 @@ gridd_add_customizer_section(
 		/* translators: The grid-part label. */
 		'title'       => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Revolution Slider', 'gridd' ) ),
 		'description' => Customizer::section_description(
+			'gridd_grid_part_details_revolution-slider',
 			[
 				'docs' => 'https://wplemon.com/documentation/gridd/grid-parts/revolution-slider/',
 			]
