@@ -4,7 +4,7 @@
 	// display: inline;
 	float: left;
 	margin-right: 1.5em !important;
-	margin-left: calc(50% - var(--gridd-content-max-width-calculated) / 2) !important;
+	// margin-left: calc(50% - var(--gridd-content-max-width-calculated) / 2) !important;
 
 	img {
 		float: left;
@@ -15,7 +15,7 @@
 	// display: inline;
 	float: right;
 	margin-left: 1.5em !important;
-	margin-right: calc(50% - var(--gridd-content-max-width-calculated) / 2) !important;
+	// margin-right: calc(50% - var(--gridd-content-max-width-calculated) / 2) !important;
 
 	img {
 		float: right;
