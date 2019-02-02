@@ -13,4 +13,5 @@
     color: var(--gridd-header-social-icons-color); }
   .gridd-tp-social_media.gridd-tp svg {
     fill: var(--gridd-header-social-icons-color);
-    max-width: var(--gridd-header-social-icons-size); }
+    max-width: var(--gridd-header-social-icons-size);
+    width: 100%; }
