@@ -9,7 +9,7 @@
 use Gridd\Style;
 
 // Early exit if we're on the frontpage.
-if ( ! get_theme_mod( 'gridd_grid_breadcrumbs_show_on_front', false ) && ( is_front_page() || is_home() ) ) {
+if ( is_front_page() || is_home() ) {
 	return;
 }
 
@@ -41,7 +41,7 @@ $style->add_vars(
 			apply_filters(
 				'gridd_breadcrumbs_args',
 				[
-					'show_on_front' => get_theme_mod( 'gridd_grid_breadcrumbs_show_on_front', false ),
+					'show_on_front' => false,
 					'labels'        => [
 						'title' => false,
 					],
