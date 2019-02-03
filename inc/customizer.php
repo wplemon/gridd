@@ -294,6 +294,10 @@ class Customizer {
 			]
 		);
 
+		if ( ! $args['plus'] && ! $args['docs'] && ! $args['tip'] ) {
+			return;
+		}
+
 		if ( $args['plus'] ) {
 			$buttons .= '<button class="gridd-section-description-trigger gridd-plus" data-context="gridd-plus">' . esc_html__( 'Plus Features', 'gridd' ) . '</button>';
 
@@ -304,8 +308,9 @@ class Customizer {
 				$boxes .= '<li>' . $feature . '</li>';
 			}
 			$boxes .= '</ul>';
+			$boxes .= '</div>';
 		}
-		
+
 		if ( $args['tip'] ) {
 			$buttons .= '<button class="gridd-section-description-trigger gridd-tip" data-context="gridd-tip">' . esc_html__( 'Tip', 'gridd' ) . '</button>';
 			$boxes   .= '<div class="gridd-section-description" aria-expanded="false" data-context="gridd-tip">' . $args['tip'] . '</div>';
