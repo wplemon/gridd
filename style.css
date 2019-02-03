@@ -1,18 +1,13 @@
 /*!
-Theme Name: Gridd
-Theme URI: https://wplemon.com/gridd
-Author: wplemon.com
-Author URI: https://wplemon.com/
-Description: Built with Accessibility, performance and SEO in mind, the Gridd theme features a unique layout builder allowing you to create any kind of layout with ease.
-Version: 0.1.0
-License: GNU General Public License v2 or later
-License URI: LICENSE
-Text Domain: gridd
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, accessibility-ready,
-
-Gridd is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
-*/
+ * Theme Name:   Gridd
+ * Theme URI:    https://wplemon.com/gridd
+ * Author:       Ari Stathopoulos
+ * Author URI:   https://wplemon.com/
+ * Description:  Built with Accessibility, performance and SEO in mind, the Gridd theme features a unique layout builder allowing you to create any kind of layout with ease.
+ * Version:      0.1.0
+ * License:      GNU General Public License v2.0 or later
+ * License URI:  https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain:  gridd
+ * Requires PHP: 5.6
+ * Tags:         custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, accessibility-ready
+ */
