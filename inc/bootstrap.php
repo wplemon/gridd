@@ -194,7 +194,7 @@ function gridd_filter_comment_form_defaults( $args ) {
 function gridd_get_post_parts() {
 	return apply_filters(
 		'gridd_get_post_parts',
-		get_theme_mod( 'gridd_post_parts', [ 'post-title', 'post-date-author', 'post-thumbnail', 'post-content', 'post-category', 'post-tags', 'post-comments-link' ] )
+		[ 'post-title', 'post-date-author', 'post-thumbnail', 'post-content', 'post-category', 'post-tags', 'post-comments-link' ]
 	);
 }
 
