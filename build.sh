@@ -3,79 +3,72 @@
 # Clone the repository in the build folder.
 git clone git@github.com:wplemon/gridd.git build --recursive
 
-cd build
-
-# Install node modules & grunt.
-rm package-lock.json
-npm install
-grunt
-
 # Remove extra files.
-rm -rf .sass-cache
-rm -rf node_modules
-rm -f .browserslistrc
-rm -f .editorconfig
-rm -f .eslintignore
-rm -f .eslintrc.json
-rm -rf .git
-rm -f .gitignore
-rm -f .gitmodules
-rm -f package-lock.json
+rm -rf build/.sass-cache
+rm -rf build/node_modules
+rm -f build/.browserslistrc
+rm -f build/.editorconfig
+rm -f build/.eslintignore
+rm -f build/.eslintrc.json
+rm -rf build/.git
+rm -f build/.gitignore
+rm -f build/.gitmodules
+rm -f build/package-lock.json
 
-rm -f **/**/**/**/**/*.css.map
-rm -f **/**/**/**/*.css.map
-rm -f **/**/**/*.css.map
-rm -f **/**/*.css.map
-rm -f **/*.css.map
-rm -f *.css.map
+rm -f build/**/**/**/**/**/*.css.map
+rm -f build/**/**/**/**/*.css.map
+rm -f build/**/**/**/*.css.map
+rm -f build/**/**/*.css.map
+rm -f build/**/*.css.map
+rm -f build/*.css.map
 
-rm -f **/**/**/**/**/*.scss
-rm -f **/**/**/**/*.scss
-rm -f **/**/**/*.scss
-rm -f **/**/*.scss
-rm -f **/*.scss
-rm -f *.scss
+rm -f build/**/**/**/**/**/*.scss
+rm -f build/**/**/**/**/*.scss
+rm -f build/**/**/**/*.scss
+rm -f build/**/**/*.scss
+rm -f build/**/*.scss
+rm -f build/*.scss
 
-rm -f grid-parts/breadcrumbs/hybrid-breadcrumbs/.git
-rm -f grid-parts/breadcrumbs/hybrid-breadcrumbs/.editorconfig
-rm -f grid-parts/breadcrumbs/hybrid-breadcrumbs/.gitattributes
-rm -f grid-parts/breadcrumbs/hybrid-breadcrumbs/.gitignore
-rm -f grid-parts/breadcrumbs/hybrid-breadcrumbs/changelog.md
-rm -f grid-parts/breadcrumbs/hybrid-breadcrumbs/composer.json
-rm -f grid-parts/breadcrumbs/hybrid-breadcrumbs/.contributing.md
+rm -f build/grid-parts/breadcrumbs/hybrid-breadcrumbs/.git
+rm -f build/grid-parts/breadcrumbs/hybrid-breadcrumbs/.editorconfig
+rm -f build/grid-parts/breadcrumbs/hybrid-breadcrumbs/.gitattributes
+rm -f build/grid-parts/breadcrumbs/hybrid-breadcrumbs/.gitignore
+rm -f build/grid-parts/breadcrumbs/hybrid-breadcrumbs/changelog.md
+rm -f build/grid-parts/breadcrumbs/hybrid-breadcrumbs/composer.json
+rm -f build/grid-parts/breadcrumbs/hybrid-breadcrumbs/.contributing.md
 
-rm -rf inc/kirki/.git
-rm -rf inc/kirki/.github
-rm -rf inc/kirki/.sass-cache
-rm -rf inc/kirki/controls/css/*.map
-rm -rf inc/kirki/controls/js/src
-rm -rf inc/kirki/controls/scss
-rm -rf inc/kirki/docs
-rm -f inc/kirki/modules/custom-sections/*.scss
-rm -f inc/kirki/modules/custom-sections/*.map
-rm -f inc/kirki/modules/tooltips/*.scss
-rm -f inc/kirki/modules/tooltips/*.map
-rm -rf inc/kirki/node_modules
-rm -rf inc/kirki/tests
-rm -f inc/kirki/.codeclimate.yml
-rm -f inc/kirki/.coveralls.yml
-rm -f inc/kirki/.csslintrc
-rm -f inc/kirki/.editorconfig
-rm -f inc/kirki/.gitignore
-rm -f inc/kirki/.jscsrc
-rm -f inc/kirki/.jshintignore
-rm -f inc/kirki/.jshintrc
-rm -f inc/kirki/.jhintrc
-rm -f inc/kirki/.phpcs.xml.dist
-rm -f inc/kirki/.simplecov
-rm -f inc/kirki/.travis.yml
-rm -f inc/kirki/CODE_OF_CONDUCT.md
-rm -f inc/kirki/composer.*
-rm -f inc/kirki/example.php
-rm -f inc/kirki/Gruntfile.js
-rm -f inc/kirki/package.json
-rm -f inc/kirki/phpunit.xml
-rm -f inc/kirki/phpunit.xml.dist
-rm -f inc/kirki/README.md
-rm -f inc/kirki/*.sh
-rm -f inc/kirki/package-lock.json
+rm -rf build/inc/kirki/.git
+rm -rf build/inc/kirki/.github
+rm -rf build/inc/kirki/.sass-cache
+rm -rf build/inc/kirki/controls/css/*.map
+rm -rf build/inc/kirki/controls/js/src
+rm -rf build/inc/kirki/controls/scss
+rm -rf build/inc/kirki/docs
+rm -f build/inc/kirki/modules/custom-sections/*.scss
+rm -f build/inc/kirki/modules/custom-sections/*.map
+rm -f build/inc/kirki/modules/tooltips/*.scss
+rm -f build/inc/kirki/modules/tooltips/*.map
+rm -rf build/inc/kirki/node_modules
+rm -rf build/inc/kirki/tests
+rm -f build/inc/kirki/.codeclimate.yml
+rm -f build/inc/kirki/.coveralls.yml
+rm -f build/inc/kirki/.csslintrc
+rm -f build/inc/kirki/.editorconfig
+rm -f build/inc/kirki/.gitignore
+rm -f build/inc/kirki/.jscsrc
+rm -f build/inc/kirki/.jshintignore
+rm -f build/inc/kirki/.jshintrc
+rm -f build/inc/kirki/.jhintrc
+rm -f build/inc/kirki/.phpcs.xml.dist
+rm -f build/inc/kirki/.simplecov
+rm -f build/inc/kirki/.travis.yml
+rm -f build/inc/kirki/CODE_OF_CONDUCT.md
+rm -f build/inc/kirki/composer.*
+rm -f build/inc/kirki/example.php
+rm -f build/inc/kirki/Gruntfile.js
+rm -f build/inc/kirki/package.json
+rm -f build/inc/kirki/phpunit.xml
+rm -f build/inc/kirki/phpunit.xml.dist
+rm -f build/inc/kirki/README.md
+rm -f build/inc/kirki/*.sh
+rm -f build/inc/kirki/package-lock.json
