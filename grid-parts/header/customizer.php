@@ -108,7 +108,7 @@ gridd_add_customizer_field(
 		'section'   => 'gridd_grid_part_details_header',
 		'default'   => '#ffffff',
 		'transport' => 'postMessage',
-		'priority'    => 40,
+		'priority'  => 40,
 		'css_vars'  => '--gridd-header-bg',
 		'choices'   => [
 			'alpha' => true,
