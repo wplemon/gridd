@@ -3,7 +3,7 @@
  * Template part for displaying the post-time & byline.
  *
  * @package Gridd
- * @since 1.0
+ * @since 0.1
  */
 
 ?>

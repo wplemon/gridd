@@ -3,7 +3,7 @@
  * Template part for the footer copyright.
  *
  * @package Gridd
- * @since 1.0
+ * @since 0.1
  */
 
 use Gridd\Style;

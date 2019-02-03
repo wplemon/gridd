@@ -101,7 +101,7 @@
 /**
  * Gets a readable text color.
  *
- * @since 1.0
+ * @since 0.1
  * @param {string} bg - The background color (hex).
  * @returns {string} - Text color (hex).
  */

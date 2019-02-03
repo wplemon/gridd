@@ -12,7 +12,7 @@ use Gridd\Grid_Part;
 /**
  * The Gridd\Grid_Part\Breadcrumbs object.
  *
- * @since 1.0
+ * @since 0.1
  */
 class Layer_Slider extends Grid_Part {
 
@@ -20,7 +20,7 @@ class Layer_Slider extends Grid_Part {
 	 * The grid-part ID.
 	 *
 	 * @access protected
-	 * @since 1.0
+	 * @since 0.1
 	 * @var string
 	 */
 	protected $id = 'layer-slider';
@@ -29,7 +29,7 @@ class Layer_Slider extends Grid_Part {
 	 * An array of files to include.
 	 *
 	 * @access protected
-	 * @since 1.0
+	 * @since 0.1
 	 * @var array
 	 */
 	protected $include_files = [
@@ -40,7 +40,7 @@ class Layer_Slider extends Grid_Part {
 	 * The path to this directory..
 	 *
 	 * @access protected
-	 * @since 1.0
+	 * @since 0.1
 	 * @var string
 	 */
 	protected $dir = __DIR__;
@@ -49,7 +49,7 @@ class Layer_Slider extends Grid_Part {
 	 * Hooks & extra operations.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @return void
 	 */
 	public function init() {
@@ -60,7 +60,7 @@ class Layer_Slider extends Grid_Part {
 	 * Returns the grid-part definition.
 	 *
 	 * @access protected
-	 * @since 1.0
+	 * @since 0.1
 	 * @return void
 	 */
 	protected function set_part() {
@@ -76,7 +76,7 @@ class Layer_Slider extends Grid_Part {
 	 * Render this grid-part.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @param string $part The grid-part ID.
 	 * @return void
 	 */

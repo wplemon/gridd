@@ -31,7 +31,7 @@ gridd_add_customizer_section(
  * Remove header-textcolor control.
  * We have separate controls for title & subtitle so this one is not necessary.
  *
- * @since 1.0
+ * @since 0.1
  * @param object $wp_customize The WordPress Customizer instance.
  * @return void
  */

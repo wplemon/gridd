@@ -3,7 +3,7 @@
  * Template part for displaying posts - "Status" post-format.
  *
  * @package Gridd
- * @since 1.0
+ * @since 0.1
  */
 
 $parts = gridd_get_post_parts();

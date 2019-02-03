@@ -3,7 +3,7 @@
  * Template part for displaying a message that posts cannot be found
  *
  * @package Gridd
- * @since 1.0
+ * @since 0.1
  */
 
 ?>

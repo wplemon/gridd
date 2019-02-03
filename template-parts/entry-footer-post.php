@@ -3,7 +3,7 @@
  * Template part for displaying posts
  *
  * @package Gridd
- * @since 1.0
+ * @since 0.1
  */
 
 gridd_the_edit_link();

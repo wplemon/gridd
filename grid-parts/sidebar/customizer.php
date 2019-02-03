@@ -18,7 +18,7 @@ for ( $i = 1; $i <= $number; $i++ ) {
  * This function creates all options for a sidebar.
  * We use a parameter since we'll allow multiple sidebars.
  *
- * @since 1.0
+ * @since 0.1
  * @param int $id The number of this sidebar.
  * @return void
  */

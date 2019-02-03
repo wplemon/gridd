@@ -3,7 +3,7 @@
  * Template part for displaying the post-tags.
  *
  * @package Gridd
- * @since 1.0
+ * @since 0.1
  */
 
 $tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'gridd' ) );

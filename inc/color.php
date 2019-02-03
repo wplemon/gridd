@@ -15,7 +15,7 @@ use \ariColor;
 /**
  * A collection of a11y utilities.
  *
- * @since 1.0
+ * @since 0.1
  */
 class Color {
 
@@ -24,7 +24,7 @@ class Color {
 	 *
 	 * @static
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @param string $color The background color.
 	 * @return string       The text color (hex).
 	 */
@@ -37,7 +37,7 @@ class Color {
 	 *
 	 * @static
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @param array $rgb An array [R,G,B].
 	 * @return float
 	 */
@@ -58,7 +58,7 @@ class Color {
 	 *
 	 * @static
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @param array $colors The 2 colors as strings ['#fff','#000'].
 	 * @return float
 	 */

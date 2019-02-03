@@ -15,7 +15,7 @@ use Gridd\Grid_Parts;
 /**
  * Extra methods and actions for the customizer.
  *
- * @since 1.0
+ * @since 0.1
  */
 class Customizer {
 
@@ -23,7 +23,7 @@ class Customizer {
 	 * An array of grid controls.
 	 *
 	 * @static
-	 * @since 1.0
+	 * @since 0.1
 	 * @var array
 	 */
 	public static $grid_controls = [];
@@ -32,7 +32,7 @@ class Customizer {
 	 * An array of background to text color setting automations.
 	 *
 	 * @static
-	 * @since 1.0
+	 * @since 0.1
 	 * @var array
 	 */
 	public static $auto_text_color = [
@@ -64,7 +64,7 @@ class Customizer {
 	 * Constructor.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 */
 	public function __construct() {
 		add_filter( 'kirki_gridd_css_skip_hidden', '__return_false' );
@@ -101,7 +101,7 @@ class Customizer {
 	 * Setup yhe grid filters.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @return void
 	 */
 	public function setup_grid_filters() {
@@ -113,7 +113,7 @@ class Customizer {
 	/**
 	 * Filters the theme mod value on save.
 	 *
-	 * @since 1.0
+	 * @since 0.1
 	 * @param string $value The new value of the theme mod.
 	 */
 	public function theme_mod_gridd_grid( $value ) {
@@ -127,7 +127,7 @@ class Customizer {
 	 * Sanitize the gridd_grid setting.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @param array $value The control value.
 	 * @return array       The value - sanitized.
 	 */
@@ -196,7 +196,7 @@ class Customizer {
 	 * Adds custom styles to the customizer.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @return void
 	 */
 	public function customize_controls_print_styles() {
@@ -209,7 +209,7 @@ class Customizer {
 	 * Adds extra customizer scripts.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @return void
 	 */
 	public function extra_customizer_scripts() {
@@ -229,7 +229,7 @@ class Customizer {
 	 * Adds customizer scripts.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @return void
 	 */
 	public function preview_customizer_scripts() {
@@ -249,7 +249,7 @@ class Customizer {
 	 * This is useful because in many controls the descriptions andtooltips are identical.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @param string $context The tooltip context.
 	 * @param array  $params  Extra parameters. Used in sprintf().
 	 * @return string
@@ -275,7 +275,7 @@ class Customizer {
 	 *
 	 * @static
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @param string $id   The section-ID.
 	 * @param array  $args The arguments [pro=>[''], docs=>'', tip=>''].
 	 * @return string      The final HTML.

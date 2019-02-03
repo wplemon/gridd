@@ -38,7 +38,7 @@ add_filter(
  * Registers the control type and make it eligible for
  * JS templating in the Customizer.
  *
- * @since 1.0
+ * @since 0.1
  * @param object $wp_customize The Customizer object.
  * @return void
  */
@@ -53,7 +53,7 @@ add_action( 'customize_register', 'gridd_kirki_wcag_link_color_register_control_
 /**
  * Proxy function for Kirki.
  *
- * @since 1.0
+ * @since 0.1
  * @param array $args The field arguments.
  * @return void
  */
@@ -83,7 +83,7 @@ function gridd_add_customizer_field( $args ) {
 /**
  * Proxy function for Kirki.
  *
- * @since 1.0
+ * @since 0.1
  * @param string $id   The section ID.
  * @param array  $args The field arguments.
  * @return void
@@ -103,7 +103,7 @@ function gridd_add_customizer_section( $id, $args ) {
 /**
  * Proxy function for Kirki.
  *
- * @since 1.0
+ * @since 0.1
  * @param string $id   The section ID.
  * @param array  $args The field arguments.
  * @return void
@@ -135,7 +135,7 @@ gridd_add_customizer_panel(
 /**
  * Add "Get Plus" section.
  *
- * @since 1.0
+ * @since 0.1
  */
 if ( ! Gridd::is_plus_active() ) {
 	gridd_add_customizer_section(
@@ -170,7 +170,7 @@ function gridd_customize_partial_blogdescription() {
 /**
  * Changes the stylesheet in which Kirki adds its styles.
  *
- * @since 1.0
+ * @since 0.1
  * @return string
  */
 function gridd_kirki_stylesheet() {
@@ -181,7 +181,7 @@ add_filter( 'kirki_gridd_stylesheet', 'gridd_kirki_stylesheet' );
 /**
  * Adds some custom styles to the customizer.
  *
- * @since 1.0
+ * @since 0.1
  */
 function gridd_customizer_custom_styles() {
 	echo '<style>';
@@ -214,7 +214,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 /**
  * Get the default value for the grid.
  *
- * @since 1.0
+ * @since 0.1
  * @return array
  */
 function gridd_get_grid_default_value() {
@@ -271,7 +271,7 @@ add_action(
 /**
  * Move the background-color control to the modified background-image section.
  *
- * @since 1.0
+ * @since 0.1
  * @param WP_Customize The WordPress Customizer main object.
  * @return void
  */

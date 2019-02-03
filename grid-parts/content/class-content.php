@@ -13,7 +13,7 @@ use Gridd\Style;
 /**
  * The Gridd\Grid_Part\Content object.
  *
- * @since 1.0
+ * @since 0.1
  */
 class Content extends Grid_Part {
 
@@ -21,7 +21,7 @@ class Content extends Grid_Part {
 	 * The grid-part ID.
 	 *
 	 * @access protected
-	 * @since 1.0
+	 * @since 0.1
 	 * @var string
 	 */
 	protected $id = 'content';
@@ -30,7 +30,7 @@ class Content extends Grid_Part {
 	 * An array of files to include.
 	 *
 	 * @access protected
-	 * @since 1.0
+	 * @since 0.1
 	 * @var array
 	 */
 	protected $include_files = [
@@ -41,7 +41,7 @@ class Content extends Grid_Part {
 	 * The path to this directory..
 	 *
 	 * @access protected
-	 * @since 1.0
+	 * @since 0.1
 	 * @var string
 	 */
 	protected $dir = __DIR__;
@@ -50,7 +50,7 @@ class Content extends Grid_Part {
 	 * Hooks & extra operations.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @return void
 	 */
 	public function init() {
@@ -66,7 +66,7 @@ class Content extends Grid_Part {
 	 * Returns the grid-part definition.
 	 *
 	 * @access protected
-	 * @since 1.0
+	 * @since 0.1
 	 * @return void
 	 */
 	protected function set_part() {
@@ -82,7 +82,7 @@ class Content extends Grid_Part {
 	 * Add a content-filter for post-formats.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @param string $content The post-content.
 	 * @return string
 	 */
@@ -116,7 +116,7 @@ class Content extends Grid_Part {
 	 *
 	 * @static
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @return void
 	 */
 	public static function print_styles() {
@@ -151,7 +151,7 @@ class Content extends Grid_Part {
 	 * Adds the script to the footer.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @param array $paths Paths to scripts we want to load.
 	 * @return array
 	 */

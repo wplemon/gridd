@@ -6,7 +6,7 @@
  * element when on single views.
  *
  * @package Gridd
- * @since 1.0
+ * @since 0.1
  */
 
 if ( 'hidden' === get_theme_mod( 'gridd_featured_image_mode_archive', 'alignwide' ) ) {

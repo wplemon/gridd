@@ -16,7 +16,7 @@ use Gridd\Grid_Part\Footer;
 /**
  * Template handler.
  *
- * @since 1.0
+ * @since 0.1
  */
 class Grid {
 
@@ -25,7 +25,7 @@ class Grid {
 	 *
 	 * @static
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @param string $theme_mod The theme-mod we're checking.
 	 * @param array  $defaults  The defaults for the theme-mod.
 	 * @return array
@@ -67,7 +67,7 @@ class Grid {
 	 *
 	 * @static
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @param array  $settings     The theme-mods for this grid. If empty it will use the default grid.
 	 * @param string $selector     The CSS selector for the grid.
 	 * @param bool   $prefix_parts Whether we should prefix the parts CSS with the wrapper or not.
@@ -160,7 +160,7 @@ class Grid {
 	 *
 	 * @static
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @param array $args The arguments.
 	 * @return void
 	 */
@@ -175,7 +175,7 @@ class Grid {
 	 *
 	 * @static
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @param array $args The arguments.
 	 * @return string
 	 */

@@ -6,7 +6,7 @@
  * element when on single views.
  *
  * @package Gridd
- * @since 1.0
+ * @since 0.1
  */
 
 if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {

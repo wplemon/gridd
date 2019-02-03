@@ -14,7 +14,7 @@ use Gridd\Grid_Parts;
 /**
  * The Gridd\Grid_Part\Breadcrumbs object.
  *
- * @since 1.0
+ * @since 0.1
  */
 class Header extends Grid_Part {
 
@@ -22,7 +22,7 @@ class Header extends Grid_Part {
 	 * The grid-part ID.
 	 *
 	 * @access protected
-	 * @since 1.0
+	 * @since 0.1
 	 * @var string
 	 */
 	protected $id = 'header';
@@ -31,7 +31,7 @@ class Header extends Grid_Part {
 	 * An array of files to include.
 	 *
 	 * @access protected
-	 * @since 1.0
+	 * @since 0.1
 	 * @var array
 	 */
 	protected $include_files = [
@@ -46,7 +46,7 @@ class Header extends Grid_Part {
 	 * The path to this directory..
 	 *
 	 * @access protected
-	 * @since 1.0
+	 * @since 0.1
 	 * @var string
 	 */
 	protected $dir = __DIR__;
@@ -55,7 +55,7 @@ class Header extends Grid_Part {
 	 * Returns the grid-part definition.
 	 *
 	 * @access protected
-	 * @since 1.0
+	 * @since 0.1
 	 * @return void
 	 */
 	protected function set_part() {
@@ -72,7 +72,7 @@ class Header extends Grid_Part {
 	 * Hooks & extra operations.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @return void
 	 */
 	public function init() {
@@ -86,7 +86,7 @@ class Header extends Grid_Part {
 	 * Render this grid-part.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @param string $part The grid-part ID.
 	 * @return void
 	 */
@@ -101,7 +101,7 @@ class Header extends Grid_Part {
 	 *
 	 * @static
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @return array
 	 */
 	public static function get_grid_defaults() {
@@ -128,7 +128,7 @@ class Header extends Grid_Part {
 	 * Necessary for pugged-in grid-parts with no dedicated templates.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @param array $specs The initial specs.
 	 * @return array
 	 */
@@ -142,7 +142,7 @@ class Header extends Grid_Part {
 	 * Necessary for pugged-in grid-parts with no dedicated templates.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @param array $specs The initial specs.
 	 * @return array
 	 */
@@ -156,7 +156,7 @@ class Header extends Grid_Part {
 	 * This fixes an issue on android devices where images don't get properly resized.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @param string $html The logo HTML.
 	 */
 	public function get_custom_logo( $html ) {
@@ -170,7 +170,7 @@ class Header extends Grid_Part {
 	 *
 	 * @static
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @return array
 	 */
 	public static function get_header_grid_parts() {

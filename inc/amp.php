@@ -12,7 +12,7 @@ namespace Gridd;
 /**
  * Extra methods and actions for the blog.
  *
- * @since 1.0
+ * @since 0.1
  */
 class AMP {
 
@@ -22,7 +22,7 @@ class AMP {
 	 * to avoid using the webfontloader script.
 	 *
 	 * @access protected
-	 * @since 1.0
+	 * @since 0.1
 	 * @var array
 	 */
 	public $typography_settings = [
@@ -36,7 +36,7 @@ class AMP {
 	 * Constructor.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 */
 	public function __construct() {
 
@@ -71,7 +71,7 @@ class AMP {
 	 * but it will be a pretty close approximation.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @return void
 	 */
 	public function css_vars_calc() {
@@ -120,7 +120,7 @@ class AMP {
 	 * Modify the typography settings to force-download the fonts and use locally instead of using the google API.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @param array $value The theme-mod value.
 	 * @return array       The modified array for this theme-mod value.
 	 */
@@ -135,7 +135,7 @@ class AMP {
 	 * Adds theme-support for AMP - native mode.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @return void
 	 */
 	public function add_theme_support() {

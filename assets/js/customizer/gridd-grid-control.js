@@ -28,7 +28,7 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 	/**
 	 * Triggered when the control is ready.
 	 *
-	 * @since 1.0
+	 * @since 0.1
 	 * @returns {void}
 	 */
 	ready: function() {
@@ -58,7 +58,7 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 	/**
 	 * Add and remove rows and columns.
 	 *
-	 * @since 1.0
+	 * @since 0.1
 	 * @returns {void}
 	 */
 	gridButtons: function() {
@@ -98,7 +98,7 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 	/**
 	 * Gets the nr of columns and rows from active parts.
 	 *
-	 * @since 1.0
+	 * @since 0.1
 	 * @returns {Object}
 	 */
 	getMaxColsRowsFromActiveParts: function() {
@@ -122,7 +122,7 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 	/**
 	 * Adds a column.
 	 *
-	 * @since 1.0
+	 * @since 0.1
 	 * @returns {void}
 	 */
 	addColumn: function() {
@@ -136,7 +136,7 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 	/**
 	 * Removes a column.
 	 *
-	 * @since 1.0
+	 * @since 0.1
 	 * @returns {void}
 	 */
 	removeColumn: function() {
@@ -155,7 +155,7 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 	/**
 	 * Adds a row.
 	 *
-	 * @since 1.0
+	 * @since 0.1
 	 * @returns {void}
 	 */
 	addRow: function() {
@@ -169,7 +169,7 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 	/**
 	 * Removes a row.
 	 *
-	 * @since 1.0
+	 * @since 0.1
 	 * @returns {void}
 	 */
 	removeRow: function() {
@@ -189,7 +189,7 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 	 * Draws the grid selector part.
 	 * This contains the dragSelect functionality.
 	 *
-	 * @since 1.0
+	 * @since 0.1
 	 * @returns {void}
 	 */
 	drawGridSelector: function() {
@@ -286,7 +286,7 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 	/**
 	 * Draw the column input fields.
 	 *
-	 * @since 1.0
+	 * @since 0.1
 	 * @returns {void}
 	 */
 	drawColumnFields: function() {
@@ -315,7 +315,7 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 	/**
 	 * Draw the row input fields.
 	 *
-	 * @since 1.0
+	 * @since 0.1
 	 * @returns {void}
 	 */
 	drawRowFields: function() {
@@ -344,7 +344,7 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 	/**
 	 * Builds the grid selected part.
 	 *
-	 * @since 1.0
+	 * @since 0.1
 	 * @returns {void}
 	 */
 	drawGridSelectedParts: function() {
@@ -420,7 +420,7 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 	/**
 	 * Handles triggering the focus buttons.
 	 *
-	 * @since 1.0
+	 * @since 0.1
 	 * @returns {void}
 	 */
 	triggerFocusButtons: function() {
@@ -439,7 +439,7 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 	/**
 	 * Gets the actions HTML.
 	 *
-	 * @since 1.0
+	 * @since 0.1
 	 * @param {string} id - The grid-part ID.
 	 * @returns {string}
 	 */
@@ -474,7 +474,7 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 	/**
 	 * Actions to run when we select a grid-part.
 	 *
-	 * @since 1.0
+	 * @since 0.1
 	 * @returns {void}
 	 */
 	selectPartButtons: function() {
@@ -517,7 +517,7 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 	/**
 	 * Triggers for edit buttons.
 	 *
-	 * @since 1.0
+	 * @since 0.1
 	 * @returns {void}
 	 */
 	trggerPartEditButton: function() {
@@ -584,7 +584,7 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 	/**
 	 * Triggers for delete button.
 	 *
-	 * @since 1.0
+	 * @since 0.1
 	 * @returns {void}
 	 */
 	triggerPartDeleteButton: function() {
@@ -614,7 +614,7 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 	/**
 	 * Get a part attribute.
 	 *
-	 * @since 1.0
+	 * @since 0.1
 	 * @param {string} id - The part-ID.
 	 * @param {string} attr - The attribute we're getting.
 	 * @returns {string|int}
@@ -633,7 +633,7 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 	/**
 	 * Sets window.griddGridPartsSelectedAreas.
 	 *
-	 * @since 1.0
+	 * @since 0.1
 	 * @returns {void}
 	 */
 	setPartsFromAllGridControls: function() {
@@ -647,7 +647,7 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 	/**
 	 * Gets all active parts from all grid controls.
 	 *
-	 * @since 1.0
+	 * @since 0.1
 	 * @returns {Object}
 	 */
 	getPartsFromAllGridControls: function() {
@@ -721,7 +721,7 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 	/**
 	 * Saves the value.
 	 *
-	 * @since 1.0
+	 * @since 0.1
 	 * @param {string|Object} newValue - The value we're saving.
 	 * @returns {void}
 	 */

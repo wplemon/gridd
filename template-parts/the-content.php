@@ -3,7 +3,7 @@
  * The main content.
  *
  * @package Gridd
- * @since 1.0
+ * @since 0.1
  */
 
 // Content for the "Quote" post-format.

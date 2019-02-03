@@ -12,7 +12,7 @@ use Gridd\Grid_Part;
 /**
  * The Gridd\Grid_Part\Sidebar object.
  *
- * @since 1.0
+ * @since 0.1
  */
 class Sidebar extends Grid_Part {
 
@@ -20,7 +20,7 @@ class Sidebar extends Grid_Part {
 	 * An array of files to include.
 	 *
 	 * @access protected
-	 * @since 1.0
+	 * @since 0.1
 	 * @var array
 	 */
 	protected $include_files = [
@@ -31,7 +31,7 @@ class Sidebar extends Grid_Part {
 	 * The path to this directory..
 	 *
 	 * @access protected
-	 * @since 1.0
+	 * @since 0.1
 	 * @var string
 	 */
 	protected $dir = __DIR__;
@@ -40,7 +40,7 @@ class Sidebar extends Grid_Part {
 	 * Hooks & extra operations.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @return void
 	 */
 	public function init() {
@@ -52,7 +52,7 @@ class Sidebar extends Grid_Part {
 	 * Returns the grid-part definition.
 	 *
 	 * @access protected
-	 * @since 1.0
+	 * @since 0.1
 	 * @return void
 	 */
 	protected function set_part() {}
@@ -61,7 +61,7 @@ class Sidebar extends Grid_Part {
 	 * Render this grid-part.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @param string $part The grid-part ID.
 	 * @return void
 	 */
@@ -80,7 +80,7 @@ class Sidebar extends Grid_Part {
 	 * Adds the grid-part to the array of grid-parts.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @param array $parts The existing grid-parts.
 	 * @return array
 	 */
@@ -104,7 +104,7 @@ class Sidebar extends Grid_Part {
 	 * Output the CSS for a navigation.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @param int $id The navigation ID.
 	 * @return void
 	 */
@@ -116,7 +116,7 @@ class Sidebar extends Grid_Part {
 	 *
 	 * @static
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 */
 	public static function get_number_of_sidebars() {
 		return apply_filters( 'gridd_get_number_of_nav_menus', 3 );
@@ -126,7 +126,7 @@ class Sidebar extends Grid_Part {
 	 * Register the sidebars.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @return void
 	 */
 	public function register_sidebars() {

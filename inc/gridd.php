@@ -20,7 +20,7 @@ use Gridd\AMP;
 /**
  * The main theme class.
  *
- * @since 1.0
+ * @since 0.1
  */
 class Gridd {
 
@@ -28,7 +28,7 @@ class Gridd {
 	 * The theme version.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @var string
 	 */
 	public $version = '1.0';
@@ -37,7 +37,7 @@ class Gridd {
 	 * The Gridd\Customizer object.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @var Gridd\Customizer
 	 */
 	public $customizer;
@@ -46,7 +46,7 @@ class Gridd {
 	 * The Gridd\Blog object.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @var Gridd\Blog
 	 */
 	public $blog;
@@ -55,7 +55,7 @@ class Gridd {
 	 * The Gridd\Scripts object.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @var Gridd\Scripts
 	 */
 	public $scripts;
@@ -64,7 +64,7 @@ class Gridd {
 	 * The Gridd\Jetpack object.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @var Gridd\Jetpack
 	 */
 	public $jetpack;
@@ -73,7 +73,7 @@ class Gridd {
 	 * The Gridd\WooCommerce object.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @var Gridd\WooCommerce
 	 */
 	public $wc;
@@ -83,7 +83,7 @@ class Gridd {
 	 *
 	 * @static
 	 * @access private
-	 * @since 1.0
+	 * @since 0.1
 	 * @var Gridd
 	 */
 	private static $instance;
@@ -93,7 +93,7 @@ class Gridd {
 	 *
 	 * @static
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @return Gridd
 	 */
 	public static function get_instance() {
@@ -106,7 +106,7 @@ class Gridd {
 	/**
 	 * Constructor.
 	 *
-	 * @since 1.0
+	 * @since 0.1
 	 * @access private
 	 */
 	private function __construct() {
@@ -135,7 +135,7 @@ class Gridd {
 	 * Adds custom classes to the array of body classes.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @param array $classes Classes for the body element.
 	 * @return array
 	 */
@@ -156,7 +156,7 @@ class Gridd {
 	 * Adds theme-supports.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @return void
 	 */
 	public function setup() {
@@ -279,7 +279,7 @@ class Gridd {
 	 * Define the content-width.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @global int $content_width
 	 * @return void
 	 */
@@ -291,7 +291,7 @@ class Gridd {
 	 * Determine if we're using the PRO plugin or not.
 	 *
 	 * @static
-	 * @since 1.0
+	 * @since 0.1
 	 * @return bool
 	 */
 	public static function is_plus_active() {

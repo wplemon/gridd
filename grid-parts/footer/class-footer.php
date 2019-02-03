@@ -14,7 +14,7 @@ use Gridd\Style;
 /**
  * The Gridd\Grid_Part\Breadcrumbs object.
  *
- * @since 1.0
+ * @since 0.1
  */
 class Footer extends Grid_Part {
 
@@ -22,7 +22,7 @@ class Footer extends Grid_Part {
 	 * The grid-part ID.
 	 *
 	 * @access protected
-	 * @since 1.0
+	 * @since 0.1
 	 * @var string
 	 */
 	protected $id = 'footer';
@@ -31,7 +31,7 @@ class Footer extends Grid_Part {
 	 * An array of files to include.
 	 *
 	 * @access protected
-	 * @since 1.0
+	 * @since 0.1
 	 * @var array
 	 */
 	protected $include_files = [
@@ -45,7 +45,7 @@ class Footer extends Grid_Part {
 	 * The path to this directory..
 	 *
 	 * @access protected
-	 * @since 1.0
+	 * @since 0.1
 	 * @var string
 	 */
 	protected $dir = __DIR__;
@@ -54,7 +54,7 @@ class Footer extends Grid_Part {
 	 * Returns the grid-part definition.
 	 *
 	 * @access protected
-	 * @since 1.0
+	 * @since 0.1
 	 * @return void
 	 */
 	protected function set_part() {
@@ -71,7 +71,7 @@ class Footer extends Grid_Part {
 	 * Hooks & extra operations.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @return void
 	 */
 	public function init() {
@@ -84,7 +84,7 @@ class Footer extends Grid_Part {
 	 * Render this grid-part.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @param string $part The grid-part ID.
 	 * @return void
 	 */
@@ -99,7 +99,7 @@ class Footer extends Grid_Part {
 	 *
 	 * @static
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @return array
 	 */
 	public static function get_grid_defaults() {
@@ -134,7 +134,7 @@ class Footer extends Grid_Part {
 	 * Register the sidebars.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @return void
 	 */
 	public function register_footer_sidebars() {
@@ -161,7 +161,7 @@ class Footer extends Grid_Part {
 	 * Necessary for pugged-in grid-parts with no dedicated templates.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @param array $specs The initial specs.
 	 * @return array
 	 */
@@ -175,7 +175,7 @@ class Footer extends Grid_Part {
 	 *
 	 * @static
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 */
 	public static function get_number_of_sidebars() {
 		return apply_filters( 'gridd_get_number_footer_sidebars', 6 );
@@ -186,7 +186,7 @@ class Footer extends Grid_Part {
 	 *
 	 * @static
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @return array
 	 */
 	public static function get_footer_grid_parts() {

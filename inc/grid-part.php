@@ -15,7 +15,7 @@ use Gridd\Grid_Parts;
 /**
  * Extra methods and actions for the blog.
  *
- * @since 1.0
+ * @since 0.1
  */
 class Grid_Part extends Grid_Parts {
 
@@ -23,7 +23,7 @@ class Grid_Part extends Grid_Parts {
 	 * The grid-part ID.
 	 *
 	 * @access protected
-	 * @since 1.0
+	 * @since 0.1
 	 * @var string
 	 */
 	protected $id = '';
@@ -33,7 +33,7 @@ class Grid_Part extends Grid_Parts {
 	 * Used by the add_template_part method.
 	 *
 	 * @access protected
-	 * @since 1.0
+	 * @since 0.1
 	 * @var array
 	 */
 	protected $part = [];
@@ -42,7 +42,7 @@ class Grid_Part extends Grid_Parts {
 	 * An array of files to include.
 	 *
 	 * @access protected
-	 * @since 1.0
+	 * @since 0.1
 	 * @var array
 	 */
 	protected $include_files = [];
@@ -51,7 +51,7 @@ class Grid_Part extends Grid_Parts {
 	 * The path to this directory..
 	 *
 	 * @access protected
-	 * @since 1.0
+	 * @since 0.1
 	 * @var string
 	 */
 	protected $dir = __DIR__;
@@ -60,7 +60,7 @@ class Grid_Part extends Grid_Parts {
 	 * Constructor.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 */
 	public function __construct() {
 		$this->set_part();
@@ -73,7 +73,7 @@ class Grid_Part extends Grid_Parts {
 	 * Extra functionality to run on init.
 	 *
 	 * @access protected
-	 * @since 1.0
+	 * @since 0.1
 	 * @return void
 	 */
 	protected function init() {
@@ -84,7 +84,7 @@ class Grid_Part extends Grid_Parts {
 	 * Includes extra files for this grid-part.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @return void
 	 */
 	public function include_files() {
@@ -97,7 +97,7 @@ class Grid_Part extends Grid_Parts {
 	 * Set the part details.
 	 *
 	 * @access protected
-	 * @since 1.0
+	 * @since 0.1
 	 * @return void
 	 */
 	protected function set_part() {}
@@ -106,7 +106,7 @@ class Grid_Part extends Grid_Parts {
 	 * Adds the grid-part to the array of grid-parts.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @param array $parts The existing grid-parts.
 	 * @return array
 	 */
@@ -129,7 +129,7 @@ class Grid_Part extends Grid_Parts {
 	 *
 	 * @static
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @param string $part The grid-part.
 	 * @param string $grid The grid setting value.
 	 * @return array       An array of properties for this template-part.
@@ -164,7 +164,7 @@ class Grid_Part extends Grid_Parts {
 	 *
 	 * @static
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @param string $grid_part    The grid-part.
 	 * @param string $grid_setting The grid setting. Necessary for nested grids to properly work.
 	 * @return array               An array of properties for this template-part.
@@ -179,7 +179,7 @@ class Grid_Part extends Grid_Parts {
 	 *
 	 * @static
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @param array $spec The spec.
 	 * @return bool
 	 */

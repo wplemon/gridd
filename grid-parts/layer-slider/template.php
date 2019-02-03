@@ -3,7 +3,7 @@
  * Template part for Layer Slider
  *
  * @package Gridd
- * @since 1.0
+ * @since 0.1
  */
 
 ?>

@@ -12,7 +12,7 @@ namespace Gridd;
 /**
  * Extra methods and actions for the blog.
  *
- * @since 1.0
+ * @since 0.1
  */
 class Blog {
 
@@ -20,7 +20,7 @@ class Blog {
 	 * Constructor.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 */
 	public function __construct() {
 		add_filter( 'excerpt_more', [ $this, 'excerpt_more' ] );

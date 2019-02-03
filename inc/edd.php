@@ -14,7 +14,7 @@ use Gridd\AMP;
 /**
  * Add some hooks for Easy Digital Downloads.
  *
- * @since 1.0
+ * @since 0.1
  */
 class EDD {
 
@@ -22,7 +22,7 @@ class EDD {
 	 * Constructor.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 */
 	public function __construct() {
 
@@ -51,7 +51,7 @@ class EDD {
 	 * Adds a grid part.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 0.1
 	 * @param string $hook The hook we want to add.
 	 * @return void
 	 */
