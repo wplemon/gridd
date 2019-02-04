@@ -6,6 +6,13 @@
  */
 
 /**
+ * The theme version.
+ *
+ * @since 1.0
+ */
+define( 'GRIDD_VERSION', '1.0' );
+
+/**
  * Gracefully fail if the user is on an old PHP version
  * or if using an old version of WordPress.
  */

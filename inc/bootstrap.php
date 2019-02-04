@@ -55,13 +55,6 @@ spl_autoload_register(
 Widget_Output_Filters::get_instance();
 
 /**
- * The theme version.
- *
- * @since 1.0
- */
-define( 'GRIDD_VERSION', '1.0' );
-
-/**
  * Load the textdomain.
  *
  * @since 1.0
