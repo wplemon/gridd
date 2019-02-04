@@ -3,7 +3,7 @@
  * Template part for the previous/next links in posts & pages.
  *
  * @package Gridd
- * @since 0.1
+ * @since 1.0
  */
 
 if ( ! get_theme_mod( 'gridd_show_next_prev', true ) ) {

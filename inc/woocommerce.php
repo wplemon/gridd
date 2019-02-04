@@ -16,7 +16,7 @@ use Gridd\Style;
 /**
  * The WooCommerce class.
  *
- * @since 0.1
+ * @since 1.0
  */
 class WooCommerce {
 
@@ -24,7 +24,7 @@ class WooCommerce {
 	 * Constructor.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 */
 	public function __construct() {
 
@@ -74,7 +74,7 @@ class WooCommerce {
 	 * Add theme supports for WooCommerce.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @link https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/
 	 * @link https://github.com/woocommerce/woocommerce/wiki/Enabling-product-gallery-features-(zoom,-swipe,-lightbox)-in-3.0.0
 	 * @return void
@@ -90,7 +90,7 @@ class WooCommerce {
 	 * Add inline styles for WooCommerce.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @return void
 	 */
 	public function inline_styles() {
@@ -132,7 +132,7 @@ class WooCommerce {
 	 * Add 'woocommerce-active' class to the body tag.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @param  array $classes CSS classes applied to the body tag.
 	 * @return array $classes modified to include 'woocommerce-active' class.
 	 */
@@ -145,7 +145,7 @@ class WooCommerce {
 	 * Products per page.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @return integer number of products.
 	 */
 	public function products_per_page() {
@@ -156,7 +156,7 @@ class WooCommerce {
 	 * Remove the WooCommerce default BreadCrumbs.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @return void
 	 */
 	public function remove_breadcrumbs() {
@@ -167,7 +167,7 @@ class WooCommerce {
 	 * Related Products Args.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @param array $args related products args.
 	 * @return array $args related products args.
 	 */
@@ -187,7 +187,7 @@ class WooCommerce {
 	 * Wraps all WooCommerce content in wrappers which match the theme markup.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @return void
 	 */
 	public function wrapper_before() {
@@ -200,7 +200,7 @@ class WooCommerce {
 	 * Closes the wrapping divs.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @return void
 	 */
 	public function wrapper_after() {
@@ -214,7 +214,7 @@ class WooCommerce {
 	 * Ensure cart contents update when products are added to the cart via AJAX.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @param array $fragments Fragments to refresh via AJAX.
 	 * @return array Fragments to refresh via AJAX.
 	 */
@@ -231,7 +231,7 @@ class WooCommerce {
 	 * Displayed a link to the cart including the number of items present and the cart total.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @return void
 	 */
 	public function cart_link() {
@@ -260,7 +260,7 @@ class WooCommerce {
 	 * Display Header Cart.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @return void
 	 */
 	public function header_cart() {
@@ -289,7 +289,7 @@ class WooCommerce {
 	 * We're only doing this when AMP is enabled.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @return void
 	 */
 	public function dequeue_cart_fragments() {

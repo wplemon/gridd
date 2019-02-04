@@ -3,7 +3,7 @@
  * Template part for the handheld navigation.
  *
  * @package Gridd
- * @since 0.1
+ * @since 1.0
  */
 
 $label_class = get_theme_mod( 'gridd_grid_nav-handheld_hide_labels', false ) ? 'screen-reader-text' : 'label';

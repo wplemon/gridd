@@ -16,7 +16,7 @@ use Gridd\Widget_Output_Filters;
 /**
  * Require the main theme class.
  *
- * @since 0.1
+ * @since 1.0
  */
 require_once __DIR__ . '/gridd.php';
 
@@ -57,14 +57,14 @@ Widget_Output_Filters::get_instance();
 /**
  * The theme version.
  *
- * @since 0.1
+ * @since 1.0
  */
 define( 'GRIDD_VERSION', '1.0' );
 
 /**
  * Load the textdomain.
  *
- * @since 0.1
+ * @since 1.0
  */
 function gridd_load_theme_textdomain() {
 	load_theme_textdomain( 'gridd', get_template_directory() . '/languages' );
@@ -74,14 +74,14 @@ add_action( 'after_setup_theme', 'gridd_load_theme_textdomain' );
 /**
  * Load admin screen.
  *
- * @since 0.1
+ * @since 1.0
  */
 new Admin();
 
 /**
  * Load the main theme class.
  *
- * @since 0.1
+ * @since 1.0
  * @return Gridd
  */
 function gridd() {
@@ -96,7 +96,7 @@ require __DIR__ . '/customize.php';
 /**
  * Load EDD mods.
  *
- * @since 0.1
+ * @since 1.0
  */
 if ( class_exists( 'Easy_Digital_Downloads' ) ) {
 	new EDD();
@@ -105,7 +105,7 @@ if ( class_exists( 'Easy_Digital_Downloads' ) ) {
 /**
  * Post-edit link.
  *
- * @since 0.1
+ * @since 1.0
  * @return void
  */
 function gridd_the_edit_link() {
@@ -123,7 +123,7 @@ function gridd_the_edit_link() {
 /**
  * Comments link.
  *
- * @since 0.1
+ * @since 1.0
  * @return void
  */
 function gridd_the_comments_link() {
@@ -160,7 +160,7 @@ add_action( 'after_setup_theme', 'gridd_wpcom_setup' );
 /**
  * Move categories counts inside the links.
  *
- * @since 0.1
+ * @since 1.0
  * @param string $html The links.
  * @return string
  */
@@ -176,7 +176,7 @@ add_filter( 'wp_list_categories', 'gridd_filter_wp_list_categories' );
 /**
  * Add classes to the comment-form submit button.
  *
- * @since 0.1
+ * @since 1.0
  * @param array $args The comment-form args.
  * @return array
  */
@@ -188,7 +188,7 @@ function gridd_filter_comment_form_defaults( $args ) {
 /**
  * Returns an array of the singular parts for post, pages & CPTs.
  *
- * @since 0.1
+ * @since 1.0
  * @return array
  */
 function gridd_get_post_parts() {
@@ -201,7 +201,7 @@ function gridd_get_post_parts() {
 /**
  * Integrates WPBakery Builder in the theme.
  *
- * @since 0.1
+ * @since 1.0
  */
 if ( function_exists( 'vc_set_as_theme' ) ) {
 	add_action( 'vc_before_init', 'vc_set_as_theme' );
@@ -210,7 +210,7 @@ if ( function_exists( 'vc_set_as_theme' ) ) {
 /**
  * Remove logo.
  *
- * @since 0.1
+ * @since 1.0
  */
 add_filter( 'vc_nav_front_logo', '__return_empty_string' );
 
@@ -249,7 +249,7 @@ new AMP();
  * Generates the HTML for a toggle button.
  *
  * @param array $args The button arguments.
- * @since 0.1
+ * @since 1.0
  */
 function gridd_toggle_button( $args ) {
 
@@ -318,7 +318,7 @@ add_filter(
 /**
  * Utility function to get the contents of a non-executable file as plain text.
  *
- * @since 0.1
+ * @since 1.0
  * @param string $path     The file path.
  * @param bool   $absolute Set to true if we have an absolute path instead of relative to the theme root.
  * @return string          The file contents or empty string if no file was found.

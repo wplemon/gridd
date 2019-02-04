@@ -3,7 +3,7 @@
  * Template part for displaying posts - "Chat" post-format.
  *
  * @package Gridd
- * @since 0.1
+ * @since 1.0
  */
 
 $parts = gridd_get_post_parts();

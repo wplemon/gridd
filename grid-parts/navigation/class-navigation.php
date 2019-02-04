@@ -14,7 +14,7 @@ use Gridd\Style;
 /**
  * The Gridd\Grid_Part\Navigation object.
  *
- * @since 0.1
+ * @since 1.0
  */
 class Navigation extends Grid_Part {
 
@@ -22,7 +22,7 @@ class Navigation extends Grid_Part {
 	 * An array of files to include.
 	 *
 	 * @access protected
-	 * @since 0.1
+	 * @since 1.0
 	 * @var array
 	 */
 	protected $include_files = [
@@ -33,7 +33,7 @@ class Navigation extends Grid_Part {
 	 * The path to this directory..
 	 *
 	 * @access protected
-	 * @since 0.1
+	 * @since 1.0
 	 * @var string
 	 */
 	protected $dir = __DIR__;
@@ -43,7 +43,7 @@ class Navigation extends Grid_Part {
 	 *
 	 * @static
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @var bool
 	 */
 	public static $global_styles_already_included = false;
@@ -52,7 +52,7 @@ class Navigation extends Grid_Part {
 	 * Constructor.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 */
 	public function __construct() {
 		parent::__construct();
@@ -63,7 +63,7 @@ class Navigation extends Grid_Part {
 	 * Hooks & extra operations.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @return void
 	 */
 	public function init() {
@@ -75,7 +75,7 @@ class Navigation extends Grid_Part {
 	 * Returns the grid-part definition.
 	 *
 	 * @access protected
-	 * @since 0.1
+	 * @since 1.0
 	 * @return void
 	 */
 	protected function set_part() {}
@@ -84,7 +84,7 @@ class Navigation extends Grid_Part {
 	 * Render this grid-part.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @param string $part The grid-part ID.
 	 * @return void
 	 */
@@ -103,7 +103,7 @@ class Navigation extends Grid_Part {
 	 * Adds the grid-part to the array of grid-parts.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @param array $parts The existing grid-parts.
 	 * @return array
 	 */
@@ -125,7 +125,7 @@ class Navigation extends Grid_Part {
 	 * Register the navigation.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @return void
 	 */
 	public function register_navigation_menus() {
@@ -147,7 +147,7 @@ class Navigation extends Grid_Part {
 	 *
 	 * @static
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @return string
 	 */
 	public static function get_global_styles() {
@@ -165,7 +165,7 @@ class Navigation extends Grid_Part {
 	 *
 	 * @static
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 */
 	public static function get_number_of_nav_menus() {
 		return apply_filters( 'gridd_get_number_of_nav_menus', 3 );
@@ -176,7 +176,7 @@ class Navigation extends Grid_Part {
 	 *
 	 * @static
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @see https://iconmonstr.com/
 	 * @return array
 	 */
@@ -213,7 +213,7 @@ class Navigation extends Grid_Part {
 	 *
 	 * @static
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @see https://iconmonstr.com/plus-6-svg/
 	 * @param string $icon The icon we use to expand the menu.
 	 * @return string SVG Icon.
@@ -259,7 +259,7 @@ class Navigation extends Grid_Part {
 	 * Filter the HTML output of a nav menu item to add the AMP dropdown button to reveal the sub-menu.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @param string $item_output Nav menu item HTML.
 	 * @param object $item        Nav menu item.
 	 * @return string Modified nav menu item HTML.

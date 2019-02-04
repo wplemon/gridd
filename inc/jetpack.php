@@ -13,7 +13,7 @@ namespace Gridd;
 /**
  * Adds Jetpack-setup methods.
  *
- * @since 0.1
+ * @since 1.0
  */
 class Jetpack {
 
@@ -21,7 +21,7 @@ class Jetpack {
 	 * Constructor.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 */
 	public function __construct() {
 		add_action( 'after_setup_theme', [ $this, 'setup' ] );
@@ -32,7 +32,7 @@ class Jetpack {
 	 * Jetpack setup function.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @see https://jetpack.com/support/infinite-scroll/
 	 * @see https://jetpack.com/support/responsive-videos/
 	 * @see https://jetpack.com/support/content-options/
@@ -79,7 +79,7 @@ class Jetpack {
 	 * Custom render function for Infinite Scroll.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 */
 	public function infinite_scroll_render() {
 		while ( have_posts() ) {

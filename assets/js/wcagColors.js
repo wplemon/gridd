@@ -236,7 +236,7 @@ wcagColors = {
 	 * Convert hex color to RGB.
 	 * See https://stackoverflow.com/a/5624139
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 * @param {string} hex - The hex color.
 	 * @returns {Object}
 	 */
@@ -369,7 +369,7 @@ wcagColors = {
 	/**
 	 * Get contrast between 2 luminosities.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 * @param {float} lum1 - 1st Luminosity.
 	 * @param {float} lum2 - 2nd Luminosity.
 	 * @returns {float}
@@ -382,7 +382,7 @@ wcagColors = {
 	 * Gets the relative luminance from RGB.
 	 * Formula: http://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 * @param {Object} color - an RGB color {r,g,b}.
 	 * @returns {float}
 	 */
@@ -393,7 +393,7 @@ wcagColors = {
 	/**
 	 * Get luminocity for a part.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 * @param {int|float} val - The value.
 	 * @returns {float}
 	 */
@@ -409,7 +409,7 @@ wcagColors = {
 	 * Round a float.
 	 * See https://stackoverflow.com/a/5624139
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 * @param {float} number - The number we want to round.
 	 * @returns {float}
 	 */

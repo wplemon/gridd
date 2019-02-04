@@ -12,7 +12,7 @@ namespace Gridd;
 /**
  * Handle pages in the dashboard.
  *
- * @since 0.1
+ * @since 1.0
  */
 class Admin {
 
@@ -20,7 +20,7 @@ class Admin {
 	 * Constructor.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 */
 	public function __construct() {
 		if ( ! is_admin() ) {
@@ -34,7 +34,7 @@ class Admin {
 	/**
 	 * Enqueue custom VC styles.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 * @return void
 	 */
 	public function vc_styles() {

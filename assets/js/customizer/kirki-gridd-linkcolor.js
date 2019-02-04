@@ -4,7 +4,7 @@
  * The premium controls allows more flexibility and gives users the ability to choose
  * from an array of accessible and WCAG-compliant colors for their links.
  *
- * @since 0.1
+ * @since 1.0
  * @copyright 2019 Aristeidis Stathopoulos, wplemon.
  * @license GPL2.0
  */
@@ -14,7 +14,7 @@ wp.customize.controlConstructor['gridd-wcag-lc'] = wp.customize.Control.extend({
 	/**
 	 * The selected hue.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 * @var {int}
 	 */
 	hue: 0,
@@ -22,7 +22,7 @@ wp.customize.controlConstructor['gridd-wcag-lc'] = wp.customize.Control.extend({
 	/**
 	 * An array of all colors for this hue.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 * @var {Array}
 	 */
 	allColors: false,
@@ -30,7 +30,7 @@ wp.customize.controlConstructor['gridd-wcag-lc'] = wp.customize.Control.extend({
 	/**
 	 * An object containing the accessible colors for AAA, AA & A compliance.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 * @var {Object}
 	 */
 	colors: {},
@@ -38,7 +38,7 @@ wp.customize.controlConstructor['gridd-wcag-lc'] = wp.customize.Control.extend({
 	/**
 	 * Triggered when the control is ready.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 * @returns {void}
 	 */
 	ready: function() {
@@ -58,7 +58,7 @@ wp.customize.controlConstructor['gridd-wcag-lc'] = wp.customize.Control.extend({
 	/**
 	 * Init functionality for auto.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 * @returns {Object} - this
 	 */
 	initAuto: function() {
@@ -100,7 +100,7 @@ wp.customize.controlConstructor['gridd-wcag-lc'] = wp.customize.Control.extend({
 	/**
 	 * Initialize the hue colorpicker.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 * @returns {void}
 	 */
 	initHuePicker: function() {
@@ -186,7 +186,7 @@ wp.customize.controlConstructor['gridd-wcag-lc'] = wp.customize.Control.extend({
 	/**
 	 * Updates the control.allColors and control.colors attributes.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 * @param {bool} updateValue - Whether we should update the selection or not.
 	 * @returns {void}
 	 */
@@ -211,7 +211,7 @@ wp.customize.controlConstructor['gridd-wcag-lc'] = wp.customize.Control.extend({
 	/**
 	 * Watch defined controls and re-trigger results calculations when there's a change.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 * @param {string} settingToWatch - The setting we're watching. This can either be the background or the text color.
 	 * @returns {void}
 	 */
@@ -236,7 +236,7 @@ wp.customize.controlConstructor['gridd-wcag-lc'] = wp.customize.Control.extend({
 	/**
 	 * Get the best available color for a11y.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 * @returns {string}
 	 */
 	getBest: function() {
@@ -254,7 +254,7 @@ wp.customize.controlConstructor['gridd-wcag-lc'] = wp.customize.Control.extend({
 	/**
 	 * Update the control value.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 * @returns void
 	 */
 	updateColorValue: function() {

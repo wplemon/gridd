@@ -3,7 +3,7 @@
  * Template part for Revolution Slider
  *
  * @package Gridd
- * @since 0.1
+ * @since 1.0
  */
 
 ?>

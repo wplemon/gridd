@@ -3,7 +3,7 @@
  * Gridd - the grid control.
  *
  * @package Gridd
- * @since 0.1
+ * @since 1.0
  *
  * phpcs:ignoreFile WordPress.Files.FileName
  */
@@ -15,7 +15,7 @@ use Gridd\Grid_Parts;
 /**
  * The grid control.
  *
- * @since 0.1
+ * @since 1.0
  */
 class Grid extends \Kirki_Control_Base {
 
@@ -67,7 +67,7 @@ class Grid extends \Kirki_Control_Base {
 	 *
 	 * @access protected
 	 * @see WP_Customize_Control::render_content()
-	 * @since 0.1
+	 * @since 1.0
 	 */
 	protected function render_content() {
 		$grid_parts = $this->choices['parts'];

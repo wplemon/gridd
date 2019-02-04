@@ -3,7 +3,7 @@
  * Template part for displaying the post-category(ies).
  *
  * @package Gridd
- * @since 0.1
+ * @since 1.0
  */
 
 /* translators: used between list items, there is a space after the comma */

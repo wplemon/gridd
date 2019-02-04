@@ -12,7 +12,7 @@ use Gridd\Grid_Part;
 /**
  * The Gridd\Grid_Part\Nav_Handheld object.
  *
- * @since 0.1
+ * @since 1.0
  */
 class Nav_Handheld extends Grid_Part {
 
@@ -20,7 +20,7 @@ class Nav_Handheld extends Grid_Part {
 	 * The grid-part ID.
 	 *
 	 * @access protected
-	 * @since 0.1
+	 * @since 1.0
 	 * @var string
 	 */
 	protected $id = 'nav-handheld';
@@ -29,7 +29,7 @@ class Nav_Handheld extends Grid_Part {
 	 * An array of files to include.
 	 *
 	 * @access protected
-	 * @since 0.1
+	 * @since 1.0
 	 * @var array
 	 */
 	protected $include_files = [
@@ -40,7 +40,7 @@ class Nav_Handheld extends Grid_Part {
 	 * The path to this directory..
 	 *
 	 * @access protected
-	 * @since 0.1
+	 * @since 1.0
 	 * @var string
 	 */
 	protected $dir = __DIR__;
@@ -49,7 +49,7 @@ class Nav_Handheld extends Grid_Part {
 	 * Hooks & extra operations.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @return void
 	 */
 	public function init() {
@@ -61,7 +61,7 @@ class Nav_Handheld extends Grid_Part {
 	 * Returns the grid-part definition.
 	 *
 	 * @access protected
-	 * @since 0.1
+	 * @since 1.0
 	 * @return void
 	 */
 	protected function set_part() {
@@ -78,7 +78,7 @@ class Nav_Handheld extends Grid_Part {
 	 * Render this grid-part.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @param string $part The grid-part ID.
 	 * @return void
 	 */
@@ -92,7 +92,7 @@ class Nav_Handheld extends Grid_Part {
 	 * Add the widget area.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @return void
 	 */
 	public function register_sidebar() {

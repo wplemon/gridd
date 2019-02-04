@@ -4,7 +4,7 @@
  * Only used in post-archives.
  *
  * @package Gridd
- * @since 0.1
+ * @since 1.0
  */
 
 if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {

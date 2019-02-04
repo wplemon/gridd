@@ -24,7 +24,7 @@ class Widget_Output_Filters {
 	 *
 	 * @static
 	 * @access private
-	 * @since 0.1
+	 * @since 1.0
 	 * @var Widget_Output_Filters
 	 */
 	private static $instance = null;
@@ -34,7 +34,7 @@ class Widget_Output_Filters {
 	 *
 	 * @static
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @return Widget_Output_Filters The single instance of this class.
 	 */
 	public static function get_instance() {
@@ -48,7 +48,7 @@ class Widget_Output_Filters {
 	 * Initializes the functionality by registering actions and filters.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 */
 	private function __construct() {
 
@@ -61,7 +61,7 @@ class Widget_Output_Filters {
 	 * The $sidebar_params variable is not modified; it is only used to get the current widget's ID.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @param array $sidebar_params The sidebar parameters.
 	 * @return array The sidebar parameters
 	 */
@@ -83,7 +83,7 @@ class Widget_Output_Filters {
 	 * Execute the widget's original callback function, filtering its output.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @return void
 	 */
 	public function display_widget() {

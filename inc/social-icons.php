@@ -11,7 +11,7 @@ if ( ! function_exists( 'gridd_social_icons_svg' ) ) {
 	 * Return an array of SVG icons.
 	 * The icons are taken from the twentyNineteen theme.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 * @param string $context Use keys_only if we need an array [key=>key].
 	 * @return array
 	 */

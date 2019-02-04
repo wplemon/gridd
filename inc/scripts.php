@@ -16,7 +16,7 @@ use Gridd\Grid_Part\Navigation;
 /**
  * Template handler.
  *
- * @since 0.1
+ * @since 1.0
  */
 class Scripts {
 
@@ -24,7 +24,7 @@ class Scripts {
 	 * Whether we're debugging scripts or not.
 	 *
 	 * @access private
-	 * @since 0.1
+	 * @since 1.0
 	 * @var bool
 	 */
 	private $script_debug = false;
@@ -33,7 +33,7 @@ class Scripts {
 	 * An array of deferred scripts.
 	 *
 	 * @access private
-	 * @since 0.1
+	 * @since 1.0
 	 * @var array
 	 */
 	private $defer_scripts = [];
@@ -42,7 +42,7 @@ class Scripts {
 	 * An array of async scripts.
 	 *
 	 * @access private
-	 * @since 0.1
+	 * @since 1.0
 	 * @var array
 	 */
 	private $async_scripts = [
@@ -56,7 +56,7 @@ class Scripts {
 	 * An array of stylesheets that will get the rel="preload" tag.
 	 *
 	 * @access private
-	 * @since 0.1
+	 * @since 1.0
 	 * @var array
 	 */
 	private $preload_styles = [
@@ -69,7 +69,7 @@ class Scripts {
 	 *
 	 * @static
 	 * @access private
-	 * @since 0.1
+	 * @since 1.0
 	 * @var array
 	 */
 	private static $widgets = [];
@@ -77,7 +77,7 @@ class Scripts {
 	/**
 	 * Constructor.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 * @access public
 	 */
 	public function __construct() {
@@ -109,7 +109,7 @@ class Scripts {
 	 * Add scripts inline.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @return void
 	 */
 	public function inline_scripts() {
@@ -141,7 +141,7 @@ class Scripts {
 	 * Enqueue scripts.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 */
 	public function scripts() {
 
@@ -165,7 +165,7 @@ class Scripts {
 	 * This will load stylesheets in the footer and they won't be render-blocking.
 	 *
 	 * @access
-	 * @since 0.1
+	 * @since 1.0
 	 */
 	public function print_late_styles() {
 	}
@@ -174,7 +174,7 @@ class Scripts {
 	 * Add async to scripts.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @param string $tag    The script tag.
 	 * @param string $handle The script handle.
 	 * @return string
@@ -192,7 +192,7 @@ class Scripts {
 	 * Add defer to scripts.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @param string $tag    The script tag.
 	 * @param string $handle The script handle.
 	 * @return string
@@ -210,7 +210,7 @@ class Scripts {
 	 * Inline stylesheets builder.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @return void
 	 */
 	public function inline_styles() {
@@ -333,7 +333,7 @@ class Scripts {
 	 * Add editor styles.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @return void
 	 */
 	public function editor_styles() {
@@ -345,7 +345,7 @@ class Scripts {
 	 * Add user-agent classes in the <body>.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @return void
 	 */
 	public function add_user_agent_inline_script() {
@@ -361,7 +361,7 @@ class Scripts {
 	 * Add CSS for widgets.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @param string $widget_output  The widget's output.
 	 * @param string $widget_id_base The widget's base ID.
 	 * @param string $widget_id      The widget's full ID.

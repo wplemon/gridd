@@ -13,7 +13,7 @@ use Gridd\Customizer;
 /**
  * Register the menus.
  *
- * @since 0.1
+ * @since 1.0
  * @return void
  */
 function gridd_add_nav_parts() {
@@ -29,7 +29,7 @@ add_action( 'after_setup_theme', 'gridd_add_nav_parts' );
  * This function creates all options for a navigation.
  * We use a parameter since we'll allow multiple navigations.
  *
- * @since 0.1
+ * @since 1.0
  * @param int $id The number of this navigation.
  * @return void
  */

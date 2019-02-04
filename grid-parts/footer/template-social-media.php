@@ -3,7 +3,7 @@
  * Template part for the Footer Social-Media.
  *
  * @package Gridd
- * @since 0.1
+ * @since 1.0
  */
 
 use Gridd\Grid_Part\Footer;

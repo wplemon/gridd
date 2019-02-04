@@ -17,7 +17,7 @@ for ( $i = 1; $i <= $sidebars_nr; $i++ ) {
 /**
  * Adds options for a footer widget-area.
  *
- * @since 0.1
+ * @since 1.0
  * @param int $id - The sidebar number.
  * @return void
  */

@@ -3,7 +3,7 @@
  * Template part for displaying posts
  *
  * @package Gridd
- * @since 0.1
+ * @since 1.0
  */
 
 if ( is_singular() ) {

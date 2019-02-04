@@ -5,7 +5,7 @@
  * For more details see https://wplemon.com/downloads/kirki-wcag-link-colorpicker/
  *
  * @package Gridd
- * @since 0.1
+ * @since 1.0
  */
 
 namespace Gridd\Customizer\Control;
@@ -13,7 +13,7 @@ namespace Gridd\Customizer\Control;
 /**
  * The main control class.
  *
- * @since 0.1
+ * @since 1.0
  */
 class Kirki_WCAG_Link_Color extends \WP_Customize_Control {
 
@@ -174,7 +174,7 @@ class Kirki_WCAG_Link_Color extends \WP_Customize_Control {
 	 * Adding an empty function here prevents PHP errors from to_json() in the parent class.
 	 *
 	 * @access protected
-	 * @since 0.1
+	 * @since 1.0
 	 * @return void
 	 */
 	protected function render_content() {}

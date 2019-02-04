@@ -35,7 +35,7 @@ use Gridd\Grid_Parts;
 /**
  * Add the main grid styles.
  *
- * @since 0.1
+ * @since 1.0
  */
 $style = Style::get_instance( 'main-grid' );
 $style->add_string(
@@ -77,7 +77,7 @@ $style->add_string(
 		/**
 		 * Add styles for the content.
 		 *
-		 * @since 0.1
+		 * @since 1.0
 		 */
 		Content::print_styles();
 		?>

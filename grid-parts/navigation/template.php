@@ -3,7 +3,7 @@
  * Template part for the Navigation.
  *
  * @package Gridd
- * @since 0.1
+ * @since 1.0
  */
 
 use Gridd\Grid_Part\Navigation;

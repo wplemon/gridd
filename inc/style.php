@@ -12,7 +12,7 @@ namespace Gridd;
 /**
  * Template handler.
  *
- * @since 0.1
+ * @since 1.0
  */
 class Style {
 
@@ -21,7 +21,7 @@ class Style {
 	 *
 	 * @static
 	 * @access private
-	 * @since 0.1
+	 * @since 1.0
 	 * @var array
 	 */
 	private static $instances = [];
@@ -30,7 +30,7 @@ class Style {
 	 * The context of this instance.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @var string
 	 */
 	public $context = '';
@@ -39,7 +39,7 @@ class Style {
 	 * CSS vars to replace.
 	 *
 	 * @access private
-	 * @since 0.1
+	 * @since 1.0
 	 * @var array
 	 */
 	private $vars = [];
@@ -48,7 +48,7 @@ class Style {
 	 * CSS as a string.
 	 *
 	 * @access private
-	 * @since 0.1
+	 * @since 1.0
 	 * @var string
 	 */
 	private $css = '';
@@ -58,7 +58,7 @@ class Style {
 	 *
 	 * @static
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @param string $context The context of this instance.
 	 * @return Style
 	 */
@@ -75,7 +75,7 @@ class Style {
 	 *
 	 * @access private
 	 * @param string $context The context of this instance.
-	 * @since 0.1
+	 * @since 1.0
 	 */
 	private function __construct( $context = '' ) {
 		$this->context = $context;
@@ -86,7 +86,7 @@ class Style {
 	 * Add vars.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @param array $vars An array of css-vars to replace.
 	 * @return void
 	 */
@@ -98,7 +98,7 @@ class Style {
 	 * Add CSS from string.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @param string $css The CSS to add.
 	 * @return void
 	 */
@@ -115,7 +115,7 @@ class Style {
 	 * Add CSS from file path.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @param string $path Absolute path to a file.
 	 * @return void
 	 */
@@ -134,7 +134,7 @@ class Style {
 	 * Replace strings in the CSS.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @param string|array $search  The 1st argument in str_replace.
 	 * @param string|array $replace The 2nd argument in str_replace.
 	 * @return void
@@ -153,7 +153,7 @@ class Style {
 	 * Gets the CSS, replacing all vars.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @return string
 	 */
 	public function get_css() {
@@ -174,7 +174,7 @@ class Style {
 	 * Print the CSS.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @param string $id The <style> ID.
 	 * @return void
 	 */

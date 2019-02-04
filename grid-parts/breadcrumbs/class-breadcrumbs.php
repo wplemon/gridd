@@ -13,7 +13,7 @@ use Gridd\Grid_Parts;
 /**
  * The Gridd\Grid_Part\Breadcrumbs object.
  *
- * @since 0.1
+ * @since 1.0
  */
 class Breadcrumbs extends Grid_Part {
 
@@ -21,7 +21,7 @@ class Breadcrumbs extends Grid_Part {
 	 * The grid-part ID.
 	 *
 	 * @access protected
-	 * @since 0.1
+	 * @since 1.0
 	 * @var string
 	 */
 	protected $id = 'breadcrumbs';
@@ -30,7 +30,7 @@ class Breadcrumbs extends Grid_Part {
 	 * An array of files to include.
 	 *
 	 * @access protected
-	 * @since 0.1
+	 * @since 1.0
 	 * @var array
 	 */
 	protected $include_files = [
@@ -41,7 +41,7 @@ class Breadcrumbs extends Grid_Part {
 	 * The path to this directory..
 	 *
 	 * @access protected
-	 * @since 0.1
+	 * @since 1.0
 	 * @var string
 	 */
 	protected $dir = __DIR__;
@@ -50,7 +50,7 @@ class Breadcrumbs extends Grid_Part {
 	 * Hooks & extra operations.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @return void
 	 */
 	public function init() {
@@ -65,7 +65,7 @@ class Breadcrumbs extends Grid_Part {
 	 * Returns the grid-part definition.
 	 *
 	 * @access protected
-	 * @since 0.1
+	 * @since 1.0
 	 * @return void
 	 */
 	protected function set_part() {
@@ -82,7 +82,7 @@ class Breadcrumbs extends Grid_Part {
 	 * Render this grid-part.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @param string $part The grid-part ID.
 	 * @return void
 	 */
@@ -124,7 +124,7 @@ class Breadcrumbs extends Grid_Part {
 	 * Loads additional textdomains.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @return void
 	 */
 	public function load_breadcrumbs_textdomain() {
@@ -137,7 +137,7 @@ class Breadcrumbs extends Grid_Part {
 	 * Overrides the textdomain to force-use the one from the theme.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @param bool   $override Whether to override the .mo file loading. Default false.
 	 * @param string $domain   Text domain. Unique identifier for retrieving translated strings.
 	 * @return bool
@@ -163,7 +163,7 @@ class Breadcrumbs extends Grid_Part {
 	 * Remove Woocommerce breadcrumbs.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @return void
 	 */
 	public function remove_woocommerce_breadcrumbs() {

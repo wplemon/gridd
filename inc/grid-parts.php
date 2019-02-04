@@ -15,7 +15,7 @@ use Gridd\Grid_Parts;
 /**
  * Grid-Part.
  *
- * @since 0.1
+ * @since 1.0
  */
 class Grid_Parts {
 
@@ -23,7 +23,7 @@ class Grid_Parts {
 	 * The parts array.
 	 *
 	 * @access protected
-	 * @since 0.1
+	 * @since 1.0
 	 * @var array
 	 */
 	protected $parts;
@@ -33,7 +33,7 @@ class Grid_Parts {
 	 *
 	 * @static
 	 * @access private
-	 * @since 0.1
+	 * @since 1.0
 	 * @var Gridd\Grid_Parts
 	 */
 	private static $instance;
@@ -43,7 +43,7 @@ class Grid_Parts {
 	 *
 	 * @static
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @return Gridd\Grid_Parts
 	 */
 	public static function get_instance() {
@@ -56,7 +56,7 @@ class Grid_Parts {
 	/**
 	 * Constructor.
 	 *
-	 * @since 0.1
+	 * @since 1.0
 	 * @access private
 	 */
 	private function __construct() {
@@ -72,7 +72,7 @@ class Grid_Parts {
 	 * Get an array of active template parts.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @return array
 	 */
 	public function get_active() {
@@ -93,7 +93,7 @@ class Grid_Parts {
 	 * Include files from grid-parts.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @return void
 	 */
 	public function include_grid_part_files() {
@@ -134,7 +134,7 @@ class Grid_Parts {
 	 * Sets $this->parts.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @return void
 	 */
 	public function set_parts() {
@@ -156,7 +156,7 @@ class Grid_Parts {
 	 * Get an array of template parts along with their labels.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @return array
 	 */
 	public function get_parts() {
@@ -168,7 +168,7 @@ class Grid_Parts {
 	 * Returns the private $grid_parts property of this object.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @return array
 	 */
 	public function get_grid_parts() {
@@ -187,7 +187,7 @@ class Grid_Parts {
 	 * Get the grids from parts.
 	 *
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @return array
 	 */
 	public function get_grids() {
@@ -207,7 +207,7 @@ class Grid_Parts {
 	 *
 	 * @static
 	 * @access public
-	 * @since 0.1
+	 * @since 1.0
 	 * @param string $grid_part The grid part we want to check.
 	 * @param string $grid      The grid setting we want to check.
 	 * @return bool
