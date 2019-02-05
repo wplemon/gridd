@@ -6,9 +6,6 @@
   @media screen and (max-width: 600px) {
     .admin-bar .gridd-tp.gridd-sticky {
       top: 0; } }
-@media screen and (max-width: 600px) {
-  .admin-bar #wpadminbar {
-    top: -46px; } }
 .admin-bar #gridd-handheld-search-wrapper,
 .admin-bar #gridd-handheld-widget-area-wrapper,
 .admin-bar #gridd-handheld-menu-wrapper,
