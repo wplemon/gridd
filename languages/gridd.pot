@@ -1,10 +1,10 @@
-# <!=Copyright (C) 2019 wplemon.com
-# This file is distributed under the GNU General Public License v2 or later.=!>
+# <!=Copyright (C) 2019 Ari Stathopoulos
+# This file is distributed under the GNU General Public License v2.0 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Gridd 1.0.0\n"
+"Project-Id-Version: Gridd 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/gridd\n"
-"POT-Creation-Date: 2019-01-28 17:54:48+00:00\n"
+"POT-Creation-Date: 2019-02-05 20:45:16+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -52,199 +52,159 @@ msgstr ""
 msgid "Remove"
 msgstr ""
 
-#: functions.php:24
-msgid ""
-"<strong>ERROR</strong>: The Gridd Theme requires a PHP version greater than "
-"5.6. Please visit <a href=\"https://wordpress.org/support/update-php/\" "
-"rel=\"nofollow\">this link</a> for instructions on how to update your PHP "
-"version, or switch to a different theme."
-msgstr ""
-
 #: grid-parts/breadcrumbs/class-breadcrumbs.php:73
-#: grid-parts/breadcrumbs/customizer.php:12
+#: grid-parts/breadcrumbs/customizer.php:14
 msgid "Breadcrumbs"
 msgstr ""
 
-#: grid-parts/breadcrumbs/customizer.php:12
-#: grid-parts/content/customizer.php:12
-#: grid-parts/footer/customizer-footer-copyright.php:13
-#: grid-parts/footer/customizer-footer-sidebars.php:31
-#: grid-parts/footer/customizer-social-media.php:17
-#: grid-parts/header/customizer-branding.php:12
-#: grid-parts/header/customizer-contact-info.php:14
-#: grid-parts/header/customizer-search.php:14
-#: grid-parts/header/customizer-social-media.php:20
-#: grid-parts/layer-slider/customizer.php:12
-#: grid-parts/navigation/customizer.php:45
-#: grid-parts/revolution-slider/customizer.php:12
+#: grid-parts/breadcrumbs/customizer.php:14
+#: grid-parts/content/customizer.php:14
+#: grid-parts/footer/customizer-footer-copyright.php:15
+#: grid-parts/footer/customizer-footer-sidebars.php:32
+#: grid-parts/footer/customizer-social-media.php:18
+#: grid-parts/header/customizer-branding.php:14
+#: grid-parts/header/customizer-contact-info.php:15
+#: grid-parts/header/customizer-search.php:15
+#: grid-parts/header/customizer-social-media.php:21
+#: grid-parts/layer-slider/customizer.php:14
+#: grid-parts/navigation/customizer.php:46
+#: grid-parts/revolution-slider/customizer.php:14
 #. translators: The grid-part label.
 msgid "%s Options"
 msgstr ""
 
-#: grid-parts/breadcrumbs/customizer.php:16
-msgid ""
-"<a href=\"https://wplemon.com/gridd-plus\" rel=\"nofollow\" "
-"target=\"_blank\">Upgrade to <strong>plus</strong></a> for extra options in "
-"this section: Automatic WCAG-compliant colors suggestion and spacing "
-"between breadcrumbs."
+#: grid-parts/breadcrumbs/customizer.php:20
+#: grid-parts/footer/customizer-footer-copyright.php:20
+#: grid-parts/footer/customizer-footer-sidebars.php:40
+#: grid-parts/header/customizer-contact-info.php:20
+#: grid-parts/navigation/customizer.php:54 grid-parts/sidebar/customizer.php:39
+msgid "Selecting from an array of WCAG-compliant colors for text"
 msgstr ""
 
-#: grid-parts/breadcrumbs/customizer.php:17
-#: grid-parts/content/customizer.php:14
-#: grid-parts/footer/customizer-footer-copyright.php:17
-#: grid-parts/footer/customizer-footer-sidebars.php:38
-#: grid-parts/footer/customizer-social-media.php:19
-#: grid-parts/footer/customizer.php:18
-#: grid-parts/header/customizer-branding.php:13
-#: grid-parts/header/customizer-contact-info.php:18
-#: grid-parts/header/customizer-search.php:16
-#: grid-parts/header/customizer-social-media.php:22
-#: grid-parts/header/customizer.php:18
-#: grid-parts/layer-slider/customizer.php:13
-#: grid-parts/nav-handheld/customizer.php:15
-#: grid-parts/navigation/customizer.php:52
-#: grid-parts/revolution-slider/customizer.php:13
-#: grid-parts/sidebar/customizer.php:37 inc/customizer/section/edd.php:30
-#: inc/customizer/section/grid.php:24 inc/customizer/section/typography.php:22
-msgid "Learn more about these settings"
+#: grid-parts/breadcrumbs/customizer.php:21
+msgid "Adjustable pacing between breadcrumbs."
 msgstr ""
 
-#: grid-parts/breadcrumbs/customizer.php:27
-#: grid-parts/footer/customizer-social-media.php:88
-#: grid-parts/footer/customizer.php:111
-#: grid-parts/header/customizer-branding.php:65
-#: grid-parts/header/customizer-contact-info.php:99
-#: grid-parts/header/customizer-search.php:25
-#: grid-parts/header/customizer-social-media.php:91
-#: grid-parts/navigation/customizer.php:119
-#: grid-parts/sidebar/customizer.php:143
+#: grid-parts/breadcrumbs/customizer.php:34
+#: grid-parts/footer/customizer-social-media.php:93
+#: grid-parts/footer/customizer.php:87
+#: grid-parts/header/customizer-branding.php:71
+#: grid-parts/header/customizer-contact-info.php:102
+#: grid-parts/header/customizer-search.php:31
+#: grid-parts/header/customizer-social-media.php:96
+#: grid-parts/navigation/customizer.php:127
+#: grid-parts/sidebar/customizer.php:148
 msgid "Padding"
 msgstr ""
 
-#: grid-parts/breadcrumbs/customizer.php:28
-#: grid-parts/navigation/customizer.php:120
+#: grid-parts/breadcrumbs/customizer.php:35
+msgid "Inner padding for this grid-part. Use any valid CSS value."
+msgstr ""
+
+#: grid-parts/breadcrumbs/customizer.php:36 grid-parts/footer/customizer.php:89
+#: grid-parts/header/customizer-branding.php:72
+#: grid-parts/header/customizer-contact-info.php:103
 msgid ""
-"Inner padding for this grid-part. Use any valid CSS value. For details on "
-"how padding works, please refer to <a "
+"For details on how padding works, please refer to <a "
 "href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/padding\" "
 "target=\"_blank\" rel=\"nofollow\">this article</a>."
 msgstr ""
 
-#: grid-parts/breadcrumbs/customizer.php:40
-#: grid-parts/content/customizer.php:23 grid-parts/footer/customizer.php:85
-#: grid-parts/header/customizer.php:112
+#: grid-parts/breadcrumbs/customizer.php:48
+#: grid-parts/content/customizer.php:30 grid-parts/footer/customizer.php:59
+#: grid-parts/header/customizer.php:76
 msgid "Max-Width"
 msgstr ""
 
-#: grid-parts/breadcrumbs/customizer.php:41
-#: grid-parts/content/customizer.php:24 grid-parts/footer/customizer.php:86
-#: grid-parts/header/customizer.php:113
+#: grid-parts/breadcrumbs/customizer.php:49
+#: grid-parts/content/customizer.php:31 grid-parts/footer/customizer.php:60
+#: grid-parts/header/customizer.php:77
+msgid "The maximum width that the contents of this grid-part can use."
+msgstr ""
+
+#: grid-parts/breadcrumbs/customizer.php:50
+#: grid-parts/content/customizer.php:32 grid-parts/footer/customizer.php:61
+#: grid-parts/header/customizer.php:78
 msgid ""
-"The maximum width that the contents of this grid-part can use. Use any "
-"valid CSS value like <code>50em</code>, <code>800px</code> or "
+"Use any valid CSS value like <code>50em</code>, <code>800px</code> or "
 "<code>100%</code>."
 msgstr ""
 
-#: grid-parts/breadcrumbs/customizer.php:53
-#: grid-parts/header/customizer-contact-info.php:79
-#: grid-parts/header/customizer-search.php:44
+#: grid-parts/breadcrumbs/customizer.php:62
+#: grid-parts/footer/customizer-footer-copyright.php:109
+#: grid-parts/header/customizer-contact-info.php:82
+#: grid-parts/header/customizer-search.php:50
 #: inc/kirki/controls/php/class-kirki-control-dimensions.php:123
 #: inc/kirki/controls/php/class-kirki-control-typography.php:102
 msgid "Font Size"
 msgstr ""
 
-#: grid-parts/breadcrumbs/customizer.php:54
+#: grid-parts/breadcrumbs/customizer.php:63
 msgid ""
 "Controls the font-size for your breadcrumbs. This value is relevant to the "
 "body font-size, so a value of 1em will have the same size as your content."
 msgstr ""
 
-#: grid-parts/breadcrumbs/customizer.php:72
-#: grid-parts/content/customizer.php:61
-#: grid-parts/footer/customizer-footer-sidebars.php:49
-#: grid-parts/footer/customizer-social-media.php:107
-#: grid-parts/footer/customizer.php:124
-#: grid-parts/header/customizer-branding.php:49
-#: grid-parts/header/customizer-contact-info.php:47
-#: grid-parts/header/customizer-search.php:63
-#: grid-parts/header/customizer-social-media.php:110
-#: grid-parts/header/customizer.php:139
-#: grid-parts/navigation/customizer.php:131
-#: grid-parts/sidebar/customizer.php:60
+#: grid-parts/breadcrumbs/customizer.php:81
+#: grid-parts/content/customizer.php:68
+#: grid-parts/footer/customizer-footer-sidebars.php:55
+#: grid-parts/footer/customizer-social-media.php:112
+#: grid-parts/footer/customizer.php:101
+#: grid-parts/header/customizer-branding.php:56
+#: grid-parts/header/customizer-contact-info.php:52
+#: grid-parts/header/customizer-search.php:69
+#: grid-parts/header/customizer-social-media.php:115
+#: grid-parts/header/customizer.php:106
+#: grid-parts/navigation/customizer.php:139
+#: grid-parts/sidebar/customizer.php:65
 #: inc/kirki/controls/php/class-kirki-control-background.php:48
 msgid "Background Color"
 msgstr ""
 
-#: grid-parts/breadcrumbs/customizer.php:73
-msgid "Select the background-color for this grid-part."
-msgstr ""
-
-#: grid-parts/breadcrumbs/customizer.php:88
-#: grid-parts/footer/customizer-footer-sidebars.php:66
-#: grid-parts/header/customizer-contact-info.php:62
-#: grid-parts/header/customizer-search.php:79
-#: grid-parts/sidebar/customizer.php:86
-#: inc/customizer/section/typography.php:107
+#: grid-parts/breadcrumbs/customizer.php:96
+#: grid-parts/footer/customizer-footer-sidebars.php:71
+#: grid-parts/header/customizer-contact-info.php:66
+#: grid-parts/header/customizer-search.php:84
+#: grid-parts/sidebar/customizer.php:91
+#: inc/customizer/section/typography.php:115
 msgid "Text Color"
 msgstr ""
 
-#: grid-parts/breadcrumbs/customizer.php:89
-#: grid-parts/footer/customizer-footer-copyright.php:71
-#: grid-parts/footer/customizer-footer-sidebars.php:67
-#: grid-parts/header/customizer-contact-info.php:63
-#: grid-parts/header/customizer-search.php:80
-#: grid-parts/sidebar/customizer.php:87
-#: inc/customizer/section/typography.php:108
-msgid ""
-"Select the color used for your text. Please choose a color with sufficient "
-"contrast with the selected background-color."
-msgstr ""
-
-#: grid-parts/breadcrumbs/customizer.php:104
+#: grid-parts/breadcrumbs/customizer.php:111
 msgid "Alignment"
 msgstr ""
 
-#: grid-parts/breadcrumbs/customizer.php:105
-msgid "Select if you want your breadcrumbs aligned to the left, right, or centered."
-msgstr ""
-
-#: grid-parts/breadcrumbs/customizer.php:106
-msgid ""
-"Please note that this option does not change the order of your breadcrumbs, "
-"only their alignment inside their container."
-msgstr ""
-
-#: grid-parts/breadcrumbs/customizer.php:112
-#: grid-parts/footer/customizer-footer-copyright.php:133
-#: grid-parts/footer/customizer-social-media.php:144
-#: grid-parts/header/customizer-branding.php:219
-#: grid-parts/header/customizer-contact-info.php:119
-#: grid-parts/header/customizer-social-media.php:147
+#: grid-parts/breadcrumbs/customizer.php:117
+#: grid-parts/footer/customizer-footer-copyright.php:136
+#: grid-parts/footer/customizer-social-media.php:148
+#: grid-parts/header/customizer-branding.php:222
+#: grid-parts/header/customizer-contact-info.php:121
+#: grid-parts/header/customizer-social-media.php:151
 #: inc/kirki/controls/php/class-kirki-control-dimensions.php:131
 #: inc/kirki/controls/php/class-kirki-control-typography.php:145
 #: inc/kirki/field/class-kirki-field-spacing.php:34
 msgid "Left"
 msgstr ""
 
-#: grid-parts/breadcrumbs/customizer.php:113
-#: grid-parts/footer/customizer-footer-copyright.php:134
-#: grid-parts/footer/customizer-social-media.php:145
-#: grid-parts/header/customizer-branding.php:220
-#: grid-parts/header/customizer-branding.php:239
-#: grid-parts/header/customizer-contact-info.php:120
-#: grid-parts/header/customizer-social-media.php:148
-#: grid-parts/navigation/customizer.php:259
+#: grid-parts/breadcrumbs/customizer.php:118
+#: grid-parts/footer/customizer-footer-copyright.php:137
+#: grid-parts/footer/customizer-social-media.php:149
+#: grid-parts/header/customizer-branding.php:223
+#: grid-parts/header/customizer-branding.php:241
+#: grid-parts/header/customizer-contact-info.php:122
+#: grid-parts/header/customizer-social-media.php:152
+#: grid-parts/navigation/customizer.php:267
 #: inc/kirki/controls/php/class-kirki-control-dimensions.php:133
 #: inc/kirki/controls/php/class-kirki-control-typography.php:151
 msgid "Center"
 msgstr ""
 
-#: grid-parts/breadcrumbs/customizer.php:114
-#: grid-parts/footer/customizer-footer-copyright.php:135
-#: grid-parts/footer/customizer-social-media.php:146
-#: grid-parts/header/customizer-branding.php:221
-#: grid-parts/header/customizer-contact-info.php:121
-#: grid-parts/header/customizer-social-media.php:149
+#: grid-parts/breadcrumbs/customizer.php:119
+#: grid-parts/footer/customizer-footer-copyright.php:138
+#: grid-parts/footer/customizer-social-media.php:150
+#: grid-parts/header/customizer-branding.php:224
+#: grid-parts/header/customizer-contact-info.php:123
+#: grid-parts/header/customizer-social-media.php:153
 #: inc/kirki/controls/php/class-kirki-control-dimensions.php:132
 #: inc/kirki/controls/php/class-kirki-control-typography.php:157
 #: inc/kirki/field/class-kirki-field-spacing.php:35
@@ -256,7 +216,7 @@ msgid "Browse:"
 msgstr ""
 
 #: grid-parts/breadcrumbs/hybrid-breadcrumbs/src/Breadcrumbs.php:97
-#: grid-parts/nav-handheld/customizer.php:25
+#: grid-parts/nav-handheld/customizer.php:31
 #: grid-parts/nav-handheld/part-home.php:16
 msgid "Home"
 msgstr ""
@@ -294,29 +254,25 @@ msgstr ""
 msgid "Week %s"
 msgstr ""
 
-#: grid-parts/content/class-content.php:74 grid-parts/content/customizer.php:12
+#: grid-parts/content/class-content.php:74 grid-parts/content/customizer.php:14
+#: grid-parts/header/customizer-contact-info.php:34
 msgid "Content"
 msgstr ""
 
-#: grid-parts/content/customizer.php:37
+#: grid-parts/content/customizer.php:45
 msgid "Container Padding"
 msgstr ""
 
-#: grid-parts/content/customizer.php:38
-msgid "Please enter values for the content area's padding."
-msgstr ""
-
-#: grid-parts/content/customizer.php:62
-msgid ""
-"Background Color for the content area. Always prefer light backgrounds with "
-"dark text for increased accessibility"
+#: grid-parts/content/customizer.php:69
+msgid "Always prefer light backgrounds with dark text for increased accessibility"
 msgstr ""
 
 #: grid-parts/footer/class-footer.php:62 grid-parts/footer/customizer.php:14
 msgid "Footer"
 msgstr ""
 
-#: grid-parts/footer/class-footer.php:147 grid-parts/footer/customizer.php:46
+#: grid-parts/footer/class-footer.php:147
+#: grid-parts/footer/class-footer.php:214
 #. translators: Sidebar number,
 #. translators: The widget-area number.
 msgid "Footer Widget Area %d"
@@ -328,190 +284,138 @@ msgstr ""
 msgid "Add widgets here."
 msgstr ""
 
-#: grid-parts/footer/customizer-footer-copyright.php:13
-#: grid-parts/footer/customizer.php:27
+#: grid-parts/footer/class-footer.php:195
+#: grid-parts/footer/customizer-footer-copyright.php:15
 msgid "Copyright Area"
 msgstr ""
 
-#: grid-parts/footer/customizer-footer-copyright.php:16
-#: grid-parts/header/customizer-contact-info.php:17
-msgid ""
-"<a href=\"https://wplemon.com/gridd-plus\" rel=\"nofollow\" "
-"target=\"_blank\">Upgrade to <strong>plus</strong></a> for automatic "
-"WCAG-compliant colors suggestion on this section."
+#: grid-parts/footer/class-footer.php:202
+#: grid-parts/header/class-header.php:212
+msgid "Social Media"
 msgstr ""
 
-#: grid-parts/footer/customizer-footer-copyright.php:27
+#: grid-parts/footer/customizer-footer-copyright.php:33
 msgid "Copyright Text"
 msgstr ""
 
-#: grid-parts/footer/customizer-footer-copyright.php:28
+#: grid-parts/footer/customizer-footer-copyright.php:34
 msgid "The text for your copyright area (accepts HTML)."
 msgstr ""
 
-#: grid-parts/footer/customizer-footer-copyright.php:31
+#: grid-parts/footer/customizer-footer-copyright.php:37
 #: grid-parts/footer/template-footer-copyright.php:36
 #. translators: 1: CMS name, i.e. WordPress. 2: Theme name, 3: Theme author.
 msgid "Proudly powered by %1$s | Theme: %2$s by %3$s."
 msgstr ""
 
-#: grid-parts/footer/customizer-footer-copyright.php:53
+#: grid-parts/footer/customizer-footer-copyright.php:60
 msgid "Copyright area background-color"
 msgstr ""
 
-#: grid-parts/footer/customizer-footer-copyright.php:54
-msgid "Select the background color for your copyright area."
-msgstr ""
-
-#: grid-parts/footer/customizer-footer-copyright.php:70
+#: grid-parts/footer/customizer-footer-copyright.php:76
 msgid "Copyright Text Color"
 msgstr ""
 
-#: grid-parts/footer/customizer-footer-copyright.php:87
+#: grid-parts/footer/customizer-footer-copyright.php:92
 msgid "Copyright Links Color"
 msgstr ""
 
-#: grid-parts/footer/customizer-footer-copyright.php:88
+#: grid-parts/footer/customizer-footer-copyright.php:110
 msgid ""
-"The color of any links included in the copyright area. Please choose a "
-"color with sufficient contrast with the selected background-color."
+"The font-size defined here is relative to the body font-size so a size of "
+"1em will be the same ssize as your content."
 msgstr ""
 
-#: grid-parts/footer/customizer-footer-copyright.php:105
-msgid "Copyright Text Font-Size"
+#: grid-parts/footer/customizer-footer-copyright.php:129
+msgid "Text Alignment"
 msgstr ""
 
-#: grid-parts/footer/customizer-footer-copyright.php:106
-msgid ""
-"Select the font-size for your copyright. The font-size defined here is "
-"relative to the body font-size so a size of 1em will be the same ssize as "
-"your content."
-msgstr ""
-
-#: grid-parts/footer/customizer-footer-copyright.php:125
-msgid "Copyright Text Alignment"
-msgstr ""
-
-#: grid-parts/footer/customizer-footer-copyright.php:126
-msgid "Select if the copyright text will be aligned to the left, center or right."
-msgstr ""
-
-#: grid-parts/footer/customizer-footer-sidebars.php:33
+#: grid-parts/footer/customizer-footer-sidebars.php:34
 #. translators: The number of the footer widget area.
 msgid "Footer Sidebar %d"
 msgstr ""
 
-#: grid-parts/footer/customizer-footer-sidebars.php:37
-msgid ""
-"<a href=\"https://wplemon.com/gridd-plus\" rel=\"nofollow\" "
-"target=\"_blank\">Upgrade to <strong>plus</strong></a> for automatic "
-"WCAG-compliant colors suggestion for your text and links on this section."
+#: grid-parts/footer/customizer-footer-sidebars.php:41
+msgid "Selecting from an array of WCAG-compliant colors for links"
 msgstr ""
 
-#: grid-parts/footer/customizer-footer-sidebars.php:50
-msgid "Choose a background color for this widget-area."
-msgstr ""
-
-#: grid-parts/footer/customizer-footer-sidebars.php:83
-#: grid-parts/sidebar/customizer.php:109
-#: inc/customizer/section/typography.php:124
+#: grid-parts/footer/customizer-footer-sidebars.php:87
+#: grid-parts/sidebar/customizer.php:114
+#: inc/customizer/section/typography.php:132
 msgid "Links Color"
 msgstr ""
 
-#: grid-parts/footer/customizer-footer-sidebars.php:84
-msgid "The color for links in this widget-area."
-msgstr ""
-
-#: grid-parts/footer/customizer-social-media.php:17
+#: grid-parts/footer/customizer-social-media.php:18
 msgid "Footer Contact Info"
 msgstr ""
 
-#: grid-parts/footer/customizer-social-media.php:28
-#: grid-parts/header/customizer-social-media.php:31
+#: grid-parts/footer/customizer-social-media.php:34
+#: grid-parts/header/customizer-social-media.php:37
 msgid "Social Media Links"
 msgstr ""
 
-#: grid-parts/footer/customizer-social-media.php:29
-#: grid-parts/header/customizer-social-media.php:32
+#: grid-parts/footer/customizer-social-media.php:35
+#: grid-parts/header/customizer-social-media.php:38
 msgid "Add, remove and reorder your social links."
 msgstr ""
 
-#: grid-parts/footer/customizer-social-media.php:36
-#: grid-parts/header/customizer-social-media.php:39
+#: grid-parts/footer/customizer-social-media.php:42
+#: grid-parts/header/customizer-social-media.php:45
 msgid "Add Icon"
 msgstr ""
 
-#: grid-parts/footer/customizer-social-media.php:40
-#: grid-parts/header/customizer-social-media.php:43
+#: grid-parts/footer/customizer-social-media.php:46
+#: grid-parts/header/customizer-social-media.php:49
 msgid "Select Icon"
 msgstr ""
 
-#: grid-parts/footer/customizer-social-media.php:41
-#: grid-parts/header/customizer-social-media.php:44
+#: grid-parts/footer/customizer-social-media.php:47
+#: grid-parts/header/customizer-social-media.php:50
 msgid "Choose a social-network to add its icon."
 msgstr ""
 
-#: grid-parts/footer/customizer-social-media.php:47
-#: grid-parts/header/customizer-social-media.php:50 inc/kirki/example.php:733
+#: grid-parts/footer/customizer-social-media.php:53
+#: grid-parts/header/customizer-social-media.php:56
 msgid "Link URL"
 msgstr ""
 
-#: grid-parts/footer/customizer-social-media.php:48
-#: grid-parts/header/customizer-social-media.php:51
+#: grid-parts/footer/customizer-social-media.php:54
+#: grid-parts/header/customizer-social-media.php:57
 msgid "Enter the URL for your profile/page on the social network."
 msgstr ""
 
-#: grid-parts/footer/customizer-social-media.php:69
-#: grid-parts/header/customizer-social-media.php:72
+#: grid-parts/footer/customizer-social-media.php:75
+#: grid-parts/header/customizer-social-media.php:78
 #: inc/kirki/controls/php/class-kirki-control-dimensions.php:134
 msgid "Size"
 msgstr ""
 
-#: grid-parts/footer/customizer-social-media.php:70
-#: grid-parts/header/customizer-social-media.php:73
-msgid "Change the size of your social-media icons."
-msgstr ""
-
-#: grid-parts/footer/customizer-social-media.php:89
-#: grid-parts/header/customizer-social-media.php:92
+#: grid-parts/footer/customizer-social-media.php:94
 msgid ""
-"Change the padding for your social-media icons. Controls how large the "
-"clickable area will be, and also the spacing between icons."
+"Controls how large the clickable area will be, and also the spacing between "
+"icons."
 msgstr ""
 
-#: grid-parts/footer/customizer-social-media.php:122
-#: grid-parts/header/customizer-social-media.php:125
+#: grid-parts/footer/customizer-social-media.php:127
+#: grid-parts/header/customizer-social-media.php:130
 msgid "Icons Color"
 msgstr ""
 
-#: grid-parts/footer/customizer-social-media.php:137
-#: grid-parts/header/customizer-social-media.php:140
+#: grid-parts/footer/customizer-social-media.php:142
+#: grid-parts/header/customizer-social-media.php:145
 msgid "Icons Alignment"
 msgstr ""
 
-#: grid-parts/footer/customizer-social-media.php:138
-#: grid-parts/header/customizer-social-media.php:141
-msgid "Select how the icons will be aligned."
+#: grid-parts/footer/customizer.php:19 grid-parts/header/customizer.php:20
+msgid "Separate grid for mobile devices"
 msgstr ""
 
-#: grid-parts/footer/customizer.php:17 grid-parts/header/customizer.php:17
-#: inc/customizer/section/grid.php:23
-msgid ""
-"<a href=\"https://wplemon.com/gridd-plus\" rel=\"nofollow\" "
-"target=\"_blank\">Upgrade to <strong>plus</strong></a> for a separate grid "
-"for mobile devices."
-msgstr ""
-
-#: grid-parts/footer/customizer.php:34 grid-parts/header/customizer.php:75
-msgid "Social Media"
-msgstr ""
-
-#: grid-parts/footer/customizer.php:61 grid-parts/header/customizer.php:88
-#: inc/customizer/section/grid.php:36
+#: grid-parts/footer/customizer.php:35 grid-parts/header/customizer.php:51
+#: inc/customizer/section/grid.php:41
 msgid "Grid Settings"
 msgstr ""
 
-#: grid-parts/footer/customizer.php:62 grid-parts/header/customizer.php:89
+#: grid-parts/footer/customizer.php:36 grid-parts/header/customizer.php:52
 msgid ""
 "Edit settings for your footer grid. For more information and documentation "
 "on how the grid works, please read <a "
@@ -519,12 +423,173 @@ msgid ""
 "target=\"_blank\" rel=\"nofollow\">this article</a>."
 msgstr ""
 
-#: grid-parts/footer/customizer.php:98 grid-parts/header/customizer.php:125
+#: grid-parts/footer/customizer.php:73 grid-parts/header/customizer.php:91
 msgid "Grid Gap"
 msgstr ""
 
-#: grid-parts/footer/customizer.php:99 grid-parts/header/customizer.php:126
-#: inc/customizer/section/grid.php:71
+#: grid-parts/footer/customizer.php:74 inc/customizer/section/grid.php:71
+msgid "Adds a gap between your grid-parts, both horizontally and vertically."
+msgstr ""
+
+#: grid-parts/footer/customizer.php:75 inc/customizer/section/grid.php:72
+msgid ""
+"For more information please read <a "
+"href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/gap\" "
+"target=\"_blank\" rel=\"nofollow\">this article</a>."
+msgstr ""
+
+#: grid-parts/footer/customizer.php:88
+msgid "Inner padding for all parts in the footer."
+msgstr ""
+
+#: grid-parts/footer/customizer.php:102
+msgid ""
+"Individual grid-parts can override this by setting their own background "
+"color for their area. If you are using a grid-gap the color defined here "
+"will be visible between grid-parts."
+msgstr ""
+
+#: grid-parts/footer/customizer.php:117
+msgid "Border-Top Width"
+msgstr ""
+
+#: grid-parts/footer/customizer.php:118
+msgid ""
+"You can make the top border of the footer ticker or thinner by adjusting "
+"this value. Set to 0 to disable the top border."
+msgstr ""
+
+#: grid-parts/footer/customizer.php:137
+msgid "Top Border Color"
+msgstr ""
+
+#: grid-parts/header/class-header.php:63 grid-parts/header/customizer.php:15
+msgid "Header"
+msgstr ""
+
+#: grid-parts/header/class-header.php:188
+msgid "Branding"
+msgstr ""
+
+#: grid-parts/header/class-header.php:196
+#: grid-parts/nav-handheld/customizer.php:32
+#: grid-parts/nav-handheld/part-search.php:21
+msgid "Search"
+msgstr ""
+
+#: grid-parts/header/class-header.php:204
+msgid "Contact Information"
+msgstr ""
+
+#: grid-parts/header/customizer-branding.php:14
+msgid "Site Branding"
+msgstr ""
+
+#: grid-parts/header/customizer-branding.php:34
+msgid "Click here to edit your site identity"
+msgstr ""
+
+#: grid-parts/header/customizer-branding.php:48
+msgid "Click here to edit the branding grid-part"
+msgstr ""
+
+#: grid-parts/header/customizer-branding.php:84
+msgid "Logo Maximum Width"
+msgstr ""
+
+#: grid-parts/header/customizer-branding.php:109
+msgid "Site-Title Typography"
+msgstr ""
+
+#: grid-parts/header/customizer-branding.php:146
+msgid "Tagline Typography"
+msgstr ""
+
+#: grid-parts/header/customizer-branding.php:173
+msgid "Inline Elements"
+msgstr ""
+
+#: grid-parts/header/customizer-branding.php:174
+msgid ""
+"Enable this option to show the branding elements inline instead of one "
+"below the other."
+msgstr ""
+
+#: grid-parts/header/customizer-branding.php:195
+msgid "Spacing between elements"
+msgstr ""
+
+#: grid-parts/header/customizer-branding.php:196
+msgid "This value is relevant to the site-title font-size."
+msgstr ""
+
+#: grid-parts/header/customizer-branding.php:215
+msgid "Horizontal Alignment"
+msgstr ""
+
+#: grid-parts/header/customizer-branding.php:233
+msgid "Vertical Alignment"
+msgstr ""
+
+#: grid-parts/header/customizer-branding.php:240
+#: inc/kirki/controls/php/class-kirki-control-dimensions.php:129
+#: inc/kirki/field/class-kirki-field-spacing.php:32
+msgid "Top"
+msgstr ""
+
+#: grid-parts/header/customizer-branding.php:242
+#: inc/kirki/controls/php/class-kirki-control-dimensions.php:130
+#: inc/kirki/field/class-kirki-field-spacing.php:33
+msgid "Bottom"
+msgstr ""
+
+#: grid-parts/header/customizer-contact-info.php:15
+#: grid-parts/header/customizer-social-media.php:21
+msgid "Header Contact Info"
+msgstr ""
+
+#: grid-parts/header/customizer-contact-info.php:35
+msgid ""
+"Enter any text you want - usually your contact info or important "
+"announcements that you want your visitors to see."
+msgstr ""
+
+#: grid-parts/header/customizer-contact-info.php:37
+#: grid-parts/header/template-contact-info.php:33
+msgid ""
+"Email: <a href=\"mailto:contact@example.com\">contact@example.com</a>. "
+"Phone: +1-541-754-3010"
+msgstr ""
+
+#: grid-parts/header/customizer-contact-info.php:83
+#: grid-parts/header/customizer-search.php:51
+msgid ""
+"The value selected here is relevant to your body font-size, so a value of "
+"1em will be the same size as your content."
+msgstr ""
+
+#: grid-parts/header/customizer-contact-info.php:115
+#: inc/kirki/controls/php/class-kirki-control-typography.php:134
+msgid "Text Align"
+msgstr ""
+
+#: grid-parts/header/customizer-search.php:15
+msgid "Header Search"
+msgstr ""
+
+#: grid-parts/header/customizer-search.php:32
+msgid ""
+"Select the left and right padding for this grid-part. Vertically there is "
+"no padding because the searchform occupies the whole height of this area."
+msgstr ""
+
+#: grid-parts/header/customizer-social-media.php:97
+msgid ""
+"Change the padding for your social-media icons. Controls how large the "
+"clickable area will be, and also the spacing between icons."
+msgstr ""
+
+#: grid-parts/header/customizer.php:92
 msgid ""
 "Adds a gap between your grid-parts, both horizontally and vertically. For "
 "more information please read <a "
@@ -532,214 +597,14 @@ msgid ""
 "target=\"_blank\" rel=\"nofollow\">this article</a>."
 msgstr ""
 
-#: grid-parts/footer/customizer.php:112
-msgid ""
-"Inner padding for all parts in the footer. For details on how padding "
-"works, please refer to <a "
-"href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/padding\" "
-"target=\"_blank\" rel=\"nofollow\">this article</a>."
-msgstr ""
-
-#: grid-parts/footer/customizer.php:125
-msgid ""
-"Choose a background color for the footer. Individual grid-parts can "
-"override this by setting their own background color for their area. If you "
-"are using a grid-gap the color defined here will be visible between "
-"grid-parts."
-msgstr ""
-
-#: grid-parts/footer/customizer.php:140
-msgid "Border-Top Width"
-msgstr ""
-
-#: grid-parts/footer/customizer.php:141
-msgid ""
-"You can make the top border of the footer ticker or thinner by adjusting "
-"this value. Set to 0 to disable the top border."
-msgstr ""
-
-#: grid-parts/footer/customizer.php:160
-msgid "Border-top Color"
-msgstr ""
-
-#: grid-parts/footer/customizer.php:161
-msgid "Choose a color for the top border."
-msgstr ""
-
-#: grid-parts/header/class-header.php:62 grid-parts/header/customizer.php:14
-msgid "Header"
-msgstr ""
-
-#: grid-parts/header/customizer-branding.php:12
-msgid "Site Branding"
-msgstr ""
-
-#: grid-parts/header/customizer-branding.php:27
-msgid "Click here to edit your site identity"
-msgstr ""
-
-#: grid-parts/header/customizer-branding.php:41
-msgid "Click here to edit the branding grid-part"
-msgstr ""
-
-#: grid-parts/header/customizer-branding.php:50
-msgid "Select the background color for this grid-part."
-msgstr ""
-
-#: grid-parts/header/customizer-branding.php:66
-#: grid-parts/header/customizer-contact-info.php:100
-msgid ""
-"The padding for this grid-part. For details on how padding works, please "
-"refer to <a "
-"href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/padding\" "
-"target=\"_blank\" rel=\"nofollow\">this article</a>."
-msgstr ""
-
-#: grid-parts/header/customizer-branding.php:78
-msgid "Logo Maximum Width"
-msgstr ""
-
-#: grid-parts/header/customizer-branding.php:103
-msgid "Site-Title Typography"
-msgstr ""
-
-#: grid-parts/header/customizer-branding.php:104
-msgid "Please select typography settings for your site-title."
-msgstr ""
-
-#: grid-parts/header/customizer-branding.php:141
-msgid "Tagline Typography"
-msgstr ""
-
-#: grid-parts/header/customizer-branding.php:142
-msgid "Please select typography settings for your tagline."
-msgstr ""
-
-#: grid-parts/header/customizer-branding.php:169
-msgid "Inline Elements"
-msgstr ""
-
-#: grid-parts/header/customizer-branding.php:170
-msgid ""
-"Enable this option to show the branding elements inline instead of one "
-"below the other."
-msgstr ""
-
-#: grid-parts/header/customizer-branding.php:191
-msgid "Spacing between elements"
-msgstr ""
-
-#: grid-parts/header/customizer-branding.php:192
-msgid "This value is relevant to the site-title font-size."
-msgstr ""
-
-#: grid-parts/header/customizer-branding.php:211
-msgid "Horizontal Alignment"
-msgstr ""
-
-#: grid-parts/header/customizer-branding.php:212
-msgid "Choose the horizontal alignment for your branding"
-msgstr ""
-
-#: grid-parts/header/customizer-branding.php:230
-msgid "Vertical Alignment"
-msgstr ""
-
-#: grid-parts/header/customizer-branding.php:231
-msgid "Choose the vertical alignment for your branding"
-msgstr ""
-
-#: grid-parts/header/customizer-branding.php:238
-#: inc/kirki/controls/php/class-kirki-control-dimensions.php:129
-#: inc/kirki/field/class-kirki-field-spacing.php:32
-msgid "Top"
-msgstr ""
-
-#: grid-parts/header/customizer-branding.php:240
-#: inc/kirki/controls/php/class-kirki-control-dimensions.php:130
-#: inc/kirki/field/class-kirki-field-spacing.php:33
-msgid "Bottom"
-msgstr ""
-
-#: grid-parts/header/customizer-contact-info.php:14
-#: grid-parts/header/customizer-social-media.php:20
-msgid "Header Contact Info"
-msgstr ""
-
-#: grid-parts/header/customizer-contact-info.php:29
-msgid "Contact Info Content"
-msgstr ""
-
-#: grid-parts/header/customizer-contact-info.php:30
-msgid ""
-"Enter any text you want - usually your contact info or important "
-"announcements that you want your visitors to see."
-msgstr ""
-
-#: grid-parts/header/customizer-contact-info.php:32
-#: grid-parts/header/template-contact-info.php:33
-msgid ""
-"Email: <a href=\"mailto:contact@example.com\">contact@example.com</a>. "
-"Phone: +1-541-754-3010"
-msgstr ""
-
-#: grid-parts/header/customizer-contact-info.php:48
-msgid "Select a background color for this grid-part."
-msgstr ""
-
-#: grid-parts/header/customizer-contact-info.php:80
-#: grid-parts/header/customizer-search.php:45
-msgid ""
-"Controls the font-size for this grid-part. The value selected here is "
-"relevant to your body font-size, so a value of 1em will be the same size as "
-"your content."
-msgstr ""
-
-#: grid-parts/header/customizer-contact-info.php:112
-#: inc/kirki/controls/php/class-kirki-control-typography.php:134
-msgid "Text Align"
-msgstr ""
-
-#: grid-parts/header/customizer-contact-info.php:113
-msgid "Select how the text will be aligned."
-msgstr ""
-
-#: grid-parts/header/customizer-search.php:14
-msgid "Header Search"
-msgstr ""
-
-#: grid-parts/header/customizer-search.php:26
-msgid ""
-"Select the left and right padding for this grid-part. Vertically there is "
-"no padding because the searchform occupies the whole height of this area."
-msgstr ""
-
-#: grid-parts/header/customizer-search.php:64
-msgid "Select the background color for this area."
-msgstr ""
-
-#: grid-parts/header/customizer.php:51
-msgid "Branding"
-msgstr ""
-
-#: grid-parts/header/customizer.php:59
-#: grid-parts/nav-handheld/customizer.php:26
-#: grid-parts/nav-handheld/part-search.php:21
-msgid "Search"
-msgstr ""
-
-#: grid-parts/header/customizer.php:67
-msgid "Contact Information"
-msgstr ""
-
-#: grid-parts/header/customizer.php:127
+#: grid-parts/header/customizer.php:93
 msgid ""
 "If you have a background-color or background-image defined for your header, "
 "then these will be visible through these gaps which creates a unique "
 "appearance since each grid-part looks separate."
 msgstr ""
 
-#: grid-parts/header/customizer.php:140
+#: grid-parts/header/customizer.php:107
 msgid ""
 "Choose a background color for the header. Individual grid-parts can "
 "override this by setting their own background color for their area. If you "
@@ -747,81 +612,77 @@ msgid ""
 "grid-parts."
 msgstr ""
 
-#: grid-parts/header/customizer.php:156
+#: grid-parts/header/customizer.php:124
 msgid "Drop Shadow Intensity"
 msgstr ""
 
-#: grid-parts/header/customizer.php:157
+#: grid-parts/header/customizer.php:125
 msgid ""
 "Set to \"None\" if you want to disable the shadow for this grid-part, or "
 "increase the intensity for a more dramatic effect."
 msgstr ""
 
-#: grid-parts/header/customizer.php:164
+#: grid-parts/header/customizer.php:132
 #: inc/kirki/controls/php/class-kirki-control-typography.php:176
 #: inc/kirki/controls/php/class-kirki-control-typography.php:192
 msgid "None"
 msgstr ""
 
-#: grid-parts/header/customizer.php:165
+#: grid-parts/header/customizer.php:133
 msgid "Extra Light"
 msgstr ""
 
-#: grid-parts/header/customizer.php:166
+#: grid-parts/header/customizer.php:134
 msgid "Light"
 msgstr ""
 
-#: grid-parts/header/customizer.php:167
+#: grid-parts/header/customizer.php:135
 msgid "Medium"
 msgstr ""
 
-#: grid-parts/header/customizer.php:168
+#: grid-parts/header/customizer.php:136
 msgid "Heavy"
 msgstr ""
 
-#: grid-parts/header/customizer.php:169
+#: grid-parts/header/customizer.php:137
 msgid "Extra Heavy"
 msgstr ""
 
-#: grid-parts/header/customizer.php:179
+#: grid-parts/header/customizer.php:146
 msgid "Sticky on Large Devices"
 msgstr ""
 
-#: grid-parts/header/customizer.php:180
+#: grid-parts/header/customizer.php:147
 msgid ""
 "Enable to stick this area to the top of the page when users scroll-down on "
 "devices larger than the breakpoint you defined in your main grid."
 msgstr ""
 
-#: grid-parts/header/customizer.php:193
+#: grid-parts/header/customizer.php:159
 msgid "Sticky on Small Devices"
 msgstr ""
 
-#: grid-parts/header/customizer.php:194
+#: grid-parts/header/customizer.php:160
 msgid ""
 "Enable to stick this area to the top of the page when users scroll-down on "
 "devices smaller than the breakpoint you defined in your main grid."
 msgstr ""
 
 #: grid-parts/layer-slider/class-layer-slider.php:68
-#: grid-parts/layer-slider/customizer.php:12
+#: grid-parts/layer-slider/customizer.php:14
 msgid "Layer Slider"
 msgstr ""
 
-#: grid-parts/layer-slider/customizer.php:20
+#: grid-parts/layer-slider/customizer.php:27
 msgid "Choose a slider"
 msgstr ""
 
-#: grid-parts/layer-slider/customizer.php:29
+#: grid-parts/layer-slider/customizer.php:36
 msgid "Choose Slider"
 msgstr ""
 
-#: grid-parts/layer-slider/customizer.php:30
-msgid "Select the slider you want to assign to this area."
-msgstr ""
-
 #: grid-parts/nav-handheld/class-nav-handheld.php:69
-#: grid-parts/nav-handheld/customizer.php:11 inc/gridd.php:184
+#: grid-parts/nav-handheld/customizer.php:13 inc/gridd.php:184
 msgid "Mobile Navigation"
 msgstr ""
 
@@ -829,46 +690,38 @@ msgstr ""
 msgid "Mobile Navigation Widget Area"
 msgstr ""
 
-#: grid-parts/nav-handheld/customizer.php:14
-msgid ""
-"<a href=\"https://wplemon.com/gridd-plus\" rel=\"nofollow\" "
-"target=\"_blank\">Upgrade to <strong>plus</strong></a> to add a custom "
-"widget-area as a new menu item in mobile navigation."
+#: grid-parts/nav-handheld/customizer.php:18
+msgid "Additional item: axpandable widget-area with custom icon"
 msgstr ""
 
-#: grid-parts/nav-handheld/customizer.php:24
+#: grid-parts/nav-handheld/customizer.php:30
 #: grid-parts/nav-handheld/part-menu.php:36
 msgid "Menu"
 msgstr ""
 
-#: grid-parts/nav-handheld/customizer.php:31
-#: grid-parts/nav-handheld/part-woo-cart.php:17
-msgid "Cart"
-msgstr ""
-
-#: grid-parts/nav-handheld/customizer.php:38
+#: grid-parts/nav-handheld/customizer.php:39
 msgid "Enable Mobile Navigation"
 msgstr ""
 
-#: grid-parts/nav-handheld/customizer.php:39
+#: grid-parts/nav-handheld/customizer.php:40
 msgid ""
 "Enables the mobile navigation for devices smaller than the breakpoint "
 "defined in your grid settings."
 msgstr ""
 
-#: grid-parts/nav-handheld/customizer.php:59
+#: grid-parts/nav-handheld/customizer.php:60
 msgid "Mobile Navigation active parts & order"
 msgstr ""
 
-#: grid-parts/nav-handheld/customizer.php:60
+#: grid-parts/nav-handheld/customizer.php:61
 msgid "Enable and disable parts of the mobile navigation, and reorder them at will."
 msgstr ""
 
-#: grid-parts/nav-handheld/customizer.php:88
+#: grid-parts/nav-handheld/customizer.php:89
 msgid "Hide Labels"
 msgstr ""
 
-#: grid-parts/nav-handheld/customizer.php:89
+#: grid-parts/nav-handheld/customizer.php:90
 msgid ""
 "Enable this option if you want to hide the button labels. If labels are "
 "hidden, they only become available to screen-readers."
@@ -876,7 +729,7 @@ msgstr ""
 
 #: grid-parts/navigation/class-navigation.php:115
 #: grid-parts/navigation/class-navigation.php:137
-#: grid-parts/navigation/customizer.php:47
+#: grid-parts/navigation/customizer.php:48
 #. translators: The number of the navigation.
 #. translators: The navigation number.
 msgid "Navigation %d"
@@ -894,27 +747,39 @@ msgstr ""
 msgid "Toggle Child Menu"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:51
-msgid ""
-"<a href=\"https://wplemon.com/gridd-plus\" rel=\"nofollow\" "
-"target=\"_blank\">Upgrade to <strong>plus</strong></a> for automatic "
-"WCAG-compliant colors suggestion on this section and additional options for "
-"font-sizes and WooCommerce cart on your menu."
+#: grid-parts/navigation/customizer.php:55
+msgid "WooCommerce Cart inside the navigation"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:65
+#: grid-parts/navigation/customizer.php:56
+msgid "font-size adjustments"
+msgstr ""
+
+#: grid-parts/navigation/customizer.php:58
+msgid ""
+"Try to keep your horizontal navigation as short as possible and avoid "
+"hierarchical menus."
+msgstr ""
+
+#: grid-parts/navigation/customizer.php:58
+msgid ""
+"Verical menus provide a better user experience for hierarchical (nested) "
+"menus."
+msgstr ""
+
+#: grid-parts/navigation/customizer.php:73
 msgid "Looking for your menu items?"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:67
+#: grid-parts/navigation/customizer.php:75
 msgid "Click here to edit your menus"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:75
+#: grid-parts/navigation/customizer.php:83
 msgid "Responsive Behavior"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:78
+#: grid-parts/navigation/customizer.php:86
 #. translators: The link properies.
 msgid ""
 "Select how this navigation should behave in smaller screens. We recommend "
@@ -922,52 +787,60 @@ msgid ""
 "mobile-navigation menu</a>."
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:84
+#: grid-parts/navigation/customizer.php:92
 msgid "Always visible"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:85
+#: grid-parts/navigation/customizer.php:93
 msgid "Collapse to icon on mobile"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:86
+#: grid-parts/navigation/customizer.php:94
 msgid "Always collapsed"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:87
+#: grid-parts/navigation/customizer.php:95
 msgid "Hide on mobile"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:132
+#: grid-parts/navigation/customizer.php:128
+msgid ""
+"Inner padding for this grid-part. Use any valid CSS value. For details on "
+"how padding works, please refer to <a "
+"href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/padding\" "
+"target=\"_blank\" rel=\"nofollow\">this article</a>."
+msgstr ""
+
+#: grid-parts/navigation/customizer.php:140
 msgid "Controls the overall background color for this grid-part."
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:147
+#: grid-parts/navigation/customizer.php:155
 msgid "Items Color"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:148
+#: grid-parts/navigation/customizer.php:156
 msgid ""
 "Select the color used for your menu items. Please choose a color with "
 "sufficient contrast with the selected background-color."
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:163
+#: grid-parts/navigation/customizer.php:171
 msgid "Accent Background Color"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:164
+#: grid-parts/navigation/customizer.php:172
 msgid ""
 "Controls the background-color for menu items on hover, as well as for the "
 "currently active menu-item. Applies to both parent and child (dropdown) "
 "menu items."
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:179
+#: grid-parts/navigation/customizer.php:187
 msgid "Accent Items Color"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:180
+#: grid-parts/navigation/customizer.php:188
 msgid ""
 "Select the color used for your menu items on hover, as well as for the "
 "currently active menu-item. Applies to both parent and child (dropdown) "
@@ -975,102 +848,102 @@ msgid ""
 "selected background-color."
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:196
+#: grid-parts/navigation/customizer.php:204
 msgid "Enable Vertical Menu Mode"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:197
+#: grid-parts/navigation/customizer.php:205
 msgid ""
 "If your layout is column-based and you want a vertical side-navigation "
 "enable this option."
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:237
+#: grid-parts/navigation/customizer.php:245
 msgid "Justify Items"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:238
+#: grid-parts/navigation/customizer.php:246
 msgid "Choose how menu items will be spread horizontally inside the menu container."
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:239
+#: grid-parts/navigation/customizer.php:247
 msgid ""
 "This helps distribute extra free space left over when all the items on a "
 "line have reached their maximum size. It also exerts some control over the "
 "alignment of items when they overflow the line."
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:257
+#: grid-parts/navigation/customizer.php:265
 msgid "Start"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:258
+#: grid-parts/navigation/customizer.php:266
 msgid "End"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:260
+#: grid-parts/navigation/customizer.php:268
 msgid "Space Between"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:261
+#: grid-parts/navigation/customizer.php:269
 msgid "Space Around"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:262
+#: grid-parts/navigation/customizer.php:270
 msgid "Space Evenly"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:271
+#: grid-parts/navigation/customizer.php:279
 msgid "Expand Icon"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:272
+#: grid-parts/navigation/customizer.php:280
 msgid "Select the icon that should be used to expand the navigation."
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:319
+#: grid-parts/navigation/customizer.php:327
 msgid "Expand Icon Position"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:320
+#: grid-parts/navigation/customizer.php:328
 msgid "Changes the position of the collapsed-menu icon inside the area."
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:325
+#: grid-parts/navigation/customizer.php:333
 msgid "Top Left"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:326
+#: grid-parts/navigation/customizer.php:334
 msgid "Top Center"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:327
+#: grid-parts/navigation/customizer.php:335
 msgid "Top Right"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:328
+#: grid-parts/navigation/customizer.php:336
 msgid "Center Left"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:329
+#: grid-parts/navigation/customizer.php:337
 #: inc/kirki/controls/php/class-kirki-control-background.php:90
 #: inc/kirki/controls/php/class-kirki-control-dimensions.php:121
 msgid "Center Center"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:330
+#: grid-parts/navigation/customizer.php:338
 msgid "Center Right"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:331
+#: grid-parts/navigation/customizer.php:339
 msgid "Bottom Left"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:332
+#: grid-parts/navigation/customizer.php:340
 msgid "Bottom Center"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:333
+#: grid-parts/navigation/customizer.php:341
 msgid "Bottom Right"
 msgstr ""
 
@@ -1086,70 +959,70 @@ msgstr ""
 msgid "Toggle Navigation"
 msgstr ""
 
-#: grid-parts/navigation/template.php:160
+#: grid-parts/navigation/template.php:161
 #. translators: The navigation number.
 msgid "Please assign a menu to the \"Navigation %d\" menu."
 msgstr ""
 
 #: grid-parts/revolution-slider/class-revolution-slider.php:68
-#: grid-parts/revolution-slider/customizer.php:12
+#: grid-parts/revolution-slider/customizer.php:14
 msgid "Revolution Slider"
 msgstr ""
 
-#: grid-parts/revolution-slider/customizer.php:20
-#: grid-parts/revolution-slider/customizer.php:30
+#: grid-parts/revolution-slider/customizer.php:27
+#: grid-parts/revolution-slider/customizer.php:37
 msgid "Select Slider"
 msgstr ""
 
-#: grid-parts/revolution-slider/customizer.php:31
+#: grid-parts/revolution-slider/customizer.php:38
 msgid "Select the slider you want to assign to this grid-part."
 msgstr ""
 
 #: grid-parts/sidebar/class-sidebar.php:91
 #: grid-parts/sidebar/class-sidebar.php:138
-#: grid-parts/sidebar/customizer.php:27
+#: grid-parts/sidebar/customizer.php:28
 #. translators: The number of the widget area.
 msgid "Widget Area %d"
 msgstr ""
 
-#: grid-parts/sidebar/customizer.php:33
+#: grid-parts/sidebar/customizer.php:34
 #. translators: The grid-part label.
 msgid "%s Advanced Options"
 msgstr ""
 
-#: grid-parts/sidebar/customizer.php:36
-msgid ""
-"<a href=\"https://wplemon.com/gridd-plus\" rel=\"nofollow\" "
-"target=\"_blank\">Upgrade to <strong>plus</strong></a> for automatic "
-"WCAG-compliant colors suggestion and independent font-size on this section."
-msgstr ""
-
-#: grid-parts/sidebar/customizer.php:52
+#: grid-parts/sidebar/customizer.php:57
 msgid "Click here to edit your widgets"
 msgstr ""
 
-#: grid-parts/sidebar/customizer.php:61
+#: grid-parts/sidebar/customizer.php:66
 msgid "Select the background color for this area"
 msgstr ""
 
-#: grid-parts/sidebar/customizer.php:110
+#: grid-parts/sidebar/customizer.php:92
+#: inc/customizer/section/typography.php:116
+msgid ""
+"Select the color used for your text. Please choose a color with sufficient "
+"contrast with the selected background-color."
+msgstr ""
+
+#: grid-parts/sidebar/customizer.php:115
 msgid ""
 "Select the color used for your links. Please choose a color with sufficient "
 "contrast with the selected background-color."
 msgstr ""
 
-#: grid-parts/sidebar/customizer.php:144
+#: grid-parts/sidebar/customizer.php:149
 msgid ""
 "The padding for this area. For details on how padding works, please refer "
 "to <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/padding\" "
 "target=\"_blank\" rel=\"nofollow\">this article</a>."
 msgstr ""
 
-#: grid-parts/sidebar/customizer.php:163
+#: grid-parts/sidebar/customizer.php:168
 msgid "Margin between widgets"
 msgstr ""
 
-#: grid-parts/sidebar/customizer.php:164
+#: grid-parts/sidebar/customizer.php:169
 msgid "Changes the spacing between widgets in this widget-area."
 msgstr ""
 
@@ -1162,25 +1035,49 @@ msgstr ""
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
-#: inc/bootstrap.php:115
+#: inc/bootstrap-compatibility.php:35
+#. Translators: 1 is the required WordPress version and 2 is the user's current
+#. version.
+msgid ""
+"Gridd requires at least WordPress version %1$s. You are running version "
+"%2$s. Please upgrade and try again."
+msgstr ""
+
+#: inc/bootstrap-compatibility.php:44
+#. Translators: 1 is the required PHP version and 2 is the user's current
+#. version.
+msgid ""
+"Gridd requires at least PHP version %1$s. You are running version %2$s. "
+"Please upgrade and try again."
+msgstr ""
+
+#: inc/bootstrap.php:108
 #. translators: %s: Name of the post.
 msgid "Edit %s"
 msgstr ""
 
-#: inc/bootstrap.php:133
+#: inc/bootstrap.php:126
 #. translators: %s: post title
 msgid "Leave a Comment on %s"
 msgstr ""
 
-#: inc/customize.php:106
+#: inc/customize.php:130
 msgid "Theme Options"
 msgstr ""
 
-#: inc/customize.php:213
+#: inc/customize.php:144
+msgid "Gridd Plus"
+msgstr ""
+
+#: inc/customize.php:145
+msgid "Go Premium"
+msgstr ""
+
+#: inc/customize.php:254
 msgid "Template"
 msgstr ""
 
-#: inc/customize.php:244 inc/customize.php:249
+#: inc/customize.php:285 inc/customize.php:290
 msgid ""
 "Background is visible under transparent grid-parts, or if the grid is not "
 "set to 100% width."
@@ -1232,15 +1129,15 @@ msgstr ""
 msgid "- Row"
 msgstr ""
 
-#: inc/customizer/control/grid.php:122
+#: inc/customizer/control/grid.php:126
 msgid "Select Grid Part for this area."
 msgstr ""
 
-#: inc/customizer/control/grid.php:124
+#: inc/customizer/control/grid.php:128
 msgid "Select a grid-part to add."
 msgstr ""
 
-#: inc/customizer/control/grid.php:131
+#: inc/customizer/control/grid.php:135
 msgid "Cancel"
 msgstr ""
 
@@ -1250,6 +1147,10 @@ msgstr ""
 
 #: inc/customizer/section/edd.php:28
 msgid "Product Grid"
+msgstr ""
+
+#: inc/customizer/section/edd.php:30
+msgid "Learn more about these settings"
 msgstr ""
 
 #: inc/customizer/section/edd.php:38
@@ -1274,11 +1175,15 @@ msgstr ""
 msgid "Grid Items Inner Padding"
 msgstr ""
 
-#: inc/customizer/section/grid.php:19
+#: inc/customizer/section/grid.php:20
 msgid "Grid"
 msgstr ""
 
-#: inc/customizer/section/grid.php:37
+#: inc/customizer/section/grid.php:26
+msgid "Separate grid for mobile devices."
+msgstr ""
+
+#: inc/customizer/section/grid.php:42
 msgid ""
 "Edit settings for the grid. For more information and documentation on how "
 "the grid works, please read <a "
@@ -1286,17 +1191,17 @@ msgid ""
 "target=\"_blank\">this article</a>."
 msgstr ""
 
-#: inc/customizer/section/grid.php:58
+#: inc/customizer/section/grid.php:57
 msgid "Mobile Breakpoint"
 msgstr ""
 
-#: inc/customizer/section/grid.php:59
+#: inc/customizer/section/grid.php:58
 msgid ""
 "The breakpoint that separates mobile views from desktop views. Use a valid "
 "CSS unit."
 msgstr ""
 
-#: inc/customizer/section/grid.php:60
+#: inc/customizer/section/grid.php:59
 msgid ""
 "Screen sizes below the breakpoint defined will get a stacked view instead "
 "of grid."
@@ -1306,77 +1211,81 @@ msgstr ""
 msgid "Grid Container Gap"
 msgstr ""
 
-#: inc/customizer/section/grid.php:88
+#: inc/customizer/section/grid.php:90
 msgid "Grid Container max-width"
 msgstr ""
 
-#: inc/customizer/section/grid.php:89
+#: inc/customizer/section/grid.php:91
 msgid "The maximum width for this grid."
 msgstr ""
 
-#: inc/customizer/section/grid.php:90
+#: inc/customizer/section/grid.php:92
 msgid ""
-"By setting the max-width to something other than 100% you get a boxed "
+"By setting the max-width to something other than 100% you can build a boxed "
 "layout."
 msgstr ""
 
-#: inc/customizer/section/typography.php:18
+#: inc/customizer/section/typography.php:20
 msgid "Typography & Links"
 msgstr ""
 
-#: inc/customizer/section/typography.php:21
-msgid ""
-"<a href=\"https://wplemon.com/gridd-plus\" rel=\"nofollow\" "
-"target=\"_blank\">Upgrade to <strong>plus</strong></a> for extra options in "
-"this section: Automatic WCAG-compliant colors suggestion, typography-scales "
-"and links decoration."
+#: inc/customizer/section/typography.php:25
+msgid "Selecting from an array of WCAG-compliant colors for text, headers and links"
 msgstr ""
 
-#: inc/customizer/section/typography.php:36
+#: inc/customizer/section/typography.php:26
+msgid "Adjustable typography scales"
+msgstr ""
+
+#: inc/customizer/section/typography.php:27
+msgid ""
+"Links decoration (underlined/not-underlined) for content and headers "
+"separately."
+msgstr ""
+
+#: inc/customizer/section/typography.php:44
 msgid "Body Typography"
 msgstr ""
 
-#: inc/customizer/section/typography.php:37
+#: inc/customizer/section/typography.php:45
 msgid ""
 "Edit the font-family used for the body of your site. This applies to all "
 "text except the headers which have a separate setting."
 msgstr ""
 
-#: inc/customizer/section/typography.php:69
+#: inc/customizer/section/typography.php:77
 msgid "Headers Typography"
 msgstr ""
 
-#: inc/customizer/section/typography.php:70
+#: inc/customizer/section/typography.php:78
 msgid "Edit the font-family used for all headers on your site."
 msgstr ""
 
-#: inc/customizer/section/typography.php:125
-msgid "Select the color for your links."
+#: inc/customizer/section/typography.php:133
+msgid ""
+"Select the hue for you links. The color will be auto-calculated to ensure "
+"maximum readability according to WCAG."
 msgstr ""
 
-#: inc/customizer/section/typography.php:145
+#: inc/customizer/section/typography.php:153
 msgid "Links Hover Color"
 msgstr ""
 
-#: inc/customizer/section/typography.php:146
-msgid "Select the colors for your links on hover."
-msgstr ""
-
-#: inc/customizer/section/typography.php:169
+#: inc/customizer/section/typography.php:176
 msgid "Body Font-Size"
 msgstr ""
 
-#: inc/customizer/section/typography.php:170
+#: inc/customizer/section/typography.php:177
 msgid ""
 "Choose the main font-size for your content. We recommend you a font-size "
 "greater than 18px to ensure greater readability."
 msgstr ""
 
-#: inc/customizer/section/typography.php:192
+#: inc/customizer/section/typography.php:196
 msgid "Fluid typography Ratio"
 msgstr ""
 
-#: inc/customizer/section/typography.php:193
+#: inc/customizer/section/typography.php:197
 msgid ""
 "Defines by how much your font-size will change depending on the "
 "screen-size. Larger values will increase the font-size more on bigger "
@@ -1384,13 +1293,38 @@ msgid ""
 "the screen-size."
 msgstr ""
 
-#: inc/customizer/section/typography.php:195
+#: inc/customizer/section/typography.php:199
 #. translators: "Read this article" link.
 msgid "Need more Information? %s"
 msgstr ""
 
-#: inc/customizer/section/typography.php:195
+#: inc/customizer/section/typography.php:199
 msgid "Read this article."
+msgstr ""
+
+#: inc/customizer/section/typography.php:220
+msgid "Typography Scale"
+msgstr ""
+
+#: inc/customizer/section/typography.php:221
+msgid ""
+"Controls the size relations between your headers and your main typography "
+"font-size."
+msgstr ""
+
+#: inc/customizer/section/typography.php:229
+#. Translators: Numeric representation of the scale.
+msgid "%s - Musical Pentatonic (classic)"
+msgstr ""
+
+#: inc/customizer/section/typography.php:231
+#. Translators: Numeric representation of the scale.
+msgid "%s - Musical Tritonic"
+msgstr ""
+
+#: inc/customizer/section/typography.php:233
+#. Translators: Numeric representation of the scale.
+msgid "%s - Perfect Fourth"
 msgstr ""
 
 #: inc/customizer/section/woocommerce.php:16
@@ -1402,39 +1336,45 @@ msgid "The minimum width of your products in product-grids."
 msgstr ""
 
 #: inc/customizer/section/woocommerce.php:29
-msgid "Products per-page"
+msgid "Products per page"
 msgstr ""
 
-#: inc/customizer/section/woocommerce.php:30
-msgid "The number of products displayed on each page."
-msgstr ""
-
-#: inc/customizer.php:226
+#: inc/customizer.php:260
 msgid ""
 "The font-size defined here is in relation to the global font-size defined "
 "in your typography options."
 msgstr ""
 
-#: inc/customizer.php:229
+#: inc/customizer.php:263
 msgid ""
 "If you have a background-color defined for this grid, then that color will "
 "be visible through these gaps which creates a unique appearance since each "
 "grid-part looks separate."
 msgstr ""
 
-#: inc/customizer.php:232
+#: inc/customizer.php:266
 msgid ""
 "If the container for this grid-part is taller than its contents, you can "
 "use this option to vertically align the contents inside theie parent "
 "container."
 msgstr ""
 
-#: inc/customizer.php:261
-msgid "Gridd Plus"
+#: inc/customizer.php:302
+msgid "Plus Features"
 msgstr ""
 
-#: inc/customizer.php:262
-msgid "Get Plus"
+#: inc/customizer.php:305
+msgid ""
+"<a href=\"https://wplemon.com/gridd-plus\" rel=\"noopener noreferrer "
+"nofollow\" target=\"_blank\">Upgrade to Plus</a> for extra options:"
+msgstr ""
+
+#: inc/customizer.php:315
+msgid "Tip"
+msgstr ""
+
+#: inc/customizer.php:320
+msgid "Documentation"
 msgstr ""
 
 #: inc/kirki/controls/php/class-kirki-control-background.php:54
@@ -1744,7 +1684,6 @@ msgid "Margin Bottom"
 msgstr ""
 
 #: inc/kirki/controls/php/class-kirki-control-typography.php:221
-#: inc/kirki/example.php:62 inc/kirki/example.php:591
 msgid "Color"
 msgstr ""
 
@@ -1810,530 +1749,6 @@ msgstr ""
 
 #: inc/kirki/deprecated/functions.php:19
 msgid "%1$s or %2$s"
-msgstr ""
-
-#: inc/kirki/docs/files/class-kirki-installer-section.php:105
-msgid ""
-"Please install the Kirki plugin to take full advantage of this theme\\s "
-"customizer capabilities"
-msgstr ""
-
-#: inc/kirki/docs/files/class-kirki-installer-section.php:107
-msgid "Install Kirki Toolkit now"
-msgstr ""
-
-#: inc/kirki/docs/files/class-kirki-installer-section.php:108
-msgid "Install Now"
-msgstr ""
-
-#: inc/kirki/docs/files/class-kirki-installer-section.php:122
-msgid ""
-"You have installed Kirki. Activate it to take advantage of this theme's "
-"features in the customizer."
-msgstr ""
-
-#: inc/kirki/docs/files/class-kirki-installer-section.php:124
-msgid "Activate Kirki Toolkit now"
-msgstr ""
-
-#: inc/kirki/docs/files/class-kirki-installer-section.php:125
-msgid "Activate Now"
-msgstr ""
-
-#: inc/kirki/docs/files/class-kirki-installer-section.php:144
-#: inc/kirki/docs/files/class-kirki-installer-section.php:145
-msgid "Don't show this again"
-msgstr ""
-
-#: inc/kirki/docs/files/class-kirki-installer-section.php:144
-msgid "Dismiss"
-msgstr ""
-
-#: inc/kirki/docs/files/class-kirki-installer-section.php:155
-msgid ""
-"Are you sure? Dismissing this message will hide the installation "
-"recommendation and you will have to manually install and activate the "
-"plugin in the future."
-msgstr ""
-
-#: inc/kirki/example.php:45
-msgid "Kirki Demo Panel"
-msgstr ""
-
-#: inc/kirki/example.php:46
-msgid "Contains sections for all kirki controls."
-msgstr ""
-
-#: inc/kirki/example.php:59
-msgid "Background"
-msgstr ""
-
-#: inc/kirki/example.php:60
-msgid "Code"
-msgstr ""
-
-#: inc/kirki/example.php:61 inc/kirki/example.php:749
-msgid "Checkbox"
-msgstr ""
-
-#: inc/kirki/example.php:63
-msgid "Color Palette"
-msgstr ""
-
-#: inc/kirki/example.php:64
-msgid "Custom"
-msgstr ""
-
-#: inc/kirki/example.php:65
-msgid "Dashicons"
-msgstr ""
-
-#: inc/kirki/example.php:66
-msgid "Date"
-msgstr ""
-
-#: inc/kirki/example.php:67
-msgid "Dimension"
-msgstr ""
-
-#: inc/kirki/example.php:68
-msgid "Dimensions"
-msgstr ""
-
-#: inc/kirki/example.php:69
-msgid "Dropdown Pages"
-msgstr ""
-
-#: inc/kirki/example.php:70
-msgid "Editor"
-msgstr ""
-
-#: inc/kirki/example.php:71
-msgid "Font-Awesome"
-msgstr ""
-
-#: inc/kirki/example.php:72
-msgid "Generic"
-msgstr ""
-
-#: inc/kirki/example.php:73
-msgid "Image"
-msgstr ""
-
-#: inc/kirki/example.php:74
-msgid "Multicheck"
-msgstr ""
-
-#: inc/kirki/example.php:75
-msgid "Multicolor"
-msgstr ""
-
-#: inc/kirki/example.php:76
-msgid "Number"
-msgstr ""
-
-#: inc/kirki/example.php:77
-msgid "Palette"
-msgstr ""
-
-#: inc/kirki/example.php:78
-msgid "Preset"
-msgstr ""
-
-#: inc/kirki/example.php:79
-msgid "Radio"
-msgstr ""
-
-#: inc/kirki/example.php:79
-msgid "A plain Radio control."
-msgstr ""
-
-#: inc/kirki/example.php:80
-msgid "Radio Buttonset"
-msgstr ""
-
-#: inc/kirki/example.php:80
-msgid ""
-"Radio-Buttonset controls are essentially radio controls with some fancy "
-"styling to make them look cooler."
-msgstr ""
-
-#: inc/kirki/example.php:81
-msgid "Radio Image"
-msgstr ""
-
-#: inc/kirki/example.php:81
-msgid ""
-"Radio-Image controls are essentially radio controls with some fancy styles "
-"to use images"
-msgstr ""
-
-#: inc/kirki/example.php:82
-msgid "Repeater"
-msgstr ""
-
-#: inc/kirki/example.php:83
-msgid "Select"
-msgstr ""
-
-#: inc/kirki/example.php:84
-msgid "Slider"
-msgstr ""
-
-#: inc/kirki/example.php:85
-msgid "Sortable"
-msgstr ""
-
-#: inc/kirki/example.php:86
-msgid "Switch"
-msgstr ""
-
-#: inc/kirki/example.php:87
-msgid "Toggle"
-msgstr ""
-
-#: inc/kirki/example.php:88
-msgid "Typography"
-msgstr ""
-
-#: inc/kirki/example.php:105
-msgid "Test Link Section"
-msgstr ""
-
-#: inc/kirki/example.php:107
-msgid "Pro"
-msgstr ""
-
-#: inc/kirki/example.php:130
-msgid "Background Control"
-msgstr ""
-
-#: inc/kirki/example.php:131
-msgid "Background conrols are pretty complex! (but useful if properly used)"
-msgstr ""
-
-#: inc/kirki/example.php:153
-msgid "Code Control"
-msgstr ""
-
-#: inc/kirki/example.php:154 inc/kirki/example.php:173
-#: inc/kirki/example.php:483 inc/kirki/example.php:494
-#: inc/kirki/example.php:846 inc/kirki/example.php:857
-#: inc/kirki/example.php:882
-msgid "Description"
-msgstr ""
-
-#: inc/kirki/example.php:172
-msgid "Checkbox Control"
-msgstr ""
-
-#: inc/kirki/example.php:188
-msgid "Color Control (hex-only)"
-msgstr ""
-
-#: inc/kirki/example.php:189
-msgid "This is a color control - without alpha channel."
-msgstr ""
-
-#: inc/kirki/example.php:199
-msgid "Color Control (with alpha channel)"
-msgstr ""
-
-#: inc/kirki/example.php:200
-msgid "This is a color control - with alpha channel."
-msgstr ""
-
-#: inc/kirki/example.php:213
-msgid "Color Control - hue only."
-msgstr ""
-
-#: inc/kirki/example.php:214
-msgid "This is a color control - hue only."
-msgstr ""
-
-#: inc/kirki/example.php:228
-msgid "Date Control"
-msgstr ""
-
-#: inc/kirki/example.php:229
-msgid "This is a date control."
-msgstr ""
-
-#: inc/kirki/example.php:242
-msgid "First Editor Control"
-msgstr ""
-
-#: inc/kirki/example.php:243
-msgid "This is an editor control."
-msgstr ""
-
-#: inc/kirki/example.php:253
-msgid "Second Editor Control"
-msgstr ""
-
-#: inc/kirki/example.php:254
-msgid ""
-"This is a 2nd editor control just to check that we do not have issues with "
-"multiple instances."
-msgstr ""
-
-#: inc/kirki/example.php:256
-msgid "Default Text"
-msgstr ""
-
-#: inc/kirki/example.php:269 inc/kirki/example.php:284
-#: inc/kirki/example.php:299 inc/kirki/example.php:314
-#: inc/kirki/example.php:329
-msgid "Color-Palette"
-msgstr ""
-
-#: inc/kirki/example.php:270
-msgid "This is a color-palette control"
-msgstr ""
-
-#: inc/kirki/example.php:285
-msgid "Material Design Colors - all"
-msgstr ""
-
-#: inc/kirki/example.php:300
-msgid "Material Design Colors - primary"
-msgstr ""
-
-#: inc/kirki/example.php:315
-msgid "Material Design Colors - red"
-msgstr ""
-
-#: inc/kirki/example.php:330
-msgid "Material Design Colors - A100"
-msgstr ""
-
-#: inc/kirki/example.php:350
-msgid "Dashicons Control"
-msgstr ""
-
-#: inc/kirki/example.php:351
-msgid "Using a custom array of dashicons"
-msgstr ""
-
-#: inc/kirki/example.php:370
-msgid "All Dashicons"
-msgstr ""
-
-#: inc/kirki/example.php:371
-msgid "Showing all dashicons"
-msgstr ""
-
-#: inc/kirki/example.php:384 inc/kirki/example.php:401
-#: inc/kirki/example.php:415 inc/kirki/example.php:450
-msgid "Dimension Control"
-msgstr ""
-
-#: inc/kirki/example.php:385 inc/kirki/example.php:402
-#: inc/kirki/example.php:416 inc/kirki/example.php:432
-#: inc/kirki/example.php:451 inc/kirki/example.php:469
-#: inc/kirki/example.php:525 inc/kirki/example.php:536
-#: inc/kirki/example.php:550
-msgid "Description Here."
-msgstr ""
-
-#: inc/kirki/example.php:431
-msgid "Spacing Control"
-msgstr ""
-
-#: inc/kirki/example.php:468
-msgid "Font Awesome Control"
-msgstr ""
-
-#: inc/kirki/example.php:482
-msgid "Text Control"
-msgstr ""
-
-#: inc/kirki/example.php:493
-msgid "Textarea Control"
-msgstr ""
-
-#: inc/kirki/example.php:504
-msgid "Custom input Control."
-msgstr ""
-
-#: inc/kirki/example.php:505
-msgid ""
-"The \"generic\" control allows you to add any input type you want. In this "
-"case we use type=\"password\" and define custom styles."
-msgstr ""
-
-#: inc/kirki/example.php:524
-msgid "Image Control (URL)"
-msgstr ""
-
-#: inc/kirki/example.php:535
-msgid "Image Control (ID)"
-msgstr ""
-
-#: inc/kirki/example.php:549
-msgid "Image Control (array)"
-msgstr ""
-
-#: inc/kirki/example.php:566
-msgid "Multickeck Control"
-msgstr ""
-
-#: inc/kirki/example.php:571 inc/kirki/example.php:653
-#: inc/kirki/example.php:674 inc/kirki/example.php:769
-#: inc/kirki/example.php:788 inc/kirki/example.php:828
-msgid "Option 1"
-msgstr ""
-
-#: inc/kirki/example.php:572 inc/kirki/example.php:654
-#: inc/kirki/example.php:675 inc/kirki/example.php:770
-#: inc/kirki/example.php:789 inc/kirki/example.php:829
-msgid "Option 2"
-msgstr ""
-
-#: inc/kirki/example.php:573 inc/kirki/example.php:655
-#: inc/kirki/example.php:676 inc/kirki/example.php:771
-#: inc/kirki/example.php:790 inc/kirki/example.php:830
-msgid "Option 3"
-msgstr ""
-
-#: inc/kirki/example.php:574 inc/kirki/example.php:656
-#: inc/kirki/example.php:772 inc/kirki/example.php:791
-#: inc/kirki/example.php:831
-msgid "Option 4"
-msgstr ""
-
-#: inc/kirki/example.php:575 inc/kirki/example.php:657
-#: inc/kirki/example.php:773 inc/kirki/example.php:792
-#: inc/kirki/example.php:832
-msgid "Option 5"
-msgstr ""
-
-#: inc/kirki/example.php:587 inc/kirki/example.php:611
-#: inc/kirki/example.php:629
-msgid "Label"
-msgstr ""
-
-#: inc/kirki/example.php:592
-msgid "Hover"
-msgstr ""
-
-#: inc/kirki/example.php:593
-msgid "Active"
-msgstr ""
-
-#: inc/kirki/example.php:648
-msgid "Radio Control"
-msgstr ""
-
-#: inc/kirki/example.php:649 inc/kirki/example.php:670
-#: inc/kirki/example.php:689 inc/kirki/example.php:708
-#: inc/kirki/example.php:764 inc/kirki/example.php:783
-#: inc/kirki/example.php:805
-msgid "The description here."
-msgstr ""
-
-#: inc/kirki/example.php:669
-msgid "Radio-Buttonset Control"
-msgstr ""
-
-#: inc/kirki/example.php:688
-msgid "Radio-Image Control"
-msgstr ""
-
-#: inc/kirki/example.php:707
-msgid "Repeater Control"
-msgstr ""
-
-#: inc/kirki/example.php:712
-msgid "Kirki Site"
-msgstr ""
-
-#: inc/kirki/example.php:718
-msgid "Kirki Repository"
-msgstr ""
-
-#: inc/kirki/example.php:727
-msgid "Link Text"
-msgstr ""
-
-#: inc/kirki/example.php:728
-msgid "This will be the label for your link"
-msgstr ""
-
-#: inc/kirki/example.php:734
-msgid "This will be the link URL"
-msgstr ""
-
-#: inc/kirki/example.php:739
-msgid "Link Target"
-msgstr ""
-
-#: inc/kirki/example.php:740
-msgid "This will be the link target"
-msgstr ""
-
-#: inc/kirki/example.php:743
-msgid "New Window"
-msgstr ""
-
-#: inc/kirki/example.php:744
-msgid "Same Frame"
-msgstr ""
-
-#: inc/kirki/example.php:763 inc/kirki/example.php:782
-msgid "Select Control"
-msgstr ""
-
-#: inc/kirki/example.php:767
-msgid "Select an option"
-msgstr ""
-
-#: inc/kirki/example.php:804
-msgid "Slider Control"
-msgstr ""
-
-#: inc/kirki/example.php:824
-msgid "This is a sortable control."
-msgstr ""
-
-#: inc/kirki/example.php:833
-msgid "Option 6"
-msgstr ""
-
-#: inc/kirki/example.php:845
-msgid "Switch Control"
-msgstr ""
-
-#: inc/kirki/example.php:856
-msgid "Switch Control with custom labels"
-msgstr ""
-
-#: inc/kirki/example.php:861
-msgid "Enabled"
-msgstr ""
-
-#: inc/kirki/example.php:862
-msgid "Disabled"
-msgstr ""
-
-#: inc/kirki/example.php:881
-msgid "Toggle Control"
-msgstr ""
-
-#: inc/kirki/example.php:906 inc/kirki/example.php:960
-msgid "Typography Control Label"
-msgstr ""
-
-#: inc/kirki/example.php:907 inc/kirki/example.php:961
-msgid "The full set of options."
-msgstr ""
-
-#: inc/kirki/example.php:998
-msgid "Sidebars Select"
-msgstr ""
-
-#: inc/kirki/example.php:999
-msgid "An example of how to implement sidebars selection."
 msgstr ""
 
 #: inc/kirki/field/class-kirki-field-color.php:52
@@ -2574,18 +1989,23 @@ msgstr ""
 msgid "Gridd"
 msgstr ""
 
-#. Author URI of the plugin/theme
-msgid "https://wplemon.com/"
+#. Theme URI of the plugin/theme
+msgid "https://wplemon.com/gridd"
 msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"The most versatile WordPress Theme, allowing you to create any kind of "
-"layout. Built with Accessibility and SEO in mind."
+"Built with Accessibility, performance and SEO in mind, the Gridd theme "
+"features a unique layout builder allowing you to create any kind of layout "
+"with ease."
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "wplemon.com"
+msgid "Ari Stathopoulos"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://wplemon.com/"
 msgstr ""
 
 #: comments.php:38
