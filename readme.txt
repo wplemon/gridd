@@ -40,3 +40,5 @@ Gridd is a flexible, inclusive theme with a strong focus on performance, accessi
 * Hybrid Breadcrumbs: Script by Justin Tadlock (https://themehybrid.com) licenced under [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
 * Kirki: Framework by Aristeidis Stathopoulos (https://github.com/aristath/kirki) licensed under [MIT](https://opensource.org/licenses/MIT)
 * wcagColors: Script by Aristeidis Stathopoulos (https://aristath.github.io/wcagColors/) licensed under [MIT](https://opensource.org/licenses/MIT)
+* Underscores: Parts of the theme's PHP originated in the Underscores starter theme (https://underscores.me/) by Automattic (https://automattic.com/) licenced under [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
+* Mythic: The graceful fallback script for old PHP & WP versions originated in the Mythic starter theme (https://themehybrid.com/themes/mythic) by Justin Tadlock (https://themehybrid.com) licenced under [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
