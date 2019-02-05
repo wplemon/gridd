@@ -33,7 +33,7 @@ class Week extends Base {
 		return sprintf(
 			$this->breadcrumbs->label( 'archive_week' ),
 			get_the_time(
-				esc_html_x( 'W', 'weekly archives date format', 'hybrid-core' )
+				esc_html_x( 'W', 'weekly archives date format', 'gridd' )
 			)
 		);
 	}

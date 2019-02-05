@@ -130,7 +130,7 @@ class Breadcrumbs extends Grid_Part {
 	public function load_breadcrumbs_textdomain() {
 
 		// Load the framework textdomain.
-		load_textdomain( 'hybrid-core', '' );
+		load_textdomain( 'gridd', '' );
 	}
 
 	/**
@@ -145,7 +145,7 @@ class Breadcrumbs extends Grid_Part {
 	public function override_load_textdomain( $override, $domain ) {
 
 		// Check if the domain is our framework domain.
-		if ( 'hybrid-core' === $domain ) {
+		if ( 'gridd' === $domain ) {
 			global $l10n;
 
 			// If the theme's textdomain is loaded, assign the theme's translations to the framework's textdomain.

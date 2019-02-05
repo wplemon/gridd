@@ -42,7 +42,7 @@ class Day extends Base {
 		return sprintf(
 			$this->breadcrumbs->label( 'archive_day' ),
 			get_the_time(
-				esc_html_x( 'j', 'daily archives date format', 'hybrid-core' ),
+				esc_html_x( 'j', 'daily archives date format', 'gridd' ),
 				$this->post
 			)
 		);

@@ -92,21 +92,21 @@ class Breadcrumbs implements BreadcrumbsContract {
 	protected function defaultLabels() {
 
 		return [
-			'title'               => __( 'Browse:',                               'hybrid-core' ),
-			'aria_label'          => _x( 'Breadcrumbs', 'breadcrumbs aria label', 'hybrid-core' ),
-			'home'                => __( 'Home',                                  'hybrid-core' ),
-			'error_404'           => __( '404 Not Found',                         'hybrid-core' ),
-			'archives'            => __( 'Archives',                              'hybrid-core' ),
+			'title'               => __( 'Browse:',                               'gridd' ),
+			'aria_label'          => _x( 'Breadcrumbs', 'breadcrumbs aria label', 'gridd' ),
+			'home'                => __( 'Home',                                  'gridd' ),
+			'error_404'           => __( '404 Not Found',                         'gridd' ),
+			'archives'            => __( 'Archives',                              'gridd' ),
 			// Translators: %s is the search query.
-			'search'              => __( 'Search results for: %s',                'hybrid-core' ),
+			'search'              => __( 'Search results for: %s',                'gridd' ),
 			// Translators: %s is the page number.
-			'paged'               => __( 'Page %s',                               'hybrid-core' ),
+			'paged'               => __( 'Page %s',                               'gridd' ),
 			// Translators: %s is the page number.
-			'paged_comments'      => __( 'Comment Page %s',                       'hybrid-core' ),
+			'paged_comments'      => __( 'Comment Page %s',                       'gridd' ),
 			// Translators: Minute archive title. %s is the minute time format.
-			'archive_minute'      => __( 'Minute %s',                             'hybrid-core' ),
+			'archive_minute'      => __( 'Minute %s',                             'gridd' ),
 			// Translators: Weekly archive title. %s is the week date format.
-			'archive_week'        => __( 'Week %s',                               'hybrid-core' ),
+			'archive_week'        => __( 'Week %s',                               'gridd' ),
 
 			// "%s" is replaced with the translated date/time format.
 			'archive_minute_hour' => '%s',

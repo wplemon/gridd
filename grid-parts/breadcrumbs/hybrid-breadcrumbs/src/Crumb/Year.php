@@ -42,7 +42,7 @@ class Year extends Base {
 		return sprintf(
 			$this->breadcrumbs->label( 'archive_year' ),
 			get_the_time(
-				esc_html_x( 'Y', 'yearly archives date format', 'hybrid-core' ),
+				esc_html_x( 'Y', 'yearly archives date format', 'gridd' ),
 				$this->post
 			)
 		);
