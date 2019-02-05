@@ -5,7 +5,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 Requires at least: 4.9
 Tested up to: 5.0
 Requires PHP: 5.6
-Stable tag: 0.1
+Stable tag: 1.0
 License: GNU General Public License v2.0 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,7 +31,7 @@ Gridd is a flexible, inclusive theme with a strong focus on performance, accessi
 
 == Changelog ==
 
-= 0.1 =
+= 1.0 =
 
 * Initial Release
 
