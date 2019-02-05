@@ -41,7 +41,7 @@ function gridd_compat_message() {
 	if ( version_compare( PHP_VERSION, '5.6', '<' ) ) {
 		return sprintf(
 			/* Translators: 1 is the required PHP version and 2 is the user's current version. */
-			esc_html__( 'Mythic requires at least PHP version %1$s. You are running version %2$s. Please upgrade and try again.', 'gridd' ),
+			esc_html__( 'Gridd requires at least PHP version %1$s. You are running version %2$s. Please upgrade and try again.', 'gridd' ),
 			'5.6',
 			PHP_VERSION
 		);
