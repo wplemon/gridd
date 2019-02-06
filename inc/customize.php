@@ -207,6 +207,7 @@ if ( class_exists( 'Kirki' ) ) {
 require_once get_template_directory() . '/inc/customizer/section/grid.php';
 require_once get_template_directory() . '/inc/customizer/section/typography.php';
 require_once get_template_directory() . '/inc/customizer/section/edd.php';
+require_once get_template_directory() . '/inc/customizer/section/features.php';
 if ( class_exists( 'WooCommerce' ) ) {
 	require_once get_template_directory() . '/inc/customizer/section/woocommerce.php';
 }
