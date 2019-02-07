@@ -1,5 +1,5 @@
-a:not(.wp-block-button__link),
-a:not(.wp-block-button__link):visited {
+a:not(.button):not(.wp-block-button__link),
+a:not(.button):not(.wp-block-button__link):visited {
 	color: var(--gridd-links-color);
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
 	transition: all 100ms ease-in-out;
