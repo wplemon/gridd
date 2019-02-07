@@ -22,6 +22,7 @@ Gridd is a flexible, inclusive theme with a strong focus on performance, accessi
 * Jetpack Compatible
 * WooCommerce Compatible
 * Mobile Navigation
+* Native AMP Support using the official [AMP Plugin](https://wordpress.org/plugins/amp/)
 
 == Installation ==
 
