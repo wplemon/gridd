@@ -118,13 +118,19 @@ foreach ( $post_types as $id => $post_type ) {
 					'element'       => ".gridd-post-type-archive-$id #main",
 					'property'      => 'grid-gap',
 					'exclude'       => [ false, 0, 'false', '0' ],
-					'value_pattern' => '1em',
+					'value_pattern' => '2em',
 				],
 				[
 					'element'       => ".gridd-post-type-archive-$id #main",
 					'property'      => 'grid-template-columns',
 					'exclude'       => [ false, 0, 'false', '0' ],
 					'value_pattern' => 'repeat(auto-fit, minmax(20em, 1fr))',
+				],
+				[
+					'element'       => ".gridd-post-type-archive-$id .posts-navigation",
+					'property'      => 'grid-column-start',
+					'exclude'       => [ false, 0, 'false', '0' ],
+					'value_pattern' => '1',
 				],
 			],
 			'active_callback' => function() use ( $id ) {
