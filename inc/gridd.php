@@ -148,6 +148,9 @@ class Gridd {
 		if ( ! AMP::is_active() ) {
 			$classes[] = 'gridd-amp';
 		}
+		if ( is_archive() || is_home() ) {
+			$classes[] = 'gridd-post-type-archive-' . get_post_type();
+		}
 
 		return $classes;
 	}

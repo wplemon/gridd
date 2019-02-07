@@ -13,7 +13,7 @@ if ( get_post_format() && in_array( get_post_format(), [ 'quote', 'link', 'video
 }
 
 if ( ! is_singular() ) {
-	if ( 'excerpt' === get_theme_mod( 'gridd_archive_mode', 'excerpt' ) ) {
+	if ( ! get_theme_mod( 'gridd_archives_display_full_post', false ) ) {
 		echo '<div class="gridd-excerpt-container">';
 		the_excerpt();
 		echo '</div>';

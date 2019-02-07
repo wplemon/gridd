@@ -59,69 +59,80 @@ gridd_add_customizer_field(
 
 gridd_add_customizer_field(
 	[
+		'type'      => 'checkbox',
+		'settings'  => 'gridd_show_next_prev',
+		'label'     => esc_attr__( 'Show Next/Previous Post in single posts', 'gridd' ),
+		'section'   => 'gridd_features',
+		'default'   => true,
+		'transport' => 'refresh',
+	]
+);
+
+gridd_add_customizer_field(
+	[
 		'type'        => 'checkbox',
-		'settings'    => 'gridd_show_next_prev',
-		'label'       => esc_attr__( 'Show Next/Previous Post in single posts', 'gridd' ),
-		'section'     => 'gridd_features',
-		'default'     => true,
-		'transport'   => 'refresh',
-	]
-);
-
-gridd_add_customizer_field(
-	[
-		'type'        => 'radio',
-		'settings'    => 'gridd_archive_grid_template_columns',
-		'label'       => esc_attr__( 'Grid Columns in Post Archives', 'gridd' ),
-		'section'     => 'gridd_features',
-		'default'     => 'auto',
-        'transport'   => 'auto',
-        'choices'     => [
-            'single'                              => esc_html__( 'Single Column', 'gridd' ),
-            'repeat(auto-fit, minmax(20em, 1fr))' => esc_html__( 'Grid - Auto-fit', 'gridd' ),
-        ],
-        'output'      => [
-            [
-                'element'       => [ '.archive #main', '.blog #main' ],
-                'property'      => 'display',
-                'exclude'       => 'repeat(auto-fit, minmax(20em, 1fr))',
-                'value_pattern' => 'grid',
-            ],
-            [
-                'element'       => [ '.archive #main > article', '.blog #main > article' ],
-                'property'      => 'height',
-                'exclude'       => 'repeat(auto-fit, minmax(20em, 1fr))',
-                'value_pattern' => '100%',
-            ],
-            [
-                'element'       => [ '.archive #main', '.blog #main' ],
-                'property'      => 'grid-gap',
-                'exclude'       => 'repeat(auto-fit, minmax(20em, 1fr))',
-                'value_pattern' => '1em',
-            ],
-            [
-                'element'       => [ '.archive #main', '.blog #main' ],
-                'property'      => 'grid-template-columns',
-            ]
-        ]
-	]
-);
-
-gridd_add_customizer_field(
-	[
-		'type'        => 'radio',
-		'settings'    => 'gridd_archive_mode',
-		'label'       => esc_attr__( 'Post display mode in archives', 'gridd' ),
+		'settings'    => 'gridd_archives_display_full_post',
+		'label'       => esc_attr__( 'Show full post in archives', 'gridd' ),
 		'description' => '',
 		'section'     => 'gridd_features',
-		'default'     => 'excerpt',
+		'default'     => false,
 		'transport'   => 'refresh',
-		'choices'     => [
-			'excerpt' => esc_html__( 'Excerpt', 'gridd' ),
-			'full'    => esc_attr__( 'Full Post', 'gridd' ),
-		],
 	]
 );
+
+$post_types = get_post_types(
+	[
+		'public'             => true,
+		'publicly_queryable' => true,
+	],
+	'objects'
+);
+
+foreach ( $post_types as $id => $post_type ) {
+	gridd_add_customizer_field(
+		[
+			'type'            => 'checkbox',
+			'settings'        => "gridd_archive_display_grid_$id",
+			'label'           => sprintf(
+				/* translators: The post-type name. */
+				esc_attr__( 'Display "%s" archives as a grid', 'gridd' ),
+				$post_type->labels->name
+			),
+			'section'         => 'gridd_features',
+			'default'         => false,
+			'transport'       => 'refresh',
+			'output'          => [
+				[
+					'element'       => ".gridd-post-type-archive-$id #main",
+					'property'      => 'display',
+					'exclude'       => [ false, 0, 'false', '0' ],
+					'value_pattern' => 'grid',
+				],
+				[
+					'element'       => ".gridd-post-type-archive-$id #main > *",
+					'property'      => 'height',
+					'exclude'       => [ false, 0, 'false', '0' ],
+					'value_pattern' => '100%',
+				],
+				[
+					'element'       => ".gridd-post-type-archive-$id #main",
+					'property'      => 'grid-gap',
+					'exclude'       => [ false, 0, 'false', '0' ],
+					'value_pattern' => '1em',
+				],
+				[
+					'element'       => ".gridd-post-type-archive-$id #main",
+					'property'      => 'grid-template-columns',
+					'exclude'       => [ false, 0, 'false', '0' ],
+					'value_pattern' => 'repeat(auto-fit, minmax(20em, 1fr))',
+				],
+			],
+			'active_callback' => function() use ( $id ) {
+				return is_post_type_archive( $id ) || ( 'post' === $id && is_home() );
+			},
+		]
+	);
+}
 
 gridd_add_customizer_field(
 	[
