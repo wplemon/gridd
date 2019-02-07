@@ -267,6 +267,9 @@ class Scripts {
 				]
 			);
 			$style->add_file( get_theme_file_path( 'assets/css/plugins/edd.min.css' ) );
+			if ( AMP::is_active() ) {
+				$style->add_file( get_theme_file_path( 'assets/css/plugins/amp-edd.min.css' ) );
+			}
 		}
 
 		// Comments.
