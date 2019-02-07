@@ -298,6 +298,6 @@ class Gridd {
 	 * @return bool
 	 */
 	public static function is_plus_active() {
-		return ( function_exists( 'gridd_pro' ) );
+		return ( class_exists( 'Gridd_Plus' ) );
 	}
 }
