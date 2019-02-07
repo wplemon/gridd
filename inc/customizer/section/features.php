@@ -88,53 +88,53 @@ $post_types = get_post_types(
 	'objects'
 );
 
-foreach ( $post_types as $id => $post_type ) {
+foreach ( $post_types as $post_type_id => $post_type_obj ) {
 	gridd_add_customizer_field(
 		[
 			'type'            => 'checkbox',
-			'settings'        => "gridd_archive_display_grid_$id",
+			'settings'        => "gridd_archive_display_grid_$post_type_id",
 			'label'           => sprintf(
 				/* translators: The post-type name. */
 				esc_attr__( 'Display "%s" archives as a grid', 'gridd' ),
-				$post_type->labels->name
+				$post_type_obj->labels->name
 			),
 			'section'         => 'gridd_features',
 			'default'         => false,
 			'transport'       => 'refresh',
 			'output'          => [
 				[
-					'element'       => ".gridd-post-type-archive-$id #main",
+					'element'       => ".gridd-post-type-archive-$post_type_id #main",
 					'property'      => 'display',
 					'exclude'       => [ false, 0, 'false', '0' ],
 					'value_pattern' => 'grid',
 				],
 				[
-					'element'       => ".gridd-post-type-archive-$id #main > *",
+					'element'       => ".gridd-post-type-archive-$post_type_id #main > *",
 					'property'      => 'height',
 					'exclude'       => [ false, 0, 'false', '0' ],
 					'value_pattern' => '100%',
 				],
 				[
-					'element'       => ".gridd-post-type-archive-$id #main",
+					'element'       => ".gridd-post-type-archive-$post_type_id #main",
 					'property'      => 'grid-gap',
 					'exclude'       => [ false, 0, 'false', '0' ],
 					'value_pattern' => '2em',
 				],
 				[
-					'element'       => ".gridd-post-type-archive-$id #main",
+					'element'       => ".gridd-post-type-archive-$post_type_id #main",
 					'property'      => 'grid-template-columns',
 					'exclude'       => [ false, 0, 'false', '0' ],
 					'value_pattern' => 'repeat(auto-fit, minmax(20em, 1fr))',
 				],
 				[
-					'element'       => ".gridd-post-type-archive-$id .posts-navigation",
+					'element'       => ".gridd-post-type-archive-$post_type_id .posts-navigation",
 					'property'      => 'grid-column-start',
 					'exclude'       => [ false, 0, 'false', '0' ],
 					'value_pattern' => '1',
 				],
 			],
-			'active_callback' => function() use ( $id ) {
-				return is_post_type_archive( $id ) || ( 'post' === $id && is_home() );
+			'active_callback' => function() use ( $post_type_id ) {
+				return is_post_type_archive( $post_type_id ) || ( 'post' === $post_type_id && is_home() );
 			},
 		]
 	);
