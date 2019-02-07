@@ -1,21 +1,3 @@
-article.post.format {
-	&-video {
-		iframe {
-			width: 100%;
-			max-width: 100%;
-		}
-	}
-
-	&-image {
-
-		figure,
-		img {
-			width: 100%;
-			max-width: 100%;
-		}
-	}
-}
-
 .archive {
 	article.post {
 		&.format {

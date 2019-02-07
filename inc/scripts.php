@@ -279,12 +279,12 @@ class Scripts {
 		}
 
 		// Post-formats for singular posts.
-		if ( is_singular() ) {
+		if ( is_singular() && has_post_format( [ 'aside', 'chat', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio' ] ) ) {
 			$style->add_file( get_theme_file_path( 'assets/css/core/singular-post-formats.min.css' ) );
 		}
 
 		// Post-formats for post-archives.
-		if ( is_archive() ) {
+		if ( is_post_type_archive( 'post' ) || is_home() ) {
 			$style->add_file( get_theme_file_path( 'assets/css/core/archive-post-formats.min.css' ) );
 		}
 
