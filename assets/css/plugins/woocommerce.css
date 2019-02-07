@@ -1,9 +1,7 @@
 .woocommerce .products ul,
 .woocommerce ul.products {
-  display: -ms-grid;
   display: grid;
   grid-gap: 1em;
-  -ms-grid-columns: repeat(auto-fit, minmax(var(--gridd-woo-catalog-product-min-width), 1fr));
   grid-template-columns: repeat(auto-fit, minmax(var(--gridd-woo-catalog-product-min-width), 1fr)); }
   .woocommerce .products ul:before, .woocommerce .products ul:after,
   .woocommerce ul.products:before,
@@ -13,10 +11,8 @@
   .woocommerce ul.products li.product {
     width: 100% !important;
     float: none;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap; }
+    flex-wrap: wrap; }
     .woocommerce .products ul li.product > *,
     .woocommerce ul.products li.product > * {
       width: 100%; }
@@ -31,14 +27,11 @@
     .woocommerce .products ul li.product .add_to_cart_button,
     .woocommerce ul.products li.product .add_to_cart,
     .woocommerce ul.products li.product .add_to_cart_button {
-      -ms-flex-order: 100;
-          order: 100; }
+      order: 100; }
 .woocommerce .button {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  align-self: flex-end;
   text-align: center;
   font-weight: 400;
-  font-size: 16px;
   font-size: 1rem; }
 .woocommerce div.product div.images .woocommerce-product-gallery__trigger:hover {
   outline: none;
@@ -103,10 +96,8 @@
             filter: none; }
 
 .woocommerce div.product form.cart {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
+  flex-wrap: wrap; }
   .woocommerce div.product form.cart > * {
     height: 100%;
     line-height: 1.5; }
@@ -124,14 +115,10 @@
   width: 100%; }
 
 .woocommerce-product-search {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: repeat(auto-fit, minmax(150px, max-content));
   grid-template-columns: repeat(auto-fit, minmax(150px, -webkit-max-content));
   grid-template-columns: repeat(auto-fit, minmax(150px, max-content)); }
 
 .woocommerce-grouped-product-list tr {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-align: center;
-      align-items: center; }
+  align-items: center; }

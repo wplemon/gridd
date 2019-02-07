@@ -9,7 +9,6 @@
   max-width: 350px;
   z-index: 9; }
 .gridd-tp-nav_ID .gridd-toggle-navigation {
-  display: -ms-flexbox;
   display: flex;
   background-color: var(--gridd-nav-ID-bg);
   padding: 1em;
@@ -49,22 +48,16 @@
   .gridd-tp-nav_ID .gridd-toggle-navigation.toggled-on .icon.close svg {
     opacity: 1; }
 .gridd-tp-nav_ID.gridd-menu-collapse-position-top-left .inner, .gridd-tp-nav_ID.gridd-menu-collapse-position-top-center .inner, .gridd-tp-nav_ID.gridd-menu-collapse-position-top-right .inner {
-  -ms-flex-align: start;
-      align-items: flex-start; }
+  align-items: flex-start; }
 .gridd-tp-nav_ID.gridd-menu-collapse-position-center-left .inner, .gridd-tp-nav_ID.gridd-menu-collapse-position-center-center .inner, .gridd-tp-nav_ID.gridd-menu-collapse-position-center-right .inner {
-  -ms-flex-align: center;
-      align-items: center; }
+  align-items: center; }
 .gridd-tp-nav_ID.gridd-menu-collapse-position-bottom-left .inner, .gridd-tp-nav_ID.gridd-menu-collapse-position-bottom-center .inner, .gridd-tp-nav_ID.gridd-menu-collapse-position-bottom-right .inner {
-  -ms-flex-align: end;
-      align-items: flex-end; }
+  align-items: flex-end; }
 .gridd-tp-nav_ID.gridd-menu-collapse-position-top-left .inner, .gridd-tp-nav_ID.gridd-menu-collapse-position-center-left .inner, .gridd-tp-nav_ID.gridd-menu-collapse-position-bottom-left .inner {
-  -ms-flex-pack: start;
-      justify-content: flex-start; }
+  justify-content: flex-start; }
 .gridd-tp-nav_ID.gridd-menu-collapse-position-top-center .inner, .gridd-tp-nav_ID.gridd-menu-collapse-position-center-center .inner, .gridd-tp-nav_ID.gridd-menu-collapse-position-bottom-center .inner {
-  -ms-flex-pack: center;
-      justify-content: center; }
+  justify-content: center; }
 .gridd-tp-nav_ID.gridd-menu-collapse-position-top-right .inner, .gridd-tp-nav_ID.gridd-menu-collapse-position-center-right .inner, .gridd-tp-nav_ID.gridd-menu-collapse-position-bottom-right .inner {
-  -ms-flex-pack: end;
-      justify-content: flex-end; }
+  justify-content: flex-end; }
 .gridd-tp-nav_ID.gridd-menu-collapse-position-top-right nav, .gridd-tp-nav_ID.gridd-menu-collapse-position-center-right nav, .gridd-tp-nav_ID.gridd-menu-collapse-position-bottom-right nav {
   right: 0; }

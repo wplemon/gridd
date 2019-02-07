@@ -1,8 +1,6 @@
 .gridd-tp-header.gridd-tp {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: center;
-      justify-content: center;
+  justify-content: center;
   overflow: visible;
   z-index: 1000;
   background-color: var(--gridd-header-bg);

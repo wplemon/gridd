@@ -7,10 +7,8 @@
   border-bottom: 1px solid rgba(0, 0, 0, .2);
   margin-bottom: 2em; }
   .woocommerce-account .woocommerce-MyAccount-navigation ul {
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
     margin: 0;
     padding: 0; }
   .woocommerce-account .woocommerce-MyAccount-navigation li {

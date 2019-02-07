@@ -6,16 +6,13 @@ nav {
   padding: 0;
   list-style-type: none;
   z-index: 1;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
+  flex-wrap: wrap; }
   .gridd-navigation ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
     position: absolute;
     top: 100%;
     right: 0;
@@ -26,7 +23,6 @@ nav {
     .gridd-navigation ul ul {
       position: relative; }
   .gridd-navigation li {
-    display: -ms-flexbox;
     display: flex;
     position: relative; }
     .gridd-navigation li.menu-item-has-children > a, .gridd-navigation li.page_item_has_children > a {
@@ -38,10 +34,8 @@ nav {
     text-decoration: none;
     width: 100%; }
   .gridd-navigation .gridd-toggle {
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-align: center;
-        align-items: center;
+    align-items: center;
     background: none;
     opacity: .7;
     border: none;
@@ -62,10 +56,8 @@ nav {
       .gridd-navigation .gridd-toggle.toggled-on + ul {
         display: block; }
         .gridd-navigation .gridd-toggle.toggled-on + ul li {
-          display: -ms-flexbox;
           display: flex;
-          -ms-flex-wrap: wrap;
-              flex-wrap: wrap; }
+          flex-wrap: wrap; }
           .gridd-navigation .gridd-toggle.toggled-on + ul li ul {
             width: 100%; }
   .gridd-nav-vertical .gridd-navigation a, .toggled-on + .gridd-nav-horizontal .gridd-navigation a {
@@ -115,9 +107,7 @@ nav {
       margin-right: 0; }
   .gridd-nav-vertical .gridd-navigation li, .toggled-on + .gridd-nav-horizontal .gridd-navigation li {
     width: 100%;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap; }
+    flex-wrap: wrap; }
   .gridd-nav-vertical .gridd-navigation a, .toggled-on + .gridd-nav-horizontal .gridd-navigation a {
     background: none; }

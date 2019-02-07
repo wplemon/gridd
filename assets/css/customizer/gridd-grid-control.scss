@@ -15,7 +15,7 @@
 
 	// The grid wrapper for everything.
 	.gridd-grid-builder-grids-wrapper {
-		display:-ms-grid;
+		// display: -ms-grid;
 		display: grid;
 		grid-template-columns: 1fr 46px;
 		grid-gap: 7px;

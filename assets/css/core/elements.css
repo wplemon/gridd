@@ -51,7 +51,6 @@ table {
   width: 100%; }
   table td,
   table th {
-    padding: 12px;
     padding: 0.75rem;
     border-top: 1px solid #dee2e6; }
   table thead th {

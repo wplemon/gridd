@@ -1,10 +1,8 @@
 .gridd-tp-footer_sidebar_ID {
   background-color: var(--gridd-footer-sidebar-ID-bg);
   padding: var(--gridd-footer-padding);
-  -ms-flex-direction: column;
-      flex-direction: column;
-  -ms-flex-pack: start;
-      justify-content: flex-start; }
+  flex-direction: column;
+  justify-content: flex-start; }
   .gridd-tp-footer_sidebar_ID .widget,
   .gridd-tp-footer_sidebar_ID .wp-caption {
     width: 100%;

@@ -1,12 +1,10 @@
 .gridd-tp-header_contact_info.gridd-tp {
   background-color: var(--gridd-header-contact-bg);
   font-size: var(--gridd-header-contact-font-size);
-  -ms-flex-pack: var(--gridd-header-contact-text-align);
-      justify-content: var(--gridd-header-contact-text-align);
+  justify-content: var(--gridd-header-contact-text-align);
   width: 100%;
   max-width: 100%;
-  -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   padding: var(--gridd-header-contact-padding);
   color: var(--gridd-header-contact-color); }
   .gridd-tp-header_contact_info.gridd-tp a {

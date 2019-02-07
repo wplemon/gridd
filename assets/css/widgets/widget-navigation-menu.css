@@ -1,6 +1,5 @@
 .gridd-tp-sidebar_1 .widget_nav_menu .gridd-navigation {
-  -ms-flex-pack: start;
-      justify-content: flex-start; }
+  justify-content: flex-start; }
   .gridd-tp-sidebar_1 .widget_nav_menu .gridd-navigation li.current-menu-item > a,
   .gridd-tp-sidebar_1 .widget_nav_menu .gridd-navigation li.current-menu-item > a:visited, .gridd-tp-sidebar_1 .widget_nav_menu .gridd-navigation li.current-page-item > a,
   .gridd-tp-sidebar_1 .widget_nav_menu .gridd-navigation li.current-page-item > a:visited, .gridd-tp-sidebar_1 .widget_nav_menu .gridd-navigation li.current_page_item > a,

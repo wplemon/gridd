@@ -10,10 +10,8 @@
     padding: var(--gridd-breadcrumbs-padding);
     width: 100%;
     max-width: var(--gridd-breadcrumbs-max-width);
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-align: center;
-        align-items: center; }
+    align-items: center; }
 
 nav.breadcrumbs {
   z-index: 2;
@@ -30,7 +28,6 @@ nav.breadcrumbs {
     list-style-type: none;
     text-align: var(--gridd-breadcrumbs-text-align); }
   nav.breadcrumbs li {
-    display: -ms-inline-flexbox;
     display: inline-flex; }
   nav.breadcrumbs .breadcrumbs__crumb + .breadcrumbs__crumb:before {
     content: '›';

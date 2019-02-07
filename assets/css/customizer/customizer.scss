@@ -48,7 +48,7 @@ $purple: #826eb4;
 }
 
 .customize-control-kirki-radio-buttonset .buttonset {
-	display: -ms-grid;
+	// display: -ms-grid;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
 	border-radius: 4px;
@@ -62,7 +62,7 @@ $purple: #826eb4;
 }
 
 #input_gridd_grid_nav-primary_justify_content {
-	display: -ms-grid;
+	// display: -ms-grid;
 	display: grid;
 	grid-gap: 1em;
 	grid-template-columns: 1fr 1fr;
@@ -103,7 +103,6 @@ $purple: #826eb4;
 .customize-control-kirki-dimensions {
 	.wrapper {
 		.control {
-			display: -ms-grid;
 			display: grid;
 			grid-template-columns: 1fr 1fr 1fr 1fr;
 			grid-gap: 12px;

@@ -5,12 +5,9 @@ body {
   position: fixed;
   bottom: 0;
   background: #fff;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-align: stretch;
-      align-items: stretch;
-  -ms-flex-pack: center;
-      justify-content: center;
+  align-items: stretch;
+  justify-content: center;
   z-index: 9999;
   width: 100%;
   box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2), 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12);
@@ -20,14 +17,10 @@ body {
     max-width: 168px; }
 
 .gridd-nav-handheld-btn {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-pack: center;
-      justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   border-radius: 0;
   background: none;
@@ -69,24 +62,19 @@ body {
   width: 100%;
   height: auto;
   max-height: calc(100vh - 54px);
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-align: end;
-      align-items: flex-end;
+  flex-wrap: wrap;
+  align-items: flex-end;
   overflow-y: scroll;
   box-shadow: 0 -10px 15px 0 rgba(0, 0, 0, .12);
   padding: 12px 12px 0 12px; }
   #gridd-handheld-search-wrapper.expanded,
   #gridd-handheld-menu-wrapper.expanded,
   #gridd-handheld-cart-wrapper.expanded {
-    display: -ms-flexbox;
     display: flex; }
 
 #gridd-handheld-search-wrapper {
-  -ms-flex-align: normal;
-      align-items: normal;
-  -ms-flex-align: stretch;
-      align-items: stretch;
+  align-items: normal;
+  align-items: stretch;
   font-size: 22px;
   padding: 2em; }
   #gridd-handheld-search-wrapper .search-form {

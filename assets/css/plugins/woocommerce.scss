@@ -2,10 +2,10 @@
 
   .products ul,
   ul.products {
-    display: -ms-grid;
+    // display: -ms-grid;
     display: grid;
     grid-gap: 1em;
-    -ms-grid-columns: repeat(auto-fit, minmax(var(--gridd-woo-catalog-product-min-width), 1fr));
+    // -ms-grid-columns: repeat(auto-fit, minmax(var(--gridd-woo-catalog-product-min-width), 1fr));
     grid-template-columns: repeat(auto-fit, minmax(var(--gridd-woo-catalog-product-min-width), 1fr));
 
     &:before,
@@ -192,9 +192,9 @@
 }
 
 .woocommerce-product-search {
-  display: -ms-grid;
+  // display: -ms-grid;
   display: grid;
-  -ms-grid-columns: repeat(auto-fit, minmax(150px, max-content));
+  // -ms-grid-columns: repeat(auto-fit, minmax(150px, max-content));
   grid-template-columns: repeat(auto-fit, minmax(150px, max-content));
 }
 

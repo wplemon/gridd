@@ -1,9 +1,7 @@
 .gridd-tp-footer_social_media.gridd-tp {
   background-color: var(--gridd-footer-social-icons-bg);
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-pack: var(--gridd-footer-social-icons-text-align);
-      justify-content: var(--gridd-footer-social-icons-text-align); }
+  align-items: center;
+  justify-content: var(--gridd-footer-social-icons-text-align); }
   .gridd-tp-footer_social_media.gridd-tp a {
     display: block;
     max-width: var(--gridd-footer-social-icons-size);

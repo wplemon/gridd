@@ -2,7 +2,6 @@
 .woocommerce table.cart td.actions .coupon,
 .woocommerce-page #content table.cart td.actions .coupon,
 .woocommerce-page table.cart td.actions .coupon {
-  display: -ms-flexbox;
   display: flex; }
   .woocommerce #content table.cart td.actions .coupon input,
   .woocommerce table.cart td.actions .coupon input,

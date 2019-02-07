@@ -1,11 +1,3 @@
-article.post.format-video iframe {
-  width: 100%;
-  max-width: 100%; }
-article.post.format-image figure,
-article.post.format-image img {
-  width: 100%;
-  max-width: 100%; }
-
 .archive article.post.format-aside, .archive article.post.format-link, .archive article.post.format-status {
   padding: 1.5em; }
 .archive article.post.format-aside {

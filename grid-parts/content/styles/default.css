@@ -19,19 +19,15 @@
   .site-main .entry-footer,
   .site-main .gridd-contain,
   .site-main .entry-content {
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-direction: column;
-        flex-direction: column;
-    -ms-flex-pack: center;
-        justify-content: center; }
+    flex-direction: column;
+    justify-content: center; }
     .site-main .entry-header > *,
     .site-main .entry-footer > *,
     .site-main .gridd-contain > *,
     .site-main .entry-content > * {
       width: 100%;
-      -ms-flex-item-align: center;
-          align-self: center;
+      align-self: center;
       max-width: var(--gridd-content-max-width-calculated); }
     .site-main .entry-header .alignwide,
     .site-main .entry-header .alignfull,

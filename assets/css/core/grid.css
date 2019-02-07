@@ -7,12 +7,9 @@
 .gridd-tp {
   min-width: 0;
   min-height: 0;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  justify-content: center;
+  flex-wrap: nowrap;
   transition: all 100ms ease-in-out;
   overflow: hidden; }
   .gridd-tp.gridd-sticky {

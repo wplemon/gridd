@@ -2,7 +2,7 @@
 .edd_downloads_list {
 	display:-ms-grid;
 	display: grid;
-	-ms-grid-columns: repeat(auto-fit, minmax(var(--gridd-edd-grid-min-col-width), 1fr));
+	// -ms-grid-columns: repeat(auto-fit, minmax(var(--gridd-edd-grid-min-col-width), 1fr));
 	grid-template-columns: repeat(auto-fit, minmax(var(--gridd-edd-grid-min-col-width), 1fr));
 	grid-gap: var(--gridd-edd-grid-gap);
 	padding-bottom: 3em;
@@ -113,7 +113,7 @@
 		}
 
 		> p {
-			display:-ms-grid;
+			// display:-ms-grid;
 			display: grid;
 		}
 

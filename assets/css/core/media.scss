@@ -51,14 +51,14 @@ object {
 
 .gallery {
 	margin-bottom: 1.5em;
-	display: -ms-grid;
+	// display: -ms-grid;
 	display: grid;
 	grid-gap: 0.5em;
 
 	// Loops to enumerate the classes for gallery columns.
 	@for $i from 2 through 9 {
 		&.gallery-columns-#{$i} {
-			-ms-grid-columns: repeat(#{$i}, 1fr);
+			// -ms-grid-columns: repeat(#{$i}, 1fr);
 			grid-template-columns: repeat(#{$i}, 1fr);
 		}
 	}

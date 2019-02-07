@@ -81,7 +81,6 @@ textarea {
 
 .search-form {
   width: 100%;
-  display: -ms-flexbox;
   display: flex; }
   .search-form > label {
     width: 100%; }

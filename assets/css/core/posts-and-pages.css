@@ -7,10 +7,8 @@
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-align: center;
-      align-items: center; }
+  align-items: center; }
   .page-links > .item {
     text-align: center;
     min-width: 1.5em;
@@ -20,10 +18,8 @@
     padding: .25em .5em; }
 
 .entry-footer {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   font-size: 0.85em; }
   .entry-footer > * {
     margin-right: 2.5em; }

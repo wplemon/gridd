@@ -8,7 +8,6 @@
     grid-column: 2 / 3;
     padding: 0; }
   .customize-control-gridd_grid .gridd-grid-builder-grids-wrapper {
-    display: -ms-grid;
     display: grid;
     grid-template-columns: 1fr 46px;
     grid-gap: 7px; }
@@ -129,7 +128,6 @@
     background-size: 5px 5px; }
 
 .grid-selected-part {
-  display: -ms-flexbox;
   display: flex;
   z-index: 1; }
   .grid-selected-part .part-label-wrapper {
@@ -141,12 +139,9 @@
   .grid-selected-part .inner {
     box-shadow: inset 0px 1px 10px 0px rgba(0, 0, 0, .2);
     color: #fff;
-    -ms-flex-pack: center;
-        justify-content: center;
-    display: -ms-flexbox;
+    justify-content: center;
     display: flex;
-    -ms-flex-align: center;
-        align-items: center;
+    align-items: center;
     width: 100%;
     height: 100%;
     word-break: break-all;

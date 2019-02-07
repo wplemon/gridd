@@ -1,8 +1,6 @@
 .gridd-nav-handheld-btn[aria-expanded="true"] + #gridd-handheld-menu-wrapper {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-line-pack: start;
-      align-content: flex-start; }
+  align-content: flex-start; }
 
 .gridd-hanheld-nav-popup-wrapper {
   background-color: var(--gridd-content-bg);
