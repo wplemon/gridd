@@ -89,7 +89,8 @@
 
 .edd_purchase_submit_wrapper {
   display: flex; }
-  .edd_purchase_submit_wrapper a {
+  .edd_purchase_submit_wrapper a,
+  .edd_purchase_submit_wrapper .edd-add-to-cart {
     display: block;
     width: 100%;
     text-align: center; }
