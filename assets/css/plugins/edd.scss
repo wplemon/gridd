@@ -136,6 +136,12 @@
 
 .edd_purchase_submit_wrapper {
 	display: flex;
+
+	a {
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
 }
 
 #edd_download_pagination {
@@ -153,4 +159,8 @@
 			margin-right: 0;
 		}
 	}
+}
+
+.edd-add-to-cart {
+	text-align: center;
 }
