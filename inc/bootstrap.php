@@ -267,7 +267,7 @@ function gridd_toggle_button( $args ) {
 	];
 
 	if ( AMP::is_active() ) {
-		$button_atts['[class]']         = $classes . '+(' . $args['expanded_state_id'] . '?\'toggled-on\':\'\')';
+		$button_atts['[class]']         = '(' . $args['expanded_state_id'] . '?\'' . $classes . ' toggled-on\':\'' . $classes . '\')';
 		$button_atts['[aria-expanded]'] = "{$args['expanded_state_id']} ? 'true' : 'false'";
 		$button_atts['on']              = "tap:AMP.setState({ {$args['expanded_state_id']}: ! {$args['expanded_state_id']} })";
 	}
