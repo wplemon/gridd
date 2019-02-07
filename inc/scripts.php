@@ -314,18 +314,6 @@ class Scripts {
 			$style->add_file( get_theme_file_path( 'assets/css/core/can-edit-post.min.css' ) );
 		}
 
-		// Header-anchor links.
-		if ( get_theme_mod( 'gridd_headers_anchor_links', true ) ) {
-			$style->add_file( get_theme_file_path( 'assets/css/core/anchor-links.min.css' ) );
-		}
-
-		/*
-		// External-links.
-		if ( get_theme_mod( 'gridd_link_external_icon', false ) ) {
-			$style->add_file( get_theme_file_path( 'assets/css/core/links-external', false, 'SITE_URL', '"' . site_url() . '".min.css' ) );
-		}
-		*/
-
 		$style->the_css( 'gridd-inline-css-main-styles' );
 	}
 
