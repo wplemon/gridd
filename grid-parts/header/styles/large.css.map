@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AACI,kCAAS;EACX,OAAO,EAAC,QAAQ;EACV,OAAO,EAAE,IAAI",
+"mappings": "AACI,kCAAS;EAEL,OAAO,EAAE,IAAI",
 "sources": ["large.scss"],
 "names": [],
 "file": "large.css"

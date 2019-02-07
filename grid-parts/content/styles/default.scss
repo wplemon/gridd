@@ -58,29 +58,29 @@
 	background-color: var(--gridd-content-bg);
 
 	.wp-block-columns {
-		display: -ms-grid;
+		// display: -ms-grid;
 		display: grid;
 		grid-template-columns: 1fr;
-		-ms-grid-columns: 1fr;
+		// -ms-grid-columns: 1fr;
 
 		&.has-2-columns,
 		&.has-3-columns {
 			grid-template-columns: 1fr;
-			-ms-grid-columns: 1fr;
+			// -ms-grid-columns: 1fr;
 		}
 
 		&.has-4-columns,
 		&.has-5-columns {
 			@media only screen and (min-width: 600px) {
 				grid-template-columns: 1fr 1fr;
-				-ms-grid-columns: 1fr 1fr;
+				// -ms-grid-columns: 1fr 1fr;
 			}
 		}
 
 		&.has-6-columns {
 			@media only screen and (min-width: 960px) {
 				grid-template-columns: 1fr 1fr 1fr;
-				-ms-grid-columns: 1fr 1fr 1fr;
+				// -ms-grid-columns: 1fr 1fr 1fr;
 			}
 		}
 

@@ -1,18 +1,12 @@
 .gridd-tp-content .wp-block-columns {
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  -ms-grid-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
   .gridd-tp-content .wp-block-columns.has-2-columns {
-    grid-template-columns: 1fr 1fr;
-    -ms-grid-columns: 1fr 1fr; }
+    grid-template-columns: 1fr 1fr; }
   .gridd-tp-content .wp-block-columns.has-3-columns {
-    grid-template-columns: 1fr 1fr 1fr;
-    -ms-grid-columns: 1fr 1fr 1fr; }
+    grid-template-columns: 1fr 1fr 1fr; }
   .gridd-tp-content .wp-block-columns.has-4-columns {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    -ms-grid-columns: 1fr 1fr 1fr 1fr; }
+    grid-template-columns: 1fr 1fr 1fr 1fr; }
   .gridd-tp-content .wp-block-columns.has-5-columns {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr; }
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; }
   .gridd-tp-content .wp-block-columns.has-6-columns {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr; }
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; }
