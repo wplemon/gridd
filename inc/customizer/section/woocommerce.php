@@ -16,7 +16,7 @@ gridd_add_customizer_field(
 		'label'       => esc_html__( 'Products min-width', 'gridd' ),
 		'description' => esc_html__( 'The minimum width of your products in product-grids.', 'gridd' ),
 		'section'     => 'woocommerce_product_catalog',
-		'transport'   => 'auto',
+		'transport'   => 'postMessage',
 		'default'     => '250px',
 		'css_vars'    => '--gridd-woo-catalog-product-min-width',
 	]
