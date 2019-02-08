@@ -1,6 +1,5 @@
 .gridd-archive-downloads,
 .edd_downloads_list {
-  display: -ms-grid;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(var(--gridd-edd-grid-min-col-width), 1fr));
   grid-gap: var(--gridd-edd-grid-gap);
@@ -107,3 +106,20 @@
 
 .edd-add-to-cart {
   text-align: center; }
+
+.edd-cart {
+  list-style: none;
+  margin: 1em 0;
+  padding: 0; }
+
+.widget_edd_cart_widget .edd-cart-item {
+  font-size: calc(1em / var(--gridd-typo-scale));
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  padding: .5em 0; }
+
+.edd_cart_item_image {
+  display: inline-block;
+  margin-right: 1em; }
+  .rtl .edd_cart_item_image {
+    margin-right: 0;
+    margin-left: 1em; }
