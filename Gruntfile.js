@@ -134,8 +134,7 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( 'grunt-wp-i18n' );
 	grunt.loadNpmTasks( 'grunt-po2mo' );
 
-	grunt.registerTask( 'default', [ 'sass:main', 'sass:gridParts', 'postcss:assetsCSS', 'postcss:gridPartsCSS', 'cssmin', 'uglify' ] );
+	grunt.registerTask( 'default', [ 'sass:main', 'sass:gridParts', 'postcss:assetsCSS', 'postcss:gridPartsCSS', 'cssmin', 'uglify', 'makepot' ] );
 	grunt.registerTask( 'css', [ 'sass:main', 'sass:gridParts', 'postcss:assetsCSS', 'postcss:gridPartsCSS', 'cssmin' ] );
 	grunt.registerTask( 'js', [ 'uglify' ] );
-	grunt.registerTask( 'language', [ 'makepot' ] );
 };

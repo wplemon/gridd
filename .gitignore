@@ -4,4 +4,4 @@ vendor/
 package-lock.json
 composer.lock
 *.css.map
-build/
+gridd.zip
