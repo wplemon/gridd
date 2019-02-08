@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gridd 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/gridd\n"
-"POT-Creation-Date: 2019-02-05 20:45:16+00:00\n"
+"POT-Creation-Date: 2019-02-08 16:30:32+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -39,17 +39,6 @@ msgstr ""
 
 #: comments.php:62
 msgid "Comments are closed."
-msgstr ""
-
-#: edd_templates/widget-cart-item.php:15
-#: inc/kirki/controls/php/class-kirki-control-background.php:62
-#: inc/kirki/controls/php/class-kirki-control-base.php:133
-#: inc/kirki/controls/php/class-kirki-control-repeater.php:386
-#: inc/kirki/controls/php/class-kirki-control-repeater.php:418
-#: inc/kirki/controls/php/class-kirki-control-repeater.php:443
-#: inc/kirki/controls/views/image.php:37
-#: inc/kirki/field/class-kirki-field-image.php:50
-msgid "Remove"
 msgstr ""
 
 #: grid-parts/breadcrumbs/class-breadcrumbs.php:73
@@ -166,7 +155,7 @@ msgstr ""
 #: grid-parts/header/customizer-contact-info.php:66
 #: grid-parts/header/customizer-search.php:84
 #: grid-parts/sidebar/customizer.php:91
-#: inc/customizer/section/typography.php:115
+#: inc/customizer/section/typography.php:111
 msgid "Text Color"
 msgstr ""
 
@@ -341,7 +330,7 @@ msgstr ""
 
 #: grid-parts/footer/customizer-footer-sidebars.php:87
 #: grid-parts/sidebar/customizer.php:114
-#: inc/customizer/section/typography.php:132
+#: inc/customizer/section/typography.php:128
 msgid "Links Color"
 msgstr ""
 
@@ -411,7 +400,7 @@ msgid "Separate grid for mobile devices"
 msgstr ""
 
 #: grid-parts/footer/customizer.php:35 grid-parts/header/customizer.php:51
-#: inc/customizer/section/grid.php:41
+#: inc/customizer/section/grid.php:37
 msgid "Grid Settings"
 msgstr ""
 
@@ -427,11 +416,11 @@ msgstr ""
 msgid "Grid Gap"
 msgstr ""
 
-#: grid-parts/footer/customizer.php:74 inc/customizer/section/grid.php:71
+#: grid-parts/footer/customizer.php:74 inc/customizer/section/grid.php:67
 msgid "Adds a gap between your grid-parts, both horizontally and vertically."
 msgstr ""
 
-#: grid-parts/footer/customizer.php:75 inc/customizer/section/grid.php:72
+#: grid-parts/footer/customizer.php:75 inc/customizer/section/grid.php:68
 msgid ""
 "For more information please read <a "
 "href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/gap\" "
@@ -682,7 +671,7 @@ msgid "Choose Slider"
 msgstr ""
 
 #: grid-parts/nav-handheld/class-nav-handheld.php:69
-#: grid-parts/nav-handheld/customizer.php:13 inc/gridd.php:184
+#: grid-parts/nav-handheld/customizer.php:13 inc/gridd.php:187
 msgid "Mobile Navigation"
 msgstr ""
 
@@ -999,7 +988,7 @@ msgid "Select the background color for this area"
 msgstr ""
 
 #: grid-parts/sidebar/customizer.php:92
-#: inc/customizer/section/typography.php:116
+#: inc/customizer/section/typography.php:112
 msgid ""
 "Select the color used for your text. Please choose a color with sufficient "
 "contrast with the selected background-color."
@@ -1030,7 +1019,11 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: inc/blog.php:37
+#: inc/ari-image.php:248
+msgid "No image URL has been entered."
+msgstr ""
+
+#: inc/blog.php:37 inc/customizer/section/features.php:170
 #. translators: %s: Name of current post. Only visible to screen readers
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
@@ -1061,23 +1054,23 @@ msgstr ""
 msgid "Leave a Comment on %s"
 msgstr ""
 
-#: inc/customize.php:130
+#: inc/customize.php:116
 msgid "Theme Options"
 msgstr ""
 
-#: inc/customize.php:144
+#: inc/customize.php:130
 msgid "Gridd Plus"
 msgstr ""
 
-#: inc/customize.php:145
+#: inc/customize.php:131
 msgid "Go Premium"
 msgstr ""
 
-#: inc/customize.php:254
+#: inc/customize.php:239
 msgid "Template"
 msgstr ""
 
-#: inc/customize.php:285 inc/customize.php:290
+#: inc/customize.php:270 inc/customize.php:275
 msgid ""
 "Background is visible under transparent grid-parts, or if the grid is not "
 "set to 100% width."
@@ -1113,77 +1106,173 @@ msgstr ""
 msgid "Exit edit mode"
 msgstr ""
 
-#: inc/customizer/control/grid.php:107
-msgid "+ Column"
+#: inc/customizer/control/grid.php:107 inc/customizer/control/grid.php:109
+msgid "Append column"
 msgstr ""
 
-#: inc/customizer/control/grid.php:108
-msgid "- Column"
+#: inc/customizer/control/grid.php:111 inc/customizer/control/grid.php:113
+msgid "Remove last column"
 msgstr ""
 
-#: inc/customizer/control/grid.php:109
-msgid "+ Row"
+#: inc/customizer/control/grid.php:115 inc/customizer/control/grid.php:117
+msgid "Append Row"
 msgstr ""
 
-#: inc/customizer/control/grid.php:110
-msgid "- Row"
+#: inc/customizer/control/grid.php:119 inc/customizer/control/grid.php:121
+msgid "Remove last row"
 msgstr ""
 
-#: inc/customizer/control/grid.php:126
+#: inc/customizer/control/grid.php:138
 msgid "Select Grid Part for this area."
 msgstr ""
 
-#: inc/customizer/control/grid.php:128
+#: inc/customizer/control/grid.php:140
 msgid "Select a grid-part to add."
 msgstr ""
 
-#: inc/customizer/control/grid.php:135
+#: inc/customizer/control/grid.php:147
 msgid "Cancel"
 msgstr ""
 
-#: inc/customizer/section/edd.php:19
-msgid "Easy Digital Downloads"
+#: inc/customizer/section/edd.php:15
+msgid "EDD Grid"
 msgstr ""
 
-#: inc/customizer/section/edd.php:28
-msgid "Product Grid"
-msgstr ""
-
-#: inc/customizer/section/edd.php:30
+#: inc/customizer/section/edd.php:17
 msgid "Learn more about these settings"
 msgstr ""
 
-#: inc/customizer/section/edd.php:38
+#: inc/customizer/section/edd.php:26
 msgid "Minimum Column Width"
 msgstr ""
 
-#: inc/customizer/section/edd.php:39
+#: inc/customizer/section/edd.php:27
 msgid ""
 "Define the minimum width that each item in a grid can have. The columns and "
 "rows will be auto-calculated using this value."
 msgstr ""
 
-#: inc/customizer/section/edd.php:57
+#: inc/customizer/section/edd.php:45
 msgid "Gap"
 msgstr ""
 
-#: inc/customizer/section/edd.php:58
+#: inc/customizer/section/edd.php:46
 msgid "The gap between grid items. Use any valid CSS value."
 msgstr ""
 
-#: inc/customizer/section/edd.php:76
+#: inc/customizer/section/edd.php:64
 msgid "Grid Items Inner Padding"
 msgstr ""
 
-#: inc/customizer/section/grid.php:20
+#: inc/customizer/section/edd.php:82
+msgid "Grid Items Image Ratio"
+msgstr ""
+
+#: inc/customizer/section/edd.php:87
+msgid "1:1 (Square)"
+msgstr ""
+
+#: inc/customizer/section/edd.php:88
+msgid "4:3 (Classic)"
+msgstr ""
+
+#: inc/customizer/section/edd.php:89
+msgid "Golden Ratio"
+msgstr ""
+
+#: inc/customizer/section/edd.php:90
+msgid "Original"
+msgstr ""
+
+#: inc/customizer/section/features.php:14
+msgid "Theme Features"
+msgstr ""
+
+#: inc/customizer/section/features.php:20
+msgid "Fixed mode for featured images with custom height"
+msgstr ""
+
+#: inc/customizer/section/features.php:21
+msgid "Anchor links in headers "
+msgstr ""
+
+#: inc/customizer/section/features.php:22
+msgid "Scroll to top button"
+msgstr ""
+
+#: inc/customizer/section/features.php:23
+msgid ""
+"Enable more custom widget-areas and customize their titles for easier "
+"identification"
+msgstr ""
+
+#: inc/customizer/section/features.php:36
+msgid "Featured Images Mode in Archives"
+msgstr ""
+
+#: inc/customizer/section/features.php:37
+msgid "Select how featured images will be displayed in post-archives."
+msgstr ""
+
+#: inc/customizer/section/features.php:43
+#: inc/customizer/section/features.php:64
+msgid "Hidden"
+msgstr ""
+
+#: inc/customizer/section/features.php:44
+#: inc/customizer/section/features.php:65
+msgid "Normal"
+msgstr ""
+
+#: inc/customizer/section/features.php:45
+#: inc/customizer/section/features.php:66
+msgid "Wide"
+msgstr ""
+
+#: inc/customizer/section/features.php:57
+msgid "Featured Images Mode in Single Posts"
+msgstr ""
+
+#: inc/customizer/section/features.php:58
+msgid ""
+"Select how featured images will be displayed in single post-types (Applies "
+"to all post-types)."
+msgstr ""
+
+#: inc/customizer/section/features.php:67
+msgid "Full Width"
+msgstr ""
+
+#: inc/customizer/section/features.php:79
+msgid "Show Next/Previous Post in single posts"
+msgstr ""
+
+#: inc/customizer/section/features.php:91
+msgid "Show full post in archives"
+msgstr ""
+
+#: inc/customizer/section/features.php:115
+#. translators: The post-type name.
+msgid "Display \"%s\" archives as a grid"
+msgstr ""
+
+#: inc/customizer/section/features.php:165
+msgid "Read More link"
+msgstr ""
+
+#: inc/customizer/section/features.php:166
+msgid "Available placeholder: %s for the post-title."
+msgstr ""
+
+#: inc/customizer/section/grid.php:16
 msgid "Grid"
 msgstr ""
 
-#: inc/customizer/section/grid.php:26
+#: inc/customizer/section/grid.php:22
 msgid "Separate grid for mobile devices."
 msgstr ""
 
-#: inc/customizer/section/grid.php:42
+#: inc/customizer/section/grid.php:38
 msgid ""
 "Edit settings for the grid. For more information and documentation on how "
 "the grid works, please read <a "
@@ -1191,101 +1280,101 @@ msgid ""
 "target=\"_blank\">this article</a>."
 msgstr ""
 
-#: inc/customizer/section/grid.php:57
+#: inc/customizer/section/grid.php:53
 msgid "Mobile Breakpoint"
 msgstr ""
 
-#: inc/customizer/section/grid.php:58
+#: inc/customizer/section/grid.php:54
 msgid ""
 "The breakpoint that separates mobile views from desktop views. Use a valid "
 "CSS unit."
 msgstr ""
 
-#: inc/customizer/section/grid.php:59
+#: inc/customizer/section/grid.php:55
 msgid ""
 "Screen sizes below the breakpoint defined will get a stacked view instead "
 "of grid."
 msgstr ""
 
-#: inc/customizer/section/grid.php:70
+#: inc/customizer/section/grid.php:66
 msgid "Grid Container Gap"
 msgstr ""
 
-#: inc/customizer/section/grid.php:90
+#: inc/customizer/section/grid.php:86
 msgid "Grid Container max-width"
 msgstr ""
 
-#: inc/customizer/section/grid.php:91
+#: inc/customizer/section/grid.php:87
 msgid "The maximum width for this grid."
 msgstr ""
 
-#: inc/customizer/section/grid.php:92
+#: inc/customizer/section/grid.php:88
 msgid ""
 "By setting the max-width to something other than 100% you can build a boxed "
 "layout."
 msgstr ""
 
-#: inc/customizer/section/typography.php:20
+#: inc/customizer/section/typography.php:16
 msgid "Typography & Links"
 msgstr ""
 
-#: inc/customizer/section/typography.php:25
+#: inc/customizer/section/typography.php:21
 msgid "Selecting from an array of WCAG-compliant colors for text, headers and links"
 msgstr ""
 
-#: inc/customizer/section/typography.php:26
+#: inc/customizer/section/typography.php:22
 msgid "Adjustable typography scales"
 msgstr ""
 
-#: inc/customizer/section/typography.php:27
+#: inc/customizer/section/typography.php:23
 msgid ""
 "Links decoration (underlined/not-underlined) for content and headers "
 "separately."
 msgstr ""
 
-#: inc/customizer/section/typography.php:44
+#: inc/customizer/section/typography.php:40
 msgid "Body Typography"
 msgstr ""
 
-#: inc/customizer/section/typography.php:45
+#: inc/customizer/section/typography.php:41
 msgid ""
 "Edit the font-family used for the body of your site. This applies to all "
 "text except the headers which have a separate setting."
 msgstr ""
 
-#: inc/customizer/section/typography.php:77
+#: inc/customizer/section/typography.php:73
 msgid "Headers Typography"
 msgstr ""
 
-#: inc/customizer/section/typography.php:78
+#: inc/customizer/section/typography.php:74
 msgid "Edit the font-family used for all headers on your site."
 msgstr ""
 
-#: inc/customizer/section/typography.php:133
+#: inc/customizer/section/typography.php:129
 msgid ""
 "Select the hue for you links. The color will be auto-calculated to ensure "
 "maximum readability according to WCAG."
 msgstr ""
 
-#: inc/customizer/section/typography.php:153
+#: inc/customizer/section/typography.php:149
 msgid "Links Hover Color"
 msgstr ""
 
-#: inc/customizer/section/typography.php:176
+#: inc/customizer/section/typography.php:172
 msgid "Body Font-Size"
 msgstr ""
 
-#: inc/customizer/section/typography.php:177
+#: inc/customizer/section/typography.php:173
 msgid ""
 "Choose the main font-size for your content. We recommend you a font-size "
 "greater than 18px to ensure greater readability."
 msgstr ""
 
-#: inc/customizer/section/typography.php:196
+#: inc/customizer/section/typography.php:192
 msgid "Fluid typography Ratio"
 msgstr ""
 
-#: inc/customizer/section/typography.php:197
+#: inc/customizer/section/typography.php:193
 msgid ""
 "Defines by how much your font-size will change depending on the "
 "screen-size. Larger values will increase the font-size more on bigger "
@@ -1293,49 +1382,49 @@ msgid ""
 "the screen-size."
 msgstr ""
 
-#: inc/customizer/section/typography.php:199
+#: inc/customizer/section/typography.php:195
 #. translators: "Read this article" link.
 msgid "Need more Information? %s"
 msgstr ""
 
-#: inc/customizer/section/typography.php:199
+#: inc/customizer/section/typography.php:195
 msgid "Read this article."
 msgstr ""
 
-#: inc/customizer/section/typography.php:220
+#: inc/customizer/section/typography.php:216
 msgid "Typography Scale"
 msgstr ""
 
-#: inc/customizer/section/typography.php:221
+#: inc/customizer/section/typography.php:217
 msgid ""
 "Controls the size relations between your headers and your main typography "
 "font-size."
 msgstr ""
 
-#: inc/customizer/section/typography.php:229
+#: inc/customizer/section/typography.php:225
 #. Translators: Numeric representation of the scale.
 msgid "%s - Musical Pentatonic (classic)"
 msgstr ""
 
-#: inc/customizer/section/typography.php:231
+#: inc/customizer/section/typography.php:227
 #. Translators: Numeric representation of the scale.
 msgid "%s - Musical Tritonic"
 msgstr ""
 
-#: inc/customizer/section/typography.php:233
+#: inc/customizer/section/typography.php:229
 #. Translators: Numeric representation of the scale.
 msgid "%s - Perfect Fourth"
 msgstr ""
 
-#: inc/customizer/section/woocommerce.php:16
+#: inc/customizer/section/woocommerce.php:12
 msgid "Products min-width"
 msgstr ""
 
-#: inc/customizer/section/woocommerce.php:17
+#: inc/customizer/section/woocommerce.php:13
 msgid "The minimum width of your products in product-grids."
 msgstr ""
 
-#: inc/customizer/section/woocommerce.php:29
+#: inc/customizer/section/woocommerce.php:25
 msgid "Products per page"
 msgstr ""
 
@@ -1386,6 +1475,16 @@ msgstr ""
 #: inc/kirki/controls/php/class-kirki-control-repeater.php:408
 #: inc/kirki/controls/php/class-kirki-control-repeater.php:413
 msgid "No File Selected"
+msgstr ""
+
+#: inc/kirki/controls/php/class-kirki-control-background.php:62
+#: inc/kirki/controls/php/class-kirki-control-base.php:133
+#: inc/kirki/controls/php/class-kirki-control-repeater.php:386
+#: inc/kirki/controls/php/class-kirki-control-repeater.php:418
+#: inc/kirki/controls/php/class-kirki-control-repeater.php:443
+#: inc/kirki/controls/views/image.php:37
+#: inc/kirki/field/class-kirki-field-image.php:50
+msgid "Remove"
 msgstr ""
 
 #: inc/kirki/controls/php/class-kirki-control-background.php:63
