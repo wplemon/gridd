@@ -3,6 +3,10 @@
 .button,
 a.button,
 a.button:visited,
-input[type=submit] {
+a.comment-reply-link,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
 	@include button();
 }

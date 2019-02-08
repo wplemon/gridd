@@ -1,19 +1,31 @@
-.archive article.post.format-aside, .archive article.post.format-link, .archive article.post.format-status {
+.archive .post.format-aside, .archive .post.format-link, .archive .post.format-status,
+.blog .post.format-aside,
+.blog .post.format-link,
+.blog .post.format-status {
   padding: 1.5em; }
-.archive article.post.format-aside {
+.archive .post.format-image figure,
+.blog .post.format-image figure {
+  max-width: 100% !important; }
+.archive .post.format-aside,
+.blog .post.format-aside {
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2); }
-.archive article.post.format-status {
+.archive .post.format-status,
+.blog .post.format-status {
   border: 1px solid rgba(0, 0, 0, .1); }
-.archive article.post.format-link {
+.archive .post.format-link,
+.blog .post.format-link {
   border: 1px solid rgba(0, 0, 0, .1);
   text-align: center; }
-.archive article.post.format-chat .entry-content p {
+.archive .post.format-chat .entry-content p,
+.blog .post.format-chat .entry-content p {
   margin: 0;
   border-bottom: 1px dashed rgba(0, 0, 0, .2);
   padding: 0.5em 1em;
   background: rgba(0, 0, 0, .025); }
-  .archive article.post.format-chat .entry-content p:nth-child(odd) {
+  .archive .post.format-chat .entry-content p:nth-child(odd),
+  .blog .post.format-chat .entry-content p:nth-child(odd) {
     background: rgba(0, 0, 0, .1); }
-.archive article.post a.to-infinity-and-beyond {
+.archive .post a.to-infinity-and-beyond,
+.blog .post a.to-infinity-and-beyond {
   padding: 0 0.5em;
   display: inline-block; }

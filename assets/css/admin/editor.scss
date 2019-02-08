@@ -72,7 +72,7 @@
 		margin-bottom: 1.5em;
 		max-width: 100%;
 		width: 100%;
-		background-color: rgba(128, 128, 128, .1);
+		// background-color: rgba(128, 128, 128, .1);
 		padding-bottom: 0.5em;
 		color: var(--gridd-text-color);
 		font-size: calc(1em / var(--gridd-typo-scale));
@@ -92,16 +92,16 @@
 	}
 
 	.wp-block-quote:not(.is-large):not(.is-style-large) {
-		border-left-color: var(--gridd-links-hover-color);
+		border-left-color: currentColor;
 	}
 
 	.wp-block-quote,
 	.wp-block-pullquote {
 		color: var(--gridd-text-color);
-		border-top-color: var(--gridd-links-hover-color);
-		border-bottom-color: var(--gridd-links-hover-color);
-		border-left-color: var(--gridd-links-hover-color);
-		border-right-color: var(--gridd-links-hover-color);
+		border-top-color: currentColor;
+		border-bottom-color: currentColor;
+		border-left-color: currentColor;
+		border-right-color: currentColor;
 	}
 
 	.wp-block-cover {

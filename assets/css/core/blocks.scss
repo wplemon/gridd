@@ -70,3 +70,17 @@
         padding: 1em;
     }
 }
+
+.wp-block-button__link {
+    &:not(.has-text-color) {
+        color: #fff;
+
+        &:visited,
+        &:focus,
+        &:hover,
+        &:visited:focus,
+        &:visited:hover {
+            color: #fff;
+        }
+    }
+}

@@ -1,12 +1,5 @@
 @import "../mixins";
 
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-	@include button();
-}
-
 input[type="text"],
 input[type="email"],
 input[type="url"],

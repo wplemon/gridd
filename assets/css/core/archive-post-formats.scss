@@ -1,11 +1,18 @@
-.archive {
-	article.post {
+.archive,
+.blog {
+	.post {
 		&.format {
 
 			&-aside,
 			&-link,
 			&-status {
 				padding: 1.5em;
+			}
+
+			&-image {
+				figure {
+					max-width: 100% !important;
+				}
 			}
 
 			&-aside {
