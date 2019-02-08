@@ -7,10 +7,6 @@
 
 use Gridd\Customizer;
 
-if ( ! class_exists( 'Kirki' ) ) {
-	return;
-}
-
 /**
  * Add the Theme-Options panel.
  */

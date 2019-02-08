@@ -8,10 +8,6 @@
 use Gridd\Customizer;
 use Gridd\Grid_Parts;
 
-if ( ! class_exists( 'Kirki' ) ) {
-	return;
-}
-
 $grid_parts = Grid_Parts::get_instance()->get_parts();
 
 gridd_add_customizer_section(

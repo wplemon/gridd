@@ -5,10 +5,6 @@
  * @package Gridd
  */
 
-if ( ! class_exists( 'Kirki' ) ) {
-	return;
-}
-
 gridd_add_customizer_field(
 	[
 		'type'        => 'dimension',

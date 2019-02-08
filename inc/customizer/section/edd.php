@@ -5,10 +5,6 @@
  * @package Gridd
  */
 
-if ( ! class_exists( 'Kirki' ) ) {
-	return;
-}
-
 if ( ! class_exists( 'Easy_Digital_Downloads' ) ) {
 	return;
 }

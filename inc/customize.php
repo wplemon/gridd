@@ -59,9 +59,6 @@ add_action( 'customize_register', 'gridd_kirki_wcag_link_color_register_control_
  */
 function gridd_add_customizer_field( $args ) {
 	global $wp_customize;
-	if ( ! class_exists( 'Kirki' ) ) {
-		return;
-	}
 
 	$args = apply_filters( 'gridd_field_args', $args );
 
@@ -89,9 +86,6 @@ function gridd_add_customizer_field( $args ) {
  * @return void
  */
 function gridd_add_customizer_section( $id, $args ) {
-	if ( ! class_exists( 'Kirki' ) ) {
-		return;
-	}
 	// WIP: Disable icons.
 	if ( isset( $args['icon'] ) ) {
 		unset( $args['icon'] );
@@ -109,19 +103,11 @@ function gridd_add_customizer_section( $id, $args ) {
  * @return void
  */
 function gridd_add_customizer_panel( $id, $args ) {
-	if ( ! class_exists( 'Kirki' ) ) {
-		return;
-	}
 	// WIP: Disable icons.
 	if ( isset( $args['icon'] ) ) {
 		unset( $args['icon'] );
 	}
 	Kirki::add_panel( $id, $args );
-}
-
-// Don't continue any further if the Kirki plugin is not installed.
-if ( ! class_exists( 'Kirki' ) ) {
-	return;
 }
 
 gridd_add_customizer_panel(
@@ -191,18 +177,16 @@ function gridd_customizer_custom_styles() {
 }
 add_action( 'customize_controls_print_styles', 'gridd_customizer_custom_styles', 999 );
 
-if ( class_exists( 'Kirki' ) ) {
-	/**
-	 * Add the config.
-	 */
-	Kirki::add_config(
-		'gridd',
-		[
-			'capability'  => 'edit_theme_options',
-			'option_type' => 'theme_mod',
-		]
-	);
-}
+/**
+ * Add the config.
+ */
+Kirki::add_config(
+	'gridd',
+	[
+		'capability'  => 'edit_theme_options',
+		'option_type' => 'theme_mod',
+	]
+);
 
 require_once get_template_directory() . '/inc/customizer/section/grid.php';
 require_once get_template_directory() . '/inc/customizer/section/typography.php';
