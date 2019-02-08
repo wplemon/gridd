@@ -134,7 +134,7 @@ class Content extends Grid_Part {
 			[
 				'--gridd-content-padding-top'    => $padding['top'],
 				'--gridd-content-padding-bottom' => $padding['bottom'],
-				'--gridd-content-padding-right'  => $padding['right'],
+				'--gridd-content-padding-left'   => $padding['left'],
 				'--gridd-content-padding-right'  => $padding['right'],
 				'--gridd-content-max-width'      => get_theme_mod( 'gridd_grid_content_max_width', '45em' ),
 				'--gridd-content-bg'             => get_theme_mod( 'gridd_grid_content_background_color', '#ffffff' ),
@@ -144,6 +144,14 @@ class Content extends Grid_Part {
 		$style->add_string( '@media only screen and (min-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '800px' ) . '){' );
 		$style->add_file( get_theme_file_path( 'grid-parts/content/styles/large.min.css' ) );
 		$style->add_string( '}' );
+
+		/**
+		 * This CSS is just a hack to overcome a bug in the CSS minifier
+		 * that strips units from zero valus, making the calc() function invalid.
+		 * The same CSS is commented-out in the default.scss file for reference.
+		 * Once the bug in the minifier is fixed we can remove this.
+		 */
+		$style->add_string( '.site-main .entry-content .alignfull,.site-main .entry-footer .alignfull,.site-main .entry-header .alignfull,.site-main .gridd-contain .alignfull{transform:translateX(calc(0px - var(--gridd-content-padding-left)));}' );
 		$style->the_css( 'gridd-inline-css-content' );
 	}
 

@@ -15,9 +15,11 @@
 	justify-content: space-between;
 	font-size: 1em;
 	padding: 1em 0;
+	border-top: 1px solid currentColor;
 
 	a {
 		display: block;
+		text-decoration: none;
 	}
 
 	.nav-next,

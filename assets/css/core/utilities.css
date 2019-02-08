@@ -60,21 +60,3 @@
 .site-footer:after,
 .site-header:after {
   clear: both; }
-
-.wp-block-quote,
-.wp-block-pullquote {
-  color: var(--gridd-text-color);
-  border-top-color: var(--gridd-links-hover-color);
-  border-bottom-color: var(--gridd-links-hover-color);
-  border-left-color: var(--gridd-links-hover-color);
-  border-right-color: var(--gridd-links-hover-color); }
-  .wp-block-quote:not(.is-large):not(.is-style-large),
-  .wp-block-pullquote:not(.is-large):not(.is-style-large) {
-    border-left-color: var(--gridd-links-hover-color); }
-  .wp-block-quote cite,
-  .wp-block-pullquote cite {
-    color: var(--gridd-text-color);
-    font-size: calc(1em / var(--gridd-typo-scale)); }
-
-.wp-block-pullquote blockquote {
-  border-left: none; }

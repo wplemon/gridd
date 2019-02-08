@@ -1,3 +1,9 @@
+a.custom-logo-link {
+	&:hover {
+		border-bottom: none;
+	}
+}
+
 .gridd-tp-header_branding.gridd-tp {
 	background-color: var(--gridd-branding-bg);
 	display: flex;

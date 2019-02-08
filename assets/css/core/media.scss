@@ -41,8 +41,10 @@ object {
 	}
 }
 
-.wp-block-image figcaption {
-	padding: 1em;
+.wp-block-image {
+	figcaption {
+		padding: 1em;
+	}
 }
 
 .wp-caption-text {

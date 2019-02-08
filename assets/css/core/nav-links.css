@@ -11,9 +11,11 @@
   flex-wrap: wrap;
   justify-content: space-between;
   font-size: 1em;
-  padding: 1em 0; }
+  padding: 1em 0;
+  border-top: 1px solid currentColor; }
   .nav-links a {
-    display: block; }
+    display: block;
+    text-decoration: none; }
   .nav-links .nav-next,
   .nav-links .nav-previous {
     display: flex; }

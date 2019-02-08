@@ -161,16 +161,6 @@ class Scripts {
 	}
 
 	/**
-	 * Enqueue styles using print_late_styles().
-	 * This will load stylesheets in the footer and they won't be render-blocking.
-	 *
-	 * @access
-	 * @since 1.0
-	 */
-	public function print_late_styles() {
-	}
-
-	/**
 	 * Add async to scripts.
 	 *
 	 * @access public
@@ -217,10 +207,6 @@ class Scripts {
 
 		$style = Style::get_instance( 'main-styles' );
 
-		// Add blocks styles from wp-core.
-		$style->add_file( ABSPATH . WPINC . '/css/dist/block-library/style.min.css' );
-		$style->add_file( ABSPATH . WPINC . '/css/dist/block-library/theme.min.css' );
-
 		$style->add_vars(
 			[
 				'--gridd-typo-scale'        => get_theme_mod( 'gridd_type_scale', 1.26 ),
@@ -235,13 +221,8 @@ class Scripts {
 		);
 		$style->add_file( get_theme_file_path( 'assets/css/core/normalize.min.css' ) );
 		$style->add_file( get_theme_file_path( 'assets/css/core/elements.min.css' ) );
-		$style->add_file( get_theme_file_path( 'assets/css/core/inline-icons.min.css' ) );
 		$style->add_file( get_theme_file_path( 'assets/css/core/forms.min.css' ) );
-		$style->add_file( get_theme_file_path( 'assets/css/core/buttons.min.css' ) );
 		$style->add_file( get_theme_file_path( 'assets/css/core/accessibility.min.css' ) );
-		$style->add_file( get_theme_file_path( 'assets/css/core/media.min.css' ) );
-		$style->add_file( get_theme_file_path( 'assets/css/core/nav-links.min.css' ) );
-		$style->add_file( get_theme_file_path( 'assets/css/core/post-sticky.min.css' ) );
 		$style->add_file( get_theme_file_path( 'assets/css/core/posts-and-pages.min.css' ) );
 		$style->add_file( get_theme_file_path( 'assets/css/core/typography.min.css' ) );
 		$style->add_file( get_theme_file_path( 'assets/css/core/utilities.min.css' ) );
@@ -318,6 +299,31 @@ class Scripts {
 		}
 
 		$style->the_css( 'gridd-inline-css-main-styles' );
+	}
+
+	/**
+	 * Enqueue styles using print_late_styles().
+	 * This will load stylesheets in the footer and includes non-critical styles.
+	 *
+	 * @access
+	 * @since 1.0
+	 */
+	public function print_late_styles() {
+		$style = Style::get_instance( 'footer-late-styles' );
+
+		$style->add_file( get_theme_file_path( 'assets/css/core/inline-icons.min.css' ) );
+		$style->add_file( get_theme_file_path( 'assets/css/core/buttons.min.css' ) );
+		$style->add_file( get_theme_file_path( 'assets/css/core/media.min.css' ) );
+		$style->add_file( get_theme_file_path( 'assets/css/core/nav-links.min.css' ) );
+		$style->add_file( get_theme_file_path( 'assets/css/core/post-sticky.min.css' ) );
+
+		// Add blocks styles from wp-core.
+		$style->add_file( ABSPATH . WPINC . '/css/dist/block-library/style.min.css' );
+		$style->add_file( ABSPATH . WPINC . '/css/dist/block-library/theme.min.css' );
+
+		$style->add_file( get_theme_file_path( 'assets/css/core/blocks.min.css' ) );
+
+		$style->the_css( 'gridd-inline-css-late-styles' );
 	}
 
 	/**

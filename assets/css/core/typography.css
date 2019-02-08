@@ -36,10 +36,6 @@ blockquote {
   padding: 0 1.5em;
   border-left: 5px solid rgba(0, 0, 0, .2); }
 
-.wp-block-pullquote {
-  border-left: none;
-  border-right: none; }
-
 .rtl blockquote {
   border-left: none;
   border-right: 5px solid rgba(0, 0, 0, .2); }

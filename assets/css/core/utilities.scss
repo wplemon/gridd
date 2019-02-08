@@ -79,26 +79,3 @@
 	@include clearfix-after;
 }
 
-.wp-block-quote,
-.wp-block-pullquote {
-	color: var(--gridd-text-color);
-	border-top-color: var(--gridd-links-hover-color);
-	border-bottom-color: var(--gridd-links-hover-color);
-	border-left-color: var(--gridd-links-hover-color);
-	border-right-color: var(--gridd-links-hover-color);
-
-	&:not(.is-large):not(.is-style-large) {
-		border-left-color: var(--gridd-links-hover-color);
-	}
-
-	cite {
-		color: var(--gridd-text-color);
-		font-size: calc(1em / var(--gridd-typo-scale));
-	}
-}
-
-.wp-block-pullquote {
-	blockquote {
-		border-left: none;
-	}
-}
