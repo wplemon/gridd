@@ -63,7 +63,7 @@ textarea {
 			transition: all 200ms;
 			opacity: .7;
 
-			.rtl {
+			.rtl & {
 				padding-right: 1.5em;
 				padding-left: .5em;
 			}

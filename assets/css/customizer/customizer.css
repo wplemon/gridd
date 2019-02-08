@@ -17,7 +17,7 @@
 .accordion-section-title.dashicons-before:before {
   color: #82878C;
   padding-right: 7px; }
-  .accordion-section-title.dashicons-before:before.rtl {
+  .rtl .accordion-section-title.dashicons-before:before {
     padding-right: 0;
     padding-left: 7px; }
 

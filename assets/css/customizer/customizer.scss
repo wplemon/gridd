@@ -41,7 +41,7 @@ $purple: #826eb4;
 	color: #82878C;
 	padding-right: 7px;
 
-	&.rtl {
+	.rtl & {
 		padding-right: 0;
 		padding-left: 7px;
 	}
