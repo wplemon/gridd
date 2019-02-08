@@ -15,7 +15,7 @@ namespace Gridd\Customizer\Control;
  *
  * @since 1.0
  */
-class Kirki_WCAG_Link_Color extends \WP_Customize_Control {
+class Gridd_Kirki_WCAG_Link_Color extends \WP_Customize_Control {
 
 	/**
 	 * The control type.
