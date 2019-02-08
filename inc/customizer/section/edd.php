@@ -26,14 +26,14 @@ gridd_add_customizer_field(
 		'label'       => esc_html__( 'Minimum Column Width', 'gridd' ),
 		'description' => esc_html__( 'Define the minimum width that each item in a grid can have. The columns and rows will be auto-calculated using this value.', 'gridd' ),
 		'section'     => 'gridd_edd',
-		'default'     => 320,
+		'default'     => 15,
 		'transport'   => 'postMessage',
-		'css_vars'    => [ '--gridd-edd-grid-min-col-width', '$px' ],
+		'css_vars'    => [ '--gridd-edd-grid-min-col-width', '$em' ],
 		'choices'     => [
-			'min'    => 200,
-			'max'    => 600,
+			'min'    => 10,
+			'max'    => 30,
 			'step'   => 1,
-			'suffix' => 'px',
+			'suffix' => 'em',
 		],
 	]
 );
@@ -43,16 +43,16 @@ gridd_add_customizer_field(
 		'type'        => 'slider',
 		'settings'    => 'gridd_edd_archive_grid_gap',
 		'label'       => esc_html__( 'Gap', 'gridd' ),
-		'description' => esc_html__( 'The gap between grid items. Use any valid CSS value.', 'gridd' ),
+		'description' => esc_html__( 'The gap between grid items.', 'gridd' ),
 		'section'     => 'gridd_edd',
-		'default'     => 20,
+		'default'     => 1.5,
 		'transport'   => 'postMessage',
-		'css_vars'    => [ '--gridd-edd-grid-gap', '$px' ],
+		'css_vars'    => [ '--gridd-edd-grid-gap', '$em' ],
 		'choices'     => [
 			'min'    => 0,
-			'max'    => 200,
-			'step'   => 1,
-			'suffix' => 'px',
+			'max'    => 10,
+			'step'   => .1,
+			'suffix' => 'em',
 		],
 	]
 );
@@ -63,14 +63,14 @@ gridd_add_customizer_field(
 		'settings'  => 'gridd_edd_product_grid_inner_padding',
 		'label'     => esc_html__( 'Grid Items Inner Padding', 'gridd' ),
 		'section'   => 'gridd_edd',
-		'default'   => 20,
+		'default'   => 1.5,
 		'transport' => 'postMessage',
-		'css_vars'  => [ '--gridd-edd-grid-inner-padding', '$px' ],
+		'css_vars'  => [ '--gridd-edd-grid-inner-padding', '$em' ],
 		'choices'   => [
 			'min'    => 0,
-			'max'    => 60,
-			'step'   => 1,
-			'suffix' => 'px',
+			'max'    => 10,
+			'step'   => .1,
+			'suffix' => 'em',
 		],
 	]
 );

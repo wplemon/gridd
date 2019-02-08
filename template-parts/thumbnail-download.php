@@ -17,7 +17,7 @@ if ( 'hidden' === get_theme_mod( 'gridd_featured_image_mode_archive', 'alignwide
 <a class="post-thumbnail <?php echo esc_attr( get_theme_mod( 'gridd_featured_image_mode_archive', 'alignwide' ) ); ?>" href="<?php the_permalink(); ?>" aria-hidden="true">
 	<?php
 	$ratio = get_theme_mod( 'gridd_edd_product_grid_image_ratio', 'golden' );
-	$width = get_theme_mod( 'gridd_edd_grid_min_col_width', 320 );
+	$width = absint( get_theme_mod( 'gridd_edd_grid_min_col_width', 15 ) * get_theme_mod( 'gridd_body_font_size', 18 ) * ( 1 + 2.5 * get_theme_mod( 'gridd_fluid_typography_ratio', 0.25 ) ) );
 
 	// If we're on the customizer, use a hardcoded width of 320 to prevent constantly regenerating images.
 	if ( is_customize_preview() ) {

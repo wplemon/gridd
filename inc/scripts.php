@@ -244,7 +244,7 @@ class Scripts {
 		if ( class_exists( 'Easy_Digital_Downloads' ) ) {
 			$style->add_vars(
 				[
-					'--gridd-edd-grid-gap' => get_theme_mod( 'gridd_edd_archive_grid_gap', 20 ) . 'px',
+					'--gridd-edd-grid-gap' => get_theme_mod( 'gridd_edd_archive_grid_gap', 1.5 ) . 'em',
 				]
 			);
 			$style->add_file( get_theme_file_path( 'assets/css/plugins/edd.min.css' ) );

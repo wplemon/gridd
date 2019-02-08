@@ -33,7 +33,7 @@
     .edd_downloads_list .edd_download .entry-content {
       width: 100%;
       margin-bottom: 1em;
-      padding: var(--gridd-edd-grid-inner-padding);
+      padding: 0 var(--gridd-edd-grid-inner-padding);
       text-align: center; }
       .gridd-archive-downloads .type-download .entry-content .gridd-excerpt-container, .gridd-archive-downloads .edd_download .entry-content .gridd-excerpt-container, .edd_downloads_list .type-download .entry-content .gridd-excerpt-container,
       .edd_downloads_list .edd_download .entry-content .gridd-excerpt-container {
