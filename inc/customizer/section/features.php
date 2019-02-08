@@ -6,12 +6,25 @@
  * @since 1.0
  */
 
+use Gridd\Customizer;
+
 gridd_add_customizer_section(
 	'gridd_features',
 	[
 		'title'       => esc_attr__( 'Theme Features', 'gridd' ),
 		'priority'    => 28,
-		'description' => '<a href="https://wplemon.com/documentation/gridd/theme-features-customizer-section/" target="_blank" rel="noopener noreferrer nofollow">' . esc_html__( 'Learn more about these settings', 'gridd' ),
+		'description' => Customizer::section_description(
+			'gridd_typography',
+			[
+				'plus' => [
+					esc_html__( 'Fixed mode for featured images with custom height', 'gridd' ),
+					esc_html__( 'Anchor links in headers ', 'gridd' ),
+					esc_html__( 'Scroll to top button', 'gridd' ),
+					esc_html__( 'Enable more custom widget-areas and customize their titles for easier identification', 'gridd' ),
+				],
+				'docs' => 'https://wplemon.com/documentation/gridd/theme-features-customizer-section/',
+			]
+		),
 		'panel'       => 'gridd_options',
 	]
 );
@@ -25,6 +38,7 @@ gridd_add_customizer_field(
 		'section'         => 'gridd_features',
 		'default'         => 'alignwide',
 		'transport'       => 'refresh',
+		'priority'        => 10,
 		'choices'         => [
 			'hidden'        => esc_attr__( 'Hidden', 'gridd' ),
 			'gridd-contain' => esc_attr__( 'Normal', 'gridd' ),
@@ -45,6 +59,7 @@ gridd_add_customizer_field(
 		'section'         => 'gridd_features',
 		'default'         => 'alignwide',
 		'transport'       => 'refresh',
+		'priority'        => 20,
 		'choices'         => [
 			'hidden'        => esc_attr__( 'Hidden', 'gridd' ),
 			'gridd-contain' => esc_attr__( 'Normal', 'gridd' ),
@@ -64,6 +79,7 @@ gridd_add_customizer_field(
 		'label'     => esc_attr__( 'Show Next/Previous Post in single posts', 'gridd' ),
 		'section'   => 'gridd_features',
 		'default'   => true,
+		'priority'  => 30,
 		'transport' => 'refresh',
 	]
 );
@@ -76,6 +92,7 @@ gridd_add_customizer_field(
 		'description' => '',
 		'section'     => 'gridd_features',
 		'default'     => false,
+		'priority'    => 40,
 		'transport'   => 'refresh',
 	]
 );
@@ -101,6 +118,7 @@ foreach ( $post_types as $post_type_id => $post_type_obj ) {
 			'section'         => 'gridd_features',
 			'default'         => false,
 			'transport'       => 'refresh',
+			'priority'        => 50,
 			'output'          => [
 				[
 					'element'       => ".gridd-post-type-archive-$post_type_id #main",
@@ -146,9 +164,10 @@ gridd_add_customizer_field(
 		'settings'    => 'gridd_excerpt_more',
 		'label'       => esc_attr__( 'Read More link', 'gridd' ),
 		'description' => esc_html__( 'Available placeholder: %s for the post-title.', 'gridd' ), // phpcs:ignore WordPress.WP.I18n.MissingTranslatorsComment
-	'section'         => 'gridd_features',
-	/* translators: %s: Name of current post. Only visible to screen readers */
-	'default'         => __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'gridd' ),
-	'transport'       => 'refresh',
+		'section'     => 'gridd_features',
+		'priority'    => 60,
+		/* translators: %s: Name of current post. Only visible to screen readers */
+		'default'     => __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'gridd' ),
+		'transport'   => 'refresh',
 	]
 );
