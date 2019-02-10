@@ -1,7 +1,9 @@
+@import "../variables";
+
 .wp-block-separator {
-    color: unset;
-    border-bottom-color: currentColor;
-    background: none;
+	color: unset;
+	border-bottom-color: currentColor;
+	background: none;
 }
 
 .wp-block-pullquote {
@@ -34,53 +36,297 @@
 }
 
 .wp-block-columns {
-    // display: -ms-grid;
-    display: grid;
-    grid-template-columns: 1fr;
-    // -ms-grid-columns: 1fr;
+	// display: -ms-grid;
+	display: grid;
+	grid-template-columns: 1fr;
+	// -ms-grid-columns: 1fr;
 
-    &.has-2-columns,
-    &.has-3-columns {
-        grid-template-columns: 1fr;
-        // -ms-grid-columns: 1fr;
-    }
+	&.has-2-columns,
+	&.has-3-columns {
+		grid-template-columns: 1fr;
+		// -ms-grid-columns: 1fr;
+	}
 
-    &.has-4-columns,
-    &.has-5-columns {
-        @media only screen and (min-width: 600px) {
-            grid-template-columns: 1fr 1fr;
-            // -ms-grid-columns: 1fr 1fr;
-        }
-    }
+	&.has-4-columns,
+	&.has-5-columns {
+		@media only screen and (min-width: 600px) {
+			grid-template-columns: 1fr 1fr;
+			// -ms-grid-columns: 1fr 1fr;
+		}
+	}
 
-    &.has-6-columns {
-        @media only screen and (min-width: 960px) {
-            grid-template-columns: 1fr 1fr 1fr;
-            // -ms-grid-columns: 1fr 1fr 1fr;
-        }
-    }
+	&.has-6-columns {
+		@media only screen and (min-width: 960px) {
+			grid-template-columns: 1fr 1fr 1fr;
+			// -ms-grid-columns: 1fr 1fr 1fr;
+		}
+	}
 
-    &.alignfull {
-        padding-left: var(--gridd-content-padding-left);
-        padding-right: var(--gridd-content-padding-right);
-    }
+	&.alignfull {
+		padding-left: var(--gridd-content-padding-left);
+		padding-right: var(--gridd-content-padding-right);
+	}
 
-    .wp-block-column {
-        margin: 0;
-        padding: 1em;
-    }
+	.wp-block-column {
+		margin: 0;
+		padding: 1em;
+	}
 }
 
 .wp-block-button__link {
-    &:not(.has-text-color) {
-        color: #fff;
+	font-size: 1em;
 
-        &:visited,
-        &:focus,
-        &:hover,
-        &:visited:focus,
-        &:visited:hover {
-            color: #fff;
-        }
-    }
+	// Make sure buttons text remains visible if user doesn't select a text color.
+	&:not(.has-text-color) {
+		color: $very-light-gray;
+
+		&.has {
+
+			&-pale-pink,
+			&-light-green-cyan,
+			&-pale-cyan-blue,
+			&-very-light-gray {
+				&-background-color {
+					color: $very-dark-gray;
+				}
+			}
+		}
+
+		&:visited,
+		&:focus,
+		&:hover,
+		&:visited:focus,
+		&:visited:hover {
+			color: #fff;
+		}
+	}
+}
+
+.has {
+	&-pale-pink {
+		&-color {
+
+			&:hover,
+			&:focus,
+			&:active,
+			&:visited,
+			&:focus:hover,
+			&:active:hover,
+			&:visited:hover {
+				color: $pale-pink;
+			}
+		}
+	}
+
+	&-vivid-red {
+		&-color {
+
+			&:hover,
+			&:focus,
+			&:active,
+			&:visited,
+			&:focus:hover,
+			&:active:hover,
+			&:visited:hover {
+				color: $vivid-red;
+			}
+		}
+	}
+
+	&-luminous-vivid-orange {
+		&-color {
+
+			&:hover,
+			&:focus,
+			&:active,
+			&:visited,
+			&:focus:hover,
+			&:active:hover,
+			&:visited:hover {
+				color: $luminous-vivid-orange;
+			}
+		}
+	}
+
+	&-luminous-vivid-amber {
+		&-color {
+
+			&:hover,
+			&:focus,
+			&:active,
+			&:visited,
+			&:focus:hover,
+			&:active:hover,
+			&:visited:hover {
+				color: $luminous-vivid-amber;
+			}
+		}
+	}
+
+	&-light-green-cyan {
+		&-color {
+
+			&:hover,
+			&:focus,
+			&:active,
+			&:visited,
+			&:focus:hover,
+			&:active:hover,
+			&:visited:hover {
+				color: $light-green-cyan;
+			}
+		}
+	}
+
+	&-vivid-green-cyan {
+		&-color {
+
+			&:hover,
+			&:focus,
+			&:active,
+			&:visited,
+			&:focus:hover,
+			&:active:hover,
+			&:visited:hover {
+				color: $vivid-green-cyan;
+			}
+		}
+	}
+
+	&-pale-cyan-blue {
+		&-color {
+
+			&:hover,
+			&:focus,
+			&:active,
+			&:visited,
+			&:focus:hover,
+			&:active:hover,
+			&:visited:hover {
+				color: $pale-cyan-blue;
+			}
+		}
+	}
+
+	&-vivid-cyan-blue {
+		&-color {
+
+			&:hover,
+			&:focus,
+			&:active,
+			&:visited,
+			&:focus:hover,
+			&:active:hover,
+			&:visited:hover {
+				color: $vivid-cyan-blue;
+			}
+		}
+	}
+
+	&-very-light-gray {
+		&-color {
+
+			&:hover,
+			&:focus,
+			&:active,
+			&:visited,
+			&:focus:hover,
+			&:active:hover,
+			&:visited:hover {
+				color: $very-light-gray;
+			}
+		}
+
+	}
+
+	&-cyan-bluish-gray {
+		&-color {
+
+			&:hover,
+			&:focus,
+			&:active,
+			&:visited,
+			&:focus:hover,
+			&:active:hover,
+			&:visited:hover {
+				color: $cyan-bluish-gray;
+			}
+		}
+
+	}
+
+	&-very-dark-gray {
+		&-color {
+
+			&:hover,
+			&:focus,
+			&:active,
+			&:visited,
+			&:focus:hover,
+			&:active:hover,
+			&:visited:hover {
+				color: $very-dark-gray;
+			}
+		}
+	}
+
+	&-cyan {
+		&-color {
+
+			&:hover,
+			&:focus,
+			&:active,
+			&:visited,
+			&:focus:hover,
+			&:active:hover,
+			&:visited:hover {
+				color: $cyan;
+			}
+		}
+	}
+
+	&-white {
+		&-color {
+
+			&:hover,
+			&:focus,
+			&:active,
+			&:visited,
+			&:focus:hover,
+			&:active:hover,
+			&:visited:hover {
+				color: $white;
+			}
+		}
+	}
+
+	&-blue-gray {
+		&-color {
+
+			&:hover,
+			&:focus,
+			&:active,
+			&:visited,
+			&:focus:hover,
+			&:active:hover,
+			&:visited:hover {
+				color: $blue-gray;
+			}
+		}
+	}
+
+	&-black {
+		&-color {
+
+			&:hover,
+			&:focus,
+			&:active,
+			&:visited,
+			&:focus:hover,
+			&:active:hover,
+			&:visited:hover {
+				color: $black;
+			}
+		}
+	}
 }

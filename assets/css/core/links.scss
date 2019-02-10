@@ -1,5 +1,5 @@
-a:not(.has-text-color),
-a:not(.has-text-color):visited {
+a,
+a:visited {
 	color: var(--gridd-links-color);
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
 	transition: all 100ms ease-in-out;

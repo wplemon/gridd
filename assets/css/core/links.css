@@ -1,16 +1,16 @@
-a:not(.has-text-color),
-a:not(.has-text-color):visited {
+a,
+a:visited {
   color: var(--gridd-links-color);
   -webkit-tap-highlight-color: rgba(0, 0, 0, .3);
   transition: all 100ms ease-in-out; }
-  a:not(.has-text-color):active, a:not(.has-text-color):focus, a:not(.has-text-color):hover,
-  a:not(.has-text-color):visited:active,
-  a:not(.has-text-color):visited:focus,
-  a:not(.has-text-color):visited:hover {
+  a:active, a:focus, a:hover,
+  a:visited:active,
+  a:visited:focus,
+  a:visited:hover {
     color: var(--gridd-links-hover-color);
     outline: thin dotted; }
-  a:not(.has-text-color):focus,
-  a:not(.has-text-color):visited:focus {
+  a:focus,
+  a:visited:focus {
     outline: thin dashed; }
 
 .entry-title a {
