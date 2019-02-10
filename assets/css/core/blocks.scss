@@ -1,4 +1,14 @@
+@import "../blocks/colors";
+@import "../blocks/variables";
+@import "../blocks/animations";
+@import "../blocks/breakpoints";
+@import "../blocks/mixins";
+@import "../blocks/z-index";
+
 @import "../variables";
+
+@import "../blocks/block-library/style";
+@import "../blocks/block-library/theme";
 
 .wp-block-separator {
 	color: unset;
