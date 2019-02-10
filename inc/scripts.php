@@ -229,6 +229,10 @@ class Scripts {
 		$style->add_file( get_theme_file_path( 'assets/css/core/grid.min.css' ) );
 		$style->add_file( get_theme_file_path( 'assets/css/core/layout.min.css' ) );
 		$style->add_file( get_theme_file_path( 'assets/css/core/links.min.css' ) );
+		if ( ! apply_filters( 'gridd_use_core_blocks_styles', false ) ) {
+			$style->add_file( get_theme_file_path( 'assets/css/core/blocks-critical.min.css' ) );
+		}
+
 
 		// Adminbar.
 		if ( is_admin_bar_showing() ) {
@@ -323,7 +327,7 @@ class Scripts {
 			$style->add_file( ABSPATH . WPINC . '/css/dist/block-library/theme.min.css' );
 		} else {
 			// Add custom blocks styles for this theme.
-			$style->add_file( get_theme_file_path( 'assets/css/core/blocks.min.css' ) );
+			$style->add_file( get_theme_file_path( 'assets/css/core/blocks-secondary.min.css' ) );
 		}
 
 		$style->the_css( 'gridd-inline-css-late-styles' );

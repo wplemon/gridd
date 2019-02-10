@@ -1,14 +1,4 @@
-@import "../blocks/colors";
-@import "../blocks/variables";
-@import "../blocks/animations";
-@import "../blocks/breakpoints";
-@import "../blocks/mixins";
-@import "../blocks/z-index";
-
 @import "../variables";
-
-@import "../blocks/block-library/style";
-@import "../blocks/block-library/theme";
 
 .has-pale-pink-color.has-pale-pink-color {
 	color: $pale-pink;
