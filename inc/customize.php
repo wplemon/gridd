@@ -27,7 +27,7 @@ add_filter(
 	function( $controls ) {
 		$controls['gridd_grid'] = 'Gridd\Customizer\Control\Grid';
 		if ( ! class_exists( 'Gridd\Customizer\Control\Gridd_Kirki_WCAG_Link_Color' ) ) {
-			require_once get_template_directory() . '/inc/customizer/control/class-kirki-wcag-link-color.php';
+			require_once get_template_directory() . '/inc/customizer/control/class-gridd-kirki-wcag-link-color.php';
 		}
 		$controls['gridd-wcag-lc'] = 'Gridd\Customizer\Control\Gridd_Kirki_WCAG_Link_Color';
 		return $controls;
@@ -44,7 +44,7 @@ add_filter(
  */
 function gridd_kirki_wcag_link_color_register_control_type( $wp_customize ) {
 	if ( ! class_exists( 'Gridd\Customizer\Control\Gridd_Kirki_WCAG_Link_Color' ) ) {
-		require_once get_template_directory() . '/inc/customizer/control/class-kirki-wcag-link-color.php';
+		require_once get_template_directory() . '/inc/customizer/control/class-gridd-kirki-wcag-link-color.php';
 	}
 	$wp_customize->register_control_type( 'Gridd\Customizer\Control\Gridd_Kirki_WCAG_Link_Color' );
 }
