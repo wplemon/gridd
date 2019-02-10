@@ -36,6 +36,31 @@
 	&:visited {
 		color: inherit;
 	}
+
+	// Make sure buttons text remains visible if user doesn't select a text color.
+	&:not(.has-text-color) {
+		color: $very-light-gray;
+
+		&.has {
+
+			&-pale-pink,
+			&-light-green-cyan,
+			&-pale-cyan-blue,
+			&-very-light-gray {
+				&-background-color {
+					color: $very-dark-gray;
+				}
+			}
+		}
+
+		&:visited,
+		&:focus,
+		&:hover,
+		&:visited:focus,
+		&:visited:hover {
+			color: $very-light-gray;
+		}
+	}	
 }
 
 .is-style-squared .wp-block-button__link {

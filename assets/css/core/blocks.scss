@@ -10,35 +10,6 @@
 @import "../blocks/block-library/style";
 @import "../blocks/block-library/theme";
 
-.wp-block-button__link {
-	font-size: 1em;
-
-	// Make sure buttons text remains visible if user doesn't select a text color.
-	&:not(.has-text-color) {
-		color: $very-light-gray;
-
-		&.has {
-
-			&-pale-pink,
-			&-light-green-cyan,
-			&-pale-cyan-blue,
-			&-very-light-gray {
-				&-background-color {
-					color: $very-dark-gray;
-				}
-			}
-		}
-
-		&:visited,
-		&:focus,
-		&:hover,
-		&:visited:focus,
-		&:visited:hover {
-			color: #fff;
-		}
-	}
-}
-
 .has-pale-pink-color.has-pale-pink-color {
 	color: $pale-pink;
 

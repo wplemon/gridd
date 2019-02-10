@@ -7,21 +7,50 @@
 			grid-template-columns: 1fr 1fr;
 			// -ms-grid-columns: 1fr 1fr;
 		}
+
 		&.has-3-columns {
 			grid-template-columns: 1fr 1fr 1fr;
 			// -ms-grid-columns: 1fr 1fr 1fr;
 		}
+
 		&.has-4-columns {
 			grid-template-columns: 1fr 1fr 1fr 1fr;
 			// -ms-grid-columns: 1fr 1fr 1fr 1fr;
 		}
+
 		&.has-5-columns {
 			grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 			// -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
 		}
+
 		&.has-6-columns {
 			grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 			// -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+		}
+	}
+}
+
+.site-main {
+
+	.entry-header,
+	.entry-footer,
+	.gridd-contain,
+	.entry-content {
+		>* {
+			&:not(.alignfull):not(.alignwide):not(.alignleft):not(.alignright) {
+				// width: 100%;
+				max-width: var(--gridd-content-max-width-calculated);
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			&.alignleft {
+				margin-left: calc(50% - var(--gridd-content-max-width-calculated) / 2);
+			}
+
+			&.alignright {
+				margin-right: calc(50% - var(--gridd-content-max-width-calculated) / 2);
+			}
 		}
 	}
 }

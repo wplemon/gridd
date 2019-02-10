@@ -33,23 +33,6 @@
 		// justify-content: center;
 		// align-items: center;
 
-		>* {
-			&:not(.alignfull):not(.alignwide):not(.alignleft):not(.alignright) {
-				// width: 100%;
-				max-width: var(--gridd-content-max-width-calculated);
-				margin-left: auto;
-				margin-right: auto;
-			}
-
-			&.alignleft {
-				margin-left: calc(50% - var(--gridd-content-max-width-calculated) / 2);
-			}
-
-			&.alignright {
-				margin-right: calc(50% - var(--gridd-content-max-width-calculated) / 2);
-			}
-		}
-
 		.alignwide,
 		.alignfull {
 			max-width: calc(100% + var(--gridd-content-padding-left) + var(--gridd-content-padding-right));

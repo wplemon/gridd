@@ -4,14 +4,14 @@
 
 // Fonts & basics
 $default-font: -apple-system, BlinkMacSystemFont,"Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell,"Helvetica Neue", sans-serif;
-$default-font-size: 13px;
+$default-font-size: 1em;
 $default-line-height: 1.4;
 $editor-font: "Noto Serif", serif;
 $editor-html-font: Menlo, Consolas, monaco, monospace;
-$editor-font-size: 16px;
-$text-editor-font-size: 14px;
+$editor-font-size: 1em;
+$text-editor-font-size: 1em;
 $editor-line-height: 1.8;
-$big-font-size: 18px;
+$big-font-size: calc(var(--gridd-typo-scale) * 1em);
 $mobile-text-min-font-size: 16px; // Any font size below 16px will cause Mobile Safari to "zoom in"
 
 // Grid size
