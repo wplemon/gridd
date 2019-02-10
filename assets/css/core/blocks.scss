@@ -10,79 +10,6 @@
 @import "../blocks/block-library/style";
 @import "../blocks/block-library/theme";
 
-.wp-block-separator {
-	color: unset;
-	border-bottom-color: currentColor;
-	background: none;
-}
-
-.wp-block-pullquote {
-	border-left: none;
-	border-right: none;
-}
-
-.wp-block-quote,
-.wp-block-pullquote {
-	color: var(--gridd-text-color);
-	border-top-color: currentColor;
-	border-bottom-color: currentColor;
-	border-left-color: currentColor;
-	border-right-color: currentColor;
-
-	&:not(.is-large):not(.is-style-large) {
-		border-left-color: currentColor;
-	}
-
-	cite {
-		color: var(--gridd-text-color);
-		font-size: calc(1em / var(--gridd-typo-scale));
-	}
-}
-
-.wp-block-pullquote {
-	blockquote {
-		border-left: none;
-	}
-}
-
-.wp-block-columns {
-	// display: -ms-grid;
-	display: grid;
-	grid-template-columns: 1fr;
-	// -ms-grid-columns: 1fr;
-
-	&.has-2-columns,
-	&.has-3-columns {
-		grid-template-columns: 1fr;
-		// -ms-grid-columns: 1fr;
-	}
-
-	&.has-4-columns,
-	&.has-5-columns {
-		@media only screen and (min-width: 600px) {
-			grid-template-columns: 1fr 1fr;
-			// -ms-grid-columns: 1fr 1fr;
-		}
-	}
-
-	&.has-6-columns {
-		@media only screen and (min-width: 960px) {
-			grid-template-columns: 1fr 1fr 1fr;
-			// -ms-grid-columns: 1fr 1fr 1fr;
-		}
-	}
-
-	&.alignfull {
-		padding-left: var(--gridd-content-padding-left);
-		padding-right: var(--gridd-content-padding-right);
-	}
-
-	.wp-block-column {
-		margin: 0;
-		padding: 1em;
-	}
-}
-
 .wp-block-button__link {
 	font-size: 1em;
 
@@ -112,231 +39,213 @@
 	}
 }
 
-.has {
-	&-pale-pink {
-		&-color {
+.has-pale-pink-color.has-pale-pink-color {
+	color: $pale-pink;
 
-			&:hover,
-			&:focus,
-			&:active,
-			&:visited,
-			&:focus:hover,
-			&:active:hover,
-			&:visited:hover {
-				color: $pale-pink;
-			}
-		}
+	&:hover,
+	&:focus,
+	&:active,
+	&:visited,
+	&:focus:hover,
+	&:active:hover,
+	&:visited:hover {
+		color: $pale-pink;
 	}
+}
 
-	&-vivid-red {
-		&-color {
+.has-vivid-red-color.has-vivid-red-color {
+	color: $vivid-red;
 
-			&:hover,
-			&:focus,
-			&:active,
-			&:visited,
-			&:focus:hover,
-			&:active:hover,
-			&:visited:hover {
-				color: $vivid-red;
-			}
-		}
+	&:hover,
+	&:focus,
+	&:active,
+	&:visited,
+	&:focus:hover,
+	&:active:hover,
+	&:visited:hover {
+		color: $vivid-red;
 	}
+}
 
-	&-luminous-vivid-orange {
-		&-color {
+.has-luminous-vivid-orange-color.has-luminous-vivid-orange-color {
+	color: $luminous-vivid-orange;
 
-			&:hover,
-			&:focus,
-			&:active,
-			&:visited,
-			&:focus:hover,
-			&:active:hover,
-			&:visited:hover {
-				color: $luminous-vivid-orange;
-			}
-		}
+	&:hover,
+	&:focus,
+	&:active,
+	&:visited,
+	&:focus:hover,
+	&:active:hover,
+	&:visited:hover {
+		color: $luminous-vivid-orange;
 	}
+}
 
-	&-luminous-vivid-amber {
-		&-color {
+.has-luminous-vivid-amber-color.has-luminous-vivid-amber-color {
+	color: $luminous-vivid-amber;
 
-			&:hover,
-			&:focus,
-			&:active,
-			&:visited,
-			&:focus:hover,
-			&:active:hover,
-			&:visited:hover {
-				color: $luminous-vivid-amber;
-			}
-		}
+	&:hover,
+	&:focus,
+	&:active,
+	&:visited,
+	&:focus:hover,
+	&:active:hover,
+	&:visited:hover {
+		color: $luminous-vivid-amber;
 	}
+}
 
-	&-light-green-cyan {
-		&-color {
+.has-light-green-cyan-color.has-light-green-cyan-color {
+	color: $light-green-cyan;
 
-			&:hover,
-			&:focus,
-			&:active,
-			&:visited,
-			&:focus:hover,
-			&:active:hover,
-			&:visited:hover {
-				color: $light-green-cyan;
-			}
-		}
+	&:hover,
+	&:focus,
+	&:active,
+	&:visited,
+	&:focus:hover,
+	&:active:hover,
+	&:visited:hover {
+		color: $light-green-cyan;
 	}
+}
 
-	&-vivid-green-cyan {
-		&-color {
+.has-vivid-green-cyan-color.has-vivid-green-cyan-color {
+	color: $vivid-green-cyan;
 
-			&:hover,
-			&:focus,
-			&:active,
-			&:visited,
-			&:focus:hover,
-			&:active:hover,
-			&:visited:hover {
-				color: $vivid-green-cyan;
-			}
-		}
+	&:hover,
+	&:focus,
+	&:active,
+	&:visited,
+	&:focus:hover,
+	&:active:hover,
+	&:visited:hover {
+		color: $vivid-green-cyan;
 	}
+}
 
-	&-pale-cyan-blue {
-		&-color {
+.has-pale-cyan-blue-color.has-pale-cyan-blue-color {
+	color: $pale-cyan-blue;
 
-			&:hover,
-			&:focus,
-			&:active,
-			&:visited,
-			&:focus:hover,
-			&:active:hover,
-			&:visited:hover {
-				color: $pale-cyan-blue;
-			}
-		}
+	&:hover,
+	&:focus,
+	&:active,
+	&:visited,
+	&:focus:hover,
+	&:active:hover,
+	&:visited:hover {
+		color: $pale-cyan-blue;
 	}
+}
 
-	&-vivid-cyan-blue {
-		&-color {
+.has-vivid-cyan-blue-color.has-vivid-cyan-blue-color {
+	color: $vivid-cyan-blue;
 
-			&:hover,
-			&:focus,
-			&:active,
-			&:visited,
-			&:focus:hover,
-			&:active:hover,
-			&:visited:hover {
-				color: $vivid-cyan-blue;
-			}
-		}
+	&:hover,
+	&:focus,
+	&:active,
+	&:visited,
+	&:focus:hover,
+	&:active:hover,
+	&:visited:hover {
+		color: $vivid-cyan-blue;
 	}
+}
 
-	&-very-light-gray {
-		&-color {
+.has-very-light-gray-color.has-very-light-gray-color {
 
-			&:hover,
-			&:focus,
-			&:active,
-			&:visited,
-			&:focus:hover,
-			&:active:hover,
-			&:visited:hover {
-				color: $very-light-gray;
-			}
-		}
+	color: $very-light-gray;
 
+	&:hover,
+	&:focus,
+	&:active,
+	&:visited,
+	&:focus:hover,
+	&:active:hover,
+	&:visited:hover {
+		color: $very-light-gray;
 	}
+}
 
-	&-cyan-bluish-gray {
-		&-color {
+.has-cyan-bluish-gray-color.has-cyan-bluish-gray-color {
+	color: $cyan-bluish-gray;
 
-			&:hover,
-			&:focus,
-			&:active,
-			&:visited,
-			&:focus:hover,
-			&:active:hover,
-			&:visited:hover {
-				color: $cyan-bluish-gray;
-			}
-		}
-
+	&:hover,
+	&:focus,
+	&:active,
+	&:visited,
+	&:focus:hover,
+	&:active:hover,
+	&:visited:hover {
+		color: $cyan-bluish-gray;
 	}
+}
 
-	&-very-dark-gray {
-		&-color {
+.has-very-dark-gray-color.has-very-dark-gray-color {
+	color: $very-dark-gray;
 
-			&:hover,
-			&:focus,
-			&:active,
-			&:visited,
-			&:focus:hover,
-			&:active:hover,
-			&:visited:hover {
-				color: $very-dark-gray;
-			}
-		}
+	&:hover,
+	&:focus,
+	&:active,
+	&:visited,
+	&:focus:hover,
+	&:active:hover,
+	&:visited:hover {
+		color: $very-dark-gray;
 	}
+}
 
-	&-cyan {
-		&-color {
+.has-cyan-color.has-cyan-color {
+	color: $cyan;
 
-			&:hover,
-			&:focus,
-			&:active,
-			&:visited,
-			&:focus:hover,
-			&:active:hover,
-			&:visited:hover {
-				color: $cyan;
-			}
-		}
+	&:hover,
+	&:focus,
+	&:active,
+	&:visited,
+	&:focus:hover,
+	&:active:hover,
+	&:visited:hover {
+		color: $cyan;
 	}
+}
 
-	&-white {
-		&-color {
+.has-white-color.has-white-color {
+	color: $white;
 
-			&:hover,
-			&:focus,
-			&:active,
-			&:visited,
-			&:focus:hover,
-			&:active:hover,
-			&:visited:hover {
-				color: $white;
-			}
-		}
+	&:hover,
+	&:focus,
+	&:active,
+	&:visited,
+	&:focus:hover,
+	&:active:hover,
+	&:visited:hover {
+		color: $white;
 	}
+}
 
-	&-blue-gray {
-		&-color {
+.has-blue-gray-color.has-blue-gray-color {
+	color: $blue-gray;
 
-			&:hover,
-			&:focus,
-			&:active,
-			&:visited,
-			&:focus:hover,
-			&:active:hover,
-			&:visited:hover {
-				color: $blue-gray;
-			}
-		}
+	&:hover,
+	&:focus,
+	&:active,
+	&:visited,
+	&:focus:hover,
+	&:active:hover,
+	&:visited:hover {
+		color: $blue-gray;
 	}
+}
 
-	&-black {
-		&-color {
+.has-black-color.has-black-color {
+	color: $black;
 
-			&:hover,
-			&:focus,
-			&:active,
-			&:visited,
-			&:focus:hover,
-			&:active:hover,
-			&:visited:hover {
-				color: $black;
-			}
-		}
+	&:hover,
+	&:focus,
+	&:active,
+	&:visited,
+	&:focus:hover,
+	&:active:hover,
+	&:visited:hover {
+		color: $black;
 	}
 }

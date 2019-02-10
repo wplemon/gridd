@@ -1,11 +1,11 @@
 .wp-block-quote {
-	margin: 20px 0;
+	margin: calc(var(--gridd-typo-scale) * 1em) 0;
 
 	cite,
 	footer,
 	&__citation {
-		color: $dark-gray-300;
-		font-size: $default-font-size;
+		color: currentColor;
+		// font-size: $default-font-size;
 		margin-top: 1em;
 		position: relative;
 		font-style: normal;
@@ -13,6 +13,6 @@
 }
 
 .wp-block-quote:not(.is-large):not(.is-style-large) {
-	border-left: 4px solid $black;
+	border-left: 4px solid currentColor;
 	padding-left: 1em;
 }

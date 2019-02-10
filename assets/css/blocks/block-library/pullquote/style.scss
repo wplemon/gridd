@@ -6,15 +6,15 @@
 
 	&.alignleft,
 	&.alignright {
-		max-width: $content-width / 2;
+		max-width: calc(var(--gridd-content-max-width-calculated) / 2);
 
 		p {
-			font-size: 20px;
+			font-size: calc(var(--gridd-typo-scale) * 1em);
 		}
 	}
 
 	p {
-		font-size: 28px;
+		font-size: calc(var(--gridd-typo-scale) * var(--gridd-typo-scale) * 1em);
 		line-height: 1.6;
 	}
 
@@ -24,6 +24,10 @@
 	}
 	.has-text-color a {
 		color: inherit;
+	}
+
+	blockquote {
+		border-left: none;
 	}
 }
 
@@ -43,7 +47,7 @@
 		p {
 			margin-top: 0;
 			margin-bottom: 0;
-			font-size: 32px;
+			font-size: calc(var(--gridd-typo-scale) * var(--gridd-typo-scale) * 1em);
 		}
 
 		cite {
@@ -54,5 +58,5 @@
 }
 
 .wp-block-pullquote cite {
-	color: inherit;
+	// color: inherit;
 }
