@@ -317,12 +317,14 @@ class Scripts {
 		$style->add_file( get_theme_file_path( 'assets/css/core/nav-links.min.css' ) );
 		$style->add_file( get_theme_file_path( 'assets/css/core/post-sticky.min.css' ) );
 
-		// Add blocks styles from wp-core.
-		$style->add_file( ABSPATH . WPINC . '/css/dist/block-library/style.min.css' );
-		$style->add_file( ABSPATH . WPINC . '/css/dist/block-library/theme.min.css' );
-
-		// Add custom blocks styles for this theme.
-		$style->add_file( get_theme_file_path( 'assets/css/core/blocks.min.css' ) );
+		if ( apply_filters( 'gridd_use_core_blocks_styles', false ) ) {
+			// Add blocks styles from wp-core.
+			$style->add_file( ABSPATH . WPINC . '/css/dist/block-library/style.min.css' );
+			$style->add_file( ABSPATH . WPINC . '/css/dist/block-library/theme.min.css' );
+		} else {
+			// Add custom blocks styles for this theme.
+			$style->add_file( get_theme_file_path( 'assets/css/core/blocks.min.css' ) );
+		}
 
 		$style->the_css( 'gridd-inline-css-late-styles' );
 	}
