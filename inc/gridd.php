@@ -261,7 +261,83 @@ class Gridd {
 		}
 		add_theme_support( 'responsive-embeds' );
 		add_editor_style( 'assets/css/admin/editor.min.css' );
-
+		add_theme_support( 'editor-color-palette', array(
+			[
+				'name'  => esc_attr__( 'Pale Pink', 'gridd' ),
+				'slug'  => 'pale-pink',
+				'color' => '#f78da7',
+			],
+			[
+				'name'  => esc_attr__( 'Vivid Red', 'gridd' ),
+				'slug'  => 'vivid-red',
+				'color' => '#cf2e2e',
+			],
+			[
+				'name'  => esc_attr__( 'Luminous Vivid Orange', 'gridd' ),
+				'slug'  => 'luminous-vivid-orange',
+				'color' => '#ff6900',
+			],
+			[
+				'name'  => esc_attr__( 'Luminous Vivid Amber', 'gridd' ),
+				'slug'  => 'luminous-vivid-amber',
+				'color' => '#fcb900',
+			],
+			[
+				'name'  => esc_attr__( 'Light Green Cyan', 'gridd' ),
+				'slug'  => 'light-green-cyan',
+				'color' => '#7bdcb5',
+			],
+			[
+				'name'  => esc_attr__( 'Vivid Green Cyan', 'gridd' ),
+				'slug'  => 'vivid-green-cyan',
+				'color' => '#00d084',
+			],
+			[
+				'name'  => esc_attr__( 'Pale Cyan Blue', 'gridd' ),
+				'slug'  => 'pale-cyan-blue',
+				'color' => '#8ed1fc',
+			],
+			[
+				'name'  => esc_attr__( 'cyan', 'gridd' ),
+				'slug'  => 'cyan',
+				'color' => '#26C6DA',
+			],
+			[
+				'name'  => esc_html__( 'Vivid Cyan Blue', 'gridd' ),
+				'slug'  => 'vivid-cyan-blue',
+				'color' => '#0693e3',
+			],
+			[
+				'name'  => esc_attr__( 'White', 'gridd' ),
+				'slug'  => 'white',
+				'color' => '#fff',
+			],
+			[
+				'name'  => esc_attr__( 'Very Light Gray', 'gridd' ),
+				'slug'  => 'very-light-gray',
+				'color' => '#eee',
+			],
+			[
+				'name'  => esc_html__( 'Cyan Bluish Gray', 'gridd' ),
+				'slug'  => 'cyan-bluish-gray',
+				'color' => '#abb8c3',
+			],
+			[
+				'name'  => esc_attr__( 'Blue Gray', 'gridd' ),
+				'slug'  => 'blue-gray',
+				'color' => '#546E7A',
+			],
+			[
+				'name'  => esc_attr__( 'Very Dark Gray', 'gridd' ),
+				'slug'  => 'very-dark-gray',
+				'color' => '#313131',
+			],
+			[
+				'name'  => esc_attr__( 'Black', 'gridd' ),
+				'slug'  => 'black',
+				'color' => '#000',
+			],
+		) );
 		// Starter Content.
 		add_theme_support(
 			'starter-content',
