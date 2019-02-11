@@ -76,5 +76,6 @@ rm -f gridd/inc/kirki/*.sh
 rm -f gridd/inc/kirki/package-lock.json
 rm -f gridd/*.sh
 
+rm -f gridd.zip
 zip -rq gridd.zip gridd
 rm -Rf gridd/
