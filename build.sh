@@ -74,6 +74,7 @@ rm -f gridd/inc/kirki/phpunit.xml.dist
 rm -f gridd/inc/kirki/README.md
 rm -f gridd/inc/kirki/*.sh
 rm -f gridd/inc/kirki/package-lock.json
+rm -f gridd/*.sh
 
 zip -rq gridd.zip gridd
 rm -Rf gridd/
