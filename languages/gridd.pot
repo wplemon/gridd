@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2.0 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Gridd 1.0\n"
+"Project-Id-Version: Gridd 1.0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/gridd\n"
-"POT-Creation-Date: 2019-02-08 16:30:32+00:00\n"
+"POT-Creation-Date: 2019-02-11 16:37:36+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1157,7 +1157,7 @@ msgid "Gap"
 msgstr ""
 
 #: inc/customizer/section/edd.php:46
-msgid "The gap between grid items. Use any valid CSS value."
+msgid "The gap between grid items."
 msgstr ""
 
 #: inc/customizer/section/edd.php:64
@@ -1464,6 +1464,66 @@ msgstr ""
 
 #: inc/customizer.php:320
 msgid "Documentation"
+msgstr ""
+
+#: inc/gridd.php:270
+msgid "Pale Pink"
+msgstr ""
+
+#: inc/gridd.php:275
+msgid "Vivid Red"
+msgstr ""
+
+#: inc/gridd.php:280
+msgid "Luminous Vivid Orange"
+msgstr ""
+
+#: inc/gridd.php:285
+msgid "Luminous Vivid Amber"
+msgstr ""
+
+#: inc/gridd.php:290
+msgid "Light Green Cyan"
+msgstr ""
+
+#: inc/gridd.php:295
+msgid "Vivid Green Cyan"
+msgstr ""
+
+#: inc/gridd.php:300
+msgid "Pale Cyan Blue"
+msgstr ""
+
+#: inc/gridd.php:305
+msgid "cyan"
+msgstr ""
+
+#: inc/gridd.php:310
+msgid "Vivid Cyan Blue"
+msgstr ""
+
+#: inc/gridd.php:315
+msgid "White"
+msgstr ""
+
+#: inc/gridd.php:320
+msgid "Very Light Gray"
+msgstr ""
+
+#: inc/gridd.php:325
+msgid "Cyan Bluish Gray"
+msgstr ""
+
+#: inc/gridd.php:330
+msgid "Blue Gray"
+msgstr ""
+
+#: inc/gridd.php:335
+msgid "Very Dark Gray"
+msgstr ""
+
+#: inc/gridd.php:340
+msgid "Black"
 msgstr ""
 
 #: inc/kirki/controls/php/class-kirki-control-background.php:54
