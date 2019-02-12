@@ -16,7 +16,8 @@
     padding-left: 0;
     padding-right: 0;
     padding-bottom: 1em;
-    max-width: 100%; }
+    max-width: 100%;
+    width: 100%; }
   .site-main .entry-header .alignwide,
   .site-main .entry-header .alignfull,
   .site-main .entry-footer .alignwide,
