@@ -34,9 +34,9 @@
     width: 1em;
     height: 100%;
     display: inline-block; }
-  .nav-links .nav-previous:before {
+  .nav-links .nav-previous a:before {
     content: "‹";
     padding-right: 0.5em; }
-  .nav-links .nav-next:after {
+  .nav-links .nav-next a:after {
     content: "›";
     padding-left: 0.5em; }

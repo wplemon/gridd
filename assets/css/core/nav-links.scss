@@ -46,13 +46,21 @@
 		display: inline-block;
 	}
 
-	.nav-previous:before {
-		content: "‹";
-		padding-right: 0.5em;
+	.nav-previous {
+		a {
+			&:before {
+				content: "‹";
+				padding-right: 0.5em;
+			}
+		}
 	}
 
-	.nav-next:after {
-		content: "›";
-		padding-left: 0.5em;
+	.nav-next {
+		a {
+			&:after {
+				content: "›";
+				padding-left: 0.5em;
+			}
+		}
 	}
 }
