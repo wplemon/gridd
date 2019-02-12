@@ -274,12 +274,35 @@ function gridd_nav_customizer_options( $id ) {
 
 	gridd_add_customizer_field(
 		[
+			'type'            => 'text',
+			'settings'        => "gridd_grid_nav_{$id}_expand_label",
+			'label'           => esc_html__( 'Expand Label', 'gridd' ),
+			'section'         => "gridd_grid_part_details_nav_$id",
+			'default'         => esc_html__( 'MENU' ),
+			'transport'       => 'refresh',
+			'active_callback' => [
+				[
+					'setting'  => "gridd_grid_nav_{$id}_responsive_behavior",
+					'value'    => 'desktop-normal mobile-normal',
+					'operator' => '!==',
+				],
+				[
+					'setting'  => "gridd_grid_nav_{$id}_responsive_behavior",
+					'value'    => 'desktop-normal mobile-hidden',
+					'operator' => '!==',
+				],
+			],
+		]
+	);
+
+	gridd_add_customizer_field(
+		[
 			'type'            => 'radio-buttonset',
 			'settings'        => "gridd_grid_nav_{$id}_expand_icon",
 			'label'           => esc_html__( 'Expand Icon', 'gridd' ),
 			'description'     => esc_html__( 'Select the icon that should be used to expand the navigation.', 'gridd' ),
 			'section'         => "gridd_grid_part_details_nav_$id",
-			'default'         => 'plus-5',
+			'default'         => 'menu-1',
 			'transport'       => 'refresh',
 			'choices'         => Navigation::get_expand_svgs(),
 			'active_callback' => [

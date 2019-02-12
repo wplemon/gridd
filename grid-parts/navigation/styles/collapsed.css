@@ -12,11 +12,12 @@
   display: flex;
   background-color: var(--gridd-nav-ID-bg);
   padding: 1em;
-  border: none;
-  width: 1em;
+  border: 2px solid;
   height: 1em;
+  line-height: 1;
   box-sizing: content-box;
-  border-radius: 0; }
+  border-radius: 0;
+  color: var(--gridd-nav-ID-color); }
   .gridd-tp-nav_ID .gridd-toggle-navigation svg {
     width: 1em;
     fill: var(--gridd-nav-ID-color); }
@@ -27,12 +28,15 @@
       -webkit-transform-origin: center center;
               transform-origin: center center; }
     .gridd-tp-nav_ID .gridd-toggle-navigation .icon.close {
-      position: absolute; }
+      position: absolute;
+      -webkit-transform: translateX(-1em);
+              transform: translateX(-1em); }
       .gridd-tp-nav_ID .gridd-toggle-navigation .icon.close svg {
         opacity: 0; }
   .gridd-tp-nav_ID .gridd-toggle-navigation:hover, .gridd-tp-nav_ID .gridd-toggle-navigation:focus, .gridd-tp-nav_ID .gridd-toggle-navigation.focus, .gridd-tp-nav_ID .gridd-toggle-navigation.toggled-on {
     background: var(--gridd-nav-ID-accent-bg);
-    box-shadow: none; }
+    box-shadow: none;
+    color: var(--gridd-nav-ID-accent-color); }
     .gridd-tp-nav_ID .gridd-toggle-navigation:hover svg, .gridd-tp-nav_ID .gridd-toggle-navigation:focus svg, .gridd-tp-nav_ID .gridd-toggle-navigation.focus svg, .gridd-tp-nav_ID .gridd-toggle-navigation.toggled-on svg {
       fill: var(--gridd-nav-ID-accent-color); }
   .gridd-tp-nav_ID .gridd-toggle-navigation.toggled-on ~ nav {

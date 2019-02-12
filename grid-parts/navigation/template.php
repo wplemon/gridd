@@ -104,8 +104,11 @@ foreach ( $responsive_mode_parts as $responsive_mode_part ) {
 			 * Add the toggle button.
 			 */
 			$icons = Navigation::get_expand_svgs();
-			$icon  = get_theme_mod( "gridd_grid_nav_{$id}_expand_icon", 'plus-5' );
-
+			$icon  = get_theme_mod( "gridd_grid_nav_{$id}_expand_icon", 'menu-1' );
+			$label = trim( get_theme_mod( "gridd_grid_nav_{$id}_expand_label", 'MENU' ) );
+			if ( ! empty( $label ) ) {
+				$label = '<span class="gridd-menu-toggle-label">' . $label . '</span><span style="display:block;width:1em;"></span>';
+			}
 			/**
 			 * Prints the button.
 			 * No need to escape this, it's already escaped in the function itself.
@@ -117,7 +120,7 @@ foreach ( $responsive_mode_parts as $responsive_mode_part ) {
 					'screen_reader_label_collapse' => __( 'Collapse Navigation', 'gridd' ),
 					'screen_reader_label_expand'   => __( 'Expand Navigation', 'gridd' ),
 					'screen_reader_label_toggle'   => __( 'Toggle Navigation', 'gridd' ),
-					'label'                        => '<span class="icon open">' . $icons[ $icon ] . '</span><span class="icon close">' . Navigation::get_collapse_svg( $icon ) . '</span>',
+					'label'                        => $label . '<span style="position"relative;"><span class="icon open">' . $icons[ $icon ] . '</span><span class="icon close">' . Navigation::get_collapse_svg( $icon ) . '</span></span>',
 					'classes'                      => [ 'gridd-toggle-navigation' ],
 				]
 			);

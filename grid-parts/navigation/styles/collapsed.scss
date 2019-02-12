@@ -21,11 +21,13 @@
 		display: flex;
 		background-color: var(--gridd-nav-ID-bg);
 		padding: 1em;
-		border: none;
-		width: 1em;
+		border: 2px solid;
+		// width: 1em;
 		height: 1em;
+		line-height: 1;
 		box-sizing: content-box;
 		border-radius: 0;
+		color: var(--gridd-nav-ID-color);
 
 		svg {
 			width: 1em;
@@ -42,6 +44,7 @@
 
 			&.close {
 				position: absolute;
+				transform: translateX(-1em);
 
 				svg {
 					opacity: 0;
@@ -55,6 +58,7 @@
 		&.toggled-on {
 			background: var(--gridd-nav-ID-accent-bg);
 			box-shadow: none;
+			color: var(--gridd-nav-ID-accent-color);
 
 			svg {
 				fill: var(--gridd-nav-ID-accent-color);
