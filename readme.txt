@@ -33,6 +33,12 @@ Gridd is a flexible, inclusive theme with a strong focus on performance, accessi
 
 == Changelog ==
 
+= 1.0.2 =
+
+* New: CSS for blocks is now only loaded for active blocks.
+* New: Added option for collapsed navigation label.
+* Fix: Various CSS styling fixes.
+
 = 1.0.1 =
 
 * New: Added the "Features" section in the customizer.
