@@ -110,7 +110,7 @@ gridd_add_customizer_field(
 		'settings'  => 'gridd_grid_breadcrumbs_text_align',
 		'label'     => esc_html__( 'Alignment', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_breadcrumbs',
-		'default'   => 'left',
+		'default'   => 'center',
 		'transport' => 'postMessage',
 		'css_vars'  => '--gridd-breadcrumbs-text-align',
 		'choices'   => [

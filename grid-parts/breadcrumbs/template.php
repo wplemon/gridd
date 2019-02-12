@@ -22,7 +22,7 @@ $style->add_vars(
 		'--gridd-breadcrumbs-font-size'  => get_theme_mod( 'gridd_grid_breadcrumbs_font_size', 1 ) . 'em',
 		'--gridd-breadcrumbs-color'      => get_theme_mod( 'gridd_grid_breadcrumbs_color', '#000000' ),
 		'--gridd-breadcrumbs-padding'    => get_theme_mod( 'gridd_grid_breadcrumbs_padding', '1em' ),
-		'--gridd-breadcrumbs-text-align' => get_theme_mod( 'gridd_grid_breadcrumbs_text_align', 'left' ),
+		'--gridd-breadcrumbs-text-align' => get_theme_mod( 'gridd_grid_breadcrumbs_text_align', 'center' ),
 		'--gridd-breadcrumbs-max-width'  => get_theme_mod( 'gridd_grid_breadcrumbs_max_width', '100%' ),
 	]
 );
