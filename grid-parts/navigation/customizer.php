@@ -94,29 +94,6 @@ function gridd_nav_customizer_options( $id ) {
 				'desktop-icon mobile-icon'     => esc_html__( 'Always collapsed', 'gridd' ),
 				'desktop-normal mobile-hidden' => esc_html__( 'Hide on mobile', 'gridd' ),
 			],
-			// 'transport'       => 'postMessage',
-			// 'partial_refresh' => [
-			// 	"gridd_grid_nav_{$id}_responsive_behavior_template" => [
-			// 		'selector'            => ".gridd-tp-nav_{$id}",
-			// 		'container_inclusive' => true,
-			// 		'render_callback'     => function() use ( $id ) {
-			// 			/**
-			// 			 * We use include( get_theme_file_path() ) here
-			// 			 * because we need to pass the $id var to the template.
-			// 			 */
-			// 			include get_theme_file_path( 'grid-parts/navigation/template.php' );
-			// 			/**
-			// 			 * Due to the partial refresh, JS listeners no longer work for the menu.
-			// 			 * We need to re-inject the JS here to make previews work after the partial refresh.
-			// 			 */
-			// 			if ( ! AMP::is_active() ) {
-			// 				echo '<script>';
-			// 				include get_theme_file_path( 'assets/js/nav.min.js' );
-			// 				echo '<script>';
-			// 			}
-			// 		},
-			// 	],
-			// ],
 		]
 	);
 
@@ -212,29 +189,6 @@ function gridd_nav_customizer_options( $id ) {
 					'operator' => '!==',
 				],
 			],
-			// 'transport'       => 'postMessage',
-			// 'partial_refresh' => [
-			// 	"gridd_grid_nav_{$id}_vertical_template" => [
-			// 		'selector'            => ".gridd-tp-nav_{$id}",
-			// 		'container_inclusive' => true,
-			// 		'render_callback'     => function() use ( $id ) {
-			// 			/**
-			// 			 * We use include( get_theme_file_path() ) here
-			// 			 * because we need to pass the $id var to the template.
-			// 			 */
-			// 			include get_theme_file_path( 'grid-parts/navigation/template.php' );
-			// 			/**
-			// 			 * Due to the partial refresh, JS listeners no longer work for the menu.
-			// 			 * We need to re-inject the JS here to make previews work after the partial refresh.
-			// 			 */
-			// 			if ( ! AMP::is_active() ) {
-			// 				echo '<script>';
-			// 				include get_theme_file_path( 'assets/js/nav.min.js' );
-			// 				echo '<script>';
-			// 			}
-			// 		},
-			// 	],
-			// ],
 		]
 	);
 
@@ -278,7 +232,7 @@ function gridd_nav_customizer_options( $id ) {
 			'settings'        => "gridd_grid_nav_{$id}_expand_label",
 			'label'           => esc_html__( 'Expand Label', 'gridd' ),
 			'section'         => "gridd_grid_part_details_nav_$id",
-			'default'         => esc_html__( 'MENU' ),
+			'default'         => esc_html__( 'MENU', 'gridd' ),
 			'transport'       => 'refresh',
 			'active_callback' => [
 				[
@@ -317,29 +271,6 @@ function gridd_nav_customizer_options( $id ) {
 					'operator' => '!==',
 				],
 			],
-			// 'transport'       => 'postMessage',
-			// 'partial_refresh' => [
-			// 	"gridd_grid_nav_{$id}_expand_icon_template" => [
-			// 		'selector'            => ".gridd-tp-nav_{$id}",
-			// 		'container_inclusive' => true,
-			// 		'render_callback'     => function() use ( $id ) {
-			// 			/**
-			// 			 * We use include( get_theme_file_path() ) here
-			// 			 * because we need to pass the $id var to the template.
-			// 			 */
-			// 			include get_theme_file_path( 'grid-parts/navigation/template.php' );
-			// 			/**
-			// 			 * Due to the partial refresh, JS listeners no longer work for the menu.
-			// 			 * We need to re-inject the JS here to make previews work after the partial refresh.
-			// 			 */
-			// 			if ( ! AMP::is_active() ) {
-			// 				echo '<script>';
-			// 				include get_theme_file_path( 'assets/js/nav.min.js' );
-			// 				echo '<script>';
-			// 			}
-			// 		},
-			// 	],
-			// ],
 		]
 	);
 
@@ -375,29 +306,6 @@ function gridd_nav_customizer_options( $id ) {
 					'operator' => '!==',
 				],
 			],
-			// 'transport'       => 'postMessage',
-			// 'partial_refresh' => [
-			// 	"gridd_grid_nav_{$id}_expand_icon_position_template" => [
-			// 		'selector'            => ".gridd-tp-nav_{$id}",
-			// 		'container_inclusive' => true,
-			// 		'render_callback'     => function() use ( $id ) {
-			// 			/**
-			// 			 * We use include( get_theme_file_path() ) here
-			// 			 * because we need to pass the $id var to the template.
-			// 			 */
-			// 			include get_theme_file_path( 'grid-parts/navigation/template.php' );
-			// 			/**
-			// 			 * Due to the partial refresh, JS listeners no longer work for the menu.
-			// 			 * We need to re-inject the JS here to make previews work after the partial refresh.
-			// 			 */
-			// 			if ( ! AMP::is_active() ) {
-			// 				echo '<script>';
-			// 				include get_theme_file_path( 'assets/js/nav.min.js' );
-			// 				echo '<script>';
-			// 			}
-			// 		},
-			// 	],
-			// ],
 		]
 	);
 }
