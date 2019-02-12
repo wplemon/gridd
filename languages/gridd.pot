@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gridd 1.0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/gridd\n"
-"POT-Creation-Date: 2019-02-11 18:43:36+00:00\n"
+"POT-Creation-Date: 2019-02-12 21:23:37+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1466,63 +1466,63 @@ msgstr ""
 msgid "Documentation"
 msgstr ""
 
-#: inc/gridd.php:270
+#: inc/gridd.php:269
 msgid "Pale Pink"
 msgstr ""
 
-#: inc/gridd.php:275
+#: inc/gridd.php:274
 msgid "Vivid Red"
 msgstr ""
 
-#: inc/gridd.php:280
+#: inc/gridd.php:279
 msgid "Luminous Vivid Orange"
 msgstr ""
 
-#: inc/gridd.php:285
+#: inc/gridd.php:284
 msgid "Luminous Vivid Amber"
 msgstr ""
 
-#: inc/gridd.php:290
+#: inc/gridd.php:289
 msgid "Light Green Cyan"
 msgstr ""
 
-#: inc/gridd.php:295
+#: inc/gridd.php:294
 msgid "Vivid Green Cyan"
 msgstr ""
 
-#: inc/gridd.php:300
+#: inc/gridd.php:299
 msgid "Pale Cyan Blue"
 msgstr ""
 
-#: inc/gridd.php:305
+#: inc/gridd.php:304
 msgid "cyan"
 msgstr ""
 
-#: inc/gridd.php:310
+#: inc/gridd.php:309
 msgid "Vivid Cyan Blue"
 msgstr ""
 
-#: inc/gridd.php:315
+#: inc/gridd.php:314
 msgid "White"
 msgstr ""
 
-#: inc/gridd.php:320
+#: inc/gridd.php:319
 msgid "Very Light Gray"
 msgstr ""
 
-#: inc/gridd.php:325
+#: inc/gridd.php:324
 msgid "Cyan Bluish Gray"
 msgstr ""
 
-#: inc/gridd.php:330
+#: inc/gridd.php:329
 msgid "Blue Gray"
 msgstr ""
 
-#: inc/gridd.php:335
+#: inc/gridd.php:334
 msgid "Very Dark Gray"
 msgstr ""
 
-#: inc/gridd.php:340
+#: inc/gridd.php:339
 msgid "Black"
 msgstr ""
 
