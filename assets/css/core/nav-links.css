@@ -3,9 +3,6 @@
   position: relative;
   min-height: 2.75rem; }
 
-.navigation.post-navigation {
-  border-radius: 0; }
-
 .nav-links {
   position: relative;
   display: flex;
@@ -22,18 +19,7 @@
     left: 0;
     width: 100%; }
   .nav-links a {
-    display: block;
     text-decoration: none; }
-  .nav-links .nav-next,
-  .nav-links .nav-previous {
-    display: flex; }
-  .nav-links .nav-next:after,
-  .nav-links .nav-previous:before {
-    vertical-align: middle;
-    color: var(--gridd-links-color);
-    width: 1em;
-    height: 100%;
-    display: inline-block; }
   .nav-links .nav-previous a:before {
     content: "‹";
     padding-right: 0.5em; }
