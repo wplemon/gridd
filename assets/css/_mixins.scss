@@ -16,27 +16,23 @@
 }
 // Buttons
 @mixin button() {
-	border: 2px solid #222;
-	color: #fff;
-	background-color: #222;
+	// color: currentColor;
 	text-decoration: none !important;
-	border-radius: 0;
+	border-radius: 2.5em;
 	padding: .35em 1.25em;
 	transition: all 150ms ease-in-out;
+	position: relative;
+	border: 2px solid; //currentColor;
 
 	&:active,
 	&:hover {
-		cursor: default;
+		cursor: pointer;
 		outline: none;
 		text-decoration: none;
+		box-shadow: 1px 1px 1px 0px;
 	}
 
-	&:active,
-	&:focus,
-	&:hover {
-		color: #fff;
-		border-color: #333;
-		background: #333;
-		box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	&:focus {
+		box-shadow: inset 1px 1px 1px 0px;
 	}
 }
