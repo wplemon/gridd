@@ -1,58 +1,20 @@
 .wp-block-columns {
-	// display: -ms-grid;
-	display: grid;
-	grid-template-columns: 1fr;
-	// -ms-grid-columns: 1fr;
+	display: flex;
 
-	&.has-2-columns,
-	&.has-3-columns {
-		grid-template-columns: 1fr;
-		// -ms-grid-columns: 1fr;
-	}
+	// Responsiveness: Allow wrapping on mobile.
+	flex-wrap: wrap;
 
-	&.has-4-columns,
-	&.has-5-columns {
-		@media only screen and (min-width: 30em) {
-			grid-template-columns: 1fr 1fr;
-			// -ms-grid-columns: 1fr 1fr;
-		}
-	}
-
-	&.has-6-columns {
-		@media only screen and (min-width: 50em) {
-			grid-template-columns: 1fr 1fr 1fr;
-			// -ms-grid-columns: 1fr 1fr 1fr;
-		}
-	}
-
-	&.alignfull {
-		padding-left: var(--gridd-content-padding-left);
-		padding-right: var(--gridd-content-padding-right);
-	}
-
-	.wp-block-column {
-		margin: 0;
-		padding: 1em;
+	@include break-medium() {
+		flex-wrap: nowrap;
 	}
 }
 
-// .wp-block-columns {
-// 	display: flex;
-
-// 	// Responsiveness: Allow wrapping on mobile.
-// 	flex-wrap: wrap;
-
-// 	@include break-medium() {
-// 		flex-wrap: nowrap;
-// 	}
-// }
-
 .wp-block-column {
-	// flex-grow: 1;
+	flex-grow: 1;
 	margin-bottom: 1em;
 
 	// Responsiveness: Show at most one columns on mobile.
-	// flex-basis: 100%;
+	flex-basis: 100%;
 
 	// Prevent the columns from growing wider than their distributed sizes.
 	min-width: 0;
@@ -61,24 +23,24 @@
 	word-break: break-word; // For back-compat.
 	overflow-wrap: break-word; // New standard.
 
-	// @include break-small() {
+	@include break-small() {
 
-	// 	// Beyond mobile, allow 2 columns.
-	// 	flex-basis: calc(50% - #{$grid-size-large});
-	// 	flex-grow: 0;
+		// Beyond mobile, allow 2 columns.
+		flex-basis: calc(50% - #{$grid-size-large});
+		flex-grow: 0;
 
-	// 	// Add space between the 2 columns. Themes can customize this if they wish to work differently.
-	// 	// Only apply this beyond the mobile breakpoint, as there's only a single column on mobile.
-	// 	&:nth-child(even) {
-	// 		margin-left: $grid-size-large * 2;
-	// 	}
-	// }
+		// Add space between the 2 columns. Themes can customize this if they wish to work differently.
+		// Only apply this beyond the mobile breakpoint, as there's only a single column on mobile.
+		&:nth-child(even) {
+			margin-left: $grid-size-large * 2;
+		}
+	}
 
-	// @include break-medium() {
+	@include break-medium() {
 
-	// 	// When columns are in a single row, add space before all except the first.
-	// 	&:not(:first-child) {
-	// 		margin-left: $grid-size-large * 2;
-	// 	}
-	// }
+		// When columns are in a single row, add space before all except the first.
+		&:not(:first-child) {
+			margin-left: $grid-size-large * 2;
+		}
+	}
 }

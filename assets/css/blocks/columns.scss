@@ -1,0 +1,24 @@
+@import "block-library/colors";
+@import "block-library/variables";
+@import "block-library/animations";
+@import "block-library/breakpoints";
+@import "block-library/mixins";
+@import "block-library/z-index";
+@import "block-library/mixins";
+
+@import "block-library/columns/style.scss";
+
+.wp-block-columns {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+
+	&.alignfull {
+		padding-left: var(--gridd-content-padding-left);
+		padding-right: var(--gridd-content-padding-right);
+	}
+
+	.wp-block-column {
+		margin: 0;
+		padding: 1em;
+	}
+}

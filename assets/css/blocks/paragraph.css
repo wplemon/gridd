@@ -1,0 +1,95 @@
+/**
+ * Colors
+ */
+/**
+ * Often re-used variables
+ */
+/**
+ * Breakpoints & Media Queries
+ */
+/**
+ * Breakpoint mixins
+ */
+/**
+ * Long content fade mixin
+ *
+ * Creates a fading overlay to signify that the content is longer
+ * than the space allows.
+ */
+/**
+ * Button states and focus styles
+ */
+/**
+ * Applies editor left position to the selector passed as argument
+ */
+/**
+ * Applies editor right position to the selector passed as argument
+ */
+/**
+ * Styles that are reused verbatim in a few places
+ */
+/**
+ * Breakpoint mixins
+ */
+/**
+ * Long content fade mixin
+ *
+ * Creates a fading overlay to signify that the content is longer
+ * than the space allows.
+ */
+/**
+ * Button states and focus styles
+ */
+/**
+ * Applies editor left position to the selector passed as argument
+ */
+/**
+ * Applies editor right position to the selector passed as argument
+ */
+/**
+ * Styles that are reused verbatim in a few places
+ */
+.is-small-text {
+  font-size: 14px; }
+
+.is-regular-text {
+  font-size: 16px; }
+
+.is-large-text {
+  font-size: 36px; }
+
+.is-larger-text {
+  font-size: 48px; }
+
+.has-drop-cap:not(:focus)::first-letter {
+  float: left;
+  font-size: 8.4em;
+  line-height: 0.68;
+  font-weight: 100;
+  margin: 0.05em 0.1em 0 0;
+  text-transform: uppercase;
+  font-style: normal; }
+
+.has-drop-cap:not(:focus)::after {
+  content: "";
+  display: table;
+  clear: both;
+  padding-top: 14px; }
+
+p.has-background {
+  padding: 20px 30px; }
+
+p.has-text-color a {
+  color: inherit; }
+
+p.is-small-text {
+  font-size: calc(1em / var(--gridd-typo-scale)); }
+p.is-regular-text {
+  font-size: 1em; }
+p.is-large-text {
+  font-size: calc(var(--gridd-typo-scale) * 1em); }
+p.is-larger-text {
+  font-size: calc(var(--gridd-typo-scale) * var(--gridd-typo-scale) * 1em); }
+
+p.has-background {
+  padding: 1.5em 2em; }

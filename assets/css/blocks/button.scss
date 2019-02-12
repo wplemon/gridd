@@ -1,0 +1,47 @@
+@import "block-library/colors";
+@import "block-library/variables";
+@import "block-library/animations";
+@import "block-library/breakpoints";
+@import "block-library/mixins";
+@import "block-library/z-index";
+@import "block-library/mixins";
+
+@import "block-library/button/style.scss";
+
+@import "../variables";
+
+.wp-block-button__link {
+	background-color: $very-dark-gray;
+	border-radius: 3em;
+	font-size: 1em;
+	padding: .5em 1em;
+
+	// Make sure buttons text remains visible if user doesn't select a text color.
+	&:not(.has-text-color) {
+		color: $very-light-gray;
+
+		&.has {
+
+			&-pale-pink,
+			&-light-green-cyan,
+			&-pale-cyan-blue,
+			&-very-light-gray {
+				&-background-color {
+					color: $very-dark-gray;
+				}
+			}
+		}
+
+		&:visited,
+		&:focus,
+		&:hover,
+		&:visited:focus,
+		&:visited:hover {
+			color: $very-light-gray;
+		}
+	}
+}
+
+.is-style-outline {
+	color: currentColor;
+}

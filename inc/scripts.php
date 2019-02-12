@@ -75,6 +75,16 @@ class Scripts {
 	private static $widgets = [];
 
 	/**
+	 * An array of blocks used in this page.
+	 *
+	 * @static
+	 * @access private
+	 * @since 1.0.2
+	 * @var array
+	 */
+	private static $blocks = [];
+
+	/**
 	 * Constructor.
 	 *
 	 * @since 1.0
@@ -103,6 +113,13 @@ class Scripts {
 
 		// Add widget styles.
 		add_filter( 'gridd_widget_output', [ $this, 'widget_output' ], 10, 4 );
+
+		/**
+		 * Use a filter to figure out which blocks are used.
+		 * We'll use this to populate the $blocks property of this object
+		 * and enque the CSS needed for them.
+		 */
+		add_filter( 'render_block', [ $this, 'render_block' ], 10, 2 );		
 	}
 
 	/**
@@ -229,10 +246,6 @@ class Scripts {
 		$style->add_file( get_theme_file_path( 'assets/css/core/grid.min.css' ) );
 		$style->add_file( get_theme_file_path( 'assets/css/core/layout.min.css' ) );
 		$style->add_file( get_theme_file_path( 'assets/css/core/links.min.css' ) );
-		if ( ! apply_filters( 'gridd_use_core_blocks_styles', false ) ) {
-			$style->add_file( get_theme_file_path( 'assets/css/core/blocks-critical.min.css' ) );
-		}
-
 
 		// Adminbar.
 		if ( is_admin_bar_showing() ) {
@@ -321,16 +334,16 @@ class Scripts {
 		$style->add_file( get_theme_file_path( 'assets/css/core/nav-links.min.css' ) );
 		$style->add_file( get_theme_file_path( 'assets/css/core/post-sticky.min.css' ) );
 
-		if ( apply_filters( 'gridd_use_core_blocks_styles', false ) ) {
-			// Add blocks styles from wp-core.
-			$style->add_file( ABSPATH . WPINC . '/css/dist/block-library/style.min.css' );
-			$style->add_file( ABSPATH . WPINC . '/css/dist/block-library/theme.min.css' );
-		} else {
-			// Add custom blocks styles for this theme.
-			$style->add_file( get_theme_file_path( 'assets/css/core/blocks-secondary.min.css' ) );
-		}
-
 		$style->the_css( 'gridd-inline-css-late-styles' );
+
+		// Add blocks styles.
+		$style = Style::get_instance( 'blocks-styles' );
+		$blocks = $this->get_blocks();
+		foreach ( $blocks as $block ) {
+			$block = str_replace( 'core/', '', $block );
+			$style->add_file( get_theme_file_path( "assets/css/blocks/$block.min.css" ) );
+		}
+		$style->the_css( 'blocks-styles' );
 	}
 
 	/**
@@ -460,5 +473,33 @@ class Scripts {
 
 		// Return the widget output, with the CSS prepended.
 		return $styles . $widget_output;
+	}
+
+
+	/**
+	 * Filters the content of a single block.
+	 *
+	 * @since 1.0.2
+	 * @access public
+	 * @param string $block_content The block content about to be appended.
+	 * @param array  $block         The full block, including name and attributes.
+	 * @return string               Returns $block_content unaltered.
+	 */
+	public function render_block( $block_content, $block ) {
+		if ( $block['blockName'] ) {
+			self::$blocks[] = $block['blockName'];
+		}
+		return $block_content;
+	}
+
+	/**
+	 * Get an array of blocks used in this page.
+	 *
+	 * @access public
+	 * @since 1.0.2
+	 * @return array
+	 */
+	public function get_blocks() {
+		return array_unique( self::$blocks );
 	}
 }

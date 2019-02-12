@@ -1,6 +1,6 @@
 .wp-block-table {
 	width: 100%;
-	min-width: 30em;
+	min-width: $break-mobile / 2;
 	border-collapse: collapse;
 
 	td,

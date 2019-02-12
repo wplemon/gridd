@@ -42,8 +42,8 @@
 		line-height: 1.25;
 		z-index: 1;
 		margin-bottom: 0;
-		max-width: var(--gridd-content-max-width-calculated);
-		padding: 1em;
+		max-width: $content-width;
+		padding: $block-padding;
 		text-align: center;
 
 		a,
@@ -86,7 +86,7 @@
 	// Apply max-width to floated items that have no intrinsic width
 	&.alignleft,
 	&.alignright {
-		max-width: calc(var(--gridd-content-max-width-calculated) / 2);
+		max-width: $content-width / 2;
 		width: 100%;
 	}
 

@@ -1,0 +1,40 @@
+@import "block-library/colors";
+@import "block-library/variables";
+@import "block-library/animations";
+@import "block-library/breakpoints";
+@import "block-library/mixins";
+@import "block-library/z-index";
+@import "block-library/mixins";
+
+@import "block-library/latest-comments/style.scss";
+
+.wp-block-latest-comments__comment {
+	font-size: calc(1em / var(--gridd-typo-scale));
+
+	.has-avatars & {
+		min-height: 2em;
+
+		.wp-block-latest-comments__comment-meta,
+		.wp-block-latest-comments__comment-excerpt {
+			margin-left: 3em;
+		}
+	}
+}
+
+.wp-block-latest-comments__comment-excerpt p {
+	font-size: calc(1em / var(--gridd-typo-scale));
+	margin: .25em 0 1em;
+}
+
+.wp-block-latest-comments__comment-date {
+	color: currentColor;
+	font-size: calc(1em / var(--gridd-typo-scale) / var(--gridd-typo-scale));
+}
+
+.wp-block-latest-comments .avatar,
+.wp-block-latest-comments__comment-avatar {
+	border-radius: 2em;
+	height: 2.5em;
+	margin-right: 1em;
+	width: 2.5em;
+}
