@@ -31,7 +31,7 @@ input[type="submit"] {
     cursor: pointer;
     outline: none;
     text-decoration: none;
-    box-shadow: 1px 1px 1px 0px; }
+    box-shadow: 0px 1px 1px 0px; }
   .button:focus,
   a.button:focus,
   a.button:visited:focus,
@@ -40,4 +40,4 @@ input[type="submit"] {
   input[type="button"]:focus,
   input[type="reset"]:focus,
   input[type="submit"]:focus {
-    box-shadow: inset 1px 1px 1px 0px; }
+    box-shadow: inset 0px 1px 1px 0px; }
