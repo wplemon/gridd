@@ -190,13 +190,15 @@ class Grid {
 		$css = '';
 
 		$args['small'] = ( empty( $args['small'] ) ) ? false : $args['small'];
+
+		$css .= "{$args['selector']}{display:grid;}";
+
 		if ( $args['small'] ) {
 
 			// Add breakpoint for small screens.
 			$css .= "@media only screen and (max-width:{$args['breakpoint']}){";
 
 			// Add styles for mobile grid.
-			$css .= "{$args['selector']}{display:grid;}";
 			$css .= self::get_styles( $args['small'], $args['selector'], $args['prefix'] );
 
 			// Find parts in the large grid that don't exist in the small grid.
@@ -215,12 +217,6 @@ class Grid {
 
 			// Close breakpoint for small screens.
 			$css .= '}';
-		} else {
-
-			// We don't have any setting for the small breakpoint.
-			// Fallback to display:block and have grid-parts one below the other
-			// using the default priorities.
-			$css .= "{$args['selector']}{display:block;}";
 		}
 
 		// Add breakpoint for large screens.
