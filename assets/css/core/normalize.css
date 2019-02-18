@@ -4,8 +4,10 @@ html {
   -ms-text-size-adjust: 100%; }
 
 body {
-  margin: 0;
-  position: relative; }
+  margin: 0; }
+  @media screen and (min-width: 600px) {
+    body {
+      position: relative; } }
 
 article,
 aside,
