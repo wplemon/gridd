@@ -141,7 +141,7 @@ class Content extends Grid_Part {
 			]
 		);
 		$style->add_file( get_theme_file_path( 'grid-parts/content/styles/default.min.css' ) );
-		$style->add_string( '@media only screen and (min-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '800px' ) . '){' );
+		$style->add_string( '@media only screen and (min-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . '){' );
 		$style->add_file( get_theme_file_path( 'grid-parts/content/styles/large.min.css' ) );
 		$style->add_string( '}' );
 

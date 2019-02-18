@@ -34,7 +34,7 @@ if ( false !== strpos( $responsive_mode, 'icon' ) ) {
 
 	// Add the media-query.
 	if ( false !== strpos( $responsive_mode, 'desktop-normal' ) ) {
-		$style->add_string( '@media only screen and (max-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '800px' ) . '){' );
+		$style->add_string( '@media only screen and (max-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . '){' );
 	}
 
 	// Add styles.
@@ -51,7 +51,7 @@ if ( false !== strpos( $responsive_mode, 'icon' ) ) {
 
 // Hide on mobile.
 if ( false !== strpos( $responsive_mode, 'mobile-hidden' ) ) {
-	$style->add_string( '@media only screen and (max-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '800px' ) . '){.gridd-tp-nav_' . $id . '.gridd-mobile-hidden{display:none;}}' );
+	$style->add_string( '@media only screen and (max-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . '){.gridd-tp-nav_' . $id . '.gridd-mobile-hidden{display:none;}}' );
 }
 
 // Replace ID with $id.

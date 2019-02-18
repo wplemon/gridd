@@ -43,7 +43,7 @@ $style->add_string(
 		[
 			'context'    => 'main',
 			'large'      => Grid::get_options( 'gridd_grid' ),
-			'breakpoint' => get_theme_mod( 'gridd_mobile_breakpoint', '800px' ),
+			'breakpoint' => get_theme_mod( 'gridd_mobile_breakpoint', '992px' ),
 			'selector'   => '.gridd-site-wrapper',
 			'prefix'     => false,
 		]

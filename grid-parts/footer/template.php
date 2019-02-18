@@ -21,7 +21,7 @@ $style->add_string(
 		[
 			'context'    => 'footer',
 			'large'      => Grid::get_options( 'gridd_footer_grid' ),
-			'breakpoint' => get_theme_mod( 'gridd_mobile_breakpoint', '800px' ),
+			'breakpoint' => get_theme_mod( 'gridd_mobile_breakpoint', '992px' ),
 			'selector'   => '.gridd-tp-footer > .inner',
 			'prefix'     => true,
 		]

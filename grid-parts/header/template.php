@@ -20,18 +20,18 @@ $style->add_string(
 		[
 			'context'    => 'header',
 			'large'      => Grid::get_options( 'gridd_header_grid' ),
-			'breakpoint' => get_theme_mod( 'gridd_mobile_breakpoint', '800px' ),
+			'breakpoint' => get_theme_mod( 'gridd_mobile_breakpoint', '992px' ),
 			'selector'   => '.gridd-tp-header > .inner',
 			'prefix'     => true,
 		]
 	)
 );
 $style->add_file( get_theme_file_path( 'grid-parts/header/styles/default.min.css' ) );
-$style->add_string( '@media only screen and (min-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '800px' ) . '){' );
+$style->add_string( '@media only screen and (min-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . '){' );
 $style->add_file( get_theme_file_path( 'grid-parts/header/styles/large.min.css' ) );
 $style->add_string( '}' );
 if ( true === get_theme_mod( 'gridd_header_sticky', false ) && false === get_theme_mod( 'gridd_header_sticky_mobile', false ) ) {
-	$style->add_string( '@media only screen and (max-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '800px' ) . '){.gridd-tp.gridd-tp-header.gridd-sticky{position:relative;}}' );
+	$style->add_string( '@media only screen and (max-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . '){.gridd-tp.gridd-tp-header.gridd-sticky{position:relative;}}' );
 }
 $style->add_vars(
 	[

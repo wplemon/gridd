@@ -55,7 +55,7 @@ gridd_add_customizer_field(
 		'tooltip'     => __( 'Screen sizes below the breakpoint defined will get a stacked view instead of grid.', 'gridd' ),
 		'section'     => 'gridd_grid',
 		'priority'    => 20,
-		'default'     => '800px',
+		'default'     => '992px',
 	]
 );
 
