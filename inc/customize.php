@@ -205,27 +205,21 @@ if ( class_exists( 'WooCommerce' ) ) {
 function gridd_get_grid_default_value() {
 	return [
 		'rows'         => 4,
-		'columns'      => 2,
+		'columns'      => 1,
 		'areas'        => [
 			'header'      => [
-				'cells' => [ [ 1, 1 ], [ 1, 2 ] ],
-			],
-			'breadcrumbs' => [
-				'cells' => [ [ 2, 1 ] ],
+				'cells' => [ [ 1, 1 ] ],
 			],
 			'content'     => [
-				'cells' => [ [ 3, 1 ] ],
-			],
-			'sidebar_1'   => [
-				'cells' => [ [ 2, 2 ], [ 3, 2 ] ],
+				'cells' => [ [ 2, 1 ] ],
 			],
 			'footer'      => [
-				'cells' => [ [ 4, 1 ], [ 4, 2 ] ],
+				'cells' => [ [ 3, 1 ] ],
 			],
 		],
 		'gridTemplate' => [
-			'rows'    => [ 'auto', '3.5em', 'auto', 'auto' ],
-			'columns' => [ 'auto', '350px' ],
+			'rows'    => [ 'auto', 'auto', 'auto' ],
+			'columns' => [ 'auto' ],
 		],
 	];
 }
