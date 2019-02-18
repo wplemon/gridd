@@ -18,14 +18,6 @@
 		}
 	}
 
-    @for $i from 3 through 8 {
-
-        &.columns-#{ $i } .blocks-gallery-image,
-        &.columns-#{ $i } .blocks-gallery-item {
-            margin-right: 1em;
-        }
-    }
-
 	// Apply max-width to floated items that have no intrinsic width.
 	&.alignleft,
 	&.alignright {
