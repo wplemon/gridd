@@ -59,7 +59,7 @@ class Grid {
 				$grid = $grid_json;
 			}
 		}
-		return wp_parse_args( $grid, $defaults );
+		return apply_filters( 'gridd_get_options', wp_parse_args( $grid, $defaults ), $theme_mod );
 	}
 
 	/**
