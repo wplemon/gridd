@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2.0 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Gridd 1.0.1\n"
+"Project-Id-Version: Gridd 1.0.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/gridd\n"
-"POT-Creation-Date: 2019-02-12 21:23:37+00:00\n"
+"POT-Creation-Date: 2019-02-23 12:55:25+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -81,7 +81,7 @@ msgstr ""
 #: grid-parts/header/customizer-contact-info.php:102
 #: grid-parts/header/customizer-search.php:31
 #: grid-parts/header/customizer-social-media.php:96
-#: grid-parts/navigation/customizer.php:127
+#: grid-parts/navigation/customizer.php:104
 #: grid-parts/sidebar/customizer.php:148
 msgid "Padding"
 msgstr ""
@@ -144,7 +144,7 @@ msgstr ""
 #: grid-parts/header/customizer-search.php:69
 #: grid-parts/header/customizer-social-media.php:115
 #: grid-parts/header/customizer.php:106
-#: grid-parts/navigation/customizer.php:139
+#: grid-parts/navigation/customizer.php:116
 #: grid-parts/sidebar/customizer.php:65
 #: inc/kirki/controls/php/class-kirki-control-background.php:48
 msgid "Background Color"
@@ -182,7 +182,7 @@ msgstr ""
 #: grid-parts/header/customizer-branding.php:241
 #: grid-parts/header/customizer-contact-info.php:122
 #: grid-parts/header/customizer-social-media.php:152
-#: grid-parts/navigation/customizer.php:267
+#: grid-parts/navigation/customizer.php:221
 #: inc/kirki/controls/php/class-kirki-control-dimensions.php:133
 #: inc/kirki/controls/php/class-kirki-control-typography.php:151
 msgid "Center"
@@ -724,15 +724,15 @@ msgstr ""
 msgid "Navigation %d"
 msgstr ""
 
-#: grid-parts/navigation/class-navigation.php:294
+#: grid-parts/navigation/class-navigation.php:248
 msgid "Collapse Child Menu"
 msgstr ""
 
-#: grid-parts/navigation/class-navigation.php:295
+#: grid-parts/navigation/class-navigation.php:249
 msgid "Expand Child Menu"
 msgstr ""
 
-#: grid-parts/navigation/class-navigation.php:296
+#: grid-parts/navigation/class-navigation.php:250
 msgid "Toggle Child Menu"
 msgstr ""
 
@@ -792,7 +792,7 @@ msgstr ""
 msgid "Hide on mobile"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:128
+#: grid-parts/navigation/customizer.php:105
 msgid ""
 "Inner padding for this grid-part. Use any valid CSS value. For details on "
 "how padding works, please refer to <a "
@@ -800,36 +800,36 @@ msgid ""
 "target=\"_blank\" rel=\"nofollow\">this article</a>."
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:140
+#: grid-parts/navigation/customizer.php:117
 msgid "Controls the overall background color for this grid-part."
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:155
+#: grid-parts/navigation/customizer.php:132
 msgid "Items Color"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:156
+#: grid-parts/navigation/customizer.php:133
 msgid ""
 "Select the color used for your menu items. Please choose a color with "
 "sufficient contrast with the selected background-color."
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:171
+#: grid-parts/navigation/customizer.php:148
 msgid "Accent Background Color"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:172
+#: grid-parts/navigation/customizer.php:149
 msgid ""
 "Controls the background-color for menu items on hover, as well as for the "
 "currently active menu-item. Applies to both parent and child (dropdown) "
 "menu items."
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:187
+#: grid-parts/navigation/customizer.php:164
 msgid "Accent Items Color"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:188
+#: grid-parts/navigation/customizer.php:165
 msgid ""
 "Select the color used for your menu items on hover, as well as for the "
 "currently active menu-item. Applies to both parent and child (dropdown) "
@@ -837,118 +837,126 @@ msgid ""
 "selected background-color."
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:204
+#: grid-parts/navigation/customizer.php:181
 msgid "Enable Vertical Menu Mode"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:205
+#: grid-parts/navigation/customizer.php:182
 msgid ""
 "If your layout is column-based and you want a vertical side-navigation "
 "enable this option."
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:245
+#: grid-parts/navigation/customizer.php:199
 msgid "Justify Items"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:246
+#: grid-parts/navigation/customizer.php:200
 msgid "Choose how menu items will be spread horizontally inside the menu container."
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:247
+#: grid-parts/navigation/customizer.php:201
 msgid ""
 "This helps distribute extra free space left over when all the items on a "
 "line have reached their maximum size. It also exerts some control over the "
 "alignment of items when they overflow the line."
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:265
+#: grid-parts/navigation/customizer.php:219
 msgid "Start"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:266
+#: grid-parts/navigation/customizer.php:220
 msgid "End"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:268
+#: grid-parts/navigation/customizer.php:222
 msgid "Space Between"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:269
+#: grid-parts/navigation/customizer.php:223
 msgid "Space Around"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:270
+#: grid-parts/navigation/customizer.php:224
 msgid "Space Evenly"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:279
+#: grid-parts/navigation/customizer.php:233
+msgid "Expand Label"
+msgstr ""
+
+#: grid-parts/navigation/customizer.php:235
+msgid "MENU"
+msgstr ""
+
+#: grid-parts/navigation/customizer.php:256
 msgid "Expand Icon"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:280
+#: grid-parts/navigation/customizer.php:257
 msgid "Select the icon that should be used to expand the navigation."
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:327
+#: grid-parts/navigation/customizer.php:281
 msgid "Expand Icon Position"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:328
+#: grid-parts/navigation/customizer.php:282
 msgid "Changes the position of the collapsed-menu icon inside the area."
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:333
+#: grid-parts/navigation/customizer.php:287
 msgid "Top Left"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:334
+#: grid-parts/navigation/customizer.php:288
 msgid "Top Center"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:335
+#: grid-parts/navigation/customizer.php:289
 msgid "Top Right"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:336
+#: grid-parts/navigation/customizer.php:290
 msgid "Center Left"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:337
+#: grid-parts/navigation/customizer.php:291
 #: inc/kirki/controls/php/class-kirki-control-background.php:90
 #: inc/kirki/controls/php/class-kirki-control-dimensions.php:121
 msgid "Center Center"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:338
+#: grid-parts/navigation/customizer.php:292
 msgid "Center Right"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:339
+#: grid-parts/navigation/customizer.php:293
 msgid "Bottom Left"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:340
+#: grid-parts/navigation/customizer.php:294
 msgid "Bottom Center"
 msgstr ""
 
-#: grid-parts/navigation/customizer.php:341
+#: grid-parts/navigation/customizer.php:295
 msgid "Bottom Right"
 msgstr ""
 
-#: grid-parts/navigation/template.php:117
+#: grid-parts/navigation/template.php:120
 msgid "Collapse Navigation"
 msgstr ""
 
-#: grid-parts/navigation/template.php:118
+#: grid-parts/navigation/template.php:121
 msgid "Expand Navigation"
 msgstr ""
 
-#: grid-parts/navigation/template.php:119
+#: grid-parts/navigation/template.php:122
 msgid "Toggle Navigation"
 msgstr ""
 
-#: grid-parts/navigation/template.php:161
+#: grid-parts/navigation/template.php:164
 #. translators: The navigation number.
 msgid "Please assign a menu to the \"Navigation %d\" menu."
 msgstr ""
@@ -1066,11 +1074,11 @@ msgstr ""
 msgid "Go Premium"
 msgstr ""
 
-#: inc/customize.php:239
+#: inc/customize.php:233
 msgid "Template"
 msgstr ""
 
-#: inc/customize.php:270 inc/customize.php:275
+#: inc/customize.php:264 inc/customize.php:269
 msgid ""
 "Background is visible under transparent grid-parts, or if the grid is not "
 "set to 100% width."
@@ -1666,12 +1674,6 @@ msgstr ""
 msgid "Default Browser Font-Family"
 msgstr ""
 
-#: inc/kirki/controls/php/class-kirki-control-code.php:37
-msgid ""
-"Please update your WordPress installation to a version newer than 4.9 to "
-"access the code control."
-msgstr ""
-
 #: inc/kirki/controls/php/class-kirki-control-dimension.php:41
 #: inc/kirki/controls/php/class-kirki-control-dimensions.php:138
 msgid "Invalid Value"
@@ -1933,11 +1935,11 @@ msgstr ""
 msgid "Customizing &#9656; %s"
 msgstr ""
 
-#: inc/kirki/modules/telemetry/class-kirki-modules-telemetry.php:144
+#: inc/kirki/modules/telemetry/class-kirki-modules-telemetry.php:146
 msgid "Help us improve Kirki."
 msgstr ""
 
-#: inc/kirki/modules/telemetry/class-kirki-modules-telemetry.php:145
+#: inc/kirki/modules/telemetry/class-kirki-modules-telemetry.php:147
 msgid ""
 "Help us begin a dialogue with theme developers, collaborate and improve "
 "both the theme you are using and the Kirki framework by agreeing to send "
@@ -1945,31 +1947,31 @@ msgid ""
 "collect any identifyable information about you or your website.</strong>"
 msgstr ""
 
-#: inc/kirki/modules/telemetry/class-kirki-modules-telemetry.php:149
+#: inc/kirki/modules/telemetry/class-kirki-modules-telemetry.php:151
 msgid "Data that will be sent"
 msgstr ""
 
-#: inc/kirki/modules/telemetry/class-kirki-modules-telemetry.php:154
+#: inc/kirki/modules/telemetry/class-kirki-modules-telemetry.php:156
 msgid "PHP Version"
 msgstr ""
 
-#: inc/kirki/modules/telemetry/class-kirki-modules-telemetry.php:158
+#: inc/kirki/modules/telemetry/class-kirki-modules-telemetry.php:160
 msgid "Theme Name"
 msgstr ""
 
-#: inc/kirki/modules/telemetry/class-kirki-modules-telemetry.php:162
+#: inc/kirki/modules/telemetry/class-kirki-modules-telemetry.php:164
 msgid "Theme Author"
 msgstr ""
 
-#: inc/kirki/modules/telemetry/class-kirki-modules-telemetry.php:166
+#: inc/kirki/modules/telemetry/class-kirki-modules-telemetry.php:168
 msgid "Theme URI"
 msgstr ""
 
-#: inc/kirki/modules/telemetry/class-kirki-modules-telemetry.php:170
+#: inc/kirki/modules/telemetry/class-kirki-modules-telemetry.php:172
 msgid "Field Types Used"
 msgstr ""
 
-#: inc/kirki/modules/telemetry/class-kirki-modules-telemetry.php:180
+#: inc/kirki/modules/telemetry/class-kirki-modules-telemetry.php:182
 #. translators: %1$s: URL to the server plugin code. %2$s: URL to the stats
 #. page.
 msgid ""
@@ -1979,19 +1981,19 @@ msgid ""
 "page</a>."
 msgstr ""
 
-#: inc/kirki/modules/telemetry/class-kirki-modules-telemetry.php:191
+#: inc/kirki/modules/telemetry/class-kirki-modules-telemetry.php:193
 msgid "I agree"
 msgstr ""
 
-#: inc/kirki/modules/telemetry/class-kirki-modules-telemetry.php:192
+#: inc/kirki/modules/telemetry/class-kirki-modules-telemetry.php:194
 msgid "No thanks"
 msgstr ""
 
-#: inc/kirki/modules/telemetry/class-kirki-modules-telemetry.php:193
+#: inc/kirki/modules/telemetry/class-kirki-modules-telemetry.php:195
 msgid "Show me the data"
 msgstr ""
 
-#: inc/kirki/modules/telemetry/class-kirki-modules-telemetry.php:194
+#: inc/kirki/modules/telemetry/class-kirki-modules-telemetry.php:196
 msgid "Collapse data"
 msgstr ""
 
@@ -2165,6 +2167,14 @@ msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "https://wplemon.com/"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Content & Footer"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Content Only"
 msgstr ""
 
 #: comments.php:38
