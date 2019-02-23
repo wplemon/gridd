@@ -148,21 +148,30 @@ h3.gridd-customizer-section-title {
 	}
 }
 
-#input_gridd_grid_nav_1_expand_icon_position,
-#input_gridd_grid_nav_2_expand_icon_position,
-#input_gridd_grid_nav_3_expand_icon_position,
-#input_gridd_grid_nav_4_expand_icon_position,
-#input_gridd_grid_nav_5_expand_icon_position,
-#input_gridd_grid_nav_6_expand_icon_position,
-#input_gridd_grid_nav_7_expand_icon_position,
-#input_gridd_grid_nav_8_expand_icon_position,
-#input_gridd_grid_nav_9_expand_icon_position,
-#input_gridd_grid_nav_10_expand_icon_position {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
+@for $i from 1 through 10 {
+	#input_gridd_grid_nav_#{ $i }_expand_icon_position {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
 
-	>label {
-		line-height: 2.5em;
+		>label {
+			line-height: 2.5em;
+		}
+	}
+}
+
+@for $i from 1 through 10 {
+	#customize-control-gridd_grid_nav_#{ $i } {
+		&_justify_content {
+			input {
+				&:checked {
+					+label {
+						svg {
+							fill: #fff;
+						}
+					}
+				}
+			}
+		}
 	}
 }
 

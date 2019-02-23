@@ -81,29 +81,95 @@ h3.gridd-customizer-section-title {
     padding: 10px;
     box-sizing: border-box; }
 
-#input_gridd_grid_nav_1_expand_icon_position,
-#input_gridd_grid_nav_2_expand_icon_position,
-#input_gridd_grid_nav_3_expand_icon_position,
-#input_gridd_grid_nav_4_expand_icon_position,
-#input_gridd_grid_nav_5_expand_icon_position,
-#input_gridd_grid_nav_6_expand_icon_position,
-#input_gridd_grid_nav_7_expand_icon_position,
-#input_gridd_grid_nav_8_expand_icon_position,
-#input_gridd_grid_nav_9_expand_icon_position,
+#input_gridd_grid_nav_1_expand_icon_position {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; }
+  #input_gridd_grid_nav_1_expand_icon_position > label {
+    line-height: 2.5em; }
+
+#input_gridd_grid_nav_2_expand_icon_position {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; }
+  #input_gridd_grid_nav_2_expand_icon_position > label {
+    line-height: 2.5em; }
+
+#input_gridd_grid_nav_3_expand_icon_position {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; }
+  #input_gridd_grid_nav_3_expand_icon_position > label {
+    line-height: 2.5em; }
+
+#input_gridd_grid_nav_4_expand_icon_position {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; }
+  #input_gridd_grid_nav_4_expand_icon_position > label {
+    line-height: 2.5em; }
+
+#input_gridd_grid_nav_5_expand_icon_position {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; }
+  #input_gridd_grid_nav_5_expand_icon_position > label {
+    line-height: 2.5em; }
+
+#input_gridd_grid_nav_6_expand_icon_position {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; }
+  #input_gridd_grid_nav_6_expand_icon_position > label {
+    line-height: 2.5em; }
+
+#input_gridd_grid_nav_7_expand_icon_position {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; }
+  #input_gridd_grid_nav_7_expand_icon_position > label {
+    line-height: 2.5em; }
+
+#input_gridd_grid_nav_8_expand_icon_position {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; }
+  #input_gridd_grid_nav_8_expand_icon_position > label {
+    line-height: 2.5em; }
+
+#input_gridd_grid_nav_9_expand_icon_position {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; }
+  #input_gridd_grid_nav_9_expand_icon_position > label {
+    line-height: 2.5em; }
+
 #input_gridd_grid_nav_10_expand_icon_position {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr; }
-  #input_gridd_grid_nav_1_expand_icon_position > label,
-  #input_gridd_grid_nav_2_expand_icon_position > label,
-  #input_gridd_grid_nav_3_expand_icon_position > label,
-  #input_gridd_grid_nav_4_expand_icon_position > label,
-  #input_gridd_grid_nav_5_expand_icon_position > label,
-  #input_gridd_grid_nav_6_expand_icon_position > label,
-  #input_gridd_grid_nav_7_expand_icon_position > label,
-  #input_gridd_grid_nav_8_expand_icon_position > label,
-  #input_gridd_grid_nav_9_expand_icon_position > label,
   #input_gridd_grid_nav_10_expand_icon_position > label {
     line-height: 2.5em; }
+
+#customize-control-gridd_grid_nav_1_justify_content input:checked + label svg {
+  fill: #fff; }
+
+#customize-control-gridd_grid_nav_2_justify_content input:checked + label svg {
+  fill: #fff; }
+
+#customize-control-gridd_grid_nav_3_justify_content input:checked + label svg {
+  fill: #fff; }
+
+#customize-control-gridd_grid_nav_4_justify_content input:checked + label svg {
+  fill: #fff; }
+
+#customize-control-gridd_grid_nav_5_justify_content input:checked + label svg {
+  fill: #fff; }
+
+#customize-control-gridd_grid_nav_6_justify_content input:checked + label svg {
+  fill: #fff; }
+
+#customize-control-gridd_grid_nav_7_justify_content input:checked + label svg {
+  fill: #fff; }
+
+#customize-control-gridd_grid_nav_8_justify_content input:checked + label svg {
+  fill: #fff; }
+
+#customize-control-gridd_grid_nav_9_justify_content input:checked + label svg {
+  fill: #fff; }
+
+#customize-control-gridd_grid_nav_10_justify_content input:checked + label svg {
+  fill: #fff; }
 
 .wp-full-overlay.collapsed .wp-full-overlay-sidebar {
   margin-left: -400px; }
