@@ -65,25 +65,25 @@ if ( $header_bg_img ) {
 					/**
 					 * Branding.
 					 */
-					get_template_part( 'grid-parts/header/template-branding' );
+					gridd_get_template_part( 'grid-parts/header/template-branding' );
 
 				} elseif ( 'header_search' === $part ) {
 					/**
 					 * Search.
 					 */
-					get_template_part( 'grid-parts/header/template-search' );
+					gridd_get_template_part( 'grid-parts/header/template-search' );
 
 				} elseif ( 'header_contact_info' === $part ) {
 					/**
 					 * Contact Info.
 					 */
-					get_template_part( 'grid-parts/header/template-contact-info' );
+					gridd_get_template_part( 'grid-parts/header/template-contact-info' );
 
 				} elseif ( 'social_media' === $part ) {
 					/**
 					 * Social Media.
 					 */
-					get_template_part( 'grid-parts/header/template-social-media' );
+					gridd_get_template_part( 'grid-parts/header/template-social-media' );
 
 				} else {
 					/**

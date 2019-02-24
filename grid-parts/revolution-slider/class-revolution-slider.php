@@ -82,7 +82,7 @@ class Revolution_Slider extends Grid_Part {
 	 */
 	public function render( $part ) {
 		if ( $this->id === $part ) {
-			get_template_part( 'grid-parts/revolution-slider/template' );
+			gridd_get_template_part( 'grid-parts/revolution-slider/template' );
 		}
 	}
 }

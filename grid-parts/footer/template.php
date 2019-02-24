@@ -67,13 +67,13 @@ $style->add_vars(
 					/**
 					 * Social Media.
 					 */
-					get_template_part( 'grid-parts/footer/template-social-media' );
+					gridd_get_template_part( 'grid-parts/footer/template-social-media' );
 
 				} elseif ( 'footer_copyright' === $part ) {
 					/**
 					 * Copyright.
 					 */
-					get_template_part( 'grid-parts/footer/template-footer-copyright' );
+					gridd_get_template_part( 'grid-parts/footer/template-footer-copyright' );
 
 				} else {
 					do_action( 'gridd_the_grid_part', $part );

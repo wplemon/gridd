@@ -36,7 +36,7 @@ $parts = gridd_get_post_parts();
 		 */
 		?>
 		<?php if ( 'post-thumbnail' === $part ) : ?>
-			<?php get_template_part( 'template-parts/thumbnail', get_post_type( $post->ID ) ); ?>
+			<?php gridd_get_template_part( 'template-parts/thumbnail', get_post_type( $post->ID ) ); ?>
 		<?php endif; ?>
 
 		<?php

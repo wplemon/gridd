@@ -59,7 +59,7 @@ gridd_add_customizer_field(
 				'selector'            => '.gridd-tp-footer_social_media',
 				'container_inclusive' => false,
 				'render_callback'     => function() {
-					get_template_part( 'grid-parts/footer/template-social-media' );
+					gridd_get_template_part( 'grid-parts/footer/template-social-media' );
 				},
 			],
 		],

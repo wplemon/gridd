@@ -7,4 +7,4 @@
  * @package Gridd
  */
 
-get_template_part( 'archive-download' );
+gridd_get_template_part( 'archive-download' );

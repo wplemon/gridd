@@ -34,7 +34,7 @@ $parts = gridd_get_post_parts();
 		 */
 		?>
 		<?php if ( 'post-thumbnail' === $part ) : ?>
-			<?php get_template_part( 'template-parts/thumbnail', get_post_type( $post->ID ) ); ?>
+			<?php gridd_get_template_part( 'template-parts/thumbnail', get_post_type( $post->ID ) ); ?>
 		<?php endif; ?>
 
 		<?php
@@ -45,7 +45,7 @@ $parts = gridd_get_post_parts();
 		<?php if ( 'post-content' === $part ) : ?>
 			<div class="entry-content container">
 				<?php the_content(); ?>
-				<?php get_template_part( 'template-parts/link-pages' ); ?>
+				<?php gridd_get_template_part( 'template-parts/link-pages' ); ?>
 			</div>
 		<?php endif; ?>
 
@@ -56,7 +56,7 @@ $parts = gridd_get_post_parts();
 		?>
 		<?php if ( 'post-category' === $part ) : ?>
 			<div class="entry-category gridd-contain">
-				<?php get_template_part( 'template-parts/post-category' ); ?>
+				<?php gridd_get_template_part( 'template-parts/post-category' ); ?>
 			</div>
 		<?php endif; ?>
 
@@ -67,7 +67,7 @@ $parts = gridd_get_post_parts();
 		?>
 		<?php if ( 'post-tags' === $part ) : ?>
 			<div class="entry-tags gridd-contain">
-				<?php get_template_part( 'template-parts/post-tags' ); ?>
+				<?php gridd_get_template_part( 'template-parts/post-tags' ); ?>
 			</div>
 		<?php endif; ?>
 
@@ -78,7 +78,7 @@ $parts = gridd_get_post_parts();
 		?>
 		<?php if ( 'post-date-author' === $part ) : ?>
 			<div class="entry-date-author gridd-contain">
-				<?php get_template_part( 'template-parts/post-date-author' ); ?>
+				<?php gridd_get_template_part( 'template-parts/post-date-author' ); ?>
 			</div>
 		<?php endif; ?>
 
@@ -89,13 +89,13 @@ $parts = gridd_get_post_parts();
 		?>
 		<?php if ( 'post-comments-link' === $part ) : ?>
 			<div class="entry-comments-link gridd-contain">
-				<?php get_template_part( 'template-parts/post-comments-link' ); ?>
+				<?php gridd_get_template_part( 'template-parts/post-comments-link' ); ?>
 			</div>
 		<?php endif; ?>
 
 	<?php endforeach; ?>
 
 	<footer class="entry-footer container">
-		<?php get_template_part( 'template-parts/entry-footer', get_post_type( $post->ID ) ); ?>
+		<?php gridd_get_template_part( 'template-parts/entry-footer', get_post_type( $post->ID ) ); ?>
 	</footer>
 </article>

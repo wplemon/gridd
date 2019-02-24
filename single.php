@@ -12,7 +12,7 @@ get_header();
 while ( have_posts() ) {
 	the_post();
 
-	get_template_part( 'template-parts/content', get_post_type() );
+	gridd_get_template_part( 'template-parts/content', get_post_type() );
 	if ( get_theme_mod( 'gridd_show_next_prev', true ) ) {
 		the_post_navigation();
 	}

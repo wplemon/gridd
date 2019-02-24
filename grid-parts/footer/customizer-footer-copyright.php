@@ -45,7 +45,7 @@ gridd_add_customizer_field(
 				'selector'            => '.gridd-tp-footer_copyright',
 				'container_inclusive' => false,
 				'render_callback'     => function() {
-					get_template_part( 'grid-parts/footer/template-footer-copyright' );
+					gridd_get_template_part( 'grid-parts/footer/template-footer-copyright' );
 				},
 			],
 		],

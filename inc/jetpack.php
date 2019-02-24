@@ -85,9 +85,9 @@ class Jetpack {
 		while ( have_posts() ) {
 			the_post();
 			if ( is_search() ) :
-				get_template_part( 'template-parts/content', 'search' );
+				gridd_get_template_part( 'template-parts/content', 'search' );
 			else :
-				get_template_part( 'template-parts/content', get_post_format() );
+				gridd_get_template_part( 'template-parts/content', get_post_format() );
 			endif;
 		}
 	}

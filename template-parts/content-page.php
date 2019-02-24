@@ -25,13 +25,13 @@ $parts = gridd_get_post_parts();
 		<?php endif; ?>
 
 		<?php if ( 'post-thumbnail' === $part ) : ?>
-			<?php get_template_part( 'template-parts/thumbnail', get_post_type( $post->ID ) ); ?>
+			<?php gridd_get_template_part( 'template-parts/thumbnail', get_post_type( $post->ID ) ); ?>
 		<?php endif; ?>
 
 		<?php if ( 'post-content' === $part ) : ?>
 			<div class="entry-content container">
 				<?php the_content(); ?>
-				<?php get_template_part( 'template-parts/link-pages' ); ?>
+				<?php gridd_get_template_part( 'template-parts/link-pages' ); ?>
 			</div>
 		<?php endif; ?>
 

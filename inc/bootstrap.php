@@ -51,6 +51,25 @@ spl_autoload_register(
 	}
 );
 
+/**
+ * Hookable get_template_part() function.
+ * Allows us to get templates from a plugin or any other path using custom hooks.
+ *
+ * @since 1.0.3
+ * @param string $slug The template slug.
+ * @param string $name The template name.
+ * @see https://developer.wordpress.org/reference/functions/get_template_part/
+ * @return void
+ */
+function gridd_get_template_part( $slug, $name = null ) {
+	$custom_path = apply_filters( 'gridd_get_template_part', false, $slug, $name );
+	if ( $custom_path ) {
+		include $custom_path;
+		return;
+	}
+	get_template_part( $slug, $name );
+}
+
 // Add the widget filters.
 Widget_Output_Filters::get_instance();
 
