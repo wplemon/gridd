@@ -11,19 +11,17 @@ use Gridd\Customizer;
 // Include Social Icons Definitions.
 require_once get_template_directory() . '/inc/social-icons.php';
 
-gridd_add_customizer_section(
+gridd_add_customizer_outer_section(
 	'gridd_grid_part_details_footer_social_media',
 	[
 		/* translators: The grid-part label. */
 		'title'       => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Footer Contact Info', 'gridd' ) ),
-		'section'     => 'gridd_grid_part_details_footer',
 		'description' => Customizer::section_description(
 			'gridd_grid_part_details_footer_social_media',
 			[
 				'docs' => 'https://wplemon.com/documentation/gridd/grid-parts/footer/',
 			]
 		),
-		'priority'    => 20,
 	]
 );
 

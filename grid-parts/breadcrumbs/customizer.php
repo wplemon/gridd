@@ -7,12 +7,11 @@
 
 use Gridd\Customizer;
 
-gridd_add_customizer_section(
+gridd_add_customizer_outer_section(
 	'gridd_grid_part_details_breadcrumbs',
 	[
 		/* translators: The grid-part label. */
 		'title'       => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Breadcrumbs', 'gridd' ) ),
-		'section'     => 'gridd_grid',
 		'description' => Customizer::section_description(
 			'gridd_grid_part_details_breadcrumbs',
 			[
@@ -23,7 +22,6 @@ gridd_add_customizer_section(
 				'docs' => 'https://wplemon.com/documentation/gridd/grid-parts/breadcrumbs/',
 			]
 		),
-		'priority'    => 20,
 	]
 );
 

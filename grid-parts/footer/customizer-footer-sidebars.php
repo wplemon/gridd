@@ -24,7 +24,7 @@ for ( $i = 1; $i <= $sidebars_nr; $i++ ) {
 function gridd_add_footer_widget_area_options( $id ) {
 
 	// Add section.
-	gridd_add_customizer_section(
+	gridd_add_customizer_outer_section(
 		"gridd_grid_part_details_footer_sidebar_$id",
 		[
 			'title'       => sprintf(
@@ -43,7 +43,6 @@ function gridd_add_footer_widget_area_options( $id ) {
 					'docs' => 'https://wplemon.com/documentation/gridd/grid-parts/footer/',
 				]
 			),
-			'section'     => 'gridd_grid_part_details_footer',
 		]
 	);
 

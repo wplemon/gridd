@@ -96,6 +96,22 @@ function gridd_add_customizer_section( $id, $args ) {
 
 /**
  * Proxy function for Kirki.
+ * Adds an outer section.
+ *
+ * @since 1.0.3
+ * @param string $id   The section ID.
+ * @param array  $args The field arguments.
+ * @return void
+ */
+function gridd_add_customizer_outer_section( $id, $args ) {
+	$args['panel'] = 'gridd_hidden_panel';
+	$args['type']  = 'outer';
+	unset( $args['section'] );
+	gridd_add_customizer_section( $id, $args );
+}
+
+/**
+ * Proxy function for Kirki.
  *
  * @since 1.0
  * @param string $id   The section ID.
@@ -115,6 +131,17 @@ gridd_add_customizer_panel(
 	[
 		'title'    => esc_html__( 'Theme Options', 'gridd' ),
 		'priority' => 1,
+	]
+);
+
+/**
+ * This is a dummy panel used for outer sections.
+ */
+gridd_add_customizer_panel(
+	'gridd_hidden_panel',
+	[
+		'title'    => '',
+		'priority' => 999,
 	]
 );
 

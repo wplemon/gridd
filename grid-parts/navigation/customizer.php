@@ -38,7 +38,7 @@ function gridd_nav_customizer_options( $id ) {
 	/**
 	 * Add Customizer Sections.
 	 */
-	gridd_add_customizer_section(
+	gridd_add_customizer_outer_section(
 		"gridd_grid_part_details_nav_$id",
 		[
 			'title'       => sprintf(
@@ -59,7 +59,6 @@ function gridd_nav_customizer_options( $id ) {
 					'docs' => 'https://wplemon.com/documentation/gridd/grid-parts/navigation/',
 				]
 			),
-			'section'     => 'gridd_grid',
 		]
 	);
 

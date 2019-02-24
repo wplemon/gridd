@@ -27,7 +27,7 @@ function gridd_sidebar_customizer_options( $id ) {
 	/* translators: The number of the widget area. */
 	$label = get_theme_mod( "gridd_grid_widget_area_{$id}_name", sprintf( esc_html__( 'Widget Area %d', 'gridd' ), intval( $id ) ) );
 
-	gridd_add_customizer_section(
+	gridd_add_customizer_outer_section(
 		"gridd_grid_part_details_sidebar_$id",
 		[
 			/* translators: The grid-part label. */
@@ -41,7 +41,6 @@ function gridd_sidebar_customizer_options( $id ) {
 					'docs' => 'https://wplemon.com/documentation/gridd/grid-parts/widget-area/',
 				]
 			),
-			'section'     => 'gridd_grid',
 		]
 	);
 

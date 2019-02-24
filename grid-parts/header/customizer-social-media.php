@@ -14,19 +14,17 @@ if ( ! function_exists( 'gridd_social_icons_svg' ) ) {
 	require_once get_template_directory() . '/inc/social-icons.php';
 }
 
-gridd_add_customizer_section(
+gridd_add_customizer_outer_section(
 	'gridd_grid_part_details_social_media',
 	[
 		/* translators: The grid-part label. */
 		'title'       => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Header Contact Info', 'gridd' ) ),
-		'section'     => 'gridd_grid_part_details_header',
 		'description' => Customizer::section_description(
 			'gridd_grid_part_details_social_media',
 			[
 				'docs' => 'https://wplemon.com/documentation/gridd/grid-parts/header/social-media/',
 			]
 		),
-		'priority'    => 20,
 	]
 );
 

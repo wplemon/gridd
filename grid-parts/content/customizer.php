@@ -7,19 +7,17 @@
 
 use Gridd\Customizer;
 
-gridd_add_customizer_section(
+gridd_add_customizer_outer_section(
 	'gridd_grid_part_details_content',
 	[
 		/* translators: The grid-part label. */
 		'title'       => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Content', 'gridd' ) ),
-		'section'     => 'gridd_grid',
 		'description' => Customizer::section_description(
 			'gridd_grid_part_details_content',
 			[
 				'docs' => 'https://wplemon.com/documentation/gridd/grid-parts/content/',
 			]
 		),
-		'priority'    => 90,
 	]
 );
 

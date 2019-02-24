@@ -8,7 +8,7 @@
 use Gridd\Grid_Part\Header;
 use Gridd\Customizer;
 
-gridd_add_customizer_section(
+gridd_add_customizer_outer_section(
 	'gridd_grid_part_details_header_contact_info',
 	[
 		/* translators: The grid-part label. */
@@ -22,8 +22,6 @@ gridd_add_customizer_section(
 				'docs' => 'https://wplemon.com/documentation/gridd/grid-parts/header/contact-info/',
 			]
 		),
-		'section'     => 'gridd_grid_part_details_header',
-		'priority'    => 20,
 	]
 );
 

@@ -216,3 +216,6 @@ h3.gridd-customizer-section-title {
   padding-bottom: 12px; }
   .customize-control:last-child {
     border-bottom: none; }
+
+#accordion-panel-gridd_hidden_panel {
+  display: none !important; }
