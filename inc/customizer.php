@@ -58,6 +58,14 @@ class Customizer {
 		'gridd_grid_sidebar_4_background_color'                        => 'gridd_grid_sidebar_4_color',
 		'gridd_grid_sidebar_5_background_color'                        => 'gridd_grid_sidebar_5_color',
 		'gridd_grid_sidebar_6_background_color'                        => 'gridd_grid_sidebar_6_color',
+		'gridd_grid_reusable_block_1_bg_color'                         => 'gridd_grid_reusable_block_1_color',
+		'gridd_grid_reusable_block_2_bg_color'                         => 'gridd_grid_reusable_block_2_color',
+		'gridd_grid_reusable_block_3_bg_color'                         => 'gridd_grid_reusable_block_3_color',
+		'gridd_grid_reusable_block_4_bg_color'                         => 'gridd_grid_reusable_block_4_color',
+		'gridd_grid_reusable_block_5_bg_color'                         => 'gridd_grid_reusable_block_5_color',
+		'gridd_grid_reusable_block_6_bg_color'                         => 'gridd_grid_reusable_block_6_color',
+		'gridd_grid_reusable_block_7_bg_color'                         => 'gridd_grid_reusable_block_7_color',
+		'gridd_grid_reusable_block_8_bg_color'                         => 'gridd_grid_reusable_block_8_color',
 	];
 
 	/**
