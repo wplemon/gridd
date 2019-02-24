@@ -1,6 +1,6 @@
 @import "../../../assets/css/functions";
 
-.gridd-tp.gridd-tp-breadcrumbs {
+.gridd-tp-breadcrumbs {
 	background-color: var(--gridd-breadcrumbs-bg);
 	font-size: var(--gridd-breadcrumbs-font-size);
 
@@ -20,18 +20,12 @@
 }
 
 nav.breadcrumbs {
-	// padding: 0 1em;
 	z-index: 2;
 	width: 100%;
 
 	a {
 		font-weight: bold;
 		text-decoration: none;
-
-		&:hover,
-		&:focus {
-			background: transparent;
-		}
 	}
 
 	ul {
@@ -49,11 +43,9 @@ nav.breadcrumbs {
 	.breadcrumbs__crumb {
 		+ .breadcrumbs__crumb {
 			&:before {
-				content: '›';
-				width: .6em;
+				content: '\203A';
 				opacity: 0.5;
-				padding: 0 0.5em;
-				box-sizing: content-box;
+				padding: 0 0.75em;
 			}
 		}
 
