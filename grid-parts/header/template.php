@@ -19,6 +19,7 @@ $style->add_string(
 	Grid::get_styles_responsive(
 		[
 			'context'    => 'header',
+			'small'      => Grid::get_options( 'gridd_header_grid' ),
 			'large'      => Grid::get_options( 'gridd_header_grid' ),
 			'breakpoint' => get_theme_mod( 'gridd_mobile_breakpoint', '992px' ),
 			'selector'   => '.gridd-tp-header > .inner',
