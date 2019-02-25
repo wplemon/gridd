@@ -129,7 +129,8 @@
 
 .grid-selected-part {
   display: flex;
-  z-index: 1; }
+  z-index: 1;
+  opacity: .83; }
   .grid-selected-part .part-label-wrapper {
     padding: 4px;
     font-size: 12px;
@@ -147,26 +148,30 @@
     word-break: break-all;
     position: relative; }
     .grid-selected-part .inner:hover .actions {
-      display: block; }
+      display: flex; }
     .grid-selected-part .inner .actions {
       display: none;
       position: absolute;
-      top: 0;
-      right: 0; }
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translateX(-50%) translateY(-50%);
+              transform: translateX(-50%) translateY(-50%);
+      border-radius: 3px;
+      overflow: hidden; }
       .grid-selected-part .inner .actions .add,
       .grid-selected-part .inner .actions .delete,
       .grid-selected-part .inner .actions .edit,
       .grid-selected-part .inner .actions .resize {
-        background: rgba(255, 255, 255, .83);
-        border: none;
-        padding: 4px; }
+        background: #fff;
+        padding: 4px;
+        border: 1px solid rgba(0, 0, 0, .3); }
         .grid-selected-part .inner .actions .add .dashicons,
         .grid-selected-part .inner .actions .delete .dashicons,
         .grid-selected-part .inner .actions .edit .dashicons,
         .grid-selected-part .inner .actions .resize .dashicons {
-          font-size: 16px;
-          width: 16px;
-          height: 16px; }
+          font-size: 15px;
+          width: 15px;
+          height: 15px; }
       .grid-selected-part .inner .actions .edit {
         color: #000; }
       .grid-selected-part .inner .actions .delete {
