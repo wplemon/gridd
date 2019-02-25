@@ -405,8 +405,12 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 
 		if ( control.editingPart ) {
 
+			control.container.find( '.gridd-grid-builder-grids' ).addClass( 'editing-parts' );
+
 			// Add .editing class to the preview in the grid.
 			control.container.find( '.grid-selected-part.selected-part-' + control.editingPart ).addClass( 'editing' );
+		} else {
+			control.container.find( '.gridd-grid-builder-grids' ).removeClass( 'editing-parts' );
 		}
 
 		selectedContainer.css( 'grid-template-columns', 'repeat(' + control.gridVal.columns + ', 1fr)' );
@@ -528,7 +532,7 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 			if ( jQuery( e.target ).hasClass( 'edit' ) || jQuery( e.target ).hasClass( 'resize' ) || jQuery( e.target ).hasClass( 'delete' ) ) {
 				return;
 			}
-			jQuery( e.currentTarget ).find( '.actions .resize' ).on( 'click',);
+			jQuery( e.currentTarget ).find( '.actions .resize' ).click();
 		});
 
 		control.container.find( '.grid-selected-part .actions .resize' ).on( 'click', function( e ) {
@@ -549,13 +553,15 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 			// Select parts in dragSelect.
 			selectables = [];
 			control.sanitizeGridVal();
-			_.each( control.gridVal.areas[ id ].cells, function( cell ) {
-				_.each( allCells, function( HTMLcell ) {
-					if ( cell[0] === parseInt( HTMLcell.dataset.row, 10 ) && cell[1] === parseInt( HTMLcell.dataset.column, 10 ) ) {
-						selectables.push( HTMLcell );
-					}
+			if ( control.gridVal.areas[ id ] && control.gridVal.areas[ id ].cells ) {
+				_.each( control.gridVal.areas[ id ].cells, function( cell ) {
+					_.each( allCells, function( HTMLcell ) {
+						if ( cell[0] === parseInt( HTMLcell.dataset.row, 10 ) && cell[1] === parseInt( HTMLcell.dataset.column, 10 ) ) {
+							selectables.push( HTMLcell );
+						}
+					});
 				});
-			});
+			}
 			control.sanitizeGridVal();
 
 			// Redraw things.
@@ -575,6 +581,7 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 
 			// Add .editing class to the preview in the grid.
 			control.container.find( '.grid-selected-part' ).removeClass( 'editing' );
+			control.container.find( '.gridd-grid-builder-grids' ).removeClass( 'editing-parts' );
 
 			// Toggle class to hide the advanced options.
 			control.dragSelect.clearSelection();
@@ -608,6 +615,13 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 
 			// Redraw things.
 			control.drawPreview();
+
+			// Exit edit mode.
+			// We're adding a 250ms delay to be sure the settings gets updated.
+			// 250 is overkill, but better safe than sorry.
+			setTimeout( function() {
+				control.container.find( '.edit-part-options-done' ).click();
+			}, 250 );
 		});
 	},
 
