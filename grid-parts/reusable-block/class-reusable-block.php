@@ -38,6 +38,16 @@ class Reusable_Block extends Grid_Part {
 	protected $dir = __DIR__;
 
 	/**
+	 * An array of reusable blocks.
+	 *
+	 * @static
+	 * @access private
+	 * @since 1.0.3
+	 * @var array
+	 */
+	private static $reusable_blocks;
+
+	/**
 	 * Hooks & extra operations.
 	 *
 	 * @access public
@@ -45,7 +55,14 @@ class Reusable_Block extends Grid_Part {
 	 * @return void
 	 */
 	public function init() {
+		self::$reusable_blocks = get_posts(
+			[
+				'posts_per_page' => 100,
+				'post_type'      => 'wp_block',
+			]
+		);
 		add_action( 'gridd_the_grid_part', [ $this, 'render' ] );
+		add_action( 'gridd_auto_text_color', [ $this, 'auto_text_color_settings' ] );
 	}
 
 	/**
@@ -67,13 +84,42 @@ class Reusable_Block extends Grid_Part {
 	 */
 	public function render( $part ) {
 		if ( 0 === strpos( $part, 'reusable_block_' ) && is_numeric( str_replace( 'reusable_block_', '', $part ) ) ) {
-			$id = (int) str_replace( 'reusable_block_', '', $part );
+			$gridd_reusable_block_id = (int) str_replace( 'reusable_block_', '', $part );
 			/**
 			 * We use include( get_theme_file_path() ) here
 			 * because we need to pass the $sidebar_id var to the template.
 			 */
 			include get_theme_file_path( 'grid-parts/reusable-block/template.php' );
 		}
+	}
+
+	/**
+	 * Adds the color settings to the array of auto-calculated settings for text-color.
+	 *
+	 * @access public
+	 * @since 1.0.3
+	 * @param array $settings The array of settings.
+	 * @return array
+	 */
+	public function auto_text_color_settings( $settings ) {
+		if ( self::$reusable_blocks ) {
+			foreach ( self::$reusable_blocks as $block ) {
+				$settings[ "gridd_grid_reusable_block_{$block->ID}_bg_color" ] = "gridd_grid_reusable_block_{$block->ID}_color";
+			}
+		}
+		return $settings;
+	}
+
+	/**
+	 * Get an array of reusable posts.
+	 *
+	 * @static
+	 * @access public
+	 * @since 1.0.3
+	 * @return array
+	 */
+	public static function get_reusable_blocks() {
+		return self::$reusable_blocks;
 	}
 
 	/**
@@ -85,29 +131,20 @@ class Reusable_Block extends Grid_Part {
 	 * @return array
 	 */
 	public function add_template_part( $parts ) {
-		$number = self::get_number_of_reusable_blocks_grid_parts();
-		for ( $i = 1; $i <= $number; $i++ ) {
-			$parts[] = [
-				/* translators: The number of the reusable block. */
-				'label'    => sprintf( esc_html__( 'Reusable Block %d', 'gridd' ), absint( $i ) ),
-				'color'    => [ '#000', '#fff' ],
-				'priority' => 30,
-				'id'       => "reusable_block_$i",
-			];
-		}
-		return $parts;
-	}
 
-	/**
-	 * Gets the number of reusable blocks.
-	 * Returns the object's $number property.
-	 *
-	 * @static
-	 * @access public
-	 * @since 1.0
-	 */
-	public static function get_number_of_reusable_blocks_grid_parts() {
-		return apply_filters( 'gridd_get_number_of_reusable_blocks_grid_parts', 2 );
+		if ( self::$reusable_blocks ) {
+			foreach ( self::$reusable_blocks as $block ) {
+				$parts[] = [
+					/* translators: The name of the reusable block. */
+					'label'    => sprintf( esc_html__( 'Reusable Block: %s', 'gridd' ), esc_html( $block->post_title ) ),
+					'color'    => [ '#000', '#fff' ],
+					'priority' => 30,
+					'id'       => "reusable_block_{$block->ID}",
+				];
+			}
+		}
+
+		return $parts;
 	}
 }
 

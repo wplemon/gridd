@@ -17,10 +17,11 @@ use Gridd\Customizer;
  * @return void
  */
 function gridd_add_reusable_blocks_parts() {
-	$number = Reusable_Block::get_number_of_reusable_blocks_grid_parts();
-
-	for ( $i = 1; $i <= $number; $i++ ) {
-		gridd_reusable_blocks_customizer_options( $i );
+	$reusable_blocks = Reusable_Block::get_reusable_blocks();
+	if ( $reusable_blocks ) {
+		foreach ( $reusable_blocks as $block ) {
+			gridd_reusable_blocks_customizer_options( $block->ID );
+		}
 	}
 }
 add_action( 'after_setup_theme', 'gridd_add_reusable_blocks_parts' );
@@ -35,6 +36,16 @@ add_action( 'after_setup_theme', 'gridd_add_reusable_blocks_parts' );
  */
 function gridd_reusable_blocks_customizer_options( $id ) {
 
+	gridd_add_customizer_field(
+		[
+			'type'        => 'custom',
+			'settings'    => "gridd_grid_reusable_block_{$id}_help",
+			'description' => '<a href="' . esc_url( admin_url( 'edit.php?post_type=wp_block' ) ) . '" target="_blank">' . esc_html__( ' Manage reusable blocks', 'gridd' ) . '</a>',
+			'section'     => "gridd_grid_part_details_reusable_block_$id",
+			'default'     => '',
+		]
+	);
+
 	/**
 	 * Add Customizer Sections.
 	 */
@@ -47,36 +58,6 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 				/* translators: The reusable block number. */
 				sprintf( esc_html__( 'Reusable Block %d', 'gridd' ), absint( $id ) )
 			),
-		]
-	);
-
-	$reusable_blocks       = [
-		0 => esc_html__( '-- Select a reusable block --', 'gridd' ),
-	];
-	$saved_reusable_blocks = \Kirki_Helper::get_posts(
-		[
-			'posts_per_page' => -1,
-			'post_type'      => 'wp_block',
-		]
-	);
-	foreach ( $saved_reusable_blocks as $reusable_block_id => $reusable_block_title ) {
-		$reusable_blocks[ $reusable_block_id ] = $reusable_block_title;
-	}
-
-	gridd_add_customizer_field(
-		[
-			'type'        => 'select',
-			'settings'    => "gridd_grid_reusable_block_{$id}_id",
-			'label'       => esc_html__( 'Reusable Block', 'gridd' ),
-			'description' => sprintf(
-				/* Translators: URL. */
-				__( 'Select the reusable block to use or <a href="%s" target="_blank">manage reusable blocks</a>.', 'gridd' ),
-				esc_url( admin_url( 'edit.php?post_type=wp_block' ) )
-			),
-			'section'     => "gridd_grid_part_details_reusable_block_$id",
-			'default'     => 0,
-			'transport'   => 'refresh',
-			'choices'     => $reusable_blocks,
 		]
 	);
 

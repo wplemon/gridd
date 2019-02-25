@@ -64,8 +64,9 @@ function gridd_add_customizer_field( $args ) {
 
 	if ( 'gridd-wcag-tc' === $args['type'] ) {
 		// No need to init a colorpicker if the setting is automated.
-		$args['type'] = 'color';
-		if ( in_array( $args['settings'], array_values( Customizer::$auto_text_color ), true ) ) {
+		$args['type']    = 'color';
+		$auto_text_color = apply_filters( 'gridd_auto_text_color', Customizer::$auto_text_color );
+		if ( in_array( $args['settings'], array_values( $auto_text_color ), true ) ) {
 			$args['type']            = 'hidden';
 			$args['active_callback'] = '__return_false';
 		}
@@ -234,13 +235,13 @@ function gridd_get_grid_default_value() {
 		'rows'         => 4,
 		'columns'      => 1,
 		'areas'        => [
-			'header'      => [
+			'header'  => [
 				'cells' => [ [ 1, 1 ] ],
 			],
-			'content'     => [
+			'content' => [
 				'cells' => [ [ 2, 1 ] ],
 			],
-			'footer'      => [
+			'footer'  => [
 				'cells' => [ [ 3, 1 ] ],
 			],
 		],

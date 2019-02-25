@@ -10,35 +10,30 @@ use Gridd\Grid_Part\Reusable_Block;
 use Gridd\Style;
 use Gridd\AMP;
 
-$gridd_reusable_block_id = (int) get_theme_mod( "gridd_grid_reusable_block_{$id}_id", 0 );
-if ( ! $gridd_reusable_block_id ) {
-	return;
-}
-
-$style = Style::get_instance( "grid-part/navigation/$id" );
+$style = Style::get_instance( "grid-part/navigation/$gridd_reusable_block_id" );
 
 // Add main styles.
 $style->add_file( get_theme_file_path( 'grid-parts/reusable-block/styles/styles.min.css' ) );
 
-// Replace ID with $id.
-$style->replace( 'ID', $id );
+// Replace ID with $gridd_reusable_block_id.
+$style->replace( 'ID', $gridd_reusable_block_id );
 
 // Add vars to replace.
 $style->add_vars(
 	[
-		"--gridd-reusable-block-$id-bg"      => get_theme_mod( "gridd_grid_reusable_block_{$id}_bg_color", '#ffffff' ),
-		"--gridd-reusable-block-$id-color"   => get_theme_mod( "gridd_grid_reusable_block_{$id}_color", 1 ),
-		"--gridd-reusable-block-$id-padding" => get_theme_mod( "gridd_grid_reusable_block_{$id}_padding", '1em' ),
+		"--gridd-reusable-block-$gridd_reusable_block_id-bg"      => get_theme_mod( "gridd_grid_reusable_block_{$gridd_reusable_block_id}_bg_color", '#ffffff' ),
+		"--gridd-reusable-block-$gridd_reusable_block_id-color"   => get_theme_mod( "gridd_grid_reusable_block_{$gridd_reusable_block_id}_color", '#000000' ),
+		"--gridd-reusable-block-$gridd_reusable_block_id-padding" => get_theme_mod( "gridd_grid_reusable_block_{$gridd_reusable_block_id}_padding", '1em' ),
 	]
 );
 
 ?>
-<div class="gridd-tp gridd-tp-reusable-block gridd-tp-reusable_block_<?php echo absint( $id ); ?>">
+<div class="gridd-tp gridd-tp-reusable-block gridd-tp-reusable_block_<?php echo absint( $gridd_reusable_block_id ); ?>">
 	<?php
 	/**
 	 * Print styles.
 	 */
-	$style->the_css( "gridd-inline-css-reusable-block-$id" );
+	$style->the_css( "gridd-inline-css-reusable-block-$gridd_reusable_block_id" );
 	?>
 	<div class="inner">
 		<?php
