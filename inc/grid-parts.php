@@ -140,7 +140,7 @@ class Grid_Parts {
 	public function set_parts() {
 		$this->parts = apply_filters( 'gridd_get_template_parts', [] );
 
-		// Reorder.
+		// Reorder using the default priorities.
 		usort(
 			$this->parts,
 			function( $a, $b ) {
@@ -150,6 +150,9 @@ class Grid_Parts {
 				return ( isset( $a['priority'] ) ) ? 1 : -1;
 			}
 		);
+
+		// Apply cusstom order.
+		$this->apply_custom_order();
 	}
 
 	/**
@@ -226,6 +229,60 @@ class Grid_Parts {
 		if ( isset( $value['areas'] ) ) {
 			if ( isset( $value['areas'][ $grid_part ] ) && isset( $value['areas'][ $grid_part ]['cells'] ) && ! empty( $value['areas'][ $grid_part ]['cells'] ) ) {
 				return true;
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * Applies custom order to grid-parts.
+	 *
+	 * @access protected
+	 * @since 1.0.3
+	 * @return void
+	 */
+	protected function apply_custom_order() {
+		$saved_order  = get_theme_mod( 'gridd_grid_load_order', array() );
+		$all_part_ids = [];
+
+		// Get an array of all part IDs.
+		foreach ( $this->parts as $part ) {
+			$all_part_ids[] = $part['id'];
+		}
+
+		// Add any missing part-IDs to the saved order.
+		// Necessary if there is no saved order, or if a new part-ID was added.
+		foreach ( $all_part_ids as $part_id ) {
+			if ( ! in_array( $part_id, $saved_order ) ) {
+				$saved_order[] = $part_id;
+			}
+		}
+
+		// Build the ordered array.
+		$ordered = [];
+		foreach ( $saved_order as $part_id ) {
+			$part = $this->get_part_definition( $part_id );
+			if ( $part ) {
+				$ordered[] = $part;
+			}
+		}
+
+		// Update the array of parts with the custom-ordered one.
+		$this->parts = $ordered;
+	}
+
+	/**
+	 * Get the definition of a grid-part.
+	 *
+	 * @access protected
+	 * @since 1.0.3
+	 * @param string $id The grid-part ID.
+	 * @return array|false
+	 */
+	protected function get_part_definition( $id ) {
+		foreach ( $this->parts as $part ) {
+			if ( $id === $part['id'] ) {
+				return $part;
 			}
 		}
 		return false;

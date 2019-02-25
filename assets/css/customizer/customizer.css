@@ -219,3 +219,6 @@ h3.gridd-customizer-section-title {
 
 #accordion-panel-gridd_hidden_panel {
   display: none !important; }
+
+#customize-control-gridd_grid_load_order .visibility {
+  display: none; }

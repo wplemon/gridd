@@ -63,12 +63,11 @@ $style->add_string(
 	 */
 	$active_parts     = Grid_Parts::get_instance()->get_active();
 	$content_position = array_search( 'content', $active_parts, true );
-	if ( false === $content_position ) {
-		return;
-	}
-	foreach ( $active_parts as $key => $val ) {
-		if ( $key < $content_position ) {
-			do_action( 'gridd_the_grid_part', $val );
+	if ( false !== $content_position ) {
+		foreach ( $active_parts as $key => $val ) {
+			if ( $key < $content_position ) {
+				do_action( 'gridd_the_grid_part', $val );
+			}
 		}
 	}
 	?>
