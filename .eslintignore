@@ -3,3 +3,5 @@
 **/**/**/*.min.js
 assets/js/vendor
 vendor/
+node_modules/
+inc/kirki/

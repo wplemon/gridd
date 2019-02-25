@@ -24,7 +24,7 @@
 	<arg value="psv"/>
 
 	<!-- Only check the PHP, CSS and SCSS files. JS files are checked separately with JSCS and JSHint. -->
-	<arg name="extensions" value="php,css,scss/css"/>
+	<arg name="extensions" value="php"/>
 
 	<!-- Check all files in this directory and the directories below it. -->
 	<file>.</file>
