@@ -239,7 +239,7 @@ class Customizer {
 			'gridd-customizer-preview-script',
 			'griddCustomizerVars',
 			array(
-				'autoText' => self::$auto_text_color,
+				'autoText' => apply_filters( 'gridd_auto_text_color', Customizer::$auto_text_color ),
 			)
 		);
 	}
