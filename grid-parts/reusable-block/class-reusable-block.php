@@ -136,7 +136,7 @@ class Reusable_Block extends Grid_Part {
 			foreach ( self::$reusable_blocks as $block ) {
 				$parts[] = [
 					/* translators: The name of the reusable block. */
-					'label'    => sprintf( esc_html__( 'Reusable Block: %s', 'gridd' ), esc_html( $block->post_title ) ),
+					'label'    => sprintf( esc_html__( 'Block: %s', 'gridd' ), esc_html( $block->post_title ) ),
 					'color'    => [ '#000', '#fff' ],
 					'priority' => 30,
 					'id'       => "reusable_block_{$block->ID}",
