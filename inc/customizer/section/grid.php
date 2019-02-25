@@ -20,6 +20,7 @@ gridd_add_customizer_section(
 			[
 				'plus' => [
 					esc_html__( 'Separate grid for mobile devices.', 'gridd' ),
+					esc_html__( 'Grid-parts can overlap', 'gridd' ),
 				],
 				'docs' => 'https://wplemon.com/documentation/gridd/grid/',
 			]
@@ -94,7 +95,7 @@ gridd_add_customizer_field(
 	]
 );
 
-$parts = Grid_Parts::get_instance()->get_parts();
+$parts          = Grid_Parts::get_instance()->get_parts();
 $sortable_parts = [];
 foreach ( $parts as $part ) {
 	$sortable_parts[ $part['id'] ] = $part['label'];
