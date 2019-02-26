@@ -163,10 +163,12 @@ class Style {
 			return $this->css;
 		}
 
-		// Replace css-vars.
+		/**
+		 * WIP: Replace css-vars.
 		foreach ( $this->vars as $name => $value ) {
 			$this->replace( "var($name)", $value );
 		}
+		*/
 		return apply_filters( 'gridd_style_css', $this->css, $this->context );
 	}
 
