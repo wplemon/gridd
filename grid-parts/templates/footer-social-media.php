@@ -32,7 +32,7 @@ $style->add_vars(
 );
 
 // Add stylesheet.
-$style->add_file( get_theme_file_path( 'grid-parts/styles/footer/social-icons.min.css' ) );
+$style->add_file( get_theme_file_path( 'grid-parts/styles/footer-social-icons.min.css' ) );
 ?>
 
 <div class="gridd-tp gridd-tp-footer_social_media">

@@ -13,7 +13,7 @@ use Gridd\AMP;
 $style = Style::get_instance( "grid-part/navigation/$gridd_reusable_block_id" );
 
 // Add main styles.
-$style->add_file( get_theme_file_path( 'grid-parts/styles/reusable-block/styles.min.css' ) );
+$style->add_file( get_theme_file_path( 'grid-parts/styles/reusable-block.min.css' ) );
 
 // Replace ID with $gridd_reusable_block_id.
 $style->replace( 'ID', $gridd_reusable_block_id );

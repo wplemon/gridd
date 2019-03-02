@@ -9,7 +9,7 @@
 use Gridd\Style;
 
 $style = Style::get_instance( 'grid-part/header/contact-info' );
-$style->add_file( get_theme_file_path( 'grid-parts/styles/header/contact-info.min.css' ) );
+$style->add_file( get_theme_file_path( 'grid-parts/styles/header-contact-info.min.css' ) );
 $style->add_vars(
 	[
 		'--gridd-header-contact-bg'         => get_theme_mod( 'gridd_grid_part_details_header_contact_info_background_color', '#ffffff' ),

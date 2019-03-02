@@ -23,7 +23,7 @@ $style->add_vars(
 	]
 );
 $style->add_string( ':root{--header-textcolor:#' . esc_attr( trim( get_header_textcolor(), '#' ) ) . ';}' );
-$style->add_file( get_theme_file_path( 'grid-parts/styles/header/branding.min.css' ) );
+$style->add_file( get_theme_file_path( 'grid-parts/styles/header-branding.min.css' ) );
 $style->the_css( 'gridd-inline-css-header-branding' );
 ?>
 <div class="gridd-tp gridd-tp-header_branding<?php echo ( has_custom_logo() ) ? ' has-logo' : ''; ?><?php echo get_theme_mod( 'gridd_branding_inline', false ) ? ' inline' : ' vertical'; ?>">

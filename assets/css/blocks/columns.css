@@ -62,7 +62,7 @@
   flex-basis: 100%;
   min-width: 0;
   word-break: break-word;
-  word-wrap: break-word; }
+  overflow-wrap: break-word; }
   @media (min-width: 600px) {
     .wp-block-column {
       flex-basis: calc(50% - 16px);
@@ -88,3 +88,5 @@
     grid-template-columns: repeat(auto-fit, minmax(13em, 1fr)); }
   .wp-block-columns.has-3-columns {
     grid-template-columns: repeat(auto-fit, minmax(10em, 1fr)); }
+
+/*# sourceMappingURL=columns.css.map */

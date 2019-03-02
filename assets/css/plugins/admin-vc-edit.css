@@ -5,9 +5,7 @@
   .vc_add-element-container .wpb-content-layouts li {
     height: 100%;
     background: none;
-    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="0.24409600000000004 0.6865919999999999 0.069312 0 0 0.204096 0.7265919999999999 0.069312 0 0 0.204096 0.6865919999999999 0.10931200000000003 0 0 0 0 0 1 0" /></filter></svg>#filter');
-    -webkit-filter: grayscale(96%);
-            filter: grayscale(96%);
+    filter: grayscale(96%);
     width: 100%;
     border: 1px solid #dedede; }
     .vc_add-element-container .wpb-content-layouts li a {
@@ -20,8 +18,7 @@
         color: #444; }
     .vc_add-element-container .wpb-content-layouts li:hover {
       border-color: #000;
-      -webkit-filter: none;
-              filter: none; }
+      filter: none; }
       .vc_add-element-container .wpb-content-layouts li:hover a {
         color: #111; }
 
@@ -47,3 +44,5 @@ button.vc_btn-primary {
 
 .vc_ui-search-box input[type="search"] {
   border-radius: 0; }
+
+/*# sourceMappingURL=admin-vc-edit.css.map */

@@ -101,7 +101,7 @@ pre,
 samp {
   font-family: monospace, monospace;
   font-size: 1em;
-  background: rgba(0, 0, 0, .1); }
+  background: rgba(0, 0, 0, 0.1); }
 
 button,
 input,
@@ -173,3 +173,5 @@ table {
 td,
 th {
   padding: 0; }
+
+/*# sourceMappingURL=normalize.css.map */

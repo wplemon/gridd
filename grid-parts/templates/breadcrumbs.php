@@ -15,7 +15,7 @@ if ( is_front_page() || is_home() ) {
 
 // Add styles.
 $style = Style::get_instance( 'grid-part/breadcrumbs' );
-$style->add_file( get_theme_file_path( 'grid-parts/styles/breadcrumbs/styles.min.css' ) );
+$style->add_file( get_theme_file_path( 'grid-parts/styles/breadcrumbs.min.css' ) );
 $style->add_vars(
 	[
 		'--gridd-breadcrumbs-bg'         => get_theme_mod( 'gridd_grid_breadcrumbs_background_color', '#ffffff' ),

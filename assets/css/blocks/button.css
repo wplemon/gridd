@@ -72,7 +72,7 @@
   text-align: center;
   text-decoration: none;
   white-space: normal;
-  word-wrap: break-word; }
+  overflow-wrap: break-word; }
   .wp-block-button__link:hover, .wp-block-button__link:focus, .wp-block-button__link:active, .wp-block-button__link:visited {
     color: inherit; }
 
@@ -99,3 +99,5 @@
 
 .is-style-outline {
   color: currentColor; }
+
+/*# sourceMappingURL=button.css.map */

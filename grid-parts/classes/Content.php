@@ -122,9 +122,9 @@ class Content extends Grid_Part {
 				'--gridd-content-bg'             => get_theme_mod( 'gridd_grid_content_background_color', '#ffffff' ),
 			]
 		);
-		$style->add_file( get_theme_file_path( 'grid-parts/styles/content/default.min.css' ) );
+		$style->add_file( get_theme_file_path( 'grid-parts/styles/content.min.css' ) );
 		$style->add_string( '@media only screen and (min-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . '){' );
-		$style->add_file( get_theme_file_path( 'grid-parts/styles/content/large.min.css' ) );
+		$style->add_file( get_theme_file_path( 'grid-parts/styles/content-large.min.css' ) );
 		$style->add_string( '}' );
 
 		/**

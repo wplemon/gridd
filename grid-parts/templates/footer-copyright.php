@@ -19,7 +19,7 @@ $styles->add_vars(
 		'--gridd-footer-copyright-links-color' => get_theme_mod( 'gridd_grid_footer_copyright_links_color', '#0f5e97' ),
 	]
 );
-$styles->add_file( get_theme_file_path( 'grid-parts/styles/footer/copyright.min.css' ) );
+$styles->add_file( get_theme_file_path( 'grid-parts/styles/footer-copyright.min.css' ) );
 $styles->the_css( 'gridd-inline-css-footer-copyright' );
 
 ?>

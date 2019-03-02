@@ -1,5 +1,6 @@
 .widget.widget_media_gallery {
   font-size: calc(1em / var(--gridd-typo-scale)); }
   .widget.widget_media_gallery a {
-    -webkit-filter: none;
-            filter: none; }
+    filter: none; }
+
+/*# sourceMappingURL=widget-gallery.css.map */

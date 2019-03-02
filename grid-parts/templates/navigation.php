@@ -14,7 +14,7 @@ $style = Style::get_instance( "grid-part/navigation/$id" );
 
 // Add main styles.
 $style->add_string( Navigation::get_global_styles() );
-$style->add_file( get_theme_file_path( 'grid-parts/styles/navigation/main.min.css' ) );
+$style->add_file( get_theme_file_path( 'grid-parts/styles/navigation.min.css' ) );
 
 $responsive_mode       = get_theme_mod( "gridd_grid_nav_{$id}_responsive_behavior", 'desktop-normal mobile-hidden' );
 $added_vertical_styles = false;
@@ -24,7 +24,7 @@ if ( false !== strpos( $responsive_mode, 'desktop-normal' ) ) {
 
 	// Check if we need to add the vertical styles.
 	if ( get_theme_mod( "gridd_grid_nav_{$id}_vertical", false ) ) {
-		$style->add_file( get_theme_file_path( 'grid-parts/styles/navigation/vertical.min.css' ) );
+		$style->add_file( get_theme_file_path( 'grid-parts/styles/navigation-vertical.min.css' ) );
 		$added_vertical_styles = true;
 	}
 }
@@ -38,9 +38,9 @@ if ( false !== strpos( $responsive_mode, 'icon' ) ) {
 	}
 
 	// Add styles.
-	$style->add_file( get_theme_file_path( 'grid-parts/styles/navigation/collapsed.min.css' ) );
+	$style->add_file( get_theme_file_path( 'grid-parts/styles/navigation-collapsed.min.css' ) );
 	if ( ! $added_vertical_styles ) {
-		$style->add_file( get_theme_file_path( 'grid-parts/styles/navigation/vertical.min.css' ) );
+		$style->add_file( get_theme_file_path( 'grid-parts/styles/navigation-vertical.min.css' ) );
 	}
 
 	// Close the media-query.

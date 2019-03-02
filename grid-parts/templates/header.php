@@ -27,9 +27,9 @@ $style->add_string(
 		]
 	)
 );
-$style->add_file( get_theme_file_path( 'grid-parts/styles/header/default.min.css' ) );
+$style->add_file( get_theme_file_path( 'grid-parts/styles/header.min.css' ) );
 $style->add_string( '@media only screen and (min-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . '){' );
-$style->add_file( get_theme_file_path( 'grid-parts/styles/header/large.min.css' ) );
+$style->add_file( get_theme_file_path( 'grid-parts/styles/header-large.min.css' ) );
 $style->add_string( '}' );
 if ( true === get_theme_mod( 'gridd_header_sticky', false ) && false === get_theme_mod( 'gridd_header_sticky_mobile', false ) ) {
 	$style->add_string( '@media only screen and (max-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . '){.gridd-tp.gridd-tp-header.gridd-sticky{position:relative;}}' );

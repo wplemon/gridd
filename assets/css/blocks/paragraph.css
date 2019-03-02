@@ -85,7 +85,7 @@ p.has-text-color a {
 p.is-small-text {
   font-size: calc(1em / var(--gridd-typo-scale)); }
 p.is-regular-text {
-  font-size: 1em; }
+  font-size: var(--gridd-em, 1em); }
 p.is-large-text {
   font-size: calc(var(--gridd-typo-scale) * 1em); }
 p.is-larger-text {
@@ -93,3 +93,5 @@ p.is-larger-text {
 
 p.has-background {
   padding: 1.5em 2em; }
+
+/*# sourceMappingURL=paragraph.css.map */

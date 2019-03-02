@@ -137,7 +137,7 @@ class Navigation extends Grid_Part {
 			return '';
 		}
 		self::$global_styles_already_included = true;
-		return gridd_get_file_contents( 'grid-parts/styles/navigation/global.min.css' );
+		return gridd_get_file_contents( 'grid-parts/styles/navigation-global.min.css' );
 	}
 
 
