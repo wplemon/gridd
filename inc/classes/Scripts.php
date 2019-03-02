@@ -30,15 +30,6 @@ class Scripts {
 	private $script_debug = false;
 
 	/**
-	 * An array of deferred scripts.
-	 *
-	 * @access private
-	 * @since 1.0
-	 * @var array
-	 */
-	private $defer_scripts = [];
-
-	/**
 	 * An array of async scripts.
 	 *
 	 * @access private
@@ -46,22 +37,7 @@ class Scripts {
 	 * @var array
 	 */
 	private $async_scripts = [
-		'skip-link',
-		// 'gridd-edd',
-		'gridd-sticky-footer',
 		'comment-reply',
-	];
-
-	/**
-	 * An array of stylesheets that will get the rel="preload" tag.
-	 *
-	 * @access private
-	 * @since 1.0
-	 * @var array
-	 */
-	private $preload_styles = [
-		'kirki-styles-gridd',
-		'gridd-style',
 	];
 
 	/**
@@ -92,12 +68,9 @@ class Scripts {
 	 */
 	public function __construct() {
 		$this->script_debug   = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG );
-		$this->defer_scripts  = apply_filters( 'gridd_defer_scripts', $this->defer_scripts );
 		$this->async_scripts  = apply_filters( 'gridd_async_scripts', $this->async_scripts );
-		$this->preload_styles = apply_filters( 'gridd_preload_styles', $this->preload_styles );
 
 		add_filter( 'script_loader_tag', [ $this, 'add_async_attribute' ], 10, 2 );
-		add_filter( 'script_loader_tag', [ $this, 'add_defer_attribute' ], 10, 2 );
 
 		add_action( 'wp_print_footer_scripts', [ $this, 'inline_scripts' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'scripts' ] );
@@ -190,24 +163,6 @@ class Scripts {
 		foreach ( $this->async_scripts as $script ) {
 			if ( $script === $handle ) {
 				return str_replace( ' src', ' async="async" src', $tag );
-			}
-		}
-		return $tag;
-	}
-
-	/**
-	 * Add defer to scripts.
-	 *
-	 * @access public
-	 * @since 1.0
-	 * @param string $tag    The script tag.
-	 * @param string $handle The script handle.
-	 * @return string
-	 */
-	public function add_defer_attribute( $tag, $handle ) {
-		foreach ( $this->defer_scripts as $script ) {
-			if ( $script === $handle ) {
-				return str_replace( ' src', ' defer src', $tag );
 			}
 		}
 		return $tag;
