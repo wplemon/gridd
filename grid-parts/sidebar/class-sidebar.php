@@ -46,6 +46,7 @@ class Sidebar extends Grid_Part {
 	public function init() {
 		add_action( 'widgets_init', [ $this, 'register_sidebars' ] );
 		add_action( 'gridd_the_grid_part', [ $this, 'render' ] );
+		add_action( 'get_sidebar', [ $this, 'get_sidebar' ] );
 	}
 
 	/**
@@ -58,6 +59,18 @@ class Sidebar extends Grid_Part {
 	protected function set_part() {}
 
 	/**
+	 * Add action on the get_sidebar hook.
+	 *
+	 * @access public
+	 * @since 1.0.3
+	 * @param string $name The sidebar name.
+	 * @return void
+	 */
+	public function get_sidebar( $name ) {
+		$this->render( $name );
+	}
+
+	/**
 	 * Render this grid-part.
 	 *
 	 * @access public
@@ -67,7 +80,7 @@ class Sidebar extends Grid_Part {
 	 */
 	public function render( $part ) {
 		if ( 0 === strpos( $part, 'sidebar_' ) && is_numeric( str_replace( 'sidebar_', '', $part ) ) ) {
-			$id = (int) str_replace( 'sidebar_', '', $part );
+			$sidebar_id = (int) str_replace( 'sidebar_', '', $part );
 			/**
 			 * We use include( get_theme_file_path() ) here
 			 * because we need to pass the $sidebar_id var to the template.
