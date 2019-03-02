@@ -8,6 +8,7 @@
 namespace Gridd\Grid_Part;
 
 use Gridd\Grid;
+use Gridd\Grid_Parts;
 use Gridd\Grid_Part;
 use Gridd\Style;
 
@@ -218,6 +219,14 @@ class Footer extends Grid_Part {
 				'class'    => "footer_sidebar_$i",
 				'id'       => "footer_sidebar_$i",
 			];
+		}
+
+		// Add reusable-block parts.
+		$all_parts = Grid_Parts::get_instance()->get_parts();
+		foreach ( $all_parts as $part ) {
+			if ( isset( $part['id'] ) && 0 === strpos( $part['id'], 'reusable_block_' ) ) {
+				$footer_grid_parts[] = $part;
+			}
 		}
 
 		return apply_filters( 'gridd_footer_grid_parts', $footer_grid_parts );
