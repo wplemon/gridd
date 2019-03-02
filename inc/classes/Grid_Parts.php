@@ -98,33 +98,7 @@ class Grid_Parts {
 	 */
 	public function include_grid_part_files() {
 
-		$grid_parts_paths = [];
-
-		// Add child-theme first.
-		if ( is_child_theme() && file_exists( get_stylesheet_directory() . '/grid-parts' ) && is_dir( get_stylesheet_directory() . '/grid-parts' ) ) {
-			$grid_parts_paths[] = get_stylesheet_directory() . '/grid-parts';
-		}
-
-		// Add parent theme.
-		$grid_parts_paths[] = get_template_directory() . '/grid-parts';
-
-		// Allow filtering to add grid-parts from plugins.
-		$grid_parts_paths = apply_filters( 'gridd_grid_parts_paths', $grid_parts_paths );
-
-		foreach ( $grid_parts_paths as $grid_parts_path ) {
-
-			$parts = new \DirectoryIterator( $grid_parts_path );
-			foreach ( $parts as $path ) {
-				$path_parts = explode( '/', $path );
-				$part       = $path_parts[ count( $path_parts ) - 1 ];
-				if ( '..' === $part || '.' === $part ) {
-					continue;
-				}
-				if ( file_exists( "$grid_parts_path/$part/functions.php" ) ) {
-					require_once "$grid_parts_path/$part/functions.php";
-				}
-			}
-		}
+		require_once get_theme_file_path( 'grid-parts/functions.php' );
 	}
 
 	/**

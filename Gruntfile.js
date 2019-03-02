@@ -19,7 +19,7 @@ module.exports = function( grunt ) {
 				files: [ {
 					expand: true,
 					cwd: 'grid-parts',
-					src: [ '**/*.scss' ],
+					src: [ 'styles/**/*.scss', 'styles/**/**/*.scss', 'styles/**/**/**/*.scss' ],
 					dest: 'grid-parts',
 					ext: '.css'
 				} ]
@@ -61,7 +61,7 @@ module.exports = function( grunt ) {
 						src: [
 							'assets/js/*.js',
 							'!assets/js/*.min.js',
-							'grid-parts/**/*.js',
+							'grid-parts/scripts/*.js',
 							'!grid-parts/**/*.min.js'
 						],
 						dest: '.',

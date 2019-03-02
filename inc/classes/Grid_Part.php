@@ -39,24 +39,6 @@ class Grid_Part extends Grid_Parts {
 	protected $part = [];
 
 	/**
-	 * An array of files to include.
-	 *
-	 * @access protected
-	 * @since 1.0
-	 * @var array
-	 */
-	protected $include_files = [];
-
-	/**
-	 * The path to this directory..
-	 *
-	 * @access protected
-	 * @since 1.0
-	 * @var string
-	 */
-	protected $dir = __DIR__;
-
-	/**
 	 * Constructor.
 	 *
 	 * @access public
@@ -64,7 +46,6 @@ class Grid_Part extends Grid_Parts {
 	 */
 	public function __construct() {
 		$this->set_part();
-		$this->include_files();
 		$this->init();
 		add_filter( 'gridd_get_template_parts', [ $this, 'add_template_part' ] );
 	}
@@ -78,19 +59,6 @@ class Grid_Part extends Grid_Parts {
 	 */
 	protected function init() {
 		// Extend in child classes.
-	}
-
-	/**
-	 * Includes extra files for this grid-part.
-	 *
-	 * @access public
-	 * @since 1.0
-	 * @return void
-	 */
-	public function include_files() {
-		foreach ( $this->include_files as $file ) {
-			require_once $this->dir . '/' . $file;
-		}
 	}
 
 	/**
