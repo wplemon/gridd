@@ -7,8 +7,19 @@
  * @package Gridd
  */
 
+/**
+ * Modify the grid.
+ */
 add_filter(
 	'gridd_get_options',
+	/**
+	 * Filters the value of the grid.
+	 *
+	 * @since 1.0.3
+	 * @param mixed  $value     The theme-mod value.
+	 * @param string $theme_mod The theme-mod.
+	 * @return mixed
+	 */
 	function( $value, $theme_mod ) {
 		if ( 'gridd_grid' === $theme_mod ) {
 			return [

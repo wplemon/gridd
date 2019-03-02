@@ -3,6 +3,8 @@
  * Gridd Customizer
  *
  * @package Gridd
+ *
+ * phpcs:ignoreFile WordPress.Files.FileName
  */
 
 use Gridd\Customizer;

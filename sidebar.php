@@ -1,6 +1,8 @@
 <?php
 /**
- * The sidebar containing the main widget area
+ * The sidebar containing the main widget area.
+ * This file is empty on purpose.
+ * Sidebars are added as separate grid-parts.
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *

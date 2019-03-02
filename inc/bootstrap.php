@@ -18,7 +18,7 @@ use Gridd\Widget_Output_Filters;
  *
  * @since 1.0
  */
-require_once __DIR__ . '/gridd.php';
+// require_once __DIR__ . '/gridd.php';
 
 /**
  * If Kirki isn't loaded as a plugin, load the included version.
@@ -35,14 +35,13 @@ if ( ! class_exists( 'Kirki' ) ) {
  */
 spl_autoload_register(
 	function( $class ) {
-		$name = strtolower( str_replace( '_', '-', substr( $class, 5 ) ) );
 		if ( 0 === strpos( $class, 'Gridd' ) ) {
-			$path = __DIR__ . str_replace( '\\', '/', "$name/$name" ) . '.php';
+			$path = __DIR__ . '/' . str_replace( '\\', '/', "$class/$class" ) . '.php';
 			$path = str_replace( '//', '/', $path );
 			if ( file_exists( $path ) ) {
 				require_once $path;
 			}
-			$path = __DIR__ . str_replace( '\\', '/', $name ) . '.php';
+			$path = __DIR__ . '/' . str_replace( '\\', '/', $class ) . '.php';
 			$path = str_replace( '//', '/', $path );
 			if ( file_exists( $path ) ) {
 				require_once $path;
@@ -62,11 +61,24 @@ spl_autoload_register(
  * @return void
  */
 function gridd_get_template_part( $slug, $name = null ) {
-	$custom_path = apply_filters( 'gridd_get_template_part', false, $slug, $name );
+	$custom_path = false;
+	/**
+	 * Determine if we want to use a custom path for this template-part.
+	 *
+	 * @since 1.0.3
+	 * @param string|false $custom_path The custom template-part path. Defaults to false. Use absolute path.
+	 * @param string       $slug        The template slug.
+	 * @param string       $name        The template name.
+	 * @return string|false
+	 */
+	$custom_path = apply_filters( 'gridd_get_template_part', $custom_path, $slug, $name );
 	if ( $custom_path ) {
-		include $custom_path;
+		if ( file_exists( $custom_path ) ) {
+			include $custom_path;
+		}
 		return;
 	}
+	// Get the default template part.
 	get_template_part( $slug, $name );
 }
 
@@ -84,7 +96,7 @@ function gridd_load_theme_textdomain() {
 add_action( 'after_setup_theme', 'gridd_load_theme_textdomain' );
 
 /**
- * Load admin screen.
+ * Load admin tweaks.
  *
  * @since 1.0
  */
