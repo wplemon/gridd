@@ -528,13 +528,6 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 		var control  = this,
 			allCells = document.getElementsByClassName( 'gridd-grid-selectable-cell' );
 
-		control.container.find( '.grid-selected-part' ).on( 'click', function( e ) {
-			if ( jQuery( e.target ).hasClass( 'edit' ) || jQuery( e.target ).hasClass( 'resize' ) || jQuery( e.target ).hasClass( 'delete' ) ) {
-				return;
-			}
-			jQuery( e.currentTarget ).find( '.actions .resize' ).click();
-		});
-
 		control.container.find( '.grid-selected-part .actions .resize' ).on( 'click', function( e ) {
 
 			var selectables = [],
