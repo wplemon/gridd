@@ -6,6 +6,9 @@
  */
 
 use Gridd\Customizer;
+use Gridd\Customizer\Sanitize;
+
+$sanitization = new Sanitize();
 
 gridd_add_customizer_outer_section(
 	'gridd_grid_part_details_breadcrumbs',
@@ -89,32 +92,36 @@ gridd_add_customizer_field(
 
 gridd_add_customizer_field(
 	[
-		'type'      => 'gridd-wcag-tc',
-		'settings'  => 'gridd_grid_breadcrumbs_color',
-		'label'     => esc_html__( 'Text Color', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_breadcrumbs',
-		'css_vars'  => '--gridd-breadcrumbs-color',
-		'default'   => '#000000',
-		'transport' => 'postMessage',
-		'choices'   => [
+		'type'              => 'gridd-wcag-tc',
+		'settings'          => 'gridd_grid_breadcrumbs_color',
+		'label'             => esc_html__( 'Text Color', 'gridd' ),
+		'section'           => 'gridd_grid_part_details_breadcrumbs',
+		'css_vars'          => '--gridd-breadcrumbs-color',
+		'default'           => '#000000',
+		'transport'         => 'postMessage',
+		'choices'           => [
 			'setting' => 'gridd_grid_breadcrumbs_background_color',
 		],
+		'sanitize_callback' => [ $sanitization, 'color_hex' ],
 	]
 );
 
 gridd_add_customizer_field(
 	[
-		'type'      => 'radio-buttonset',
-		'settings'  => 'gridd_grid_breadcrumbs_text_align',
-		'label'     => esc_html__( 'Alignment', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_breadcrumbs',
-		'default'   => 'center',
-		'transport' => 'postMessage',
-		'css_vars'  => '--gridd-breadcrumbs-text-align',
-		'choices'   => [
+		'type'              => 'radio-buttonset',
+		'settings'          => 'gridd_grid_breadcrumbs_text_align',
+		'label'             => esc_html__( 'Alignment', 'gridd' ),
+		'section'           => 'gridd_grid_part_details_breadcrumbs',
+		'default'           => 'center',
+		'transport'         => 'postMessage',
+		'css_vars'          => '--gridd-breadcrumbs-text-align',
+		'choices'           => [
 			'left'   => esc_html__( 'Left', 'gridd' ),
 			'center' => esc_html__( 'Center', 'gridd' ),
 			'right'  => esc_html__( 'Right', 'gridd' ),
 		],
+		'sanitize_callback' => function( $value ) {
+			return ( 'left' !== $value && 'right' !== $value && 'center' !== $value ) ? 'center' : $value;
+		},
 	]
 );

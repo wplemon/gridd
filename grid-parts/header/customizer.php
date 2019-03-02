@@ -8,6 +8,9 @@
 use Gridd\Grid_Part\Header;
 use Gridd\Grid_Parts;
 use Gridd\Customizer;
+use Gridd\Customizer\Sanitize;
+
+$sanitization = new Sanitize();
 
 gridd_add_customizer_section(
 	'gridd_grid_part_details_header',
@@ -39,7 +42,7 @@ gridd_add_customizer_field(
 		'choices'           => [
 			'parts' => Header::get_header_grid_parts(),
 		],
-		'sanitize_callback' => [ gridd()->customizer, 'sanitize_gridd_grid' ],
+		'sanitize_callback' => [ $sanitization, 'grid' ],
 		'transport'         => 'postMessage',
 		'priority'          => 10,
 		'partial_refresh'   => [
@@ -104,16 +107,16 @@ gridd_add_customizer_field(
 
 gridd_add_customizer_field(
 	[
-		'type'      => 'radio',
-		'settings'  => 'gridd_grid_header_box_shadow',
-		'label'     => esc_html__( 'Drop Shadow Intensity', 'gridd' ),
-		'tooltip'   => esc_html__( 'Set to "None" if you want to disable the shadow for this grid-part, or increase the intensity for a more dramatic effect.', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_header',
-		'default'   => '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
-		'transport' => 'postMessage',
-		'css_vars'  => '--gridd-header-box-shadow',
-		'priority'  => 50,
-		'choices'   => [
+		'type'              => 'radio',
+		'settings'          => 'gridd_grid_header_box_shadow',
+		'label'             => esc_html__( 'Drop Shadow Intensity', 'gridd' ),
+		'tooltip'           => esc_html__( 'Set to "None" if you want to disable the shadow for this grid-part, or increase the intensity for a more dramatic effect.', 'gridd' ),
+		'section'           => 'gridd_grid_part_details_header',
+		'default'           => '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
+		'transport'         => 'postMessage',
+		'css_vars'          => '--gridd-header-box-shadow',
+		'priority'          => 50,
+		'choices'           => [
 			'none' => esc_html__( 'None', 'gridd' ),
 			'0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)' => esc_html__( 'Extra Light', 'gridd' ),
 			'0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)' => esc_html__( 'Light', 'gridd' ),
@@ -121,6 +124,7 @@ gridd_add_customizer_field(
 			'0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)' => esc_html__( 'Heavy', 'gridd' ),
 			'0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)' => esc_html__( 'Extra Heavy', 'gridd' ),
 		],
+		'sanitize_callback' => 'sanitize_text_field',
 	]
 );
 

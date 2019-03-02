@@ -138,17 +138,20 @@ gridd_add_customizer_field(
 
 gridd_add_customizer_field(
 	[
-		'type'      => 'radio-buttonset',
-		'settings'  => 'gridd_grid_part_details_social_icons_icons_text_align',
-		'label'     => esc_html__( 'Icons Alignment', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_social_media',
-		'default'   => 'flex-end',
-		'transport' => 'postMessage',
-		'css_vars'  => '--gridd-header-social-icons-text-align',
-		'choices'   => [
+		'type'              => 'radio-buttonset',
+		'settings'          => 'gridd_grid_part_details_social_icons_icons_text_align',
+		'label'             => esc_html__( 'Icons Alignment', 'gridd' ),
+		'section'           => 'gridd_grid_part_details_social_media',
+		'default'           => 'flex-end',
+		'transport'         => 'postMessage',
+		'css_vars'          => '--gridd-header-social-icons-text-align',
+		'choices'           => [
 			'flex-start' => esc_html__( 'Left', 'gridd' ),
 			'center'     => esc_html__( 'Center', 'gridd' ),
 			'flex-end'   => esc_html__( 'Right', 'gridd' ),
 		],
+		'sanitize_callback' => function( $value ) {
+			return ( 'flex-start' !== $value && 'flex-end' !== $value && 'center' !== $value ) ? 'flex-end' : $value;
+		},
 	]
 );

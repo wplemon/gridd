@@ -6,6 +6,9 @@
  */
 
 use Gridd\Customizer;
+use Gridd\Customizer\Sanitize;
+
+$sanitization = new Sanitize();
 
 // Add section.
 gridd_add_customizer_outer_section(
@@ -70,34 +73,36 @@ gridd_add_customizer_field(
 
 gridd_add_customizer_field(
 	[
-		'type'      => 'gridd-wcag-tc',
-		'settings'  => 'gridd_grid_footer_copyright_color',
-		'label'     => esc_html__( 'Copyright Text Color', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_footer_copyright',
-		'default'   => '#000000',
-		'transport' => 'postMessage',
-		'css_vars'  => '--gridd-footer-copyright-color',
-		'priority'  => 120,
-		'choices'   => [
+		'type'              => 'gridd-wcag-tc',
+		'settings'          => 'gridd_grid_footer_copyright_color',
+		'label'             => esc_html__( 'Copyright Text Color', 'gridd' ),
+		'section'           => 'gridd_grid_part_details_footer_copyright',
+		'default'           => '#000000',
+		'transport'         => 'postMessage',
+		'css_vars'          => '--gridd-footer-copyright-color',
+		'priority'          => 120,
+		'choices'           => [
 			'setting' => 'gridd_grid_footer_copyright_bg_color',
 		],
+		'sanitize_callback' => [ $sanitization, 'color_hex' ],
 	]
 );
 
 gridd_add_customizer_field(
 	[
-		'type'      => 'gridd-wcag-lc',
-		'settings'  => 'gridd_grid_footer_copyright_links_color',
-		'label'     => esc_html__( 'Copyright Links Color', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_footer_copyright',
-		'default'   => '#0f5e97',
-		'transport' => 'postMessage',
-		'css_vars'  => '--gridd-footer-copyright-links-color',
-		'priority'  => 130,
-		'choices'   => [
+		'type'              => 'gridd-wcag-lc',
+		'settings'          => 'gridd_grid_footer_copyright_links_color',
+		'label'             => esc_html__( 'Copyright Links Color', 'gridd' ),
+		'section'           => 'gridd_grid_part_details_footer_copyright',
+		'default'           => '#0f5e97',
+		'transport'         => 'postMessage',
+		'css_vars'          => '--gridd-footer-copyright-links-color',
+		'priority'          => 130,
+		'choices'           => [
 			'backgroundColor' => 'gridd_grid_footer_copyright_bg_color',
 			'textColor'       => 'gridd_grid_footer_copyright_color',
 		],
+		'sanitize_callback' => [ $sanitization, 'color_hex' ],
 	]
 );
 
@@ -123,18 +128,21 @@ gridd_add_customizer_field(
 
 gridd_add_customizer_field(
 	[
-		'type'      => 'radio-buttonset',
-		'settings'  => 'gridd_grid_footer_copyright_text_align',
-		'label'     => esc_html__( 'Text Alignment', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_footer_copyright',
-		'default'   => 'left',
-		'transport' => 'postMessage',
-		'css_vars'  => '--gridd-footer-copyright-text-align',
-		'priority'  => 150,
-		'choices'   => [
+		'type'              => 'radio-buttonset',
+		'settings'          => 'gridd_grid_footer_copyright_text_align',
+		'label'             => esc_html__( 'Text Alignment', 'gridd' ),
+		'section'           => 'gridd_grid_part_details_footer_copyright',
+		'default'           => 'left',
+		'transport'         => 'postMessage',
+		'css_vars'          => '--gridd-footer-copyright-text-align',
+		'priority'          => 150,
+		'choices'           => [
 			'left'   => esc_html__( 'Left', 'gridd' ),
 			'center' => esc_html__( 'Center', 'gridd' ),
 			'right'  => esc_html__( 'Right', 'gridd' ),
 		],
+		'sanitize_callback' => function( $value ) {
+			return ( 'left' !== $value && 'right' !== $value && 'center' !== $value ) ? 'center' : $value;
+		},
 	]
 );

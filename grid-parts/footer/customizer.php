@@ -6,7 +6,10 @@
  */
 
 use Gridd\Customizer;
+use Gridd\Customizer\Sanitize;
 use Gridd\Grid_Part\Footer;
+
+$sanitization = new Sanitize();
 
 gridd_add_customizer_section(
 	'gridd_grid_part_details_footer',
@@ -38,7 +41,7 @@ gridd_add_customizer_field(
 		'choices'           => [
 			'parts' => Footer::get_footer_grid_parts(),
 		],
-		'sanitize_callback' => [ gridd()->customizer, 'sanitize_gridd_grid' ],
+		'sanitize_callback' => [ $sanitization, 'grid' ],
 		'transport'         => 'postMessage',
 		'partial_refresh'   => [
 			'gridd_footer_grid_template' => [

@@ -9,6 +9,7 @@
 use Gridd\Grid_Part\Navigation;
 use Gridd\AMP;
 use Gridd\Customizer;
+use Gridd\Customizer\Sanitize;
 
 /**
  * Register the menus.
@@ -34,6 +35,8 @@ add_action( 'after_setup_theme', 'gridd_add_nav_parts' );
  * @return void
  */
 function gridd_nav_customizer_options( $id ) {
+
+	$sanitization = new Sanitize();
 
 	/**
 	 * Add Customizer Sections.
@@ -77,22 +80,28 @@ function gridd_nav_customizer_options( $id ) {
 
 	gridd_add_customizer_field(
 		[
-			'type'        => 'radio',
-			'settings'    => "gridd_grid_nav_{$id}_responsive_behavior",
-			'label'       => esc_html__( 'Responsive Behavior', 'gridd' ),
-			'description' => sprintf(
+			'type'              => 'radio',
+			'settings'          => "gridd_grid_nav_{$id}_responsive_behavior",
+			'label'             => esc_html__( 'Responsive Behavior', 'gridd' ),
+			'description'       => sprintf(
 				/* translators: The link properies. */
 				__( 'Select how this navigation should behave in smaller screens. We recommend you hide navigations on mobile and instead use the <a%s>separate mobile-navigation menu</a>.', 'gridd' ),
 				' href="#" class="button-gridd-focus global-focus" data-context="section" data-focus="gridd_grid_part_details_nav-handheld"'
 			),
-			'section'     => "gridd_grid_part_details_nav_$id",
-			'default'     => 'desktop-normal mobile-hidden',
-			'choices'     => [
+			'section'           => "gridd_grid_part_details_nav_$id",
+			'default'           => 'desktop-normal mobile-hidden',
+			'choices'           => [
 				'desktop-normal mobile-normal' => esc_html__( 'Always visible', 'gridd' ),
 				'desktop-normal mobile-icon'   => esc_html__( 'Collapse to icon on mobile', 'gridd' ),
 				'desktop-icon mobile-icon'     => esc_html__( 'Always collapsed', 'gridd' ),
 				'desktop-normal mobile-hidden' => esc_html__( 'Hide on mobile', 'gridd' ),
 			],
+			'sanitize_callback' => function( $value ) {
+				if ( 'desktop-normal mobile-normal' !== $value && 'desktop-normal mobile-icon' !== $value && 'desktop-icon mobile-icon' !== $value && 'desktop-normal mobile-hidden' !== $value ) {
+					return 'desktop-normal mobile-hidden';
+				}
+				return $value;
+			},
 		]
 	);
 
@@ -127,17 +136,18 @@ function gridd_nav_customizer_options( $id ) {
 
 	gridd_add_customizer_field(
 		[
-			'type'        => 'gridd-wcag-tc',
-			'label'       => esc_html__( 'Items Color', 'gridd' ),
-			'description' => esc_html__( 'Select the color used for your menu items. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
-			'settings'    => "gridd_grid_nav_{$id}_items_color",
-			'section'     => "gridd_grid_part_details_nav_$id",
-			'choices'     => [
+			'type'              => 'gridd-wcag-tc',
+			'label'             => esc_html__( 'Items Color', 'gridd' ),
+			'description'       => esc_html__( 'Select the color used for your menu items. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
+			'settings'          => "gridd_grid_nav_{$id}_items_color",
+			'section'           => "gridd_grid_part_details_nav_$id",
+			'choices'           => [
 				'setting' => "gridd_grid_nav_{$id}_bg_color",
 			],
-			'default'     => '#000000',
-			'transport'   => 'postMessage',
-			'css_vars'    => "--gridd-nav-$id-color",
+			'default'           => '#000000',
+			'transport'         => 'postMessage',
+			'css_vars'          => "--gridd-nav-$id-color",
+			'sanitize_callback' => [ $sanitization, 'color_hex' ],
 		]
 	);
 
@@ -159,17 +169,18 @@ function gridd_nav_customizer_options( $id ) {
 
 	gridd_add_customizer_field(
 		[
-			'type'        => 'gridd-wcag-tc',
-			'label'       => esc_html__( 'Accent Items Color', 'gridd' ),
-			'description' => esc_html__( 'Select the color used for your menu items on hover, as well as for the currently active menu-item. Applies to both parent and child (dropdown) menu items. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
-			'settings'    => "gridd_grid_nav_{$id}_accent_color",
-			'section'     => "gridd_grid_part_details_nav_$id",
-			'choices'     => [
+			'type'              => 'gridd-wcag-tc',
+			'label'             => esc_html__( 'Accent Items Color', 'gridd' ),
+			'description'       => esc_html__( 'Select the color used for your menu items on hover, as well as for the currently active menu-item. Applies to both parent and child (dropdown) menu items. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
+			'settings'          => "gridd_grid_nav_{$id}_accent_color",
+			'section'           => "gridd_grid_part_details_nav_$id",
+			'choices'           => [
 				'setting' => "gridd_grid_nav_{$id}_accent_bg_color",
 			],
-			'default'     => '#ffffff',
-			'transport'   => 'postMessage',
-			'css_vars'    => "--gridd-nav-$id-accent-color",
+			'default'           => '#ffffff',
+			'transport'         => 'postMessage',
+			'css_vars'          => "--gridd-nav-$id-accent-color",
+			'sanitize_callback' => [ $sanitization, 'color_hex' ],
 		]
 	);
 
@@ -193,16 +204,16 @@ function gridd_nav_customizer_options( $id ) {
 
 	gridd_add_customizer_field(
 		[
-			'type'            => 'radio-buttonset',
-			'settings'        => "gridd_grid_nav_{$id}_justify_content",
-			'label'           => esc_html__( 'Justify Items', 'gridd' ),
-			'description'     => esc_html__( 'Choose how menu items will be spread horizontally inside the menu container.', 'gridd' ),
-			'tooltip'         => esc_html__( 'This helps distribute extra free space left over when all the items on a line have reached their maximum size. It also exerts some control over the alignment of items when they overflow the line.', 'gridd' ),
-			'section'         => "gridd_grid_part_details_nav_$id",
-			'default'         => 'center',
-			'transport'       => 'postMessage',
-			'css_vars'        => "--gridd-nav-$id-justify",
-			'active_callback' => [
+			'type'              => 'radio-buttonset',
+			'settings'          => "gridd_grid_nav_{$id}_justify_content",
+			'label'             => esc_html__( 'Justify Items', 'gridd' ),
+			'description'       => esc_html__( 'Choose how menu items will be spread horizontally inside the menu container.', 'gridd' ),
+			'tooltip'           => esc_html__( 'This helps distribute extra free space left over when all the items on a line have reached their maximum size. It also exerts some control over the alignment of items when they overflow the line.', 'gridd' ),
+			'section'           => "gridd_grid_part_details_nav_$id",
+			'default'           => 'center',
+			'transport'         => 'postMessage',
+			'css_vars'          => "--gridd-nav-$id-justify",
+			'active_callback'   => [
 				[
 					'setting'  => "gridd_grid_nav_{$id}_vertical",
 					'operator' => '!==',
@@ -214,7 +225,7 @@ function gridd_nav_customizer_options( $id ) {
 					'operator' => '!==',
 				],
 			],
-			'choices'         => [
+			'choices'           => [
 				'flex-start'    => '<span class="gridd-flexbox-svg-option" title="' . esc_attr__( 'Start', 'gridd' ) . '"><span class="screen-reader-text">' . esc_html__( 'Start', 'gridd' ) . '</span>' . gridd_get_file_contents( 'assets/images/flexbox/justify-content-flex-start.svg' ) . '</span>',
 				'flex-end'      => '<span class="gridd-flexbox-svg-option" title="' . esc_attr__( 'End', 'gridd' ) . '"><span class="screen-reader-text">' . esc_html__( 'End', 'gridd' ) . '</span>' . gridd_get_file_contents( 'assets/images/flexbox/justify-content-flex-end.svg' ) . '</span>',
 				'center'        => '<span class="gridd-flexbox-svg-option" title="' . esc_attr__( 'Center', 'gridd' ) . '"><span class="screen-reader-text">' . esc_html__( 'Center', 'gridd' ) . '</span>' . gridd_get_file_contents( 'assets/images/flexbox/justify-content-center.svg' ) . '</span>',
@@ -222,18 +233,24 @@ function gridd_nav_customizer_options( $id ) {
 				'space-around'  => '<span class="gridd-flexbox-svg-option" title="' . esc_attr__( 'Space Around', 'gridd' ) . '"><span class="screen-reader-text">' . esc_html__( 'Space Around', 'gridd' ) . '</span>' . gridd_get_file_contents( 'assets/images/flexbox/justify-content-space-around.svg' ) . '</span>',
 				'space-evenly'  => '<span class="gridd-flexbox-svg-option" title="' . esc_attr__( 'Space Evenly', 'gridd' ) . '"><span class="screen-reader-text">' . esc_html__( 'Space Evenly', 'gridd' ) . '</span>' . gridd_get_file_contents( 'assets/images/flexbox/justify-content-space-evenly.svg' ) . '</span>',
 			],
+			'sanitize_callback' => function( $value ) {
+				if ( ! in_array( $value, [ 'flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'space-evenly' ] ) ) {
+					return 'center';
+				}
+				return $value;
+			},
 		]
 	);
 
 	gridd_add_customizer_field(
 		[
-			'type'            => 'text',
-			'settings'        => "gridd_grid_nav_{$id}_expand_label",
-			'label'           => esc_html__( 'Expand Label', 'gridd' ),
-			'section'         => "gridd_grid_part_details_nav_$id",
-			'default'         => esc_html__( 'MENU', 'gridd' ),
-			'transport'       => 'refresh',
-			'active_callback' => [
+			'type'              => 'text',
+			'settings'          => "gridd_grid_nav_{$id}_expand_label",
+			'label'             => esc_html__( 'Expand Label', 'gridd' ),
+			'section'           => "gridd_grid_part_details_nav_$id",
+			'default'           => esc_html__( 'MENU', 'gridd' ),
+			'transport'         => 'refresh',
+			'active_callback'   => [
 				[
 					'setting'  => "gridd_grid_nav_{$id}_responsive_behavior",
 					'value'    => 'desktop-normal mobile-normal',
@@ -245,20 +262,21 @@ function gridd_nav_customizer_options( $id ) {
 					'operator' => '!==',
 				],
 			],
+			'sanitize_callback' => 'esc_html',
 		]
 	);
 
 	gridd_add_customizer_field(
 		[
-			'type'            => 'radio-buttonset',
-			'settings'        => "gridd_grid_nav_{$id}_expand_icon",
-			'label'           => esc_html__( 'Expand Icon', 'gridd' ),
-			'description'     => esc_html__( 'Select the icon that should be used to expand the navigation.', 'gridd' ),
-			'section'         => "gridd_grid_part_details_nav_$id",
-			'default'         => 'menu-1',
-			'transport'       => 'refresh',
-			'choices'         => Navigation::get_expand_svgs(),
-			'active_callback' => [
+			'type'              => 'radio-buttonset',
+			'settings'          => "gridd_grid_nav_{$id}_expand_icon",
+			'label'             => esc_html__( 'Expand Icon', 'gridd' ),
+			'description'       => esc_html__( 'Select the icon that should be used to expand the navigation.', 'gridd' ),
+			'section'           => "gridd_grid_part_details_nav_$id",
+			'default'           => 'menu-1',
+			'transport'         => 'refresh',
+			'choices'           => Navigation::get_expand_svgs(),
+			'active_callback'   => [
 				[
 					'setting'  => "gridd_grid_nav_{$id}_responsive_behavior",
 					'value'    => 'desktop-normal mobile-normal',
@@ -270,19 +288,22 @@ function gridd_nav_customizer_options( $id ) {
 					'operator' => '!==',
 				],
 			],
+			'sanitize_callback' => function( $value ) {
+				return in_array( $value, array_keys( Navigation::get_expand_svgs() ), true ) ? $value : 'menu-1';
+			},
 		]
 	);
 
 	gridd_add_customizer_field(
 		[
-			'type'            => 'select',
-			'settings'        => "gridd_grid_nav_{$id}_expand_icon_position",
-			'label'           => esc_html__( 'Expand Icon Position', 'gridd' ),
-			'description'     => esc_html__( 'Changes the position of the collapsed-menu icon inside the area.', 'gridd' ),
-			'section'         => "gridd_grid_part_details_nav_$id",
-			'default'         => 'center-right',
-			'transport'       => 'refresh',
-			'choices'         => [
+			'type'              => 'select',
+			'settings'          => "gridd_grid_nav_{$id}_expand_icon_position",
+			'label'             => esc_html__( 'Expand Icon Position', 'gridd' ),
+			'description'       => esc_html__( 'Changes the position of the collapsed-menu icon inside the area.', 'gridd' ),
+			'section'           => "gridd_grid_part_details_nav_$id",
+			'default'           => 'center-right',
+			'transport'         => 'refresh',
+			'choices'           => [
 				'top-left'      => esc_html__( 'Top Left', 'gridd' ),
 				'top-center'    => esc_html__( 'Top Center', 'gridd' ),
 				'top-right'     => esc_html__( 'Top Right', 'gridd' ),
@@ -293,7 +314,7 @@ function gridd_nav_customizer_options( $id ) {
 				'bottom-center' => esc_html__( 'Bottom Center', 'gridd' ),
 				'bottom-right'  => esc_html__( 'Bottom Right', 'gridd' ),
 			],
-			'active_callback' => [
+			'active_callback'   => [
 				[
 					'setting'  => "gridd_grid_nav_{$id}_responsive_behavior",
 					'value'    => 'desktop-normal mobile-normal',
@@ -305,6 +326,12 @@ function gridd_nav_customizer_options( $id ) {
 					'operator' => '!==',
 				],
 			],
+			'sanitize_callback' => function( $value ) {
+				if ( ! in_array( $value, [ 'top-left', 'top-center', 'top-right', 'center-left', 'center-center', 'center-right', 'bottom-left', 'bottom-center', 'bottom-right' ], true ) ) {
+					return 'center-right';
+				}
+				return $value;
+			},
 		]
 	);
 }

@@ -6,9 +6,11 @@
  */
 
 use Gridd\Customizer;
+use Gridd\Customizer\Sanitize;
 use Gridd\Grid_Parts;
 
-$grid_parts = Grid_Parts::get_instance()->get_parts();
+$sanitization = new Sanitize();
+$grid_parts   = Grid_Parts::get_instance()->get_parts();
 
 gridd_add_customizer_section(
 	'gridd_grid',
@@ -39,7 +41,7 @@ gridd_add_customizer_field(
 		'description'       => __( 'Edit settings for the grid. For more information and documentation on how the grid works, please read <a href="https://wplemon.com/documentation/gridd/the-grid-control/" target="_blank">this article</a>.', 'gridd' ),
 		'default'           => gridd_get_grid_default_value(),
 		'priority'          => 10,
-		'sanitize_callback' => [ gridd()->customizer, 'sanitize_gridd_grid' ],
+		'sanitize_callback' => [ $sanitization, 'grid' ],
 		'choices'           => [
 			'parts'     => Grid_Parts::get_instance()->get_parts(),
 			'duplicate' => 'gridd_grid_mobile',

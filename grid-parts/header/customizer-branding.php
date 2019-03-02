@@ -85,15 +85,16 @@ add_action(
 
 gridd_add_customizer_field(
 	[
-		'type'      => 'text',
-		'settings'  => 'gridd_grid_header_branding_padding',
-		'label'     => esc_html__( 'Padding', 'gridd' ),
-		'tooltip'   => __( 'For details on how padding works, please refer to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_header_branding',
-		'priority'  => 30,
-		'default'   => '0.5em',
-		'transport' => 'postMessage',
-		'css_vars'  => '--gridd-branding-padding',
+		'type'              => 'text',
+		'settings'          => 'gridd_grid_header_branding_padding',
+		'label'             => esc_html__( 'Padding', 'gridd' ),
+		'tooltip'           => __( 'For details on how padding works, please refer to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
+		'section'           => 'gridd_grid_part_details_header_branding',
+		'priority'          => 30,
+		'default'           => '0.5em',
+		'transport'         => 'postMessage',
+		'css_vars'          => '--gridd-branding-padding',
+		'sanitize_callback' => 'esc_attr', // Though not exactly accurate, in this case it sanitizes the CSS value properly.
 	]
 );
 
@@ -235,38 +236,44 @@ gridd_add_customizer_field(
 
 gridd_add_customizer_field(
 	[
-		'type'      => 'radio-buttonset',
-		'settings'  => 'gridd_grid_header_branding_horizontal_align',
-		'label'     => esc_html__( 'Horizontal Alignment', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_header_branding',
-		'priority'  => 100,
-		'default'   => 'left',
-		'transport' => 'auto',
-		'css_vars'  => '--gridd-branding-horizontal-align',
-		'transport' => 'postMessage',
-		'choices'   => [
+		'type'              => 'radio-buttonset',
+		'settings'          => 'gridd_grid_header_branding_horizontal_align',
+		'label'             => esc_html__( 'Horizontal Alignment', 'gridd' ),
+		'section'           => 'gridd_grid_part_details_header_branding',
+		'priority'          => 100,
+		'default'           => 'left',
+		'transport'         => 'auto',
+		'css_vars'          => '--gridd-branding-horizontal-align',
+		'transport'         => 'postMessage',
+		'choices'           => [
 			'left'   => esc_html__( 'Left', 'gridd' ),
 			'center' => esc_html__( 'Center', 'gridd' ),
 			'right'  => esc_html__( 'Right', 'gridd' ),
 		],
+		'sanitize_callback' => function( $value ) {
+			return ( 'left' !== $value && 'right' !== $value && 'center' !== $value ) ? 'left' : $value;
+		},
 	]
 );
 
 gridd_add_customizer_field(
 	[
-		'type'      => 'radio-buttonset',
-		'settings'  => 'gridd_grid_header_branding_vertical_align',
-		'label'     => esc_html__( 'Vertical Alignment', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_header_branding',
-		'priority'  => 110,
-		'default'   => 'center',
-		'transport' => 'auto',
-		'css_vars'  => '--gridd-branding-vertical-align',
-		'transport' => 'postMessage',
-		'choices'   => [
+		'type'              => 'radio-buttonset',
+		'settings'          => 'gridd_grid_header_branding_vertical_align',
+		'label'             => esc_html__( 'Vertical Alignment', 'gridd' ),
+		'section'           => 'gridd_grid_part_details_header_branding',
+		'priority'          => 110,
+		'default'           => 'center',
+		'transport'         => 'auto',
+		'css_vars'          => '--gridd-branding-vertical-align',
+		'transport'         => 'postMessage',
+		'choices'           => [
 			'flex-start' => esc_html__( 'Top', 'gridd' ),
 			'center'     => esc_html__( 'Center', 'gridd' ),
 			'flex-end'   => esc_html__( 'Bottom', 'gridd' ),
 		],
+		'sanitize_callback' => function( $value ) {
+			return ( 'flex-start' !== $value && 'flex-end' !== $value && 'center' !== $value ) ? 'center' : $value;
+		},
 	]
 );

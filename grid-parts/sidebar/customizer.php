@@ -7,6 +7,7 @@
 
 use Gridd\Grid_Part\Sidebar;
 use Gridd\Customizer;
+use Gridd\Customizer\Sanitize;
 use Gridd\AMP;
 
 $number = Sidebar::get_number_of_sidebars();
@@ -23,6 +24,8 @@ for ( $i = 1; $i <= $number; $i++ ) {
  * @return void
  */
 function gridd_sidebar_customizer_options( $id ) {
+
+	$sanitization = new Sanitize();
 
 	/* translators: The number of the widget area. */
 	$label = get_theme_mod( "gridd_grid_widget_area_{$id}_name", sprintf( esc_html__( 'Widget Area %d', 'gridd' ), intval( $id ) ) );
@@ -85,41 +88,42 @@ function gridd_sidebar_customizer_options( $id ) {
 
 	gridd_add_customizer_field(
 		[
-			'type'        => 'gridd-wcag-tc',
-			'settings'    => "gridd_grid_sidebar_{$id}_color",
-			'label'       => esc_html__( 'Text Color', 'gridd' ),
-			'description' => esc_html__( 'Select the color used for your text. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
-			'section'     => "gridd_grid_part_details_sidebar_$id",
-			'default'     => '#000000',
-			'priority'    => 20,
-			'transport'   => 'auto',
-			'choices'     => [
+			'type'              => 'gridd-wcag-tc',
+			'settings'          => "gridd_grid_sidebar_{$id}_color",
+			'label'             => esc_html__( 'Text Color', 'gridd' ),
+			'description'       => esc_html__( 'Select the color used for your text. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
+			'section'           => "gridd_grid_part_details_sidebar_$id",
+			'default'           => '#000000',
+			'priority'          => 20,
+			'transport'         => 'auto',
+			'choices'           => [
 				'setting' => "gridd_grid_sidebar_{$id}_background_color",
 			],
-			'output'      => [
+			'output'            => [
 				[
 					'element'  => ".gridd-tp-sidebar_{$id},.gridd-tp-sidebar_{$id} h1,.gridd-tp-sidebar_{$id} h2,.gridd-tp-sidebar_{$id} h3,.gridd-tp-sidebar_{$id} h4,.gridd-tp-sidebar_{$id} h5,.gridd-tp-sidebar_{$id} h6,.gridd-tp-sidebar_{$id} .widget-title",
 					'property' => 'color',
 				],
 			],
-			'css_vars'    => "--gridd-sidebar-{$id}-color",
+			'css_vars'          => "--gridd-sidebar-{$id}-color",
+			'sanitize_callback' => [ $sanitization, 'color_hex' ],
 		]
 	);
 
 	gridd_add_customizer_field(
 		[
-			'type'        => 'gridd-wcag-lc',
-			'settings'    => "gridd_grid_sidebar_{$id}_links_color",
-			'label'       => esc_html__( 'Links Color', 'gridd' ),
-			'description' => esc_html__( 'Select the color used for your links. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
-			'section'     => "gridd_grid_part_details_sidebar_$id",
-			'default'     => '#0f5e97',
-			'priority'    => 30,
-			'transport'   => 'auto',
-			'choices'     => [
+			'type'              => 'gridd-wcag-lc',
+			'settings'          => "gridd_grid_sidebar_{$id}_links_color",
+			'label'             => esc_html__( 'Links Color', 'gridd' ),
+			'description'       => esc_html__( 'Select the color used for your links. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
+			'section'           => "gridd_grid_part_details_sidebar_$id",
+			'default'           => '#0f5e97',
+			'priority'          => 30,
+			'transport'         => 'auto',
+			'choices'           => [
 				'alpha' => true,
 			],
-			'output'      => [
+			'output'            => [
 				[
 					'element'  => [
 						".gridd-tp-sidebar_{$id} a",
@@ -132,17 +136,18 @@ function gridd_sidebar_customizer_options( $id ) {
 					'property' => 'color',
 				],
 			],
-			'css_vars'    => "--gridd-sidebar-{$id}-links-color",
-			'choices'     => [
+			'css_vars'          => "--gridd-sidebar-{$id}-links-color",
+			'choices'           => [
 				'backgroundColor' => "gridd_grid_sidebar_{$id}_background_color",
 				'textColor'       => "gridd_grid_sidebar_{$id}_color",
 			],
+			'sanitize_callback' => [ $sanitization, 'color_hex' ],
 		]
 	);
 
 	gridd_add_customizer_field(
 		[
-			'type'        => 'text',
+			'type'        => 'dimension',
 			'settings'    => "gridd_grid_sidebar_{$id}_padding",
 			'label'       => esc_html__( 'Padding', 'gridd' ),
 			'description' => __( 'The padding for this area. For details on how padding works, please refer to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
@@ -162,7 +167,7 @@ function gridd_sidebar_customizer_options( $id ) {
 
 	gridd_add_customizer_field(
 		[
-			'type'        => 'text',
+			'type'        => 'dimension',
 			'settings'    => "gridd_grid_sidebar_{$id}_widgets_margin",
 			'label'       => esc_html__( 'Margin between widgets', 'gridd' ),
 			'description' => esc_html__( 'Changes the spacing between widgets in this widget-area.', 'gridd' ),

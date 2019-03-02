@@ -30,16 +30,16 @@ foreach ( $sliders as $slider ) {
 }
 gridd_add_customizer_field(
 	[
-		'type'            => 'select',
-		'settings'        => 'gridd_grid_layerslider_slider',
-		'label'           => esc_html__( 'Choose Slider', 'gridd' ),
-		'section'         => 'gridd_grid_part_details_layer-slider',
-		'default'         => '',
-		'priority'        => 10,
-		'transport'       => 'refresh',
-		'choices'         => $sliders_array,
-		'transport'       => 'postMessage',
-		'partial_refresh' => [
+		'type'              => 'select',
+		'settings'          => 'gridd_grid_layerslider_slider',
+		'label'             => esc_html__( 'Choose Slider', 'gridd' ),
+		'section'           => 'gridd_grid_part_details_layer-slider',
+		'default'           => '',
+		'priority'          => 10,
+		'transport'         => 'refresh',
+		'choices'           => $sliders_array,
+		'transport'         => 'postMessage',
+		'partial_refresh'   => [
 			'gridd_grid_layerslider_slider_template' => [
 				'selector'            => '.gridd-tp-layer-slider',
 				'container_inclusive' => true,
@@ -48,5 +48,11 @@ gridd_add_customizer_field(
 				},
 			],
 		],
+		'sanitize_callback' => function( $value ) use ( $sliders_array ) {
+			if ( ! isset( $sliders_array[ $value ] ) ) {
+				return '';
+			}
+			return $value;
+		},
 	]
 );

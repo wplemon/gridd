@@ -6,6 +6,9 @@
  */
 
 use Gridd\Customizer;
+use Gridd\Customizer\Sanitize;
+
+$sanitization = new Sanitize();
 
 /**
  * Add the Theme-Options panel.
@@ -106,59 +109,62 @@ gridd_add_customizer_field(
 
 gridd_add_customizer_field(
 	[
-		'type'        => 'gridd-wcag-tc',
-		'settings'    => 'gridd_text_color',
-		'label'       => esc_html__( 'Text Color', 'gridd' ),
-		'description' => esc_html__( 'Select the color used for your text. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
-		'section'     => 'gridd_typography',
-		'priority'    => 30,
-		'default'     => '#000000',
-		'css_vars'    => '--gridd-text-color',
-		'transport'   => 'postMessage',
-		'choices'     => [
+		'type'              => 'gridd-wcag-tc',
+		'settings'          => 'gridd_text_color',
+		'label'             => esc_html__( 'Text Color', 'gridd' ),
+		'description'       => esc_html__( 'Select the color used for your text. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
+		'section'           => 'gridd_typography',
+		'priority'          => 30,
+		'default'           => '#000000',
+		'css_vars'          => '--gridd-text-color',
+		'transport'         => 'postMessage',
+		'choices'           => [
 			'setting' => 'gridd_grid_content_background_color',
 		],
+		'sanitize_callback' => [ $sanitization, 'color_hex' ],
 	]
 );
 
 gridd_add_customizer_field(
 	[
-		'settings'    => 'gridd_links_color',
-		'type'        => 'gridd-wcag-lc',
-		'label'       => esc_html__( 'Links Color', 'gridd' ),
-		'description' => esc_html__( 'Select the hue for you links. The color will be auto-calculated to ensure maximum readability according to WCAG.', 'gridd' ),
-		'section'     => 'gridd_typography',
-		'transport'   => 'postMessage',
-		'priority'    => 40,
-		'choices'     => [
+		'settings'          => 'gridd_links_color',
+		'type'              => 'gridd-wcag-lc',
+		'label'             => esc_html__( 'Links Color', 'gridd' ),
+		'description'       => esc_html__( 'Select the hue for you links. The color will be auto-calculated to ensure maximum readability according to WCAG.', 'gridd' ),
+		'section'           => 'gridd_typography',
+		'transport'         => 'postMessage',
+		'priority'          => 40,
+		'choices'           => [
 			'alpha' => false,
 		],
-		'default'     => '#0f5e97',
-		'choices'     => [
+		'default'           => '#0f5e97',
+		'choices'           => [
 			'backgroundColor' => 'gridd_grid_content_background_color',
 			'textColor'       => 'gridd_text_color',
 		],
-		'css_vars'    => '--gridd-links-color',
+		'css_vars'          => '--gridd-links-color',
+		'sanitize_callback' => [ $sanitization, 'color_hex' ],
 	]
 );
 
 gridd_add_customizer_field(
 	[
-		'settings'  => 'gridd_links_hover_color',
-		'type'      => 'gridd-wcag-lc',
-		'label'     => esc_html__( 'Links Hover Color', 'gridd' ),
-		'section'   => 'gridd_typography',
-		'transport' => 'postMessage',
-		'priority'  => 50,
-		'choices'   => [
+		'settings'          => 'gridd_links_hover_color',
+		'type'              => 'gridd-wcag-lc',
+		'label'             => esc_html__( 'Links Hover Color', 'gridd' ),
+		'section'           => 'gridd_typography',
+		'transport'         => 'postMessage',
+		'priority'          => 50,
+		'choices'           => [
 			'alpha' => false,
 		],
-		'default'   => '#541cfc',
-		'css_vars'  => '--gridd-links-hover-color',
-		'choices'   => [
+		'default'           => '#541cfc',
+		'css_vars'          => '--gridd-links-hover-color',
+		'choices'           => [
 			'backgroundColor' => 'gridd_grid_content_background_color',
 			'textColor'       => 'gridd_text_color',
 		],
+		'sanitize_callback' => [ $sanitization, 'color_hex' ],
 	]
 );
 
@@ -211,16 +217,16 @@ gridd_add_customizer_field(
  */
 gridd_add_customizer_field(
 	[
-		'settings'    => 'gridd_type_scale',
-		'type'        => 'radio',
-		'label'       => esc_attr__( 'Typography Scale', 'gridd' ),
-		'description' => esc_attr__( 'Controls the size relations between your headers and your main typography font-size.', 'gridd' ),
-		'section'     => 'gridd_typography',
-		'default'     => '1.26',
-		'transport'   => 'postMessage',
-		'css_vars'    => '--gridd-typo-scale',
-		'priority'    => 80,
-		'choices'     => [
+		'settings'          => 'gridd_type_scale',
+		'type'              => 'radio',
+		'label'             => esc_attr__( 'Typography Scale', 'gridd' ),
+		'description'       => esc_attr__( 'Controls the size relations between your headers and your main typography font-size.', 'gridd' ),
+		'section'           => 'gridd_typography',
+		'default'           => '1.26',
+		'transport'         => 'postMessage',
+		'css_vars'          => '--gridd-typo-scale',
+		'priority'          => 80,
+		'choices'           => [
 			/* Translators: Numeric representation of the scale. */
 			'1.149' => sprintf( esc_attr__( '%s - Musical Pentatonic (classic)', 'gridd' ), '1.149' ),
 			/* Translators: Numeric representation of the scale. */
@@ -228,6 +234,9 @@ gridd_add_customizer_field(
 			/* Translators: Numeric representation of the scale. */
 			'1.333' => sprintf( esc_attr__( '%s - Perfect Fourth', 'gridd' ), '1.333' ),
 		],
-		'priority'    => 80,
+		'priority'          => 80,
+		'sanitize_callback' => function( $value ) {
+			return is_numeric( $value ) ? $value : '1.26';
+		},
 	]
 );

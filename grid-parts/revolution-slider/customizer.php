@@ -31,17 +31,17 @@ foreach ( $slider->getArrSliders() as $slide ) {
 
 gridd_add_customizer_field(
 	[
-		'type'            => 'select',
-		'settings'        => 'gridd_grid_revslider_slider',
-		'label'           => esc_html__( 'Select Slider', 'gridd' ),
-		'description'     => esc_html__( 'Select the slider you want to assign to this grid-part.', 'gridd' ),
-		'section'         => 'gridd_grid_part_details_revolution-slider',
-		'default'         => '',
-		'priority'        => 10,
-		'transport'       => 'refresh',
-		'choices'         => $sliders_array,
-		'transport'       => 'postMessage',
-		'partial_refresh' => [
+		'type'              => 'select',
+		'settings'          => 'gridd_grid_revslider_slider',
+		'label'             => esc_html__( 'Select Slider', 'gridd' ),
+		'description'       => esc_html__( 'Select the slider you want to assign to this grid-part.', 'gridd' ),
+		'section'           => 'gridd_grid_part_details_revolution-slider',
+		'default'           => '',
+		'priority'          => 10,
+		'transport'         => 'refresh',
+		'choices'           => $sliders_array,
+		'transport'         => 'postMessage',
+		'partial_refresh'   => [
 			'gridd_grid_revslider_slider_template' => [
 				'selector'            => '.gridd-tp-revolution-slider',
 				'container_inclusive' => true,
@@ -50,5 +50,11 @@ gridd_add_customizer_field(
 				},
 			],
 		],
+		'sanitize_callback' => function( $value ) use ( $sliders_array ) {
+			if ( ! isset( $sliders_array[ $value ] ) ) {
+				return '';
+			}
+			return $value;
+		},
 	]
 );

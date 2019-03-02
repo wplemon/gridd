@@ -9,6 +9,7 @@
 use Gridd\Grid_Part\Reusable_Block;
 use Gridd\AMP;
 use Gridd\Customizer;
+use Gridd\Customizer\Sanitize;
 
 /**
  * Register the menus.
@@ -35,6 +36,8 @@ add_action( 'after_setup_theme', 'gridd_add_reusable_blocks_parts' );
  * @return void
  */
 function gridd_reusable_blocks_customizer_options( $id ) {
+
+	$sanitization = new Sanitize();
 
 	gridd_add_customizer_field(
 		[
@@ -92,18 +95,19 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 
 	gridd_add_customizer_field(
 		[
-			'type'        => 'gridd-wcag-tc',
-			'settings'    => "gridd_grid_reusable_block_{$id}_color",
-			'section'     => "gridd_grid_part_details_reusable_block_$id",
-			'choices'     => [
+			'type'              => 'gridd-wcag-tc',
+			'settings'          => "gridd_grid_reusable_block_{$id}_color",
+			'section'           => "gridd_grid_part_details_reusable_block_$id",
+			'choices'           => [
 				'setting' => "gridd_grid_reusable_block_{$id}_bg_color",
 			],
-			'label'       => esc_html__( 'Text Color', 'gridd' ),
-			'description' => esc_html__( 'Select the color used for your text. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
-			'priority'    => 30,
-			'default'     => '#000000',
-			'css_vars'    => "--gridd-reusable-block-$id-color",
-			'transport'   => 'postMessage',
+			'label'             => esc_html__( 'Text Color', 'gridd' ),
+			'description'       => esc_html__( 'Select the color used for your text. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
+			'priority'          => 30,
+			'default'           => '#000000',
+			'css_vars'          => "--gridd-reusable-block-$id-color",
+			'transport'         => 'postMessage',
+			'sanitize_callback' => [ $sanitization, 'color_hex' ],
 		]
 	);
 }

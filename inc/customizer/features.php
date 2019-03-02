@@ -31,43 +31,49 @@ gridd_add_customizer_section(
 
 gridd_add_customizer_field(
 	[
-		'type'            => 'radio',
-		'settings'        => 'gridd_featured_image_mode_archive',
-		'label'           => esc_attr__( 'Featured Images Mode in Archives', 'gridd' ),
-		'description'     => esc_html__( 'Select how featured images will be displayed in post-archives.', 'gridd' ),
-		'section'         => 'gridd_features',
-		'default'         => 'alignwide',
-		'transport'       => 'refresh',
-		'priority'        => 10,
-		'choices'         => [
+		'type'              => 'radio',
+		'settings'          => 'gridd_featured_image_mode_archive',
+		'label'             => esc_attr__( 'Featured Images Mode in Archives', 'gridd' ),
+		'description'       => esc_html__( 'Select how featured images will be displayed in post-archives.', 'gridd' ),
+		'section'           => 'gridd_features',
+		'default'           => 'alignwide',
+		'transport'         => 'refresh',
+		'priority'          => 10,
+		'choices'           => [
 			'hidden'        => esc_attr__( 'Hidden', 'gridd' ),
 			'gridd-contain' => esc_attr__( 'Normal', 'gridd' ),
 			'alignwide'     => esc_attr__( 'Wide', 'gridd' ),
 		],
-		'active_callback' => function() {
+		'active_callback'   => function() {
 			return ( is_archive() || is_home() );
+		},
+		'sanitize_callback' => function( $value ) {
+			return ( 'hidden' === $value || 'gridd-contain' === $value || 'alignwide' === $value ) ? $value : 'alignwide';
 		},
 	]
 );
 
 gridd_add_customizer_field(
 	[
-		'type'            => 'radio',
-		'settings'        => 'gridd_featured_image_mode_singular',
-		'label'           => esc_attr__( 'Featured Images Mode in Single Posts', 'gridd' ),
-		'description'     => esc_html__( 'Select how featured images will be displayed in single post-types (Applies to all post-types).', 'gridd' ),
-		'section'         => 'gridd_features',
-		'default'         => 'alignwide',
-		'transport'       => 'refresh',
-		'priority'        => 20,
-		'choices'         => [
+		'type'              => 'radio',
+		'settings'          => 'gridd_featured_image_mode_singular',
+		'label'             => esc_attr__( 'Featured Images Mode in Single Posts', 'gridd' ),
+		'description'       => esc_html__( 'Select how featured images will be displayed in single post-types (Applies to all post-types).', 'gridd' ),
+		'section'           => 'gridd_features',
+		'default'           => 'alignwide',
+		'transport'         => 'refresh',
+		'priority'          => 20,
+		'choices'           => [
 			'hidden'        => esc_attr__( 'Hidden', 'gridd' ),
 			'gridd-contain' => esc_attr__( 'Normal', 'gridd' ),
 			'alignwide'     => esc_attr__( 'Wide', 'gridd' ),
 			'alignfull'     => esc_attr__( 'Full Width', 'gridd' ),
 		],
-		'active_callback' => function() {
+		'active_callback'   => function() {
 			return is_singular();
+		},
+		'sanitize_callback' => function( $value ) {
+			return ( 'hidden' === $value || 'gridd-contain' === $value || 'alignwide' === $value || 'alignfull' === $value ) ? $value : 'alignwide';
 		},
 	]
 );

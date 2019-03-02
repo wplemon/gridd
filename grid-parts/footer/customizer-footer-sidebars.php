@@ -7,6 +7,7 @@
 
 use Gridd\Grid_Part\Footer;
 use Gridd\Customizer;
+use Gridd\Customizer\Sanitize;
 
 // Add sections & settings for widget areas.
 $sidebars_nr = Footer::get_number_of_sidebars();
@@ -22,6 +23,8 @@ for ( $i = 1; $i <= $sidebars_nr; $i++ ) {
  * @return void
  */
 function gridd_add_footer_widget_area_options( $id ) {
+
+	$sanitization = new Sanitize();
 
 	// Add section.
 	gridd_add_customizer_outer_section(
@@ -65,34 +68,36 @@ function gridd_add_footer_widget_area_options( $id ) {
 	// Text Color.
 	gridd_add_customizer_field(
 		[
-			'type'      => 'gridd-wcag-tc',
-			'settings'  => "gridd_grid_footer_sidebar_{$id}_color",
-			'label'     => esc_html__( 'Text Color', 'gridd' ),
-			'section'   => "gridd_grid_part_details_footer_sidebar_$id",
-			'default'   => '#000000',
-			'transport' => 'postMessage',
-			'css_vars'  => "--gridd-footer-sidebar-$id-color",
-			'choices'   => [
+			'type'              => 'gridd-wcag-tc',
+			'settings'          => "gridd_grid_footer_sidebar_{$id}_color",
+			'label'             => esc_html__( 'Text Color', 'gridd' ),
+			'section'           => "gridd_grid_part_details_footer_sidebar_$id",
+			'default'           => '#000000',
+			'transport'         => 'postMessage',
+			'css_vars'          => "--gridd-footer-sidebar-$id-color",
+			'choices'           => [
 				'setting' => "gridd_grid_footer_sidebar_{$id}_bg_color",
 			],
+			'sanitize_callback' => [ $sanitization, 'color_hex' ],
 		]
 	);
 
 	// Links Color.
 	gridd_add_customizer_field(
 		[
-			'type'      => 'gridd-wcag-lc',
-			'settings'  => "gridd_grid_footer_sidebar_{$id}_links_color",
-			'label'     => esc_html__( 'Links Color', 'gridd' ),
-			'section'   => "gridd_grid_part_details_footer_sidebar_$id",
-			'default'   => '#0f5e97',
-			'transport' => 'postMessage',
-			'css_vars'  => "--gridd-footer-sidebar-$id-links-color",
-			'priority'  => 20,
-			'choices'   => [
+			'type'              => 'gridd-wcag-lc',
+			'settings'          => "gridd_grid_footer_sidebar_{$id}_links_color",
+			'label'             => esc_html__( 'Links Color', 'gridd' ),
+			'section'           => "gridd_grid_part_details_footer_sidebar_$id",
+			'default'           => '#0f5e97',
+			'transport'         => 'postMessage',
+			'css_vars'          => "--gridd-footer-sidebar-$id-links-color",
+			'priority'          => 20,
+			'choices'           => [
 				'backgroundColor' => "gridd_grid_footer_sidebar_{$id}_bg_color",
 				'textColor'       => "gridd_grid_footer_sidebar_{$id}_color",
 			],
+			'sanitize_callback' => [ $sanitization, 'color_hex' ],
 		]
 	);
 }
