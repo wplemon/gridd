@@ -92,7 +92,8 @@
   .gridd-tp.gridd-tp-nvp .mini_cart_item a.focus,
   .gridd-tp.gridd-tp-nvp .mini_cart_item a:active,
   .gridd-tp.gridd-tp-nvp .mini_cart_item a:hover {
-    filter: none; }
+    -webkit-filter: none;
+            filter: none; }
 
 .woocommerce div.product form.cart {
   display: flex;
@@ -115,10 +116,9 @@
 
 .woocommerce-product-search {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, -webkit-max-content));
   grid-template-columns: repeat(auto-fit, minmax(150px, max-content)); }
 
 .woocommerce-grouped-product-list tr {
   display: flex;
   align-items: center; }
-
-/*# sourceMappingURL=woocommerce.css.map */

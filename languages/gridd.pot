@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gridd 1.0.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/gridd\n"
-"POT-Creation-Date: 2019-03-02 18:13:44+00:00\n"
+"POT-Creation-Date: 2019-03-02 23:07:31+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -172,7 +172,7 @@ msgstr ""
 
 #: grid-parts/customizer/breadcrumbs.php:35
 #: grid-parts/customizer/footer-social-media.php:91
-#: grid-parts/customizer/footer.php:90
+#: grid-parts/customizer/footer.php:80
 #: grid-parts/customizer/header-branding.php:90
 #: grid-parts/customizer/header-contact-info.php:105
 #: grid-parts/customizer/header-search.php:29
@@ -187,7 +187,7 @@ msgstr ""
 msgid "Inner padding for this grid-part. Use any valid CSS value."
 msgstr ""
 
-#: grid-parts/customizer/breadcrumbs.php:37 grid-parts/customizer/footer.php:92
+#: grid-parts/customizer/breadcrumbs.php:37 grid-parts/customizer/footer.php:82
 #: grid-parts/customizer/header-branding.php:91
 #: grid-parts/customizer/header-contact-info.php:106
 msgid ""
@@ -197,19 +197,19 @@ msgid ""
 msgstr ""
 
 #: grid-parts/customizer/breadcrumbs.php:49
-#: grid-parts/customizer/content.php:28 grid-parts/customizer/footer.php:62
+#: grid-parts/customizer/content.php:28 grid-parts/customizer/footer.php:52
 #: grid-parts/customizer/header.php:64
 msgid "Max-Width"
 msgstr ""
 
 #: grid-parts/customizer/breadcrumbs.php:50
-#: grid-parts/customizer/content.php:29 grid-parts/customizer/footer.php:63
+#: grid-parts/customizer/content.php:29 grid-parts/customizer/footer.php:53
 #: grid-parts/customizer/header.php:65
 msgid "The maximum width that the contents of this grid-part can use."
 msgstr ""
 
 #: grid-parts/customizer/breadcrumbs.php:51
-#: grid-parts/customizer/content.php:30 grid-parts/customizer/footer.php:64
+#: grid-parts/customizer/content.php:30 grid-parts/customizer/footer.php:54
 #: grid-parts/customizer/header.php:66
 msgid ""
 "Use any valid CSS value like <code>50em</code>, <code>800px</code> or "
@@ -235,7 +235,7 @@ msgstr ""
 #: grid-parts/customizer/content.php:66
 #: grid-parts/customizer/footer-sidebars.php:57
 #: grid-parts/customizer/footer-social-media.php:110
-#: grid-parts/customizer/footer.php:104
+#: grid-parts/customizer/footer.php:94
 #: grid-parts/customizer/header-branding.php:55
 #: grid-parts/customizer/header-contact-info.php:54
 #: grid-parts/customizer/header-search.php:67
@@ -434,43 +434,43 @@ msgid ""
 "target=\"_blank\" rel=\"nofollow\">this article</a>."
 msgstr ""
 
-#: grid-parts/customizer/footer.php:76 grid-parts/customizer/header.php:79
+#: grid-parts/customizer/footer.php:66 grid-parts/customizer/header.php:79
 msgid "Grid Gap"
 msgstr ""
 
-#: grid-parts/customizer/footer.php:77 inc/customizer/grid.php:70
+#: grid-parts/customizer/footer.php:67 inc/customizer/grid.php:70
 msgid "Adds a gap between your grid-parts, both horizontally and vertically."
 msgstr ""
 
-#: grid-parts/customizer/footer.php:78 inc/customizer/grid.php:71
+#: grid-parts/customizer/footer.php:68 inc/customizer/grid.php:71
 msgid ""
 "For more information please read <a "
 "href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/gap\" "
 "target=\"_blank\" rel=\"nofollow\">this article</a>."
 msgstr ""
 
-#: grid-parts/customizer/footer.php:91
+#: grid-parts/customizer/footer.php:81
 msgid "Inner padding for all parts in the footer."
 msgstr ""
 
-#: grid-parts/customizer/footer.php:105
+#: grid-parts/customizer/footer.php:95
 msgid ""
 "Individual grid-parts can override this by setting their own background "
 "color for their area. If you are using a grid-gap the color defined here "
 "will be visible between grid-parts."
 msgstr ""
 
-#: grid-parts/customizer/footer.php:120
+#: grid-parts/customizer/footer.php:110
 msgid "Border-Top Width"
 msgstr ""
 
-#: grid-parts/customizer/footer.php:121
+#: grid-parts/customizer/footer.php:111
 msgid ""
 "You can make the top border of the footer ticker or thinner by adjusting "
 "this value. Set to 0 to disable the top border."
 msgstr ""
 
-#: grid-parts/customizer/footer.php:140
+#: grid-parts/customizer/footer.php:130
 msgid "Top Border Color"
 msgstr ""
 
@@ -989,19 +989,19 @@ msgstr ""
 msgid "Changes the spacing between widgets in this widget-area."
 msgstr ""
 
-#: grid-parts/templates/navigation.php:120
+#: grid-parts/templates/navigation.php:124
 msgid "Collapse Navigation"
 msgstr ""
 
-#: grid-parts/templates/navigation.php:121
+#: grid-parts/templates/navigation.php:125
 msgid "Expand Navigation"
 msgstr ""
 
-#: grid-parts/templates/navigation.php:122
+#: grid-parts/templates/navigation.php:126
 msgid "Toggle Navigation"
 msgstr ""
 
-#: grid-parts/templates/navigation.php:164
+#: grid-parts/templates/navigation.php:168
 #. translators: The navigation number.
 msgid "Please assign a menu to the \"Navigation %d\" menu."
 msgstr ""

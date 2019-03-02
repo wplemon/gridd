@@ -5,7 +5,7 @@
   padding: 0; }
   .widget_rss > ul > li {
     padding: 1em 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+    border-bottom: 1px solid rgba(0, 0, 0, .1); }
     .widget_rss > ul > li:first-child {
       padding-top: 0; }
     .widget_rss > ul > li:last-child {
@@ -17,5 +17,3 @@
     .widget_rss > ul > li > cite {
       font-size: calc(1em / var(--gridd-typo-scale));
       display: block; }
-
-/*# sourceMappingURL=widget-rss.css.map */

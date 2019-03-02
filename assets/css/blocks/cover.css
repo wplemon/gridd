@@ -182,7 +182,7 @@
     content: "";
     font-size: 0;
     min-height: inherit; }
-    @supports (position: sticky) {
+    @supports ((position: -webkit-sticky) or (position: sticky)) {
       .wp-block-cover-image::after,
       .wp-block-cover::after {
         content: none; } }
@@ -196,11 +196,13 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
   width: 100%;
   height: 100%;
   z-index: 0;
-  object-fit: cover; }
+  -o-object-fit: cover;
+     object-fit: cover; }
 
 .wp-block-cover-image h2,
 .wp-block-cover-image .wp-block-cover-image-text,
@@ -214,5 +216,3 @@
 .wp-block-cover.alignleft,
 .wp-block-cover.alignright {
   max-width: calc(var(--gridd-content-max-width-calculated) / 2); }
-
-/*# sourceMappingURL=cover.css.map */

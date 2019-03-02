@@ -4,7 +4,7 @@
   width: 100%; }
 .woocommerce-account .woocommerce-MyAccount-navigation {
   font-size: calc(1em / var(--gridd-typo-scale));
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
   margin-bottom: 2em; }
   .woocommerce-account .woocommerce-MyAccount-navigation ul {
     display: flex;
@@ -26,5 +26,3 @@
     .woocommerce-account .woocommerce-MyAccount-navigation a:hover, .woocommerce-account .woocommerce-MyAccount-navigation a:focus {
       color: var(--gridd-links-hover-color);
       border-bottom: 2px solid var(--gridd-links-hover-color); }
-
-/*# sourceMappingURL=woo-account.css.map */

@@ -4,7 +4,7 @@
   padding: 0;
   margin: 0; }
 .widget_meta li {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+  border-bottom: 1px solid rgba(0, 0, 0, .1); }
   .widget_meta li a {
     text-decoration: none; }
   .widget_meta li:last-child {
@@ -12,5 +12,3 @@
 .widget_meta a {
   display: block;
   padding: .25em 0; }
-
-/*# sourceMappingURL=widget-meta.css.map */

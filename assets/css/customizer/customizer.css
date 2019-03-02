@@ -52,7 +52,7 @@
   #input_gridd_grid_nav-primary_justify_content img {
     height: 40px; }
   #input_gridd_grid_nav-primary_justify_content input:checked + label {
-    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, .25);
     border: 1px solid #3498DB; }
 
 .customize-control-kirki-dimensions .wrapper .control {
@@ -181,7 +181,7 @@ h3.gridd-customizer-section-title {
   margin-top: -10px; }
   .gridd-section-description-wrapper .gridd-section-description-trigger {
     display: inline-block;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, .1);
     border-radius: 3px;
     text-decoration: none;
     color: #fff;
@@ -223,4 +223,6 @@ h3.gridd-customizer-section-title {
 #customize-control-gridd_grid_load_order .visibility {
   display: none; }
 
-/*# sourceMappingURL=customizer.css.map */
+.outer-section-open #customize-preview {
+  width: calc(100% - 300px);
+  opacity: 1; }
