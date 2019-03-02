@@ -25,6 +25,7 @@ class Jetpack {
 	 */
 	public function __construct() {
 		add_action( 'after_setup_theme', [ $this, 'setup' ] );
+		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
 	}
 
 	/**
@@ -46,6 +47,7 @@ class Jetpack {
 				'container' => 'main',
 				'render'    => [ $this, 'infinite_scroll_render' ],
 				'footer'    => 'page',
+				'type'      => 'click',
 			]
 		);
 
@@ -90,5 +92,16 @@ class Jetpack {
 				gridd_get_template_part( 'template-parts/content', get_post_format() );
 			endif;
 		}
+	}
+
+	/**
+	 * Enqueue & Dequeue scripts & styles.
+	 *
+	 * @access public
+	 * @since 1.0.3
+	 * @return void
+	 */
+	public function enqueue_scripts() {
+		wp_dequeue_style( 'the-neverending-homepage' );
 	}
 }
