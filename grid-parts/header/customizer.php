@@ -27,21 +27,6 @@ gridd_add_customizer_section(
 	]
 );
 
-/**
- * Remove header-textcolor control.
- * We have separate controls for title & subtitle so this one is not necessary.
- *
- * @since 1.0
- * @param object $wp_customize The WordPress Customizer instance.
- * @return void
- */
-add_action(
-	'customize_register',
-	function( $wp_customize ) {
-		$wp_customize->remove_control( 'header_textcolor' );
-	}
-);
-
 gridd_add_customizer_field(
 	[
 		'settings'          => 'gridd_header_grid',

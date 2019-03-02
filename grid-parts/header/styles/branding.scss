@@ -39,11 +39,26 @@ a.custom-logo-link {
 		margin: 0;
 	}
 
+	.site-description {
+		font-size: var(--gridd-tagline-size);
+	}
+
+	.site-description,
+	.site-title,
+	.site-title a,
+	.site-title a:visited,
+	.site-title a:hover,
+	.site-title a:visited:hover {
+		color: var(--header-textcolor);
+	}
+
 	.site-title {
 		line-height: 1;
+		font-size: var(--gridd-sitetitle-size);
 
 		a {
 			text-decoration: none;
+			color: var(--header-textcolor);
 		}
 	}
 

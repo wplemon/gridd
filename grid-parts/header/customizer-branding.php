@@ -54,6 +54,7 @@ gridd_add_customizer_field(
 		'settings'  => 'gridd_grid_header_branding_background_color',
 		'label'     => esc_html__( 'Background Color', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_header_branding',
+		'priority'  => 10,
 		'default'   => '#ffffff',
 		'transport' => 'postMessage',
 		'css_vars'  => '--gridd-branding-bg',
@@ -63,6 +64,25 @@ gridd_add_customizer_field(
 	]
 );
 
+/**
+ * Tweak the header-textcolor control.
+ *
+ * @since 1.0.3
+ * @param object $wp_customize The WordPress Customizer instance.
+ * @return void
+ */
+add_action(
+	'customize_register',
+	function( $wp_customize ) {
+		$wp_customize->get_control( 'header_textcolor' )->section     = 'gridd_grid_part_details_header_branding';
+		$wp_customize->get_control( 'header_textcolor' )->label       = esc_html__( 'Text Color', 'gridd' );
+		$wp_customize->get_control( 'header_textcolor' )->description = esc_html__( 'Select the text color for your site title & tagline.', 'gridd' );
+		$wp_customize->get_setting( 'header_textcolor' )->transport   = 'postMessage';
+		$wp_customize->get_setting( 'header_textcolor' )->default     = '#000000';
+		$wp_customize->get_control( 'header_textcolor' )->priority    = 20;
+	}
+);
+
 gridd_add_customizer_field(
 	[
 		'type'      => 'text',
@@ -70,6 +90,7 @@ gridd_add_customizer_field(
 		'label'     => esc_html__( 'Padding', 'gridd' ),
 		'tooltip'   => __( 'For details on how padding works, please refer to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_header_branding',
+		'priority'  => 30,
 		'default'   => '0.5em',
 		'transport' => 'postMessage',
 		'css_vars'  => '--gridd-branding-padding',
@@ -82,6 +103,7 @@ gridd_add_customizer_field(
 		'type'            => 'slider',
 		'label'           => esc_html__( 'Logo Maximum Width', 'gridd' ),
 		'section'         => 'gridd_grid_part_details_header_branding',
+		'priority'        => 40,
 		'default'         => 100,
 		'choices'         => [
 			'min'    => 10,
@@ -103,30 +125,19 @@ gridd_add_customizer_field(
 
 gridd_add_customizer_field(
 	[
-		'settings'        => 'gridd_branding_sitename_typography',
+		'settings'        => 'gridd_branding_typography',
 		'type'            => 'typography',
-		'label'           => esc_html__( 'Site-Title Typography', 'gridd' ),
+		'label'           => esc_html__( 'Site Title & Tagline Typography', 'gridd' ),
 		'section'         => 'gridd_grid_part_details_header_branding',
+		'priority'        => 50,
 		'default'         => [
 			'font-family' => 'Noto Serif',
 			'font-weight' => 700,
-			'font-size'   => '32px',
-			'color'       => '#000000',
 		],
 		'transport'       => 'auto',
 		'output'          => [
 			[
-				'element' => '.gridd-tp-header_branding .site-title',
-			],
-			[
-				'element'  => [ '.gridd-tp-header_branding .site-title a', '.gridd-tp-header_branding .site-title a:hover', '.gridd-tp-header_branding .site-title a:focus', '.gridd-tp-header_branding .site-title a:visited' ],
-				'property' => 'color',
-				'choice'   => 'color',
-			],
-			[
-				'element'  => [ '.gridd-tp-header_branding .site-description' ],
-				'property' => 'line-height',
-				'choice'   => 'font-size',
+				'element' => [ '.site-title', '.site-title a', '.site-description' ],
 			],
 		],
 		'active_callback' => 'display_header_text',
@@ -140,27 +151,40 @@ gridd_add_customizer_field(
 
 gridd_add_customizer_field(
 	[
-		'settings'        => 'gridd_branding_tagline_typography',
-		'type'            => 'typography',
-		'label'           => esc_html__( 'Tagline Typography', 'gridd' ),
+		'settings'        => 'gridd_branding_sitetitle_size',
+		'type'            => 'slider',
+		'label'           => esc_html__( 'Site Title Font-Size', 'gridd' ),
 		'section'         => 'gridd_grid_part_details_header_branding',
-		'default'         => [
-			'font-family' => 'Noto Serif',
-			'font-weight' => 'regular',
-			'font-size'   => '16px',
-			'color'       => '#000000',
-		],
-		'transport'       => 'auto',
-		'output'          => [
-			[
-				'element' => '.gridd-tp-header_branding .site-description',
-			],
-		],
+		'priority'        => 60,
+		'default'         => 2,
+		'transport'       => 'postMessage',
 		'active_callback' => 'display_header_text',
+		'css_vars'        => [ '--gridd-sitetitle-size', '$em' ],
 		'choices'         => [
-			'fonts' => [
-				'google' => [ 'popularity' ],
-			],
+			'min'    => 1,
+			'max'    => 10,
+			'step'   => .01,
+			'suffix' => 'em',
+		],
+	]
+);
+
+gridd_add_customizer_field(
+	[
+		'settings'        => 'gridd_branding_tagline_size',
+		'type'            => 'slider',
+		'label'           => esc_html__( 'Site Tagline Font-Size', 'gridd' ),
+		'section'         => 'gridd_grid_part_details_header_branding',
+		'priority'        => 70,
+		'default'         => 1,
+		'transport'       => 'postMessage',
+		'active_callback' => 'display_header_text',
+		'css_vars'        => [ '--gridd-tagline-size', '$em' ],
+		'choices'         => [
+			'min'    => 1,
+			'max'    => 5,
+			'step'   => .01,
+			'suffix' => 'em',
 		],
 	]
 );
@@ -172,6 +196,7 @@ gridd_add_customizer_field(
 		'label'           => esc_html__( 'Inline Elements', 'gridd' ),
 		'description'     => esc_html__( 'Enable this option to show the branding elements inline instead of one below the other.', 'gridd' ),
 		'section'         => 'gridd_grid_part_details_header_branding',
+		'priority'        => 80,
 		'default'         => false,
 		'transport'       => 'postMessage',
 		'active_callback' => 'display_header_text',
@@ -194,6 +219,7 @@ gridd_add_customizer_field(
 		'label'           => esc_html__( 'Spacing between elements', 'gridd' ),
 		'tooltip'         => esc_html__( 'This value is relevant to the site-title font-size.', 'gridd' ),
 		'section'         => 'gridd_grid_part_details_header_branding',
+		'priority'        => 90,
 		'default'         => .5,
 		'transport'       => 'postMessage',
 		'css_vars'        => [ '--gridd-branding-elements-padding', '$em' ],
@@ -213,6 +239,7 @@ gridd_add_customizer_field(
 		'settings'  => 'gridd_grid_header_branding_horizontal_align',
 		'label'     => esc_html__( 'Horizontal Alignment', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_header_branding',
+		'priority'  => 100,
 		'default'   => 'left',
 		'transport' => 'auto',
 		'css_vars'  => '--gridd-branding-horizontal-align',
@@ -231,6 +258,7 @@ gridd_add_customizer_field(
 		'settings'  => 'gridd_grid_header_branding_vertical_align',
 		'label'     => esc_html__( 'Vertical Alignment', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_header_branding',
+		'priority'  => 110,
 		'default'   => 'center',
 		'transport' => 'auto',
 		'css_vars'  => '--gridd-branding-vertical-align',

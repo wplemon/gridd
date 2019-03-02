@@ -23,10 +23,21 @@ a.custom-logo-link:hover {
   .gridd-tp-header_branding.gridd-tp .site-title,
   .gridd-tp-header_branding.gridd-tp .site-description {
     margin: 0; }
+  .gridd-tp-header_branding.gridd-tp .site-description {
+    font-size: var(--gridd-tagline-size); }
+  .gridd-tp-header_branding.gridd-tp .site-description,
+  .gridd-tp-header_branding.gridd-tp .site-title,
+  .gridd-tp-header_branding.gridd-tp .site-title a,
+  .gridd-tp-header_branding.gridd-tp .site-title a:visited,
+  .gridd-tp-header_branding.gridd-tp .site-title a:hover,
+  .gridd-tp-header_branding.gridd-tp .site-title a:visited:hover {
+    color: var(--header-textcolor); }
   .gridd-tp-header_branding.gridd-tp .site-title {
-    line-height: 1; }
+    line-height: 1;
+    font-size: var(--gridd-sitetitle-size); }
     .gridd-tp-header_branding.gridd-tp .site-title a {
-      text-decoration: none; }
+      text-decoration: none;
+      color: var(--header-textcolor); }
   .gridd-tp-header_branding.gridd-tp a:hover {
     outline: none; }
   .gridd-tp-header_branding.gridd-tp a:focus {
