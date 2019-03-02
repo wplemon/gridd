@@ -10,7 +10,7 @@
 
 .wp-block-columns {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(7em, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
 
 	&.alignfull {
 		padding-left: var(--gridd-content-padding-left);
@@ -26,5 +26,12 @@
 		.site-main .entry-content > & {
 			max-width: calc(var(--gridd-content-max-width-calculated) + 2em);
 		}
+	}
+
+	&.has-2-columns {
+		grid-template-columns: repeat(auto-fit, minmax(13em, 1fr));
+	}
+	&.has-3-columns {
+		grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
 	}
 }
