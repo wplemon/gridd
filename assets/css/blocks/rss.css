@@ -78,7 +78,7 @@
 .wp-block-rss__item-publish-date,
 .wp-block-rss__item-author {
   color: #6c7781;
-  font-size: 13px; }
+  font-size: 1em; }
 
 .wp-block-rss.is-grid li {
   margin: 0 1em 1em 0; }

@@ -78,7 +78,7 @@
 .wp-block-latest-posts__post-date {
   display: block;
   color: #6c7781;
-  font-size: 13px; }
+  font-size: 1em; }
 
 .wp-block-latest-posts.is-grid li {
   margin: 0 1em 1em 0; }

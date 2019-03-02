@@ -69,7 +69,7 @@
   .wp-block-quote cite,
   .wp-block-quote footer, .wp-block-quote__citation {
     color: #6c7781;
-    font-size: 13px;
+    font-size: 1em;
     margin-top: 1em;
     position: relative;
     font-style: normal; }

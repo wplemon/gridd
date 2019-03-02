@@ -94,7 +94,7 @@
       padding: 40px 10px 9px;
       color: #fff;
       text-align: center;
-      font-size: 13px;
+      font-size: 1em;
       background: linear-gradient(0deg, rgba(0, 0, 0, .7) 0, rgba(0, 0, 0, .3) 70%, transparent); }
       .wp-block-gallery .blocks-gallery-image figcaption img,
       .wp-block-gallery .blocks-gallery-item figcaption img {

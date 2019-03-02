@@ -96,7 +96,7 @@
   .wp-block-pullquote footer, .wp-block-pullquote__citation {
     color: #40464d;
     text-transform: uppercase;
-    font-size: 13px;
+    font-size: 1em;
     font-style: normal; }
 
 .wp-block-pullquote {
