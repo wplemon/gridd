@@ -103,12 +103,7 @@ class Style {
 	 * @return void
 	 */
 	public function add_string( $css ) {
-
-		// Add a note if on debug mode.
-		if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
-			$this->css .= "\r\n\r\n/* GRIDD DEBUG MODE. CSS ADDED INLINE */\r\n";
-		}
-		$this->css .= $css;
+		$this->css .= (string) $css;
 	}
 
 	/**
@@ -120,11 +115,6 @@ class Style {
 	 * @return void
 	 */
 	public function add_file( $path ) {
-
-		// Add a note if on debug mode.
-		if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
-			$this->css .= "\r\n\r\n/* GRIDD DEBUG MODE. CSS FROM FILE: {$path} */\r\n";
-		}
 		if ( file_exists( $path ) ) {
 			$this->css .= gridd_get_file_contents( $path, true );
 		}
