@@ -9,8 +9,7 @@
 	<exclude-pattern>vendor</exclude-pattern>
 	<exclude-pattern>bin</exclude-pattern>
 	<exclude-pattern>tests/</exclude-pattern>
-	<exclude-pattern>inc/class-tgm-plugin-activation.php</exclude-pattern>
-	<exclude-pattern>grid-parts/breadcrumbs/hybrid-breadcrumbs</exclude-pattern>
+	<exclude-pattern>inc/hybrid-breadcrumbs</exclude-pattern>
 
 	<!-- Set a description for this ruleset. -->
 	<description>A custom set of code standard rules to check for WordPress themes.</description>

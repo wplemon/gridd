@@ -234,7 +234,7 @@ function gridd_nav_customizer_options( $id ) {
 				'space-evenly'  => '<span class="gridd-flexbox-svg-option" title="' . esc_attr__( 'Space Evenly', 'gridd' ) . '"><span class="screen-reader-text">' . esc_html__( 'Space Evenly', 'gridd' ) . '</span>' . gridd_get_file_contents( 'assets/images/flexbox/justify-content-space-evenly.svg' ) . '</span>',
 			],
 			'sanitize_callback' => function( $value ) {
-				if ( ! in_array( $value, [ 'flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'space-evenly' ] ) ) {
+				if ( ! in_array( $value, [ 'flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'space-evenly' ], true ) ) {
 					return 'center';
 				}
 				return $value;
