@@ -22,19 +22,8 @@ rm -f gridd/package-lock.json
 rm -f gridd/composer.lock
 rm -Rf gridd/vendor
 
-rm -f gridd/**/**/**/**/**/*.css.map
-rm -f gridd/**/**/**/**/*.css.map
-rm -f gridd/**/**/**/*.css.map
-rm -f gridd/**/**/*.css.map
-rm -f gridd/**/*.css.map
-rm -f gridd/*.css.map
-
-# rm -f gridd/**/**/**/**/**/*.scss
-# rm -f gridd/**/**/**/**/*.scss
-# rm -f gridd/**/**/**/*.scss
-# rm -f gridd/**/**/*.scss
-# rm -f gridd/**/*.scss
-# rm -f gridd/*.scss
+find ./gridd/ -name "*.bak" -type f -delete
+find ./gridd/ -name "*.scss" -type f -delete
 
 rm -f gridd/grid-parts/breadcrumbs/hybrid-breadcrumbs/.git
 rm -f gridd/grid-parts/breadcrumbs/hybrid-breadcrumbs/.editorconfig
