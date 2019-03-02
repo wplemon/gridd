@@ -120,9 +120,6 @@ class Grid_Parts {
 				if ( '..' === $part || '.' === $part ) {
 					continue;
 				}
-				if ( file_exists( "$grid_parts_path/$part/class-$part.php" ) ) {
-					require_once "$grid_parts_path/$part/class-$part.php";
-				}
 				if ( file_exists( "$grid_parts_path/$part/functions.php" ) ) {
 					require_once "$grid_parts_path/$part/functions.php";
 				}

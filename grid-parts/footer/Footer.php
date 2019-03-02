@@ -3,6 +3,8 @@
  * Gridd Footer grid-part
  *
  * @package Gridd
+ * 
+ * phpcs:ignoreFile WordPress.Files.FileName
  */
 
 namespace Gridd\Grid_Part;

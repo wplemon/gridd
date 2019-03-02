@@ -11,4 +11,5 @@ if ( ! class_exists( 'RevSliderSlider' ) ) {
 	return;
 }
 
+require_once 'Revolution_Slider.php';
 new Revolution_Slider();
