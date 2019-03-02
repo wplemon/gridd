@@ -7,6 +7,7 @@
  * phpcs:ignoreFile WordPress.Files.FileName
  */
 
+use Gridd\Gridd;
 use Gridd\Customizer;
 use Gridd\Customizer\Template;
 use Gridd\Customizer\Control\Grid;

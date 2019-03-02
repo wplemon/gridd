@@ -8,17 +8,11 @@
  * @package Gridd
  */
 
+use Gridd\Gridd;
 use Gridd\Admin;
 use Gridd\EDD;
 use Gridd\AMP;
 use Gridd\Widget_Output_Filters;
-
-/**
- * Require the main theme class.
- *
- * @since 1.0
- */
-// require_once __DIR__ . '/gridd.php';
 
 /**
  * If Kirki isn't loaded as a plugin, load the included version.
@@ -35,17 +29,18 @@ if ( ! class_exists( 'Kirki' ) ) {
  */
 spl_autoload_register(
 	function( $class ) {
-		if ( 0 === strpos( $class, 'Gridd' ) ) {
-			$path = __DIR__ . '/' . str_replace( '\\', '/', "$class/$class" ) . '.php';
-			$path = str_replace( '//', '/', $path );
-			if ( file_exists( $path ) ) {
-				require_once $path;
-			}
-			$path = __DIR__ . '/' . str_replace( '\\', '/', $class ) . '.php';
-			$path = str_replace( '//', '/', $path );
-			if ( file_exists( $path ) ) {
-				require_once $path;
-			}
+		$prefix   = 'Gridd\\';
+		$base_dir = __DIR__ . '/classes/';
+
+		$len = strlen( $prefix );
+		if ( 0 !== strncmp( $prefix, $class, $len ) ) {
+			return;
+		}
+		$relative_class = substr( $class, $len );
+		$file           = $base_dir . str_replace( '\\', '/', $relative_class ) . '.php';
+
+		if ( file_exists( $file ) ) {
+			require $file;
 		}
 	}
 );

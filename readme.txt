@@ -27,11 +27,14 @@ Gridd is a flexible, inclusive theme with a strong focus on performance, accessi
 
 == Installation ==
 
-1. Create a new Custom Menu, and assign it to the Social Links Menu location.
-2. Add links to each of your social services using the Links panel.
-3. Icons for your social links will automatically appear if it's available.
+You can install the theme using the WordPress Administration menu. For more information on installing themes please refer to [this article](https://codex.wordpress.org/Using_Themes#Adding_New_Themes).
 
 == Changelog ==
+
+= 1.0.3 =
+
+* New: Added grid parts for reusable Gutenberg Blocks.
+* New: Added custom templates.
 
 = 1.0.2 =
 
@@ -56,3 +59,4 @@ Gridd is a flexible, inclusive theme with a strong focus on performance, accessi
 * wcagColors: Script by Aristeidis Stathopoulos (https://aristath.github.io/wcagColors/) licensed under [MIT](https://opensource.org/licenses/MIT)
 * Underscores: Parts of the theme's PHP originated in the Underscores starter theme (https://underscores.me/) by Automattic (https://automattic.com/) licenced under [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
 * Mythic: The graceful fallback script for old PHP & WP versions originated in the Mythic starter theme (https://themehybrid.com/themes/mythic) by Justin Tadlock (https://themehybrid.com) licenced under [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
+* Screenshot: The screenshot shows the default demo page of the Gutenberg plugin for WordPress, licenced under [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)

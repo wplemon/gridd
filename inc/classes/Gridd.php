@@ -7,6 +7,8 @@
  * phpcs:ignoreFile WordPress.Files.FileName
  */
 
+namespace Gridd;
+
 use Gridd\Customizer;
 use Gridd\Template;
 use Gridd\Grid;
@@ -256,7 +258,7 @@ class Gridd {
 		add_theme_support( 'align-wide' );
 		add_theme_support( 'wp-block-styles' );
 		add_theme_support( 'editor-styles' );
-		if ( 50 > ariColor::newColor( get_theme_mod( 'gridd_grid_content_background_color', '#ffffff' ) )->lightness ) {
+		if ( 50 > \ariColor::newColor( get_theme_mod( 'gridd_grid_content_background_color', '#ffffff' ) )->lightness ) {
 			add_theme_support( 'dark-editor-style' );
 		}
 		add_theme_support( 'responsive-embeds' );
