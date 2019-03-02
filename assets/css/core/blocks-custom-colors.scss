@@ -1,8 +1,28 @@
 @import "../variables";
 
-.has-pale-pink-color.has-pale-pink-color {
-	color: $pale-pink;
+$colorNames: 'pale-pink' 'vivid-red' 'luminous-vivid-orange' 'luminous-vivid-amber' 'light-green-cyan' 'vivid-green-cyan' 'pale-cyan-blue' 'vivid-cyan-blue' 'very-light-gray' 'cyan-bluish-gray' 'very-dark-gray' 'cyan' 'white' 'blue-gray' 'black';
 
+$colors: (
+	pale-pink: #f78da7,
+	vivid-red: #cf2e2e,
+	luminous-vivid-orange: #ff6900,
+	luminous-vivid-amber: #fcb900,
+	light-green-cyan: #7bdcb5,
+	vivid-green-cyan: #00d084,
+	pale-cyan-blue: #8ed1fc,
+	vivid-cyan-blue: #0693e3,
+	very-light-gray: #eee,
+	cyan-bluish-gray: #abb8c3,
+	very-dark-gray: #313131,
+	cyan: #26C6DA,
+	white: #fff,
+	blue-gray: #546E7A,
+	black: #000
+);
+
+@mixin griddColorSet( $colorName ) {
+	color: map-get( $colors, $colorName);
+	
 	&:hover,
 	&:focus,
 	&:active,
@@ -10,203 +30,19 @@
 	&:focus:hover,
 	&:active:hover,
 	&:visited:hover {
-		color: $pale-pink;
+		color: map-get( $colors, $colorName);
 	}
 }
 
-.has-vivid-red-color.has-vivid-red-color {
-	color: $vivid-red;
-
-	&:hover,
-	&:focus,
-	&:active,
-	&:visited,
-	&:focus:hover,
-	&:active:hover,
-	&:visited:hover {
-		color: $vivid-red;
-	}
+@mixin griddBackgroundColorSet( $colorName ) {
+	background-color: map-get( $colors, $colorName);
 }
 
-.has-luminous-vivid-orange-color.has-luminous-vivid-orange-color {
-	color: $luminous-vivid-orange;
-
-	&:hover,
-	&:focus,
-	&:active,
-	&:visited,
-	&:focus:hover,
-	&:active:hover,
-	&:visited:hover {
-		color: $luminous-vivid-orange;
-	}
-}
-
-.has-luminous-vivid-amber-color.has-luminous-vivid-amber-color {
-	color: $luminous-vivid-amber;
-
-	&:hover,
-	&:focus,
-	&:active,
-	&:visited,
-	&:focus:hover,
-	&:active:hover,
-	&:visited:hover {
-		color: $luminous-vivid-amber;
-	}
-}
-
-.has-light-green-cyan-color.has-light-green-cyan-color {
-	color: $light-green-cyan;
-
-	&:hover,
-	&:focus,
-	&:active,
-	&:visited,
-	&:focus:hover,
-	&:active:hover,
-	&:visited:hover {
-		color: $light-green-cyan;
-	}
-}
-
-.has-vivid-green-cyan-color.has-vivid-green-cyan-color {
-	color: $vivid-green-cyan;
-
-	&:hover,
-	&:focus,
-	&:active,
-	&:visited,
-	&:focus:hover,
-	&:active:hover,
-	&:visited:hover {
-		color: $vivid-green-cyan;
-	}
-}
-
-.has-pale-cyan-blue-color.has-pale-cyan-blue-color {
-	color: $pale-cyan-blue;
-
-	&:hover,
-	&:focus,
-	&:active,
-	&:visited,
-	&:focus:hover,
-	&:active:hover,
-	&:visited:hover {
-		color: $pale-cyan-blue;
-	}
-}
-
-.has-vivid-cyan-blue-color.has-vivid-cyan-blue-color {
-	color: $vivid-cyan-blue;
-
-	&:hover,
-	&:focus,
-	&:active,
-	&:visited,
-	&:focus:hover,
-	&:active:hover,
-	&:visited:hover {
-		color: $vivid-cyan-blue;
-	}
-}
-
-.has-very-light-gray-color.has-very-light-gray-color {
-
-	color: $very-light-gray;
-
-	&:hover,
-	&:focus,
-	&:active,
-	&:visited,
-	&:focus:hover,
-	&:active:hover,
-	&:visited:hover {
-		color: $very-light-gray;
-	}
-}
-
-.has-cyan-bluish-gray-color.has-cyan-bluish-gray-color {
-	color: $cyan-bluish-gray;
-
-	&:hover,
-	&:focus,
-	&:active,
-	&:visited,
-	&:focus:hover,
-	&:active:hover,
-	&:visited:hover {
-		color: $cyan-bluish-gray;
-	}
-}
-
-.has-very-dark-gray-color.has-very-dark-gray-color {
-	color: $very-dark-gray;
-
-	&:hover,
-	&:focus,
-	&:active,
-	&:visited,
-	&:focus:hover,
-	&:active:hover,
-	&:visited:hover {
-		color: $very-dark-gray;
-	}
-}
-
-.has-cyan-color.has-cyan-color {
-	color: $cyan;
-
-	&:hover,
-	&:focus,
-	&:active,
-	&:visited,
-	&:focus:hover,
-	&:active:hover,
-	&:visited:hover {
-		color: $cyan;
-	}
-}
-
-.has-white-color.has-white-color {
-	color: $white;
-
-	&:hover,
-	&:focus,
-	&:active,
-	&:visited,
-	&:focus:hover,
-	&:active:hover,
-	&:visited:hover {
-		color: $white;
-	}
-}
-
-.has-blue-gray-color.has-blue-gray-color {
-	color: $blue-gray;
-
-	&:hover,
-	&:focus,
-	&:active,
-	&:visited,
-	&:focus:hover,
-	&:active:hover,
-	&:visited:hover {
-		color: $blue-gray;
-	}
-}
-
-.has-black-color.has-black-color {
-	color: $black;
-
-	&:hover,
-	&:focus,
-	&:active,
-	&:visited,
-	&:focus:hover,
-	&:active:hover,
-	&:visited:hover {
-		color: $black;
+@each $colorName in $colorNames {
+	.has-#{$colorName}-color.has-#{$colorName}-color {
+		@include griddColorSet( $colorName );
+	}		
+	.has-#{$colorName}-background-color.has-#{$colorName}-background-color {
+		@include griddBackgroundColorSet( $colorName );
 	}
 }
