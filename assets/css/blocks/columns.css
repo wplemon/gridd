@@ -75,7 +75,7 @@
 
 .wp-block-columns {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(8em, 1fr)); }
+  grid-template-columns: repeat(auto-fit, minmax(6.5em, 1fr)); }
   .wp-block-columns.alignfull {
     padding-left: var(--gridd-content-padding-left);
     padding-right: var(--gridd-content-padding-right); }
