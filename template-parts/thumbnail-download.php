@@ -33,7 +33,7 @@ if ( 'hidden' === get_theme_mod( 'gridd_featured_image_mode_archive', 'alignwide
 		case 'golden':
 			// Make sure we include the Ari_Image script.
 			if ( ! class_exists( 'Ari_Image' ) ) {
-				require_once get_template_directory() . '/inc/ari-image.php';
+				require_once get_template_directory() . '/inc/classes/Ari_Image.php';
 			}
 			// Calculate the height.
 			$height = (int) ( $width / 1.618 );

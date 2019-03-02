@@ -219,12 +219,12 @@ Kirki::add_config(
 	]
 );
 
-require_once get_template_directory() . '/inc/customizer/section/grid.php';
-require_once get_template_directory() . '/inc/customizer/section/typography.php';
-require_once get_template_directory() . '/inc/customizer/section/edd.php';
-require_once get_template_directory() . '/inc/customizer/section/features.php';
+require_once get_template_directory() . '/inc/customizer/grid.php';
+require_once get_template_directory() . '/inc/customizer/typography.php';
+require_once get_template_directory() . '/inc/customizer/edd.php';
+require_once get_template_directory() . '/inc/customizer/features.php';
 if ( class_exists( 'WooCommerce' ) ) {
-	require_once get_template_directory() . '/inc/customizer/section/woocommerce.php';
+	require_once get_template_directory() . '/inc/customizer/woocommerce.php';
 }
 
 /**
