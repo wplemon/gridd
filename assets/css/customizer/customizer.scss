@@ -254,3 +254,10 @@ h3.gridd-customizer-section-title {
 		display: none;
 	}
 }
+
+.outer-section-open {
+	#customize-preview {
+		width: calc(100% - 300px);
+		opacity: 1;
+	}
+}
