@@ -197,7 +197,6 @@ class Gridd {
 		add_theme_support(
 			'html5',
 			[
-				'search-form',
 				'comment-form',
 				'comment-list',
 				'gallery',
