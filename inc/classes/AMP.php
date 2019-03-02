@@ -10,27 +10,11 @@
 namespace Gridd;
 
 /**
- * Extra methods and actions for the blog.
+ * Extra methods and actions for AMP.
  *
  * @since 1.0
  */
 class AMP {
-
-	/**
-	 * An array of all our typography controls.
-	 * Allows us to force-download the font if posssible
-	 * to avoid using the webfontloader script.
-	 *
-	 * @access protected
-	 * @since 1.0
-	 * @var array
-	 */
-	public $typography_settings = [
-		'gridd_branding_sitename_typography',
-		'gridd_branding_tagline_typography',
-		'gridd_body_typography',
-		'gridd_headers_typography',
-	];
 
 	/**
 	 * Constructor.
@@ -42,14 +26,6 @@ class AMP {
 
 		if ( ! self::is_active() ) {
 			return;
-		}
-
-		// Allow modifying the typography controls array via a filter.
-		$this->typography_settings = apply_filters( 'gridd_typography_settings', $this->typography_settings );
-
-		// Apply filters for the theme-mod values.
-		foreach ( $this->typography_settings as $typo ) {
-			add_filter( "theme_mod_$typo", [ $this, 'theme_mod_filter' ] );
 		}
 
 		// Additional css-vars.
@@ -113,22 +89,8 @@ class AMP {
 		}
 
 		// We use esc_attr() for sanitization here since we want to sanitize a CSS value.
+		// Though not strictly accurate, in this case it is secure and doesn't cause any issues.
 		echo '<style>body{--gridd-content-max-width-calculated:' . esc_attr( $gridd_content_max_width_calculated ) . ';</style>';
-	}
-
-	/**
-	 * Modify the typography settings to force-download the fonts and use locally instead of using the google API.
-	 *
-	 * @access public
-	 * @since 1.0
-	 * @param array $value The theme-mod value.
-	 * @return array       The modified array for this theme-mod value.
-	 */
-	public function theme_mod_filter( $value ) {
-		if ( self::is_active() && is_array( $value ) ) {
-			$value['downloadFont'] = true;
-		}
-		return $value;
 	}
 
 	/**
