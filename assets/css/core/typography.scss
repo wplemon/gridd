@@ -114,7 +114,8 @@ h2 {
 }
 
 .h3,
-h3 {
+h3,
+.has-large-font-size {
 	font-size: calc(var(--gridd-typo-scale) * var(--gridd-typo-scale) * 1em);
 }
 
@@ -124,7 +125,8 @@ h4 {
 }
 
 .h5,
-h5 {
+h5,
+.has-small-font-size {
 	font-size: calc(1em / var(--gridd-typo-scale));
 }
 
