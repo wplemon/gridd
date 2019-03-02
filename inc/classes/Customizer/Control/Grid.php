@@ -38,7 +38,7 @@ class Grid extends \Kirki_Control_Base {
 		wp_enqueue_script( 'wp-color-picker-alpha', get_template_directory_uri() . '/assets/js/vendor/wp-color-picker-alpha.js', [ 'wp-color-picker' ], '2.0', true );
 
 		// Enqueue the script and style.
-		wp_enqueue_script( 'gridd-grid-control', get_template_directory_uri() . '/assets/js/customizer/gridd-grid-control.js', [ 'jquery', 'customize-base', 'wp-color-picker-alpha' ], GRIDD_VERSION, false );
+		wp_enqueue_script( 'gridd-grid-control', get_template_directory_uri() . '/assets/js/customizer-gridd-grid-control.js', [ 'jquery', 'customize-base', 'wp-color-picker-alpha' ], GRIDD_VERSION, false );
 
 		wp_localize_script(
 			'gridd-grid-control',

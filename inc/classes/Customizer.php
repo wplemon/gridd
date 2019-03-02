@@ -84,7 +84,7 @@ class Customizer {
 
 		// Enqueue the script and style.
 		wp_enqueue_script( 'dragselect', get_template_directory_uri() . '/assets/vendor/dragselect/ds.min.js', [ 'jquery' ], '1.9.1', false );
-		wp_enqueue_script( 'gridd-set-setting-value', get_template_directory_uri() . '/assets/js/customizer/gridd-set-setting-value.js', [ 'jquery', 'customize-base' ], GRIDD_VERSION, false );
+		wp_enqueue_script( 'gridd-set-setting-value', get_template_directory_uri() . '/assets/js/customizer-gridd-set-setting-value.js', [ 'jquery', 'customize-base' ], GRIDD_VERSION, false );
 	}
 
 	/**
@@ -93,7 +93,7 @@ class Customizer {
 	 * @access public
 	 */
 	public function plus_section_scripts() {
-		wp_enqueue_script( 'gridd-plus-section', get_template_directory_uri() . '/assets/js/customizer/plus-section.js', [ 'customize-controls' ], GRIDD_VERSION, false );
+		wp_enqueue_script( 'gridd-plus-section', get_template_directory_uri() . '/assets/js/customizer-plus-section.js', [ 'customize-controls' ], GRIDD_VERSION, false );
 		wp_enqueue_style( 'gridd-plus-section', get_template_directory_uri() . '/assets/css/customizer/plus-section.css', [], GRIDD_VERSION );
 	}
 
@@ -213,7 +213,7 @@ class Customizer {
 	 * @return void
 	 */
 	public function extra_customizer_scripts() {
-		wp_enqueue_script( 'gridd-customizer-script', get_template_directory_uri() . '/assets/js/customizer/customizer.js', [ 'jquery', 'customize-base' ], GRIDD_VERSION, false );
+		wp_enqueue_script( 'gridd-customizer-script', get_template_directory_uri() . '/assets/js/customizer.js', [ 'jquery', 'customize-base' ], GRIDD_VERSION, false );
 		wp_localize_script(
 			'gridd-customizer-script',
 			'griddTemplatePreviewScript',
@@ -234,7 +234,7 @@ class Customizer {
 	 */
 	public function preview_customizer_scripts() {
 		wp_enqueue_script( 'wcag_colors', get_template_directory_uri() . '/assets/js/wcagColors.js', [], '1.0', false );
-		wp_enqueue_script( 'gridd-customizer-preview-script', get_theme_file_uri( '/assets/js/customizer.js' ), [ 'jquery', 'customize-preview', 'jquery-color', 'wcag_colors' ], time(), true );
+		wp_enqueue_script( 'gridd-customizer-preview-script', get_theme_file_uri( '/assets/js/customizer-preview.js' ), [ 'jquery', 'customize-preview', 'jquery-color', 'wcag_colors' ], time(), true );
 		wp_localize_script(
 			'gridd-customizer-preview-script',
 			'griddCustomizerVars',
