@@ -205,19 +205,6 @@ function gridd_filter_comment_form_defaults( $args ) {
 }
 
 /**
- * Returns an array of the singular parts for post, pages & CPTs.
- *
- * @since 1.0
- * @return array
- */
-function gridd_get_post_parts() {
-	return apply_filters(
-		'gridd_get_post_parts',
-		[ 'post-title', 'post-date-author', 'post-thumbnail', 'post-content', 'post-category', 'post-tags', 'post-comments-link' ]
-	);
-}
-
-/**
  * Integrates WPBakery Builder in the theme.
  *
  * @since 1.0

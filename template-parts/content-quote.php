@@ -6,7 +6,9 @@
  * @since 1.0
  */
 
-$parts = gridd_get_post_parts();
+use Gridd\Blog;
+
+$parts = Blog::get_post_parts();
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

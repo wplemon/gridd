@@ -17,6 +17,17 @@ namespace Gridd;
 class Blog {
 
 	/**
+	 * The post-parts.
+	 * This is a static property used as a proxy to improve performance.
+	 *
+	 * @static
+	 * @access private
+	 * @since 1.0.3
+	 * @var array
+	 */
+	private static $post_parts;
+
+	/**
 	 * Constructor.
 	 *
 	 * @access public
@@ -46,5 +57,31 @@ class Blog {
 			);
 		}
 		return ' <a href="' . esc_url_raw( get_the_permalink() ) . '">' . $read_more . '</a> ';
+	}
+
+	/**
+	 * Returns an array of the singular parts for post, pages & CPTs.
+	 *
+	 * @static
+	 * @access public
+	 * @since 1.0
+	 * @return array
+	 */
+	public static function get_post_parts() {
+		if ( ! self::$post_parts ) {
+			self::$post_parts = apply_filters(
+				'gridd_get_post_parts',
+				[
+					'post-title',
+					'post-date-author',
+					'post-thumbnail',
+					'post-content',
+					'post-category',
+					'post-tags',
+					'post-comments-link'
+				]
+			);
+		}
+		return self::$post_parts;
 	}
 }
