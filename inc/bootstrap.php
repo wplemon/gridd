@@ -351,10 +351,3 @@ function gridd_get_file_contents( $path, $absolute = false ) {
 	}
 	return ob_get_clean();
 }
-
-/**
- * Inline kirki styles, avoid the extra URL call.
- *
- * @since 1.0
- */
-add_filter( 'kirki_force_inline_styles', '__return_true' );
