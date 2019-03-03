@@ -29,13 +29,13 @@ if ( ! class_exists( 'Kirki' ) ) {
  */
 do_action( 'gridd_setup' );
 
+/**
+ * The Gridd Autoloader.
+ *
+ * @param string $class The fully-qualified class name.
+ * @return void
+ */
 spl_autoload_register(
-	/**
-	 * The Gridd Autoloader.
-	 *
-	 * @param string $class The fully-qualified class name.
-	 * @return void
-	 */
 	function( $class ) {
 		$prefix   = 'Gridd\\';
 		$base_dir = __DIR__ . '/classes/';
