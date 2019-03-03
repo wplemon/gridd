@@ -122,27 +122,6 @@ if ( class_exists( 'Easy_Digital_Downloads' ) ) {
 }
 
 /**
- * Adds support for wp.com-specific theme functions.
- *
- * @global array $themecolors
- */
-function gridd_wpcom_setup() {
-	global $themecolors;
-
-	// Set theme colors for third party services.
-	if ( ! isset( $themecolors ) ) {
-		$themecolors = [
-			'bg'     => '',
-			'border' => '',
-			'text'   => '',
-			'link'   => '',
-			'url'    => '',
-		];
-	}
-}
-add_action( 'after_setup_theme', 'gridd_wpcom_setup' );
-
-/**
  * Integrates WPBakery Builder in the theme.
  *
  * @since 1.0
