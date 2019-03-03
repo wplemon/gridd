@@ -213,3 +213,11 @@ function gridd_get_file_contents( $path, $absolute = false ) {
 	}
 	return ob_get_clean();
 }
+
+/**
+ * Run an action to allow hooking addons.
+ * This avoids any errors from addons if the active theme is not Gridd.
+ *
+ * @since 1.0.3
+ */
+do_action( 'gridd_setup' );
