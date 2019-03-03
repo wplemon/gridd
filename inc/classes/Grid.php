@@ -9,9 +9,10 @@
 
 namespace Gridd;
 
-use Gridd\Customizer;
+use Gridd\Grid;
 use Gridd\Grid_Part\Header;
 use Gridd\Grid_Part\Footer;
+use Gridd\Customizer;
 
 /**
  * Template handler.
@@ -37,7 +38,7 @@ class Grid {
 			$defaults = [];
 			switch ( $theme_mod ) {
 				case 'gridd_grid':
-					$defaults = gridd_get_grid_default_value();
+					$defaults = Grid::get_grid_default_value();
 					break;
 
 				case 'gridd_header_grid':
@@ -243,5 +244,35 @@ class Grid {
 		$css .= '}';
 
 		return $css;
+	}
+
+	/**
+	 * Get the default value for the main grid.
+	 *
+	 * @static
+	 * @access public
+	 * @since 1.0
+	 * @return array
+	 */
+	public static function get_grid_default_value() {
+		return [
+			'rows'         => 3,
+			'columns'      => 1,
+			'areas'        => [
+				'header'  => [
+					'cells' => [ [ 1, 1 ] ],
+				],
+				'content' => [
+					'cells' => [ [ 2, 1 ] ],
+				],
+				'footer'  => [
+					'cells' => [ [ 3, 1 ] ],
+				],
+			],
+			'gridTemplate' => [
+				'rows'    => [ 'auto', 'auto', 'auto' ],
+				'columns' => [ 'auto' ],
+			],
+		];
 	}
 }

@@ -5,9 +5,10 @@
  * @package Gridd
  */
 
+use Gridd\Grid;
+use Gridd\Grid_Parts;
 use Gridd\Customizer;
 use Gridd\Customizer\Sanitize;
-use Gridd\Grid_Parts;
 
 $sanitization = new Sanitize();
 $grid_parts   = Grid_Parts::get_instance()->get_parts();
@@ -39,7 +40,7 @@ Customizer::add_field(
 		'grid-part'         => false,
 		'label'             => esc_html__( 'Grid Settings', 'gridd' ),
 		'description'       => __( 'Edit settings for the grid. For more information and documentation on how the grid works, please read <a href="https://wplemon.com/documentation/gridd/the-grid-control/" target="_blank">this article</a>.', 'gridd' ),
-		'default'           => gridd_get_grid_default_value(),
+		'default'           => Grid::get_grid_default_value(),
 		'priority'          => 10,
 		'sanitize_callback' => [ $sanitization, 'grid' ],
 		'choices'           => [

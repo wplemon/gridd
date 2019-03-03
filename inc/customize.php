@@ -150,34 +150,6 @@ if ( class_exists( 'WooCommerce' ) ) {
 	require_once get_template_directory() . '/inc/customizer/woocommerce.php';
 }
 
-/**
- * Get the default value for the grid.
- *
- * @since 1.0
- * @return array
- */
-function gridd_get_grid_default_value() {
-	return [
-		'rows'         => 4,
-		'columns'      => 1,
-		'areas'        => [
-			'header'  => [
-				'cells' => [ [ 1, 1 ] ],
-			],
-			'content' => [
-				'cells' => [ [ 2, 1 ] ],
-			],
-			'footer'  => [
-				'cells' => [ [ 3, 1 ] ],
-			],
-		],
-		'gridTemplate' => [
-			'rows'    => [ 'auto', 'auto', 'auto' ],
-			'columns' => [ 'auto' ],
-		],
-	];
-}
-
 add_action(
 	'customize_register',
 	function( $wp_customize ) {
