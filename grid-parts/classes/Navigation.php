@@ -209,17 +209,6 @@ class Navigation extends Grid_Part {
 			return $item_output;
 		}
 
-		/**
-		 * Obtain the initial expanded state.
-		 * By default we don't expand the menus on page-load.
-		 * If you want to change that behavior, you can use this line:
-		 *
-		 * $expanded = in_array( 'current-menu-ancestor', $item->classes, true );
-		 *
-		 * Simply replace the below line with the one above.
-		 */
-		$expanded = false;
-
 		// Generate a unique state ID.
 		static $nav_menu_item_number = 0;
 		$nav_menu_item_number++;

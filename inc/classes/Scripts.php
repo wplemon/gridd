@@ -139,7 +139,6 @@ class Scripts {
 		if ( AMP::is_active() ) {
 			return;
 		}
-		$min = $this->script_debug ? '' : '.min';
 
 		// Comments.
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

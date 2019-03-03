@@ -295,8 +295,6 @@ class Customizer {
 	 * @return void
 	 */
 	public static function add_field( $args ) {
-		global $wp_customize;
-
 		$args = apply_filters( 'gridd_field_args', $args );
 
 		if ( 'gridd-wcag-tc' === $args['type'] ) {

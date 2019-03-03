@@ -108,10 +108,9 @@ class Header extends Grid_Part {
 	 *
 	 * @access public
 	 * @since 1.0
-	 * @param array $specs The initial specs.
 	 * @return array
 	 */
-	public function get_grid_part_specs_header_contact_info( $specs ) {
+	public function get_grid_part_specs_header_contact_info() {
 		$grid = Grid::get_options( 'gridd_header_grid' );
 		return self::format_specs_from_grid_value( 'header_contact_info', $grid );
 	}
@@ -122,10 +121,9 @@ class Header extends Grid_Part {
 	 *
 	 * @access public
 	 * @since 1.0
-	 * @param array $specs The initial specs.
 	 * @return array
 	 */
-	public function get_grid_part_specs_social_media( $specs ) {
+	public function get_grid_part_specs_social_media() {
 		$grid = Grid::get_options( 'gridd_header_grid' );
 		return self::format_specs_from_grid_value( 'social_media', $grid );
 	}

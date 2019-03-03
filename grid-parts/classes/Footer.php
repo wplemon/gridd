@@ -143,10 +143,9 @@ class Footer extends Grid_Part {
 	 *
 	 * @access public
 	 * @since 1.0
-	 * @param array $specs The initial specs.
 	 * @return array
 	 */
-	public function get_grid_part_specs_footer_social_media( $specs ) {
+	public function get_grid_part_specs_footer_social_media() {
 		$grid = Grid::get_options( 'gridd_footer_grid' );
 		return self::format_specs_from_grid_value( 'footer_social_media', $grid );
 	}
