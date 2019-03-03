@@ -44,6 +44,7 @@ address {
   margin: 0 0 1.5em; }
 
 pre {
+  color: #000;
   background: #eee;
   font-family: "Courier 10 Pitch", Courier, monospace;
   font-size: 0.9375em;
@@ -51,7 +52,8 @@ pre {
   margin-bottom: 1.6em;
   max-width: 100%;
   overflow: auto;
-  padding: 1.6em; }
+  padding: 1.6em;
+  border-radius: 4px; }
   pre code {
     background: none; }
 
