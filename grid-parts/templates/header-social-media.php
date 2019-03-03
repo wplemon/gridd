@@ -52,7 +52,7 @@ $style->add_file( get_theme_file_path( 'grid-parts/styles/header-social-icons.mi
 			 * The icons here are hardcoded and there's no user-input.
 			 * There's no need to escape them.
 			 */
-			echo $icons[ $icon['icon'] ]; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo $icons[ $icon['icon'] ]; // phpcs:ignore WordPress.Security.EscapeOutput
 
 			echo '</a>';
 		}

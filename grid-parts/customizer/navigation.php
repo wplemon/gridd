@@ -5,7 +5,6 @@
  * @package Gridd
  */
 
-// phpcs:disable Squiz.Commenting.InlineComment.SpacingBefore
 use Gridd\Grid_Part\Navigation;
 use Gridd\AMP;
 use Gridd\Customizer;

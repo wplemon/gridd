@@ -1,6 +1,6 @@
 .sass-cache/
 ./node_modules/
-./vendor/
+/vendor
 package-lock.json
 composer.lock
 *.css.map

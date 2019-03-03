@@ -116,9 +116,11 @@ foreach ( $responsive_mode_parts as $responsive_mode_part ) {
 			}
 			/**
 			 * Prints the button.
-			 * No need to escape this, it's already escaped in the function itself.
+			 * No need to escape this, there's zero user input.
+			 * Everything is hardcoded and things that need escaping
+			 * are properly escaped in the function itself.
 			 */
-			echo Theme::get_toggle_button( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo Theme::get_toggle_button( // phpcs:ignore WordPress.Security.EscapeOutput
 				[
 					'expanded_state_id'            => 'navMenuExpanded' . absint( $id ),
 					'expanded'                     => 'false',

@@ -50,10 +50,10 @@ $style->add_file( get_theme_file_path( 'grid-parts/styles/footer-social-icons.mi
 
 			/**
 			 * Note to code reviewers:
-			 * The icons here are hardcoded and there's no user-input.
+			 * The icons here are hardcoded and there's no user input.
 			 * There's no need to escape them.
 			 */
-			echo $icons[ $icon['icon'] ]; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo $icons[ $icon['icon'] ]; // phpcs:ignore WordPress.Security.EscapeOutput
 
 			// Close the link.
 			echo '</a>';
