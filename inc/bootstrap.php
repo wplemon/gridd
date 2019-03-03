@@ -233,34 +233,6 @@ if ( function_exists( 'vc_set_as_theme' ) ) {
  */
 add_filter( 'vc_nav_front_logo', '__return_empty_string' );
 
-/**
- * Get an array of settings we don't want to save in templates.
- *
- * @return array
- */
-function gridd_get_template_theme_mods_blacklist() {
-	$blacklist = [
-		'nav_menu_locations',
-		'nav_menu',
-		'add_menu',
-		'nav_menu_item',
-		'gridd_logo_focus_on_core_section',
-		'gridd_footer_focus_on_core_widgets_section',
-		'gridd_logo_focus_on_typography_section',
-		'gridd_logo_focus_on_sidebar-1_section',
-		'gridd_logo_focus_on_sidebar-2_section',
-		'gridd_logo_focus_on_sidebar-3_section',
-		'gridd_logo_focus_on_sidebar-4_section',
-		'gridd_logo_focus_on_sidebar-5_section',
-		'gridd_logo_focus_on_sidebar-6_section',
-		'gridd_logo_focus_on_sidebar-7_section',
-		'gridd_logo_focus_on_sidebar-8_section',
-		'gridd_logo_focus_on_sidebar-9_section',
-		'gridd_logo_focus_on_sidebar-10_section',
-	];
-	return apply_filters( 'gridd_template_blacklist_settings', $blacklist );
-}
-
 // Init AMP Support.
 new AMP();
 
