@@ -9,6 +9,7 @@
 
 namespace Gridd\Grid_Part;
 
+use Gridd\Theme;
 use Gridd\Grid_Part;
 
 /**
@@ -66,7 +67,7 @@ class Nav_Handheld extends Grid_Part {
 	 */
 	public function render( $part ) {
 		if ( $this->id === $part ) {
-			gridd_get_template_part( 'grid-parts/templates/nav-handheld' );
+			Theme::get_template_part( 'grid-parts/templates/nav-handheld' );
 		}
 	}
 

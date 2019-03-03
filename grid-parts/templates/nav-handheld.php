@@ -6,6 +6,7 @@
  * @since 1.0
  */
 
+use Gridd\Theme;
 use Gridd\AMP;
 use Gridd\Style;
 
@@ -30,7 +31,7 @@ $style->add_string( '@media only screen and (min-width:' . get_theme_mod( 'gridd
 
 			// Print the parts.
 			foreach ( $parts as $part ) {
-				gridd_get_template_part( "grid-parts/templates/nav-handheld-$part" );
+				Theme::get_template_part( "grid-parts/templates/nav-handheld-$part" );
 				do_action( 'gridd_nav_handheld_part_template', $part );
 			}
 		}

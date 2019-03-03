@@ -9,6 +9,7 @@
 
 namespace Gridd;
 
+use Gridd\Theme;
 use Gridd\AMP;
 
 /**
@@ -25,6 +26,11 @@ class EDD {
 	 * @since 1.0
 	 */
 	public function __construct() {
+
+		// Early exit if EDD is not active.
+		if ( ! class_exists( 'Easy_Digital_Downloads' ) ) {
+			return;
+		}
 
 		// Remove and deactivate all styling included with EDD.
 		remove_action( 'wp_enqueue_scripts', 'edd_register_styles' );

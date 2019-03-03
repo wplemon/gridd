@@ -6,6 +6,7 @@
  * @since 1.0
  */
 
+use Gridd\Theme;
 use Gridd\Grid;
 use Gridd\Grid_Part\Header;
 use Gridd\Style;
@@ -66,25 +67,25 @@ if ( $header_bg_img ) {
 					/**
 					 * Branding.
 					 */
-					gridd_get_template_part( 'grid-parts/templates/header-branding' );
+					Theme::get_template_part( 'grid-parts/templates/header-branding' );
 
 				} elseif ( 'header_search' === $part ) {
 					/**
 					 * Search.
 					 */
-					gridd_get_template_part( 'grid-parts/templates/header-search' );
+					Theme::get_template_part( 'grid-parts/templates/header-search' );
 
 				} elseif ( 'header_contact_info' === $part ) {
 					/**
 					 * Contact Info.
 					 */
-					gridd_get_template_part( 'grid-parts/templates/header-contact-info' );
+					Theme::get_template_part( 'grid-parts/templates/header-contact-info' );
 
 				} elseif ( 'social_media' === $part ) {
 					/**
 					 * Social Media.
 					 */
-					gridd_get_template_part( 'grid-parts/templates/header-social-media' );
+					Theme::get_template_part( 'grid-parts/templates/header-social-media' );
 
 				} else {
 					/**

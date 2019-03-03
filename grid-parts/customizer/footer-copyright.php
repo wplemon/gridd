@@ -5,6 +5,7 @@
  * @package Gridd
  */
 
+use Gridd\Theme;
 use Gridd\Customizer;
 use Gridd\Customizer\Sanitize;
 
@@ -48,7 +49,7 @@ Customizer::add_field(
 				'selector'            => '.gridd-tp-footer_copyright',
 				'container_inclusive' => false,
 				'render_callback'     => function() {
-					gridd_get_template_part( 'grid-parts/templates/footer-copyright' );
+					Theme::get_template_part( 'grid-parts/templates/footer-copyright' );
 				},
 			],
 		],

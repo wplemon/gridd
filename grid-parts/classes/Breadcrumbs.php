@@ -9,6 +9,7 @@
 
 namespace Gridd\Grid_Part;
 
+use Gridd\Theme;
 use Gridd\Grid_Part;
 use Gridd\Grid_Parts;
 
@@ -70,7 +71,7 @@ class Breadcrumbs extends Grid_Part {
 	 */
 	public function render( $part ) {
 		if ( $this->id === $part ) {
-			gridd_get_template_part( 'grid-parts/templates/breadcrumbs' );
+			Theme::get_template_part( 'grid-parts/templates/breadcrumbs' );
 		}
 	}
 

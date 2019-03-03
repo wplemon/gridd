@@ -9,6 +9,7 @@
 
 namespace Gridd\Grid_Part;
 
+use Gridd\Theme;
 use Gridd\Grid;
 use Gridd\Grid_Parts;
 use Gridd\Grid_Part;
@@ -70,7 +71,7 @@ class Footer extends Grid_Part {
 	 */
 	public function render( $part ) {
 		if ( $this->id === $part ) {
-			gridd_get_template_part( 'grid-parts/templates/footer' );
+			Theme::get_template_part( 'grid-parts/templates/footer' );
 		}
 	}
 

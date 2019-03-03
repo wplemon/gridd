@@ -6,6 +6,8 @@
  * @since 1.0
  */
 
+use Gridd\Theme;
+
 $label_class = get_theme_mod( 'gridd_grid_nav-handheld_hide_labels', false ) ? 'screen-reader-text' : 'label';
 ?>
 <div id="gridd-handheld-search">
@@ -14,7 +16,7 @@ $label_class = get_theme_mod( 'gridd_grid_nav-handheld_hide_labels', false ) ? '
 	 * Prints the button.
 	 * No need to escape this, it's already escaped in the function itself.
 	 */
-	echo gridd_toggle_button( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	echo Theme::get_toggle_button( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		[
 			'expanded_state_id' => 'griddHandheldSearchWrapper',
 			'expanded'          => 'false',

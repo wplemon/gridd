@@ -7,8 +7,7 @@
  * phpcs:ignoreFile WordPress.Files.FileName
  */
 
-use Gridd\Gridd;
-use Gridd\Customizer;
+namespace Gridd;
 
 /**
  * Add the "Theme Options" panel.
@@ -41,7 +40,7 @@ Customizer::add_panel(
  *
  * @since 1.0
  */
-if ( ! Gridd::is_plus_active() ) {
+if ( ! Theme::is_plus_active() ) {
 	Customizer::add_section(
 		'gridd_get_plus',
 		[
@@ -57,7 +56,7 @@ if ( ! Gridd::is_plus_active() ) {
 /**
  * Add the config.
  */
-Kirki::add_config(
+\Kirki::add_config(
 	'gridd',
 	[
 		'capability'  => 'edit_theme_options',

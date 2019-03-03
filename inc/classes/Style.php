@@ -9,6 +9,8 @@
 
 namespace Gridd;
 
+use Gridd\Theme;
+
 /**
  * Template handler.
  *
@@ -116,7 +118,7 @@ class Style {
 	 */
 	public function add_file( $path ) {
 		if ( file_exists( $path ) ) {
-			$this->css .= gridd_get_file_contents( $path, true );
+			$this->css .= Theme::get_fcontents( $path, true );
 		}
 	}
 

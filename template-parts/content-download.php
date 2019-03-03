@@ -6,8 +6,10 @@
  * @since 1.0
  */
 
+use Gridd\Theme;
+
 if ( is_singular() ) {
-	gridd_get_template_part( 'template-parts/content-download', 'single' );
+	Theme::get_template_part( 'template-parts/content-download', 'single' );
 } else {
-	gridd_get_template_part( 'template-parts/content-download', 'grid' );
+	Theme::get_template_part( 'template-parts/content-download', 'grid' );
 }

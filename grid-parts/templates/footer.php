@@ -6,6 +6,7 @@
  * @since 1.0
  */
 
+use Gridd\Theme;
 use Gridd\Grid;
 use Gridd\Grid_Part\Footer;
 use Gridd\Style;
@@ -67,13 +68,13 @@ $style->add_vars(
 					/**
 					 * Social Media.
 					 */
-					gridd_get_template_part( 'grid-parts/templates/footer-social-media' );
+					Theme::get_template_part( 'grid-parts/templates/footer-social-media' );
 
 				} elseif ( 'footer_copyright' === $part ) {
 					/**
 					 * Copyright.
 					 */
-					gridd_get_template_part( 'grid-parts/templates/footer-copyright' );
+					Theme::get_template_part( 'grid-parts/templates/footer-copyright' );
 
 				} else {
 					do_action( 'gridd_the_grid_part', $part );

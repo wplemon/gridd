@@ -10,6 +10,8 @@
 
 namespace Gridd;
 
+use Gridd\Theme;
+
 /**
  * Adds Jetpack-setup methods.
  *
@@ -87,9 +89,9 @@ class Jetpack {
 		while ( have_posts() ) {
 			the_post();
 			if ( is_search() ) :
-				gridd_get_template_part( 'template-parts/content', 'search' );
+				Theme::get_template_part( 'template-parts/content', 'search' );
 			else :
-				gridd_get_template_part( 'template-parts/content', get_post_format() );
+				Theme::get_template_part( 'template-parts/content', get_post_format() );
 			endif;
 		}
 	}

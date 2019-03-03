@@ -7,4 +7,6 @@
  * @package Gridd
  */
 
-gridd_get_template_part( 'archive-download' );
+use Gridd\Theme;
+
+Theme::get_template_part( 'archive-download' );

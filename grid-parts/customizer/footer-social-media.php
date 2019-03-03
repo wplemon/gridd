@@ -5,6 +5,7 @@
  * @package Gridd
  */
 
+use Gridd\Theme;
 use Gridd\Grid_Part\Footer;
 use Gridd\Customizer;
 
@@ -59,7 +60,7 @@ Customizer::add_field(
 				'selector'            => '.gridd-tp-footer_social_media',
 				'container_inclusive' => false,
 				'render_callback'     => function() {
-					gridd_get_template_part( 'grid-parts/templates/footer-social-media' );
+					Theme::get_template_part( 'grid-parts/templates/footer-social-media' );
 				},
 			],
 		],

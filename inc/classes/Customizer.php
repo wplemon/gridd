@@ -9,7 +9,7 @@
 
 namespace Gridd;
 
-use Gridd;
+use Gridd\Theme;
 use Gridd\Grid_Parts;
 
 /**
@@ -175,32 +175,6 @@ class Customizer {
 				'autoText' => apply_filters( 'gridd_auto_text_color', Customizer::$auto_text_color ),
 			)
 		);
-	}
-
-	/**
-	 * Gets text strings that are reused multiple times in the customizer.
-	 * This is useful because in many controls the descriptions andtooltips are identical.
-	 *
-	 * @access public
-	 * @since 1.0
-	 * @param string $context The tooltip context.
-	 * @param array  $params  Extra parameters. Used in sprintf().
-	 * @return string
-	 */
-	public function get_text( $context, $params = [] ) {
-		switch ( $context ) {
-			case 'related-font-size':
-				return esc_html__( 'The font-size defined here is in relation to the global font-size defined in your typography options.', 'gridd' );
-
-			case 'grid-gap-tooltip':
-				return esc_html__( 'If you have a background-color defined for this grid, then that color will be visible through these gaps which creates a unique appearance since each grid-part looks separate.', 'gridd' );
-
-			case 'vertical-alignment':
-				return esc_html__( 'If the container for this grid-part is taller than its contents, you can use this option to vertically align the contents inside theie parent container.', 'gridd' );
-
-			default:
-				return '';
-		}
 	}
 
 	/**

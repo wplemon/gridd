@@ -10,6 +10,7 @@
 
 namespace Gridd;
 
+use Gridd\Theme;
 use Gridd\Grid_Parts;
 
 /**

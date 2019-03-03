@@ -9,6 +9,7 @@
 
 namespace Gridd\Grid_Part;
 
+use Gridd\Theme;
 use Gridd\Grid_Part;
 
 /**
@@ -64,7 +65,7 @@ class Revolution_Slider extends Grid_Part {
 	 */
 	public function render( $part ) {
 		if ( $this->id === $part ) {
-			gridd_get_template_part( 'grid-parts/templates/revolution-slider' );
+			Theme::get_template_part( 'grid-parts/templates/revolution-slider' );
 		}
 	}
 }

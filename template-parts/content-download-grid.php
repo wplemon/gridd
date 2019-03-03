@@ -6,11 +6,12 @@
  * @since 1.0
  */
 
+use Gridd\Theme;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php gridd_get_template_part( 'template-parts/thumbnail-download' ); ?>
+		<?php Theme::get_template_part( 'template-parts/thumbnail-download' ); ?>
 		<?php the_title( '<h2 class="entry-title h4"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
 	</header>
 	<div class="entry-content">

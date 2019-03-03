@@ -12,6 +12,7 @@ namespace Gridd\Grid_Part;
 use Gridd\Grid_Part;
 use Gridd\AMP;
 use Gridd\Style;
+use Gridd\Theme;
 
 /**
  * The Gridd\Grid_Part\Navigation object.
@@ -138,7 +139,7 @@ class Navigation extends Grid_Part {
 			return '';
 		}
 		self::$global_styles_already_included = true;
-		return gridd_get_file_contents( 'grid-parts/styles/navigation-global.min.css' );
+		return Theme::get_fcontents( 'grid-parts/styles/navigation-global.min.css' );
 	}
 
 
@@ -224,7 +225,7 @@ class Navigation extends Grid_Part {
 		$nav_menu_item_number++;
 		$expanded_state_id = 'navMenuItemExpanded' . $nav_menu_item_number;
 
-		return $item_output . gridd_toggle_button(
+		return $item_output . Theme::get_toggle_button(
 			[
 				'expanded_state_id'            => $expanded_state_id,
 				'expanded'                     => 'false',

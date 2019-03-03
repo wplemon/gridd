@@ -10,6 +10,7 @@ use Gridd\Grid_Part\Navigation;
 use Gridd\AMP;
 use Gridd\Customizer;
 use Gridd\Customizer\Sanitize;
+use Gridd\Theme;
 
 /**
  * Register the menus.
@@ -226,12 +227,12 @@ function gridd_nav_customizer_options( $id ) {
 				],
 			],
 			'choices'           => [
-				'flex-start'    => '<span class="gridd-flexbox-svg-option" title="' . esc_attr__( 'Start', 'gridd' ) . '"><span class="screen-reader-text">' . esc_html__( 'Start', 'gridd' ) . '</span>' . gridd_get_file_contents( 'assets/images/flexbox/justify-content-flex-start.svg' ) . '</span>',
-				'flex-end'      => '<span class="gridd-flexbox-svg-option" title="' . esc_attr__( 'End', 'gridd' ) . '"><span class="screen-reader-text">' . esc_html__( 'End', 'gridd' ) . '</span>' . gridd_get_file_contents( 'assets/images/flexbox/justify-content-flex-end.svg' ) . '</span>',
-				'center'        => '<span class="gridd-flexbox-svg-option" title="' . esc_attr__( 'Center', 'gridd' ) . '"><span class="screen-reader-text">' . esc_html__( 'Center', 'gridd' ) . '</span>' . gridd_get_file_contents( 'assets/images/flexbox/justify-content-center.svg' ) . '</span>',
-				'space-between' => '<span class="gridd-flexbox-svg-option" title="' . esc_attr__( 'Space Between', 'gridd' ) . '"><span class="screen-reader-text">' . esc_html__( 'Space Between', 'gridd' ) . '</span>' . gridd_get_file_contents( 'assets/images/flexbox/justify-content-space-between.svg' ) . '</span>',
-				'space-around'  => '<span class="gridd-flexbox-svg-option" title="' . esc_attr__( 'Space Around', 'gridd' ) . '"><span class="screen-reader-text">' . esc_html__( 'Space Around', 'gridd' ) . '</span>' . gridd_get_file_contents( 'assets/images/flexbox/justify-content-space-around.svg' ) . '</span>',
-				'space-evenly'  => '<span class="gridd-flexbox-svg-option" title="' . esc_attr__( 'Space Evenly', 'gridd' ) . '"><span class="screen-reader-text">' . esc_html__( 'Space Evenly', 'gridd' ) . '</span>' . gridd_get_file_contents( 'assets/images/flexbox/justify-content-space-evenly.svg' ) . '</span>',
+				'flex-start'    => '<span class="gridd-flexbox-svg-option" title="' . esc_attr__( 'Start', 'gridd' ) . '"><span class="screen-reader-text">' . esc_html__( 'Start', 'gridd' ) . '</span>' . Theme::get_fcontents( 'assets/images/flexbox/justify-content-flex-start.svg' ) . '</span>',
+				'flex-end'      => '<span class="gridd-flexbox-svg-option" title="' . esc_attr__( 'End', 'gridd' ) . '"><span class="screen-reader-text">' . esc_html__( 'End', 'gridd' ) . '</span>' . Theme::get_fcontents( 'assets/images/flexbox/justify-content-flex-end.svg' ) . '</span>',
+				'center'        => '<span class="gridd-flexbox-svg-option" title="' . esc_attr__( 'Center', 'gridd' ) . '"><span class="screen-reader-text">' . esc_html__( 'Center', 'gridd' ) . '</span>' . Theme::get_fcontents( 'assets/images/flexbox/justify-content-center.svg' ) . '</span>',
+				'space-between' => '<span class="gridd-flexbox-svg-option" title="' . esc_attr__( 'Space Between', 'gridd' ) . '"><span class="screen-reader-text">' . esc_html__( 'Space Between', 'gridd' ) . '</span>' . Theme::get_fcontents( 'assets/images/flexbox/justify-content-space-between.svg' ) . '</span>',
+				'space-around'  => '<span class="gridd-flexbox-svg-option" title="' . esc_attr__( 'Space Around', 'gridd' ) . '"><span class="screen-reader-text">' . esc_html__( 'Space Around', 'gridd' ) . '</span>' . Theme::get_fcontents( 'assets/images/flexbox/justify-content-space-around.svg' ) . '</span>',
+				'space-evenly'  => '<span class="gridd-flexbox-svg-option" title="' . esc_attr__( 'Space Evenly', 'gridd' ) . '"><span class="screen-reader-text">' . esc_html__( 'Space Evenly', 'gridd' ) . '</span>' . Theme::get_fcontents( 'assets/images/flexbox/justify-content-space-evenly.svg' ) . '</span>',
 			],
 			'sanitize_callback' => function( $value ) {
 				if ( ! in_array( $value, [ 'flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'space-evenly' ], true ) ) {

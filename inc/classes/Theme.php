@@ -24,7 +24,7 @@ use Gridd\AMP;
  *
  * @since 1.0
  */
-class Gridd {
+class Theme {
 
 	/**
 	 * The theme version.
@@ -403,5 +403,123 @@ class Gridd {
 	 */
 	public static function is_plus_active() {
 		return ( defined( 'GRIDD_PLUS_PATH' ) );
+	}
+
+	/**
+	 * Hookable get_template_part() function.
+	 * Allows us to get templates from a plugin or any other path using custom hooks.
+	 *
+	 * @static
+	 * @access public
+	 * @since 1.0.3
+	 * @param string $slug The template slug.
+	 * @param string $name The template name.
+	 * @see https://developer.wordpress.org/reference/functions/get_template_part/
+	 * @return void
+	 */
+	public static function get_template_part( $slug, $name = null ) {
+		$custom_path = false;
+		/**
+		 * Determine if we want to use a custom path for this template-part.
+		 *
+		 * @since 1.0.3
+		 * @param string|false $custom_path The custom template-part path. Defaults to false. Use absolute path.
+		 * @param string       $slug        The template slug.
+		 * @param string       $name        The template name.
+		 * @return string|false
+		 */
+		$custom_path = apply_filters( 'gridd_get_template_part', $custom_path, $slug, $name );
+		if ( $custom_path ) {
+			if ( file_exists( $custom_path ) ) {
+				include $custom_path;
+			}
+			return;
+		}
+		// Get the default template part.
+		get_template_part( $slug, $name );
+	}
+
+	/**
+	 * Generates the HTML for a toggle button.
+	 *
+	 * @static
+	 * @access public
+	 * @param array $args The button arguments.
+	 * @since 1.0
+	 */
+	public static function get_toggle_button( $args ) {
+
+		$html = '';
+
+		if ( AMP::is_active() ) {
+
+			// Create new state for managing storing the whether the sub-menu is expanded.
+			$html .= '<amp-state id="' . esc_attr( $args['expanded_state_id'] ) . '">';
+			$html .= '<script type="application/json">' . $args['expanded'] . '</script>';
+			$html .= '</amp-state>';
+		}
+
+		if ( ! isset( $args['classes'] ) ) {
+			$args['classes'] = [];
+		}
+		$args['classes'][] = 'gridd-toggle';
+		$classes           = implode( ' ', array_unique( $args['classes'] ) );
+
+		$button_atts = [
+			'aria-expanded' => 'false',
+		];
+
+		if ( AMP::is_active() ) {
+			$button_atts['[class]']         = '(' . $args['expanded_state_id'] . '?\'' . $classes . ' toggled-on\':\'' . $classes . '\')';
+			$button_atts['[aria-expanded]'] = "{$args['expanded_state_id']} ? 'true' : 'false'";
+			$button_atts['on']              = "tap:AMP.setState({ {$args['expanded_state_id']}: ! {$args['expanded_state_id']} })";
+		}
+
+		/*
+		* Create the toggle button which mutates the state and which has class and
+		* aria-expanded attributes which react to the state changes.
+		*/
+		$html .= '<button class="' . $classes . '"';
+		foreach ( $button_atts as $key => $val ) {
+			if ( ! empty( $key ) ) {
+				$html .= ' ' . $key . '="' . $val . '"';
+			}
+		}
+		$html .= '>';
+
+		if ( AMP::is_active() && isset( $args['screen_reader_label_collapse'] ) && isset( $args['screen_reader_label_expand'] ) ) {
+
+			// Let the screen reader text in the button also update based on the expanded state.
+			$html .= '<span class="screen-reader-text"';
+			$html .= ' [text]="' . $args['expanded_state_id'] . '?\'' . esc_attr( $args['screen_reader_label_collapse'] ) . '\':\'' . esc_attr( $args['screen_reader_label_expand'] ) . '\'">';
+			$html .= esc_html( $args['screen_reader_label_expand'] );
+		} elseif ( isset( $args['screen_reader_label_toggle'] ) ) {
+			$html .= '<span class="screen-reader-text">' . $args['screen_reader_label_toggle'] . '</span>';
+		}
+		$html .= '</span>';
+		$html .= $args['label'];
+		$html .= '</button>';
+
+		return $html;
+	}
+
+	/**
+	 * Utility function to get the contents of a non-executable file as plain text.
+	 *
+	 * @static
+	 * @access public
+	 * @since 1.0
+	 * @param string $path     The file path.
+	 * @param bool   $absolute Set to true if we have an absolute path instead of relative to the theme root.
+	 * @return string          The file contents or empty string if no file was found.
+	 */
+	public static function get_fcontents( $path, $absolute = false ) {
+		ob_start();
+		if ( $absolute && file_exists( $path ) ) {
+			include $path;
+		} else {
+			include locate_template( $path, false, false );
+		}
+		return ob_get_clean();
 	}
 }

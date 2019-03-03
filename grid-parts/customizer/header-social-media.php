@@ -5,6 +5,7 @@
  * @package Gridd
  */
 
+use Gridd\Theme;
 use Gridd\Grid_Part\Header;
 use Gridd\Customizer;
 
@@ -62,7 +63,7 @@ Customizer::add_field(
 				'selector'            => '.gridd-tp-social_media',
 				'container_inclusive' => false,
 				'render_callback'     => function() {
-					gridd_get_template_part( 'grid-parts/templates/header-social-media' );
+					Theme::get_template_part( 'grid-parts/templates/header-social-media' );
 				},
 			],
 		],

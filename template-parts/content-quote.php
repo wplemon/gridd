@@ -6,6 +6,7 @@
  * @since 1.0
  */
 
+use Gridd\Theme;
 use Gridd\Blog;
 
 $parts = Blog::get_post_parts();
@@ -18,7 +19,7 @@ $parts = Blog::get_post_parts();
 		if ( in_array( $part, [ 'post-title', 'post-thumbnail', 'post-content' ], true ) ) {
 			$part_name = is_archive() ? 'archive' : null;
 			$part_name = is_singular() ? 'singular' : null;
-			gridd_get_template_part( 'template-parts/part-' . $part, $part_name );
+			Theme::get_template_part( 'template-parts/part-' . $part, $part_name );
 		}
 	}
 	?>
