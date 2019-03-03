@@ -370,7 +370,28 @@ class Gridd {
 	 * @return void
 	 */
 	public function content_width() {
-		$GLOBALS['content_width'] = apply_filters( 'gridd_content_width', 960 );
+		$gridd_content_width = 960;
+
+		// Get the width from theme_mod.
+		$max_width = get_theme_mod( 'gridd_grid_content_max_width', '45em' );
+
+		if ( false === strpos( $max_width, 'calc' ) ) {
+			
+			// If width is defined in pixels then this is easy.
+			if ( false !== strpos( $max_width, 'px' ) ) {
+				$gridd_content_width = intval( $max_width );
+			}
+
+			// If width is in em or rem units we need to do some calculations.
+			if ( false !== strpos( $max_width, 'em' ) ) {
+				$base_font_size      = get_theme_mod( 'gridd_body_font_size', 18 );
+				$ratio               = get_theme_mod( 'gridd_fluid_typography_ratio' );
+				$font_size          = $ratio * 1440 / 100 + intval( $base_font_size ); // 1440 is an average width for screen size.
+				$gridd_content_width = $font_size * intval( $max_width );
+			}
+		}
+
+		$GLOBALS['content_width'] = apply_filters( 'gridd_content_width', $gridd_content_width );
 	}
 
 	/**
