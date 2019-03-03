@@ -110,7 +110,9 @@
 }
 
 .wp-block {
-	max-width: var(--gridd-content-max-width-calculated);
+	&:not([data-align="full"]) {
+		max-width: var(--gridd-content-max-width-calculated);
+	}
 
 	&[data-align="wide"] {
 		max-width: calc(var(--gridd-content-max-width-calculated) + 25%);

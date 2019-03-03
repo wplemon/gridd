@@ -97,7 +97,7 @@
 .wp-block-freeform.block-library-rich-text__tinymce a {
   color: var(--gridd-links-color); }
 
-.wp-block {
+.wp-block:not([data-align="full"]) {
   max-width: var(--gridd-content-max-width-calculated); }
-  .wp-block[data-align="wide"] {
-    max-width: calc(var(--gridd-content-max-width-calculated) + 25%); }
+.wp-block[data-align="wide"] {
+  max-width: calc(var(--gridd-content-max-width-calculated) + 25%); }
