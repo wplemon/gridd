@@ -386,7 +386,7 @@ class Gridd {
 			if ( false !== strpos( $max_width, 'em' ) ) {
 				$base_font_size      = get_theme_mod( 'gridd_body_font_size', 18 );
 				$ratio               = get_theme_mod( 'gridd_fluid_typography_ratio' );
-				$font_size          = $ratio * 1440 / 100 + intval( $base_font_size ); // 1440 is an average width for screen size.
+				$font_size           = $ratio * 1440 / 100 + intval( $base_font_size ); // 1440 is an average width for screen size.
 				$gridd_content_width = $font_size * intval( $max_width );
 			}
 		}

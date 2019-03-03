@@ -83,6 +83,7 @@ class Scripts {
 
 		// Add inline scripts.
 		add_action( 'gridd_footer_inline_scripts', [ $this, 'add_user_agent_inline_script' ] );
+		add_action( 'admin_footer', [ $this, 'admin_footer_editor_styles' ] );
 
 		// Add widget styles.
 		add_filter( 'gridd_widget_output', [ $this, 'widget_output' ], 10, 4 );
@@ -310,8 +311,20 @@ class Scripts {
 	 * @return void
 	 */
 	public function editor_styles() {
-		$min = $this->script_debug ? '' : '.min';
-		wp_enqueue_style( 'gridd-editor', get_template_directory_uri() . '/assets/css/admin/editor' . $min . '.css', [], GRIDD_VERSION );
+		wp_enqueue_style( 'gridd-editor', get_template_directory_uri() . '/assets/css/admin/editor.min.css', [], GRIDD_VERSION );
+	}
+
+	/**
+	 * Add extra styles for the editor.
+	 * This time we'll be directly outputing our styles in the admin footer.
+	 *
+	 * @access public
+	 * @since 1.0.3
+	 * @return void
+	 */
+	public function admin_footer_editor_styles() {
+		global $content_width;
+		echo '<style>:root{--gridd-content-max-width-calculated:' . absint( $content_width ) . 'px;}</style>';
 	}
 
 	/**
