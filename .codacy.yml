@@ -2,3 +2,5 @@
 exclude_paths:
   - 'inc/kirki/**'
   - 'inc/hybrid-breadcrumbs/**'
+  - '*.min.js'
+  - '*.min.css'
