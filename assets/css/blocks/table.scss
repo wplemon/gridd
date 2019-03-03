@@ -11,4 +11,12 @@
 
 .wp-block-table {
 	min-width: 30em;
+
+	&.is-style-stripes {
+		tr {
+			&:nth-child(2n+1) {
+				background-color: rgba(0, 0, 0, .1);
+			}
+		}
+	}
 }
