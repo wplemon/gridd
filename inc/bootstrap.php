@@ -122,40 +122,6 @@ if ( class_exists( 'Easy_Digital_Downloads' ) ) {
 }
 
 /**
- * Post-edit link.
- *
- * @since 1.0
- * @return void
- */
-function gridd_the_edit_link() {
-	edit_post_link(
-		sprintf(
-			/* translators: %s: Name of the post.*/
-			esc_html__( 'Edit %s', 'gridd' ),
-			'<span class="screen-reader-text">' . get_the_title() . '</span>'
-		),
-		'<span class="edit-link">',
-		'</span>'
-	);
-}
-
-/**
- * Comments link.
- *
- * @since 1.0
- * @return void
- */
-function gridd_the_comments_link() {
-	comments_popup_link(
-		sprintf(
-			/* translators: %s: post title */
-			'<span class="screen-reader-text">' . esc_html__( 'Leave a Comment on %s', 'gridd' ) . '</span>',
-			get_the_title()
-		)
-	);
-}
-
-/**
  * Adds support for wp.com-specific theme functions.
  *
  * @global array $themecolors
@@ -175,34 +141,6 @@ function gridd_wpcom_setup() {
 	}
 }
 add_action( 'after_setup_theme', 'gridd_wpcom_setup' );
-
-/**
- * Move categories counts inside the links.
- *
- * @since 1.0
- * @param string $html The links.
- * @return string
- */
-function gridd_filter_wp_list_categories( $html ) {
-	return str_replace(
-		[ '</a> (', ')' ],
-		[ ' (', ')</a>' ],
-		$html
-	);
-}
-add_filter( 'wp_list_categories', 'gridd_filter_wp_list_categories' );
-
-/**
- * Add classes to the comment-form submit button.
- *
- * @since 1.0
- * @param array $args The comment-form args.
- * @return array
- */
-function gridd_filter_comment_form_defaults( $args ) {
-	$args['class_submit'] .= ' wp-block-button__link';
-	return $args;
-}
 
 /**
  * Integrates WPBakery Builder in the theme.

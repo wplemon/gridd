@@ -6,6 +6,8 @@
  * @since 1.0
  */
 
-gridd_the_edit_link();
+use Gridd\Blog;
+
+Blog::the_edit_link();
 
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */

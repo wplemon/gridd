@@ -7,10 +7,12 @@
  * @since 1.0
  */
 
+use Gridd\Blog;
+
 if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) :
 	?>
 	<div class="entry-comments-link gridd-contain">
-		<span class="comments-link"><?php gridd_the_comments_link(); ?></span>
+		<span class="comments-link"><?php Blog::the_comments_link(); ?></span>
 	</div>
 	<?php
 endif;

@@ -24,7 +24,7 @@ $parts = Blog::get_post_parts();
 	?>
 	<?php if ( get_edit_post_link() ) : ?>
 		<footer class="entry-footer container">
-			<?php gridd_the_edit_link(); ?>
+			<?php Blog::the_edit_link(); ?>
 		</footer>
 	<?php endif; ?>
 </article>
