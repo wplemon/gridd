@@ -39,6 +39,7 @@ class Navigation extends Grid_Part {
 	public function __construct() {
 		parent::__construct();
 		add_filter( 'walker_nav_menu_start_el', [ $this, 'add_nav_sub_menu_buttons' ], 10, 2 );
+		add_filter( 'wp_nav_menu_args', [ $this, 'nav_menu_args' ] );
 	}
 
 	/**
@@ -233,6 +234,19 @@ class Navigation extends Grid_Part {
 				'label'                        => '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M23.245 4l-11.245 14.374-11.219-14.374-.781.619 12 15.381 12-15.391-.755-.609z"/></svg>',
 			]
 		);
+	}
+
+	/**
+	 * Tweak the nav-menu arguments.
+	 *
+	 * @access public
+	 * @since 1.0.3
+	 * @param array $args The arguments.
+	 * @return array
+	 */
+	public function nav_menu_args( $args ) {
+		$args['menu_class'] .= ' gridd-navigation';
+		return $args;
 	}
 }
 

@@ -326,14 +326,6 @@ function gridd_toggle_button( $args ) {
 	return $html;
 }
 
-add_filter(
-	'wp_nav_menu_args',
-	function( $args ) {
-		$args['menu_class'] .= ' gridd-navigation';
-		return $args;
-	}
-);
-
 /**
  * Utility function to get the contents of a non-executable file as plain text.
  *
