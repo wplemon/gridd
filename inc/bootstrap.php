@@ -224,14 +224,8 @@ function gridd_get_post_parts() {
  */
 if ( function_exists( 'vc_set_as_theme' ) ) {
 	add_action( 'vc_before_init', 'vc_set_as_theme' );
+	add_filter( 'vc_nav_front_logo', '__return_empty_string' );
 }
-
-/**
- * Remove logo.
- *
- * @since 1.0
- */
-add_filter( 'vc_nav_front_logo', '__return_empty_string' );
 
 // Init AMP Support.
 new AMP();
