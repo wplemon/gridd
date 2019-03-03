@@ -381,6 +381,6 @@ class Gridd {
 	 * @return bool
 	 */
 	public static function is_plus_active() {
-		return ( class_exists( 'Gridd_Plus' ) );
+		return ( defined( 'GRIDD_PLUS_PATH' ) );
 	}
 }
