@@ -84,7 +84,7 @@ Customizer::add_field(
 		'settings'  => 'gridd_grid_part_details_header_contact_info_font_size',
 		'label'     => esc_html__( 'Font Size', 'gridd' ),
 		'tooltip'   => esc_html__( 'The value selected here is relevant to your body font-size, so a value of 1em will be the same size as your content.', 'gridd' ),
-		'tooltip'   => gridd()->customizer->get_text( 'related-font-size' ),
+		'tooltip'   => esc_html__( 'The font-size defined here is in relation to the global font-size defined in your typography options.', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_header_contact_info',
 		'default'   => .85,
 		'transport' => 'postMessage',
