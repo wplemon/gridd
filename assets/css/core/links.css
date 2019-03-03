@@ -11,8 +11,8 @@ a:visited {
     outline: thin dotted; }
   a:focus,
   a:visited:focus {
-    outline: 2px dashed;
-    outline-offset: 2px; }
+    outline: 1px dashed;
+    outline-offset: 1px; }
 
 .entry-title a {
   text-decoration: none; }
