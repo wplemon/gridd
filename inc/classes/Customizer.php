@@ -253,4 +253,89 @@ class Customizer {
 
 		return '<div class="gridd-section-description-wrapper">' . $buttons . $boxes . '</div>';
 	}
+
+	/**
+	 * Proxy function for Kirki.
+	 *
+	 * @static
+	 * @access public
+	 * @since 1.0
+	 * @param string $id   The section ID.
+	 * @param array  $args The field arguments.
+	 * @return void
+	 */
+	public static function add_panel( $id, $args ) {
+		// WIP: Disable icons.
+		if ( isset( $args['icon'] ) ) {
+			unset( $args['icon'] );
+		}
+		\Kirki::add_panel( $id, $args );
+	}
+
+	/**
+	 * Proxy function for Kirki.
+	 *
+	 * @static
+	 * @access public
+	 * @since 1.0
+	 * @param string $id   The section ID.
+	 * @param array  $args The field arguments.
+	 * @return void
+	 */
+	public static function add_section( $id, $args ) {
+		// WIP: Disable icons.
+		if ( isset( $args['icon'] ) ) {
+			unset( $args['icon'] );
+		}
+
+		\Kirki::add_section( $id, apply_filters( 'gridd_section_args', $args ) );
+	}
+
+	/**
+	 * Proxy function for Kirki.
+	 * Adds an outer section.
+	 *
+	 * @static
+	 * @access public
+	 * @since 1.0.3
+	 * @param string $id   The section ID.
+	 * @param array  $args The field arguments.
+	 * @return void
+	 */
+	public static function add_outer_section( $id, $args ) {
+		$args['panel'] = 'gridd_hidden_panel';
+		$args['type']  = 'outer';
+		unset( $args['section'] );
+		self::add_section( $id, $args );
+	}
+
+	/**
+	 * Proxy function for Kirki.
+	 *
+	 * @static
+	 * @access public
+	 * @since 1.0
+	 * @param array $args The field arguments.
+	 * @return void
+	 */
+	public static function add_field( $args ) {
+		global $wp_customize;
+
+		$args = apply_filters( 'gridd_field_args', $args );
+
+		if ( 'gridd-wcag-tc' === $args['type'] ) {
+			// No need to init a colorpicker if the setting is automated.
+			$args['type']    = 'color';
+			$auto_text_color = apply_filters( 'gridd_auto_text_color', Customizer::$auto_text_color );
+			if ( in_array( $args['settings'], array_values( $auto_text_color ), true ) ) {
+				$args['type']            = 'hidden';
+				$args['active_callback'] = '__return_false';
+			}
+		}
+
+		\Kirki::add_field( 'gridd', $args );
+		if ( 'gridd_grid' === $args['type'] ) {
+			self::$grid_controls[ $args['settings'] ] = $args;
+		}
+	}
 }

@@ -27,7 +27,7 @@ function gridd_add_footer_widget_area_options( $id ) {
 	$sanitization = new Sanitize();
 
 	// Add section.
-	gridd_add_customizer_outer_section(
+	Customizer::add_outer_section(
 		"gridd_grid_part_details_footer_sidebar_$id",
 		[
 			'title'       => sprintf(
@@ -50,7 +50,7 @@ function gridd_add_footer_widget_area_options( $id ) {
 	);
 
 	// Background Color.
-	gridd_add_customizer_field(
+	Customizer::add_field(
 		[
 			'type'      => 'color',
 			'settings'  => "gridd_grid_footer_sidebar_{$id}_bg_color",
@@ -66,7 +66,7 @@ function gridd_add_footer_widget_area_options( $id ) {
 	);
 
 	// Text Color.
-	gridd_add_customizer_field(
+	Customizer::add_field(
 		[
 			'type'              => 'gridd-wcag-tc',
 			'settings'          => "gridd_grid_footer_sidebar_{$id}_color",
@@ -83,7 +83,7 @@ function gridd_add_footer_widget_area_options( $id ) {
 	);
 
 	// Links Color.
-	gridd_add_customizer_field(
+	Customizer::add_field(
 		[
 			'type'              => 'gridd-wcag-lc',
 			'settings'          => "gridd_grid_footer_sidebar_{$id}_links_color",

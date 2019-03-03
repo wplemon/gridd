@@ -7,7 +7,7 @@
 
 use Gridd\Customizer;
 
-gridd_add_customizer_outer_section(
+Customizer::add_outer_section(
 	'gridd_grid_part_details_layer-slider',
 	[
 		/* translators: The grid-part label. */
@@ -28,7 +28,7 @@ $sliders_array = [
 foreach ( $sliders as $slider ) {
 	$sliders_array[ $slider['id'] ] = $slider['name'];
 }
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'              => 'select',
 		'settings'          => 'gridd_grid_layerslider_slider',

@@ -10,7 +10,7 @@ use Gridd\Customizer\Sanitize;
 
 $sanitization = new Sanitize();
 
-gridd_add_customizer_outer_section(
+Customizer::add_outer_section(
 	'gridd_grid_part_details_breadcrumbs',
 	[
 		/* translators: The grid-part label. */
@@ -28,7 +28,7 @@ gridd_add_customizer_outer_section(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'        => 'text',
 		'settings'    => 'gridd_grid_breadcrumbs_padding',
@@ -42,7 +42,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_breadcrumbs_max_width',
@@ -56,7 +56,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'      => 'slider',
 		'settings'  => 'gridd_grid_breadcrumbs_font_size',
@@ -75,7 +75,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'      => 'color',
 		'settings'  => 'gridd_grid_breadcrumbs_background_color',
@@ -90,7 +90,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'              => 'gridd-wcag-tc',
 		'settings'          => 'gridd_grid_breadcrumbs_color',
@@ -106,7 +106,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'              => 'radio-buttonset',
 		'settings'          => 'gridd_grid_breadcrumbs_text_align',

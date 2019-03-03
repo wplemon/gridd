@@ -8,7 +8,7 @@
 
 use Gridd\Customizer;
 
-gridd_add_customizer_section(
+Customizer::add_section(
 	'gridd_features',
 	[
 		'title'       => esc_attr__( 'Theme Features', 'gridd' ),
@@ -29,7 +29,7 @@ gridd_add_customizer_section(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'              => 'radio',
 		'settings'          => 'gridd_featured_image_mode_archive',
@@ -53,7 +53,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'              => 'radio',
 		'settings'          => 'gridd_featured_image_mode_singular',
@@ -78,7 +78,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'      => 'checkbox',
 		'settings'  => 'gridd_show_next_prev',
@@ -90,7 +90,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'        => 'checkbox',
 		'settings'    => 'gridd_archives_display_full_post',
@@ -112,7 +112,7 @@ $post_types = get_post_types(
 );
 
 foreach ( $post_types as $post_type_id => $post_type_obj ) {
-	gridd_add_customizer_field(
+	Customizer::add_field(
 		[
 			'type'            => 'checkbox',
 			'settings'        => "gridd_archive_display_grid_$post_type_id",
@@ -164,7 +164,7 @@ foreach ( $post_types as $post_type_id => $post_type_obj ) {
 	);
 }
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'        => 'textarea',
 		'settings'    => 'gridd_excerpt_more',

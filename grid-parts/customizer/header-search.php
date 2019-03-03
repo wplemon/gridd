@@ -8,7 +8,7 @@
 use Gridd\Grid_Part\Header;
 use Gridd\Customizer;
 
-gridd_add_customizer_outer_section(
+Customizer::add_outer_section(
 	'gridd_grid_part_details_header_search',
 	[
 		/* translators: The grid-part label. */
@@ -22,7 +22,7 @@ gridd_add_customizer_outer_section(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'      => 'dimensions',
 		'settings'  => 'gridd_grid_part_details_header_search_padding',
@@ -41,7 +41,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'      => 'slider',
 		'settings'  => 'gridd_grid_part_details_header_search_font_size',
@@ -60,7 +60,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'      => 'color',
 		'settings'  => 'gridd_grid_part_details_header_bg_color',
@@ -75,7 +75,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'      => 'color',
 		'settings'  => 'gridd_grid_part_details_header_search_color',

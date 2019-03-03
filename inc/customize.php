@@ -53,84 +53,7 @@ function gridd_kirki_wcag_link_color_register_control_type( $wp_customize ) {
 }
 add_action( 'customize_register', 'gridd_kirki_wcag_link_color_register_control_type' );
 
-/**
- * Proxy function for Kirki.
- *
- * @since 1.0
- * @param array $args The field arguments.
- * @return void
- */
-function gridd_add_customizer_field( $args ) {
-	global $wp_customize;
-
-	$args = apply_filters( 'gridd_field_args', $args );
-
-	if ( 'gridd-wcag-tc' === $args['type'] ) {
-		// No need to init a colorpicker if the setting is automated.
-		$args['type']    = 'color';
-		$auto_text_color = apply_filters( 'gridd_auto_text_color', Customizer::$auto_text_color );
-		if ( in_array( $args['settings'], array_values( $auto_text_color ), true ) ) {
-			$args['type']            = 'hidden';
-			$args['active_callback'] = '__return_false';
-		}
-	}
-
-	Kirki::add_field( 'gridd', $args );
-	if ( 'gridd_grid' === $args['type'] ) {
-		Customizer::$grid_controls[ $args['settings'] ] = $args;
-	}
-}
-
-/**
- * Proxy function for Kirki.
- *
- * @since 1.0
- * @param string $id   The section ID.
- * @param array  $args The field arguments.
- * @return void
- */
-function gridd_add_customizer_section( $id, $args ) {
-	// WIP: Disable icons.
-	if ( isset( $args['icon'] ) ) {
-		unset( $args['icon'] );
-	}
-
-	Kirki::add_section( $id, apply_filters( 'gridd_section_args', $args ) );
-}
-
-/**
- * Proxy function for Kirki.
- * Adds an outer section.
- *
- * @since 1.0.3
- * @param string $id   The section ID.
- * @param array  $args The field arguments.
- * @return void
- */
-function gridd_add_customizer_outer_section( $id, $args ) {
-	$args['panel'] = 'gridd_hidden_panel';
-	$args['type']  = 'outer';
-	unset( $args['section'] );
-	gridd_add_customizer_section( $id, $args );
-}
-
-/**
- * Proxy function for Kirki.
- *
- * @since 1.0
- * @param string $id   The section ID.
- * @param array  $args The field arguments.
- * @return void
- */
-function gridd_add_customizer_panel( $id, $args ) {
-	// WIP: Disable icons.
-	if ( isset( $args['icon'] ) ) {
-		unset( $args['icon'] );
-	}
-	Kirki::add_panel( $id, $args );
-}
-
-gridd_add_customizer_panel(
+Customizer::add_panel(
 	'gridd_options',
 	[
 		'title'    => esc_html__( 'Theme Options', 'gridd' ),
@@ -141,7 +64,7 @@ gridd_add_customizer_panel(
 /**
  * This is a dummy panel used for outer sections.
  */
-gridd_add_customizer_panel(
+Customizer::add_panel(
 	'gridd_hidden_panel',
 	[
 		'title'    => '',
@@ -155,7 +78,7 @@ gridd_add_customizer_panel(
  * @since 1.0
  */
 if ( ! Gridd::is_plus_active() ) {
-	gridd_add_customizer_section(
+	Customizer::add_section(
 		'gridd_get_plus',
 		[
 			'title'       => esc_html__( 'Gridd Plus', 'gridd' ),

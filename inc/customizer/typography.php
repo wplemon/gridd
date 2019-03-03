@@ -13,7 +13,7 @@ $sanitization = new Sanitize();
 /**
  * Add the Theme-Options panel.
  */
-gridd_add_customizer_section(
+Customizer::add_section(
 	'gridd_typography',
 	[
 		'title'       => esc_html__( 'Typography & Links', 'gridd' ),
@@ -36,7 +36,7 @@ gridd_add_customizer_section(
 /**
  * Body typography.
  */
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'        => 'typography',
 		'settings'    => 'gridd_body_typography',
@@ -69,7 +69,7 @@ gridd_add_customizer_field(
 /**
  * Headers typography.
  */
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'        => 'typography',
 		'settings'    => 'gridd_headers_typography',
@@ -107,7 +107,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'              => 'gridd-wcag-tc',
 		'settings'          => 'gridd_text_color',
@@ -125,7 +125,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'settings'          => 'gridd_links_color',
 		'type'              => 'gridd-wcag-lc',
@@ -147,7 +147,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'settings'          => 'gridd_links_hover_color',
 		'type'              => 'gridd-wcag-lc',
@@ -171,7 +171,7 @@ gridd_add_customizer_field(
 /**
  * Body typography.
  */
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'        => 'slider',
 		'settings'    => 'gridd_body_font_size',
@@ -191,7 +191,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'        => 'slider',
 		'settings'    => 'gridd_fluid_typography_ratio',
@@ -215,7 +215,7 @@ gridd_add_customizer_field(
 /**
  * Type Scale
  */
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'settings'          => 'gridd_type_scale',
 		'type'              => 'radio',

@@ -12,7 +12,7 @@ use Gridd\Grid_Parts;
 $sanitization = new Sanitize();
 $grid_parts   = Grid_Parts::get_instance()->get_parts();
 
-gridd_add_customizer_section(
+Customizer::add_section(
 	'gridd_grid',
 	[
 		'title'       => esc_html__( 'Grid', 'gridd' ),
@@ -31,7 +31,7 @@ gridd_add_customizer_section(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'settings'          => 'gridd_grid',
 		'section'           => 'gridd_grid',
@@ -49,7 +49,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'        => 'dimension',
 		'settings'    => 'gridd_mobile_breakpoint',
@@ -62,7 +62,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_gap',
@@ -82,7 +82,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_max_width',
@@ -103,7 +103,7 @@ foreach ( $parts as $part ) {
 	$sortable_parts[ $part['id'] ] = $part['label'];
 }
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'        => 'sortable',
 		'settings'    => 'gridd_grid_load_order',

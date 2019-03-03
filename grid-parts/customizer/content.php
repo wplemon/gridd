@@ -7,7 +7,7 @@
 
 use Gridd\Customizer;
 
-gridd_add_customizer_outer_section(
+Customizer::add_outer_section(
 	'gridd_grid_part_details_content',
 	[
 		/* translators: The grid-part label. */
@@ -21,7 +21,7 @@ gridd_add_customizer_outer_section(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_content_max_width',
@@ -36,7 +36,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'      => 'dimensions',
 		'settings'  => 'gridd_grid_content_padding',
@@ -59,7 +59,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'      => 'color',
 		'settings'  => 'gridd_grid_content_background_color',

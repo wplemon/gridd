@@ -7,7 +7,7 @@
 
 use Gridd\Customizer;
 
-gridd_add_customizer_outer_section(
+Customizer::add_outer_section(
 	'gridd_grid_part_details_revolution-slider',
 	[
 		/* translators: The grid-part label. */
@@ -29,7 +29,7 @@ foreach ( $slider->getArrSliders() as $slide ) {
 	$sliders_array[ $slide->getAlias() ] = $slide->getTitle();
 }
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'              => 'select',
 		'settings'          => 'gridd_grid_revslider_slider',

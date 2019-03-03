@@ -11,7 +11,7 @@ use Gridd\Grid_Part\Footer;
 
 $sanitization = new Sanitize();
 
-gridd_add_customizer_section(
+Customizer::add_section(
 	'gridd_grid_part_details_footer',
 	[
 		'title'       => esc_html__( 'Footer', 'gridd' ),
@@ -29,7 +29,7 @@ gridd_add_customizer_section(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'settings'          => 'gridd_footer_grid',
 		'section'           => 'gridd_grid_part_details_footer',
@@ -45,7 +45,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_footer_max_width',
@@ -59,7 +59,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_footer_grid_gap',
@@ -73,7 +73,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_footer_padding',
@@ -87,7 +87,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'      => 'color',
 		'settings'  => 'gridd_grid_footer_background_color',
@@ -103,7 +103,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'      => 'slider',
 		'settings'  => 'gridd_grid_footer_border_top_width',
@@ -123,7 +123,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'            => 'color',
 		'settings'        => 'gridd_grid_footer_border_top_color',

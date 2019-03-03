@@ -5,7 +5,7 @@
  * @package Gridd
  */
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'        => 'dimension',
 		'settings'    => 'gridd_woocommerce_product_catalog_min_width',
@@ -18,7 +18,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'     => 'slider',
 		'settings' => 'gridd_woocommerce_product_catalog_per_page',

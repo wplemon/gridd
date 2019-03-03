@@ -7,7 +7,7 @@
 
 use Gridd\Customizer;
 
-gridd_add_customizer_section(
+Customizer::add_section(
 	'gridd_grid_part_details_nav-handheld',
 	[
 		'title'       => esc_html__( 'Mobile Navigation', 'gridd' ),
@@ -32,7 +32,7 @@ $parts = [
 	'search' => esc_html__( 'Search', 'gridd' ),
 ];
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'            => 'checkbox',
 		'settings'        => 'gridd_grid_nav-handheld_enable',
@@ -53,7 +53,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'            => 'sortable',
 		'settings'        => 'gridd_grid_nav-handheld_parts',
@@ -82,7 +82,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'            => 'checkbox',
 		'settings'        => 'gridd_grid_nav-handheld_hide_labels',

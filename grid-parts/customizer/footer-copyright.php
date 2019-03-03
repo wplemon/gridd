@@ -11,7 +11,7 @@ use Gridd\Customizer\Sanitize;
 $sanitization = new Sanitize();
 
 // Add section.
-gridd_add_customizer_outer_section(
+Customizer::add_outer_section(
 	'gridd_grid_part_details_footer_copyright',
 	[
 		/* translators: The grid-part label. */
@@ -28,7 +28,7 @@ gridd_add_customizer_outer_section(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'              => 'editor',
 		'settings'          => 'gridd_copyright_text',
@@ -55,7 +55,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'      => 'color',
 		'settings'  => 'gridd_grid_footer_copyright_bg_color',
@@ -71,7 +71,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'              => 'gridd-wcag-tc',
 		'settings'          => 'gridd_grid_footer_copyright_color',
@@ -88,7 +88,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'              => 'gridd-wcag-lc',
 		'settings'          => 'gridd_grid_footer_copyright_links_color',
@@ -106,7 +106,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'      => 'slider',
 		'settings'  => 'gridd_grid_footer_copyright_text_font_size',
@@ -126,7 +126,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'              => 'radio-buttonset',
 		'settings'          => 'gridd_grid_footer_copyright_text_align',

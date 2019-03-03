@@ -41,7 +41,7 @@ function gridd_nav_customizer_options( $id ) {
 	/**
 	 * Add Customizer Sections.
 	 */
-	gridd_add_customizer_outer_section(
+	Customizer::add_outer_section(
 		"gridd_grid_part_details_nav_$id",
 		[
 			'title'       => sprintf(
@@ -68,7 +68,7 @@ function gridd_nav_customizer_options( $id ) {
 	/**
 	 * Focus on menu_locations section.
 	 */
-	gridd_add_customizer_field(
+	Customizer::add_field(
 		[
 			'settings' => "gridd_logo_focus_on_menu_locations_$id",
 			'type'     => 'custom',
@@ -78,7 +78,7 @@ function gridd_nav_customizer_options( $id ) {
 		]
 	);
 
-	gridd_add_customizer_field(
+	Customizer::add_field(
 		[
 			'type'              => 'radio',
 			'settings'          => "gridd_grid_nav_{$id}_responsive_behavior",
@@ -105,7 +105,7 @@ function gridd_nav_customizer_options( $id ) {
 		]
 	);
 
-	gridd_add_customizer_field(
+	Customizer::add_field(
 		[
 			'type'        => 'dimension',
 			'settings'    => "gridd_grid_nav_{$id}_padding",
@@ -118,7 +118,7 @@ function gridd_nav_customizer_options( $id ) {
 		]
 	);
 
-	gridd_add_customizer_field(
+	Customizer::add_field(
 		[
 			'type'        => 'color',
 			'label'       => esc_html__( 'Background Color', 'gridd' ),
@@ -134,7 +134,7 @@ function gridd_nav_customizer_options( $id ) {
 		]
 	);
 
-	gridd_add_customizer_field(
+	Customizer::add_field(
 		[
 			'type'              => 'gridd-wcag-tc',
 			'label'             => esc_html__( 'Items Color', 'gridd' ),
@@ -151,7 +151,7 @@ function gridd_nav_customizer_options( $id ) {
 		]
 	);
 
-	gridd_add_customizer_field(
+	Customizer::add_field(
 		[
 			'type'        => 'color',
 			'label'       => esc_html__( 'Accent Background Color', 'gridd' ),
@@ -167,7 +167,7 @@ function gridd_nav_customizer_options( $id ) {
 		]
 	);
 
-	gridd_add_customizer_field(
+	Customizer::add_field(
 		[
 			'type'              => 'gridd-wcag-tc',
 			'label'             => esc_html__( 'Accent Items Color', 'gridd' ),
@@ -184,7 +184,7 @@ function gridd_nav_customizer_options( $id ) {
 		]
 	);
 
-	gridd_add_customizer_field(
+	Customizer::add_field(
 		[
 			'type'            => 'checkbox',
 			'settings'        => "gridd_grid_nav_{$id}_vertical",
@@ -202,7 +202,7 @@ function gridd_nav_customizer_options( $id ) {
 		]
 	);
 
-	gridd_add_customizer_field(
+	Customizer::add_field(
 		[
 			'type'              => 'radio-buttonset',
 			'settings'          => "gridd_grid_nav_{$id}_justify_content",
@@ -242,7 +242,7 @@ function gridd_nav_customizer_options( $id ) {
 		]
 	);
 
-	gridd_add_customizer_field(
+	Customizer::add_field(
 		[
 			'type'              => 'text',
 			'settings'          => "gridd_grid_nav_{$id}_expand_label",
@@ -266,7 +266,7 @@ function gridd_nav_customizer_options( $id ) {
 		]
 	);
 
-	gridd_add_customizer_field(
+	Customizer::add_field(
 		[
 			'type'              => 'radio-buttonset',
 			'settings'          => "gridd_grid_nav_{$id}_expand_icon",
@@ -294,7 +294,7 @@ function gridd_nav_customizer_options( $id ) {
 		]
 	);
 
-	gridd_add_customizer_field(
+	Customizer::add_field(
 		[
 			'type'              => 'select',
 			'settings'          => "gridd_grid_nav_{$id}_expand_icon_position",

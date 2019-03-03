@@ -30,7 +30,7 @@ function gridd_sidebar_customizer_options( $id ) {
 	/* translators: The number of the widget area. */
 	$label = get_theme_mod( "gridd_grid_widget_area_{$id}_name", sprintf( esc_html__( 'Widget Area %d', 'gridd' ), intval( $id ) ) );
 
-	gridd_add_customizer_outer_section(
+	Customizer::add_outer_section(
 		"gridd_grid_part_details_sidebar_$id",
 		[
 			/* translators: The grid-part label. */
@@ -50,7 +50,7 @@ function gridd_sidebar_customizer_options( $id ) {
 	/**
 	 * Focus on widget-area.
 	 */
-	gridd_add_customizer_field(
+	Customizer::add_field(
 		[
 			'settings' => "gridd_sidebar_focus_on_sidebar_{$id}_section",
 			'type'     => 'custom',
@@ -60,7 +60,7 @@ function gridd_sidebar_customizer_options( $id ) {
 		]
 	);
 
-	gridd_add_customizer_field(
+	Customizer::add_field(
 		[
 			'type'        => 'color',
 			'settings'    => "gridd_grid_sidebar_{$id}_background_color",
@@ -86,7 +86,7 @@ function gridd_sidebar_customizer_options( $id ) {
 		]
 	);
 
-	gridd_add_customizer_field(
+	Customizer::add_field(
 		[
 			'type'              => 'gridd-wcag-tc',
 			'settings'          => "gridd_grid_sidebar_{$id}_color",
@@ -110,7 +110,7 @@ function gridd_sidebar_customizer_options( $id ) {
 		]
 	);
 
-	gridd_add_customizer_field(
+	Customizer::add_field(
 		[
 			'type'              => 'gridd-wcag-lc',
 			'settings'          => "gridd_grid_sidebar_{$id}_links_color",
@@ -145,7 +145,7 @@ function gridd_sidebar_customizer_options( $id ) {
 		]
 	);
 
-	gridd_add_customizer_field(
+	Customizer::add_field(
 		[
 			'type'        => 'dimension',
 			'settings'    => "gridd_grid_sidebar_{$id}_padding",
@@ -165,7 +165,7 @@ function gridd_sidebar_customizer_options( $id ) {
 		]
 	);
 
-	gridd_add_customizer_field(
+	Customizer::add_field(
 		[
 			'type'        => 'dimension',
 			'settings'    => "gridd_grid_sidebar_{$id}_widgets_margin",

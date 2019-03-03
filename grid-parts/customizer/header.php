@@ -12,7 +12,7 @@ use Gridd\Customizer\Sanitize;
 
 $sanitization = new Sanitize();
 
-gridd_add_customizer_section(
+Customizer::add_section(
 	'gridd_grid_part_details_header',
 	[
 		'title'       => esc_html__( 'Header', 'gridd' ),
@@ -30,7 +30,7 @@ gridd_add_customizer_section(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'settings'          => 'gridd_header_grid',
 		'section'           => 'gridd_grid_part_details_header',
@@ -57,7 +57,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_header_max_width',
@@ -72,7 +72,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_header_grid_gap',
@@ -87,7 +87,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'      => 'color',
 		'settings'  => 'gridd_grid_part_details_header_background_color',
@@ -105,7 +105,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'              => 'radio',
 		'settings'          => 'gridd_grid_header_box_shadow',
@@ -128,7 +128,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'      => 'toggle',
 		'settings'  => 'gridd_header_sticky',
@@ -141,7 +141,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'            => 'toggle',
 		'settings'        => 'gridd_header_sticky_mobile',

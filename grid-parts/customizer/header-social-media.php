@@ -14,7 +14,7 @@ if ( ! function_exists( 'gridd_social_icons_svg' ) ) {
 	require_once get_template_directory() . '/inc/social-icons.php';
 }
 
-gridd_add_customizer_outer_section(
+Customizer::add_outer_section(
 	'gridd_grid_part_details_social_media',
 	[
 		/* translators: The grid-part label. */
@@ -28,7 +28,7 @@ gridd_add_customizer_outer_section(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'            => 'repeater',
 		'settings'        => 'gridd_grid_part_details_social_icons',
@@ -69,7 +69,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'      => 'slider',
 		'settings'  => 'gridd_grid_part_details_social_icons_size',
@@ -87,7 +87,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'      => 'slider',
 		'settings'  => 'gridd_grid_part_details_social_icons_padding',
@@ -106,7 +106,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'      => 'color',
 		'settings'  => 'gridd_grid_part_details_social_icons_background_color',
@@ -121,7 +121,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'      => 'color',
 		'settings'  => 'gridd_grid_part_details_social_icons_icons_color',
@@ -136,7 +136,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'              => 'radio-buttonset',
 		'settings'          => 'gridd_grid_part_details_social_icons_icons_text_align',

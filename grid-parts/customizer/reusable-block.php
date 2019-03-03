@@ -39,7 +39,7 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 
 	$sanitization = new Sanitize();
 
-	gridd_add_customizer_field(
+	Customizer::add_field(
 		[
 			'type'        => 'custom',
 			'settings'    => "gridd_grid_reusable_block_{$id}_help",
@@ -52,7 +52,7 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 	/**
 	 * Add Customizer Sections.
 	 */
-	gridd_add_customizer_outer_section(
+	Customizer::add_outer_section(
 		"gridd_grid_part_details_reusable_block_$id",
 		[
 			'title' => sprintf(
@@ -64,7 +64,7 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 		]
 	);
 
-	gridd_add_customizer_field(
+	Customizer::add_field(
 		[
 			'type'        => 'dimension',
 			'settings'    => "gridd_grid_reusable_block_{$id}_padding",
@@ -77,7 +77,7 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 		]
 	);
 
-	gridd_add_customizer_field(
+	Customizer::add_field(
 		[
 			'type'        => 'color',
 			'label'       => esc_html__( 'Background Color', 'gridd' ),
@@ -93,7 +93,7 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 		]
 	);
 
-	gridd_add_customizer_field(
+	Customizer::add_field(
 		[
 			'type'              => 'gridd-wcag-tc',
 			'settings'          => "gridd_grid_reusable_block_{$id}_color",

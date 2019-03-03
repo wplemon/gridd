@@ -7,7 +7,7 @@
 
 use Gridd\Customizer;
 
-gridd_add_customizer_outer_section(
+Customizer::add_outer_section(
 	'gridd_grid_part_details_header_branding',
 	[
 		/* translators: The grid-part label. */
@@ -24,7 +24,7 @@ gridd_add_customizer_outer_section(
 /**
  * Focus on title_tagline section.
  */
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'settings' => 'gridd_logo_focus_on_core_section',
 		'type'     => 'custom',
@@ -37,7 +37,7 @@ gridd_add_customizer_field(
 /**
  * Focus on title_tagline section.
  */
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'settings' => 'gridd_logo_focus_on_grid_part_section',
 		'type'     => 'custom',
@@ -48,7 +48,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'      => 'color',
 		'settings'  => 'gridd_grid_header_branding_background_color',
@@ -83,7 +83,7 @@ add_action(
 	}
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'              => 'text',
 		'settings'          => 'gridd_grid_header_branding_padding',
@@ -98,7 +98,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'settings'        => 'gridd_logo_max_width',
 		'type'            => 'slider',
@@ -124,7 +124,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'settings'        => 'gridd_branding_typography',
 		'type'            => 'typography',
@@ -150,7 +150,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'settings'        => 'gridd_branding_sitetitle_size',
 		'type'            => 'slider',
@@ -170,7 +170,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'settings'        => 'gridd_branding_tagline_size',
 		'type'            => 'slider',
@@ -190,7 +190,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'settings'        => 'gridd_branding_inline',
 		'type'            => 'checkbox',
@@ -213,7 +213,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'settings'        => 'gridd_branding_inline_spacing',
 		'type'            => 'slider',
@@ -234,7 +234,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'              => 'radio-buttonset',
 		'settings'          => 'gridd_grid_header_branding_horizontal_align',
@@ -256,7 +256,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'              => 'radio-buttonset',
 		'settings'          => 'gridd_grid_header_branding_vertical_align',

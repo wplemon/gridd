@@ -9,7 +9,7 @@ if ( ! class_exists( 'Easy_Digital_Downloads' ) ) {
 	return;
 }
 
-gridd_add_customizer_section(
+Customizer::add_section(
 	'gridd_edd',
 	[
 		'title'       => esc_html__( 'EDD Grid', 'gridd' ),
@@ -19,7 +19,7 @@ gridd_add_customizer_section(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'        => 'slider',
 		'settings'    => 'gridd_edd_grid_min_col_width',
@@ -38,7 +38,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'        => 'slider',
 		'settings'    => 'gridd_edd_archive_grid_gap',
@@ -57,7 +57,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'      => 'slider',
 		'settings'  => 'gridd_edd_product_grid_inner_padding',
@@ -75,7 +75,7 @@ gridd_add_customizer_field(
 	]
 );
 
-gridd_add_customizer_field(
+Customizer::add_field(
 	[
 		'type'      => 'radio',
 		'settings'  => 'gridd_edd_product_grid_image_ratio',
