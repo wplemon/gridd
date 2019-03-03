@@ -60,4 +60,3 @@ You can install the theme using the WordPress Administration menu. For more info
 * Underscores: Parts of the theme's PHP originated in the Underscores starter theme (https://underscores.me/) by Automattic (https://automattic.com/) licenced under [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
 * Mythic: The graceful fallback script for old PHP & WP versions originated in the Mythic starter theme (https://themehybrid.com/themes/mythic) by Justin Tadlock (https://themehybrid.com) licenced under [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
 * Screenshot: The screenshot shows the default demo page of the Gutenberg plugin for WordPress, licenced under [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
-Codacy Badge
