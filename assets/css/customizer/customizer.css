@@ -226,3 +226,11 @@ h3.gridd-customizer-section-title {
 .outer-section-open #customize-preview {
   width: calc(100% - 300px);
   opacity: 1; }
+
+#sub-accordion-section-gridd_to_section .customize-control {
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid rgba(0, 0, 0, .07); }
+
+#customize-controls .control-section.open .control-section-kirki-nested .accordion-section-title {
+  background: #dedede !important; }

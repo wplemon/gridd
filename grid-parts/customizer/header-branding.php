@@ -7,6 +7,56 @@
 
 use Gridd\Customizer;
 
+add_action(
+	'wp_customize',
+	/**
+	 * Tweak default customizer controls.
+	 *
+	 * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+	 */
+	function( $wp_customize ) {
+
+		// Header textcolor.
+		$wp_customize->get_control( 'header_textcolor' )->section     = 'gridd_grid_part_details_header_branding';
+		$wp_customize->get_control( 'header_textcolor' )->label       = esc_html__( 'Text Color', 'gridd' );
+		$wp_customize->get_control( 'header_textcolor' )->description = esc_html__( 'Select the text color for your site title & tagline.', 'gridd' );
+		$wp_customize->get_setting( 'header_textcolor' )->transport   = 'postMessage';
+		$wp_customize->get_setting( 'header_textcolor' )->default     = '#000000';
+		$wp_customize->get_control( 'header_textcolor' )->priority    = 20;
+
+		// Blog name.
+		$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
+
+		// Blog description.
+		$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+
+		// Custom logo.
+		$wp_customize->get_setting( 'custom_logo' )->transport = 'refresh';
+
+		// Add partial refreshes for sitename & description.
+		if ( isset( $wp_customize->selective_refresh ) ) {
+			$wp_customize->selective_refresh->add_partial(
+				'blogname',
+				array(
+					'selector'        => '.site-title a',
+					'render_callback' => function() {
+						bloginfo( 'name' );
+					},
+				)
+			);
+			$wp_customize->selective_refresh->add_partial(
+				'blogdescription',
+				array(
+					'selector'        => '.site-description',
+					'render_callback' => function() {
+						bloginfo( 'description' );
+					},
+				)
+			);
+		}
+	}
+);
+
 Customizer::add_outer_section(
 	'gridd_grid_part_details_header_branding',
 	[
@@ -62,25 +112,6 @@ Customizer::add_field(
 			'alpha' => true,
 		],
 	]
-);
-
-/**
- * Tweak the header-textcolor control.
- *
- * @since 1.0.3
- * @param object $wp_customize The WordPress Customizer instance.
- * @return void
- */
-add_action(
-	'customize_register',
-	function( $wp_customize ) {
-		$wp_customize->get_control( 'header_textcolor' )->section     = 'gridd_grid_part_details_header_branding';
-		$wp_customize->get_control( 'header_textcolor' )->label       = esc_html__( 'Text Color', 'gridd' );
-		$wp_customize->get_control( 'header_textcolor' )->description = esc_html__( 'Select the text color for your site title & tagline.', 'gridd' );
-		$wp_customize->get_setting( 'header_textcolor' )->transport   = 'postMessage';
-		$wp_customize->get_setting( 'header_textcolor' )->default     = '#000000';
-		$wp_customize->get_control( 'header_textcolor' )->priority    = 20;
-	}
 );
 
 Customizer::add_field(

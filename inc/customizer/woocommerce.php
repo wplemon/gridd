@@ -5,6 +5,11 @@
  * @package Gridd
  */
 
+// Early exit if WooCommerce is not active.
+if ( ! class_exists( 'WooCommerce' ) ) {
+	return;
+}
+
 Customizer::add_field(
 	[
 		'type'        => 'dimension',

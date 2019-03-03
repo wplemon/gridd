@@ -5,6 +5,7 @@
  * @package Gridd
  */
 
+// Early exit if EDD is not active.
 if ( ! class_exists( 'Easy_Digital_Downloads' ) ) {
 	return;
 }

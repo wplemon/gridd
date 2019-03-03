@@ -13,6 +13,39 @@ use Gridd\Customizer\Sanitize;
 $sanitization = new Sanitize();
 $grid_parts   = Grid_Parts::get_instance()->get_parts();
 
+/**
+ * Move the background controls to the grid section.
+ *
+ * @since 1.0
+ * @param WP_Customize The WordPress Customizer main object.
+ * @return void
+ */
+add_action(
+	'customize_register',
+	function( $wp_customize ) {
+
+		// Move the background-color control.
+		$wp_customize->get_control( 'background_color' )->section     = 'gridd_grid';
+		$wp_customize->get_control( 'background_color' )->priority    = 90;
+		$wp_customize->get_control( 'background_color' )->description = esc_html__( 'Background is visible under transparent grid-parts, or if the grid is not set to 100% width.', 'gridd' );
+
+		// Move the background-image control.
+		$wp_customize->get_control( 'background_image' )->section       = 'gridd_grid';
+		$wp_customize->get_control( 'background_image' )->priority      = 90;
+		$wp_customize->get_control( 'background_image' )->description   = esc_html__( 'Background is visible under transparent grid-parts, or if the grid is not set to 100% width.', 'gridd' );
+		$wp_customize->get_control( 'background_preset' )->section      = 'gridd_grid';
+		$wp_customize->get_control( 'background_preset' )->priority     = 90;
+		$wp_customize->get_control( 'background_position' )->section    = 'gridd_grid';
+		$wp_customize->get_control( 'background_position' )->priority   = 90;
+		$wp_customize->get_control( 'background_size' )->section        = 'gridd_grid';
+		$wp_customize->get_control( 'background_size' )->priority       = 90;
+		$wp_customize->get_control( 'background_repeat' )->section      = 'gridd_grid';
+		$wp_customize->get_control( 'background_repeat' )->priority     = 90;
+		$wp_customize->get_control( 'background_attachment' )->section  = 'gridd_grid';
+		$wp_customize->get_control( 'background_attachment' )->priority = 90;
+	}
+);
+
 Customizer::add_section(
 	'gridd_grid',
 	[

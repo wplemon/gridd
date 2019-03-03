@@ -12,6 +12,21 @@ use Gridd\Customizer\Sanitize;
 
 $sanitization = new Sanitize();
 
+/**
+ * Move the header-image control.
+ *
+ * @since 1.0
+ * @param WP_Customize The WordPress Customizer main object.
+ * @return void
+ */
+add_action(
+	'customize_register',
+	function( $wp_customize ) {
+		$wp_customize->get_control( 'header_image' )->section  = 'gridd_grid_part_details_header';
+		$wp_customize->get_control( 'header_image' )->priority = 80;
+	}
+);
+
 Customizer::add_section(
 	'gridd_grid_part_details_header',
 	[
