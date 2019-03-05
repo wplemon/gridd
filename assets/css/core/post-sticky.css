@@ -6,7 +6,7 @@
   .site-main .sticky:before {
     content: " ";
     background: var(--gridd-links-color);
-    opacity: .1;
+    opacity: .065;
     position: absolute;
     left: 0;
     top: 0;
