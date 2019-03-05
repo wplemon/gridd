@@ -8,7 +8,7 @@
 use Gridd\Customizer;
 
 add_action(
-	'wp_customize',
+	'customize_register',
 	/**
 	 * Tweak default customizer controls.
 	 *
