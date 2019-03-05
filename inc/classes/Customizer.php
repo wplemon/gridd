@@ -324,11 +324,11 @@ class Customizer {
 	public function kirki_control_types( $controls ) {
 
 		// Make sure the class exists.
-		if ( ! class_exists( '\Gridd\Customizer\Control\Gridd_Kirki_WCAG_Link_Color' ) ) {
+		if ( ! class_exists( '\Gridd\Customizer\Control\WCAG_Link_Color' ) ) {
 			require_once get_template_directory() . '/inc/customizer/control/class-gridd-kirki-wcag-link-color.php';
 		}
 		$controls['gridd_grid']    = '\Gridd\Customizer\Control\Grid';
-		$controls['gridd-wcag-lc'] = '\Gridd\Customizer\Control\Gridd_Kirki_WCAG_Link_Color';
+		$controls['gridd-wcag-lc'] = '\Gridd\Customizer\Control\WCAG_Link_Color';
 		return $controls;
 	}
 
@@ -343,11 +343,11 @@ class Customizer {
 	function register_control_types( $wp_customize ) {
 
 		// Make sure the class exists.
-		if ( ! class_exists( '\Gridd\Customizer\Control\Gridd_Kirki_WCAG_Link_Color' ) ) {
+		if ( ! class_exists( '\Gridd\Customizer\Control\WCAG_Link_Color' ) ) {
 			require_once get_template_directory() . '/inc/customizer/control/class-gridd-kirki-wcag-link-color.php';
 		}
 
 		// Register the control-type.
-		$wp_customize->register_control_type( 'Gridd\Customizer\Control\Gridd_Kirki_WCAG_Link_Color' );
+		$wp_customize->register_control_type( 'Gridd\Customizer\Control\WCAG_Link_Color' );
 	}
 }

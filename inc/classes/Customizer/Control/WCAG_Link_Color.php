@@ -17,7 +17,7 @@ namespace Gridd\Customizer\Control;
  *
  * @since 1.0
  */
-class Gridd_Kirki_WCAG_Link_Color extends \WP_Customize_Control {
+class WCAG_Link_Color extends \WP_Customize_Control {
 
 	/**
 	 * The control type.
@@ -92,8 +92,8 @@ class Gridd_Kirki_WCAG_Link_Color extends \WP_Customize_Control {
 	 * @access public
 	 */
 	public function enqueue() {
-		wp_enqueue_script( 'wcag_colors', get_template_directory_uri() . '/assets/js/wcagColors.js', [], '1.0', false );
-		wp_enqueue_script( 'kirki_gridd_wcag_link_color', get_template_directory_uri() . '/assets/js/customizer-kirki-gridd-linkcolor.js', [], '1.0', false );
+		wp_enqueue_script( 'wcag_colors', get_template_directory_uri() . '/assets/js/wcagColors.min.js', [], '1.0', false );
+		wp_enqueue_script( 'kirki_gridd_wcag_link_color', get_template_directory_uri() . '/assets/js/customizer-kirki-gridd-linkcolor.min.js', [], '1.0', false );
 	}
 
 	/**
