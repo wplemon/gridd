@@ -21,8 +21,11 @@ rm -f gridd/.gitmodules
 rm -f gridd/package-lock.json
 rm -f gridd/composer.lock
 rm -Rf gridd/vendor
+rm -Rf gridd/assets/css/blocks/block-library
+rm -f .codacy.yml
+rm -f README.md
 
-find ./gridd/ -name "*.bak" -type f -delete
+find ./gridd/ -name "*.map" -type f -delete
 find ./gridd/ -name "*.scss" -type f -delete
 
 rm -f gridd/grid-parts/breadcrumbs/hybrid-breadcrumbs/.git
