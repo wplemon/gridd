@@ -304,7 +304,7 @@ class Theme {
 				],
 				[
 					'name'  => esc_attr__( 'cyan', 'gridd' ),
-					'slug'  => 'cyan',
+					'slug'  => 'pure-cyan',
 					'color' => '#26C6DA',
 				],
 				[
@@ -314,7 +314,7 @@ class Theme {
 				],
 				[
 					'name'  => esc_attr__( 'White', 'gridd' ),
-					'slug'  => 'white',
+					'slug'  => 'pure-white',
 					'color' => '#fff',
 				],
 				[
@@ -339,7 +339,7 @@ class Theme {
 				],
 				[
 					'name'  => esc_attr__( 'Black', 'gridd' ),
-					'slug'  => 'black',
+					'slug'  => 'pure-black',
 					'color' => '#000',
 				],
 			]

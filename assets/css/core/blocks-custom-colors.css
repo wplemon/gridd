@@ -86,6 +86,22 @@
 .has-very-dark-gray-background-color.has-very-dark-gray-background-color {
   background-color: #313131; }
 
+.has-pure-cyan-color.has-pure-cyan-color {
+  color: #26C6DA; }
+  .has-pure-cyan-color.has-pure-cyan-color:hover, .has-pure-cyan-color.has-pure-cyan-color:focus, .has-pure-cyan-color.has-pure-cyan-color:active, .has-pure-cyan-color.has-pure-cyan-color:visited, .has-pure-cyan-color.has-pure-cyan-color:focus:hover, .has-pure-cyan-color.has-pure-cyan-color:active:hover, .has-pure-cyan-color.has-pure-cyan-color:visited:hover {
+    color: #26C6DA; }
+
+.has-pure-cyan-background-color.has-pure-cyan-background-color {
+  background-color: #26C6DA; }
+
+.has-pure-white-color.has-pure-white-color {
+  color: #fff; }
+  .has-pure-white-color.has-pure-white-color:hover, .has-pure-white-color.has-pure-white-color:focus, .has-pure-white-color.has-pure-white-color:active, .has-pure-white-color.has-pure-white-color:visited, .has-pure-white-color.has-pure-white-color:focus:hover, .has-pure-white-color.has-pure-white-color:active:hover, .has-pure-white-color.has-pure-white-color:visited:hover {
+    color: #fff; }
+
+.has-pure-white-background-color.has-pure-white-background-color {
+  background-color: #fff; }
+
 .has-blue-gray-color.has-blue-gray-color {
   color: #546E7A; }
   .has-blue-gray-color.has-blue-gray-color:hover, .has-blue-gray-color.has-blue-gray-color:focus, .has-blue-gray-color.has-blue-gray-color:active, .has-blue-gray-color.has-blue-gray-color:visited, .has-blue-gray-color.has-blue-gray-color:focus:hover, .has-blue-gray-color.has-blue-gray-color:active:hover, .has-blue-gray-color.has-blue-gray-color:visited:hover {
@@ -93,3 +109,11 @@
 
 .has-blue-gray-background-color.has-blue-gray-background-color {
   background-color: #546E7A; }
+
+.has-pure-black-color.has-pure-black-color {
+  color: #000; }
+  .has-pure-black-color.has-pure-black-color:hover, .has-pure-black-color.has-pure-black-color:focus, .has-pure-black-color.has-pure-black-color:active, .has-pure-black-color.has-pure-black-color:visited, .has-pure-black-color.has-pure-black-color:focus:hover, .has-pure-black-color.has-pure-black-color:active:hover, .has-pure-black-color.has-pure-black-color:visited:hover {
+    color: #000; }
+
+.has-pure-black-background-color.has-pure-black-background-color {
+  background-color: #000; }
