@@ -5,6 +5,8 @@
  * @package Gridd
  */
 
+use Gridd\Customizer;
+
 // Early exit if WooCommerce is not active.
 if ( ! class_exists( 'WooCommerce' ) ) {
 	return;
