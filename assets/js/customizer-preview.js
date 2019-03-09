@@ -8,6 +8,18 @@
  * Contains handlers to make Theme Customizer preview reload changes asynchronously.
  */
 
+/**
+ * Gets a readable text color.
+ *
+ * @since 1.0
+ * @param {string} bg - The background color (hex).
+ * @returns {string} - Text color (hex).
+ */
+function griddGetContrastColor( bg ) {
+	var color = wcagColors.getColorProperties( bg );
+	return wcagColors.getContrast( color.lum, 1 ) > wcagColors.getContrast( color.lum, 0 ) ? '#ffffff' : '#000000';
+}
+
 ( function( $ ) {
 	var i = 0;
 
@@ -97,15 +109,3 @@
 		});
 	});
 } ( jQuery ) );
-
-/**
- * Gets a readable text color.
- *
- * @since 1.0
- * @param {string} bg - The background color (hex).
- * @returns {string} - Text color (hex).
- */
-function griddGetContrastColor( bg ) {
-	var color = wcagColors.getColorProperties( bg );
-	return wcagColors.getContrast( color.lum, 1 ) > wcagColors.getContrast( color.lum, 0 ) ? '#ffffff' : '#000000';
-}
