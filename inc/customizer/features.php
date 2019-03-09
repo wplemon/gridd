@@ -234,7 +234,7 @@ foreach ( $post_types as $post_type_id => $post_type_obj ) {
 				],
 			],
 			'active_callback' => function() use ( $post_type_id ) {
-				return is_post_type_archive( $post_type_id ) || ( 'post' === $post_type_id && is_home() );
+				return is_post_type_archive( $post_type_id ) || is_home() || is_category() || is_tag();
 			},
 		]
 	);
