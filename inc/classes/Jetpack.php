@@ -119,7 +119,7 @@ class Jetpack {
 	 * @since 1.0.4
 	 * @return void
 	 */
-	public function css_vars( $value = '' ) {
+	public function css_vars() {
 
 		// Make sure we have everything we need.
 		if ( get_theme_mod( 'gridd_featured_image_overlay_color_from_image', true ) && class_exists( '\Tonesque' ) ) {
