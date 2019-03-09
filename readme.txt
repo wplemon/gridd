@@ -31,6 +31,12 @@ You can install the theme using the WordPress Administration menu. For more info
 
 == Changelog ==
 
+= 1.0.4 =
+
+* New: Added a new "Overlay" mode for featured images on single posts
+* New: Added support for Jetpack's `Tonesque` library.
+* Fix: Minor CSS fixes & cleanups.
+
 = 1.0.3 =
 
 * New: Added grid parts for reusable Gutenberg Blocks.
