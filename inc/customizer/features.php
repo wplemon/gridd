@@ -84,6 +84,21 @@ Customizer::add_field(
 
 Customizer::add_field(
 	[
+		'type'            => 'checkbox',
+		'settings'        => 'gridd_featured_image_overlay_color_from_image',
+		'label'           => esc_attr__( 'Use Image Colors', 'gridd' ),
+		'section'         => 'gridd_features',
+		'default'         => true,
+		'transport'       => 'refresh',
+		'priority'        => 20,
+		'active_callback' => function() {
+			return is_singular() && 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' ) && function_exists( 'jetpack_require_lib' );
+		},
+	]
+);
+
+Customizer::add_field(
+	[
 		'type'            => 'dimension',
 		'settings'        => 'gridd_featured_image_overlay_min_height',
 		'label'           => esc_attr__( 'Overlay mode minimum height', 'gridd' ),
@@ -113,7 +128,7 @@ Customizer::add_field(
 			'alpha' => true,
 		],
 		'active_callback' => function() {
-			return is_singular() && 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' );
+			return is_singular() && 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' ) && ( ! get_theme_mod( 'gridd_featured_image_overlay_color_from_image', true ) || ! function_exists( 'jetpack_require_lib' ) );
 		},
 	]
 );
@@ -134,7 +149,7 @@ Customizer::add_field(
 		],
 		'sanitize_callback' => [ $sanitization, 'color_hex' ],
 		'active_callback'   => function() {
-			return is_singular() && 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' );
+			return is_singular() && 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' ) && ( ! get_theme_mod( 'gridd_featured_image_overlay_color_from_image', true ) || ! function_exists( 'jetpack_require_lib' ) );
 		},
 	]
 );

@@ -33,9 +33,9 @@
   mix-blend-mode: screen;
   z-index: 1; }
 .gridd-featured-image-post-header-image-wrapper img {
-  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" /></filter></svg>#filter');
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="0.37007999999999996 0.57216 0.057760000000000006 0 0 0.17008 0.77216 0.057760000000000006 0 0 0.17008 0.57216 0.25775999999999993 0 0 0 0 0 1 0" /></filter></svg>#filter');
+  -webkit-filter: grayscale(80%);
+          filter: grayscale(80%);
   width: 100%;
   height: 100%;
   max-width: 1000%;

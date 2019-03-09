@@ -11,6 +11,7 @@
 namespace Gridd;
 
 use Gridd\Theme;
+use Gridd\Color;
 
 /**
  * Adds Jetpack-setup methods.
@@ -28,6 +29,7 @@ class Jetpack {
 	public function __construct() {
 		add_action( 'after_setup_theme', [ $this, 'setup' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
+		add_action( 'gridd_get_template_part', [$this,'css_vars']);
 	}
 
 	/**
@@ -77,6 +79,9 @@ class Jetpack {
 				],
 			]
 		);
+
+		// Add support for the Tonesque library.
+		add_theme_support( 'tonesque' );
 	}
 
 	/**
@@ -105,5 +110,66 @@ class Jetpack {
 	 */
 	public function enqueue_scripts() {
 		wp_dequeue_style( 'the-neverending-homepage' );
+	}
+
+	/**
+	 * Output some extra theme-mods in <head> if needed.
+	 *
+	 * @access public
+	 * @since 1.0.4
+	 * @return void
+	 */
+	public function css_vars( $value = '' ) {
+
+		// Make sure we have everything we need.
+		if ( get_theme_mod( 'gridd_featured_image_overlay_color_from_image', true ) && class_exists( '\Tonesque' ) ) {
+
+			// Get the thumbnail-id.
+			$thumbnail_id = get_post_thumbnail_id();
+
+			// Early exit if we don't have a thumbnail.
+			if ( ! $thumbnail_id ) {
+				return;
+			}
+
+			// Get saved color from the attachment's post-meta.
+			$image_color = get_post_meta( $thumbnail_id, '_gridd_image_color', true );
+
+			// If the color was not found, create it and save.
+			if ( ! $image_color ) {
+
+				// Get the URL.
+				$image = get_the_post_thumbnail_url();
+				if ( $image ) {
+
+					// Get the image's color using Jetpack's Tonesque library.
+					$tonesque    = new \Tonesque( $image );
+					$image_color = $tonesque->color();
+
+					// Prepend hash to the hex color value.
+					if ( false === strpos( $image_color, '#' ) ) {
+						$image_color = '#' . $image_color;
+					}
+
+					// Update the attachment's post-meta.
+					// We're using post-meta to improve performance and avoid getting the color every single time.
+					update_post_meta( $thumbnail_id, '_gridd_image_color', $image_color );
+				}
+			}
+
+			// If we have a color, add our custom css-vars.
+			if ( $image_color ) {
+				$color_obj = \ariColor::newColor( $image_color );
+
+				// Consistent lightness for all images.
+				$color_obj = $color_obj->getNew( 'lightness', 22 );
+
+				// If this is not a black/white image, increase the saturation.
+				if ( 2 < $color_obj->saturation ) {
+					$color_obj = $color_obj->getNew( 'saturation', 75 );
+				}
+				echo '<style>:root{--gridd-image-header-overlay-color:' . esc_attr( $color_obj->getNew( 'alpha', .85 )->toCSS( 'rgba' ) ) . ';--gridd-image-header-text-color:#fff;}</style>';
+			}
+		}
 	}
 }
