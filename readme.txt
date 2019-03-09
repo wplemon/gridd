@@ -59,4 +59,4 @@ You can install the theme using the WordPress Administration menu. For more info
 * wcagColors: Script by Aristeidis Stathopoulos (https://aristath.github.io/wcagColors/) licensed under [MIT](https://opensource.org/licenses/MIT)
 * Underscores: Parts of the theme's PHP originated in the Underscores starter theme (https://underscores.me/) by Automattic (https://automattic.com/) licenced under [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
 * Mythic: The graceful fallback script for old PHP & WP versions originated in the Mythic starter theme (https://themehybrid.com/themes/mythic) by Justin Tadlock (https://themehybrid.com) licenced under [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
-* Screenshot: Image included in the screenshot from https://stocksnap.io/photo/CWUWIMTIDO licenced under [CC0](https://creativecommons.org/share-your-work/public-domain/cc0/)
+* Screenshot: Image included in the screenshot from https://stocksnap.io/photo/WUGSHQ3NII licenced under [CC0](https://creativecommons.org/share-your-work/public-domain/cc0/)
