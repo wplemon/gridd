@@ -55,7 +55,10 @@
   z-index: 2;
   color: var(--gridd-image-header-text-color);
   width: 100%; }
-  .gridd-featured-image-post-header-content a {
+  .gridd-featured-image-post-header-content a,
+  .gridd-featured-image-post-header-content a:visited,
+  .gridd-featured-image-post-header-content a:hover,
+  .gridd-featured-image-post-header-content a:visited:hover {
     color: var(--gridd-image-header-text-color); }
   .gridd-featured-image-post-header-content .inner {
     max-width: var(--gridd-content-max-width);

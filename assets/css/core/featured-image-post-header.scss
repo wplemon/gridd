@@ -61,7 +61,10 @@
 	color: var(--gridd-image-header-text-color);
 	width: 100%;
 
-	a {
+	a,
+	a:visited,
+	a:hover,
+	a:visited:hover {
 		color: var(--gridd-image-header-text-color);
 	}
 

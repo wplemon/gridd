@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2.0 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Gridd 1.0.3\n"
+"Project-Id-Version: Gridd 1.0.4-beta.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/gridd\n"
-"POT-Creation-Date: 2019-03-07 20:11:08+00:00\n"
+"POT-Creation-Date: 2019-03-09 14:01:33+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -254,7 +254,8 @@ msgstr ""
 #: grid-parts/customizer/header-contact-info.php:68
 #: grid-parts/customizer/header-search.php:82
 #: grid-parts/customizer/reusable-block.php:103
-#: grid-parts/customizer/sidebar.php:93 inc/customizer/typography.php:114
+#: grid-parts/customizer/sidebar.php:93 inc/customizer/features.php:140
+#: inc/customizer/typography.php:114
 msgid "Text Color"
 msgstr ""
 
@@ -941,7 +942,8 @@ msgid "Reusable Block %d"
 msgstr ""
 
 #: grid-parts/customizer/reusable-block.php:104
-#: grid-parts/customizer/sidebar.php:94 inc/customizer/typography.php:115
+#: grid-parts/customizer/sidebar.php:94 inc/customizer/features.php:141
+#: inc/customizer/typography.php:115
 msgid ""
 "Select the color used for your text. Please choose a color with sufficient "
 "contrast with the selected background-color."
@@ -1031,17 +1033,17 @@ msgstr ""
 msgid "No image URL has been entered."
 msgstr ""
 
-#: inc/classes/Blog.php:50 inc/customizer/features.php:176
+#: inc/classes/Blog.php:51 inc/customizer/features.php:252
 #. translators: %s: Name of current post. Only visible to screen readers
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
-#: inc/classes/Blog.php:130
+#: inc/classes/Blog.php:142
 #. translators: %s: post title
 msgid "Leave a Comment on %s"
 msgstr ""
 
-#: inc/classes/Blog.php:148
+#: inc/classes/Blog.php:160
 #. translators: %s: Name of the post.
 msgid "Edit %s"
 msgstr ""
@@ -1108,21 +1110,21 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: inc/classes/Customizer.php:209
+#: inc/classes/Customizer.php:210
 msgid "Plus Features"
 msgstr ""
 
-#: inc/classes/Customizer.php:212
+#: inc/classes/Customizer.php:213
 msgid ""
 "<a href=\"https://wplemon.com/gridd-plus\" rel=\"noopener noreferrer "
 "nofollow\" target=\"_blank\">Upgrade to Plus</a> for extra options:"
 msgstr ""
 
-#: inc/classes/Customizer.php:222
+#: inc/classes/Customizer.php:223
 msgid "Tip"
 msgstr ""
 
-#: inc/classes/Customizer.php:227
+#: inc/classes/Customizer.php:228
 msgid "Documentation"
 msgstr ""
 
@@ -1259,80 +1261,96 @@ msgstr ""
 msgid "Original"
 msgstr ""
 
-#: inc/customizer/features.php:14
+#: inc/customizer/features.php:17
 msgid "Theme Features"
 msgstr ""
 
-#: inc/customizer/features.php:20
+#: inc/customizer/features.php:23
 msgid "Fixed mode for featured images with custom height"
 msgstr ""
 
-#: inc/customizer/features.php:21
+#: inc/customizer/features.php:24
 msgid "Anchor links in headers "
 msgstr ""
 
-#: inc/customizer/features.php:22
+#: inc/customizer/features.php:25
 msgid "Scroll to top button"
 msgstr ""
 
-#: inc/customizer/features.php:23
+#: inc/customizer/features.php:26
 msgid ""
 "Enable more custom widget-areas and customize their titles for easier "
 "identification"
 msgstr ""
 
-#: inc/customizer/features.php:36
+#: inc/customizer/features.php:39
 msgid "Featured Images Mode in Archives"
 msgstr ""
 
-#: inc/customizer/features.php:37
+#: inc/customizer/features.php:40
 msgid "Select how featured images will be displayed in post-archives."
 msgstr ""
 
-#: inc/customizer/features.php:43 inc/customizer/features.php:67
+#: inc/customizer/features.php:46 inc/customizer/features.php:70
 msgid "Hidden"
 msgstr ""
 
-#: inc/customizer/features.php:44 inc/customizer/features.php:68
+#: inc/customizer/features.php:47 inc/customizer/features.php:71
 msgid "Normal"
 msgstr ""
 
-#: inc/customizer/features.php:45 inc/customizer/features.php:69
+#: inc/customizer/features.php:48 inc/customizer/features.php:72
 msgid "Wide"
 msgstr ""
 
-#: inc/customizer/features.php:60
+#: inc/customizer/features.php:63
 msgid "Featured Images Mode in Single Posts"
 msgstr ""
 
-#: inc/customizer/features.php:61
+#: inc/customizer/features.php:64
 msgid ""
 "Select how featured images will be displayed in single post-types (Applies "
 "to all post-types)."
 msgstr ""
 
-#: inc/customizer/features.php:70
+#: inc/customizer/features.php:73
 msgid "Full Width"
 msgstr ""
 
-#: inc/customizer/features.php:85
-msgid "Show Next/Previous Post in single posts"
+#: inc/customizer/features.php:74
+msgid "Overlay"
 msgstr ""
 
-#: inc/customizer/features.php:97
-msgid "Show full post in archives"
+#: inc/customizer/features.php:89
+msgid "Use Image Colors"
+msgstr ""
+
+#: inc/customizer/features.php:104
+msgid "Overlay mode minimum height"
 msgstr ""
 
 #: inc/customizer/features.php:121
+msgid "Overlay Color"
+msgstr ""
+
+#: inc/customizer/features.php:161
+msgid "Show Next/Previous Post in single posts"
+msgstr ""
+
+#: inc/customizer/features.php:173
+msgid "Show full post in archives"
+msgstr ""
+
+#: inc/customizer/features.php:197
 #. translators: The post-type name.
 msgid "Display \"%s\" archives as a grid"
 msgstr ""
 
-#: inc/customizer/features.php:171
+#: inc/customizer/features.php:247
 msgid "Read More link"
 msgstr ""
 
-#: inc/customizer/features.php:172
+#: inc/customizer/features.php:248
 msgid "Available placeholder: %s for the post-title."
 msgstr ""
 
