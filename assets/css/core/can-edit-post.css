@@ -4,10 +4,10 @@
   transition: opacity 200ms; }
   .edit-link a {
     display: inline-block;
-    margin: 0 1em; }
+    margin: 0 .5em; }
   .edit-link svg {
     fill: currentColor;
-    width: 1em;
-    height: 1em; }
+    width: .6em;
+    height: .6em; }
   .edit-link:hover {
     opacity: 1; }
