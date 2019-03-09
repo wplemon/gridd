@@ -65,8 +65,7 @@ body {
   flex-wrap: wrap;
   align-items: flex-end;
   overflow-y: scroll;
-  box-shadow: 0 -10px 15px 0 rgba(0, 0, 0, .12);
-  padding: 12px 12px 0 12px; }
+  box-shadow: 0 -10px 15px 0 rgba(0, 0, 0, .12); }
   #gridd-handheld-search-wrapper.expanded,
   #gridd-handheld-menu-wrapper.expanded,
   #gridd-handheld-cart-wrapper.expanded {

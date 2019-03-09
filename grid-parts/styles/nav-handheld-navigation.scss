@@ -6,7 +6,7 @@
 .gridd-hanheld-nav-popup-wrapper {
 	background-color: var(--gridd-content-bg);
 	height: 100%;
-	padding: 1em;
+	padding: 0;
 
 	li {
 
@@ -92,5 +92,6 @@
 
 #nav-handheld {
 	max-height: calc(100vh - 66px);
-    overflow-y: scroll;
+	overflow-y: scroll;
+	width: 100%;
 }
