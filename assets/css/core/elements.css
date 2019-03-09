@@ -46,6 +46,10 @@ figure {
   text-align: center;
   line-height: 0;
   margin-bottom: 1em; }
+  .post-thumbnail.alignfull {
+    margin-left: calc(0px - var(--gridd-content-padding-left));
+    margin-right: calc(0px - var(--gridd-content-padding-right));
+    width: calc(100% + var(--gridd-content-padding-left) + var(--gridd-content-padding-right)); }
 
 table {
   margin: 0 0 1.5em;
