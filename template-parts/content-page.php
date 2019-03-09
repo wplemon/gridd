@@ -21,9 +21,4 @@ $parts = Blog::get_post_parts();
 		Theme::get_template_part( 'template-parts/part-' . $part, $part_name );
 	}
 	?>
-	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer container">
-			<?php Blog::the_edit_link(); ?>
-		</footer>
-	<?php endif; ?>
 </article>

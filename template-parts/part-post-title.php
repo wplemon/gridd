@@ -6,11 +6,13 @@
  * @since 1.0.3
  */
 
+use Gridd\Blog;
+
 if ( is_singular() ) :
 	?>
 	<header class="entry-header">
 		<div class="container">
-			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+			<?php the_title( '<h1 class="entry-title">', Blog::get_the_edit_link() . '</h1>' ); ?>
 		</div>
 	</header>
 <?php else : ?>

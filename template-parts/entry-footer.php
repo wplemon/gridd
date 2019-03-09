@@ -13,6 +13,5 @@ if ( ! is_single() && ! post_password_required() && ( comments_open() || get_com
 	Blog::the_comments_link();
 	echo '</span>';
 }
-Blog::the_edit_link();
 
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */

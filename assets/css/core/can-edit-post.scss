@@ -1,7 +1,20 @@
 .edit-link {
+	opacity: .6;
+	line-height: 1;
+	transition: opacity 200ms;
+
 	a {
 		display: inline-block;
-		padding: .75em;
-		font-size: .85em;
+		margin: 0 1em;
+	}
+
+	svg {
+		fill: currentColor;
+		width: 1em;
+		height: 1em;
+	}
+
+	&:hover {
+		opacity: 1;
 	}
 }

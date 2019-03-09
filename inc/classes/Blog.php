@@ -153,16 +153,22 @@ class Blog {
 	 * @since 1.0
 	 * @return void
 	 */
-	public static function the_edit_link() {
-		edit_post_link(
-			sprintf(
+	public static function get_the_edit_link() {
+		if ( get_edit_post_link() ) {
+			$text  = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-5 17l1.006-4.036 3.106 3.105-4.112.931zm5.16-1.879l-3.202-3.202 5.841-5.919 3.201 3.2-5.84 5.921z"/></svg>';
+			$text .= '<span class="screen-reader-text">';
+			$text .= sprintf(
 				/* translators: %s: Name of the post.*/
 				esc_html__( 'Edit %s', 'gridd' ),
-				'<span class="screen-reader-text">' . get_the_title() . '</span>'
-			),
-			'<span class="edit-link">',
-			'</span>'
-		);
+				get_the_title()
+			);
+			$text .= '</span>';
+
+			ob_start();
+			edit_post_link( $text, '<span class="edit-link">', '</span>' );
+			return ob_get_clean();
+		}
+		return '';
 	}
 
 	/**
