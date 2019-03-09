@@ -37,6 +37,7 @@ class Blog {
 		add_filter( 'excerpt_more', [ $this, 'excerpt_more' ] );
 		add_filter( 'comment_form_defaults', [ $this, 'comment_form_defaults' ] );
 		add_filter( 'wp_list_categories', [ $this, 'list_categories' ] );
+		add_filter( 'gridd_get_post_parts', [ $this, 'gridd_get_post_parts_filter' ] );
 	}
 
 	/**
@@ -151,5 +152,40 @@ class Blog {
 			'<span class="edit-link">',
 			'</span>'
 		);
+	}
+
+	/**
+	 * Filters the parts that will be loaded for posts.
+	 *
+	 * @access public
+	 * @since 1.0.4
+	 * @param array $parts The parts to load.
+	 * @return array
+	 */
+	public function gridd_get_post_parts_filter( $parts ) {
+		if ( is_singular() ) {
+			if ( 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' ) ) {
+				$new_parts = [
+					'post-featured-image-header'
+				];
+				foreach ( $parts as $part ) {
+					if ( 'post-title' !== $part && 'post-date-author' !== $part && 'post-thumbnail' !== $part ) {
+						$new_parts[] = $part;
+					}
+				}
+				$parts = $new_parts;
+			}
+			$post_format  = get_post_format();
+			if ( 'aside' === $post_format || 'link' === $post_format || 'quote' === $post_format || 'status' === $post_format ) {
+				$remove_parts = [ 'post-category', 'post-tags', 'post-date-author', 'part-post-comments-link' ];
+				foreach ( $remove_parts as $remove_part ) {
+					$key = array_search( $remove_part, $parts, true );
+					if ( false !== key ) {
+						unset( $parts[ $key ] );
+					}
+				}
+			}
+		}
+		return $parts;
 	}
 }

@@ -7,6 +7,9 @@
  */
 
 use Gridd\Customizer;
+use Gridd\Customizer\Sanitize;
+
+$sanitization = new Sanitize();
 
 Customizer::add_section(
 	'gridd_features',
@@ -60,7 +63,7 @@ Customizer::add_field(
 		'label'             => esc_attr__( 'Featured Images Mode in Single Posts', 'gridd' ),
 		'description'       => esc_html__( 'Select how featured images will be displayed in single post-types (Applies to all post-types).', 'gridd' ),
 		'section'           => 'gridd_features',
-		'default'           => 'alignwide',
+		'default'           => 'overlay',
 		'transport'         => 'refresh',
 		'priority'          => 20,
 		'choices'           => [
@@ -68,13 +71,65 @@ Customizer::add_field(
 			'gridd-contain' => esc_attr__( 'Normal', 'gridd' ),
 			'alignwide'     => esc_attr__( 'Wide', 'gridd' ),
 			'alignfull'     => esc_attr__( 'Full Width', 'gridd' ),
+			'overlay'       => esc_attr__( 'Overlay', 'gridd' ),
 		],
 		'active_callback'   => function() {
 			return is_singular();
 		},
 		'sanitize_callback' => function( $value ) {
-			return ( 'hidden' === $value || 'gridd-contain' === $value || 'alignwide' === $value || 'alignfull' === $value ) ? $value : 'alignwide';
+			return ( 'hidden' === $value || 'gridd-contain' === $value || 'alignwide' === $value || 'alignfull' === $value || 'overlay' === $value ) ? $value : 'overlay';
 		},
+	]
+);
+
+Customizer::add_field(
+	[
+		'type'            => 'dimension',
+		'settings'        => 'gridd_featured_image_overlay_min_height',
+		'label'           => esc_attr__( 'Overlay mode minimum height', 'gridd' ),
+		'section'         => 'gridd_features',
+		'default'         => 'overlay',
+		'transport'       => 'postMessage',
+		'priority'        => 20,
+		'default'         => '87vh',
+		'css_vars'        => '--gridd-image-header-min-height',
+		'active_callback' => function() {
+			return is_singular() && 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' );
+		},
+	]
+);
+
+Customizer::add_field(
+	[
+		'type'      => 'color',
+		'settings'  => 'gridd_featured_image_overlay_background_color',
+		'label'     => esc_attr__( 'Overlay Color', 'gridd' ),
+		'section'   => 'gridd_features',
+		'default'   => 'rgba(42,84,126,0.8)',
+		'css_vars'  => '--gridd-image-header-overlay-color',
+		'transport' => 'postMessage',
+		'priority'  => 20,
+		'choices'   => [
+			'alpha' => true,
+		],
+	]
+);
+
+Customizer::add_field(
+	[
+		'type'              => 'gridd-wcag-tc',
+		'settings'          => 'gridd_featured_image_overlay_text_color',
+		'label'             => esc_html__( 'Text Color', 'gridd' ),
+		'description'       => esc_html__( 'Select the color used for your text. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
+		'section'           => 'gridd_features',
+		'priority'          => 20,
+		'default'           => '#fff',
+		'css_vars'          => '--gridd-image-header-text-color',
+		'transport'         => 'postMessage',
+		'choices'           => [
+			'setting' => 'gridd_featured_image_overlay_background_color',
+		],
+		'sanitize_callback' => [ $sanitization, 'color_hex' ],
 	]
 );
 

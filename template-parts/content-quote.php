@@ -16,11 +16,9 @@ $parts = Blog::get_post_parts();
 
 	<?php
 	foreach ( $parts as $part ) {
-		if ( in_array( $part, [ 'post-title', 'post-thumbnail', 'post-content' ], true ) ) {
-			$part_name = is_archive() ? 'archive' : null;
-			$part_name = is_singular() ? 'singular' : null;
-			Theme::get_template_part( 'template-parts/part-' . $part, $part_name );
-		}
+		$part_name = is_archive() ? 'archive' : null;
+		$part_name = is_singular() ? 'singular' : null;
+		Theme::get_template_part( 'template-parts/part-' . $part, $part_name );
 	}
 	?>
 </article>

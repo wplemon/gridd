@@ -58,6 +58,7 @@ class Customizer {
 		'gridd_grid_sidebar_4_background_color'                        => 'gridd_grid_sidebar_4_color',
 		'gridd_grid_sidebar_5_background_color'                        => 'gridd_grid_sidebar_5_color',
 		'gridd_grid_sidebar_6_background_color'                        => 'gridd_grid_sidebar_6_color',
+		'gridd_featured_image_overlay_background_color'                => 'gridd_featured_image_overlay_text_color',
 	];
 
 	/**
