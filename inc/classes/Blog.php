@@ -100,18 +100,29 @@ class Blog {
 	 */
 	public static function get_post_parts() {
 		if ( ! self::$post_parts ) {
-			self::$post_parts = apply_filters(
-				'gridd_get_post_parts',
-				[
+			$defaults = 				[
+				'post-title',
+				'post-date-author',
+				'post-thumbnail',
+				'post-content',
+				'post-category',
+				'post-tags',
+				'post-comments-link'
+			];
+
+			if ( is_singular() ) {
+				$defaults = 				[
+					'post-thumbnail',
 					'post-title',
 					'post-date-author',
-					'post-thumbnail',
 					'post-content',
 					'post-category',
 					'post-tags',
 					'post-comments-link'
-				]
-			);
+				];	
+			}
+
+			self::$post_parts = apply_filters( 'gridd_get_post_parts', $defaults );
 		}
 		return self::$post_parts;
 	}
