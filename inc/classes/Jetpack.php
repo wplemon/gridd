@@ -149,7 +149,8 @@ class Jetpack {
 
 					// Update the attachment's post-meta.
 					// We're using post-meta to improve performance and avoid getting the color every single time.
-					update_post_meta( $thumbnail_id, '_gridd_image_color', Sanitize::color_hex( $image_color ) );
+					$sanitize = new Sanitize();
+					update_post_meta( $thumbnail_id, '_gridd_image_color', $sanitize->color_hex( $image_color ) );
 				}
 			}
 
