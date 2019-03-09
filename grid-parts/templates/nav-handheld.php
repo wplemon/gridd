@@ -31,7 +31,7 @@ $style->add_string( '@media only screen and (min-width:' . get_theme_mod( 'gridd
 
 			// Print the parts.
 			foreach ( $parts as $part ) {
-				Theme::get_template_part( "grid-parts/templates/nav-handheld-$part" );
+				Theme::get_template_part( "grid-parts/templates/nav-handheld-part-$part" );
 				do_action( 'gridd_nav_handheld_part_template', $part );
 			}
 		}
