@@ -12,6 +12,7 @@ namespace Gridd;
 
 use Gridd\Theme;
 use Gridd\Color;
+use Gridd\Customizer\Sanitize;
 
 /**
  * Adds Jetpack-setup methods.
@@ -146,14 +147,9 @@ class Jetpack {
 					$tonesque    = new \Tonesque( $image );
 					$image_color = $tonesque->color();
 
-					// Prepend hash to the hex color value.
-					if ( false === strpos( $image_color, '#' ) ) {
-						$image_color = '#' . $image_color;
-					}
-
 					// Update the attachment's post-meta.
 					// We're using post-meta to improve performance and avoid getting the color every single time.
-					update_post_meta( $thumbnail_id, '_gridd_image_color', $image_color );
+					update_post_meta( $thumbnail_id, '_gridd_image_color', Sanitize::color_hex( $image_color ) );
 				}
 			}
 
