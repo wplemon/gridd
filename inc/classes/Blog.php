@@ -181,7 +181,7 @@ class Blog {
 	 */
 	public function gridd_get_post_parts_filter( $parts ) {
 		if ( is_singular() ) {
-			if ( 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' ) ) {
+			if ( 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' ) && ! is_page() ) {
 				$new_parts = [
 					'post-featured-image-header'
 				];
@@ -200,6 +200,12 @@ class Blog {
 					if ( false !== key ) {
 						unset( $parts[ $key ] );
 					}
+				}
+			}
+			if ( is_page() ) {
+				$key = array_search( 'post-date-author', $parts, true );
+				if ( false !== $key ) {
+					unset( $parts[ $key ] );
 				}
 			}
 		}
