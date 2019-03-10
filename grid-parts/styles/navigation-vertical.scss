@@ -1,7 +1,5 @@
-// We use the "ID" (all caps) as a placeholder.
-// The ID will be replaced by the actual navigation-ID via PHP
-// when the style is included inline in the document.
-.gridd-tp-nav_ID {
+@import "navigation-vars";
+#{$element} {
 
 	.inner {
 		align-items: flex-start;
@@ -9,7 +7,7 @@
 
 	ul {
 		&.menu {
-			background-color: var(--gridd-nav-ID-submenu-bg);
+			background-color: $submenuBackground;
 		}
 	}
 

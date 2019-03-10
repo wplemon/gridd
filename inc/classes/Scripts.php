@@ -444,7 +444,6 @@ class Scripts {
 		return $styles . $widget_output;
 	}
 
-
 	/**
 	 * Filters the content of a single block.
 	 *

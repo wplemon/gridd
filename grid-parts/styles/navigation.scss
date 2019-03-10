@@ -1,13 +1,11 @@
-// We use the "ID" (all caps) as a placeholder.
-// The ID will be replaced by the actual navigation-ID via PHP
-// when the style is included inline in the document.
-.gridd-tp-nav_ID {
-	background-color: var(--gridd-nav-ID-bg);
+@import "navigation-vars";
+#{$element} {
+	background-color: $backgroundColor;
 	overflow: visible;
-	font-size: var(--gridd-nav-ID-font-size);
+	font-size: $fontSize;
 
 	.inner {
-		padding: var(--gridd-nav-ID-padding);
+		padding: $padding;
 		width: 100%;
 		position: relative;
 		display: flex;
@@ -27,10 +25,10 @@
 	}
 
 	.gridd-navigation {
-		justify-content: var(--gridd-nav-ID-justify);
+		justify-content: $justify;
 
 		ul {
-			background-color: var(--gridd-nav-ID-submenu-bg);
+			background-color: $submenuBackground;
 		}
 
 
@@ -48,16 +46,16 @@
 
 				>a,
 				>a:visited {
-					color: var(--gridd-nav-ID-accent-color);
-					background: var(--gridd-nav-ID-accent-bg);
+					color: $accentColor;
+					background: $accentBackground;
 				}
 
 				.gridd-toggle {
-					color: var(--gridd-nav-ID-accent-color);
-					background: var(--gridd-nav-ID-accent-bg);
+					color: $accentColor;
+					background: $accentBackground;
 
 					svg {
-						fill: var(--gridd-nav-ID-accent-color);
+						fill: $accentColor;
 					}
 				}
 			}
@@ -73,50 +71,50 @@
 		a,
 		a:visited {
 			padding: 0.618em 1em;
-			color: var(--gridd-nav-ID-color);
+			color: $itemsColor;
 
 			&:hover,
 			&:focus,
 			&.focus,
 			&.toggled-on {
-				color: var(--gridd-nav-ID-accent-color);
-				background: var(--gridd-nav-ID-accent-bg);
+				color: $accentColor;
+				background: $accentBackground;
 
 				~.gridd-toggle {
-					background: var(--gridd-nav-ID-accent-bg);
+					background: $accentBackground;
 
 					svg {
-						fill: var(--gridd-nav-ID-accent-color);
+						fill: $accentColor;
 					}
 				}
 			}
 		}
 
 		.gridd-toggle {
-			color: var(--gridd-nav-ID-color);
+			color: $itemsColor;
 			padding: 0 .5em;
 
 			svg {
-				fill: var(--gridd-nav-ID-color);
+				fill: $itemsColor;
 			}
 
 			&:hover,
 			&:focus,
 			&.focus,
 			&.toggled-on {
-				color: var(--gridd-nav-ID-accent-color);
-				background: var(--gridd-nav-ID-accent-bg);
+				color: $accentColor;
+				background: $accentBackground;
 
 				svg {
-					fill: var(--gridd-nav-ID-accent-color);
+					fill: $accentColor;
 				}
 			}
 
 			&.toggled-on {
-				background: var(--gridd-nav-ID-accent-bg);
+				background: $accentBackground;
 
 				svg {
-					fill: var(--gridd-nav-ID-accent-color);
+					fill: $accentColor;
 				}
 
 				+ul {
