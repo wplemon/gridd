@@ -1,22 +1,53 @@
 // We use the "ID" (all caps) as a placeholder.
 // The ID will be replaced by the actual navigation-ID via PHP
 // when the style is included inline in the document.
-$element:           ".gridd-tp-sidebar_ID .widget_nav_menu";
+$element: ".gridd-tp-sidebar_ID .widget_nav_menu";
 
 // Basic vars.
 $backgroundColor: var(--gridd-sidebar-ID-bg);
-$fontSize:        1em;
-$padding:         .5em;
-$justify:         flex-start;
-$itemsColor:      var(--gridd-sidebar-ID-color);
+$fontSize: 1em;
+$padding: .5rem;
+$justify: flex-start;
+$itemsColor: var(--gridd-sidebar-ID-color);
 
 // Submenu
 $submenuBackground: var(--gridd-sidebar-ID-bg);
 
 // Accent
-$accentColor:      var(--gridd-sidebar-ID-bg);
+$accentColor: var(--gridd-sidebar-ID-bg);
 $accentBackground: var(--gridd-sidebar-ID-color);
 
 // @import "../../../grid-parts/styles/navigation-global.scss";
 @import "../../../grid-parts/styles/navigation.scss";
 @import "../../../grid-parts/styles/navigation-vertical.scss";
+
+#{$element} {
+	.gridd-navigation {
+		li {
+
+			&.current-menu-ancestor,
+			&.current-menu-item,
+			&.current-menu-parent,
+			&.current-page-ancestor,
+			&.current-page-item,
+			&.current-page-parent,
+			&.current_page_ancestor,
+			&.current_page_item,
+			&.current_page_parent {
+				.gridd-toggle {
+					display: none;
+				}
+
+				ul {
+					&:after {
+						content: "";
+						width: 100%;
+						display: block;
+						border-bottom: 1px solid currentColor;
+						opacity: .2;
+					}
+				}
+			}
+		}
+	}
+}

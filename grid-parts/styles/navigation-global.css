@@ -96,11 +96,9 @@ nav {
     .gridd-nav-vertical .gridd-navigation ul .menu-item-has-children a,
     .gridd-nav-vertical .gridd-navigation ul .page_item_has_children a, .toggled-on + .gridd-nav-horizontal .gridd-navigation ul .menu-item-has-children a,
     .toggled-on + .gridd-nav-horizontal .gridd-navigation ul .page_item_has_children a {
-      padding-left: 2em;
       margin-right: 2.5em; }
     .gridd-nav-vertical .gridd-navigation ul ul a, .toggled-on + .gridd-nav-horizontal .gridd-navigation ul ul a {
-      padding-left: 3.5em;
-      margin-right: 0; }
+      padding-left: 3.5em; }
   .gridd-nav-vertical .gridd-navigation li, .toggled-on + .gridd-nav-horizontal .gridd-navigation li {
     width: 100%;
     display: flex;
