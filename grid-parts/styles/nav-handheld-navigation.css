@@ -24,8 +24,7 @@
     .gridd-hanheld-nav-popup-wrapper li.current-menu-item .gridd-toggle svg, .gridd-hanheld-nav-popup-wrapper li.current-page-item .gridd-toggle svg, .gridd-hanheld-nav-popup-wrapper li.current_page_item .gridd-toggle svg, .gridd-hanheld-nav-popup-wrapper li.current-page-ancestor .gridd-toggle svg, .gridd-hanheld-nav-popup-wrapper li.current-menu-ancestor .gridd-toggle svg, .gridd-hanheld-nav-popup-wrapper li.current-menu-parent .gridd-toggle svg, .gridd-hanheld-nav-popup-wrapper li.current-page-parent .gridd-toggle svg, .gridd-hanheld-nav-popup-wrapper li.current_page_parent .gridd-toggle svg, .gridd-hanheld-nav-popup-wrapper li.current_page_ancestor .gridd-toggle svg {
       fill: var(--gridd-content-bg); }
   .gridd-hanheld-nav-popup-wrapper li.menu-item-has-children > a, .gridd-hanheld-nav-popup-wrapper li.page_item_has_children > a {
-    padding-right: .5em;
-    width: calc(100% - 2em - 0.01px); }
+    padding-right: .5em; }
   .gridd-hanheld-nav-popup-wrapper a,
   .gridd-hanheld-nav-popup-wrapper a:visited {
     padding: 0.618em 1em;
