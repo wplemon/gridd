@@ -22,14 +22,6 @@ if ( ! class_exists( 'Kirki' ) ) {
 }
 
 /**
- * Run an action to allow hooking addons.
- * This avoids any errors from addons if the active theme is not Gridd.
- *
- * @since 1.0.3
- */
-do_action( 'gridd_setup' );
-
-/**
  * The Gridd Autoloader.
  *
  * @param string $class The fully-qualified class name.
@@ -52,6 +44,14 @@ spl_autoload_register(
 		}
 	}
 );
+
+/**
+ * Run an action to allow hooking addons.
+ * This avoids any errors from addons if the active theme is not Gridd.
+ *
+ * @since 1.0.3
+ */
+do_action( 'gridd_setup' );
 
 /**
  * Load the textdomain.
