@@ -22,8 +22,8 @@ rm -f gridd/package-lock.json
 rm -f gridd/composer.lock
 rm -Rf gridd/vendor
 rm -Rf gridd/assets/css/blocks/block-library
-rm -f .codacy.yml
-rm -f README.md
+rm -f gridd/.codacy.yml
+rm -f gridd/README.md
 
 find ./gridd/ -name "*.map" -type f -delete
 find ./gridd/ -name "*.scss" -type f -delete
