@@ -1,6 +1,6 @@
 @import "../variables";
 
-$colorNames: 'pale-pink' 'vivid-red' 'luminous-vivid-orange' 'luminous-vivid-amber' 'light-green-cyan' 'vivid-green-cyan' 'pale-cyan-blue' 'vivid-cyan-blue' 'very-light-gray' 'cyan-bluish-gray' 'very-dark-gray' 'pure-cyan' 'pure-white' 'blue-gray' 'pure-black';
+$colorNames: 'pale-pink' 'vivid-red' 'luminous-vivid-orange' 'luminous-vivid-amber' 'light-green-cyan' 'vivid-green-cyan' 'pale-cyan-blue' 'vivid-cyan-blue' 'very-light-gray' 'cyan-bluish-gray' 'very-dark-gray' 'theme-cyan' 'theme-white' 'blue-gray' 'theme-black';
 
 $colors: (
 	pale-pink: #f78da7,
@@ -14,10 +14,10 @@ $colors: (
 	very-light-gray: #eee,
 	cyan-bluish-gray: #abb8c3,
 	very-dark-gray: #313131,
-	pure-cyan: #26C6DA,
-	pure-white: #fff,
+	theme-cyan: #26C6DA,
+	theme-white: #fff,
 	blue-gray: #546E7A,
-	pure-black: #000
+	theme-black: #000
 );
 
 @mixin griddColorSet( $colorName ) {
