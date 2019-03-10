@@ -70,10 +70,6 @@ nav {
   .gridd-nav-vertical .gridd-navigation .current-menu-ancestor ul, .toggled-on + .gridd-nav-horizontal .gridd-navigation .current-page-ancestor ul,
   .toggled-on + .gridd-nav-horizontal .gridd-navigation .current-menu-ancestor ul {
     display: block; }
-  .gridd-nav-vertical .gridd-navigation .current-page-ancestor .gridd-toggle,
-  .gridd-nav-vertical .gridd-navigation .current-menu-ancestor .gridd-toggle, .toggled-on + .gridd-nav-horizontal .gridd-navigation .current-page-ancestor .gridd-toggle,
-  .toggled-on + .gridd-nav-horizontal .gridd-navigation .current-menu-ancestor .gridd-toggle {
-    display: none; }
   .gridd-nav-vertical .gridd-navigation .current-page-ancestor a,
   .gridd-nav-vertical .gridd-navigation .current-menu-ancestor a, .toggled-on + .gridd-nav-horizontal .gridd-navigation .current-page-ancestor a,
   .toggled-on + .gridd-nav-horizontal .gridd-navigation .current-menu-ancestor a {
