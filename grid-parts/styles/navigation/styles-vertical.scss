@@ -10,14 +10,4 @@
 			background-color: $submenuBackground;
 		}
 	}
-
-	li {
-
-		&.menu-item-has-children,
-		&.page_item_has_children {
-			>a {
-				// width: calc(100% - 2em - 0.01px);
-			}
-		}
-	}
 }
