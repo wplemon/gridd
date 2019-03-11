@@ -1,34 +1,34 @@
 @import "variables";
 #{$element} {
-	background-color: $backgroundColor;
-	overflow: visible;
-	font-size: $fontSize;
+	// background-color: $backgroundColor;
+	// overflow: visible;
+	// font-size: $fontSize;
 
 	.inner {
-		padding: $padding;
-		width: 100%;
-		position: relative;
-		display: flex;
+		// padding: $padding;
+		// width: 100%;
+		// position: relative;
+		// display: flex;
 	}
 
 	nav {
-		width: 100%;
+		// width: 100%;
 	}
 
 	.gridd-nav-horizontal {
-		display: flex;
-		align-items: center;
+		// display: flex;
+		// align-items: center;
 
 		>* {
-			width: 100%;
+			// width: 100%;
 		}
 	}
 
 	.gridd-navigation {
-		justify-content: $justify;
+		// justify-content: $justify;
 
 		ul {
-			background-color: $submenuBackground;
+			// background-color: $submenuBackground;
 		}
 
 
@@ -46,16 +46,16 @@
 
 				>a,
 				>a:visited {
-					color: $accentColor;
-					background: $accentBackground;
+					// color: $accentColor;
+					// background: $accentBackground;
 				}
 
 				.gridd-toggle {
-					color: $accentColor;
-					background: $accentBackground;
+					// color: $accentColor;
+					// background: $accentBackground;
 
 					svg {
-						fill: $accentColor;
+						// fill: $accentColor;
 					}
 				}
 			}
@@ -63,58 +63,58 @@
 			&.menu-item-has-children,
 			&.page_item_has_children {
 				>a {
-					padding-right: .5rem;
+					// padding-right: .5rem;
 				}
 			}
 		}
 
 		a,
 		a:visited {
-			padding: 0.618em 1rem;
-			color: $itemsColor;
+			// padding: 0.618em 1rem;
+			// color: $itemsColor;
 
 			&:hover,
 			&:focus,
 			&.focus,
 			&.toggled-on {
-				color: $accentColor;
-				background: $accentBackground;
+				// color: $accentColor;
+				// background: $accentBackground;
 
 				~.gridd-toggle {
-					background: $accentBackground;
+					// background: $accentBackground;
 
 					svg {
-						fill: $accentColor;
+						// fill: $accentColor;
 					}
 				}
 			}
 		}
 
 		.gridd-toggle {
-			color: $itemsColor;
-			padding: 0 .5rem;
+			// color: $itemsColor;
+			// padding: 0 .5rem;
 
 			svg {
-				fill: $itemsColor;
+				// fill: $itemsColor;
 			}
 
 			&:hover,
 			&:focus,
 			&.focus,
 			&.toggled-on {
-				color: $accentColor;
-				background: $accentBackground;
+				// color: $accentColor;
+				// background: $accentBackground;
 
 				svg {
-					fill: $accentColor;
+					// fill: $accentColor;
 				}
 			}
 
 			&.toggled-on {
-				background: $accentBackground;
+				// background: $accentBackground;
 
 				svg {
-					fill: $accentColor;
+					// fill: $accentColor;
 				}
 
 				+ul {
@@ -133,6 +133,6 @@
 	}
 
 	.gridd-toggle-navigation {
-		display: none;
+		// display: none;
 	}
 }
