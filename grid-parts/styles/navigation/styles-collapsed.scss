@@ -5,47 +5,45 @@
 
 	nav,
 	.gridd-nav-horizontal {
-		// display: none;
-		// position: absolute;
-		// top: 4em;
-		// background-color: var(--gridd-nav-ID-bg);
-		// box-shadow: 0 0 5px 0 rgba(0, 0, 0, .16);
-		// width: 15em;
-		// max-width: 350px;
-		// z-index: 9; // IE11
+		display: none;
+		position: absolute;
+		top: 4em;
+		background-color: var(--gridd-nav-ID-bg);
+		box-shadow: 0 0 5px 0 rgba(0, 0, 0, .16);
+		width: 15em;
+		max-width: 350px;
+		z-index: 9; // IE11
 	}
 
 	.gridd-toggle-navigation {
-		// display: flex;
-		// background-color: var(--gridd-nav-ID-bg);
-		// padding: 1em;
-		// border: 2px solid;
-		// // width: 1em;
-		// height: 1em;
-		// line-height: 1;
-		// box-sizing: content-box;
-		// border-radius: 0;
-		// color: var(--gridd-nav-ID-color);
+		display: flex;
+		background-color: var(--gridd-nav-ID-bg);
+		padding: 1em;
+		height: 1em;
+		line-height: 1;
+		box-sizing: content-box;
+		border-radius: 0;
+		color: var(--gridd-nav-ID-color);
 
 		svg {
-			// width: 1em;
-			// fill: var(--gridd-nav-ID-color);
+			width: 1em;
+			fill: var(--gridd-nav-ID-color);
 		}
 
 		.icon {
-			// line-height: 1;
+			line-height: 1;
 
 			svg {
-				// transition: all 200ms;
-				// transform-origin: center center;
+				transition: all 200ms;
+				transform-origin: center center;
 			}
 
 			&.close {
-				// position: absolute;
-				// transform: translateX(-1em);
+				position: absolute;
+				transform: translateX(-1em);
 
 				svg {
-					// opacity: 0;
+					opacity: 0;
 				}
 			}
 		}
@@ -54,39 +52,39 @@
 		&:focus,
 		&.focus,
 		&.toggled-on {
-			// background: var(--gridd-nav-ID-accent-bg);
-			// box-shadow: none;
-			// color: var(--gridd-nav-ID-accent-color);
+			background: var(--gridd-nav-ID-accent-bg);
+			box-shadow: none;
+			color: var(--gridd-nav-ID-accent-color);
 
 			svg {
-				// fill: var(--gridd-nav-ID-accent-color);
+				fill: var(--gridd-nav-ID-accent-color);
 			}
 		}
 
 		&.toggled-on {
 			~nav {
-				// display: block;
+				display: block;
 
 				.gridd-sticky & {
-					// max-height: 60vh;
-					// overflow-y: auto;
+					max-height: 60vh;
+					overflow-y: auto;
 				}
 			}
 
 			.icon {
 				svg {
-					// transform: rotate(360deg);
+					transform: rotate(360deg);
 				}
 
 				&.open {
 					svg {
-						// opacity: 0;
+						opacity: 0;
 					}
 				}
 
 				&.close {
 					svg {
-						// opacity: 1;
+						opacity: 1;
 					}
 				}
 			}
@@ -99,7 +97,7 @@
 		&-top-center,
 		&-top-right {
 			.inner {
-				// align-items: flex-start;
+				align-items: flex-start;
 			}
 		}
 
@@ -107,7 +105,7 @@
 		&-center-center,
 		&-center-right {
 			.inner {
-				// align-items: center;
+				align-items: center;
 			}
 		}
 
@@ -115,7 +113,7 @@
 		&-bottom-center,
 		&-bottom-right {
 			.inner {
-				// align-items: flex-end;
+				align-items: flex-end;
 			}
 		}
 
@@ -123,7 +121,7 @@
 		&-center-left,
 		&-bottom-left {
 			.inner {
-				// justify-content: flex-start;
+				justify-content: flex-start;
 			}
 		}
 
@@ -131,7 +129,7 @@
 		&-center-center,
 		&-bottom-center {
 			.inner {
-				// justify-content: center;
+				justify-content: center;
 			}
 		}
 
@@ -139,11 +137,11 @@
 		&-center-right,
 		&-bottom-right {
 			.inner {
-				// justify-content: flex-end;
+				justify-content: flex-end;
 			}
 
 			nav {
-				// right: 0; // IE11
+				right: 0; // IE11
 				// transform: translateX(calc(-100% + 1em + 2 * 1em));
 			}
 		}
