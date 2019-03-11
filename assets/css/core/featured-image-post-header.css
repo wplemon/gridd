@@ -55,6 +55,7 @@
   z-index: 2;
   color: var(--gridd-image-header-text-color);
   width: 100%; }
+  .gridd-featured-image-post-header-content *,
   .gridd-featured-image-post-header-content a,
   .gridd-featured-image-post-header-content a:visited,
   .gridd-featured-image-post-header-content a:hover,
