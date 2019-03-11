@@ -12,7 +12,7 @@ use Gridd\Grid_Part\Navigation;
 
 $style = Style::get_instance( 'grid-part/nav-handheld/menu' );
 $style->add_string( Navigation::get_global_styles() );
-$style->add_file( get_theme_file_path( 'grid-parts/styles/nav-handheld-navigation.min.css' ) );
+$style->add_file( get_theme_file_path( 'grid-parts/styles/nav-handheld/styles-navigation.min.css' ) );
 $style->add_vars(
 	[
 		'--gridd-text-color'  => get_theme_mod( 'gridd_text_color', '#000000' ),

@@ -30,7 +30,7 @@ $style->add_string(
 );
 
 // Add the stylesheet.
-$style->add_file( get_theme_file_path( 'grid-parts/styles/footer.min.css' ) );
+$style->add_file( get_theme_file_path( 'grid-parts/styles/footer/styles.min.css' ) );
 
 // Add css-vars.
 $style->add_vars(
