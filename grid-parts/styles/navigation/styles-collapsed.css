@@ -2,7 +2,8 @@
 .gridd-tp-nav_ID .gridd-nav-horizontal {
   display: none;
   position: absolute;
-  top: 4em;
+  -webkit-transform: translateY(calc(50% + 1.5em + 2px));
+          transform: translateY(calc(50% + 1.5em + 2px));
   background-color: var(--gridd-nav-ID-bg);
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, .16);
   width: 15em;
@@ -12,6 +13,7 @@
   display: flex;
   background-color: var(--gridd-nav-ID-bg);
   padding: 1em;
+  border: 2px solid;
   height: 1em;
   line-height: 1;
   box-sizing: content-box;
