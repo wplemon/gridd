@@ -1,0 +1,44 @@
+.gridd-nav-vertical,
+.toggled-on+.gridd-nav-horizontal {
+	.gridd-navigation {
+
+		.gridd-toggle {
+			position: absolute;
+			right: 0;
+			height: 3em;
+		}
+
+		.current-page-ancestor,
+		.current-menu-ancestor {
+			ul {
+				display: block;
+            }
+            
+            > a {
+                opacity: .8;
+                width: 100%;
+            }
+
+			> .gridd-toggle {
+				display: none;
+			}
+		}
+
+		ul {
+			box-shadow: none;
+			top: 0;
+			min-width: 100%;
+			position: relative;
+		}
+
+		li {
+			width: 100%;
+			display: flex;
+			// flex-wrap: wrap;
+		}
+
+		a {
+			// background: none;
+		}
+	}
+}
