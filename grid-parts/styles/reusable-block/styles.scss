@@ -5,4 +5,8 @@
     padding: var(--gridd-reusable-block-ID-padding);
     background-color: var(--gridd-reusable-block-ID-bg);
     color: var(--gridd-reusable-block-ID-color);
+
+    .inner {
+        width: 100%;
+    }
 }

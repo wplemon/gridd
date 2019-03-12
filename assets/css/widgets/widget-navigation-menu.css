@@ -7,13 +7,6 @@
     width: 100%;
     position: relative;
     display: flex; }
-  .gridd-tp-sidebar_ID .widget_nav_menu nav {
-    width: 100%; }
-  .gridd-tp-sidebar_ID .widget_nav_menu .gridd-nav-horizontal {
-    display: flex;
-    align-items: center; }
-    .gridd-tp-sidebar_ID .widget_nav_menu .gridd-nav-horizontal > * {
-      width: 100%; }
   .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation {
     justify-content: flex-start; }
     .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation ul {
@@ -35,11 +28,8 @@
       background: var(--gridd-sidebar-ID-color); }
       .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current-menu-item .gridd-toggle svg, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current-page-item .gridd-toggle svg, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current_page_item .gridd-toggle svg, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current-page-ancestor .gridd-toggle svg, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current-menu-ancestor .gridd-toggle svg, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current-menu-parent .gridd-toggle svg, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current-page-parent .gridd-toggle svg, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current_page_parent .gridd-toggle svg, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current_page_ancestor .gridd-toggle svg {
         fill: var(--gridd-sidebar-ID-bg); }
-    .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.menu-item-has-children > a, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.page_item_has_children > a {
-      padding-right: .5rem; }
     .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a,
     .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a:visited {
-      padding: 0.618em 1rem;
       color: var(--gridd-sidebar-ID-color); }
       .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a:hover, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a:focus, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a.focus, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a.toggled-on,
       .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a:visited:hover,
@@ -61,8 +51,7 @@
           .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a:visited.toggled-on ~ .gridd-toggle svg {
             fill: var(--gridd-sidebar-ID-bg); }
     .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation .gridd-toggle {
-      color: var(--gridd-sidebar-ID-color);
-      padding: 0 .5rem; }
+      color: var(--gridd-sidebar-ID-color); }
       .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation .gridd-toggle svg {
         fill: var(--gridd-sidebar-ID-color); }
       .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation .gridd-toggle:hover, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation .gridd-toggle:focus, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation .gridd-toggle.focus, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation .gridd-toggle.toggled-on {
