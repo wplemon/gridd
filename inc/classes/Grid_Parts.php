@@ -66,6 +66,9 @@ class Grid_Parts {
 
 		// Set $this->parts.
 		$this->set_parts();
+
+		// Apply custom order to grid-parts.
+		add_filter( 'gridd_get_parts', [ $this, 'apply_custom_order' ] );
 	}
 
 	/**
@@ -97,7 +100,6 @@ class Grid_Parts {
 	 * @return void
 	 */
 	public function include_grid_part_files() {
-
 		require_once get_theme_file_path( 'grid-parts/functions.php' );
 	}
 
@@ -121,9 +123,6 @@ class Grid_Parts {
 				return ( isset( $a['priority'] ) ) ? 1 : -1;
 			}
 		);
-
-		// Apply cusstom order.
-		$this->apply_custom_order();
 	}
 
 	/**
@@ -134,7 +133,7 @@ class Grid_Parts {
 	 * @return array
 	 */
 	public function get_parts() {
-		return $this->parts;
+		return apply_filters( 'gridd_get_parts', $this->parts );
 	}
 
 	/**
@@ -208,16 +207,17 @@ class Grid_Parts {
 	/**
 	 * Applies custom order to grid-parts.
 	 *
-	 * @access protected
+	 * @access public
 	 * @since 1.0.3
-	 * @return void
+	 * @param array $parts The parts we're reordering.
+	 * @return array
 	 */
-	protected function apply_custom_order() {
+	public function apply_custom_order( $parts ) {
 		$saved_order  = get_theme_mod( 'gridd_grid_load_order', array() );
 		$all_part_ids = [];
 
 		// Get an array of all part IDs.
-		foreach ( $this->parts as $part ) {
+		foreach ( $parts as $part ) {
 			$all_part_ids[] = $part['id'];
 		}
 
@@ -237,9 +237,7 @@ class Grid_Parts {
 				$ordered[] = $part;
 			}
 		}
-
-		// Update the array of parts with the custom-ordered one.
-		$this->parts = $ordered;
+		return $ordered;
 	}
 
 	/**

@@ -142,7 +142,7 @@ Customizer::add_field(
 		'type'        => 'sortable',
 		'settings'    => 'gridd_grid_load_order',
 		'label'       => esc_html__( 'Grid Parts Load Order', 'gridd' ),
-		'description' => __( 'Changes the order in which parts get loaded. This only affects the mobile views and SEO. <strong>IMPORTANT: Please note that this setting does not live-update the preview. After making your changes you will have to save the options and refresh your page.</strong>', 'gridd' ),
+		'description' => esc_html__( 'Changes the order in which parts get loaded. This only affects the mobile views and SEO.', 'gridd' ),
 		'tooltip'     => esc_html__( 'Your content should always be near the top. You can place secondary items lower in the load order', 'gridd' ),
 		'section'     => 'gridd_grid',
 		'default'     => array_keys( $sortable_parts ),
