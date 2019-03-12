@@ -4,3 +4,6 @@
   color: var(--gridd-reusable-block-ID-color); }
   .gridd-tp-reusable_block_ID .inner {
     width: 100%; }
+  .gridd-tp-reusable_block_ID .wp-block-cover {
+    margin-bottom: 0;
+    margin-top: 0; }
