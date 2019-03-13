@@ -115,14 +115,16 @@ class Reusable_Block extends Grid_Part {
 	public function add_template_part( $parts ) {
 
 		if ( self::$reusable_blocks ) {
+			$i = 0;
 			foreach ( self::$reusable_blocks as $block ) {
 				$parts[] = [
 					/* translators: The name of the reusable block. */
 					'label'    => sprintf( esc_html__( 'Block: %s', 'gridd' ), esc_html( $block->post_title ) ),
-					'color'    => [ '#000', '#fff' ],
-					'priority' => 30,
+					'color'    => [ 'hsl(' . ( $i * 57 ) . ',50%,75%)', '#000' ],
+					'priority' => 70,
 					'id'       => "reusable_block_{$block->ID}",
 				];
+				$i++;
 			}
 		}
 
