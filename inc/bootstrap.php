@@ -18,7 +18,7 @@ use Gridd\Widget_Output_Filters;
  * If Kirki isn't loaded as a plugin, load the included version.
  */
 if ( ! class_exists( 'Kirki' ) ) {
-	require_once __DIR__ . '/kirki/kirki.php';
+	// require_once __DIR__ . '/kirki/kirki.php';
 }
 
 /**
