@@ -2,28 +2,32 @@
 
 npm install && grunt
 
-rm -Rf gridd
+rm -rf gridd
 rm -f gridd.zip
-rm -Rf ../gridd2
+rm -rf ../gridd2
 cp -R . ../gridd2
 mv ../gridd2 ./gridd
 
 # Remove extra files.
+rm -rf gridd/vendor
+rm -rf gridd/assets/css/blocks/block-library
 rm -rf gridd/.sass-cache
 rm -rf gridd/node_modules
+rm -rf gridd/.git
 rm -f gridd/.browserslistrc
 rm -f gridd/.editorconfig
 rm -f gridd/.eslintignore
 rm -f gridd/.eslintrc.json
-rm -rf gridd/.git
 rm -f gridd/.gitignore
 rm -f gridd/.gitmodules
 rm -f gridd/package-lock.json
 rm -f gridd/composer.lock
-rm -Rf gridd/vendor
-rm -Rf gridd/assets/css/blocks/block-library
 rm -f gridd/.codacy.yml
 rm -f gridd/README.md
+rm -f gridd/composer.json
+rm -f gridd/Gruntfile.js
+rm -f gridd/package.json
+rm -f gridd/phpcs.xml.dist
 
 find ./gridd/ -name "*.map" -type f -delete
 find ./gridd/ -name "*.scss" -type f -delete
@@ -74,4 +78,4 @@ rm -f gridd/inc/kirki/package-lock.json
 rm -f gridd/*.sh
 
 zip -rq gridd.zip gridd
-rm -Rf gridd/
+rm -rf gridd/
