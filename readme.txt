@@ -5,7 +5,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 Requires at least: 4.9
 Tested up to: 5.0
 Requires PHP: 5.6
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GNU General Public License v2.0 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,21 +15,32 @@ Short description of the theme.
 
 Gridd is a flexible, inclusive theme with a strong focus on performance, accessibility and sustainability.
 
-* Uses CSS-Grid and flexboxes for layouts.
 * Custom, Editable Grids
+* Header Builder
+* Footer Builder
+* Layout Builder
+* Uses CSS-Grid and CSS-Flexbox for layouts.
 * Minimal CSS & JS
 * Social Links
 * Jetpack Compatible
 * WooCommerce Compatible
 * Easy-Digital-Downloads Compatible
 * Mobile Navigation
-* Native AMP Support using the official [AMP Plugin](https://wordpress.org/plugins/amp/)
+* Natively supports AMP using the official [AMP Plugin](https://wordpress.org/plugins/amp/)
+* No jQuery or 3rd-party scripts
+* No blocking assets
 
 == Installation ==
 
 You can install the theme using the WordPress Administration menu. For more information on installing themes please refer to [this article](https://codex.wordpress.org/Using_Themes#Adding_New_Themes).
 
 == Changelog ==
+
+= 1.0.5 =
+
+* Fix: Improved navigation styles.
+* Fix: The grid-parts order control now has a live preview.
+* Fix: Minor CSS fixes & cleanup.
 
 = 1.0.4 =
 
@@ -58,10 +69,12 @@ You can install the theme using the WordPress Administration menu. For more info
 
 * Initial Release
 
-== Credits ==
+== Resources ==
 
 * Hybrid Breadcrumbs: Script by Justin Tadlock (https://themehybrid.com) licenced under [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
 * Kirki: Framework by Aristeidis Stathopoulos (https://github.com/aristath/kirki) licensed under [MIT](https://opensource.org/licenses/MIT)
+* Gutenberg: Gutenberg block styles files by the WordPress Community (https://github.com/WordPress/gutenberg), licensed under [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
+* DragSelect: Script by Thibault Jan Beyer (https://github.com/thibaultjanbeyer/dragselect) licenced under [MIT](https://opensource.org/licenses/MIT)
 * wcagColors: Script by Aristeidis Stathopoulos (https://aristath.github.io/wcagColors/) licensed under [MIT](https://opensource.org/licenses/MIT)
 * Underscores: Parts of the theme's PHP originated in the Underscores starter theme (https://underscores.me/) by Automattic (https://automattic.com/) licenced under [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
 * Mythic: The graceful fallback script for old PHP & WP versions originated in the Mythic starter theme (https://themehybrid.com/themes/mythic) by Justin Tadlock (https://themehybrid.com) licenced under [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
