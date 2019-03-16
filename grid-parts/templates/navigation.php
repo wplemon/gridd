@@ -161,7 +161,6 @@ foreach ( $responsive_mode_parts as $responsive_mode_part ) {
 						'theme_location' => "menu-$id",
 						'menu_id'        => "nav-$id",
 						'item_spacing'   => 'discard',
-						'depth'          => '3',
 					]
 				);
 				?>
