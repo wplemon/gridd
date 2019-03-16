@@ -9,6 +9,8 @@
  * @since 1.0
  */
 
+use Gridd\Image;
+
 if ( 'hidden' === get_theme_mod( 'gridd_featured_image_mode_archive', 'alignwide' ) ) {
 	return;
 }
@@ -31,10 +33,6 @@ if ( 'hidden' === get_theme_mod( 'gridd_featured_image_mode_archive', 'alignwide
 		case '1:1':
 		case '4:3':
 		case 'golden':
-			// Make sure we include the Ari_Image script.
-			if ( ! class_exists( 'Ari_Image' ) ) {
-				require_once get_template_directory() . '/inc/classes/Ari_Image.php';
-			}
 			// Calculate the height.
 			$height = (int) ( $width / 1.618 );
 			if ( '1:1' === $ratio ) {
@@ -48,7 +46,7 @@ if ( 'hidden' === get_theme_mod( 'gridd_featured_image_mode_archive', 'alignwide
 			if ( $thumbnail_id ) {
 
 				// Create the image.
-				$image  = Ari_Image::create( $thumbnail_id );
+				$image  = Image::create( $thumbnail_id );
 				$resize = $image->resize(
 					[
 						'width'  => $width,
