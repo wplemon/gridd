@@ -216,6 +216,7 @@ class Navigation extends Grid_Part {
 
 		return $item_output . Theme::get_toggle_button(
 			[
+				'context'                      => [ 'navigation', $item ],
 				'expanded_state_id'            => $expanded_state_id,
 				'expanded'                     => 'false',
 				'screen_reader_label_collapse' => __( 'Collapse Child Menu', 'gridd' ),

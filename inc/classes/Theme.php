@@ -500,7 +500,7 @@ class Theme {
 		$html .= $args['label'];
 		$html .= '</button>';
 
-		return $html;
+		return apply_filters( 'gridd_get_toggle_button', $html );
 	}
 
 	/**

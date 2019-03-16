@@ -122,6 +122,7 @@ foreach ( $responsive_mode_parts as $responsive_mode_part ) {
 			 */
 			echo Theme::get_toggle_button( // phpcs:ignore WordPress.Security.EscapeOutput
 				[
+					'context'                      => [ 'expand-navigation' ],
 					'expanded_state_id'            => 'navMenuExpanded' . absint( $id ),
 					'expanded'                     => 'false',
 					'screen_reader_label_collapse' => __( 'Collapse Navigation', 'gridd' ),
