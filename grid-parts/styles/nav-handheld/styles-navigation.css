@@ -74,3 +74,6 @@
   max-height: calc(100vh - 66px);
   overflow-y: scroll;
   width: 100%; }
+
+#gridd-handheld-menu-wrapper {
+  overflow-y: scroll; }
