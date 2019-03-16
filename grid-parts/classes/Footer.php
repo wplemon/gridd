@@ -213,3 +213,5 @@ class Footer extends Grid_Part {
 }
 
 new Footer();
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

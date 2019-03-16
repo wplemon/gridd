@@ -44,3 +44,5 @@ if ( class_exists( 'RevSliderSlider' ) ) {
 	require_once get_theme_file_path( 'grid-parts/classes/Revolution_Slider.php' );
 	require_once get_theme_file_path( 'grid-parts/customizer/revolution-slider.php' );
 }
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

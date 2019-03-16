@@ -20,5 +20,4 @@ if ( 'hidden' === get_theme_mod( 'gridd_featured_image_mode_singular', 'alignwid
 	<div class="post-thumbnail <?php echo esc_attr( get_theme_mod( 'gridd_featured_image_mode_singular', 'alignwide' ) ); ?>">
 		<?php the_post_thumbnail(); ?>
 	</div>
-	<?php
-endif;
+<?php endif; ?>

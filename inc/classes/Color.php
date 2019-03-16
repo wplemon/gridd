@@ -73,3 +73,5 @@ class Color {
 		return max( ( $l1 + 0.05 ) / ( $l2 + 0.05 ), ( $l2 + 0.05 ) / ( $l1 + 0.05 ) );
 	}
 }
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

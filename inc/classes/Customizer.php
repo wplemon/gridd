@@ -352,3 +352,5 @@ class Customizer {
 		$wp_customize->register_control_type( 'Gridd\Customizer\Control\WCAG_Link_Color' );
 	}
 }
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

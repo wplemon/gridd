@@ -181,3 +181,5 @@ class WCAG_Link_Color extends \WP_Customize_Control {
 	 */
 	protected function render_content() {}
 }
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

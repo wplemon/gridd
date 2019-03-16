@@ -71,3 +71,5 @@ class Revolution_Slider extends Grid_Part {
 }
 
 new Revolution_Slider();
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

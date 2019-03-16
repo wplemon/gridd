@@ -86,3 +86,5 @@ Customizer::add_field(
 		'css_vars'  => '--gridd-header-search-color',
 	]
 );
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

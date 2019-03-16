@@ -198,3 +198,5 @@ class Header extends Grid_Part {
 }
 
 new Header();
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

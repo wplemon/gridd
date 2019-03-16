@@ -8,10 +8,9 @@
 
 use Gridd\Blog;
 
-if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-	echo '<span class="comments-link">';
-	Blog::the_comments_link();
-	echo '</span>';
-}
-
-/* Omit closing PHP tag to avoid "Headers already sent" issues. */
+?>
+<?php if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
+	<span class="comments-link">
+		<?php Blog::the_comments_link(); ?>
+	</span>
+<?php endif; ?>

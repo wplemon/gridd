@@ -94,3 +94,5 @@ class Nav_Handheld extends Grid_Part {
 }
 
 new Nav_Handheld();
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

@@ -21,7 +21,4 @@ if ( is_singular() ) :
 			<?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
 		</div>
 	</header>
-	<?php
-endif;
-
-/* Omit closing PHP tag to avoid "Headers already sent" issues. */
+<?php endif; ?>

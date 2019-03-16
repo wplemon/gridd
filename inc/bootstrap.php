@@ -114,3 +114,5 @@ if ( function_exists( 'vc_set_as_theme' ) ) {
 	add_action( 'vc_before_init', 'vc_set_as_theme' );
 	add_filter( 'vc_nav_front_logo', '__return_empty_string' );
 }
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

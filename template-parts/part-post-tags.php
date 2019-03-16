@@ -7,8 +7,8 @@
  */
 
 $tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'gridd' ) );
-if ( $tags_list ) :
-	?>
+?>
+<?php if ( $tags_list ) : ?>
 	<div class="entry-tags gridd-contain">
 		<span class="tags-links">
 			<?php
@@ -20,7 +20,4 @@ if ( $tags_list ) :
 			?>
 		</span>
 	</div>
-	<?php
-endif;
-
-/* Omit closing PHP tag to avoid "Headers already sent" issues. */
+<?php endif; ?>

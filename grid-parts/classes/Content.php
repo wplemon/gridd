@@ -152,3 +152,5 @@ class Content extends Grid_Part {
 }
 
 new Content();
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

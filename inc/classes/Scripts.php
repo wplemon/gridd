@@ -275,8 +275,7 @@ class Scripts {
 	}
 
 	/**
-	 * Enqueue styles using print_late_styles().
-	 * This will load stylesheets in the footer and includes non-critical styles.
+	 * Adds non-critical styles to the footer.
 	 *
 	 * @access
 	 * @since 1.0
@@ -471,3 +470,5 @@ class Scripts {
 		return array_unique( self::$blocks );
 	}
 }
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

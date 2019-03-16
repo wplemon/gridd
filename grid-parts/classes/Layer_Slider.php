@@ -71,3 +71,5 @@ class Layer_Slider extends Grid_Part {
 }
 
 new Layer_Slider();
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

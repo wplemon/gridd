@@ -8,8 +8,8 @@
 
 /* translators: used between list items, there is a space after the comma. */
 $categories_list = get_the_category_list( esc_html__( ', ', 'gridd' ) );
-if ( $categories_list ) :
-	?>
+?>
+<?php if ( $categories_list ) : ?>
 	<div class="entry-category gridd-contain">
 		<span class="cat-links">
 			<?php
@@ -18,7 +18,4 @@ if ( $categories_list ) :
 			?>
 		</span>
 	</div>
-	<?php
-endif;
-
-/* Omit closing PHP tag to avoid "Headers already sent" issues. */
+<?php endif; ?>

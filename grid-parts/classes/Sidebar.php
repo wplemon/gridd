@@ -148,3 +148,5 @@ class Sidebar extends Grid_Part {
 }
 
 new Sidebar();
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

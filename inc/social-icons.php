@@ -75,3 +75,5 @@ if ( ! function_exists( 'gridd_social_icons_svg' ) ) {
 		return $icons;
 	}
 }
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

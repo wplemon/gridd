@@ -23,5 +23,3 @@ if ( ! is_singular() ) {
 	return;
 }
 the_content();
-
-/* Omit closing PHP tag to avoid "Headers already sent" issues. */

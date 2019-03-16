@@ -158,3 +158,5 @@ class Breadcrumbs extends Grid_Part {
 }
 
 new Breadcrumbs;
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

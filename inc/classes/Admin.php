@@ -50,3 +50,5 @@ class Admin {
 		echo '</style>';
 	}
 }
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

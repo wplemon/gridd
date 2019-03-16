@@ -217,3 +217,5 @@ class WooCommerce {
 		wp_dequeue_script( 'wc-cart-fragments' );
 	}
 }
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

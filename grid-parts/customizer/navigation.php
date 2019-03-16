@@ -335,3 +335,5 @@ function gridd_nav_customizer_options( $id ) {
 		]
 	);
 }
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

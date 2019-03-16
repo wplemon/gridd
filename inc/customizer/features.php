@@ -253,3 +253,5 @@ Customizer::add_field(
 		'transport'   => 'refresh',
 	]
 );
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

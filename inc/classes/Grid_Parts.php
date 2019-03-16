@@ -257,3 +257,5 @@ class Grid_Parts {
 		return false;
 	}
 }
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

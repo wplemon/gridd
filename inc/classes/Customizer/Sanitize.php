@@ -116,3 +116,5 @@ class Sanitize {
         return ( ! $hash ) ? $hex : '#' . $hex;
     }
 }
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

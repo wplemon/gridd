@@ -377,3 +377,5 @@ if ( ! class_exists( 'Ari_Image' ) ) {
 		}
 	}
 }
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

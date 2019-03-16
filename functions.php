@@ -23,3 +23,5 @@ if ( version_compare( $GLOBALS['wp_version'], '4.9.6', '<' ) || version_compare(
 
 // Bootstrap the theme.
 require_once get_template_directory() . '/inc/bootstrap.php';
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

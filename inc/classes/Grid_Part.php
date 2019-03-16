@@ -156,3 +156,5 @@ class Grid_Part extends Grid_Parts {
 		return ( is_array( $spec ) && isset( $spec['row'] ) && isset( $spec['column'] ) && ! empty( $spec['row'] ) && ! empty( $spec['column'] ) );
 	}
 }
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

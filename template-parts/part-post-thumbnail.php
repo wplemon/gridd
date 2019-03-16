@@ -20,5 +20,3 @@ if ( is_singular() ) {
 } else {
 	Theme::get_template_part( 'template-parts/thumbnail-archive', get_post_type( $post->ID ) );
 }
-
-/* Omit closing PHP tag to avoid "Headers already sent" issues. */

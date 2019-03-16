@@ -181,3 +181,5 @@ class Style {
 		echo ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? "\r\n</style>\r\n" : '</style>';
 	}
 }
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

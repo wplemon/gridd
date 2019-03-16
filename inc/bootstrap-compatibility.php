@@ -97,3 +97,5 @@ function gridd_preview() {
 		wp_die( esc_html( gridd_compat_message() ) );
 	}
 }
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

@@ -523,3 +523,5 @@ class Theme {
 		return ob_get_clean();
 	}
 }
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

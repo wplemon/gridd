@@ -16,5 +16,3 @@ wp_link_pages(
 		'separator' => '</span><span class="item">',
 	]
 );
-
-/* Omit closing PHP tag to avoid "Headers already sent" issues. */

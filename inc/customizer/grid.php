@@ -150,3 +150,5 @@ Customizer::add_field(
 		'choices'     => $sortable_parts,
 	]
 );
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

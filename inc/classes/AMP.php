@@ -126,3 +126,5 @@ class AMP {
 		return ( function_exists( 'is_amp_endpoint' ) );
 	}
 }
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

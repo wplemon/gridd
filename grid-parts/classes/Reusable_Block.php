@@ -133,3 +133,5 @@ class Reusable_Block extends Grid_Part {
 }
 
 new Reusable_Block();
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

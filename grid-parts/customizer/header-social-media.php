@@ -156,3 +156,5 @@ Customizer::add_field(
 		},
 	]
 );
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

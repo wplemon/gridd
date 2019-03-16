@@ -101,3 +101,5 @@ function gridd_add_footer_widget_area_options( $id ) {
 		]
 	);
 }
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

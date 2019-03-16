@@ -212,3 +212,5 @@ class Blog {
 		return $parts;
 	}
 }
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */
