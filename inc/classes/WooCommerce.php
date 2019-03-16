@@ -58,9 +58,6 @@ class WooCommerce {
 		add_action( 'woocommerce_before_main_content', [ $this, 'wrapper_before' ] );
 		add_action( 'woocommerce_after_main_content', [ $this, 'wrapper_after' ] );
 
-		// AJAX Cart.
-		add_filter( 'woocommerce_add_to_cart_fragments', [ $this, 'cart_link_fragment' ] );
-
 		// Remove Breadcrumbs.
 		add_action( 'init', [ $this, 'remove_breadcrumbs' ] );
 
@@ -206,82 +203,6 @@ class WooCommerce {
 	public function wrapper_after() {
 		echo '</main>'; // Close #main.
 		echo '</div>'; // Close #primary.
-	}
-
-	/**
-	 * Cart Fragments.
-	 *
-	 * Ensure cart contents update when products are added to the cart via AJAX.
-	 *
-	 * @access public
-	 * @since 1.0
-	 * @param array $fragments Fragments to refresh via AJAX.
-	 * @return array Fragments to refresh via AJAX.
-	 */
-	public function cart_link_fragment( $fragments ) {
-		ob_start();
-		$this->cart_link();
-		$fragments['a.cart-contents'] = ob_get_clean();
-		return $fragments;
-	}
-
-	/**
-	 * Cart Link.
-	 *
-	 * Displayed a link to the cart including the number of items present and the cart total.
-	 *
-	 * @access public
-	 * @since 1.0
-	 * @return void
-	 */
-	public function cart_link() {
-		?>
-		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'gridd' ); ?>">
-			<svg class="gridd-inline-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 19.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5zm3.5-1.5c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm6.304-15l-3.431 12h-2.102l2.542-9h-16.813l4.615 11h13.239l3.474-12h1.929l.743-2h-4.196z"/></svg>
-			<?php
-			// Items count.
-			$count = WC()->cart->get_cart_contents_count();
-			// Count text.
-			$item_count_text = sprintf(
-				/* translators: number of items in the mini cart. */
-				_n( '%d item', '%d items', $count, 'gridd' ),
-				$count
-			);
-			?>
-			<span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span>
-			<?php if ( $count ) : ?>
-				<span class="count" aria-label="<?php echo esc_html( $item_count_text ); ?>"><?php echo absint( $count ); ?></span>
-			<?php endif; ?>
-		</a>
-		<?php
-	}
-
-	/**
-	 * Display Header Cart.
-	 *
-	 * @access public
-	 * @since 1.0
-	 * @return void
-	 */
-	public function header_cart() {
-		$class = ( is_cart() ) ? 'current-menu-item' : '';
-		?>
-		<ul id="site-header-cart" class="site-header-cart">
-			<li class="<?php echo esc_attr( $class ); ?>">
-				<?php $this->cart_link(); ?>
-			</li>
-			<li>
-				<?php
-				the_widget(
-					'WC_Widget_Cart',
-					[
-						'title' => '',
-					]
-				);
-				?>
-			</li>
-		</ul>
-		<?php
 	}
 
 	/**
