@@ -49,37 +49,6 @@
 .woocommerce span.onsale {
   font-size: calc(1em / var(--gridd-typo-scale)); }
 
-#nav-primary-cart {
-  padding: 12px;
-  min-width: 270px;
-  max-height: 60vh;
-  overflow-y: scroll; }
-
-.widget_shopping_cart .quantity {
-  font-size: calc(1em / var(--gridd-typo-scale)); }
-.widget_shopping_cart .remove.remove_from_cart_button {
-  padding: 0;
-  color: red !important;
-  min-height: 1em; }
-  .widget_shopping_cart .remove.remove_from_cart_button:hover {
-    color: #fff !important;
-    background: red !important; }
-
-.gridd-tp.gridd-tp-nvp .woocommerce-mini-cart-item a,
-.gridd-tp.gridd-tp-nvp .mini_cart_item a {
-  padding: 0;
-  border-radius: 0; }
-  .gridd-tp.gridd-tp-nvp .woocommerce-mini-cart-item a.remove, .gridd-tp.gridd-tp-nvp .woocommerce-mini-cart-item a.remove_from_cart_button,
-  .gridd-tp.gridd-tp-nvp .mini_cart_item a.remove,
-  .gridd-tp.gridd-tp-nvp .mini_cart_item a.remove_from_cart_button {
-    border-radius: 10em; }
-  .gridd-tp.gridd-tp-nvp .woocommerce-mini-cart-item a.focus, .gridd-tp.gridd-tp-nvp .woocommerce-mini-cart-item a:active, .gridd-tp.gridd-tp-nvp .woocommerce-mini-cart-item a:hover,
-  .gridd-tp.gridd-tp-nvp .mini_cart_item a.focus,
-  .gridd-tp.gridd-tp-nvp .mini_cart_item a:active,
-  .gridd-tp.gridd-tp-nvp .mini_cart_item a:hover {
-    -webkit-filter: none;
-            filter: none; }
-
 .woocommerce div.product form.cart {
   display: flex;
   flex-wrap: wrap; }
