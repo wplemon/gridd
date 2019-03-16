@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2.0 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Gridd 1.0.6\n"
+"Project-Id-Version: Gridd 1.0.7\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/gridd\n"
-"POT-Creation-Date: 2019-03-16 10:17:30+00:00\n"
+"POT-Creation-Date: 2019-03-16 13:54:33+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -84,7 +84,7 @@ msgid "Branding"
 msgstr ""
 
 #: grid-parts/classes/Header.php:173 grid-parts/customizer/nav-handheld.php:32
-#: grid-parts/templates/nav-handheld-part-search.php:25
+#: grid-parts/templates/nav-handheld-part-search.php:26
 msgid "Search"
 msgstr ""
 
@@ -113,15 +113,15 @@ msgstr ""
 msgid "Navigation %d"
 msgstr ""
 
-#: grid-parts/classes/Navigation.php:221
+#: grid-parts/classes/Navigation.php:222
 msgid "Collapse Child Menu"
 msgstr ""
 
-#: grid-parts/classes/Navigation.php:222
+#: grid-parts/classes/Navigation.php:223
 msgid "Expand Child Menu"
 msgstr ""
 
-#: grid-parts/classes/Navigation.php:223
+#: grid-parts/classes/Navigation.php:224
 msgid "Toggle Child Menu"
 msgstr ""
 
@@ -684,7 +684,7 @@ msgid "Additional item: axpandable widget-area with custom icon"
 msgstr ""
 
 #: grid-parts/customizer/nav-handheld.php:30
-#: grid-parts/templates/nav-handheld-part-menu.php:39
+#: grid-parts/templates/nav-handheld-part-menu.php:40
 msgid "Menu"
 msgstr ""
 
@@ -992,15 +992,15 @@ msgstr ""
 msgid "Changes the spacing between widgets in this widget-area."
 msgstr ""
 
-#: grid-parts/templates/navigation.php:127
+#: grid-parts/templates/navigation.php:128
 msgid "Collapse Navigation"
 msgstr ""
 
-#: grid-parts/templates/navigation.php:128
+#: grid-parts/templates/navigation.php:129
 msgid "Expand Navigation"
 msgstr ""
 
-#: grid-parts/templates/navigation.php:129
+#: grid-parts/templates/navigation.php:130
 msgid "Toggle Navigation"
 msgstr ""
 
@@ -1027,10 +1027,6 @@ msgstr ""
 msgid ""
 "Gridd requires at least PHP version %1$s. You are running version %2$s. "
 "Please upgrade and try again."
-msgstr ""
-
-#: inc/classes/Ari_Image.php:248
-msgid "No image URL has been entered."
 msgstr ""
 
 #: inc/classes/Blog.php:51 inc/customizer/features.php:252
@@ -1126,6 +1122,10 @@ msgstr ""
 
 #: inc/classes/Customizer.php:228
 msgid "Documentation"
+msgstr ""
+
+#: inc/classes/Image.php:245
+msgid "No image URL has been entered."
 msgstr ""
 
 #: inc/classes/Theme.php:271
