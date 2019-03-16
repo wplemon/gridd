@@ -110,6 +110,7 @@
   .remove.remove_from_cart_button {
     padding: 0;
     color: red !important;
+    min-height: 1em;
 
     &:hover {
       color: #fff !important;
