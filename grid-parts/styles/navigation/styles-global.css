@@ -34,8 +34,7 @@ nav {
     display: flex;
     flex-wrap: wrap;
     position: relative; }
-  .gridd-navigation a,
-  .gridd-navigation a:visited {
+  .gridd-navigation a {
     padding: 0.618em 1rem;
     display: inline-block;
     text-decoration: none;

@@ -64,22 +64,6 @@
     color: #fff !important;
     background: red !important; }
 
-.menu-item.nav-cart .amount {
-  font-size: calc(1em / var(--gridd-typo-scale)); }
-.menu-item.nav-cart .count {
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-size: .5em;
-  background: #0f834d;
-  color: #fff;
-  padding: .6em;
-  border-radius: 1.5em;
-  width: 1.5em;
-  height: 1.5em;
-  text-align: center;
-  display: block; }
-
 .gridd-tp.gridd-tp-nvp .woocommerce-mini-cart-item a,
 .gridd-tp.gridd-tp-nvp .mini_cart_item a {
   padding: 0;
