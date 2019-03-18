@@ -56,6 +56,15 @@ class Style {
 	private $css = '';
 
 	/**
+	 * The files we want to include.
+	 *
+	 * @access private
+	 * @since 1.0
+	 * @var array
+	 */
+	private $files = [];
+
+	/**
 	 * Get an instance or create one if it doesn't already exist.
 	 *
 	 * @static
@@ -118,7 +127,21 @@ class Style {
 	 */
 	public function add_file( $path ) {
 		if ( file_exists( $path ) ) {
-			$this->css .= Theme::get_fcontents( $path, true );
+			$this->files[ $path ] = Theme::get_fcontents( $path, true );
+		}
+	}
+
+	/**
+	 * Remove file.
+	 *
+	 * @access public
+	 * @since 1.0
+	 * @param string $path Absolute path to a file.
+	 * @return void
+	 */
+	public function remove_file( $path ) {
+		if ( isset( $this->files[ $path ] ) ) {
+			unset( $this->files[ $path ] );
 		}
 	}
 
@@ -149,6 +172,13 @@ class Style {
 	 * @return string
 	 */
 	public function get_css() {
+
+		/**
+		 * Add files.
+		 */
+		foreach ( $this->files as $path => $css ) {
+			$this->css .= $css;
+		}
 
 		// Don't replace css-vars if we're on the customizer.
 		if ( is_customize_preview() ) {
