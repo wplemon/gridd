@@ -2,8 +2,9 @@
 .gridd-tp-nav_ID .gridd-nav-horizontal {
   display: none;
   position: absolute;
-  -webkit-transform: translateY(calc(50% + 1.5em + 2px));
-          transform: translateY(calc(50% + 1.5em + 2px));
+  bottom: 0;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
   background-color: var(--gridd-nav-ID-bg);
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, .16);
   width: 15em;
