@@ -65,6 +65,15 @@ class Style {
 	private $files = [];
 
 	/**
+	 * The string-replace patterns we want to run.
+	 *
+	 * @access private
+	 * @since 1.0
+	 * @var array [search1=>replace1,search2=>replace2]
+	 */
+	private $replace_patterns = [];
+
+	/**
 	 * Get an instance or create one if it doesn't already exist.
 	 *
 	 * @static
@@ -155,13 +164,7 @@ class Style {
 	 * @return void
 	 */
 	public function replace( $search, $replace ) {
-		/**
-		 * First we replace "(" and ")" with "\(" and "\)" respectively,
-		 * then we use preg_replace instead of str_replace
-		 * because str_replace messes-up the CSS, removed semicolons etc.
-		 */
-		$search    = str_replace( [ '(', ')' ], [ '\\(', '\\)' ], $search );
-		$this->css = preg_replace( (string) "/$search/", (string) $replace, (string) $this->css );
+		$this->replace_patterns[ $search ] = $replace;
 	}
 
 	/**
@@ -178,6 +181,16 @@ class Style {
 		 */
 		foreach ( $this->files as $path => $css ) {
 			$this->css .= $css;
+		}
+
+		foreach ( $this->replace_patterns as $search => $replace ) {
+			/**
+			 * First we replace "(" and ")" with "\(" and "\)" respectively,
+			 * then we use preg_replace instead of str_replace
+			 * because str_replace messes-up the CSS, removed semicolons etc.
+			 */
+			$search    = str_replace( [ '(', ')' ], [ '\\(', '\\)' ], $search );
+			$this->css = preg_replace( (string) "/$search/", (string) $replace, (string) $this->css );
 		}
 
 		// Don't replace css-vars if we're on the customizer.
