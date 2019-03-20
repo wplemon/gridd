@@ -56,24 +56,6 @@ class Style {
 	private $css = '';
 
 	/**
-	 * The files we want to include.
-	 *
-	 * @access private
-	 * @since 1.0
-	 * @var array
-	 */
-	private $files = [];
-
-	/**
-	 * The string-replace patterns we want to run.
-	 *
-	 * @access private
-	 * @since 1.0
-	 * @var array [search1=>replace1,search2=>replace2]
-	 */
-	private $replace_patterns = [];
-
-	/**
 	 * Get an instance or create one if it doesn't already exist.
 	 *
 	 * @static
@@ -136,21 +118,7 @@ class Style {
 	 */
 	public function add_file( $path ) {
 		if ( file_exists( $path ) ) {
-			$this->files[ $path ] = Theme::get_fcontents( $path, true );
-		}
-	}
-
-	/**
-	 * Remove file.
-	 *
-	 * @access public
-	 * @since 1.0
-	 * @param string $path Absolute path to a file.
-	 * @return void
-	 */
-	public function remove_file( $path ) {
-		if ( isset( $this->files[ $path ] ) ) {
-			unset( $this->files[ $path ] );
+			$this->css .= Theme::get_fcontents( $path, true );
 		}
 	}
 
@@ -164,7 +132,13 @@ class Style {
 	 * @return void
 	 */
 	public function replace( $search, $replace ) {
-		$this->replace_patterns[ $search ] = $replace;
+		/**
+		 * First we replace "(" and ")" with "\(" and "\)" respectively,
+		 * then we use preg_replace instead of str_replace
+		 * because str_replace messes-up the CSS, removed semicolons etc.
+		 */
+		$search    = str_replace( [ '(', ')' ], [ '\\(', '\\)' ], $search );
+		$this->css = preg_replace( (string) "/$search/", (string) $replace, (string) $this->css );
 	}
 
 	/**
@@ -175,23 +149,6 @@ class Style {
 	 * @return string
 	 */
 	public function get_css() {
-
-		/**
-		 * Add files.
-		 */
-		foreach ( $this->files as $path => $css ) {
-			$this->css .= $css;
-		}
-
-		foreach ( $this->replace_patterns as $search => $replace ) {
-			/**
-			 * First we replace "(" and ")" with "\(" and "\)" respectively,
-			 * then we use preg_replace instead of str_replace
-			 * because str_replace messes-up the CSS, removed semicolons etc.
-			 */
-			$search    = str_replace( [ '(', ')' ], [ '\\(', '\\)' ], $search );
-			$this->css = preg_replace( (string) "/$search/", (string) $replace, (string) $this->css );
-		}
 
 		// Don't replace css-vars if we're on the customizer.
 		if ( is_customize_preview() ) {
