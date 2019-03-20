@@ -17,7 +17,7 @@
 		display: flex;
 
 		> * {
-			max-width: var(--gridd-content-max-width-calculated);
+			max-width: var(--gridd-content-max-width-calculated, var(--gridd-content-max-width));
 			padding-left: 1em;
 			padding-right: 1em;
 		}

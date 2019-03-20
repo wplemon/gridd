@@ -16,7 +16,7 @@
 
     &.alignleft,
 	&.alignright {
-		max-width: calc(var(--gridd-content-max-width-calculated) / 2);
+		max-width: calc(var(--gridd-content-max-width-calculated, var(--gridd-content-max-width)) / 2);
 
 		p {
 			font-size: calc(var(--gridd-typo-scale) * 1em);

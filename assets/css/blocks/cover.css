@@ -232,9 +232,9 @@
 .wp-block-cover h2,
 .wp-block-cover .wp-block-cover-image-text,
 .wp-block-cover .wp-block-cover-text {
-  max-width: var(--gridd-content-max-width-calculated);
+  max-width: var(--gridd-content-max-width);
   padding: 1em; }
 .wp-block-cover-image.alignleft, .wp-block-cover-image.alignright,
 .wp-block-cover.alignleft,
 .wp-block-cover.alignright {
-  max-width: calc(var(--gridd-content-max-width-calculated) / 2); }
+  max-width: calc(var(--gridd-content-max-width) / 2); }

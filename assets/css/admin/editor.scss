@@ -111,10 +111,10 @@
 
 .wp-block {
 	&:not([data-align="full"]) {
-		max-width: var(--gridd-content-max-width-calculated);
+		max-width: var(--gridd-content-max-width-calculated, var(--gridd-content-max-width));
 	}
 
 	&[data-align="wide"] {
-		max-width: calc(var(--gridd-content-max-width-calculated) + 25%);
+		max-width: calc(var(--gridd-content-max-width-calculated, var(--gridd-content-max-width)) + 25%);
 	}
 }

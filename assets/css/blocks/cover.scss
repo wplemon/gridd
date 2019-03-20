@@ -14,12 +14,12 @@
 	h2,
 	.wp-block-cover-image-text,
 	.wp-block-cover-text {
-		max-width: var(--gridd-content-max-width-calculated);
+		max-width: var(--gridd-content-max-width-calculated, var(--gridd-content-max-width));
 		padding: 1em;
 	}
 
 	&.alignleft,
 	&.alignright {
-		max-width: calc(var(--gridd-content-max-width-calculated) / 2);
+		max-width: calc(var(--gridd-content-max-width-calculated, var(--gridd-content-max-width)) / 2);
 	}
 }

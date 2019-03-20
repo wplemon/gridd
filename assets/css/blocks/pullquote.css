@@ -104,7 +104,7 @@
   border-bottom: 4px solid currentColor;
   color: currentColor; }
   .wp-block-pullquote.alignleft, .wp-block-pullquote.alignright {
-    max-width: calc(var(--gridd-content-max-width-calculated) / 2); }
+    max-width: calc(var(--gridd-content-max-width) / 2); }
     .wp-block-pullquote.alignleft p, .wp-block-pullquote.alignright p {
       font-size: calc(var(--gridd-typo-scale) * 1em); }
   .wp-block-pullquote p {
