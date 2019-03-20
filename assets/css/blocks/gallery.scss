@@ -21,6 +21,6 @@
 	// Apply max-width to floated items that have no intrinsic width.
 	&.alignleft,
 	&.alignright {
-		max-width: calc(var(--gridd-content-max-width-calculated, var(--gridd-content-max-width)) / 2);
+		max-width: calc(var(--gridd-content-max-width-calculated) / 2);
 	}
 }

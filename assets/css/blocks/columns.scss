@@ -24,7 +24,7 @@
 
 	&:not(.alignfull):not(.alignwide):not(.alignleft):not(.alignright) {
 		.site-main .entry-content > & {
-			max-width: calc(var(--gridd-content-max-width-calculated, var(--gridd-content-max-width)) + 2em);
+			max-width: calc(var(--gridd-content-max-width-calculated) + 2em);
 		}
 	}
 

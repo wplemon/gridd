@@ -189,4 +189,4 @@
   padding: 1.5em .5em;
   font-size: 1em; }
 .wp-block-gallery.alignleft, .wp-block-gallery.alignright {
-  max-width: calc(var(--gridd-content-max-width) / 2); }
+  max-width: calc(var(--gridd-content-max-width-calculated) / 2); }

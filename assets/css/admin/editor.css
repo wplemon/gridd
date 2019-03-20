@@ -98,6 +98,6 @@
   color: var(--gridd-links-color); }
 
 .wp-block:not([data-align="full"]) {
-  max-width: var(--gridd-content-max-width); }
+  max-width: var(--gridd-content-max-width-calculated); }
 .wp-block[data-align="wide"] {
-  max-width: calc(var(--gridd-content-max-width) + 25%); }
+  max-width: calc(var(--gridd-content-max-width-calculated) + 25%); }
