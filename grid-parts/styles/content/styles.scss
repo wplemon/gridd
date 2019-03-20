@@ -1,3 +1,7 @@
+:root {
+	--gridd-content-max-width-calculated: var(--gridd-content-max-width);
+}
+
 .site-main {
 	padding: var(--gridd-content-padding-top) var(--gridd-content-padding-right) var(--gridd-content-padding-bottom) var(--gridd-content-padding-left);
 
