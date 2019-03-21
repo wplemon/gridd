@@ -45,6 +45,7 @@ class Reusable_Block extends Grid_Part {
 		);
 		add_action( 'gridd_the_grid_part', [ $this, 'render' ] );
 		add_action( 'gridd_auto_text_color', [ $this, 'auto_text_color_settings' ] );
+		add_filter( 'safe_style_css', [ $this, 'safe_style_css' ] );
 	}
 
 	/**
@@ -129,6 +130,23 @@ class Reusable_Block extends Grid_Part {
 		}
 
 		return $parts;
+	}
+
+	/**
+	 * Adds 'background-position' to the array of safe CSS rules.
+	 * Fixes https://github.com/wplemon/gridd/issues/26
+	 * The problem this solves is the fact that the WordPress Editor adds "background-position"
+	 * in order to make the focal point work. However, wp_kses_post() strips it so we need to
+	 * add it using a filter.
+	 *
+	 * @access public
+	 * @since 1.0.8
+	 * @param array $safe The params deemed safe.
+	 * @return array
+	 */
+	public function safe_style_css( $safe ) {
+		$safe[] = 'background-position';
+		return $safe;
 	}
 }
 
