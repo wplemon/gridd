@@ -29,6 +29,16 @@
  * Styles that are reused verbatim in a few places
  */
 /**
+ * Allows users to opt-out of animations via OS-level preferences.
+ */
+/**
+ * Reset default styles for JavaScript UI based pages.
+ * This is a WP-admin agnostic reset
+ */
+/**
+ * Reset the WP Admin page styles for Gutenberg-like pages.
+ */
+/**
  * Breakpoint mixins
  */
 /**
@@ -49,6 +59,16 @@
 /**
  * Styles that are reused verbatim in a few places
  */
+/**
+ * Allows users to opt-out of animations via OS-level preferences.
+ */
+/**
+ * Reset default styles for JavaScript UI based pages.
+ * This is a WP-admin agnostic reset
+ */
+/**
+ * Reset the WP Admin page styles for Gutenberg-like pages.
+ */
 .wp-block-columns {
   display: flex;
   flex-wrap: wrap; }
@@ -58,7 +78,6 @@
 
 .wp-block-column {
   flex-grow: 1;
-  margin-bottom: 1em;
   flex-basis: 100%;
   min-width: 0;
   word-break: break-word;
@@ -72,6 +91,30 @@
   @media (min-width: 782px) {
     .wp-block-column:not(:first-child) {
       margin-left: 32px; } }
+
+.wp-block-column,
+.entry-content > .wp-block-columns .wp-block-column:last-child {
+  margin-bottom: 1em; }
+
+/**
+ * All Columns Alignment
+ */
+.wp-block-columns.are-vertically-aligned-top {
+  align-items: flex-start; }
+.wp-block-columns.are-vertically-aligned-center {
+  align-items: center; }
+.wp-block-columns.are-vertically-aligned-bottom {
+  align-items: flex-end; }
+
+/**
+ * Individual Column Alignment
+ */
+.wp-block-column.is-vertically-aligned-top {
+  align-self: flex-start; }
+.wp-block-column.is-vertically-aligned-center {
+  align-self: center; }
+.wp-block-column.is-vertically-aligned-bottom {
+  align-self: flex-end; }
 
 .wp-block-columns.alignfull {
   padding-left: var(--gridd-content-padding-left);
