@@ -699,7 +699,12 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 	},
 
 	sanitizeGridVal: function() {
-		var control = this;
+		var control       = this,
+			existingParts = [];
+
+		_.each( control.params.choices.parts, function( part ) {
+			existingParts.push( part.id );
+		});
 
 		// Rows.
 		control.gridVal.rows = parseInt( control.gridVal.rows, 10 );
@@ -713,7 +718,11 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 			_.each( partCells.cells, function( cell ) {
 				cellsSanitized.push( [ parseInt( cell[0], 10 ), parseInt( cell[1], 10 ) ] );
 			});
-			control.gridVal.areas[ part ].cells = cellsSanitized;
+			if ( -1 < existingParts.indexOf( part ) ) {
+				control.gridVal.areas[ part ].cells = cellsSanitized;
+			} else {
+				delete control.gridVal.areas[ part ];
+			}
 		});
 	},
 
