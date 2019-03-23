@@ -70,15 +70,9 @@ function gridd_sidebar_customizer_options( $id ) {
 			'section'     => "gridd_grid_part_details_sidebar_$id",
 			'default'     => '#ffffff',
 			'priority'    => 10,
-			'transport'   => 'auto',
+			'transport'   => 'postMessage',
 			'choices'     => [
 				'alpha' => true,
-			],
-			'output'      => [
-				[
-					'element'  => ".gridd-tp-sidebar_{$id}",
-					'property' => 'background-color',
-				],
 			],
 			'css_vars'    => "--gridd-sidebar-{$id}-bg",
 			'choices'     => [
@@ -96,15 +90,9 @@ function gridd_sidebar_customizer_options( $id ) {
 			'section'           => "gridd_grid_part_details_sidebar_$id",
 			'default'           => '#000000',
 			'priority'          => 20,
-			'transport'         => 'auto',
+			'transport'         => 'postMessage',
 			'choices'           => [
 				'setting' => "gridd_grid_sidebar_{$id}_background_color",
-			],
-			'output'            => [
-				[
-					'element'  => ".gridd-tp-sidebar_{$id},.gridd-tp-sidebar_{$id} h1,.gridd-tp-sidebar_{$id} h2,.gridd-tp-sidebar_{$id} h3,.gridd-tp-sidebar_{$id} h4,.gridd-tp-sidebar_{$id} h5,.gridd-tp-sidebar_{$id} h6,.gridd-tp-sidebar_{$id} .widget-title",
-					'property' => 'color',
-				],
 			],
 			'css_vars'          => "--gridd-sidebar-{$id}-color",
 			'sanitize_callback' => [ $sanitization, 'color_hex' ],
@@ -120,22 +108,9 @@ function gridd_sidebar_customizer_options( $id ) {
 			'section'           => "gridd_grid_part_details_sidebar_$id",
 			'default'           => '#0f5e97',
 			'priority'          => 30,
-			'transport'         => 'auto',
+			'transport'         => 'postMessage',
 			'choices'           => [
 				'alpha' => true,
-			],
-			'output'            => [
-				[
-					'element'  => [
-						".gridd-tp-sidebar_{$id} a",
-						".gridd-tp-sidebar_{$id} a:visited",
-						".gridd-tp-sidebar_{$id} a:hover",
-						".gridd-tp-sidebar_{$id} a:focus",
-						".gridd-tp-sidebar_{$id} a:visited:hover",
-						".gridd-tp-sidebar_{$id} a:visited:focus",
-					],
-					'property' => 'color',
-				],
 			],
 			'css_vars'          => "--gridd-sidebar-{$id}-links-color",
 			'choices'           => [
@@ -155,13 +130,7 @@ function gridd_sidebar_customizer_options( $id ) {
 			'section'     => "gridd_grid_part_details_sidebar_$id",
 			'priority'    => 40,
 			'default'     => '1em',
-			'transport'   => 'auto',
-			'output'      => [
-				[
-					'element'  => ".gridd-tp-sidebar_{$id}",
-					'property' => 'padding',
-				],
-			],
+			'transport'   => 'postMessage',
 			'css_vars'    => "--gridd-sidebar-{$id}-padding",
 		]
 	);
@@ -174,14 +143,8 @@ function gridd_sidebar_customizer_options( $id ) {
 			'description' => esc_html__( 'Changes the spacing between widgets in this widget-area.', 'gridd' ),
 			'section'     => "gridd_grid_part_details_sidebar_$id",
 			'priority'    => 43,
-			'default'     => '20px',
-			'transport'   => 'auto',
-			'output'      => [
-				[
-					'element'  => ".gridd-tp-sidebar_{$id} .widget",
-					'property' => 'margin-bottom',
-				],
-			],
+			'default'     => '1em',
+			'transport'   => 'postMessage',
 			'css_vars'    => "--gridd-sidebar-{$id}-margin",
 		]
 	);

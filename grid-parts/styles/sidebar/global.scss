@@ -1,0 +1,10 @@
+.gridd-tp-sidebar {
+	flex-direction: column;
+	justify-content: flex-start;
+
+	.widget {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

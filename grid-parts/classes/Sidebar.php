@@ -19,6 +19,16 @@ use Gridd\Grid_Part;
 class Sidebar extends Grid_Part {
 
 	/**
+	 * Have the global styles already been added?
+	 *
+	 * @static
+	 * @access public
+	 * @since 1.0.8
+	 * @var bool
+	 */
+	public static $global_styles_added = false;
+
+	/**
 	 * Hooks & extra operations.
 	 *
 	 * @access public

@@ -1,0 +1,28 @@
+.gridd-tp-sidebar_ID {
+	background-color: var(--gridd-sidebar-ID-bg);
+	color: var(--gridd-sidebar-ID-color);
+	padding: var(--gridd-sidebar-ID-padding);
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	.widget-title {
+		color: var(--gridd-sidebar-ID-color);
+	}
+
+	a,
+	a:hover,
+	a:visited,
+	a:visited:hover,
+	a:focus,
+	a:visited:focus {
+		color: var(--gridd-sidebar-ID-links-color);
+	}
+
+	.widget {
+		margin-bottom: var(--gridd-sidebar-ID-margin);
+	}
+}
