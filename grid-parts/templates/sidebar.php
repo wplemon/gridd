@@ -12,7 +12,7 @@ use Gridd\Style;
 $wrapper_class = 'gridd-tp gridd-tp-sidebar gridd-tp-sidebar_' . absint( $sidebar_id );
 $wrapper_class = apply_filters( 'gridd_grid_part_class', $wrapper_class, 'sidebar-' . absint( $sidebar_id ) );
 
-$style = Style::get_instance( "grid-part/sidebar/$id" );
+$style = Style::get_instance( "grid-part/sidebar/$sidebar_id" );
 if ( ! Sidebar::$global_styles_added ) {
 	$style->add_file( get_theme_file_path( 'grid-parts/styles/sidebar/global.min.css' ) );
 }
