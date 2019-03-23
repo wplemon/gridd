@@ -539,11 +539,11 @@ class Theme {
 		$i    = 0;
 		foreach ( $atts as $key => $value ) {
 			if ( is_array( $value ) ) {
-				$value = \implode( ' ', $value );
+				$value = implode( ' ', $value );
 			}
 			// Add a space in the beginning if this is not our first rodeo.
 			echo ( $i ) ? ' ' : '';
-			echo esc_html( $key ) . '"' . esc_attr( $value ) . '"';
+			echo esc_html( $key ) . '="' . esc_attr( $value ) . '"';
 		}
 	}
 }
