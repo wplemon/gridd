@@ -67,25 +67,25 @@ $wrapper_class .= get_theme_mod( 'gridd_header_sticky', false ) ? ' gridd-sticky
 		<?php
 		if ( isset( $settings['areas'] ) ) {
 			foreach ( array_keys( $settings['areas'] ) as $part ) {
-				if ( 'header_branding' === $part ) {
+				if ( 'header_branding' === $part && apply_filters( 'gridd_render_grid_part', true, 'header_branding' ) ) {
 					/**
 					 * Branding.
 					 */
 					Theme::get_template_part( 'grid-parts/templates/header-branding' );
 
-				} elseif ( 'header_search' === $part ) {
+				} elseif ( 'header_search' === $part && apply_filters( 'gridd_render_grid_part', true, 'header_search' ) ) {
 					/**
 					 * Search.
 					 */
 					Theme::get_template_part( 'grid-parts/templates/header-search' );
 
-				} elseif ( 'header_contact_info' === $part ) {
+				} elseif ( 'header_contact_info' === $part && apply_filters( 'gridd_render_grid_part', true, 'header_contact_info' ) ) {
 					/**
 					 * Contact Info.
 					 */
 					Theme::get_template_part( 'grid-parts/templates/header-contact-info' );
 
-				} elseif ( 'social_media' === $part ) {
+				} elseif ( 'social_media' === $part && apply_filters( 'gridd_render_grid_part', true, 'social_media' ) ) {
 					/**
 					 * Social Media.
 					 */

@@ -70,7 +70,7 @@ class Breadcrumbs extends Grid_Part {
 	 * @return void
 	 */
 	public function render( $part ) {
-		if ( $this->id === $part ) {
+		if ( $this->id === $part && apply_filters( 'gridd_render_grid_part', true, 'breadcrumbs' ) ) {
 			Theme::get_template_part( 'grid-parts/templates/breadcrumbs' );
 		}
 	}

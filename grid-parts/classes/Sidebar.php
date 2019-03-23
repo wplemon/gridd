@@ -73,11 +73,13 @@ class Sidebar extends Grid_Part {
 	public function render( $part ) {
 		if ( 0 === strpos( $part, 'sidebar_' ) && is_numeric( str_replace( 'sidebar_', '', $part ) ) ) {
 			$sidebar_id = (int) str_replace( 'sidebar_', '', $part );
-			/**
-			 * We use include( get_theme_file_path() ) here
-			 * because we need to pass the $sidebar_id var to the template.
-			 */
-			include get_theme_file_path( 'grid-parts/templates/sidebar.php' );
+			if ( apply_filters( 'gridd_render_grid_part', true, 'sidebar_' . $sidebar_id ) ) {
+				/**
+				 * We use include( get_theme_file_path() ) here
+				 * because we need to pass the $sidebar_id var to the template.
+				 */
+				include get_theme_file_path( 'grid-parts/templates/sidebar.php' );
+			}
 		}
 	}
 

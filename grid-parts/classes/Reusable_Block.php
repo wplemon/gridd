@@ -68,11 +68,13 @@ class Reusable_Block extends Grid_Part {
 	public function render( $part ) {
 		if ( 0 === strpos( $part, 'reusable_block_' ) && is_numeric( str_replace( 'reusable_block_', '', $part ) ) ) {
 			$gridd_reusable_block_id = (int) str_replace( 'reusable_block_', '', $part );
-			/**
-			 * We use include( get_theme_file_path() ) here
-			 * because we need to pass the $sidebar_id var to the template.
-			 */
-			include get_theme_file_path( 'grid-parts/templates/reusable-block.php' );
+			if ( apply_filters( 'gridd_render_grid_part', true, 'reusable_block_' . $gridd_reusable_block_id ) ) {
+				/**
+				 * We use include( get_theme_file_path() ) here
+				 * because we need to pass the $gridd_reusable_block_id var to the template.
+				 */
+				include get_theme_file_path( 'grid-parts/templates/reusable-block.php' );
+			}
 		}
 	}
 

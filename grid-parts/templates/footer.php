@@ -56,21 +56,22 @@ $style->add_vars(
 			foreach ( array_keys( $settings['areas'] ) as $part ) {
 
 				if ( 0 === strpos( $part, 'footer_sidebar_' ) ) {
-					/**
-					 * Footer Sidebars.
-					 * We use include( get_theme_file_path() ) here
-					 * because we need to pass the $sidebar_id var to the template.
-					 */
 					$sidebar_id = (int) str_replace( 'footer_sidebar_', '', $part );
-					include get_theme_file_path( 'grid-parts/templates/footer-sidebar.php' );
-
-				} elseif ( 'footer_social_media' === $part ) {
+					if ( apply_filters( 'gridd_render_grid_part', true, 'footer_sidebar_' . $sidebar_id ) ) {
+						/**
+						 * Footer Sidebars.
+						 * We use include( get_theme_file_path() ) here
+						 * because we need to pass the $sidebar_id var to the template.
+						 */
+						include get_theme_file_path( 'grid-parts/templates/footer-sidebar.php' );
+					}
+				} elseif ( 'footer_social_media' === $part && apply_filters( 'gridd_render_grid_part', true, 'footer_social_media' ) ) {
 					/**
 					 * Social Media.
 					 */
 					Theme::get_template_part( 'grid-parts/templates/footer-social-media' );
 
-				} elseif ( 'footer_copyright' === $part ) {
+				} elseif ( 'footer_copyright' === $part && apply_filters( 'gridd_render_grid_part', true, 'footer_copyright' ) ) {
 					/**
 					 * Copyright.
 					 */

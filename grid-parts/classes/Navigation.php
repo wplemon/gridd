@@ -75,11 +75,13 @@ class Navigation extends Grid_Part {
 	public function render( $part ) {
 		if ( 0 === strpos( $part, 'nav_' ) && is_numeric( str_replace( 'nav_', '', $part ) ) ) {
 			$id = (int) str_replace( 'nav_', '', $part );
-			/**
-			 * We use include( get_theme_file_path() ) here
-			 * because we need to pass the $sidebar_id var to the template.
-			 */
-			include get_theme_file_path( 'grid-parts/templates/navigation.php' );
+			if ( apply_filters( 'gridd_render_grid_part', true, 'nav_' . $id ) ) {
+				/**
+				 * We use include( get_theme_file_path() ) here
+				 * because we need to pass the $sidebar_id var to the template.
+				 */
+				include get_theme_file_path( 'grid-parts/templates/navigation.php' );
+			}
 		}
 	}
 
