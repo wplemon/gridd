@@ -504,7 +504,7 @@ class Theme {
 	}
 
 	/**
-	 * Utility function to get the contents of a non-executable file as plain text.
+	 * Utility method to get the contents of a non-executable file as plain text.
 	 *
 	 * @static
 	 * @access public
@@ -521,6 +521,28 @@ class Theme {
 			include locate_template( $path, false, false );
 		}
 		return ob_get_clean();
+	}
+
+	/**
+	 * Utility method.
+	 * Prints an element's attributes.
+	 *
+	 * @static
+	 * @access public
+	 * @since 1.0.8
+	 * @param array $atts The element attributes we want to print.
+	 * @return void
+	 */
+	public static function print_attributes( $atts ) {
+		$i = 0;
+		foreach ( $atts as $key => $value ) {
+			if ( is_array( $value ) ) {
+				$value = \implode( ' ', $value );
+			}
+			// Add a space in the beginning if this is not our first rodeo.
+			echo ( $i ) ? ' ' : '';
+			echo esc_html( $key ) . '"' . esc_attr( $value ) . '"';
+		}
 	}
 }
 
