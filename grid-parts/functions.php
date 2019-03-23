@@ -33,16 +33,4 @@ require_once get_theme_file_path( 'grid-parts/customizer/navigation.php' );
 require_once get_theme_file_path( 'grid-parts/customizer/reusable-block.php' );
 require_once get_theme_file_path( 'grid-parts/customizer/sidebar.php' );
 
-// Layer-Slider compatibility.
-if ( class_exists( 'LS_Sliders' ) ) {
-	require_once get_theme_file_path( 'grid-parts/classes/Layer_Slider.php' );
-	require_once get_theme_file_path( 'grid-parts/customizer/layer-slider.php' );
-}
-
-// Revolution Slider compatibility.
-if ( class_exists( 'RevSliderSlider' ) ) {
-	require_once get_theme_file_path( 'grid-parts/classes/Revolution_Slider.php' );
-	require_once get_theme_file_path( 'grid-parts/customizer/revolution-slider.php' );
-}
-
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */
