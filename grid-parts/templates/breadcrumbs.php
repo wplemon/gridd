@@ -26,8 +26,10 @@ $style->add_vars(
 		'--gridd-breadcrumbs-max-width'  => get_theme_mod( 'gridd_grid_breadcrumbs_max_width', '100%' ),
 	]
 );
+
+$wrapper_class = apply_filters( 'gridd_grid_part_class', 'gridd-tp gridd-tp-breadcrumbs', 'breadcrumbs' );
 ?>
-<div class="gridd-tp gridd-tp-breadcrumbs">
+<div class="<?php echo esc_attr( $wrapper_class ); ?>">
 	<?php
 	/**
 	 * Print styles.

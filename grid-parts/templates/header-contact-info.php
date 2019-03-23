@@ -24,8 +24,11 @@ $style->add_vars(
  * Print styles.
  */
 $style->the_css( 'gridd-inline-css-header-contact-info' );
+
+$wrapper_class = apply_filters( 'gridd_grid_part_class', 'gridd-tp gridd-tp-header_contact_info', 'header_contact_info' )
 ?>
-<div class="gridd-tp gridd-tp-header_contact_info">
+
+<div class="<?php echo esc_attr( $wrapper_class ); ?>">
 	<?php
 	/**
 	 * Print the text entered by the user.

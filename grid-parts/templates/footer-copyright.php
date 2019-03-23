@@ -22,9 +22,10 @@ $styles->add_vars(
 $styles->add_file( get_theme_file_path( 'grid-parts/styles/footer/styles-copyright.min.css' ) );
 $styles->the_css( 'gridd-inline-css-footer-copyright' );
 
+$wrapper_class = apply_filters( 'gridd_grid_part_class', 'gridd-tp gridd-tp-footer_copyright', 'footer_copyright' )
 ?>
 
-<div class="gridd-tp gridd-tp-footer_copyright">
+<div class="<?php echo esc_attr( $wrapper_class ); ?>">
 	<div class="site-info">
 		<div class="site-info-text">
 			<?php

@@ -6,8 +6,9 @@
  * @since 1.0
  */
 
+$wrapper_class = apply_filters( 'gridd_grid_part_class', 'gridd-tp gridd-tp-revolution-slider', 'revolution-slider' );
 ?>
-<div class="gridd-tp-revolution-slider gridd-tp">
+<div class="<?php echo esc_attr( $wrapper_class ); ?>">
 	<?php
 
 	// Get the selected slider.

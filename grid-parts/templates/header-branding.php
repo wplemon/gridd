@@ -25,8 +25,14 @@ $style->add_vars(
 $style->add_string( ':root{--header-textcolor:#' . esc_attr( trim( get_header_textcolor(), '#' ) ) . ';}' );
 $style->add_file( get_theme_file_path( 'grid-parts/styles/header/styles-branding.min.css' ) );
 $style->the_css( 'gridd-inline-css-header-branding' );
+
+$wrapper_class  = 'gridd-tp gridd-tp-header_branding';
+$wrapper_class .= get_theme_mod( 'gridd_branding_inline', false ) ? ' inline' : ' vertical';
+$wrapper_class .= ( has_custom_logo() ) ? ' has-logo' : '';
+$wrapper_class  = apply_filters( 'gridd_grid_part_class', $wrapper_class, 'header_branding' )
 ?>
-<div class="gridd-tp gridd-tp-header_branding<?php echo ( has_custom_logo() ) ? ' has-logo' : ''; ?><?php echo get_theme_mod( 'gridd_branding_inline', false ) ? ' inline' : ' vertical'; ?>">
+
+<div class="<?php echo esc_attr( $wrapper_class ); ?>">
 	<?php if ( has_custom_logo() ) : ?>
 		<?php the_custom_logo(); ?>
 	<?php endif; ?>

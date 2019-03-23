@@ -51,8 +51,13 @@ if ( $header_bg_img ) {
 	// If we have a header image, add it as a background.
 	$style->add_string( '.gridd-tp.gridd-tp-header{background-image:url(\'' . esc_url_raw( $header_bg_img ) . '\');background-size:cover;background-position:center center;}' );
 }
+
+$wrapper_class  = 'gridd-tp gridd-tp-header';
+$wrapper_class .= get_theme_mod( 'gridd_header_sticky', false ) ? ' gridd-sticky' : '';
+$wrapper_class  = apply_filters( 'gridd_grid_part_class', $wrapper_class, 'header' );
 ?>
-<div class="gridd-tp gridd-tp-header<?php echo get_theme_mod( 'gridd_header_sticky', false ) ? ' gridd-sticky' : ''; ?>">
+
+<div class="<?php echo esc_attr( $wrapper_class ); ?>">
 	<?php
 	/**
 	 * Print styles.

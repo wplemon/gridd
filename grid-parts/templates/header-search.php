@@ -29,9 +29,11 @@ $style->add_vars(
 		'--gridd-header-search-color'         => get_theme_mod( 'gridd_grid_part_details_header_search_color', '#000000' ),
 	]
 );
+
+$wrapper_class = apply_filters( 'gridd_grid_part_class', 'gridd-tp gridd-tp-header_search', 'header_search' )
 ?>
 
-<div class="gridd-tp gridd-tp-header_search">
+<div class="<?php echo esc_attr( $wrapper_class ); ?>">
 	<?php
 	/**
 	 * Print styles.

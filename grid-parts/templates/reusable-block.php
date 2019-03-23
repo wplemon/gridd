@@ -28,8 +28,10 @@ $style->add_vars(
 	]
 );
 
+$wrapper_class = "gridd-tp gridd-tp-reusable-block gridd-tp-reusable_block_$gridd_reusable_block_id";
+$wrapper_class = apply_filters( 'gridd_grid_part_class', $wrapper_class, "reusable_block_$gridd_reusable_block_id" );
 ?>
-<div class="gridd-tp gridd-tp-reusable-block gridd-tp-reusable_block_<?php echo absint( $gridd_reusable_block_id ); ?>">
+<div class="<?php echo esc_attr( $wrapper_class ); ?>">
 	<?php
 	/**
 	 * Print styles.

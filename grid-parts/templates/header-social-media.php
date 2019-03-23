@@ -33,9 +33,11 @@ $style->add_vars(
 
 // Add stylesheet.
 $style->add_file( get_theme_file_path( 'grid-parts/styles/header/styles-social-icons.min.css' ) );
+
+$wrapper_class = apply_filters( 'gridd_grid_part_class', 'gridd-tp gridd-tp-social_media', 'social_media' )
 ?>
 
-<div class="gridd-tp gridd-tp-social_media">
+<div class="<?php echo esc_attr( $wrapper_class ); ?>">
 	<?php
 	/**
 	 * Print styles.

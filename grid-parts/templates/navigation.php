@@ -84,18 +84,17 @@ if ( class_exists( 'ariColor' ) ) {
 		]
 	);
 }
-$classes               = [
-	'gridd-tp',
-	"gridd-tp-nav_$id",
-	'gridd-menu-collapse-position-' . get_theme_mod( "gridd_grid_nav_{$id}_expand_icon_position", 'center-right' ),
-];
+
+$wrapper_class  = "gridd-tp gridd-tp-nav_$id";
+$wrapper_class .= ' gridd-menu-collapse-position-' . get_theme_mod( "gridd_grid_nav_{$id}_expand_icon_position", 'center-right' );
+
 $responsive_mode_parts = explode( ' ', $responsive_mode );
 foreach ( $responsive_mode_parts as $responsive_mode_part ) {
-	$classes[] = 'gridd-' . $responsive_mode_part;
+	$wrapper_class .= ' gridd-' . $responsive_mode_part;
 }
+$wrapper_class = apply_filters( 'gridd_grid_part_class', $wrapper_class, "gridd-tp-nav_$id" );
 ?>
-
-<div class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
+<div class="<?php echo esc_attr( $wrapper_class ); ?>">
 	<?php
 	/**
 	 * Print styles.
