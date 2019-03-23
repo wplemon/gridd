@@ -157,9 +157,21 @@ h3.gridd-customizer-section-title {
 			line-height: 2.5em;
 		}
 	}
-}
 
-@for $i from 1 through 10 {
+	#input_gridd_grid_nav_#{ $i }_expand_icon {
+		>label {
+			svg {
+				height: 20px;
+				width: 20px;
+			}
+		}
+		.switch-input:checked + label {
+			svg {
+				fill: #fff;
+			}
+		}
+	}
+
 	#customize-control-gridd_grid_nav_#{ $i } {
 		&_justify_content {
 			input {
