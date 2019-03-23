@@ -105,6 +105,10 @@ foreach ( $responsive_mode_parts as $responsive_mode_part ) {
 	<div class="inner">
 		<?php if ( false !== strpos( $responsive_mode, 'icon' ) ) : ?>
 			<?php
+			$toggle_classes = [ 'gridd-toggle-navigation' ];
+			if ( get_theme_mod( "gridd_grid_nav_{$id}_expand_icon_boxed", false ) ) {
+				$toggle_classes[] = 'gridd-nav-toggle-boxed';
+			}
 			/**
 			 * Add the toggle button.
 			 */
@@ -129,7 +133,7 @@ foreach ( $responsive_mode_parts as $responsive_mode_part ) {
 					'screen_reader_label_expand'   => __( 'Expand Navigation', 'gridd' ),
 					'screen_reader_label_toggle'   => __( 'Toggle Navigation', 'gridd' ),
 					'label'                        => $label . '<span style="position"relative;"><span class="icon open">' . $icons[ $icon ] . '</span><span class="icon close">' . Navigation::get_collapse_svg( $icon ) . '</span></span>',
-					'classes'                      => [ 'gridd-toggle-navigation' ],
+					'classes'                      => $toggle_classes,
 				]
 			);
 			?>

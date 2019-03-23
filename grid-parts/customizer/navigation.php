@@ -296,6 +296,30 @@ function gridd_nav_customizer_options( $id ) {
 
 	Customizer::add_field(
 		[
+			'type'            => 'checkbox',
+			'settings'        => "gridd_grid_nav_{$id}_expand_icon_boxed",
+			'label'           => esc_html__( 'Boxed Expand Icon', 'gridd' ),
+			'description'     => esc_html__( 'Enable this option if you want to "box" the expand icon.', 'gridd' ),
+			'section'         => "gridd_grid_part_details_nav_$id",
+			'default'         => false,
+			'transport'       => 'refresh',
+			'active_callback' => [
+				[
+					'setting'  => "gridd_grid_nav_{$id}_responsive_behavior",
+					'value'    => 'desktop-normal mobile-normal',
+					'operator' => '!==',
+				],
+				[
+					'setting'  => "gridd_grid_nav_{$id}_responsive_behavior",
+					'value'    => 'desktop-normal mobile-hidden',
+					'operator' => '!==',
+				],
+			],
+		]
+	);
+
+	Customizer::add_field(
+		[
 			'type'              => 'select',
 			'settings'          => "gridd_grid_nav_{$id}_expand_icon_position",
 			'label'             => esc_html__( 'Expand Icon Position', 'gridd' ),

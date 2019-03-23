@@ -18,18 +18,28 @@
 
 	.gridd-toggle-navigation {
 		display: flex;
-		background-color: var(--gridd-nav-ID-bg);
 		padding: 1em;
-		border: 2px solid;
+		border: 2px solid transparent;
 		height: 1em;
 		line-height: 1;
 		box-sizing: content-box;
 		border-radius: 0;
-		color: var(--gridd-nav-ID-color);
+		// background-color:
+		// color: currentColor;
 
 		svg {
 			width: 1em;
-			fill: var(--gridd-nav-ID-color);
+			fill: currentColor;
+		}
+
+		&.gridd-nav-toggle-boxed {
+			background-color: var(--gridd-nav-ID-bg);
+			color: var(--gridd-nav-ID-color);
+			border-color: currentColor;
+
+			svg {
+				fill: var(--gridd-nav-ID-color);
+			}
 		}
 
 		.icon {
@@ -54,12 +64,35 @@
 		&:focus,
 		&.focus,
 		&.toggled-on {
-			background: var(--gridd-nav-ID-accent-bg);
+			background: none;
 			box-shadow: none;
-			color: var(--gridd-nav-ID-accent-color);
+			color: currentColor;
 
 			svg {
-				fill: var(--gridd-nav-ID-accent-color);
+				fill: currentColor;
+			}
+		}
+		&:not(.gridd-nav-toggle-boxed) {
+			&:hover,
+			&:focus,
+			&.focus,
+			&.toggled-on {
+				outline: 1px dotted;
+			}
+		}
+
+		&.gridd-nav-toggle-boxed {
+
+			&:hover,
+			&:focus,
+			&.focus,
+			&.toggled-on {
+				background: var(--gridd-nav-ID-accent-bg);
+				color: var(--gridd-nav-ID-accent-color);
+
+				svg {
+					fill: var(--gridd-nav-ID-accent-color);
+				}
 			}
 		}
 
