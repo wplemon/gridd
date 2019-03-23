@@ -8,3 +8,8 @@
   .gridd-tp-reusable_block_ID .wp-block-cover {
     margin-bottom: 0;
     margin-top: 0; }
+  .gridd-tp-reusable_block_ID a,
+  .gridd-tp-reusable_block_ID a:visited,
+  .gridd-tp-reusable_block_ID a:hover,
+  .gridd-tp-reusable_block_ID a:focus {
+    color: var(--gridd-reusable-block-ID-links-color); }

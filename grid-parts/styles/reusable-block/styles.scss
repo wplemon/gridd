@@ -2,17 +2,24 @@
 // The ID will be replaced by the actual navigation-ID via PHP
 // when the style is included inline in the document.
 .gridd-tp-reusable_block_ID {
-    padding: var(--gridd-reusable-block-ID-padding);
-    background-color: var(--gridd-reusable-block-ID-bg);
-    color: var(--gridd-reusable-block-ID-color);
-    position: relative;
+	padding: var(--gridd-reusable-block-ID-padding);
+	background-color: var(--gridd-reusable-block-ID-bg);
+	color: var(--gridd-reusable-block-ID-color);
+	position: relative;
 
-    .inner {
-        width: 100%;
-    }
+	.inner {
+		width: 100%;
+	}
 
-    .wp-block-cover {
-        margin-bottom: 0;
-        margin-top: 0;
-    }
+	.wp-block-cover {
+		margin-bottom: 0;
+		margin-top: 0;
+	}
+
+	a,
+	a:visited,
+	a:hover,
+	a:focus {
+		color: var(--gridd-reusable-block-ID-links-color);
+	}
 }

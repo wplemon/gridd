@@ -38,16 +38,6 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 
 	$sanitization = new Sanitize();
 
-	Customizer::add_field(
-		[
-			'type'        => 'custom',
-			'settings'    => "gridd_grid_reusable_block_{$id}_help",
-			'description' => '<a href="' . esc_url( admin_url( 'edit.php?post_type=wp_block' ) ) . '" target="_blank">' . esc_html__( ' Manage reusable blocks', 'gridd' ) . '</a>',
-			'section'     => "gridd_grid_part_details_reusable_block_$id",
-			'default'     => '',
-		]
-	);
-
 	/**
 	 * Add Customizer Sections.
 	 */
@@ -60,6 +50,26 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 				/* translators: The reusable block number. */
 				sprintf( esc_html__( 'Reusable Block %d', 'gridd' ), absint( $id ) )
 			),
+			'description' => Customizer::section_description(
+				'gridd_grid_part_details_footer_copyright',
+				[
+					'plus' => [
+						esc_html__( 'Selecting from an array of WCAG-compliant colors for text', 'gridd' ),
+						esc_html__( 'Selecting from an array of WCAG-compliant colors for links', 'gridd' ),
+					],
+					'docs' => 'https://wplemon.com/documentation/gridd/grid-parts/footer/',
+				]
+			),
+		]
+	);
+
+	Customizer::add_field(
+		[
+			'type'        => 'custom',
+			'settings'    => "gridd_grid_reusable_block_{$id}_help",
+			'description' => '<a href="' . esc_url( admin_url( 'edit.php?post_type=wp_block' ) ) . '" target="_blank">' . esc_html__( ' Manage reusable blocks', 'gridd' ) . '</a>',
+			'section'     => "gridd_grid_part_details_reusable_block_$id",
+			'default'     => '',
 		]
 	);
 
@@ -106,6 +116,28 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 			'default'           => '#000000',
 			'css_vars'          => "--gridd-reusable-block-$id-color",
 			'transport'         => 'postMessage',
+			'sanitize_callback' => [ $sanitization, 'color_hex' ],
+		]
+	);
+
+	Customizer::add_field(
+		[
+			'type'              => 'gridd-wcag-lc',
+			'settings'          => "gridd_grid_reusable_block_{$id}_links_color",
+			'label'             => esc_html__( 'Links Color', 'gridd' ),
+			'description'       => esc_html__( 'Select the color used for your links. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
+			'section'           => "gridd_grid_part_details_reusable_block_$id",
+			'default'           => '#0f5e97',
+			'priority'          => 40,
+			'transport'         => 'postMessage',
+			'choices'           => [
+				'alpha' => false,
+			],
+			'css_vars'          => "--gridd-reusable-block-{$id}-links-color",
+			'choices'           => [
+				'backgroundColor' => "gridd_grid_reusable_block_{$id}_bg_color",
+				'textColor'       => "gridd_grid_reusable_block_{$id}_color",
+			],
 			'sanitize_callback' => [ $sanitization, 'color_hex' ],
 		]
 	);
