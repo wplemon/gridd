@@ -530,11 +530,13 @@ class Theme {
 	 * @static
 	 * @access public
 	 * @since 1.0.8
-	 * @param array $atts The element attributes we want to print.
+	 * @param array  $atts           The element attributes we want to print.
+	 * @param string $filter_context Argument passed-on as the 2nd param in the gridd_print_attributes filter.
 	 * @return void
 	 */
-	public static function print_attributes( $atts ) {
-		$i = 0;
+	public static function print_attributes( $atts, $filter_context = false ) {
+		$atts = apply_filters( 'gridd_print_attributes', $atts, $filter_context );
+		$i    = 0;
 		foreach ( $atts as $key => $value ) {
 			if ( is_array( $value ) ) {
 				$value = \implode( ' ', $value );
