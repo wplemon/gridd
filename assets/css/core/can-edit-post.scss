@@ -18,3 +18,28 @@
 		opacity: 1;
 	}
 }
+
+.gridd-tp-reusable-block {
+	.edit-link {
+		position: absolute;
+		top: .5em;
+		right: .5em;
+		z-index: 5;
+		display: none;
+
+		.post-edit-link {
+			color: #fff;
+
+			svg {
+				width: 1em;
+				height: 1em;
+			}
+		}
+	}
+
+	&:hover {
+		.edit-link {
+			display: block;
+		}
+	}
+}

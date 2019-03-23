@@ -151,21 +151,28 @@ class Blog {
 	 * @static
 	 * @access public
 	 * @since 1.0
-	 * @return void
+	 * @param null|int|WP_Post $post_id The post.
+	 * @param bool             $echo    Set to true if you want to echo instead of return.
+	 * @return string
 	 */
-	public static function get_the_edit_link() {
-		if ( get_edit_post_link() ) {
+	public static function get_the_edit_link( $post_id = null, $echo = false ) {
+		if ( get_edit_post_link( $post_id ) ) {
 			$text  = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-5 17l1.006-4.036 3.106 3.105-4.112.931zm5.16-1.879l-3.202-3.202 5.841-5.919 3.201 3.2-5.84 5.921z"/></svg>';
 			$text .= '<span class="screen-reader-text">';
 			$text .= sprintf(
 				/* translators: %s: Name of the post.*/
 				esc_html__( 'Edit %s', 'gridd' ),
-				get_the_title()
+				get_the_title( $post_id )
 			);
 			$text .= '</span>';
 
+			if ( $echo ) {
+				edit_post_link( $text, '<span class="edit-link">', '</span>', $post_id );
+				return;
+			}
+
 			ob_start();
-			edit_post_link( $text, '<span class="edit-link">', '</span>' );
+			edit_post_link( $text, '<span class="edit-link">', '</span>', $post_id );
 			return ob_get_clean();
 		}
 		return '';

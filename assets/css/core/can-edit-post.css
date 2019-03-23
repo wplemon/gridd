@@ -11,3 +11,17 @@
     height: .6em; }
   .edit-link:hover {
     opacity: 1; }
+
+.gridd-tp-reusable-block .edit-link {
+  position: absolute;
+  top: .5em;
+  right: .5em;
+  z-index: 5;
+  display: none; }
+  .gridd-tp-reusable-block .edit-link .post-edit-link {
+    color: #fff; }
+    .gridd-tp-reusable-block .edit-link .post-edit-link svg {
+      width: 1em;
+      height: 1em; }
+.gridd-tp-reusable-block:hover .edit-link {
+  display: block; }

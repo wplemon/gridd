@@ -8,6 +8,7 @@
 
 use Gridd\Grid_Part\Reusable_Block;
 use Gridd\Style;
+use Gridd\Blog;
 use Gridd\AMP;
 
 $style = Style::get_instance( "grid-part/navigation/$gridd_reusable_block_id" );
@@ -37,6 +38,11 @@ $style->add_vars(
 	?>
 	<div class="inner">
 		<?php
+
+		// Edit link.
+		Blog::get_the_edit_link( $gridd_reusable_block_id, true );
+
+		// The block.
 		$gridd_reusable_block = get_post( $gridd_reusable_block_id );
 		if ( $gridd_reusable_block ) {
 			echo wp_kses_post( do_blocks( $gridd_reusable_block->post_content ) );
