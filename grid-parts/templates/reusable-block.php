@@ -8,6 +8,7 @@
 
 use Gridd\Grid_Part\Reusable_Block;
 use Gridd\Style;
+use Gridd\Theme;
 use Gridd\Blog;
 use Gridd\AMP;
 
@@ -27,11 +28,9 @@ $style->add_vars(
 		"--gridd-reusable-block-$gridd_reusable_block_id-padding" => get_theme_mod( "gridd_grid_reusable_block_{$gridd_reusable_block_id}_padding", '1em' ),
 	]
 );
-
-$wrapper_class = "gridd-tp gridd-tp-reusable-block gridd-tp-reusable_block_$gridd_reusable_block_id";
-$wrapper_class = apply_filters( 'gridd_grid_part_class', $wrapper_class, "reusable_block_$gridd_reusable_block_id" );
 ?>
-<div class="<?php echo esc_attr( $wrapper_class ); ?>">
+
+<div <?php Theme::print_attributes( [ 'class' => "gridd-tp gridd-tp-reusable-block gridd-tp-reusable_block_$gridd_reusable_block_id" ], "reusable_block_$gridd_reusable_block_id" ); ?>>
 	<?php
 	/**
 	 * Print styles.

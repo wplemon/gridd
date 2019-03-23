@@ -7,6 +7,7 @@
  */
 
 use Gridd\Style;
+use Gridd\Theme;
 
 $style = Style::get_instance( 'grid-part/header/contact-info' );
 $style->add_file( get_theme_file_path( 'grid-parts/styles/header/styles-contact-info.min.css' ) );
@@ -24,11 +25,9 @@ $style->add_vars(
  * Print styles.
  */
 $style->the_css( 'gridd-inline-css-header-contact-info' );
-
-$wrapper_class = apply_filters( 'gridd_grid_part_class', 'gridd-tp gridd-tp-header_contact_info', 'header_contact_info' )
 ?>
 
-<div class="<?php echo esc_attr( $wrapper_class ); ?>">
+<div <?php Theme::print_attributes( [ 'class' => 'gridd-tp gridd-tp-header_contact_info' ], 'wrapper-header_contact_info' ); ?>>
 	<?php
 	/**
 	 * Print the text entered by the user.

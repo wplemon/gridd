@@ -7,6 +7,7 @@
  */
 
 use Gridd\Style;
+use Gridd\Theme;
 
 $style = Style::get_instance( "grid-part/footer/sidebar/$sidebar_id" );
 
@@ -27,7 +28,7 @@ $style->add_vars(
 );
 ?>
 
-<div class="gridd-tp gridd-tp-footer_sidebar_<?php echo esc_attr( $sidebar_id ); ?>">
+<div <?php Theme::print_attributes( [ 'class' => 'gridd-tp gridd-tp-footer_sidebar_' . $sidebar_id ], 'wrapper-footer_sidebar_' . $sidebar_id ); ?>>
 	<?php
 	/**
 	 * Print styles.

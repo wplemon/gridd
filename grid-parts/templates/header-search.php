@@ -8,6 +8,7 @@
 
 use Gridd\Grid_Part\Header;
 use Gridd\Style;
+use Gridd\Theme;
 
 $style = Style::get_instance( 'grid-part/header/search' );
 $style->add_string( '.gridd-header-search{background-color:var(--gridd-header-search-bg);padding-left:var(--gridd-header-search-padding-left);padding-right: var(--gridd-header-search-padding-right);}' );
@@ -29,11 +30,9 @@ $style->add_vars(
 		'--gridd-header-search-color'         => get_theme_mod( 'gridd_grid_part_details_header_search_color', '#000000' ),
 	]
 );
-
-$wrapper_class = apply_filters( 'gridd_grid_part_class', 'gridd-tp gridd-tp-header_search', 'header_search' )
 ?>
 
-<div class="<?php echo esc_attr( $wrapper_class ); ?>">
+<div <?php Theme::print_attributes( [ 'class' => 'gridd-tp gridd-tp-header_search' ], 'wrapper-header_search' ); ?>>
 	<?php
 	/**
 	 * Print styles.

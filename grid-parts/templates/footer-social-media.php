@@ -8,6 +8,7 @@
 
 use Gridd\Grid_Part\Footer;
 use Gridd\Style;
+use Gridd\Theme;
 
 $setting = get_theme_mod( 'gridd_grid_part_details_footer_social_icons', [] );
 if ( ! function_exists( 'gridd_social_icons_svg' ) ) {
@@ -33,11 +34,9 @@ $style->add_vars(
 
 // Add stylesheet.
 $style->add_file( get_theme_file_path( 'grid-parts/styles/footer/styles-social-icons.min.css' ) );
-
-$wrapper_class = apply_filters( 'gridd_grid_part_class', 'gridd-tp gridd-tp-footer_social_media', 'footer_social_media' )
 ?>
 
-<div class="<?php echo esc_attr( $wrapper_class ); ?>">
+<div <?php Theme::print_attributes( [ 'class' => 'gridd-tp gridd-tp-footer_social_media' ], 'wrapper-footer_social_media' ); ?>>
 	<?php
 	/**
 	 * Print styles.

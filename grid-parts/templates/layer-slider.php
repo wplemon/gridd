@@ -6,9 +6,9 @@
  * @since 1.0
  */
 
-$wrapper_class = apply_filters( 'gridd_grid_part_class', 'gridd-tp gridd-tp-revolution-slider', 'revolution-slider' );
+use Gridd\Theme;
 ?>
-<div class="<?php echo esc_attr( $wrapper_class ); ?>">
+<div <?php Theme::print_attributes( [ 'class' => 'gridd-tp gridd-tp-layer-slider' ], 'wrapper-layer-slider' ); ?>>
 	<?php
 
 	// Get the selected slider.

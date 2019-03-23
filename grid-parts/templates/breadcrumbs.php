@@ -7,6 +7,7 @@
  */
 
 use Gridd\Style;
+use Gridd\Theme;
 
 // Early exit if we're on the frontpage.
 if ( is_front_page() || is_home() ) {
@@ -27,9 +28,8 @@ $style->add_vars(
 	]
 );
 
-$wrapper_class = apply_filters( 'gridd_grid_part_class', 'gridd-tp gridd-tp-breadcrumbs', 'breadcrumbs' );
 ?>
-<div class="<?php echo esc_attr( $wrapper_class ); ?>">
+<div <?php Theme::print_attributes( [ 'class' => 'gridd-tp gridd-tp-breadcrumbs' ], 'wrapper-breadcrumbs' ); ?>>
 	<?php
 	/**
 	 * Print styles.

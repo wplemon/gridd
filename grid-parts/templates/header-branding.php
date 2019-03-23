@@ -7,6 +7,7 @@
  */
 
 use Gridd\Style;
+use Gridd\Theme;
 
 $style = Style::get_instance( 'grid-part/header/branding' );
 $style->add_vars(
@@ -29,10 +30,9 @@ $style->the_css( 'gridd-inline-css-header-branding' );
 $wrapper_class  = 'gridd-tp gridd-tp-header_branding';
 $wrapper_class .= get_theme_mod( 'gridd_branding_inline', false ) ? ' inline' : ' vertical';
 $wrapper_class .= ( has_custom_logo() ) ? ' has-logo' : '';
-$wrapper_class  = apply_filters( 'gridd_grid_part_class', $wrapper_class, 'header_branding' )
 ?>
 
-<div class="<?php echo esc_attr( $wrapper_class ); ?>">
+<div <?php Theme::print_attributes( [ 'class' => $wrapper_class ], 'wrapper-header_branding' ); ?>>
 	<?php if ( has_custom_logo() ) : ?>
 		<?php the_custom_logo(); ?>
 	<?php endif; ?>

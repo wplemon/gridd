@@ -14,10 +14,9 @@ use Gridd\Style;
 $style = Style::get_instance( 'grid-part/nav-handheld' );
 $style->add_file( get_theme_file_path( 'grid-parts/styles/nav-handheld/styles.min.css' ) );
 $style->add_string( '@media only screen and (min-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . '){.gridd-tp.gridd-tp-nav-handheld{display: none;}body{padding-bottom:0;}}' );
-
-$wrapper_class = apply_filters( 'gridd_grid_part_class', 'gridd-tp gridd-tp-nav-handheld', 'nav-handheld' );
 ?>
-<div class="<?php echo esc_attr( $wrapper_class ); ?>">
+
+<div <?php Theme::print_attributes( [ 'class' => 'gridd-tp gridd-tp-nav-handheld' ], 'wrapper-nav-handheld' ); ?>>
 	<?php
 	if ( get_theme_mod( 'gridd_grid_nav-handheld_enable', true ) ) {
 

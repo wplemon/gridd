@@ -92,9 +92,9 @@ $responsive_mode_parts = explode( ' ', $responsive_mode );
 foreach ( $responsive_mode_parts as $responsive_mode_part ) {
 	$wrapper_class .= ' gridd-' . $responsive_mode_part;
 }
-$wrapper_class = apply_filters( 'gridd_grid_part_class', $wrapper_class, "gridd-tp-nav_$id" );
 ?>
-<div class="<?php echo esc_attr( $wrapper_class ); ?>">
+
+<div <?php Theme::print_attributes( [ 'class' => $wrapper_class ], "wrapper-nav_$id" ); ?>>
 	<?php
 	/**
 	 * Print styles.
