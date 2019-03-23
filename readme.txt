@@ -5,7 +5,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 Requires at least: 4.9
 Tested up to: 5.0
 Requires PHP: 5.6
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 License: GNU General Public License v2.0 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,6 +35,24 @@ Gridd is a flexible, inclusive theme with a strong focus on performance, accessi
 You can install the theme using the WordPress Administration menu. For more information on installing themes please refer to [this article](https://codex.wordpress.org/Using_Themes#Adding_New_Themes).
 
 == Changelog ==
+
+= 1.0.8 =
+
+* Fix: CSS overflow fix for mobile navigation.
+* Fix: Collapsed naviation position.
+* Fix: Cover block focal-point when using a reusable editor block as a separate grid-part.
+* Fix: Remove non-existing grid-parts (deleted reusable blocks) from the grid control in the customizer.
+* Fix: Removed incomplete implementations for Layer-Slider and Revolution-Slider.
+* New: Added option to enable boxed mode for navigation toggle button.
+* New: Added edit links to reusable blocks.
+* New: Added links-color setting to reusable blocks.
+* New: Added `gridd_print_attributes` filter.
+
+= 1.0.7 =
+
+* Fix: Naviation depth is no longer limited to 3.
+* Fix: CSS cleanup
+* New: Added `gridd_get_toggle_button` filter.
 
 = 1.0.6 =
 
