@@ -40,7 +40,7 @@ class Breadcrumbs extends Grid_Part {
 		spl_autoload_register( [ $this, 'autoloader' ] );
 		add_action( 'after_setup_theme', [ $this, 'load_breadcrumbs_textdomain' ] );
 		add_filter( 'override_load_textdomain', [ $this, 'override_load_textdomain' ], 10, 2 );
-		add_action( 'init', [ $this, 'remove_woocommerce_breadcrumbs' ] );
+		add_action( 'woocommerce_before_main_content', [ $this, 'remove_woocommerce_breadcrumbs' ], 1 );
 		add_action( 'gridd_the_grid_part', [ $this, 'render' ] );
 	}
 
