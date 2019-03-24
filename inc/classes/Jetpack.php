@@ -30,7 +30,7 @@ class Jetpack {
 	public function __construct() {
 		add_action( 'after_setup_theme', [ $this, 'setup' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
-		add_action( 'gridd_get_template_part', [$this,'css_vars']);
+		add_action( 'wp_footer', [ $this,'css_vars' ] );
 	}
 
 	/**

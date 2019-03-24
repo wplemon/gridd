@@ -418,7 +418,6 @@ class Theme {
 	 * @return void
 	 */
 	public static function get_template_part( $slug, $name = null ) {
-		$custom_path = false;
 		/**
 		 * Determine if we want to use a custom path for this template-part.
 		 *
@@ -428,7 +427,7 @@ class Theme {
 		 * @param string       $name        The template name.
 		 * @return string|false
 		 */
-		$custom_path = apply_filters( 'gridd_get_template_part', $custom_path, $slug, $name );
+		$custom_path = apply_filters( 'gridd_get_template_part', false, $slug, $name );
 		if ( $custom_path ) {
 			if ( file_exists( $custom_path ) ) {
 				include $custom_path;
