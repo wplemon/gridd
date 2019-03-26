@@ -14,6 +14,10 @@
 
 			&.alignleft {
 				margin-left: calc(50% - var(--gridd-content-max-width-calculated) / 2);
+
+				+.alignleft {
+					margin-left: 0;
+				}
 			}
 
 			&.alignright {
