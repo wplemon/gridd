@@ -115,4 +115,17 @@ if ( function_exists( 'vc_set_as_theme' ) ) {
 	add_filter( 'vc_nav_front_logo', '__return_empty_string' );
 }
 
+/**
+ * Custom CSS should be at the end of everything else in order to override existing styles.
+ * We need to unhook it from wp_head and hook it in wp_footer.
+ */
+add_action(
+	'wp_head',
+	function() {
+		remove_action( 'wp_head', 'wp_custom_css_cb', 101 );
+		add_action( 'wp_footer', 'wp_custom_css_cb', PHP_INT_MAX );
+	},
+	10
+);
+
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */
