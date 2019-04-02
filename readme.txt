@@ -38,6 +38,7 @@ You can install the theme using the WordPress Administration menu. For more info
 
 = 1.0.8 =
 
+* Fix: Custom CSS priority
 * Fix: CSS overflow fix for mobile navigation.
 * Fix: Collapsed naviation position.
 * Fix: Cover block focal-point when using a reusable editor block as a separate grid-part.
