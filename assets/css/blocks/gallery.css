@@ -194,8 +194,6 @@
   .wp-block-gallery .blocks-gallery-image:last-child,
   .wp-block-gallery .blocks-gallery-item:last-child {
     margin-right: 0; }
-  .wp-block-gallery .blocks-gallery-item.has-add-item-button {
-    width: 100%; }
   .wp-block-gallery.alignleft, .wp-block-gallery.alignright {
     max-width: 305px;
     width: 100%; }
