@@ -82,7 +82,7 @@ class Nav_Handheld extends Grid_Part {
 	 * Renders the grid-part partial.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 1.1
 	 * @param string $part The grid-part ID.
 	 * @return void
 	 */
