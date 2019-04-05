@@ -77,9 +77,7 @@ class Rest {
 					request.onreadystatechange = function() {
 						if ( 4 === request.readyState ) {
 							event = new CustomEvent( 'griddRestPart', { detail: id } );
-							console.log( id );
 							document.querySelectorAll( '.gridd-tp-' + id )[0].outerHTML = JSON.parse( request.response );
-							console.log( request );
 							document.dispatchEvent( event );
 						}
 					};
