@@ -254,4 +254,25 @@ Customizer::add_field(
 	]
 );
 
+Customizer::add_field(
+	[
+		'type'        => 'select',
+		'settings'    => 'gridd_rest_api_partials',
+		'label'       => esc_attr__( 'Deferred Parts', 'gridd' ),
+		'description' => esc_html__( 'Select the parts that should be loaded after the initial request. Non-essential parts can be added here.', 'gridd' ),
+		'section'     => 'gridd_features',
+		'priority'    => 70,
+		'multiple'    => 999,
+		'choices'     => apply_filters(
+			'gridd_rest_api_partials_choices',
+			[
+				'footer'       => esc_html__( 'Footer', 'gridd' ),
+				'nav-handheld' => esc_html__( 'Mobile Navigation', 'gridd' ),
+			]
+		),
+		'default'     => [ 'footer', 'nav-handheld' ],
+		'transport'   => 'postMessage',
+	]
+);
+
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */
