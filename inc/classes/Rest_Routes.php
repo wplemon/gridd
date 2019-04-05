@@ -3,7 +3,7 @@
  * Post tweaks.
  *
  * @package Gridd
- * @since 1.0.9
+ * @since 1.1
  *
  * phpcs:ignoreFile WordPress.Files.FileName.InvalidClassFileName
  */
@@ -15,7 +15,7 @@ use Gridd\Grid_Parts;
 /**
  * Implements the custom REST Routes.
  *
- * @since 1.0
+ * @since 1.1
  */
 class Rest_Routes extends \WP_REST_Controller {
 
@@ -23,7 +23,7 @@ class Rest_Routes extends \WP_REST_Controller {
 	 * Constructor.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 1.1
 	 */
 	public function __construct() {
 		add_action( 'rest_api_init', [ $this, 'register_routes' ] );
@@ -34,7 +34,7 @@ class Rest_Routes extends \WP_REST_Controller {
 	 * Register the routes for the objects of the controller.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 1.1
 	 * @return void
 	 */
 	public function register_routes() {
@@ -67,8 +67,10 @@ class Rest_Routes extends \WP_REST_Controller {
 	}
 
 	/**
-	 * Get a grid-part.
+	 * Get a partial.
 	 *
+	 * @access public
+	 * @since 1.1
 	 * @param WP_REST_Request $request Full data about the request.
 	 * @return string                  The markup for this grid-part.
 	 */
