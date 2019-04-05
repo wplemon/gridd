@@ -13,6 +13,7 @@ use Gridd\Admin;
 use Gridd\EDD;
 use Gridd\AMP;
 use Gridd\Widget_Output_Filters;
+use Gridd\Rest_Routes;
 
 /**
  * If Kirki isn't loaded as a plugin, load the included version.
@@ -104,6 +105,13 @@ require __DIR__ . '/customize.php';
  * @since 1.0
  */
 new AMP();
+
+/**
+ * REST-API Routes.
+ *
+ * @since 1.1
+ */
+new Rest_Routes();
 
 /**
  * Integrates WPBakery Builder in the theme.
