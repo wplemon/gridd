@@ -1,6 +1,6 @@
 <?php
 /**
- * Post tweaks.
+ * Register REST API Routes.
  *
  * @package Gridd
  * @since 1.1
@@ -79,7 +79,7 @@ class Rest_Routes extends \WP_REST_Controller {
 		$attributes = $request->get_attributes();
 
 		// Get the partial.
-		if ( isset( $attributes['args'] ) && isset( $attributes['args']['grid-part'] ) ) {
+		if ( isset( $attributes['args'] ) && isset( $attributes['args']['partial'] ) ) {
 			$partial = $attributes['args']['partial'];
 			if ( $partial ) {
 				ob_start();

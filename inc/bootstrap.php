@@ -13,6 +13,7 @@ use Gridd\Admin;
 use Gridd\EDD;
 use Gridd\AMP;
 use Gridd\Widget_Output_Filters;
+use Gridd\Rest;
 use Gridd\Rest_Routes;
 
 /**
@@ -105,6 +106,13 @@ require __DIR__ . '/customize.php';
  * @since 1.0
  */
 new AMP();
+
+/**
+ * REST-API implementation.
+ *
+ * @since 1.1
+ */
+new Rest();
 
 /**
  * REST-API Routes.

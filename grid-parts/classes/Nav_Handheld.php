@@ -11,6 +11,7 @@ namespace Gridd\Grid_Part;
 
 use Gridd\Theme;
 use Gridd\Grid_Part;
+use Gridd\Rest;
 
 /**
  * The Gridd\Grid_Part\Nav_Handheld object.
@@ -38,6 +39,7 @@ class Nav_Handheld extends Grid_Part {
 	public function init() {
 		add_action( 'widgets_init', [ $this, 'register_sidebar' ] );
 		add_action( 'gridd_the_grid_part', [ $this, 'render' ] );
+		add_action( 'gridd_the_partial', [ $this, 'the_partial' ] );
 	}
 
 	/**
@@ -66,8 +68,27 @@ class Nav_Handheld extends Grid_Part {
 	 * @return void
 	 */
 	public function render( $part ) {
-		if ( $this->id === $part && apply_filters( 'gridd_render_grid_part', true, $this->id ) ) {
-			Theme::get_template_part( 'grid-parts/templates/nav-handheld' );
+		if ( $this->id !== $part ) {
+			return;
+		}
+		if ( Rest::is_partial_deferred( $this->id ) ) {
+			echo '<div class="gridd-tp gridd-tp-' . esc_attr( $this->id ) . ' gridd-rest-api-placeholder"></div>';
+			return;
+		}
+		$this->the_partial( $this->id );
+	}
+
+	/**
+	 * Renders the grid-part partial.
+	 *
+	 * @access public
+	 * @since 1.0
+	 * @param string $part The grid-part ID.
+	 * @return void
+	 */
+	public function the_partial( $part ) {
+		if ( $this->id === $part ) {
+			Theme::get_template_part( 'grid-parts/templates/' . $this->id );
 		}
 	}
 
