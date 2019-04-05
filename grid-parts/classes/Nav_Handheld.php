@@ -66,7 +66,7 @@ class Nav_Handheld extends Grid_Part {
 	 * @return void
 	 */
 	public function render( $part ) {
-		if ( $this->id === $part ) {
+		if ( $this->id === $part && apply_filters( 'gridd_render_grid_part', true, $this->id ) ) {
 			Theme::get_template_part( 'grid-parts/templates/nav-handheld' );
 		}
 	}
