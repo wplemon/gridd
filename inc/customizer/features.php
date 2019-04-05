@@ -8,6 +8,8 @@
 
 use Gridd\Customizer;
 use Gridd\Customizer\Sanitize;
+use Gridd\Rest;
+use Gridd\Grid_Part\Sidebar;
 
 $sanitization = new Sanitize();
 
@@ -254,6 +256,15 @@ Customizer::add_field(
 	]
 );
 
+$choices = [
+	'footer'       => esc_html__( 'Footer', 'gridd' ),
+	'nav-handheld' => esc_html__( 'Mobile Navigation', 'gridd' ),
+];
+$max_sidebars = Sidebar::get_number_of_sidebars();
+for ( $i = 1; $i <= $max_sidebars; $i++ ) {
+	$choices[ "sidebar_$i" ] = get_theme_mod( "gridd_grid_widget_area_{$i}_name", sprintf( esc_html__( 'Widget Area %d', 'gridd' ), intval( $i ) ) );
+}
+
 Customizer::add_field(
 	[
 		'type'        => 'select',
@@ -263,14 +274,8 @@ Customizer::add_field(
 		'section'     => 'gridd_features',
 		'priority'    => 70,
 		'multiple'    => 999,
-		'choices'     => apply_filters(
-			'gridd_rest_api_partials_choices',
-			[
-				'footer'       => esc_html__( 'Footer', 'gridd' ),
-				'nav-handheld' => esc_html__( 'Mobile Navigation', 'gridd' ),
-			]
-		),
-		'default'     => [ 'footer', 'nav-handheld' ],
+		'choices'     => apply_filters( 'gridd_rest_api_partials_choices', $choices ),
+		'default'     => Rest::get_deferred_defaults(),
 		'transport'   => 'postMessage',
 	]
 );

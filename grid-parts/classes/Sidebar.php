@@ -10,6 +10,7 @@
 namespace Gridd\Grid_Part;
 
 use Gridd\Grid_Part;
+use Gridd\Rest;
 
 /**
  * The Gridd\Grid_Part\Sidebar object.
@@ -39,6 +40,7 @@ class Sidebar extends Grid_Part {
 		add_action( 'widgets_init', [ $this, 'register_sidebars' ] );
 		add_action( 'gridd_the_grid_part', [ $this, 'render' ] );
 		add_action( 'get_sidebar', [ $this, 'get_sidebar' ] );
+		add_action( 'gridd_the_partial', [ $this, 'the_partial' ] );
 	}
 
 	/**
@@ -72,14 +74,31 @@ class Sidebar extends Grid_Part {
 	 */
 	public function render( $part ) {
 		if ( 0 === strpos( $part, 'sidebar_' ) && is_numeric( str_replace( 'sidebar_', '', $part ) ) ) {
-			$sidebar_id = (int) str_replace( 'sidebar_', '', $part );
-			if ( apply_filters( 'gridd_render_grid_part', true, 'sidebar_' . $sidebar_id ) ) {
-				/**
-				 * We use include( get_theme_file_path() ) here
-				 * because we need to pass the $sidebar_id var to the template.
-				 */
-				include get_theme_file_path( 'grid-parts/templates/sidebar.php' );
+			if ( Rest::is_partial_deferred( $part ) ) {
+				echo '<div class="gridd-tp gridd-tp-' . esc_attr( $part ) . ' gridd-rest-api-placeholder"></div>';
+				return;
 			}
+			$this->the_partial( $part );
+		}
+	}
+
+	/**
+	 * Renders the grid-part partial.
+	 *
+	 * @access public
+	 * @since 1.1
+	 * @param string $part The grid-part ID.
+	 * @return void
+	 */
+	public function the_partial( $part ) {
+		error_log( $part );
+		if ( 0 === strpos( $part, 'sidebar_' ) && is_numeric( str_replace( 'sidebar_', '', $part ) ) ) {
+			$sidebar_id = (int) str_replace( 'sidebar_', '', $part );
+			/**
+			 * We use include( get_theme_file_path() ) here
+			 * because we need to pass the $sidebar_id var to the template.
+			 */
+			include get_theme_file_path( 'grid-parts/templates/sidebar.php' );
 		}
 	}
 

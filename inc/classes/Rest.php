@@ -10,6 +10,8 @@
 
 namespace Gridd;
 
+use Gridd\Grid_Part\Sidebar;
+
 /**
  * Implements the custom REST Routes.
  *
@@ -28,6 +30,19 @@ class Rest {
 			return;
 		}
 		add_action( 'wp_footer', [ $this, 'script' ], PHP_INT_MAX );
+		add_filter( 'gridd_rest_api_partials_choices', [ $this, 'partials_choices' ] );
+	}
+
+	/**
+	 * Adds partials choices to the multiselect option.
+	 *
+	 * @access public
+	 * @since 1.1
+	 * @param array $choices Existing choices
+	 * @return array
+	 */
+	public function partials_choices( $choices ) {
+		return $choices;
 	}
 
 	/**
@@ -39,7 +54,24 @@ class Rest {
 	 * @return array
 	 */
 	public static function get_partials() {
-		return get_theme_mod( 'gridd_rest_api_partials', [ 'footer', 'nav-handheld' ] );
+		return get_theme_mod( 'gridd_rest_api_partials', self::get_deferred_defaults() );
+	}
+
+	/**
+	 * Get an array of partials we want to defer by default.
+	 *
+	 * @static
+	 * @access public
+	 * @since 1.1
+	 * @return array
+	 */
+	public static function get_deferred_defaults() {
+		$partials     = [ 'footer', 'nav-handheld' ];
+		$max_sidebars = Sidebar::get_number_of_sidebars();
+		for ( $i = 1; $i <= $max_sidebars; $i++ ) {
+			$partials[] = "sidebar_$i";
+		}
+		return $partials;
 	}
 
 	/**
