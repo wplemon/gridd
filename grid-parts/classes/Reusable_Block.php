@@ -11,6 +11,8 @@ namespace Gridd\Grid_Part;
 
 use Gridd\Grid_Part;
 use Gridd\Style;
+use Gridd\Rest;
+use Gridd\Scripts;
 
 /**
  * The Gridd\Grid_Part\Reusable_Block object.
@@ -43,9 +45,12 @@ class Reusable_Block extends Grid_Part {
 				'post_type'      => 'wp_block',
 			]
 		);
+		$this->register_rest_api_partials();
 		add_action( 'gridd_the_grid_part', [ $this, 'render' ] );
 		add_action( 'gridd_auto_text_color', [ $this, 'auto_text_color_settings' ] );
 		add_filter( 'safe_style_css', [ $this, 'safe_style_css' ] );
+		add_action( 'gridd_the_partial', [ $this, 'the_partial' ] );
+		add_action( 'gridd_the_partial', [ $this, 'the_partial_styles' ] );
 	}
 
 	/**
@@ -68,13 +73,48 @@ class Reusable_Block extends Grid_Part {
 	public function render( $part ) {
 		if ( 0 === strpos( $part, 'reusable_block_' ) && is_numeric( str_replace( 'reusable_block_', '', $part ) ) ) {
 			$gridd_reusable_block_id = (int) str_replace( 'reusable_block_', '', $part );
-			if ( apply_filters( 'gridd_render_grid_part', true, 'reusable_block_' . $gridd_reusable_block_id ) ) {
-				/**
-				 * We use include( get_theme_file_path() ) here
-				 * because we need to pass the $gridd_reusable_block_id var to the template.
-				 */
-				include get_theme_file_path( 'grid-parts/templates/reusable-block.php' );
+			if ( Rest::is_partial_deferred( $part ) ) {
+				echo '<div class="gridd-tp gridd-tp-' . esc_attr( $part ) . ' gridd-rest-api-placeholder"></div>';
+				return;
 			}
+			$this->the_partial( $part );
+		}
+	}
+
+	/**
+	 * Render this grid-part.
+	 *
+	 * @access public
+	 * @since 1.0
+	 * @param string $part The grid-part ID.
+	 * @return void
+	 */
+	public function the_partial( $part ) {
+		if ( 0 === strpos( $part, 'reusable_block_' ) && is_numeric( str_replace( 'reusable_block_', '', $part ) ) ) {
+			$gridd_reusable_block_id = (int) str_replace( 'reusable_block_', '', $part );
+			/**
+			 * We use include( get_theme_file_path() ) here
+			 * because we need to pass the $gridd_reusable_block_id var to the template.
+			 */
+			include get_theme_file_path( 'grid-parts/templates/reusable-block.php' );
+		}
+	}
+
+	public function the_partial_styles( $part ) {
+		if ( 0 === strpos( $part, 'reusable_block_' ) && is_numeric( str_replace( 'reusable_block_', '', $part ) ) ) {
+			$id = (int) str_replace( 'reusable_block_', '', $part );
+
+			// Get the blocks used in this partial.
+			$script = new Scripts();
+			$blocks = $script->get_blocks();
+
+			// Add styles.
+			$style = Style::get_instance( 'blocks-styles' );
+			foreach ( $blocks as $block ) {
+				$block = str_replace( 'core/', '', $block );
+				$style->add_file( get_theme_file_path( "assets/css/blocks/$block.min.css" ) );
+			}
+			$style->the_css( "block-styles-$id" );
 		}
 	}
 
@@ -149,6 +189,26 @@ class Reusable_Block extends Grid_Part {
 	public function safe_style_css( $safe ) {
 		$safe[] = 'background-position';
 		return $safe;
+	}
+
+	/**
+	 * Registers the partial(s) for the REST API.
+	 *
+	 * @access public
+	 * @since 1.1
+	 * @return void
+	 */
+	public function register_rest_api_partials() {
+		if ( self::$reusable_blocks ) {
+			foreach ( self::$reusable_blocks as $block ) {
+				Rest::register_partial(
+					[
+						'id'    => "reusable_block_{$block->ID}",
+						'label' => sprintf( esc_html__( 'Block: %s', 'gridd' ), esc_html( $block->post_title ) ),
+					]
+				);
+			}
+		}
 	}
 }
 
