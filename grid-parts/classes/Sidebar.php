@@ -92,7 +92,6 @@ class Sidebar extends Grid_Part {
 	 * @return void
 	 */
 	public function the_partial( $part ) {
-		error_log( $part );
 		if ( 0 === strpos( $part, 'sidebar_' ) && is_numeric( str_replace( 'sidebar_', '', $part ) ) ) {
 			$sidebar_id = (int) str_replace( 'sidebar_', '', $part );
 			/**
