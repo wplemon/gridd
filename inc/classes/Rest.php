@@ -133,6 +133,14 @@ class Rest {
 		}
 	}
 
+	/**
+	 * Prints styles for blocks used inside this partial.
+	 *
+	 * @access public
+	 * @since 1.1
+	 * @param string $part The partial ID.
+	 * @return void
+	 */
 	public function the_partial_styles_blocks( $part ) {
 
 		// Get the blocks used in this partial.
