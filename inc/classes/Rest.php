@@ -98,25 +98,11 @@ class Rest {
 	 * @return void
 	 */
 	public function script() {
-		?>
-		<script>
-			document.addEventListener( 'DOMContentLoaded', function( event ) {
-				var event, griddRestParts = <?php echo wp_json_encode( self::get_partials() ); ?>;
-				Array.prototype.forEach.call( griddRestParts, function( id, i ) {
-					var request = new XMLHttpRequest();
-					request.open( 'GET', '<?php echo esc_url_raw( site_url( '?rest_route=/gridd/v1/partials/' ) ); ?>' + id, true );
-					request.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8' );
-					request.onreadystatechange = function() {
-						if ( 4 === request.readyState ) {
-							event = new CustomEvent( 'griddRestPart', { detail: id } );
-							document.querySelectorAll( '.gridd-tp-' + id )[0].outerHTML = JSON.parse( request.response );
-							document.dispatchEvent( event );
-						}
-					};
-					request.send();
-				});
-			});
-		</script>
-		<?php
+		$partials = wp_json_encode( self::get_partials() );
+		$route    = esc_url_raw( site_url( '?rest_route=/gridd/v1/partials/' ) );
+		echo '<script>';
+		echo 'var griddRestParts=' . $partials . ',griddRestRoute="' . $route . '";';
+		include get_theme_file_path( 'assets/js/rest-partials.min.js' );
+		echo '</script>';
 	}
 }

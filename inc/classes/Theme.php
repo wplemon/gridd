@@ -472,6 +472,10 @@ class Theme {
 			$button_atts['[class]']         = '(' . $args['expanded_state_id'] . '?\'' . $classes . ' toggled-on\':\'' . $classes . '\')';
 			$button_atts['[aria-expanded]'] = "{$args['expanded_state_id']} ? 'true' : 'false'";
 			$button_atts['on']              = "tap:AMP.setState({ {$args['expanded_state_id']}: ! {$args['expanded_state_id']} })";
+		} else {
+			$uid = rand( 0, 99 ) . substr( str_shuffle( md5( microtime() ) ), 0, 10 );
+			$button_atts['data-uid'] = $uid;
+			$button_atts['onclick']  = 'griddToggleButtonClick(\'' . $uid . '\')';
 		}
 
 		/*
