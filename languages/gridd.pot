@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gridd 1.0.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/gridd\n"
-"POT-Creation-Date: 2019-04-02 19:51:31+00:00\n"
+"POT-Creation-Date: 2019-04-06 07:48:31+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -52,26 +52,27 @@ msgid "Content"
 msgstr ""
 
 #: grid-parts/classes/Footer.php:43 grid-parts/customizer/footer.php:17
+#: inc/customizer/features.php:260
 msgid "Footer"
 msgstr ""
 
-#: grid-parts/classes/Footer.php:128 grid-parts/classes/Footer.php:194
+#: grid-parts/classes/Footer.php:148 grid-parts/classes/Footer.php:214
 #. translators: Sidebar number,
 #. translators: The widget-area number.
 msgid "Footer Widget Area %d"
 msgstr ""
 
-#: grid-parts/classes/Footer.php:130 grid-parts/classes/Nav_Handheld.php:86
-#: grid-parts/classes/Sidebar.php:151
+#: grid-parts/classes/Footer.php:150 grid-parts/classes/Nav_Handheld.php:107
+#: grid-parts/classes/Sidebar.php:170
 msgid "Add widgets here."
 msgstr ""
 
-#: grid-parts/classes/Footer.php:175
+#: grid-parts/classes/Footer.php:195
 #: grid-parts/customizer/footer-copyright.php:19
 msgid "Copyright Area"
 msgstr ""
 
-#: grid-parts/classes/Footer.php:182 grid-parts/classes/Header.php:189
+#: grid-parts/classes/Footer.php:202 grid-parts/classes/Header.php:189
 msgid "Social Media"
 msgstr ""
 
@@ -92,12 +93,13 @@ msgstr ""
 msgid "Contact Information"
 msgstr ""
 
-#: grid-parts/classes/Nav_Handheld.php:52
+#: grid-parts/classes/Nav_Handheld.php:54
 #: grid-parts/customizer/nav-handheld.php:13 inc/classes/Theme.php:189
+#: inc/customizer/features.php:261
 msgid "Mobile Navigation"
 msgstr ""
 
-#: grid-parts/classes/Nav_Handheld.php:84
+#: grid-parts/classes/Nav_Handheld.php:105
 msgid "Mobile Navigation Widget Area"
 msgstr ""
 
@@ -125,8 +127,8 @@ msgstr ""
 msgid "Block: %s"
 msgstr ""
 
-#: grid-parts/classes/Sidebar.php:98 grid-parts/classes/Sidebar.php:145
-#: grid-parts/customizer/sidebar.php:31
+#: grid-parts/classes/Sidebar.php:117 grid-parts/classes/Sidebar.php:164
+#: grid-parts/customizer/sidebar.php:31 inc/customizer/features.php:265
 #. translators: The number of the widget area.
 msgid "Widget Area %d"
 msgstr ""
@@ -244,7 +246,7 @@ msgstr ""
 #: grid-parts/customizer/header-contact-info.php:68
 #: grid-parts/customizer/header-search.php:82
 #: grid-parts/customizer/reusable-block.php:113
-#: grid-parts/customizer/sidebar.php:89 inc/customizer/features.php:140
+#: grid-parts/customizer/sidebar.php:89 inc/customizer/features.php:142
 #: inc/customizer/typography.php:114
 msgid "Text Color"
 msgstr ""
@@ -936,7 +938,7 @@ msgid " Manage reusable blocks"
 msgstr ""
 
 #: grid-parts/customizer/reusable-block.php:114
-#: grid-parts/customizer/sidebar.php:90 inc/customizer/features.php:141
+#: grid-parts/customizer/sidebar.php:90 inc/customizer/features.php:143
 #: inc/customizer/typography.php:115
 msgid ""
 "Select the color used for your text. Please choose a color with sufficient "
@@ -1021,7 +1023,7 @@ msgid ""
 "Please upgrade and try again."
 msgstr ""
 
-#: inc/classes/Blog.php:51 inc/customizer/features.php:252
+#: inc/classes/Blog.php:51 inc/customizer/features.php:254
 #. translators: %s: Name of current post. Only visible to screen readers
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
@@ -1242,97 +1244,107 @@ msgstr ""
 msgid "Original"
 msgstr ""
 
-#: inc/customizer/features.php:17
+#: inc/customizer/features.php:19
 msgid "Theme Features"
 msgstr ""
 
-#: inc/customizer/features.php:23
+#: inc/customizer/features.php:25
 msgid "Fixed mode for featured images with custom height"
 msgstr ""
 
-#: inc/customizer/features.php:24
+#: inc/customizer/features.php:26
 msgid "Anchor links in headers "
 msgstr ""
 
-#: inc/customizer/features.php:25
+#: inc/customizer/features.php:27
 msgid "Scroll to top button"
 msgstr ""
 
-#: inc/customizer/features.php:26
+#: inc/customizer/features.php:28
 msgid ""
 "Enable more custom widget-areas and customize their titles for easier "
 "identification"
 msgstr ""
 
-#: inc/customizer/features.php:39
+#: inc/customizer/features.php:41
 msgid "Featured Images Mode in Archives"
 msgstr ""
 
-#: inc/customizer/features.php:40
+#: inc/customizer/features.php:42
 msgid "Select how featured images will be displayed in post-archives."
 msgstr ""
 
-#: inc/customizer/features.php:46 inc/customizer/features.php:70
+#: inc/customizer/features.php:48 inc/customizer/features.php:72
 msgid "Hidden"
 msgstr ""
 
-#: inc/customizer/features.php:47 inc/customizer/features.php:71
+#: inc/customizer/features.php:49 inc/customizer/features.php:73
 msgid "Normal"
 msgstr ""
 
-#: inc/customizer/features.php:48 inc/customizer/features.php:72
+#: inc/customizer/features.php:50 inc/customizer/features.php:74
 msgid "Wide"
 msgstr ""
 
-#: inc/customizer/features.php:63
+#: inc/customizer/features.php:65
 msgid "Featured Images Mode in Single Posts"
 msgstr ""
 
-#: inc/customizer/features.php:64
+#: inc/customizer/features.php:66
 msgid ""
 "Select how featured images will be displayed in single post-types (Applies "
 "to all post-types)."
 msgstr ""
 
-#: inc/customizer/features.php:73
+#: inc/customizer/features.php:75
 msgid "Full Width"
 msgstr ""
 
-#: inc/customizer/features.php:74
+#: inc/customizer/features.php:76
 msgid "Overlay"
 msgstr ""
 
-#: inc/customizer/features.php:89
+#: inc/customizer/features.php:91
 msgid "Use Image Colors"
 msgstr ""
 
-#: inc/customizer/features.php:104
+#: inc/customizer/features.php:106
 msgid "Overlay mode minimum height"
 msgstr ""
 
-#: inc/customizer/features.php:121
+#: inc/customizer/features.php:123
 msgid "Overlay Color"
 msgstr ""
 
-#: inc/customizer/features.php:161
+#: inc/customizer/features.php:163
 msgid "Show Next/Previous Post in single posts"
 msgstr ""
 
-#: inc/customizer/features.php:173
+#: inc/customizer/features.php:175
 msgid "Show full post in archives"
 msgstr ""
 
-#: inc/customizer/features.php:197
+#: inc/customizer/features.php:199
 #. translators: The post-type name.
 msgid "Display \"%s\" archives as a grid"
 msgstr ""
 
-#: inc/customizer/features.php:247
+#: inc/customizer/features.php:249
 msgid "Read More link"
 msgstr ""
 
-#: inc/customizer/features.php:248
+#: inc/customizer/features.php:250
 msgid "Available placeholder: %s for the post-title."
+msgstr ""
+
+#: inc/customizer/features.php:272
+msgid "Deferred Parts"
+msgstr ""
+
+#: inc/customizer/features.php:273
+msgid ""
+"Select the parts that should be loaded after the initial request. "
+"Non-essential parts can be added here."
 msgstr ""
 
 #: inc/customizer/grid.php:30 inc/customizer/grid.php:35
