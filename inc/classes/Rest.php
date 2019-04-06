@@ -39,7 +39,7 @@ class Rest {
 		if ( AMP::is_active() ) {
 			return;
 		}
-		add_action( 'wp_footer', [ $this, 'script' ], PHP_INT_MAX );
+		add_action( 'wp_footer', [ $this, 'add_assets' ], PHP_INT_MAX );
 		add_filter( 'gridd_rest_api_partials_choices', [ $this, 'partials_choices' ] );
 	}
 
@@ -132,12 +132,21 @@ class Rest {
 	 * @since 1.0
 	 * @return void
 	 */
-	public function script() {
+	public function add_assets() {
 		$partials = wp_json_encode( self::get_partials() );
-		$route    = esc_url_raw( site_url( '?rest_route=/gridd/v1/partials/' ) );
-		echo '<script>';
-		echo 'var griddRestParts=' . $partials . ',griddRestRoute="' . $route . '";';
-		include get_theme_file_path( 'assets/js/rest-partials.min.js' );
-		echo '</script>';
+		if ( ! empty( $partials ) ) {
+
+			// Add script.
+			$route    = esc_url_raw( site_url( '?rest_route=/gridd/v1/partials/' ) );
+			echo '<script>';
+			echo 'var griddRestParts=' . $partials . ',griddRestRoute="' . $route . '";';
+			include get_theme_file_path( 'assets/js/rest-partials.min.js' );
+			echo '</script>';
+
+			// Add style.
+			echo '<style>';
+			include get_theme_file_path( 'assets/css/core/skeleton.min.css' );
+			echo '</style>';
+		}
 	}
 }
