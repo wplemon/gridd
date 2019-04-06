@@ -259,7 +259,6 @@ wp.customize.controlConstructor['gridd-wcag-lc'] = wp.customize.Control.extend({
 	 */
 	updateColorValue: function() {
 		if ( this.getBest() ) {
-			console.log( this.getBest() );
 			this.container.find( '.hidden-value-hex' ).attr( 'value', this.getBest() ).trigger( 'change' );
 		}
 	}
