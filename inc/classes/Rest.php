@@ -119,7 +119,7 @@ class Rest {
 	 * @return bool
 	 */
 	public static function is_partial_deferred( $id ) {
-		if ( AMP::is_active() ) {
+		if ( AMP::is_active() || \is_customize_preview() ) {
 			return false;
 		}
 		return ( \in_array( $id, self::get_partials(), true ) );
