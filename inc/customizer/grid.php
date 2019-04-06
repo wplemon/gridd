@@ -61,7 +61,7 @@ Customizer::add_section(
 				'docs' => 'https://wplemon.com/documentation/gridd/grid/',
 				'tip'  => sprintf(
 					/* translators: Link to the blocks-management screen. */
-					__( 'Did you know you can place resuable blocks anywhere in your grid? <a href="%s" target="_blank">Click here</a> to manage your reusable blocks.', 'gridd' ),
+					__( 'Did you know you can place reusable blocks anywhere in your grid? <a href="%s" target="_blank">Click here</a> to manage your reusable blocks.', 'gridd' ),
 					esc_url( admin_url( 'edit.php?post_type=wp_block' ) )
 				),
 			]
