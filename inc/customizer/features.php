@@ -269,7 +269,7 @@ add_action(
 				'priority'    => 70,
 				'multiple'    => 999,
 				'choices'     => Rest::get_all_partials(),
-				'default'     => Rest::get_deferred_defaults(),
+				'default'     => [],
 				'transport'   => 'postMessage',
 			]
 		);
