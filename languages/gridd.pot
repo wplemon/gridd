@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gridd 1.0.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/gridd\n"
-"POT-Creation-Date: 2019-04-06 07:48:31+00:00\n"
+"POT-Creation-Date: 2019-04-06 12:30:37+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -51,28 +51,28 @@ msgstr ""
 msgid "Content"
 msgstr ""
 
-#: grid-parts/classes/Footer.php:43 grid-parts/customizer/footer.php:17
-#: inc/customizer/features.php:260
+#: grid-parts/classes/Footer.php:43 grid-parts/classes/Footer.php:246
+#: grid-parts/customizer/footer.php:17
 msgid "Footer"
 msgstr ""
 
-#: grid-parts/classes/Footer.php:148 grid-parts/classes/Footer.php:214
+#: grid-parts/classes/Footer.php:149 grid-parts/classes/Footer.php:215
 #. translators: Sidebar number,
 #. translators: The widget-area number.
 msgid "Footer Widget Area %d"
 msgstr ""
 
-#: grid-parts/classes/Footer.php:150 grid-parts/classes/Nav_Handheld.php:107
+#: grid-parts/classes/Footer.php:151 grid-parts/classes/Nav_Handheld.php:108
 #: grid-parts/classes/Sidebar.php:170
 msgid "Add widgets here."
 msgstr ""
 
-#: grid-parts/classes/Footer.php:195
+#: grid-parts/classes/Footer.php:196
 #: grid-parts/customizer/footer-copyright.php:19
 msgid "Copyright Area"
 msgstr ""
 
-#: grid-parts/classes/Footer.php:202 grid-parts/classes/Header.php:189
+#: grid-parts/classes/Footer.php:203 grid-parts/classes/Header.php:189
 msgid "Social Media"
 msgstr ""
 
@@ -93,13 +93,13 @@ msgstr ""
 msgid "Contact Information"
 msgstr ""
 
-#: grid-parts/classes/Nav_Handheld.php:54
+#: grid-parts/classes/Nav_Handheld.php:55
+#: grid-parts/classes/Nav_Handheld.php:128
 #: grid-parts/customizer/nav-handheld.php:13 inc/classes/Theme.php:189
-#: inc/customizer/features.php:261
 msgid "Mobile Navigation"
 msgstr ""
 
-#: grid-parts/classes/Nav_Handheld.php:105
+#: grid-parts/classes/Nav_Handheld.php:106
 msgid "Mobile Navigation Widget Area"
 msgstr ""
 
@@ -122,13 +122,14 @@ msgstr ""
 msgid "Toggle Child Menu"
 msgstr ""
 
-#: grid-parts/classes/Reusable_Block.php:125
+#: grid-parts/classes/Reusable_Block.php:146
+#: grid-parts/classes/Reusable_Block.php:188
 #. translators: The name of the reusable block.
 msgid "Block: %s"
 msgstr ""
 
 #: grid-parts/classes/Sidebar.php:117 grid-parts/classes/Sidebar.php:164
-#: grid-parts/customizer/sidebar.php:31 inc/customizer/features.php:265
+#: grid-parts/classes/Sidebar.php:193 grid-parts/customizer/sidebar.php:31
 #. translators: The number of the widget area.
 msgid "Widget Area %d"
 msgstr ""
@@ -152,7 +153,6 @@ msgstr ""
 #: grid-parts/customizer/footer-copyright.php:24
 #: grid-parts/customizer/footer-sidebars.php:43
 #: grid-parts/customizer/header-contact-info.php:23
-#: grid-parts/customizer/navigation.php:57
 #: grid-parts/customizer/reusable-block.php:57
 #: grid-parts/customizer/sidebar.php:42
 msgid "Selecting from an array of WCAG-compliant colors for text"
@@ -274,7 +274,7 @@ msgstr ""
 #: grid-parts/customizer/header-branding.php:303
 #: grid-parts/customizer/header-contact-info.php:124
 #: grid-parts/customizer/header-social-media.php:151
-#: grid-parts/customizer/navigation.php:231
+#: grid-parts/customizer/navigation.php:216
 #: inc/kirki/controls/php/class-kirki-control-dimensions.php:133
 #: inc/kirki/controls/php/class-kirki-control-typography.php:151
 msgid "Center"
@@ -420,7 +420,7 @@ msgid "Separate grid for mobile devices"
 msgstr ""
 
 #: grid-parts/customizer/footer.php:38 grid-parts/customizer/header.php:54
-#: inc/customizer/grid.php:74
+#: inc/customizer/grid.php:79
 msgid "Grid Settings"
 msgstr ""
 
@@ -436,11 +436,11 @@ msgstr ""
 msgid "Grid Gap"
 msgstr ""
 
-#: grid-parts/customizer/footer.php:67 inc/customizer/grid.php:104
+#: grid-parts/customizer/footer.php:67 inc/customizer/grid.php:109
 msgid "Adds a gap between your grid-parts, both horizontally and vertically."
 msgstr ""
 
-#: grid-parts/customizer/footer.php:68 inc/customizer/grid.php:105
+#: grid-parts/customizer/footer.php:68 inc/customizer/grid.php:110
 msgid ""
 "For more information please read <a "
 "href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/gap\" "
@@ -710,6 +710,10 @@ msgid ""
 "hidden, they only become available to screen-readers."
 msgstr ""
 
+#: grid-parts/customizer/navigation.php:57
+msgid "More extensive control over colors"
+msgstr ""
+
 #: grid-parts/customizer/navigation.php:58
 msgid "WooCommerce Cart inside the navigation"
 msgstr ""
@@ -791,140 +795,127 @@ msgid ""
 msgstr ""
 
 #: grid-parts/customizer/navigation.php:157
-msgid "Accent Background Color"
+msgid "Accent Color"
 msgstr ""
 
 #: grid-parts/customizer/navigation.php:158
 msgid ""
-"Controls the background-color for menu items on hover, as well as for the "
-"currently active menu-item. Applies to both parent and child (dropdown) "
-"menu items."
+"Select the hue for you active item. The color will be auto-calculated to "
+"ensure maximum readability."
 msgstr ""
 
-#: grid-parts/customizer/navigation.php:173
-msgid "Accent Items Color"
-msgstr ""
-
-#: grid-parts/customizer/navigation.php:174
-msgid ""
-"Select the color used for your menu items on hover, as well as for the "
-"currently active menu-item. Applies to both parent and child (dropdown) "
-"menu items. Please choose a color with sufficient contrast with the "
-"selected background-color."
-msgstr ""
-
-#: grid-parts/customizer/navigation.php:191
+#: grid-parts/customizer/navigation.php:176
 msgid "Enable Vertical Menu Mode"
 msgstr ""
 
-#: grid-parts/customizer/navigation.php:192
+#: grid-parts/customizer/navigation.php:177
 msgid ""
 "If your layout is column-based and you want a vertical side-navigation "
 "enable this option."
 msgstr ""
 
-#: grid-parts/customizer/navigation.php:209
+#: grid-parts/customizer/navigation.php:194
 msgid "Justify Items"
 msgstr ""
 
-#: grid-parts/customizer/navigation.php:210
+#: grid-parts/customizer/navigation.php:195
 msgid "Choose how menu items will be spread horizontally inside the menu container."
 msgstr ""
 
-#: grid-parts/customizer/navigation.php:211
+#: grid-parts/customizer/navigation.php:196
 msgid ""
 "This helps distribute extra free space left over when all the items on a "
 "line have reached their maximum size. It also exerts some control over the "
 "alignment of items when they overflow the line."
 msgstr ""
 
-#: grid-parts/customizer/navigation.php:229
+#: grid-parts/customizer/navigation.php:214
 msgid "Start"
 msgstr ""
 
-#: grid-parts/customizer/navigation.php:230
+#: grid-parts/customizer/navigation.php:215
 msgid "End"
 msgstr ""
 
-#: grid-parts/customizer/navigation.php:232
+#: grid-parts/customizer/navigation.php:217
 msgid "Space Between"
 msgstr ""
 
-#: grid-parts/customizer/navigation.php:233
+#: grid-parts/customizer/navigation.php:218
 msgid "Space Around"
 msgstr ""
 
-#: grid-parts/customizer/navigation.php:234
+#: grid-parts/customizer/navigation.php:219
 msgid "Space Evenly"
 msgstr ""
 
-#: grid-parts/customizer/navigation.php:249
+#: grid-parts/customizer/navigation.php:234
 msgid "Expand Label"
 msgstr ""
 
-#: grid-parts/customizer/navigation.php:251
+#: grid-parts/customizer/navigation.php:236
 msgid "MENU"
 msgstr ""
 
-#: grid-parts/customizer/navigation.php:273
+#: grid-parts/customizer/navigation.php:258
 msgid "Expand Icon"
 msgstr ""
 
-#: grid-parts/customizer/navigation.php:274
+#: grid-parts/customizer/navigation.php:259
 msgid "Select the icon that should be used to expand the navigation."
 msgstr ""
 
-#: grid-parts/customizer/navigation.php:301
+#: grid-parts/customizer/navigation.php:286
 msgid "Boxed Expand Icon"
 msgstr ""
 
-#: grid-parts/customizer/navigation.php:302
+#: grid-parts/customizer/navigation.php:287
 msgid "Enable this option if you want to \"box\" the expand icon."
 msgstr ""
 
-#: grid-parts/customizer/navigation.php:325
+#: grid-parts/customizer/navigation.php:310
 msgid "Expand Icon Position"
 msgstr ""
 
-#: grid-parts/customizer/navigation.php:326
+#: grid-parts/customizer/navigation.php:311
 msgid "Changes the position of the collapsed-menu icon inside the area."
 msgstr ""
 
-#: grid-parts/customizer/navigation.php:331
+#: grid-parts/customizer/navigation.php:316
 msgid "Top Left"
 msgstr ""
 
-#: grid-parts/customizer/navigation.php:332
+#: grid-parts/customizer/navigation.php:317
 msgid "Top Center"
 msgstr ""
 
-#: grid-parts/customizer/navigation.php:333
+#: grid-parts/customizer/navigation.php:318
 msgid "Top Right"
 msgstr ""
 
-#: grid-parts/customizer/navigation.php:334
+#: grid-parts/customizer/navigation.php:319
 msgid "Center Left"
 msgstr ""
 
-#: grid-parts/customizer/navigation.php:335
+#: grid-parts/customizer/navigation.php:320
 #: inc/kirki/controls/php/class-kirki-control-background.php:90
 #: inc/kirki/controls/php/class-kirki-control-dimensions.php:121
 msgid "Center Center"
 msgstr ""
 
-#: grid-parts/customizer/navigation.php:336
+#: grid-parts/customizer/navigation.php:321
 msgid "Center Right"
 msgstr ""
 
-#: grid-parts/customizer/navigation.php:337
+#: grid-parts/customizer/navigation.php:322
 msgid "Bottom Left"
 msgstr ""
 
-#: grid-parts/customizer/navigation.php:338
+#: grid-parts/customizer/navigation.php:323
 msgid "Bottom Center"
 msgstr ""
 
-#: grid-parts/customizer/navigation.php:339
+#: grid-parts/customizer/navigation.php:324
 msgid "Bottom Right"
 msgstr ""
 
@@ -986,19 +977,19 @@ msgstr ""
 msgid "Changes the spacing between widgets in this widget-area."
 msgstr ""
 
-#: grid-parts/templates/navigation.php:131
+#: grid-parts/templates/navigation.php:130
 msgid "Collapse Navigation"
 msgstr ""
 
-#: grid-parts/templates/navigation.php:132
+#: grid-parts/templates/navigation.php:131
 msgid "Expand Navigation"
 msgstr ""
 
-#: grid-parts/templates/navigation.php:133
+#: grid-parts/templates/navigation.php:132
 msgid "Toggle Navigation"
 msgstr ""
 
-#: grid-parts/templates/navigation.php:174
+#: grid-parts/templates/navigation.php:173
 #. translators: The navigation number.
 msgid "Please assign a menu to the \"Navigation %d\" menu."
 msgstr ""
@@ -1337,11 +1328,11 @@ msgstr ""
 msgid "Available placeholder: %s for the post-title."
 msgstr ""
 
-#: inc/customizer/features.php:272
+#: inc/customizer/features.php:266
 msgid "Deferred Parts"
 msgstr ""
 
-#: inc/customizer/features.php:273
+#: inc/customizer/features.php:267
 msgid ""
 "Select the parts that should be loaded after the initial request. "
 "Non-essential parts can be added here."
@@ -1365,7 +1356,14 @@ msgstr ""
 msgid "Grid-parts can overlap"
 msgstr ""
 
-#: inc/customizer/grid.php:75
+#: inc/customizer/grid.php:64
+#. translators: Link to the blocks-management screen.
+msgid ""
+"Did you know you can place resuable blocks anywhere in your grid? <a "
+"href=\"%s\" target=\"_blank\">Click here</a> to manage your reusable blocks."
+msgstr ""
+
+#: inc/customizer/grid.php:80
 msgid ""
 "Edit settings for the grid. For more information and documentation on how "
 "the grid works, please read <a "
@@ -1373,51 +1371,51 @@ msgid ""
 "target=\"_blank\">this article</a>."
 msgstr ""
 
-#: inc/customizer/grid.php:90
+#: inc/customizer/grid.php:95
 msgid "Mobile Breakpoint"
 msgstr ""
 
-#: inc/customizer/grid.php:91
+#: inc/customizer/grid.php:96
 msgid ""
 "The breakpoint that separates mobile views from desktop views. Use a valid "
 "CSS unit."
 msgstr ""
 
-#: inc/customizer/grid.php:92
+#: inc/customizer/grid.php:97
 msgid ""
 "Screen sizes below the breakpoint defined will get a stacked view instead "
 "of grid."
 msgstr ""
 
-#: inc/customizer/grid.php:103
+#: inc/customizer/grid.php:108
 msgid "Grid Container Gap"
 msgstr ""
 
-#: inc/customizer/grid.php:123
+#: inc/customizer/grid.php:128
 msgid "Grid Container max-width"
 msgstr ""
 
-#: inc/customizer/grid.php:124
+#: inc/customizer/grid.php:129
 msgid "The maximum width for this grid."
 msgstr ""
 
-#: inc/customizer/grid.php:125
+#: inc/customizer/grid.php:130
 msgid ""
 "By setting the max-width to something other than 100% you can build a boxed "
 "layout."
 msgstr ""
 
-#: inc/customizer/grid.php:144
+#: inc/customizer/grid.php:149
 msgid "Grid Parts Load Order"
 msgstr ""
 
-#: inc/customizer/grid.php:145
+#: inc/customizer/grid.php:150
 msgid ""
 "Changes the order in which parts get loaded. This only affects the mobile "
 "views and SEO."
 msgstr ""
 
-#: inc/customizer/grid.php:146
+#: inc/customizer/grid.php:151
 msgid ""
 "Your content should always be near the top. You can place secondary items "
 "lower in the load order"

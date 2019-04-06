@@ -104,6 +104,7 @@ function griddGetContrastColor( bg ) {
 	_.each( griddCustomizerVars.autoText, function( textColor, backgroundColor ) {
 		wp.customize( backgroundColor, function( value ) {
 			value.bind( function( to ) {
+				console.log( textColor );
 				window.parent.window.wp.customize.control( textColor ).setting.set( griddGetContrastColor( to ) );
 			});
 		});

@@ -48,10 +48,9 @@
   .gridd-tp-nav_ID .gridd-toggle-navigation:not(.gridd-nav-toggle-boxed):hover, .gridd-tp-nav_ID .gridd-toggle-navigation:not(.gridd-nav-toggle-boxed):focus, .gridd-tp-nav_ID .gridd-toggle-navigation:not(.gridd-nav-toggle-boxed).focus, .gridd-tp-nav_ID .gridd-toggle-navigation:not(.gridd-nav-toggle-boxed).toggled-on {
     outline: 1px dotted; }
   .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed:hover, .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed:focus, .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed.focus, .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed.toggled-on {
-    background: var(--gridd-nav-ID-accent-bg);
-    color: var(--gridd-nav-ID-accent-color); }
+    color: var(--gridd-nav-ID-accent); }
     .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed:hover svg, .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed:focus svg, .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed.focus svg, .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed.toggled-on svg {
-      fill: var(--gridd-nav-ID-accent-color); }
+      fill: var(--gridd-nav-ID-accent); }
   .gridd-tp-nav_ID .gridd-toggle-navigation.toggled-on ~ nav {
     display: block; }
     .gridd-sticky .gridd-tp-nav_ID .gridd-toggle-navigation.toggled-on ~ nav {

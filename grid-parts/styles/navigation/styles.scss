@@ -35,12 +35,11 @@
 				>a,
 				>a:visited {
 					color: $accentColor;
-					background: $accentBackground;
+					border-bottom: 2px solid;
 				}
 
 				.gridd-toggle {
 					color: $accentColor;
-					background: $accentBackground;
 
 					svg {
 						fill: $accentColor;
@@ -58,10 +57,10 @@
 			&.focus,
 			&.toggled-on {
 				color: $accentColor;
-				background: $accentBackground;
+				border-bottom: 2px solid $accentColor;
 
 				~.gridd-toggle {
-					background: $accentBackground;
+					border-bottom: 2px solid $accentColor;
 
 					svg {
 						fill: $accentColor;
@@ -82,7 +81,7 @@
 			&.focus,
 			&.toggled-on {
 				color: $accentColor;
-				background: $accentBackground;
+				border-bottom: 2px solid $accentColor;
 
 				svg {
 					fill: $accentColor;
@@ -90,7 +89,7 @@
 			}
 
 			&.toggled-on {
-				background: $accentBackground;
+				border-bottom: 2px solid $accentColor;
 
 				svg {
 					fill: $accentColor;

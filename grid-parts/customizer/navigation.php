@@ -54,7 +54,7 @@ function gridd_nav_customizer_options( $id ) {
 				"gridd_grid_part_details_nav_$id",
 				[
 					'plus' => [
-						esc_html__( 'Selecting from an array of WCAG-compliant colors for text', 'gridd' ),
+						esc_html__( 'More extensive control over colors', 'gridd' ),
 						esc_html__( 'WooCommerce Cart inside the navigation', 'gridd' ),
 						esc_html__( 'font-size adjustments', 'gridd' ),
 					],
@@ -153,33 +153,18 @@ function gridd_nav_customizer_options( $id ) {
 
 	Customizer::add_field(
 		[
-			'type'        => 'color',
-			'label'       => esc_html__( 'Accent Background Color', 'gridd' ),
-			'description' => esc_html__( 'Controls the background-color for menu items on hover, as well as for the currently active menu-item. Applies to both parent and child (dropdown) menu items.', 'gridd' ),
-			'settings'    => "gridd_grid_nav_{$id}_accent_bg_color",
-			'section'     => "gridd_grid_part_details_nav_$id",
-			'default'     => '#0f5e97',
-			'transport'   => 'postMessage',
-			'css_vars'    => "--gridd-nav-$id-accent-bg",
-			'choices'     => [
-				'alpha' => true,
-			],
-		]
-	);
-
-	Customizer::add_field(
-		[
-			'type'              => 'gridd-wcag-tc',
-			'label'             => esc_html__( 'Accent Items Color', 'gridd' ),
-			'description'       => esc_html__( 'Select the color used for your menu items on hover, as well as for the currently active menu-item. Applies to both parent and child (dropdown) menu items. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
+			'type'              => 'gridd-wcag-lc',
+			'label'             => esc_html__( 'Accent Color', 'gridd' ),
+			'description'       => esc_html__( 'Select the hue for you active item. The color will be auto-calculated to ensure maximum readability.', 'gridd' ),
 			'settings'          => "gridd_grid_nav_{$id}_accent_color",
 			'section'           => "gridd_grid_part_details_nav_$id",
-			'choices'           => [
-				'setting' => "gridd_grid_nav_{$id}_accent_bg_color",
-			],
-			'default'           => '#ffffff',
+			'default'           => '#0f5e97',
 			'transport'         => 'postMessage',
-			'css_vars'          => "--gridd-nav-$id-accent-color",
+			'css_vars'          => "--gridd-nav-$id-accent",
+			'choices'           => [
+				'backgroundColor' => "gridd_grid_nav_{$id}_bg_color",
+				'textColor'       => "gridd_grid_nav_{$id}_items_color",
+			],
 			'sanitize_callback' => [ $sanitization, 'color_hex' ],
 		]
 	);

@@ -87,11 +87,10 @@
 			&:focus,
 			&.focus,
 			&.toggled-on {
-				background: var(--gridd-nav-ID-accent-bg);
-				color: var(--gridd-nav-ID-accent-color);
+				color: var(--gridd-nav-ID-accent);
 
 				svg {
-					fill: var(--gridd-nav-ID-accent-color);
+					fill: var(--gridd-nav-ID-accent);
 				}
 			}
 		}
