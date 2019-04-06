@@ -1,5 +1,5 @@
 /* global griddRestParts, griddRestRoute */
-document.addEventListener( 'DOMContentLoaded', function( e ) {
+document.addEventListener( 'DOMContentLoaded', function() {
 	Array.prototype.forEach.call( griddRestParts, function( id, i ) {
 		var request = new XMLHttpRequest(),
 			event,
