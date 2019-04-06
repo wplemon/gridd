@@ -10,8 +10,6 @@
 
 namespace Gridd;
 
-use Gridd\Grid_Parts;
-
 /**
  * Implements the custom REST Routes.
  *
@@ -41,13 +39,10 @@ class Rest_Routes extends \WP_REST_Controller {
 		$version   = '1';
 		$namespace = 'gridd/v' . $version;
 
-		$partials = apply_filters( 'gridd_rest_partials', Grid_Parts::get_instance()->get_parts() );
+		$partials = array_keys( Rest::get_all_partials() );
 
 		foreach ( $partials as $partial ) {
-			if ( ! isset( $partial['id'] ) ) {
-				continue;
-			}
-			$base = "partials/{$partial['id']}";
+			$base = "partials/$partial";
 
 			register_rest_route(
 				$namespace,
@@ -58,7 +53,7 @@ class Rest_Routes extends \WP_REST_Controller {
 						'callback'            => [ $this, 'get_partial' ],
 						'permission_callback' => '__return_true',
 						'args'                => [
-							'partial' => $partial['id'],
+							'partial' => $partial,
 						],
 					],
 				]

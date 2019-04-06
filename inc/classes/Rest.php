@@ -20,6 +20,16 @@ use Gridd\Grid_Part\Sidebar;
 class Rest {
 
 	/**
+	 * An array of available partials.
+	 *
+	 * @static
+	 * @access private
+	 * @since 1.1
+	 * @var array
+	 */
+	private static $partials = [];
+
+	/**
 	 * Constructor.
 	 *
 	 * @since 1.0
@@ -34,6 +44,19 @@ class Rest {
 	}
 
 	/**
+	 * Registers a partial and makes it available to the REST API.
+	 *
+	 * @static
+	 * @access public
+	 * @since 1.1
+	 * @param array $args The partial arguments.
+	 * @return void
+	 */
+	public static function register_partial( $args ) {
+		self::$partials[ $args['id'] ] = $args['label'];
+	}
+
+	/**
 	 * Adds partials choices to the multiselect option.
 	 *
 	 * @access public
@@ -43,6 +66,18 @@ class Rest {
 	 */
 	public function partials_choices( $choices ) {
 		return $choices;
+	}
+
+	/**
+	 * Get an array of all available partials.
+	 *
+	 * @static
+	 * @access public
+	 * @since 1.1
+	 * @return array
+	 */
+	public static function get_all_partials() {
+		return self::$partials;
 	}
 
 	/**

@@ -37,6 +37,7 @@ class Nav_Handheld extends Grid_Part {
 	 * @return void
 	 */
 	public function init() {
+		$this->register_rest_api_partials();
 		add_action( 'widgets_init', [ $this, 'register_sidebar' ] );
 		add_action( 'gridd_the_grid_part', [ $this, 'render' ] );
 		add_action( 'gridd_the_partial', [ $this, 'the_partial' ] );
@@ -109,6 +110,22 @@ class Nav_Handheld extends Grid_Part {
 				'after_widget'  => '</section>',
 				'before_title'  => '<h2 class="widget-title h3">',
 				'after_title'   => '</h2>',
+			]
+		);
+	}
+
+	/**
+	 * Registers the partial(s) for the REST API.
+	 *
+	 * @access public
+	 * @since 1.1
+	 * @return void
+	 */
+	public function register_rest_api_partials() {
+		Rest::register_partial(
+			[
+				'id'    => 'nav-handheld',
+				'label' => esc_html__( 'Mobile Navigation', 'gridd' ),
 			]
 		);
 	}

@@ -56,6 +56,7 @@ class Footer extends Grid_Part {
 	 * @return void
 	 */
 	public function init() {
+		$this->register_rest_api_partials();
 		add_action( 'widgets_init', [ $this, 'register_footer_sidebars' ], 30 );
 		add_action( 'gridd_get_grid_part_specs_footer_social_media', [ $this, 'get_grid_part_specs_footer_social_media' ] );
 		add_action( 'gridd_the_grid_part', [ $this, 'render' ] );
@@ -229,6 +230,22 @@ class Footer extends Grid_Part {
 		}
 
 		return apply_filters( 'gridd_footer_grid_parts', $footer_grid_parts );
+	}
+
+	/**
+	 * Registers the partial(s) for the REST API.
+	 *
+	 * @access public
+	 * @since 1.1
+	 * @return void
+	 */
+	public function register_rest_api_partials() {
+		Rest::register_partial(
+			[
+				'id'    => 'footer',
+				'label' => esc_html__( 'Footer', 'gridd' ),
+			]
+		);
 	}
 }
 

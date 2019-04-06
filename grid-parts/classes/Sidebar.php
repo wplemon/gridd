@@ -37,6 +37,7 @@ class Sidebar extends Grid_Part {
 	 * @return void
 	 */
 	public function init() {
+		$this->register_rest_api_partials();
 		add_action( 'widgets_init', [ $this, 'register_sidebars' ] );
 		add_action( 'gridd_the_grid_part', [ $this, 'render' ] );
 		add_action( 'get_sidebar', [ $this, 'get_sidebar' ] );
@@ -172,6 +173,30 @@ class Sidebar extends Grid_Part {
 					'after_widget'  => '</section>',
 					'before_title'  => '<h2 class="widget-title h3">',
 					'after_title'   => '</h2>',
+				]
+			);
+		}
+	}
+
+	/**
+	 * Registers the partial(s) for the REST API.
+	 *
+	 * @access public
+	 * @since 1.1
+	 * @return void
+	 */
+	public function register_rest_api_partials() {
+		$number = self::get_number_of_sidebars();
+
+		for ( $i = 1; $i <= $number; $i++ ) {
+
+			/* translators: The number of the widget area. */
+			$label = get_theme_mod( "gridd_grid_widget_area_{$i}_name", sprintf( esc_html__( 'Widget Area %d', 'gridd' ), intval( $i ) ) );
+
+			Rest::register_partial(
+				[
+					'id'    => "sidebar_$i",
+					'label' => $label,
 				]
 			);
 		}
