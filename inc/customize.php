@@ -69,6 +69,7 @@ require_once get_template_directory() . '/inc/customizer/grid.php';
 require_once get_template_directory() . '/inc/customizer/typography.php';
 require_once get_template_directory() . '/inc/customizer/edd.php';
 require_once get_template_directory() . '/inc/customizer/features.php';
+require_once get_template_directory() . '/inc/customizer/static-front-page.php';
 require_once get_template_directory() . '/inc/customizer/woocommerce.php';
 
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */

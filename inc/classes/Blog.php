@@ -38,6 +38,7 @@ class Blog {
 		add_filter( 'comment_form_defaults', [ $this, 'comment_form_defaults' ] );
 		add_filter( 'wp_list_categories', [ $this, 'list_categories' ] );
 		add_filter( 'gridd_get_post_parts', [ $this, 'gridd_get_post_parts_filter' ] );
+		add_action( 'gridd_get_template_part', [ $this, 'hide_title_on_pages' ], 10, 2 );
 	}
 
 	/**
@@ -217,6 +218,21 @@ class Blog {
 			}
 		}
 		return $parts;
+	}
+
+	/**
+	 * Hides the title on the frontpage.
+	 *
+	 * @access public
+	 * @since 1.1.1
+	 * @param string|false $custom_path The custom template-part path. Defaults to false. Use absolute path.
+	 * @param string       $slug        The template slug.
+	 * @param string       $name        The template name.
+	 * @see https://developer.wordpress.org/reference/functions/get_template_part/
+	 * @return string|bool
+	 */
+	public static function hide_title_on_pages( $custom_path, $slug, $name = null ) {
+		return 'template-parts/part-post-title' === $slug && ( is_front_page() || is_home() ) && get_theme_mod( 'gridd_hide_home_title', true ) ? true : $custom_path;
 	}
 }
 
