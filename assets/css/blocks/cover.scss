@@ -23,3 +23,11 @@
 		max-width: calc(var(--gridd-content-max-width-calculated) / 2);
 	}
 }
+
+.wp-block-column {
+	.wp-block-cover {
+		&.has-background-dim {
+			display: flex;
+		}
+	}
+}
