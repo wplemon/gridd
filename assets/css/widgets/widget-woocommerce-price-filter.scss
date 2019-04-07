@@ -1,0 +1,29 @@
+.woocommerce .widget_price_filter {
+    .ui-slider-horizontal {
+        height: 2px;
+    }
+	.ui-slider {
+
+		.ui-slider-range,
+		.ui-slider-handle {
+			background-color: currentColor;
+            margin-top: calc(2px - .25em);
+        }
+        
+        .ui-slider-range {
+            height: .5em;
+        }
+	}
+
+	.price_slider_wrapper {
+		.ui-widget-content {
+			background-color: currentColor;
+			opacity: .5;
+			transition: opacity 200ms;
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+}
