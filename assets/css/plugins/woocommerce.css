@@ -40,6 +40,11 @@
     border-color: #fff; }
   .woocommerce div.product div.images .woocommerce-product-gallery__trigger:hover:after {
     background: #fff; }
+.woocommerce div.product div.images .flex-control-thumbs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 100px)); }
+  .woocommerce div.product div.images .flex-control-thumbs li {
+    width: 100%; }
 .woocommerce.single-product .gridd-tp-content {
   overflow: visible; }
 .woocommerce .woocommerce-tabs ul.tabs li a:active, .woocommerce .woocommerce-tabs ul.tabs li a:focus,

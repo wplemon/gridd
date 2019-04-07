@@ -64,7 +64,16 @@
             background: #fff;
           }
         }
-      }
+			}
+			
+			.flex-control-thumbs {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(50px, 100px));
+
+				li {
+					width: 100%;
+				}
+			}
     }
   }
 
