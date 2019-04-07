@@ -129,3 +129,8 @@
   display: flex;
   align-items: center;
 }
+
+.woocommerce-product-gallery__wrapper {
+  display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
