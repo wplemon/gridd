@@ -68,7 +68,7 @@
 			
 			.flex-control-thumbs {
 				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(50px, 100px));
+				grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
 
 				li {
 					width: 100%;
