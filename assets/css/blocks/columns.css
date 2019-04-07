@@ -121,3 +121,5 @@
   padding: 1em; }
 .site-main .entry-content > .wp-block-columns:not(.alignfull):not(.alignwide):not(.alignleft):not(.alignright) {
   max-width: calc(var(--gridd-content-max-width-calculated) + 2em); }
+.wp-block-columns .full-height {
+  height: 100%; }
