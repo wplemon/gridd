@@ -68,11 +68,6 @@
 .woocommerce-widget-layered-nav-dropdown {
   width: 100%; }
 
-.woocommerce-product-search {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, -webkit-max-content));
-  grid-template-columns: repeat(auto-fit, minmax(150px, max-content)); }
-
 .woocommerce-grouped-product-list tr {
   display: flex;
   align-items: center; }

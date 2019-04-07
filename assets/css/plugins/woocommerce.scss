@@ -125,13 +125,6 @@
   width: 100%;
 }
 
-.woocommerce-product-search {
-  // display: -ms-grid;
-  display: grid;
-  // -ms-grid-columns: repeat(auto-fit, minmax(150px, max-content));
-  grid-template-columns: repeat(auto-fit, minmax(150px, max-content));
-}
-
 .woocommerce-grouped-product-list tr {
   display: flex;
   align-items: center;

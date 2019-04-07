@@ -1,0 +1,15 @@
+@import "../mixins";
+
+.widget_product_search {}
+
+.woocommerce-product-search {
+	display: flex;
+
+	input {
+		width: 100%;
+	}
+
+	button {
+    @include screen-reader-text;
+	}
+}
