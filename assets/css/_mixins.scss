@@ -1,3 +1,5 @@
+@import "functions";
+
 // Center block
 @mixin center-block {
 	display: block;
@@ -35,5 +37,58 @@
 
 	&:focus {
 		box-shadow: inset 0px 1px 1px 0px;
+	}
+}
+
+@mixin widget-list {
+	ul {
+		list-style: none;
+		list-style-type: none;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+
+		a {
+			display: block;
+			padding: .25em 0;
+			text-decoration: none;
+			border-bottom: 1px solid rgba(0,0,0,.1);
+
+			&:hover {
+				text-decoration: none;
+			}
+
+			&:hover,
+			&:active,
+			&:focus {
+				background-color: var(--gridd-links-color);
+				color: #fff;
+				filter: none;
+			}
+		}
+
+		ul {
+			list-style: none;
+			list-style-type: none;
+
+			a {
+				&:before {
+					content: inline-svg('<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M23.245 4l-11.245 14.374-11.219-14.374-.781.619 12 15.381 12-15.391-.755-.609z"/></svg>');
+					display: inline-block;
+					transform: rotate(270deg);
+					margin-right: .5em;
+				}
+			}
+		}
+
+		&.menu {
+			> li {
+				&:last-child {
+					> a {
+						border-bottom: none;
+					}
+				}
+			}
+		}
 	}
 }

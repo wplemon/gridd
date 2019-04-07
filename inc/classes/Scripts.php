@@ -371,26 +371,6 @@ class Scripts {
 		);
 
 		switch ( $widget_id_base ) {
-			case 'media_gallery':
-				$style->add_file( get_theme_file_path( 'assets/css/widgets/widget-gallery.min.css' ) );
-				break;
-
-			case 'media_image':
-				$style->add_file( get_theme_file_path( 'assets/css/widgets/widget-image.min.css' ) );
-				break;
-
-			case 'archives':
-				$style->add_file( get_theme_file_path( 'assets/css/widgets/widget-archive.min.css' ) );
-				break;
-
-			case 'categories':
-				$style->add_file( get_theme_file_path( 'assets/css/widgets/widget-categories.min.css' ) );
-				break;
-
-			case 'meta':
-				$style->add_file( get_theme_file_path( 'assets/css/widgets/widget-meta.min.css' ) );
-				break;
-
 			case 'nav_menu':
 				$widget_output = str_replace( 'widget_nav_menu', 'widget_nav_menu gridd-nav-vertical', $widget_output );
 				$id            = (int) str_replace( 'sidebar-', '', $sidebar_id );
@@ -406,21 +386,8 @@ class Scripts {
 				);
 				break;
 
-			case 'pages':
-				$style->add_file( get_theme_file_path( 'assets/css/widgets/widget-pages.min.css' ) );
-				break;
-
-			case 'recent-comments':
-				$style->add_file( get_theme_file_path( 'assets/css/widgets/widget-recent-comments.min.css' ) );
-				break;
-
-			case 'recent-posts':
-				$style->add_file( get_theme_file_path( 'assets/css/widgets/widget-recent-posts.min.css' ) );
-				break;
-
-			case 'rss':
-				$style->add_file( get_theme_file_path( 'assets/css/widgets/widget-rss.min.css' ) );
-				break;
+			default:
+				$style->add_file( get_theme_file_path( 'assets/css/widgets/widget-' . str_replace( '_', '-', $widget_id_base ) . '.min.css' ) );
 		}
 
 		$css = $style->get_css();
