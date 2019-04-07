@@ -52,7 +52,16 @@
 .woocommerce .woocommerce-tabs ul.tabs li a:visited:focus {
   background: none; }
 .woocommerce span.onsale {
-  font-size: calc(1em / var(--gridd-typo-scale)); }
+  font-size: calc(1em / var(--gridd-typo-scale));
+  min-height: 0;
+  min-width: 0;
+  top: 0;
+  left: 0;
+  border-radius: 0;
+  padding: .5em 1em;
+  line-height: 1.5;
+  background-color: var(--gridd-links-color);
+  color: var(--gridd-content-bg); }
 
 .woocommerce div.product form.cart {
   display: flex;

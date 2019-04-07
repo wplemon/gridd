@@ -37,7 +37,7 @@
       .add_to_cart,
       .add_to_cart_button {
         order: 100;
-      }
+			}
     }
   }
 
@@ -100,7 +100,16 @@
   }
 
   span.onsale {
-    font-size: calc(1em / var(--gridd-typo-scale));
+		font-size: calc(1em / var(--gridd-typo-scale));
+		min-height: 0;
+    min-width: 0;
+    top: 0;
+    left: 0;
+    border-radius: 0;
+    padding: .5em 1em;
+		line-height: 1.5;
+		background-color: var(--gridd-links-color);
+		color: var(--gridd-content-bg);
   }
 }
 
