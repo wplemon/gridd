@@ -3,8 +3,9 @@
 .widget_product_categories {
 	@include widget-list;
 
-	select {
-		width: 100%;
-		padding: .5em;
+	.current-cat {
+		a {
+			border-color: currentColor;
+		}
 	}
 }

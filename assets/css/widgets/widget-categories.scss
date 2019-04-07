@@ -3,6 +3,12 @@
 .widget_categories {
 	@include widget-list;
 
+	.current-cat {
+		a {
+			border-color: currentColor;
+		}
+	}
+
 	select {
 		width: 100%;
 		padding: .5em;
