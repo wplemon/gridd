@@ -254,8 +254,8 @@
 .wp-block-cover .wp-block-cover-text {
   max-width: var(--gridd-content-max-width-calculated);
   padding: 1em; }
-.wp-block-cover-image > *,
-.wp-block-cover > * {
+.wp-block-cover-image .wp-block-cover__inner-container > *,
+.wp-block-cover .wp-block-cover__inner-container > * {
   margin: auto; }
 .wp-block-cover-image.alignleft, .wp-block-cover-image.alignright,
 .wp-block-cover.alignleft,
