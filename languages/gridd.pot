@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gridd 1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/gridd\n"
-"POT-Creation-Date: 2019-04-07 10:46:27+00:00\n"
+"POT-Creation-Date: 2019-04-08 19:59:27+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1014,17 +1014,17 @@ msgid ""
 "Please upgrade and try again."
 msgstr ""
 
-#: inc/classes/Blog.php:51 inc/customizer/features.php:254
+#: inc/classes/Blog.php:52 inc/customizer/features.php:254
 #. translators: %s: Name of current post. Only visible to screen readers
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
-#: inc/classes/Blog.php:142
+#: inc/classes/Blog.php:143
 #. translators: %s: post title
 msgid "Leave a Comment on %s"
 msgstr ""
 
-#: inc/classes/Blog.php:164
+#: inc/classes/Blog.php:165
 #. translators: %s: Name of the post.
 msgid "Edit %s"
 msgstr ""
@@ -1419,6 +1419,10 @@ msgstr ""
 msgid ""
 "Your content should always be near the top. You can place secondary items "
 "lower in the load order"
+msgstr ""
+
+#: inc/customizer/static-front-page.php:15
+msgid "Hide Homepage Title"
 msgstr ""
 
 #: inc/customizer/typography.php:19

@@ -18,6 +18,10 @@
 		padding: 1em;
 	}
 
+	> * {
+		margin: auto;
+	}
+
 	&.alignleft,
 	&.alignright {
 		max-width: calc(var(--gridd-content-max-width-calculated) / 2);
