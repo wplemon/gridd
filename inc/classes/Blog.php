@@ -232,7 +232,7 @@ class Blog {
 	 * @return string|bool
 	 */
 	public static function hide_title_on_pages( $custom_path, $slug, $name = null ) {
-		return 'template-parts/part-post-title' === $slug && \is_front_page() && ! \is_blog() && \get_theme_mod( 'gridd_hide_home_title', true ) ? true : $custom_path;
+		return 'template-parts/part-post-title' === $slug && \is_front_page() && ! \is_home() && \get_theme_mod( 'gridd_hide_home_title', true ) ? true : $custom_path;
 	}
 }
 
