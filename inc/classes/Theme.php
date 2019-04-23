@@ -418,6 +418,14 @@ class Theme {
 	 * @return void
 	 */
 	public static function get_template_part( $slug, $name = null ) {
+		if ( null === $name ) {
+			if ( is_archive() ) {
+				$name = 'archive';
+			} elseif ( is_singular() ) {
+				$name = 'singular';
+			}
+		}
+
 		/**
 		 * Determine if we want to use a custom path for this template-part.
 		 *
