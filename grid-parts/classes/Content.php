@@ -126,6 +126,7 @@ class Content extends Grid_Part {
 		$style->add_string( '@media only screen and (min-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . '){' );
 		$style->add_file( get_theme_file_path( 'grid-parts/styles/content/styles-large.min.css' ) );
 		$style->add_string( '}' );
+		$style->add_string( ':root{--gridd-content-max-width-calculated:var(--gridd-content-max-width);}' );
 
 		/**
 		 * This CSS is just a hack to overcome a bug in the CSS minifier

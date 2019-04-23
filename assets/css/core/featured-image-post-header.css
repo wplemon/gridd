@@ -62,6 +62,6 @@
   .gridd-featured-image-post-header-content a:visited:hover {
     color: var(--gridd-image-header-text-color); }
   .gridd-featured-image-post-header-content .inner {
-    max-width: var(--gridd-content-max-width);
+    max-width: var(--gridd-content-max-width-calculated);
     margin-left: auto;
     margin-right: auto; }
