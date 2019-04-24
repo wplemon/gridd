@@ -43,3 +43,4 @@ phpunit.xml export-ignore
 phpunit.xml.dist export-ignore
 README.md export-ignore
 *.sh export-ignore
+Updater.php export-ignore
