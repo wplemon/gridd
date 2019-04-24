@@ -24,3 +24,13 @@
 .site-main .entry-content > *.alignright {
   margin-right: calc(50% - var(--gridd-content-max-width-calculated) / 2);
 }
+.site-main .wp-block-group > * {
+  margin-left: auto;
+  margin-right: auto;
+}
+.site-main .wp-block-group .wp-block-columns:not(.alignfull):not(.alignwide) {
+  max-width: calc(var(--gridd-content-max-width-calculated) + 2em);
+}
+.site-main .wp-block-group .wp-block-column {
+  flex-basis: 50%;
+}
