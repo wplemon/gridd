@@ -1,5 +1,7 @@
 .gridd-tp-sidebar {
   flex-direction: column;
-  justify-content: flex-start; }
-  .gridd-tp-sidebar .widget:last-child {
-    margin-bottom: 0; }
+  justify-content: flex-start;
+}
+.gridd-tp-sidebar .widget:last-child {
+  margin-bottom: 0;
+}

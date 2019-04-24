@@ -1,6 +1,8 @@
 body {
   -ms-word-wrap: break-word;
-  word-wrap: break-word; }
+  word-wrap: break-word;
+}
 
 #main {
-  width: 100%; }
+  width: 100%;
+}

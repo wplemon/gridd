@@ -69,11 +69,8 @@
 /**
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
-.wp-block-categories.alignleft {
-  /*rtl:ignore*/
-  margin-right: 2em;
-}
-.wp-block-categories.alignright {
-  /*rtl:ignore*/
-  margin-left: 2em;
+.wp-block-group.has-background {
+  padding: 20px 30px;
+  margin-top: 0;
+  margin-bottom: 0;
 }

@@ -1,7 +1,10 @@
 .widget-area {
-  width: 100%; }
+  width: 100%;
+}
 
 .widget {
-  margin: 0 0 1.5em; }
-  .widget select {
-    max-width: 100%; }
+  margin: 0 0 1.5em;
+}
+.widget select {
+  max-width: 100%;
+}
