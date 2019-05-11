@@ -268,9 +268,14 @@ class Theme {
 			'editor-color-palette',
 			[
 				[
-					'name'  => esc_attr__( 'Pale Pink', 'gridd' ),
-					'slug'  => 'pale-pink',
-					'color' => '#f78da7',
+					'name'  => esc_attr__( 'White', 'gridd' ),
+					'slug'  => 'theme-white',
+					'color' => '#fff',
+				],
+				[
+					'name'  => esc_attr__( 'Black', 'gridd' ),
+					'slug'  => 'theme-black',
+					'color' => '#000',
 				],
 				[
 					'name'  => esc_attr__( 'Vivid Red', 'gridd' ),
@@ -303,19 +308,9 @@ class Theme {
 					'color' => '#8ed1fc',
 				],
 				[
-					'name'  => esc_attr__( 'cyan', 'gridd' ),
-					'slug'  => 'theme-cyan',
-					'color' => '#26C6DA',
-				],
-				[
 					'name'  => esc_html__( 'Vivid Cyan Blue', 'gridd' ),
 					'slug'  => 'vivid-cyan-blue',
 					'color' => '#0693e3',
-				],
-				[
-					'name'  => esc_attr__( 'White', 'gridd' ),
-					'slug'  => 'theme-white',
-					'color' => '#fff',
 				],
 				[
 					'name'  => esc_attr__( 'Very Light Gray', 'gridd' ),
@@ -336,11 +331,6 @@ class Theme {
 					'name'  => esc_attr__( 'Very Dark Gray', 'gridd' ),
 					'slug'  => 'very-dark-gray',
 					'color' => '#313131',
-				],
-				[
-					'name'  => esc_attr__( 'Black', 'gridd' ),
-					'slug'  => 'theme-black',
-					'color' => '#000',
 				],
 			]
 		);
