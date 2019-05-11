@@ -43,15 +43,17 @@ You can install the theme using the WordPress Administration menu. For more info
 * Fix: Improve styles for products-search widget.
 * Fix: Improve WooCommerce price-filter widget styles.
 * Fix: No edit links in products.
-* New: Added option to hide page-title on the frontpage.
 * Fix: WooCommerce product slides.
 * Fix: WooCommerce image thumbnails in carousels.
-* Fix: WooCommerce .onsale tags styling.
+* Fix: WooCommerce `.onsale` tags styling.
 * Fix: blocks alignment in cover block.
 * Fix: Added product-searchform template for WooCommerce.
 * Fix: Content-width calculation when using `em` values for the main content area's max-width setting.
 * Fix: Updated Block styles from latest Gutenberg-dev version.
+* Fix: Simplified color palette.
+* Fix: Updated block styles.
 * New: Added support for the new "Group" editor block.
+* New: Added option to hide page-title on the frontpage.
 
 = 1.1 =
 
