@@ -95,21 +95,22 @@
   background-color: transparent;
   border-bottom: 1px solid #f3f4f5;
 }
-.wp-block-table.is-style-stripes tr:nth-child(odd) {
+.wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
   background-color: #f3f4f5;
 }
-.wp-block-table.is-style-stripes.has-subtle-light-gray-background-color tr:nth-child(odd) {
+.wp-block-table.is-style-stripes.has-subtle-light-gray-background-color tbody tr:nth-child(odd) {
   background-color: #f3f4f5;
 }
-.wp-block-table.is-style-stripes.has-subtle-pale-green-background-color tr:nth-child(odd) {
+.wp-block-table.is-style-stripes.has-subtle-pale-green-background-color tbody tr:nth-child(odd) {
   background-color: #e9fbe5;
 }
-.wp-block-table.is-style-stripes.has-subtle-pale-blue-background-color tr:nth-child(odd) {
+.wp-block-table.is-style-stripes.has-subtle-pale-blue-background-color tbody tr:nth-child(odd) {
   background-color: #e7f5fe;
 }
-.wp-block-table.is-style-stripes.has-subtle-pale-pink-background-color tr:nth-child(odd) {
+.wp-block-table.is-style-stripes.has-subtle-pale-pink-background-color tbody tr:nth-child(odd) {
   background-color: #fcf0ef;
 }
+.wp-block-table.is-style-stripes th,
 .wp-block-table.is-style-stripes td {
   border-color: transparent;
 }

@@ -77,11 +77,13 @@
   /*rtl:ignore*/
   margin-left: 2em;
 }
+.wp-block-latest-posts.wp-block-latest-posts__list {
+  list-style: none;
+}
 .wp-block-latest-posts.is-grid {
   display: flex;
   flex-wrap: wrap;
   padding: 0;
-  list-style: none;
 }
 .wp-block-latest-posts.is-grid li {
   margin: 0 16px 16px 0;
