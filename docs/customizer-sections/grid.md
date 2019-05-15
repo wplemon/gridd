@@ -18,7 +18,7 @@ Building a layout has never been this easy!
 
 Separate your page in columns and rows, place the header, footer, sidebars and a number of other grid-parts wherever you want, define custom widths for your columns and height for your rows.
 
-For more information on how the grid control works, you can read this article in our documentation.
+For more information on how the grid control works, you can read [this article](the-grid-control.md) in our documentation.
 
 ## Mobile Breakpoint
 
