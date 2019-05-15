@@ -144,17 +144,4 @@ add_action(
 	10
 );
 
-/**
- * Custom updater until the theme goes live on w.org.
- * Once the theme is live, this can be deleted.
- *
- * @see https://aristath.github.io/github-theme-updater/
- */
-add_action(
-	'after_setup_theme',
-	function() {
-		get_template_part( 'inc/classes/Updater' );
-	}
-);
-
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */

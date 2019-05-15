@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2.0 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Gridd 1.1\n"
+"Project-Id-Version: Gridd 1.1.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/gridd\n"
-"POT-Creation-Date: 2019-04-24 16:38:25+00:00\n"
+"POT-Creation-Date: 2019-05-15 06:03:50+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1114,35 +1114,35 @@ msgid "No image URL has been entered."
 msgstr ""
 
 #: inc/classes/Theme.php:271
-msgid "Pale Pink"
+msgid "White"
 msgstr ""
 
 #: inc/classes/Theme.php:276
-msgid "Vivid Red"
+msgid "Black"
 msgstr ""
 
 #: inc/classes/Theme.php:281
-msgid "Luminous Vivid Orange"
+msgid "Vivid Red"
 msgstr ""
 
 #: inc/classes/Theme.php:286
-msgid "Luminous Vivid Amber"
+msgid "Luminous Vivid Orange"
 msgstr ""
 
 #: inc/classes/Theme.php:291
-msgid "Light Green Cyan"
+msgid "Luminous Vivid Amber"
 msgstr ""
 
 #: inc/classes/Theme.php:296
-msgid "Vivid Green Cyan"
+msgid "Light Green Cyan"
 msgstr ""
 
 #: inc/classes/Theme.php:301
-msgid "Pale Cyan Blue"
+msgid "Vivid Green Cyan"
 msgstr ""
 
 #: inc/classes/Theme.php:306
-msgid "cyan"
+msgid "Pale Cyan Blue"
 msgstr ""
 
 #: inc/classes/Theme.php:311
@@ -1150,27 +1150,19 @@ msgid "Vivid Cyan Blue"
 msgstr ""
 
 #: inc/classes/Theme.php:316
-msgid "White"
-msgstr ""
-
-#: inc/classes/Theme.php:321
 msgid "Very Light Gray"
 msgstr ""
 
-#: inc/classes/Theme.php:326
+#: inc/classes/Theme.php:321
 msgid "Cyan Bluish Gray"
 msgstr ""
 
-#: inc/classes/Theme.php:331
+#: inc/classes/Theme.php:326
 msgid "Blue Gray"
 msgstr ""
 
-#: inc/classes/Theme.php:336
+#: inc/classes/Theme.php:331
 msgid "Very Dark Gray"
-msgstr ""
-
-#: inc/classes/Theme.php:341
-msgid "Black"
 msgstr ""
 
 #: inc/customize.php:20

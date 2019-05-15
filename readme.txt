@@ -36,6 +36,10 @@ You can install the theme using the WordPress Administration menu. For more info
 
 == Changelog ==
 
+= 1.1.2 =
+
+* Fix: Properly escape the read-me link for blog excerpts.
+
 = 1.1.1 =
 
 * Fix: WooCommerce categories widget styles

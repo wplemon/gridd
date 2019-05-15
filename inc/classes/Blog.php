@@ -60,7 +60,7 @@ class Blog {
 				)
 			);
 		}
-		return ' <a href="' . esc_url_raw( get_the_permalink() ) . '">' . $read_more . '</a> ';
+		return ' <a href="' . esc_url_raw( get_the_permalink() ) . '">' . wp_kses_post( $read_more ) . '</a> ';
 	}
 
 	/**
