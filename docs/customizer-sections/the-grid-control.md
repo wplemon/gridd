@@ -1,7 +1,8 @@
 ---
 layout: default
 title: The Grid Control
-grand_parent: Grid
+parent: Grid
+grand_parent: Customizer Sections
 nav_order: 1
 ---
 

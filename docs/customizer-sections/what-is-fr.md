@@ -1,7 +1,8 @@
 ---
 layout: default
 title: The fr CSS Unit
-grand_parent: Grid
+parent: Grid
+grand_parent: Customizer Sections
 nav_order: 1
 ---
 
