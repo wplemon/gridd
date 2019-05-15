@@ -1,4 +1,5 @@
 @import "variables";
+
 #{$element} {
 
 	.inner {
@@ -8,6 +9,12 @@
 	ul {
 		&.menu {
 			background-color: $submenuBackground;
+
+			>li {
+				>ul {
+					font-size: calc(1em / var(--gridd-typo-scale));
+				}
+			}
 		}
 	}
 }
