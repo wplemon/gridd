@@ -7,7 +7,7 @@ nav_order: 1
 
 The grid control allows you to create any layout you want for your website
 
-<img src="https://wplemon.github.io/gridd/uploads/grid-control-1.png" alt="">
+<img src="https://wplemon.github.io/gridd/uploads/grid-control-1.png" alt="" style="max-width:300px;">
 
 Add any number of rows and columns.
 Adjust & reorder widget areas, content, navigation, branding, sliders etc.
@@ -15,7 +15,7 @@ Bring your site to life quickly and conveniently, right from inside the customiz
 
 ## Adding and removing rows and columns
 
-<img src="https://wplemon.github.io/gridd/uploads/grid-control-2.png" alt="">
+<img src="https://wplemon.github.io/gridd/uploads/grid-control-2.png" alt="" style="max-width:300px;">
 
 Dedicated buttons on the top of the grid control allow you to add extra columns and rows.
 
@@ -26,7 +26,7 @@ You can add any number of rows and columns you want. New columns and rows get ad
 
 ## Resizing columns and rows
 
-<img src="https://wplemon.github.io/gridd/uploads/grid-control-3.png" alt="">
+<img src="https://wplemon.github.io/gridd/uploads/grid-control-3.png" alt="" style="max-width:300px;">
 
 You can define the width of each column and the height of each column, or you can leave the to auto in which case they will be auto-calculated by your browser.
 
@@ -38,7 +38,7 @@ You can mix and match units as you please, and also use the fr unit. For more in
 
 ## Grid-part actions
 
-<img src="https://wplemon.github.io/gridd/uploads/grid-control-4.png" alt="">
+<img src="https://wplemon.github.io/gridd/uploads/grid-control-4.png" alt="" style="max-width:300px;">
 
 When you hover a grid-part, you’ll see icons that allow you to perform additional actions:
 
@@ -48,7 +48,7 @@ When you hover a grid-part, you’ll see icons that allow you to perform additio
 
 ## Adding a new grid-part
 
-<img src="https://wplemon.github.io/gridd/uploads/grid-control-5.gif" alt="">
+<img src="https://wplemon.github.io/gridd/uploads/grid-control-5.gif" alt="" style="max-width:300px;">
 
 To add a new grid-part, you can click on any empty region in your grid. To make the grid-part span multiple areas, all you have to do is click and drag these areas.
 
@@ -58,7 +58,7 @@ You can only add each part once (you can’t have 2 breadcrumbs on your site, th
 
 ## Deleting an existing grid-part
 
-<img src="https://wplemon.github.io/gridd/uploads/grid-control-6.gif" alt="">
+<img src="https://wplemon.github.io/gridd/uploads/grid-control-6.gif" alt="" style="max-width:300px;">
 
 Made a mistake? Want to remove a grid-part from your layout? No problem! Just hover that grid-part and click on the trash icon on that grid-part.
 

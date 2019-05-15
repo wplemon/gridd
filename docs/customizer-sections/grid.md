@@ -12,7 +12,7 @@ Inside the “Grid” section in the WordPress Customizer you will find the foll
 
 ## Grid Settings
 
-<img src="https://wplemon.github.io/gridd/uploads/grid1.png" alt="">
+<img src="https://wplemon.github.io/gridd/uploads/grid1.png" alt="" style="max-width:300px;">
 
 Building a layout has never been this easy!
 
@@ -22,7 +22,7 @@ For more information on how the grid control works, you can read this article in
 
 ## Mobile Breakpoint
 
-<img src="https://wplemon.github.io/gridd/uploads/grid2.png" alt="">
+<img src="https://wplemon.github.io/gridd/uploads/grid2.png" alt="" style="max-width:300px;">
 
 The breakpoint is what separates a mobile device from a desktop device.
 
@@ -33,7 +33,7 @@ Users on small devices (below the breakpoint) will get a stacked view, while use
 To customize mobile grids, [Gridd Plus](https://wplemon.com/gridd-plus) is required.
 {: .label .label-yellow }
 
-<img src="https://wplemon.github.io/gridd/uploads/grid3.png" alt="">
+<img src="https://wplemon.github.io/gridd/uploads/grid3.png" alt="" style="max-width:300px;">
 
 In Grid Plus you have the option to define a custom grid for mobile devices.
 
@@ -45,7 +45,7 @@ Our advise it to always check your site on a mobile device and provide a simplif
 
 ## Grid Container Gap
 
-<img src="https://wplemon.github.io/gridd/uploads/grid4.png" alt="">
+<img src="https://wplemon.github.io/gridd/uploads/grid4.png" alt="" style="max-width:300px;">
 
 If you want your grid-parts to have some spacing between then you can define a CSS value in this field.
 
@@ -53,13 +53,13 @@ Your background color and background image will be visible from these gaps, allo
 
 ## Grid Container Max-Width
 
-<img src="https://wplemon.github.io/gridd/uploads/grid5.png" alt="">
+<img src="https://wplemon.github.io/gridd/uploads/grid5.png" alt="" style="max-width:300px;">
 
 If you want to create a boxed layout you can use this control to define the maximum width for your grid.
 
 ## Background Color
 
-<img src="https://wplemon.github.io/gridd/uploads/grid6.png" alt="">
+<img src="https://wplemon.github.io/gridd/uploads/grid6.png" alt="" style="max-width:300px;">
 
 Define a background color for the whole page.
 
@@ -69,13 +69,13 @@ The color selected here will also be visible if you have used a grid-gap.
 
 ## Background Image
 
-<img src="https://wplemon.github.io/gridd/uploads/grid7.png" alt="">
+<img src="https://wplemon.github.io/gridd/uploads/grid7.png" alt="" style="max-width:300px;">
 
 Similarly to the background color, if you define a background image it will be visible on the sides of a boxed layout, between grid-gaps and also underneath grid-parts that have a transparent background.
 
 ## Grid Parts Load Order
 
-<img src="https://wplemon.github.io/gridd/uploads/grid8.png" alt="">
+<img src="https://wplemon.github.io/gridd/uploads/grid8.png" alt="" style="max-width:300px;">
 
 You can customize the order in which your grid-parts are loaded. This will change the way your HTML is structured which has an impact both on accessibility and SEO.
 
