@@ -1,19 +1,20 @@
-a,
-a:visited {
-	color: var(--gridd-links-color);
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
-	transition: all 100ms ease-in-out;
+.gridd-site-wrapper {
+	a {
+		color: var(--gridd-links-color);
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+		transition: all 100ms ease-in-out;
 
-	&:active,
-	&:focus,
-	&:hover {
-		color: var(--gridd-links-hover-color);
-		outline: thin dotted;
-	}
+		&:active,
+		&:focus,
+		&:hover {
+			color: var(--gridd-links-hover-color);
+			outline: thin dotted;
+		}
 
-	&:focus {
-		outline: 1px dashed;
-		outline-offset: 1px;
+		&:focus {
+			outline: 1px dashed;
+			outline-offset: 1px;
+		}
 	}
 }
 

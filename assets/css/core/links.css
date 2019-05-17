@@ -1,18 +1,13 @@
-a,
-a:visited {
+.gridd-site-wrapper a {
   color: var(--gridd-links-color);
   -webkit-tap-highlight-color: rgba(0, 0, 0, .3);
   transition: all 100ms ease-in-out;
 }
-a:active, a:focus, a:hover,
-a:visited:active,
-a:visited:focus,
-a:visited:hover {
+.gridd-site-wrapper a:active, .gridd-site-wrapper a:focus, .gridd-site-wrapper a:hover {
   color: var(--gridd-links-hover-color);
   outline: thin dotted;
 }
-a:focus,
-a:visited:focus {
+.gridd-site-wrapper a:focus {
   outline: 1px dashed;
   outline-offset: 1px;
 }
