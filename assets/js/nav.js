@@ -18,19 +18,24 @@ function griddToggleButtonClick( id ) {
 };
 
 window.onload = function() {
-	var griddNavLinks = document.querySelectorAll( '.menu-item a' ), i;
+	var griddNavLinks = document.querySelectorAll( '.menu-item a' ),
+		i;
 	for ( i = 0; i < griddNavLinks.length; i++ ) {
 		griddNavLinks[ i ].addEventListener( 'focus', griddNavToggleFocus, true );
 		griddNavLinks[ i ].addEventListener( 'blur', griddNavToggleFocus, true );
 	}
-}
+};
 
 function griddNavToggleFocus() {
 	griddNavToggleFocusByEl( this );
 }
 
 function griddNavToggleFocusByEl( el ) {
-	var isMenu = el.closest( '.menu' ), closestSubMenu, closestUl, allOpenSubMenuButtons, i;
+	var isMenu = el.closest( '.menu' ),
+		closestSubMenu,
+		closestUl,
+		allOpenSubMenuButtons,
+		i;
 
 	if ( isMenu ) {
 		closestSubMenu        = el.closest( '.sub-menu' );

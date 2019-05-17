@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gridd 1.1.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/gridd\n"
-"POT-Creation-Date: 2019-05-17 20:45:50+00:00\n"
+"POT-Creation-Date: 2019-05-17 21:36:14+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -62,7 +62,7 @@ msgstr ""
 msgid "Footer Widget Area %d"
 msgstr ""
 
-#: grid-parts/classes/Footer.php:151 grid-parts/classes/Nav_Handheld.php:108
+#: grid-parts/classes/Footer.php:151 grid-parts/classes/Nav_Handheld.php:111
 #: grid-parts/classes/Sidebar.php:170
 msgid "Add widgets here."
 msgstr ""
@@ -93,13 +93,13 @@ msgstr ""
 msgid "Contact Information"
 msgstr ""
 
-#: grid-parts/classes/Nav_Handheld.php:55
-#: grid-parts/classes/Nav_Handheld.php:128
+#: grid-parts/classes/Nav_Handheld.php:58
+#: grid-parts/classes/Nav_Handheld.php:131
 #: grid-parts/customizer/nav-handheld.php:13 inc/classes/Theme.php:189
 msgid "Mobile Navigation"
 msgstr ""
 
-#: grid-parts/classes/Nav_Handheld.php:106
+#: grid-parts/classes/Nav_Handheld.php:109
 msgid "Mobile Navigation Widget Area"
 msgstr ""
 
@@ -975,6 +975,10 @@ msgstr ""
 
 #: grid-parts/customizer/sidebar.php:144
 msgid "Changes the spacing between widgets in this widget-area."
+msgstr ""
+
+#: grid-parts/templates/nav-handheld-part-menu.php:27
+msgid "Handheld Navigation"
 msgstr ""
 
 #: grid-parts/templates/navigation.php:130
