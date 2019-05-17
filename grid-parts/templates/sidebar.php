@@ -17,9 +17,12 @@ if ( ! Sidebar::$global_styles_added ) {
 $style->add_file( get_theme_file_path( 'grid-parts/styles/sidebar/styles.min.css' ) );
 $style->replace( 'ID', absint( $sidebar_id ) );
 
-
+$attrs = [
+	'class' => 'gridd-tp gridd-tp-sidebar gridd-tp-sidebar_' . absint( $sidebar_id ),
+	'role'  => 'complementary',
+]
 ?>
-<div <?php Theme::print_attributes( [ 'class' => 'gridd-tp gridd-tp-sidebar gridd-tp-sidebar_' . absint( $sidebar_id ), 'role' => 'complementary' ], 'wrapper-sidebar_' . absint( $sidebar_id ) ); ?>>
+<div <?php Theme::print_attributes( $attrs, 'wrapper-sidebar_' . absint( $sidebar_id ) ); ?>>
 	<?php $style->the_css( 'gridd-inline-css-sidebar-' . $sidebar_id ); ?>
 	<?php dynamic_sidebar( "sidebar-$sidebar_id" ); ?>
 </div>

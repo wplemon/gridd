@@ -54,9 +54,13 @@ if ( $header_bg_img ) {
 
 $wrapper_class  = 'gridd-tp gridd-tp-header';
 $wrapper_class .= get_theme_mod( 'gridd_header_sticky', false ) ? ' gridd-sticky' : '';
+$attrs          = [
+	'class' => $wrapper_class,
+	'role'  => 'banner',
+];
 ?>
 
-<div <?php Theme::print_attributes( [ 'class' => $wrapper_class, 'role' => 'banner' ], 'wrapper-header' ); ?>>
+<div <?php Theme::print_attributes( $attrs, 'wrapper-header' ); ?>>
 	<?php
 	/**
 	 * Print styles.

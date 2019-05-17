@@ -41,9 +41,14 @@ $style->add_vars(
 		'--gridd-footer-max-width'        => get_theme_mod( 'gridd_grid_footer_max_width', '' ),
 	]
 );
+
+$attrs = [
+	'class' => 'gridd-tp gridd-tp-footer',
+	'role'  => 'contentinfo',
+];
 ?>
 
-<div <?php Theme::print_attributes( [ 'class' => 'gridd-tp gridd-tp-footer', 'role' => 'contentinfo' ], 'wrapper-footer' ); ?>>
+<div <?php Theme::print_attributes( $attrs, 'wrapper-footer' ); ?>>
 	<?php
 	/**
 	 * Print the styles.
