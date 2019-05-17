@@ -15,7 +15,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
 					document.dispatchEvent( event );
 				}
 				if ( i === griddRestParts.length - 1 ) {
-					event = new CustomEvent( 'griddRestDone' );
+					event = new CustomEvent( 'griddRestDone', { detail: id } );
 					document.dispatchEvent( event );
 				}
 			}

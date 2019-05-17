@@ -41,6 +41,9 @@ class Nav_Handheld extends Grid_Part {
 		add_action( 'widgets_init', [ $this, 'register_sidebar' ] );
 		add_action( 'gridd_the_grid_part', [ $this, 'render' ] );
 		add_action( 'gridd_the_partial', [ $this, 'the_partial' ] );
+
+		// Add script.
+		add_filter( 'gridd_footer_inline_script_paths', [ $this, 'footer_inline_script_paths' ] );
 	}
 
 	/**
@@ -129,6 +132,20 @@ class Nav_Handheld extends Grid_Part {
 			]
 		);
 	}
+
+	/**
+	 * Adds the script to the footer.
+	 *
+	 * @access public
+	 * @since 1.0
+	 * @param array $paths Paths to scripts we want to load.
+	 * @return array
+	 */
+	public function footer_inline_script_paths( $paths ) {
+		$paths[] = get_theme_file_path( 'grid-parts/scripts/nav-handheld.min.js' );
+		return $paths;
+	}
+
 }
 
 new Nav_Handheld();
