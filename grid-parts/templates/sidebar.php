@@ -19,7 +19,7 @@ $style->replace( 'ID', absint( $sidebar_id ) );
 
 
 ?>
-<div <?php Theme::print_attributes( [ 'class' => 'gridd-tp gridd-tp-sidebar gridd-tp-sidebar_' . absint( $sidebar_id ) ], 'wrapper-sidebar_' . absint( $sidebar_id ) ); ?>>
+<div <?php Theme::print_attributes( [ 'class' => 'gridd-tp gridd-tp-sidebar gridd-tp-sidebar_' . absint( $sidebar_id ), 'role' => 'complementary' ], 'wrapper-sidebar_' . absint( $sidebar_id ) ); ?>>
 	<?php $style->the_css( 'gridd-inline-css-sidebar-' . $sidebar_id ); ?>
 	<?php dynamic_sidebar( "sidebar-$sidebar_id" ); ?>
 </div>

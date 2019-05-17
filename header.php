@@ -81,4 +81,4 @@ $style->add_string(
 		 */
 		Content::print_styles();
 		?>
-		<main id="main" class="site-main inner">
+		<main id="main" class="site-main inner" role="main">

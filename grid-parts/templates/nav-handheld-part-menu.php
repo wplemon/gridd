@@ -24,7 +24,7 @@ $style->the_css( 'gridd-inline-css-nav-handheld-menu' );
 
 $label_class = get_theme_mod( 'gridd_grid_nav-handheld_hide_labels', false ) ? 'screen-reader-text' : 'label';
 ?>
-<nav id="gridd-handheld-nav" class="gridd-nav-vertical">
+<nav id="gridd-handheld-nav" class="gridd-nav-vertical" role="navigation" aria-label="<?php esc_attr_e( 'Handheld Navigation', 'gridd' ); ?>">
 	<?php
 	/**
 	 * Prints the button.

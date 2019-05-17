@@ -43,7 +43,7 @@ $style->add_vars(
 );
 ?>
 
-<div <?php Theme::print_attributes( [ 'class' => 'gridd-tp gridd-tp-footer' ], 'wrapper-footer' ); ?>>
+<div <?php Theme::print_attributes( [ 'class' => 'gridd-tp gridd-tp-footer', 'role' => 'contentinfo' ], 'wrapper-footer' ); ?>>
 	<?php
 	/**
 	 * Print the styles.
