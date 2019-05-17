@@ -3,8 +3,8 @@
  */
 function griddToggleButtonClick( id ) {
 	var el = document.querySelector( 'button[data-uid="' + id + '"]' );
+
 	griddNavToggleFocusByEl( el );
-    
 
     // Toggle the "toggled-on" class.
 	el.classList.toggle( 'toggled-on' );
@@ -38,8 +38,10 @@ function griddNavToggleFocusByEl( el ) {
 		allOpenSubMenuButtons = closestUl.querySelectorAll( '.menu-item .gridd-toggle.toggled-on' );
 		for ( i = 0; i < allOpenSubMenuButtons.length; i++ ) {
 			if ( null === closestSubMenu || ( closestSubMenu && closestSubMenu.parentNode.querySelector( '.menu-item .gridd-toggle.toggled-on' ) !== allOpenSubMenuButtons[ i ] ) ) {
-				allOpenSubMenuButtons[ i ].classList.remove( 'toggled-on' );
-				allOpenSubMenuButtons[ i ].setAttribute( 'aria-expanded', 'false' );
+				if ( allOpenSubMenuButtons[ i ] !== el ) {
+					allOpenSubMenuButtons[ i ].classList.remove( 'toggled-on' );
+					allOpenSubMenuButtons[ i ].setAttribute( 'aria-expanded', 'false' );
+				}
 			}
 		}
 	}
