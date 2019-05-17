@@ -1,4 +1,3 @@
-vendor/ export-ignore
 assets/css/blocks/block-library/ export-ignore
 .sass-cache/ export-ignore
 node_modules/ export-ignore
