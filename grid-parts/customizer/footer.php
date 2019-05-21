@@ -21,7 +21,7 @@ Customizer::add_section(
 				'plus' => [
 					esc_html__( 'Separate grid for mobile devices', 'gridd' ),
 				],
-				'docs' => 'https://wplemon.com/documentation/gridd/grid-parts/footer/',
+				'docs' => 'https://wplemon.github.io/gridd/grid-parts/footer.html',
 			]
 		),
 		'priority'    => 25,
@@ -36,7 +36,7 @@ Customizer::add_field(
 		'type'              => 'gridd_grid',
 		'grid-part'         => 'footer',
 		'label'             => esc_html__( 'Grid Settings', 'gridd' ),
-		'description'       => __( 'Edit settings for your footer grid. For more information and documentation on how the grid works, please read <a href="https://wplemon.com/documentation/gridd/the-grid-control/" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
+		'description'       => __( 'Edit settings for your footer grid. For more information and documentation on how the grid works, please read <a href="https://wplemon.github.io/gridd/the-grid-control.html" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
 		'default'           => Footer::get_grid_defaults(),
 		'choices'           => [
 			'parts' => Footer::get_footer_grid_parts(),

@@ -15,7 +15,7 @@ Customizer::add_outer_section(
 		'description' => Customizer::section_description(
 			'gridd_grid_part_details_content',
 			[
-				'docs' => 'https://wplemon.com/documentation/gridd/grid-parts/content/',
+				'docs' => 'https://wplemon.github.io/gridd/grid-parts/content.html',
 			]
 		),
 	]

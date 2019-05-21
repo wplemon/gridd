@@ -43,7 +43,7 @@ function gridd_sidebar_customizer_options( $id ) {
 						esc_html__( 'Selecting from an array of WCAG-compliant colors for links', 'gridd' ),
 						esc_html__( 'Visibility Options: Choose specific post-IDs or category/tag/term IDs to show this grid-part', 'gridd' ),
 					],
-					'docs' => 'https://wplemon.com/documentation/gridd/grid-parts/widget-area/',
+					'docs' => 'https://wplemon.github.io/gridd/grid-parts/widget-area.html',
 				]
 			),
 		]

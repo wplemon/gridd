@@ -16,8 +16,6 @@ The Gridd theme includes a separate Mobile Navigation and options to help you ac
 
 ## Enable/Disable the Mobile Navigation
 
-<img src="https://wplemon.github.io/gridd/uploads/mobile-nav-1.png" alt="" style="max-width:300px">
-
 If you want to use the mobile navigation, first make sure you have enabled. It is enabled by default so you needn’t worry, but you can disable it if you don’t need it on your site.
 
 ## Mobile Navigation Active Parts & Order

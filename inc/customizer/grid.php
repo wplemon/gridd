@@ -58,7 +58,7 @@ Customizer::add_section(
 					esc_html__( 'Separate grid for mobile devices.', 'gridd' ),
 					esc_html__( 'Grid-parts can overlap', 'gridd' ),
 				],
-				'docs' => 'https://wplemon.com/documentation/gridd/grid/',
+				'docs' => 'https://wplemon.github.io/gridd/customizer-sections/grid.html',
 				'tip'  => sprintf(
 					/* translators: Link to the blocks-management screen. */
 					__( 'Did you know you can place reusable blocks anywhere in your grid? <a href="%s" target="_blank">Click here</a> to manage your reusable blocks.', 'gridd' ),
@@ -77,7 +77,7 @@ Customizer::add_field(
 		'type'              => 'gridd_grid',
 		'grid-part'         => false,
 		'label'             => esc_html__( 'Grid Settings', 'gridd' ),
-		'description'       => __( 'Edit settings for the grid. For more information and documentation on how the grid works, please read <a href="https://wplemon.com/documentation/gridd/the-grid-control/" target="_blank">this article</a>.', 'gridd' ),
+		'description'       => __( 'Edit settings for the grid. For more information and documentation on how the grid works, please read <a href="https://wplemon.github.io/gridd/the-grid-control.html" target="_blank">this article</a>.', 'gridd' ),
 		'default'           => Grid::get_grid_default_value(),
 		'priority'          => 10,
 		'sanitize_callback' => [ $sanitization, 'grid' ],

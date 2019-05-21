@@ -2,7 +2,6 @@
 layout: default
 title: Grid
 parent: Customizer Sections
-has_children: true
 nav_order: 2
 ---
 

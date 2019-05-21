@@ -25,7 +25,7 @@ Customizer::add_section(
 					esc_html__( 'Adjustable typography scales', 'gridd' ),
 					esc_html__( 'Links decoration (underlined/not-underlined) for content and headers separately.', 'gridd' ),
 				],
-				'docs' => 'https://wplemon.com/documentation/gridd/typography/',
+				'docs' => 'https://wplemon.github.io/gridd/customizer-sections/typography.html',
 			]
 		),
 		'priority'    => 20,
@@ -198,7 +198,7 @@ Customizer::add_field(
 		'label'       => esc_html__( 'Fluid typography Ratio', 'gridd' ),
 		'description' => esc_html__( 'Defines by how much your font-size will change depending on the screen-size. Larger values will increase the font-size more on bigger screens. Set to 0 if you do not want the font-size to change depending on the screen-size.', 'gridd' ),
 		/* translators: "Read this article" link. */
-		'tooltip'     => sprintf( esc_html__( 'Need more Information? %s', 'gridd' ), '<a href="https://wplemon.com/documentation/gridd/typography/fluid-responsive-typography/" target="_blank">' . esc_html__( 'Read this article.', 'gridd' ) ),
+		'tooltip'     => sprintf( esc_html__( 'Need more Information? %s', 'gridd' ), '<a href="https://wplemon.github.io/gridd/fluid-typography.html" target="_blank">' . esc_html__( 'Read this article.', 'gridd' ) ),
 		'section'     => 'gridd_typography',
 		'default'     => 0.25,
 		'priority'    => 70,

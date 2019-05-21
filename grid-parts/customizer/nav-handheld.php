@@ -17,7 +17,7 @@ Customizer::add_section(
 				'plus' => [
 					esc_html__( 'Additional item: axpandable widget-area with custom icon', 'gridd' ),
 				],
-				'docs' => 'https://wplemon.com/documentation/gridd/grid-parts/mobile-navigation/',
+				'docs' => 'https://wplemon.github.io/gridd/grid-parts/mobile-navigation.html',
 			]
 		),
 		'priority'    => 26,

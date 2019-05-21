@@ -65,7 +65,7 @@ Customizer::add_outer_section(
 		'description' => Customizer::section_description(
 			'gridd_grid_part_details_header_branding',
 			[
-				'docs' => 'https://wplemon.com/documentation/gridd/grid-parts/header/branding/',
+				'docs' => 'https://wplemon.github.io/gridd/grid-parts/branding.html',
 			]
 		),
 	]

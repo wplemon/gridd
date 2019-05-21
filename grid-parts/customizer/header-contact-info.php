@@ -22,7 +22,7 @@ Customizer::add_outer_section(
 				'plus' => [
 					esc_html__( 'Selecting from an array of WCAG-compliant colors for text', 'gridd' ),
 				],
-				'docs' => 'https://wplemon.com/documentation/gridd/grid-parts/header/contact-info/',
+				'docs' => 'https://wplemon.github.io/gridd/grid-parts/contact-information.html',
 			]
 		),
 	]

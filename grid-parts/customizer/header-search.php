@@ -16,7 +16,7 @@ Customizer::add_outer_section(
 		'description' => Customizer::section_description(
 			'gridd_grid_part_details_header_search',
 			[
-				'docs' => 'https://wplemon.com/documentation/gridd/grid-parts/header/search/',
+				'docs' => 'https://wplemon.github.io/gridd/grid-parts/search.html',
 			]
 		),
 	]

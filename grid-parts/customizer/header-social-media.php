@@ -23,7 +23,7 @@ Customizer::add_outer_section(
 		'description' => Customizer::section_description(
 			'gridd_grid_part_details_social_media',
 			[
-				'docs' => 'https://wplemon.com/documentation/gridd/grid-parts/header/social-media/',
+				'docs' => 'https://wplemon.github.io/gridd/grid-parts/social-media.html',
 			]
 		),
 	]

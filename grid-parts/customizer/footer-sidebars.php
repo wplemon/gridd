@@ -43,7 +43,7 @@ function gridd_add_footer_widget_area_options( $id ) {
 						esc_html__( 'Selecting from an array of WCAG-compliant colors for text', 'gridd' ),
 						esc_html__( 'Selecting from an array of WCAG-compliant colors for links', 'gridd' ),
 					],
-					'docs' => 'https://wplemon.com/documentation/gridd/grid-parts/footer/',
+					'docs' => 'https://wplemon.github.io/gridd/grid-parts/footer.html',
 				]
 			),
 		]

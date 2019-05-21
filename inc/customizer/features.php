@@ -27,7 +27,7 @@ Customizer::add_section(
 					esc_html__( 'Scroll to top button', 'gridd' ),
 					esc_html__( 'Enable more custom widget-areas and customize their titles for easier identification', 'gridd' ),
 				],
-				'docs' => 'https://wplemon.com/documentation/gridd/theme-features-customizer-section/',
+				'docs' => 'https://wplemon.github.io/gridd/customizer-sections/theme-features.html',
 			]
 		),
 		'panel'       => 'gridd_options',

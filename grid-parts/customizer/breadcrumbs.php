@@ -22,7 +22,7 @@ Customizer::add_outer_section(
 					esc_html__( 'Selecting from an array of WCAG-compliant colors for text', 'gridd' ),
 					esc_html__( 'Adjustable spacing between breadcrumbs.', 'gridd' ),
 				],
-				'docs' => 'https://wplemon.com/documentation/gridd/grid-parts/breadcrumbs/',
+				'docs' => 'https://wplemon.github.io/gridd/grid-parts/breadcrumbs.html',
 			]
 		),
 	]
