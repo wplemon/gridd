@@ -29,11 +29,11 @@ add_action( 'template_redirect', 'gridd_preview' );
  * @return string
  */
 function gridd_compat_message() {
-	if ( version_compare( $GLOBALS['wp_version'], '4.9.6', '<' ) ) {
+	if ( version_compare( $GLOBALS['wp_version'], '5.0', '<' ) ) {
 		return sprintf(
 			/* Translators: 1 is the required WordPress version and 2 is the user's current version. */
 			esc_html__( 'Gridd requires at least WordPress version %1$s. You are running version %2$s. Please upgrade and try again.', 'gridd' ),
-			'4.9.6',
+			'5.0',
 			$GLOBALS['wp_version']
 		);
 	}

@@ -10,13 +10,13 @@
  *
  * @since 1.0
  */
-define( 'GRIDD_VERSION', '1.1.3' );
+define( 'GRIDD_VERSION', '1.1.4' );
 
 /**
  * Gracefully fail if the user is on an old PHP version
  * or if using an old version of WordPress.
  */
-if ( version_compare( $GLOBALS['wp_version'], '4.9.6', '<' ) || version_compare( PHP_VERSION, '5.6', '<' ) ) {
+if ( version_compare( $GLOBALS['wp_version'], '5.0', '<' ) || version_compare( PHP_VERSION, '5.6', '<' ) ) {
 	require_once get_template_directory() . '/inc/bootstrap-compatibility.php';
 	return;
 }
