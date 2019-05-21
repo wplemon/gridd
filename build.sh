@@ -1,7 +1,5 @@
 #!/bin/sh
 
-npm install && grunt
-
 rm -rf gridd
 rm -f gridd.zip
 rm -rf ../gridd2
@@ -28,8 +26,8 @@ rm -f gridd/composer.json
 rm -f gridd/Gruntfile.js
 rm -f gridd/package.json
 rm -f gridd/phpcs.xml.dist
-rm -f .gitattributes
-rm -rf docs
+rm -f gridd/.gitattributes
+rm -rf gridd/docs
 
 find ./gridd/ -name "*.map" -type f -delete
 find ./gridd/ -name "*.scss" -type f -delete
