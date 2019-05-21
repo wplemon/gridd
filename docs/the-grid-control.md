@@ -1,9 +1,7 @@
 ---
 layout: default
 title: The Grid Control
-parent: Grid
-grand_parent: Customizer Sections
-nav_order: 1
+nav_order: 4
 ---
 
 The grid control allows you to create any layout you want for your website

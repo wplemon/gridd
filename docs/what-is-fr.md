@@ -1,9 +1,8 @@
 ---
 layout: default
 title: The fr CSS Unit
-parent: Grid
-grand_parent: Customizer Sections
-nav_order: 1
+parent: The Grid Control
+nav_order: 5
 ---
 
 You can use any valid CSS unit you want for your columns and rows. CSS-Grids however introduce another very useful concept: the `fr` unit.
