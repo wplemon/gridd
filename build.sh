@@ -28,6 +28,8 @@ rm -f gridd/composer.json
 rm -f gridd/Gruntfile.js
 rm -f gridd/package.json
 rm -f gridd/phpcs.xml.dist
+rm -f .gitattributes
+rm -rf docs
 
 find ./gridd/ -name "*.map" -type f -delete
 find ./gridd/ -name "*.scss" -type f -delete
