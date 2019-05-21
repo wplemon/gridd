@@ -1,7 +1,6 @@
 ---
 layout: default
 title: The fr CSS Unit
-parent: The Grid Control
 nav_order: 5
 ---
 
