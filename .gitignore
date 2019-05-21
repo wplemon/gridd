@@ -5,3 +5,5 @@ package-lock.json
 composer.lock
 *.css.map
 gridd.zip
+docs/Gemfile.lock
+docs/_site
