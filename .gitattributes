@@ -1,7 +1,7 @@
 ./docs/ export-ignore
-assets/css/blocks/block-library/ export-ignore
+./assets/css/blocks/block-library/ export-ignore
 .sass-cache/ export-ignore
-node_modules/ export-ignore
+./node_modules/ export-ignore
 .git/ export-ignore
 .browserslistrc export-ignore
 .editorconfig export-ignore
@@ -23,11 +23,11 @@ phpcs.xml.dist export-ignore
 changelog.md export-ignore
 .contributing.md export-ignore
 .github export-ignore
-inc/kirki/controls/js/src/ export-ignore
-inc/kirki/controls/scss/ export-ignore
-inc/kirki/docs/ export-ignore
-inc/kirki/node_modules/ export-ignore
-inc/kirki/tests/ export-ignore
+./inc/kirki/controls/js/src/ export-ignore
+./inc/kirki/controls/scss/ export-ignore
+./inc/kirki/docs/ export-ignore
+./inc/kirki/node_modules/ export-ignore
+./inc/kirki/tests/ export-ignore
 .codeclimate.yml export-ignore
 .coveralls.yml export-ignore
 .csslintrc export-ignore
@@ -38,7 +38,7 @@ inc/kirki/tests/ export-ignore
 .simplecov export-ignore
 .travis.yml export-ignore
 CODE_OF_CONDUCT.md export-ignore
-inc/kirki/example.php export-ignore
+./inc/kirki/example.php export-ignore
 phpunit.xml export-ignore
 phpunit.xml.dist export-ignore
 README.md export-ignore
