@@ -193,8 +193,15 @@ final class Kirki_Modules_Webfonts_Embed {
 						$contents = $this->use_local_files( $contents );
 					}
 
-					// Set the transient for a week.
-					set_site_transient( $transient_id, $contents, WEEK_IN_SECONDS );
+					// Remove protocol to fix http/https issues.
+					$contents = str_replace(
+						array( 'http://', 'https://' ),
+						array( '//', '//' ),
+						$contents
+					);
+
+					// Set the transient for a day.
+					set_site_transient( $transient_id, $contents, DAY_IN_SECONDS );
 				}
 			}
 			if ( $contents ) {
