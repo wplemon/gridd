@@ -29,9 +29,7 @@
     "grunt-contrib-sass": "*",
     "grunt-contrib-uglify": "*",
     "grunt-contrib-watch": "*",
-    "grunt-po2mo": "*",
     "grunt-postcss": "*",
-    "grunt-wp-i18n": "*",
     "postcss-clean": "*",
     "postcss-cssnext": "*"
   }

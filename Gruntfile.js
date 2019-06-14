@@ -88,16 +88,6 @@ module.exports = function( grunt ) {
 			}
 		},
 
-		// Generate .pot translation file.
-		makepot: {
-			target: {
-				options: {
-					type: 'wp-theme',
-					domainPath: 'languages'
-				}
-			}
-		},
-
 		// Watch task (run with "grunt watch")
         watch: {
             cssMain: {
@@ -134,7 +124,7 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( 'grunt-wp-i18n' );
 	grunt.loadNpmTasks( 'grunt-po2mo' );
 
-	grunt.registerTask( 'default', [ 'sass:main', 'sass:gridParts', 'postcss:assetsCSS', 'postcss:gridPartsCSS', 'cssmin', 'uglify', 'makepot' ] );
+	grunt.registerTask( 'default', [ 'sass:main', 'sass:gridParts', 'postcss:assetsCSS', 'postcss:gridPartsCSS', 'cssmin', 'uglify' ] );
 	grunt.registerTask( 'css', [ 'sass:main', 'sass:gridParts', 'postcss:assetsCSS', 'postcss:gridPartsCSS', 'cssmin' ] );
 	grunt.registerTask( 'js', [ 'uglify' ] );
 };
