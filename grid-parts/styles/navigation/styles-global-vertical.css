@@ -2,36 +2,30 @@
 .toggled-on + .gridd-nav-horizontal .gridd-navigation .gridd-toggle {
   position: absolute;
   right: 0;
-  height: 3em;
-}
+  height: 3em; }
 .gridd-nav-vertical .gridd-navigation .current-page-ancestor ul,
 .gridd-nav-vertical .gridd-navigation .current-menu-ancestor ul,
 .toggled-on + .gridd-nav-horizontal .gridd-navigation .current-page-ancestor ul,
 .toggled-on + .gridd-nav-horizontal .gridd-navigation .current-menu-ancestor ul {
-  display: block;
-}
+  display: block; }
 .gridd-nav-vertical .gridd-navigation .current-page-ancestor > a,
 .gridd-nav-vertical .gridd-navigation .current-menu-ancestor > a,
 .toggled-on + .gridd-nav-horizontal .gridd-navigation .current-page-ancestor > a,
 .toggled-on + .gridd-nav-horizontal .gridd-navigation .current-menu-ancestor > a {
-  opacity: 0.8;
-  width: 100%;
-}
+  opacity: .8;
+  width: 100%; }
 .gridd-nav-vertical .gridd-navigation .current-page-ancestor > .gridd-toggle,
 .gridd-nav-vertical .gridd-navigation .current-menu-ancestor > .gridd-toggle,
 .toggled-on + .gridd-nav-horizontal .gridd-navigation .current-page-ancestor > .gridd-toggle,
 .toggled-on + .gridd-nav-horizontal .gridd-navigation .current-menu-ancestor > .gridd-toggle {
-  display: none;
-}
+  display: none; }
 .gridd-nav-vertical .gridd-navigation ul,
 .toggled-on + .gridd-nav-horizontal .gridd-navigation ul {
   box-shadow: none;
   top: 0;
   min-width: 100%;
-  position: relative;
-}
+  position: relative; }
 .gridd-nav-vertical .gridd-navigation li,
 .toggled-on + .gridd-nav-horizontal .gridd-navigation li {
   width: 100%;
-  display: flex;
-}
+  display: flex; }

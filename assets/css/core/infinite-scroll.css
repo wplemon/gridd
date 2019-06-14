@@ -1,40 +1,33 @@
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer {
-  display: none;
-}
+  display: none; }
 
 .infinity-end.neverending .site-footer {
-  display: block;
-}
+  display: block; }
 
 body #infinite-handle {
   text-align: center;
   margin-top: 1em;
-  margin-bottom: 2em;
-}
-body #infinite-handle span {
-  background: none;
-  border-radius: 0;
-  color: currentColor;
-  cursor: pointer;
-  font-size: 1em;
-  padding: 0;
-}
-body #infinite-handle span button {
-  text-decoration: none !important;
-  border-radius: 2.5em;
-  padding: 0.35em 1.25em;
-  transition: all 150ms ease-in-out;
-  position: relative;
-  border: 2px solid;
-  background: none;
-}
-body #infinite-handle span button:active, body #infinite-handle span button:hover {
-  cursor: pointer;
-  outline: none;
-  text-decoration: none;
-  box-shadow: 0px 1px 1px 0px;
-}
-body #infinite-handle span button:focus {
-  box-shadow: inset 0px 1px 1px 0px;
-}
+  margin-bottom: 2em; }
+  body #infinite-handle span {
+    background: none;
+    border-radius: 0;
+    color: currentColor;
+    cursor: pointer;
+    font-size: 1em;
+    padding: 0; }
+    body #infinite-handle span button {
+      text-decoration: none !important;
+      border-radius: 2.5em;
+      padding: .35em 1.25em;
+      transition: all 150ms ease-in-out;
+      position: relative;
+      border: 2px solid;
+      background: none; }
+      body #infinite-handle span button:active, body #infinite-handle span button:hover {
+        cursor: pointer;
+        outline: none;
+        text-decoration: none;
+        box-shadow: 0px 1px 1px 0px; }
+      body #infinite-handle span button:focus {
+        box-shadow: inset 0px 1px 1px 0px; }

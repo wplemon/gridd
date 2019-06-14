@@ -1,99 +1,78 @@
-.gridd-nav-handheld-btn[aria-expanded=true] + #gridd-handheld-menu-wrapper {
+.gridd-nav-handheld-btn[aria-expanded="true"] + #gridd-handheld-menu-wrapper {
   display: flex;
-  align-content: flex-start;
-}
+  align-content: flex-start; }
 
 #gridd-handheld-menu-wrapper {
   background-color: var(--gridd-content-bg);
   overflow: visible;
-  font-size: 1em;
-}
-#gridd-handheld-menu-wrapper .inner {
-  padding: 1em;
-  width: 100%;
-  position: relative;
-  display: flex;
-}
-#gridd-handheld-menu-wrapper .gridd-navigation {
-  justify-content: center;
-}
-#gridd-handheld-menu-wrapper .gridd-navigation ul {
-  background-color: var(--gridd-content-bg);
-}
-#gridd-handheld-menu-wrapper .gridd-navigation li.current-menu-item > a,
-#gridd-handheld-menu-wrapper .gridd-navigation li.current-menu-item > a:visited, #gridd-handheld-menu-wrapper .gridd-navigation li.current-page-item > a,
-#gridd-handheld-menu-wrapper .gridd-navigation li.current-page-item > a:visited, #gridd-handheld-menu-wrapper .gridd-navigation li.current_page_item > a,
-#gridd-handheld-menu-wrapper .gridd-navigation li.current_page_item > a:visited, #gridd-handheld-menu-wrapper .gridd-navigation li.current-page-ancestor > a,
-#gridd-handheld-menu-wrapper .gridd-navigation li.current-page-ancestor > a:visited, #gridd-handheld-menu-wrapper .gridd-navigation li.current-menu-ancestor > a,
-#gridd-handheld-menu-wrapper .gridd-navigation li.current-menu-ancestor > a:visited, #gridd-handheld-menu-wrapper .gridd-navigation li.current-menu-parent > a,
-#gridd-handheld-menu-wrapper .gridd-navigation li.current-menu-parent > a:visited, #gridd-handheld-menu-wrapper .gridd-navigation li.current-page-parent > a,
-#gridd-handheld-menu-wrapper .gridd-navigation li.current-page-parent > a:visited, #gridd-handheld-menu-wrapper .gridd-navigation li.current_page_parent > a,
-#gridd-handheld-menu-wrapper .gridd-navigation li.current_page_parent > a:visited, #gridd-handheld-menu-wrapper .gridd-navigation li.current_page_ancestor > a,
-#gridd-handheld-menu-wrapper .gridd-navigation li.current_page_ancestor > a:visited {
-  color: var(--gridd-links-color);
-  border-bottom: 2px solid;
-}
-#gridd-handheld-menu-wrapper .gridd-navigation li.current-menu-item .gridd-toggle, #gridd-handheld-menu-wrapper .gridd-navigation li.current-page-item .gridd-toggle, #gridd-handheld-menu-wrapper .gridd-navigation li.current_page_item .gridd-toggle, #gridd-handheld-menu-wrapper .gridd-navigation li.current-page-ancestor .gridd-toggle, #gridd-handheld-menu-wrapper .gridd-navigation li.current-menu-ancestor .gridd-toggle, #gridd-handheld-menu-wrapper .gridd-navigation li.current-menu-parent .gridd-toggle, #gridd-handheld-menu-wrapper .gridd-navigation li.current-page-parent .gridd-toggle, #gridd-handheld-menu-wrapper .gridd-navigation li.current_page_parent .gridd-toggle, #gridd-handheld-menu-wrapper .gridd-navigation li.current_page_ancestor .gridd-toggle {
-  color: var(--gridd-links-color);
-}
-#gridd-handheld-menu-wrapper .gridd-navigation li.current-menu-item .gridd-toggle svg, #gridd-handheld-menu-wrapper .gridd-navigation li.current-page-item .gridd-toggle svg, #gridd-handheld-menu-wrapper .gridd-navigation li.current_page_item .gridd-toggle svg, #gridd-handheld-menu-wrapper .gridd-navigation li.current-page-ancestor .gridd-toggle svg, #gridd-handheld-menu-wrapper .gridd-navigation li.current-menu-ancestor .gridd-toggle svg, #gridd-handheld-menu-wrapper .gridd-navigation li.current-menu-parent .gridd-toggle svg, #gridd-handheld-menu-wrapper .gridd-navigation li.current-page-parent .gridd-toggle svg, #gridd-handheld-menu-wrapper .gridd-navigation li.current_page_parent .gridd-toggle svg, #gridd-handheld-menu-wrapper .gridd-navigation li.current_page_ancestor .gridd-toggle svg {
-  fill: var(--gridd-links-color);
-}
-#gridd-handheld-menu-wrapper .gridd-navigation a,
-#gridd-handheld-menu-wrapper .gridd-navigation a:visited {
-  color: var(--gridd-text-color);
-}
-#gridd-handheld-menu-wrapper .gridd-navigation a:hover, #gridd-handheld-menu-wrapper .gridd-navigation a:focus, #gridd-handheld-menu-wrapper .gridd-navigation a.focus, #gridd-handheld-menu-wrapper .gridd-navigation a.toggled-on,
-#gridd-handheld-menu-wrapper .gridd-navigation a:visited:hover,
-#gridd-handheld-menu-wrapper .gridd-navigation a:visited:focus,
-#gridd-handheld-menu-wrapper .gridd-navigation a:visited.focus,
-#gridd-handheld-menu-wrapper .gridd-navigation a:visited.toggled-on {
-  color: var(--gridd-links-color);
-  border-bottom: 2px solid var(--gridd-links-color);
-}
-#gridd-handheld-menu-wrapper .gridd-navigation a:hover ~ .gridd-toggle, #gridd-handheld-menu-wrapper .gridd-navigation a:focus ~ .gridd-toggle, #gridd-handheld-menu-wrapper .gridd-navigation a.focus ~ .gridd-toggle, #gridd-handheld-menu-wrapper .gridd-navigation a.toggled-on ~ .gridd-toggle,
-#gridd-handheld-menu-wrapper .gridd-navigation a:visited:hover ~ .gridd-toggle,
-#gridd-handheld-menu-wrapper .gridd-navigation a:visited:focus ~ .gridd-toggle,
-#gridd-handheld-menu-wrapper .gridd-navigation a:visited.focus ~ .gridd-toggle,
-#gridd-handheld-menu-wrapper .gridd-navigation a:visited.toggled-on ~ .gridd-toggle {
-  border-bottom: 2px solid var(--gridd-links-color);
-}
-#gridd-handheld-menu-wrapper .gridd-navigation a:hover ~ .gridd-toggle svg, #gridd-handheld-menu-wrapper .gridd-navigation a:focus ~ .gridd-toggle svg, #gridd-handheld-menu-wrapper .gridd-navigation a.focus ~ .gridd-toggle svg, #gridd-handheld-menu-wrapper .gridd-navigation a.toggled-on ~ .gridd-toggle svg,
-#gridd-handheld-menu-wrapper .gridd-navigation a:visited:hover ~ .gridd-toggle svg,
-#gridd-handheld-menu-wrapper .gridd-navigation a:visited:focus ~ .gridd-toggle svg,
-#gridd-handheld-menu-wrapper .gridd-navigation a:visited.focus ~ .gridd-toggle svg,
-#gridd-handheld-menu-wrapper .gridd-navigation a:visited.toggled-on ~ .gridd-toggle svg {
-  fill: var(--gridd-links-color);
-}
-#gridd-handheld-menu-wrapper .gridd-navigation .gridd-toggle {
-  color: var(--gridd-text-color);
-}
-#gridd-handheld-menu-wrapper .gridd-navigation .gridd-toggle svg {
-  fill: var(--gridd-text-color);
-}
-#gridd-handheld-menu-wrapper .gridd-navigation .gridd-toggle:hover, #gridd-handheld-menu-wrapper .gridd-navigation .gridd-toggle:focus, #gridd-handheld-menu-wrapper .gridd-navigation .gridd-toggle.focus, #gridd-handheld-menu-wrapper .gridd-navigation .gridd-toggle.toggled-on {
-  color: var(--gridd-links-color);
-  border-bottom: 2px solid var(--gridd-links-color);
-}
-#gridd-handheld-menu-wrapper .gridd-navigation .gridd-toggle:hover svg, #gridd-handheld-menu-wrapper .gridd-navigation .gridd-toggle:focus svg, #gridd-handheld-menu-wrapper .gridd-navigation .gridd-toggle.focus svg, #gridd-handheld-menu-wrapper .gridd-navigation .gridd-toggle.toggled-on svg {
-  fill: var(--gridd-links-color);
-}
-#gridd-handheld-menu-wrapper .gridd-navigation .gridd-toggle.toggled-on {
-  border-bottom: 2px solid var(--gridd-links-color);
-}
-#gridd-handheld-menu-wrapper .gridd-navigation .gridd-toggle.toggled-on svg {
-  fill: var(--gridd-links-color);
-}
-#gridd-handheld-menu-wrapper .gridd-toggle-navigation {
-  display: none;
-}
+  font-size: 1em; }
+  #gridd-handheld-menu-wrapper .inner {
+    padding: 1em;
+    width: 100%;
+    position: relative;
+    display: flex; }
+  #gridd-handheld-menu-wrapper .gridd-navigation {
+    justify-content: center; }
+    #gridd-handheld-menu-wrapper .gridd-navigation ul {
+      background-color: var(--gridd-content-bg); }
+    #gridd-handheld-menu-wrapper .gridd-navigation li.current-menu-item > a,
+    #gridd-handheld-menu-wrapper .gridd-navigation li.current-menu-item > a:visited, #gridd-handheld-menu-wrapper .gridd-navigation li.current-page-item > a,
+    #gridd-handheld-menu-wrapper .gridd-navigation li.current-page-item > a:visited, #gridd-handheld-menu-wrapper .gridd-navigation li.current_page_item > a,
+    #gridd-handheld-menu-wrapper .gridd-navigation li.current_page_item > a:visited, #gridd-handheld-menu-wrapper .gridd-navigation li.current-page-ancestor > a,
+    #gridd-handheld-menu-wrapper .gridd-navigation li.current-page-ancestor > a:visited, #gridd-handheld-menu-wrapper .gridd-navigation li.current-menu-ancestor > a,
+    #gridd-handheld-menu-wrapper .gridd-navigation li.current-menu-ancestor > a:visited, #gridd-handheld-menu-wrapper .gridd-navigation li.current-menu-parent > a,
+    #gridd-handheld-menu-wrapper .gridd-navigation li.current-menu-parent > a:visited, #gridd-handheld-menu-wrapper .gridd-navigation li.current-page-parent > a,
+    #gridd-handheld-menu-wrapper .gridd-navigation li.current-page-parent > a:visited, #gridd-handheld-menu-wrapper .gridd-navigation li.current_page_parent > a,
+    #gridd-handheld-menu-wrapper .gridd-navigation li.current_page_parent > a:visited, #gridd-handheld-menu-wrapper .gridd-navigation li.current_page_ancestor > a,
+    #gridd-handheld-menu-wrapper .gridd-navigation li.current_page_ancestor > a:visited {
+      color: var(--gridd-links-color);
+      border-bottom: 2px solid; }
+    #gridd-handheld-menu-wrapper .gridd-navigation li.current-menu-item .gridd-toggle, #gridd-handheld-menu-wrapper .gridd-navigation li.current-page-item .gridd-toggle, #gridd-handheld-menu-wrapper .gridd-navigation li.current_page_item .gridd-toggle, #gridd-handheld-menu-wrapper .gridd-navigation li.current-page-ancestor .gridd-toggle, #gridd-handheld-menu-wrapper .gridd-navigation li.current-menu-ancestor .gridd-toggle, #gridd-handheld-menu-wrapper .gridd-navigation li.current-menu-parent .gridd-toggle, #gridd-handheld-menu-wrapper .gridd-navigation li.current-page-parent .gridd-toggle, #gridd-handheld-menu-wrapper .gridd-navigation li.current_page_parent .gridd-toggle, #gridd-handheld-menu-wrapper .gridd-navigation li.current_page_ancestor .gridd-toggle {
+      color: var(--gridd-links-color); }
+      #gridd-handheld-menu-wrapper .gridd-navigation li.current-menu-item .gridd-toggle svg, #gridd-handheld-menu-wrapper .gridd-navigation li.current-page-item .gridd-toggle svg, #gridd-handheld-menu-wrapper .gridd-navigation li.current_page_item .gridd-toggle svg, #gridd-handheld-menu-wrapper .gridd-navigation li.current-page-ancestor .gridd-toggle svg, #gridd-handheld-menu-wrapper .gridd-navigation li.current-menu-ancestor .gridd-toggle svg, #gridd-handheld-menu-wrapper .gridd-navigation li.current-menu-parent .gridd-toggle svg, #gridd-handheld-menu-wrapper .gridd-navigation li.current-page-parent .gridd-toggle svg, #gridd-handheld-menu-wrapper .gridd-navigation li.current_page_parent .gridd-toggle svg, #gridd-handheld-menu-wrapper .gridd-navigation li.current_page_ancestor .gridd-toggle svg {
+        fill: var(--gridd-links-color); }
+    #gridd-handheld-menu-wrapper .gridd-navigation a,
+    #gridd-handheld-menu-wrapper .gridd-navigation a:visited {
+      color: var(--gridd-text-color); }
+      #gridd-handheld-menu-wrapper .gridd-navigation a:hover, #gridd-handheld-menu-wrapper .gridd-navigation a:focus, #gridd-handheld-menu-wrapper .gridd-navigation a.focus, #gridd-handheld-menu-wrapper .gridd-navigation a.toggled-on,
+      #gridd-handheld-menu-wrapper .gridd-navigation a:visited:hover,
+      #gridd-handheld-menu-wrapper .gridd-navigation a:visited:focus,
+      #gridd-handheld-menu-wrapper .gridd-navigation a:visited.focus,
+      #gridd-handheld-menu-wrapper .gridd-navigation a:visited.toggled-on {
+        color: var(--gridd-links-color);
+        border-bottom: 2px solid var(--gridd-links-color); }
+        #gridd-handheld-menu-wrapper .gridd-navigation a:hover ~ .gridd-toggle, #gridd-handheld-menu-wrapper .gridd-navigation a:focus ~ .gridd-toggle, #gridd-handheld-menu-wrapper .gridd-navigation a.focus ~ .gridd-toggle, #gridd-handheld-menu-wrapper .gridd-navigation a.toggled-on ~ .gridd-toggle,
+        #gridd-handheld-menu-wrapper .gridd-navigation a:visited:hover ~ .gridd-toggle,
+        #gridd-handheld-menu-wrapper .gridd-navigation a:visited:focus ~ .gridd-toggle,
+        #gridd-handheld-menu-wrapper .gridd-navigation a:visited.focus ~ .gridd-toggle,
+        #gridd-handheld-menu-wrapper .gridd-navigation a:visited.toggled-on ~ .gridd-toggle {
+          border-bottom: 2px solid var(--gridd-links-color); }
+          #gridd-handheld-menu-wrapper .gridd-navigation a:hover ~ .gridd-toggle svg, #gridd-handheld-menu-wrapper .gridd-navigation a:focus ~ .gridd-toggle svg, #gridd-handheld-menu-wrapper .gridd-navigation a.focus ~ .gridd-toggle svg, #gridd-handheld-menu-wrapper .gridd-navigation a.toggled-on ~ .gridd-toggle svg,
+          #gridd-handheld-menu-wrapper .gridd-navigation a:visited:hover ~ .gridd-toggle svg,
+          #gridd-handheld-menu-wrapper .gridd-navigation a:visited:focus ~ .gridd-toggle svg,
+          #gridd-handheld-menu-wrapper .gridd-navigation a:visited.focus ~ .gridd-toggle svg,
+          #gridd-handheld-menu-wrapper .gridd-navigation a:visited.toggled-on ~ .gridd-toggle svg {
+            fill: var(--gridd-links-color); }
+    #gridd-handheld-menu-wrapper .gridd-navigation .gridd-toggle {
+      color: var(--gridd-text-color); }
+      #gridd-handheld-menu-wrapper .gridd-navigation .gridd-toggle svg {
+        fill: var(--gridd-text-color); }
+      #gridd-handheld-menu-wrapper .gridd-navigation .gridd-toggle:hover, #gridd-handheld-menu-wrapper .gridd-navigation .gridd-toggle:focus, #gridd-handheld-menu-wrapper .gridd-navigation .gridd-toggle.focus, #gridd-handheld-menu-wrapper .gridd-navigation .gridd-toggle.toggled-on {
+        color: var(--gridd-links-color);
+        border-bottom: 2px solid var(--gridd-links-color); }
+        #gridd-handheld-menu-wrapper .gridd-navigation .gridd-toggle:hover svg, #gridd-handheld-menu-wrapper .gridd-navigation .gridd-toggle:focus svg, #gridd-handheld-menu-wrapper .gridd-navigation .gridd-toggle.focus svg, #gridd-handheld-menu-wrapper .gridd-navigation .gridd-toggle.toggled-on svg {
+          fill: var(--gridd-links-color); }
+      #gridd-handheld-menu-wrapper .gridd-navigation .gridd-toggle.toggled-on {
+        border-bottom: 2px solid var(--gridd-links-color); }
+        #gridd-handheld-menu-wrapper .gridd-navigation .gridd-toggle.toggled-on svg {
+          fill: var(--gridd-links-color); }
+  #gridd-handheld-menu-wrapper .gridd-toggle-navigation {
+    display: none; }
 
 #nav-handheld {
   max-height: calc(100vh - 66px);
   overflow-y: scroll;
-  width: 100%;
-}
+  width: 100%; }
 
 #gridd-handheld-menu-wrapper {
-  overflow-y: scroll;
-}
+  overflow-y: scroll; }

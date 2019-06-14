@@ -2,24 +2,18 @@
   list-style: none;
   list-style-type: none;
   margin: 0;
-  padding: 0;
-}
-.widget_rss > ul > li {
-  padding: 1em 0;
-  border-bottom: 1px solid rgba(0, 0, 0, .1);
-}
-.widget_rss > ul > li:first-child {
-  padding-top: 0;
-}
-.widget_rss > ul > li:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-.widget_rss > ul > li > a.rsswidget {
-  font-size: calc(var(--gridd-typo-scale) * 1em);
-}
-.widget_rss > ul > li > .rss-date,
-.widget_rss > ul > li > cite {
-  font-size: calc(1em / var(--gridd-typo-scale));
-  display: block;
-}
+  padding: 0; }
+  .widget_rss > ul > li {
+    padding: 1em 0;
+    border-bottom: 1px solid rgba(0, 0, 0, .1); }
+    .widget_rss > ul > li:first-child {
+      padding-top: 0; }
+    .widget_rss > ul > li:last-child {
+      border-bottom: none;
+      padding-bottom: 0; }
+    .widget_rss > ul > li > a.rsswidget {
+      font-size: calc(var(--gridd-typo-scale) * 1em); }
+    .widget_rss > ul > li > .rss-date,
+    .widget_rss > ul > li > cite {
+      font-size: calc(1em / var(--gridd-typo-scale));
+      display: block; }

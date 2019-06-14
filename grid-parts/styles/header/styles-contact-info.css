@@ -6,8 +6,6 @@
   max-width: 100%;
   align-items: center;
   padding: var(--gridd-header-contact-padding);
-  color: var(--gridd-header-contact-color);
-}
-.gridd-tp-header_contact_info.gridd-tp a {
-  color: var(--gridd-header-contact-color);
-}
+  color: var(--gridd-header-contact-color); }
+  .gridd-tp-header_contact_info.gridd-tp a {
+    color: var(--gridd-header-contact-color); }

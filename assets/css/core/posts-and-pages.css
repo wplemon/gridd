@@ -1,42 +1,33 @@
 .hentry {
-  margin: 0 0 1.5em;
-}
+  margin: 0 0 1.5em; }
 
 .updated:not(.published) {
-  display: none;
-}
+  display: none; }
 
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
   display: flex;
-  align-items: center;
-}
-.page-links > .item {
-  text-align: center;
-  min-width: 1.5em;
-  display: inline-block;
-}
-.page-links a {
-  display: block;
-  padding: 0.25em 0.5em;
-}
+  align-items: center; }
+  .page-links > .item {
+    text-align: center;
+    min-width: 1.5em;
+    display: inline-block; }
+  .page-links a {
+    display: block;
+    padding: .25em .5em; }
 
 .entry-footer {
   display: flex;
   flex-wrap: wrap;
-  font-size: 0.85em;
-}
-.entry-footer > * {
-  margin-right: 2.5em;
-}
-.rtl .entry-footer > * {
-  margin-right: 0;
-  margin-left: 2.5em;
-}
+  font-size: 0.85em; }
+  .entry-footer > * {
+    margin-right: 2.5em; }
+    .rtl .entry-footer > * {
+      margin-right: 0;
+      margin-left: 2.5em; }
 
 .entry-meta {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  font-size: calc(1em / var(--gridd-typo-scale));
-}
+  margin-top: .5em;
+  margin-bottom: .5em;
+  font-size: calc(1em / var(--gridd-typo-scale)); }

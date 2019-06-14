@@ -70,20 +70,16 @@
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
 .is-small-text {
-  font-size: 14px;
-}
+  font-size: 14px; }
 
 .is-regular-text {
-  font-size: 16px;
-}
+  font-size: 16px; }
 
 .is-large-text {
-  font-size: 36px;
-}
+  font-size: 36px; }
 
 .is-larger-text {
-  font-size: 48px;
-}
+  font-size: 48px; }
 
 .has-drop-cap:not(:focus)::first-letter {
   float: left;
@@ -92,37 +88,28 @@
   font-weight: 100;
   margin: 0.05em 0.1em 0 0;
   text-transform: uppercase;
-  font-style: normal;
-}
+  font-style: normal; }
 
 .has-drop-cap:not(:focus)::after {
   content: "";
   display: table;
   clear: both;
-  padding-top: 14px;
-}
+  padding-top: 14px; }
 
 p.has-background {
-  padding: 20px 30px;
-}
+  padding: 20px 30px; }
 
 p.has-text-color a {
-  color: inherit;
-}
+  color: inherit; }
 
 p.is-small-text {
-  font-size: calc(1em / var(--gridd-typo-scale));
-}
+  font-size: calc(1em / var(--gridd-typo-scale)); }
 p.is-regular-text {
-  font-size: 1em;
-}
+  font-size: 1em; }
 p.is-large-text {
-  font-size: calc(var(--gridd-typo-scale) * 1em);
-}
+  font-size: calc(var(--gridd-typo-scale) * 1em); }
 p.is-larger-text {
-  font-size: calc(var(--gridd-typo-scale) * var(--gridd-typo-scale) * 1em);
-}
+  font-size: calc(var(--gridd-typo-scale) * var(--gridd-typo-scale) * 1em); }
 
 p.has-background {
-  padding: 1.5em 2em;
-}
+  padding: 1.5em 2em; }
