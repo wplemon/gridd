@@ -99,13 +99,19 @@ body {
 	align-items: normal; // fallback;
 	align-items: stretch;
 	font-size: 22px;
-	padding: 2em;
+	padding: 1em;
 
 	.search-form {
 		height: 100%;
 
 		input {
 			border-bottom: none;
+			margin-left: 0
+		}
+
+		label {
+			display: flex;
+			flex-direction: row-reverse;
 		}
 	}
 }

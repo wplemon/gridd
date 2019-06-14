@@ -76,8 +76,12 @@ body {
   align-items: normal;
   align-items: stretch;
   font-size: 22px;
-  padding: 2em; }
+  padding: 1em; }
   #gridd-handheld-search-wrapper .search-form {
     height: 100%; }
     #gridd-handheld-search-wrapper .search-form input {
-      border-bottom: none; }
+      border-bottom: none;
+      margin-left: 0; }
+    #gridd-handheld-search-wrapper .search-form label {
+      display: flex;
+      flex-direction: row-reverse; }
