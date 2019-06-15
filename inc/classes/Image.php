@@ -119,7 +119,7 @@ class Image {
 		
 		// If we got this far then the $image is a URL.
 		global $wpdb;
-		$attachment = $wpdb->get_col( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE guid='%s';", $image ) );
+		$attachment = $wpdb->get_col( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE guid=%s;", $image ) );
 		if ( $attachment && is_array( $attachment ) && isset( $attachment[0] ) ) {
 			return (int) $attachment[0];
 		}
@@ -225,7 +225,7 @@ class Image {
 
 	/**
 	 * Resizes an image and returns an array containing the resized URL, width, height and file type. 
-	 * Uses native Wordpress functionality.
+	 * Uses native WordPress functionality.
 	 * This is a slightly modified version of http://goo.gl/9iS0CO
 	 *
 	 * @access private
@@ -291,17 +291,16 @@ class Image {
 
 		if ( ! file_exists( $dest_file_name ) ) {
 			/*
-				*  Bail if this image isn't in the Media Library.
-				*  We only want to resize Media Library images, so we can be sure they get deleted correctly when appropriate.
-				*/
-			$query          = $wpdb->prepare( "SELECT * FROM $wpdb->posts WHERE guid='%s'", $url );
-			$get_attachment = $wpdb->get_results( $query );
+			*  Bail if this image isn't in the Media Library.
+			*  We only want to resize Media Library images, so we can be sure they get deleted correctly when appropriate.
+			*/
+			$get_attachment = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $wpdb->posts WHERE guid=%s", $url ) );
 
 			if ( ! $get_attachment ) {
 				return array( 'url' => $url, 'width' => $width, 'height' => $height );
 			}
 
-			// Load Wordpress Image Editor
+			// Load WordPress Image Editor
 			$editor = wp_get_image_editor( $file_path );
 			if ( is_wp_error( $editor ) ) {
 				return array( 'url' => $url, 'width' => $width, 'height' => $height );
