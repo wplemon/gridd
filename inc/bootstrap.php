@@ -30,8 +30,8 @@ if ( ! class_exists( 'ariColor' ) ) {
  */
 if ( ! class_exists( 'Kirki' ) ) {
 	require_once get_template_directory() . '/packages/autoload.php';
-	
-	$kirki = \Kirki\Core\Framework::get_instance();
+
+	$kirki          = \Kirki\Core\Framework::get_instance();
 	$kirki->modules = new \Kirki\Core\Modules();
 	new \Kirki\Compatibility\Aliases();
 	new \Kirki\Core\Kirki();
