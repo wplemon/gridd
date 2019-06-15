@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit4df748ab1099677e68e678ecfdc98e08
+class ComposerStaticInit7aaf78bbf89d721fb852bc6698fa7ff6
 {
     public static $prefixLengthsPsr4 = array (
         'K' => 
@@ -26,16 +26,16 @@ class ComposerStaticInit4df748ab1099677e68e678ecfdc98e08
         ),
         'Kirki\\Module\\' => 
         array (
-            0 => __DIR__ . '/..' . '/kirki-framework/module-webfonts/src',
+            0 => __DIR__ . '/..' . '/kirki-framework/module-css/src',
             1 => __DIR__ . '/..' . '/kirki-framework/module-css-vars/src',
             2 => __DIR__ . '/..' . '/kirki-framework/module-custom-sections/src',
-            3 => __DIR__ . '/..' . '/kirki-framework/module-css/src',
-            4 => __DIR__ . '/..' . '/kirki-framework/module-editor-styles/src',
-            5 => __DIR__ . '/..' . '/kirki-framework/module-field-dependencies/src',
-            6 => __DIR__ . '/..' . '/kirki-framework/module-loading/src',
-            7 => __DIR__ . '/..' . '/kirki-framework/module-postmessage/src',
-            8 => __DIR__ . '/..' . '/kirki-framework/module-selective-refresh/src',
-            9 => __DIR__ . '/..' . '/kirki-framework/module-tooltips/src',
+            3 => __DIR__ . '/..' . '/kirki-framework/module-editor-styles/src',
+            4 => __DIR__ . '/..' . '/kirki-framework/module-field-dependencies/src',
+            5 => __DIR__ . '/..' . '/kirki-framework/module-loading/src',
+            6 => __DIR__ . '/..' . '/kirki-framework/module-postmessage/src',
+            7 => __DIR__ . '/..' . '/kirki-framework/module-selective-refresh/src',
+            8 => __DIR__ . '/..' . '/kirki-framework/module-tooltips/src',
+            9 => __DIR__ . '/..' . '/kirki-framework/module-webfonts/src',
         ),
         'Kirki\\Field\\' => 
         array (
@@ -91,16 +91,16 @@ class ComposerStaticInit4df748ab1099677e68e678ecfdc98e08
         'Kirki\\' => 
         array (
             0 => __DIR__ . '/..' . '/kirki-framework/field/src',
-            1 => __DIR__ . '/..' . '/kirki-framework/url-getter/src',
-            2 => __DIR__ . '/..' . '/kirki-framework/googlefonts/src',
+            1 => __DIR__ . '/..' . '/kirki-framework/googlefonts/src',
+            2 => __DIR__ . '/..' . '/kirki-framework/url-getter/src',
         ),
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit4df748ab1099677e68e678ecfdc98e08::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit4df748ab1099677e68e678ecfdc98e08::$prefixDirsPsr4;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit7aaf78bbf89d721fb852bc6698fa7ff6::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit7aaf78bbf89d721fb852bc6698fa7ff6::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }
