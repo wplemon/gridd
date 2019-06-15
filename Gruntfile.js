@@ -121,7 +121,6 @@ module.exports = function( grunt ) {
     grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
 	grunt.loadNpmTasks( 'grunt-contrib-watch' );
 	grunt.loadNpmTasks( 'grunt-postcss' );
-	grunt.loadNpmTasks( 'grunt-wp-i18n' );
 	grunt.loadNpmTasks( 'grunt-po2mo' );
 
 	grunt.registerTask( 'default', [ 'sass:main', 'sass:gridParts', 'postcss:assetsCSS', 'postcss:gridPartsCSS', 'cssmin', 'uglify' ] );
