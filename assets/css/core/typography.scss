@@ -11,12 +11,12 @@ textarea {
 }
 
 html {
-	font-size: var(--gridd-font-size);
+	font-size: var(--gridd-font-size, 18px);
 }
 
 body {
-	font-size: calc(var(--gridd-font-size) + var(--gridd-typo-ratio) * 1vw);
-	color: var(--gridd-text-color);
+	font-size: calc(var(--gridd-font-size, 18px) + var(--gridd-typo-ratio, 0.25) * 1vw);
+	color: var(--gridd-text-color, #000);
 }
 
 h1,
@@ -107,43 +107,43 @@ big {
 
 .h1,
 h1 {
-	font-size: calc(var(--gridd-typo-scale) * var(--gridd-typo-scale) * var(--gridd-typo-scale) * var(--gridd-typo-scale) * 1em);
+	font-size: calc(var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * 1em);
 }
 
 .h2,
 h2 {
-	font-size: calc(var(--gridd-typo-scale) * var(--gridd-typo-scale) * var(--gridd-typo-scale) * 1em);
+	font-size: calc(var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * 1em);
 }
 
 .h3,
 h3,
 .has-large-font-size {
-	font-size: calc(var(--gridd-typo-scale) * var(--gridd-typo-scale) * 1em);
+	font-size: calc(var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * 1em);
 }
 
 .h4,
 h4,
 .has-medium-font-size {
-	font-size: calc(var(--gridd-typo-scale) * 1em);
+	font-size: calc(var(--gridd-typo-scale, 1.26) * 1em);
 }
 
 .h5,
 h5,
 .has-small-font-size {
-	font-size: calc(1em / var(--gridd-typo-scale));
+	font-size: calc(1em / var(--gridd-typo-scale, 1.26));
 }
 
 .h6,
 h6 {
-	font-size: calc(1em / var(--gridd-typo-scale) / var(--gridd-typo-scale));
+	font-size: calc(1em / var(--gridd-typo-scale, 1.26) / var(--gridd-typo-scale, 1.26));
 }
 
 .smaller,
 smaller {
-	font-size: calc(1em / var(--gridd-typo-scale) / var(--gridd-typo-scale) / var(--gridd-typo-scale));
+	font-size: calc(1em / var(--gridd-typo-scale, 1.26) / var(--gridd-typo-scale, 1.26) / var(--gridd-typo-scale, 1.26));
 }
 
 .smallest,
 smallest {
-	font-size: calc(1em / var(--gridd-typo-scale) / var(--gridd-typo-scale) / var(--gridd-typo-scale) / var(--gridd-typo-scale));
+	font-size: calc(1em / var(--gridd-typo-scale, 1.26) / var(--gridd-typo-scale, 1.26) / var(--gridd-typo-scale, 1.26) / var(--gridd-typo-scale, 1.26));
 }

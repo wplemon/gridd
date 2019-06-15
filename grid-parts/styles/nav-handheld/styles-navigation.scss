@@ -4,13 +4,13 @@
 }
 
 $element: "#gridd-handheld-menu-wrapper";
-$backgroundColor: var(--gridd-content-bg);
+$backgroundColor: var(--gridd-content-bg, #fff);
 $fontSize: 1em;
 $padding: 1em;
 $justify: center;
-$submenuBackground: var(--gridd-content-bg);
-$accentColor: var(--gridd-links-color);
-$itemsColor: var(--gridd-text-color);
+$submenuBackground: var(--gridd-content-bg, #fff);
+$accentColor: var(--gridd-links-color, #0f5e97);
+$itemsColor: var(--gridd-text-color, #000);
 
 @import "../navigation/styles.scss";
 

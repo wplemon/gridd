@@ -10,7 +10,7 @@
 
 p {
 	&.is-small-text {
-		font-size: calc(1em / var(--gridd-typo-scale));
+		font-size: calc(1em / var(--gridd-typo-scale, 1.26));
 	}
 
 	&.is-regular-text {
@@ -18,11 +18,11 @@ p {
 	}
 
 	&.is-large-text {
-		font-size: calc(var(--gridd-typo-scale) * 1em);
+		font-size: calc(var(--gridd-typo-scale, 1.26) * 1em);
 	}
 
 	&.is-larger-text {
-		font-size: calc(var(--gridd-typo-scale) * var(--gridd-typo-scale) * 1em);
+		font-size: calc(var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * 1em);
 	}
 }
 

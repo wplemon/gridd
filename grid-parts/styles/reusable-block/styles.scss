@@ -2,9 +2,9 @@
 // The ID will be replaced by the actual navigation-ID via PHP
 // when the style is included inline in the document.
 .gridd-tp-reusable_block_ID {
-	padding: var(--gridd-reusable-block-ID-padding);
-	background-color: var(--gridd-reusable-block-ID-bg);
-	color: var(--gridd-reusable-block-ID-color);
+	padding: var(--gridd-reusable-block-ID-padding, 1em);
+	background-color: var(--gridd-reusable-block-ID-bg, #fff);
+	color: var(--gridd-reusable-block-ID-color, #000);
 	position: relative;
 
 	.inner {
@@ -20,6 +20,6 @@
 	a:visited,
 	a:hover,
 	a:focus {
-		color: var(--gridd-reusable-block-ID-links-color);
+		color: var(--gridd-reusable-block-ID-links-color, #0f5e97);
 	}
 }

@@ -19,12 +19,12 @@
 			}
 
 			> a.rsswidget {
-				font-size: calc(var(--gridd-typo-scale) * 1em);
+				font-size: calc(var(--gridd-typo-scale, 1.26) * 1em);
 			}
 
 			> .rss-date,
 			> cite {
-				font-size: calc(1em / var(--gridd-typo-scale));
+				font-size: calc(1em / var(--gridd-typo-scale, 1.26));
 				display: block;
 			}
 		}

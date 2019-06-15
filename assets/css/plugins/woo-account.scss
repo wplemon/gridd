@@ -7,7 +7,7 @@
   }
 
   .woocommerce-MyAccount-navigation {
-    font-size: calc(1em / var(--gridd-typo-scale));
+    font-size: calc(1em / var(--gridd-typo-scale, 1.26));
     border-bottom: 1px solid rgba(0, 0, 0, .2);
     margin-bottom: 2em;
 
@@ -25,8 +25,8 @@
 
       &.is-active {
         a {
-          color: var(--gridd-links-color);
-          border-bottom: 2px solid var(--gridd-links-color);
+          color: var(--gridd-links-color, #0f5e97);
+          border-bottom: 2px solid var(--gridd-links-color, #0f5e97);
         }
       }
     }
@@ -34,13 +34,13 @@
     a {
       display: block;
       padding: .25em .7em;
-      color: var(--gridd-text-color);
+      color: var(--gridd-text-color, #000);
       text-decoration: none;
 
       &:hover,
       &:focus {
-        color: var(--gridd-links-hover-color);
-        border-bottom: 2px solid var(--gridd-links-hover-color);
+        color: var(--gridd-links-hover-color, #541cfc);
+        border-bottom: 2px solid var(--gridd-links-hover-color, #541cfc);
       }
     }
   }

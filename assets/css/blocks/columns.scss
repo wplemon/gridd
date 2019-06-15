@@ -13,8 +13,8 @@
 	// grid-template-columns: repeat(auto-fit, minmax(6.5em, 1fr));
 
 	&.alignfull {
-		padding-left: var(--gridd-content-padding-left);
-		padding-right: var(--gridd-content-padding-right);
+		padding-left: var(--gridd-content-padding-left, 20px);
+		padding-right: var(--gridd-content-padding-right, 20px);
 	}
 
 	.wp-block-column {
@@ -24,7 +24,7 @@
 
 	&:not(.alignfull):not(.alignwide):not(.alignleft):not(.alignright) {
 		.site-main .entry-content > & {
-			max-width: calc(var(--gridd-content-max-width-calculated) + 2em);
+			max-width: calc(var(--gridd-content-max-width-calculated, 700px) + 2em);
 		}
 	}
 

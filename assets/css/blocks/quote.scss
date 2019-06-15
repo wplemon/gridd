@@ -10,19 +10,19 @@
 @import "block-library/quote/theme.scss";
 
 .wp-block-quote {
-	margin: calc(var(--gridd-typo-scale) * 1em) 0;
+	margin: calc(var(--gridd-typo-scale, 1.26) * 1em) 0;
 
 	&.is-style-large,
 	&.is-large {
 		margin: 0 0 1em;
 
 		p {
-			font-size: calc(var(--gridd-typo-scale) * var(--gridd-typo-scale) * 1em);
+			font-size: calc(var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * 1em);
 		}
 
 		cite,
 		footer {
-			font-size: calc(var(--gridd-typo-scale) * 1em);
+			font-size: calc(var(--gridd-typo-scale, 1.26) * 1em);
 		}
 	}
 

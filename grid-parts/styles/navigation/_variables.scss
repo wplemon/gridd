@@ -2,10 +2,10 @@
 // The ID will be replaced by the actual navigation-ID via PHP
 // when the style is included inline in the document.
 $element:           ".gridd-tp-nav_ID" !default;
-$backgroundColor:   var(--gridd-nav-ID-bg) !default;
-$fontSize:          var(--gridd-nav-ID-font-size) !default;
-$padding:           var(--gridd-nav-ID-padding) !default;
-$justify:           var(--gridd-nav-ID-justify) !default;
-$submenuBackground: var(--gridd-nav-ID-submenu-bg) !default;
-$accentColor:       var(--gridd-nav-ID-accent) !default;
-$itemsColor:        var(--gridd-nav-ID-color) !default;
+$backgroundColor:   var(--gridd-nav-ID-bg, #fff) !default;
+$fontSize:          var(--gridd-nav-ID-font-size, 1em) !default;
+$padding:           var(--gridd-nav-ID-padding, 1em) !default;
+$justify:           var(--gridd-nav-ID-justify, center) !default;
+$submenuBackground: var(--gridd-nav-ID-submenu-bg, #fff) !default;
+$accentColor:       var(--gridd-nav-ID-accent, #0f5e97) !default;
+$itemsColor:        var(--gridd-nav-ID-color, #000) !default;

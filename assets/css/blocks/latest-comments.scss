@@ -9,7 +9,7 @@
 @import "block-library/latest-comments/style.scss";
 
 .wp-block-latest-comments__comment {
-	font-size: calc(1em / var(--gridd-typo-scale));
+	font-size: calc(1em / var(--gridd-typo-scale, 1.26));
 
 	.has-avatars & {
 		min-height: 2em;
@@ -22,13 +22,13 @@
 }
 
 .wp-block-latest-comments__comment-excerpt p {
-	font-size: calc(1em / var(--gridd-typo-scale));
+	font-size: calc(1em / var(--gridd-typo-scale, 1.26));
 	margin: .25em 0 1em;
 }
 
 .wp-block-latest-comments__comment-date {
 	color: currentColor;
-	font-size: calc(1em / var(--gridd-typo-scale) / var(--gridd-typo-scale));
+	font-size: calc(1em / var(--gridd-typo-scale, 1.26) / var(--gridd-typo-scale, 1.26));
 }
 
 .wp-block-latest-comments .avatar,
