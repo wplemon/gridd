@@ -1273,12 +1273,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/kirki-framework/module-custom-sections.git",
-            "reference": "722cfb5a782c007ff3b8c1f8318d047009c3157f"
+            "reference": "4a44b1c0e787b3966aca8129e503283deef6d78d"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/kirki-framework/module-custom-sections/zipball/722cfb5a782c007ff3b8c1f8318d047009c3157f",
-            "reference": "722cfb5a782c007ff3b8c1f8318d047009c3157f",
+            "url": "https://api.github.com/repos/kirki-framework/module-custom-sections/zipball/4a44b1c0e787b3966aca8129e503283deef6d78d",
+            "reference": "4a44b1c0e787b3966aca8129e503283deef6d78d",
             "shasum": ""
         },
         "require": {
@@ -1286,7 +1286,7 @@
             "kirki-framework/url-getter": "*",
             "php": ">=5.6"
         },
-        "time": "2019-06-15T07:29:56+00:00",
+        "time": "2019-06-15T08:30:33+00:00",
         "type": "library",
         "installation-source": "source",
         "autoload": {

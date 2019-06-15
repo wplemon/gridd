@@ -63,6 +63,7 @@ class Custom_Sections {
 				'kirki-expanded' => '\Kirki\Module\Custom_Sections\Section_Expanded',
 				'kirki-nested'   => '\Kirki\Module\Custom_Sections\Section_Nested',
 				'kirki-link'     => '\Kirki\Module\Custom_Sections\Section_Link',
+				'kirki-outer'    => '\Kirki\Module\Custom_Sections\Section_Outer',
 			]
 		);
 	}
