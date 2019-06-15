@@ -15,18 +15,39 @@ if ( ! function_exists( 'gridd_social_icons_svg' ) ) {
 	require_once get_template_directory() . '/inc/social-icons.php';
 }
 
-Customizer::add_outer_section(
-	'gridd_grid_part_details_social_media',
-	[
-		/* translators: The grid-part label. */
-		'title'       => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Header Contact Info', 'gridd' ) ),
-		'description' => Customizer::section_description(
-			'gridd_grid_part_details_social_media',
-			[
-				'docs' => 'https://wplemon.github.io/gridd/grid-parts/social-media.html',
-			]
-		),
-	]
+/**
+ * Add Customizer sections.
+ *
+ * @since 1.2
+ */
+add_action(
+	'customize_register',
+	/**
+	 * Register sections.
+	 *
+	 * @since 1.2
+	 * @param WP_Customize The WordPress Customizer main object.
+	 * @return void
+	 */
+	function( $wp_customize ) {
+		$wp_customize->add_section(
+			new \Kirki\Module\Custom_Sections\Section_Outer(
+				$wp_customize,
+				'gridd_grid_part_details_social_media',
+				[
+					/* translators: The grid-part label. */
+					'title'       => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Header Contact Info', 'gridd' ) ),
+					'panel'       => 'gridd_hidden_panel',
+					'description' => Customizer::section_description(
+						'gridd_grid_part_details_social_media',
+						[
+							'docs' => 'https://wplemon.github.io/gridd/grid-parts/social-media.html',
+						]
+					),
+				]
+			)
+		);
+	}
 );
 
 Customizer::add_field(

@@ -26,27 +26,47 @@ function gridd_add_footer_widget_area_options( $id ) {
 
 	$sanitization = new Sanitize();
 
-	// Add section.
-	Customizer::add_outer_section(
-		"gridd_grid_part_details_footer_sidebar_$id",
-		[
-			'title'       => sprintf(
-				/* translators: The grid-part label. */
-				esc_html__( '%s Options', 'gridd' ),
-				/* translators: The number of the footer widget area. */
-				sprintf( esc_html__( 'Footer Sidebar %d', 'gridd' ), absint( $id ) )
-			),
-			'description' => Customizer::section_description(
-				"gridd_grid_part_details_footer_sidebar_$id",
-				[
-					'plus' => [
-						esc_html__( 'Selecting from an array of WCAG-compliant colors for text', 'gridd' ),
-						esc_html__( 'Selecting from an array of WCAG-compliant colors for links', 'gridd' ),
-					],
-					'docs' => 'https://wplemon.github.io/gridd/grid-parts/footer.html',
-				]
-			),
-		]
+	/**
+	 * Add Customizer sections.
+	 *
+	 * @since 1.2
+	 */
+	add_action(
+		'customize_register',
+		/**
+		 * Register sections.
+		 *
+		 * @since 1.2
+		 * @param WP_Customize The WordPress Customizer main object.
+		 * @return void
+		 */
+		function( $wp_customize ) use ( $id ) {
+			$wp_customize->add_section(
+				new \Kirki\Module\Custom_Sections\Section_Outer(
+					$wp_customize,
+					"gridd_grid_part_details_footer_sidebar_$id",
+					[
+						'title'       => sprintf(
+							/* translators: The grid-part label. */
+							esc_html__( '%s Options', 'gridd' ),
+							/* translators: The number of the footer widget area. */
+							sprintf( esc_html__( 'Footer Sidebar %d', 'gridd' ), absint( $id ) )
+						),
+						'panel'       => 'gridd_hidden_panel',
+						'description' => Customizer::section_description(
+							"gridd_grid_part_details_footer_sidebar_$id",
+							[
+								'plus' => [
+									esc_html__( 'Selecting from an array of WCAG-compliant colors for text', 'gridd' ),
+									esc_html__( 'Selecting from an array of WCAG-compliant colors for links', 'gridd' ),
+								],
+								'docs' => 'https://wplemon.github.io/gridd/grid-parts/footer.html',
+							]
+						),
+					]
+				)
+			);
+		}
 	);
 
 	// Background Color.
