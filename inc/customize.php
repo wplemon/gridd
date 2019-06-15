@@ -10,29 +10,35 @@
 namespace Gridd;
 
 /**
- * Add the "Theme Options" panel.
+ * Add Customizer panels.
  *
- * @since 1.0
+ * @since 1.2
  */
-Customizer::add_panel(
-	'gridd_options',
-	[
-		'title'    => esc_html__( 'Theme Options', 'gridd' ),
-		'priority' => 1,
-	]
-);
-
-/**
- * Add a hidden panel used for outer sections.
- *
- * @since 1.0.3
- */
-Customizer::add_panel(
-	'gridd_hidden_panel',
-	[
-		'title'    => '',
-		'priority' => 999,
-	]
+add_action(
+	'customize_register',
+	/**
+	 * Register panels.
+	 *
+	 * @since 1.2
+	 * @param WP_Customize The WordPress Customizer main object.
+	 * @return void
+	 */
+	function( $wp_customize ) {
+		$wp_customize->add_panel(
+			'gridd_options',
+			[
+				'title'    => esc_html__( 'Theme Options', 'gridd' ),
+				'priority' => 1,		
+			]
+		);
+		$wp_customize->add_panel(
+			'gridd_hidden_panel',
+			[
+				'title'    => '',
+				'priority' => 999,
+			]
+		);
+	}
 );
 
 /**
