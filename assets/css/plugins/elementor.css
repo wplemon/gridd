@@ -7,5 +7,5 @@
   width: 100%; }
 
 .elementor-section-full_width {
-  margin-left: calc(0px - var(--gridd-content-padding-left));
-  margin-right: calc(0px - var(--gridd-content-padding-right)); }
+  margin-left: calc(0px - var(--gridd-content-padding-left, 20px));
+  margin-right: calc(0px - var(--gridd-content-padding-right, 20px)); }

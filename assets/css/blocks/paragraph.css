@@ -103,13 +103,13 @@ p.has-text-color a {
   color: inherit; }
 
 p.is-small-text {
-  font-size: calc(1em / var(--gridd-typo-scale)); }
+  font-size: calc(1em / var(--gridd-typo-scale, 1.26)); }
 p.is-regular-text {
-  font-size: 1em; }
+  font-size: var(--gridd-em, 1em); }
 p.is-large-text {
-  font-size: calc(var(--gridd-typo-scale) * 1em); }
+  font-size: calc(var(--gridd-typo-scale, 1.26) * 1em); }
 p.is-larger-text {
-  font-size: calc(var(--gridd-typo-scale) * var(--gridd-typo-scale) * 1em); }
+  font-size: calc(var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * 1em); }
 
 p.has-background {
   padding: 1.5em 2em; }

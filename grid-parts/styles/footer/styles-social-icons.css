@@ -1,13 +1,13 @@
 .gridd-tp-footer_social_media.gridd-tp {
-  background-color: var(--gridd-footer-social-icons-bg);
+  background-color: var(--gridd-footer-social-icons-bg, #fff);
   align-items: center;
-  justify-content: var(--gridd-footer-social-icons-text-align); }
+  justify-content: var(--gridd-footer-social-icons-text-align, flex-end); }
   .gridd-tp-footer_social_media.gridd-tp a {
     display: block;
-    width: var(--gridd-footer-social-icons-size);
-    padding: var(--gridd-footer-social-icons-padding);
+    width: var(--gridd-footer-social-icons-size, 1em);
+    padding: var(--gridd-footer-social-icons-padding, 0.5em);
     box-sizing: content-box;
     line-height: 1;
-    color: var(--gridd-footer-social-icons-color); }
+    color: var(--gridd-footer-social-icons-color, #000); }
   .gridd-tp-footer_social_media.gridd-tp svg {
-    fill: var(--gridd-footer-social-icons-color); }
+    fill: var(--gridd-footer-social-icons-color, #000); }

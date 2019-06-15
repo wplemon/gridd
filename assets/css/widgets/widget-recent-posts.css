@@ -5,10 +5,10 @@
   padding: 0; }
 .widget_recent_entries li {
   padding: .25em 0;
-  border-bottom: 1px solid rgba(0, 0, 0, .1); }
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
   .widget_recent_entries li:last-child {
     border-bottom: none; }
 .widget_recent_entries.widget a {
   text-decoration: none; }
 .widget_recent_entries .post-date {
-  font-size: calc(1em / var(--gridd-typo-scale)); }
+  font-size: calc(1em / var(--gridd-typo-scale, 1.26)); }

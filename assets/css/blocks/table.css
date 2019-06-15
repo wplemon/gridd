@@ -115,4 +115,4 @@
 .wp-block-table {
   min-width: 30em; }
   .wp-block-table.is-style-stripes tr:nth-child(2n+1) {
-    background-color: rgba(0, 0, 0, .1); }
+    background-color: rgba(0, 0, 0, 0.1); }

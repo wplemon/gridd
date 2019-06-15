@@ -1,7 +1,7 @@
 .gridd-tp-reusable_block_ID {
-  padding: var(--gridd-reusable-block-ID-padding);
-  background-color: var(--gridd-reusable-block-ID-bg);
-  color: var(--gridd-reusable-block-ID-color);
+  padding: var(--gridd-reusable-block-ID-padding, 1em);
+  background-color: var(--gridd-reusable-block-ID-bg, #fff);
+  color: var(--gridd-reusable-block-ID-color, #000);
   position: relative; }
   .gridd-tp-reusable_block_ID .inner {
     width: 100%; }
@@ -12,4 +12,4 @@
   .gridd-tp-reusable_block_ID a:visited,
   .gridd-tp-reusable_block_ID a:hover,
   .gridd-tp-reusable_block_ID a:focus {
-    color: var(--gridd-reusable-block-ID-links-color); }
+    color: var(--gridd-reusable-block-ID-links-color, #0f5e97); }

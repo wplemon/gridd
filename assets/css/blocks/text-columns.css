@@ -81,11 +81,11 @@
     .wp-block-text-columns .wp-block-column:last-child {
       margin-right: 0; }
   .wp-block-text-columns.columns-2 .wp-block-column {
-    width: 50%; }
+    width: calc(100% / 2); }
   .wp-block-text-columns.columns-3 .wp-block-column {
-    width: 33.33333%; }
+    width: calc(100% / 3); }
   .wp-block-text-columns.columns-4 .wp-block-column {
-    width: 25%; }
+    width: calc(100% / 4); }
 
 .wp-block-text-columns .wp-block-column {
   margin: 0 1em; }

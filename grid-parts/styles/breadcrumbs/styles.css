@@ -1,14 +1,14 @@
 .gridd-tp-breadcrumbs {
-  background-color: var(--gridd-breadcrumbs-bg);
-  font-size: var(--gridd-breadcrumbs-font-size); }
+  background-color: var(--gridd-breadcrumbs-bg, #fff);
+  font-size: var(--gridd-breadcrumbs-font-size, 1em); }
   .gridd-tp-breadcrumbs li,
   .gridd-tp-breadcrumbs li a,
   .gridd-tp-breadcrumbs li a:visited {
-    color: var(--gridd-breadcrumbs-color); }
+    color: var(--gridd-breadcrumbs-color, #000); }
   .gridd-tp-breadcrumbs .inner {
-    padding: var(--gridd-breadcrumbs-padding);
+    padding: var(--gridd-breadcrumbs-padding, 1em);
     width: 100%;
-    max-width: var(--gridd-breadcrumbs-max-width);
+    max-width: var(--gridd-breadcrumbs-max-width, 100%);
     display: flex;
     align-items: center; }
 
@@ -23,7 +23,7 @@ nav.breadcrumbs {
     padding: 0;
     list-style: none;
     list-style-type: none;
-    text-align: var(--gridd-breadcrumbs-text-align); }
+    text-align: var(--gridd-breadcrumbs-text-align, center); }
   nav.breadcrumbs li {
     display: inline-flex; }
   nav.breadcrumbs .breadcrumbs__crumb + .breadcrumbs__crumb:before {
