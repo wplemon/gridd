@@ -21,12 +21,8 @@
     padding-right: 0;
     padding-left: 7px; }
 
-.customize-control-kirki-radio-buttonset .buttonset {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-  border-radius: 4px;
-  overflow: hidden;
-  grid-gap: 2px; }
+body li[data-kirki-parent-control-type="kirki-typography"][kirki-typography-subcontrol-type="font-style"] {
+  display: none !important; }
 
 #customize-control-gridd_grid_footer_background .background-wrapper {
   padding: 1em;
@@ -270,12 +266,6 @@ h3.gridd-customizer-section-title {
   max-height: 35px; }
   .switch-input:checked .gridd-flexbox-svg-option svg {
     fill: #fff; }
-
-.customize-control {
-  border-bottom: 1px solid #e2e2e2;
-  padding-bottom: 12px; }
-  .customize-control:last-child {
-    border-bottom: none; }
 
 #accordion-panel-gridd_hidden_panel {
   display: none !important; }
