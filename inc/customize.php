@@ -56,7 +56,7 @@ if ( ! Theme::is_plus_active() ) {
 /**
  * Add the config.
  */
-\Kirki::add_config(
+\Kirki\Core\Kirki::add_config(
 	'gridd',
 	[
 		'capability'  => 'edit_theme_options',
