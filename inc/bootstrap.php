@@ -17,10 +17,19 @@ use Gridd\Rest;
 use Gridd\Rest_Routes;
 
 /**
+ * Make sure the ariColor class exists.
+ *
+ * @since 1.2
+ */
+if ( ! class_exists( 'ariColor' ) ) {
+	require_once get_template_directory() . '/inc/classes/ariColor.php';
+}
+
+/**
  * If Kirki isn't loaded as a plugin, load the included version.
  */
 if ( ! class_exists( 'Kirki' ) ) {
-	require_once __DIR__ . '/kirki/kirki.php';
+	require_once get_template_directory() . '/packages/autoload.php';
 }
 
 /**
