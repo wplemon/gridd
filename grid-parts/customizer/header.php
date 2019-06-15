@@ -104,7 +104,7 @@ Customizer::add_field(
 
 Customizer::add_field(
 	[
-		'type'      => 'color',
+		'type'      => 'kirki-color',
 		'settings'  => 'gridd_grid_part_details_header_background_color',
 		'label'     => esc_html__( 'Background Color', 'gridd' ),
 		'tooltip'   => esc_html__( 'Choose a background color for the header. Individual grid-parts can override this by setting their own background color for their area. If you are using a grid-gap the color defined here will be visible between grid-parts.', 'gridd' ),

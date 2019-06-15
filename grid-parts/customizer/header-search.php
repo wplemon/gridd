@@ -83,7 +83,7 @@ Customizer::add_field(
 
 Customizer::add_field(
 	[
-		'type'      => 'color',
+		'type'      => 'kirki-color',
 		'settings'  => 'gridd_grid_part_details_header_bg_color',
 		'label'     => esc_html__( 'Background Color', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_header_search',
@@ -98,7 +98,7 @@ Customizer::add_field(
 
 Customizer::add_field(
 	[
-		'type'      => 'color',
+		'type'      => 'kirki-color',
 		'settings'  => 'gridd_grid_part_details_header_search_color',
 		'label'     => esc_html__( 'Text Color', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_header_search',

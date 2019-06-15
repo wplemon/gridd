@@ -138,7 +138,7 @@ function gridd_nav_customizer_options( $id ) {
 
 	Customizer::add_field(
 		[
-			'type'        => 'color',
+			'type'        => 'kirki-color',
 			'label'       => esc_html__( 'Background Color', 'gridd' ),
 			'description' => esc_html__( 'Controls the overall background color for this grid-part.', 'gridd' ),
 			'settings'    => "gridd_grid_nav_{$id}_bg_color",

@@ -70,7 +70,7 @@ Customizer::add_field(
 
 Customizer::add_field(
 	[
-		'type'      => 'color',
+		'type'      => 'kirki-color',
 		'settings'  => 'gridd_grid_part_details_header_contact_info_background_color',
 		'label'     => esc_html__( 'Background Color', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_header_contact_info',

@@ -118,7 +118,7 @@ Customizer::add_field(
 
 Customizer::add_field(
 	[
-		'type'            => 'color',
+		'type'            => 'kirki-color',
 		'settings'        => 'gridd_featured_image_overlay_background_color',
 		'label'           => esc_attr__( 'Overlay Color', 'gridd' ),
 		'section'         => 'gridd_features',

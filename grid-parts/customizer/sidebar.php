@@ -86,7 +86,7 @@ function gridd_sidebar_customizer_options( $id ) {
 
 	Customizer::add_field(
 		[
-			'type'        => 'color',
+			'type'        => 'kirki-color',
 			'settings'    => "gridd_grid_sidebar_{$id}_background_color",
 			'label'       => esc_html__( 'Background Color', 'gridd' ),
 			'description' => esc_html__( 'Select the background color for this area', 'gridd' ),

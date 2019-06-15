@@ -82,7 +82,7 @@ Customizer::add_field(
 
 Customizer::add_field(
 	[
-		'type'      => 'color',
+		'type'      => 'kirki-color',
 		'settings'  => 'gridd_grid_content_background_color',
 		'label'     => esc_html__( 'Background Color', 'gridd' ),
 		'tooltip'   => esc_html__( 'Always prefer light backgrounds with dark text for increased accessibility', 'gridd' ),
