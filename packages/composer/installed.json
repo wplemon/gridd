@@ -148,12 +148,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/kirki-framework/control-color.git",
-            "reference": "91a1a87f93c144d3e75293354c12847918c6d515"
+            "reference": "f435e06686af0cd3c5e25b7d3f2a3d5eca8ada68"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/kirki-framework/control-color/zipball/91a1a87f93c144d3e75293354c12847918c6d515",
-            "reference": "91a1a87f93c144d3e75293354c12847918c6d515",
+            "url": "https://api.github.com/repos/kirki-framework/control-color/zipball/f435e06686af0cd3c5e25b7d3f2a3d5eca8ada68",
+            "reference": "f435e06686af0cd3c5e25b7d3f2a3d5eca8ada68",
             "shasum": ""
         },
         "require": {
@@ -162,7 +162,7 @@
             "kirki-framework/url-getter": "dev-master",
             "php": ">=5.6"
         },
-        "time": "2019-06-02T11:04:07+00:00",
+        "time": "2019-06-15T09:47:14+00:00",
         "type": "library",
         "installation-source": "source",
         "autoload": {
