@@ -12,7 +12,7 @@
     width: 100%;
     display: flex; }
     .vc_row.wpb_row[data-vc-full-width-init=true] > *, .vc_row.wpb_row[data-vc-full-width=true] > * {
-      max-width: var(--gridd-content-max-width-calculated);
+      max-width: var(--gridd-content-max-width-calculated, 700px);
       padding-left: 1em;
       padding-right: 1em; }
     .vc_row.wpb_row[data-vc-full-width-init=true] .vc_parallax-inner, .vc_row.wpb_row[data-vc-full-width=true] .vc_parallax-inner {

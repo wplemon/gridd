@@ -100,4 +100,4 @@
     max-width: 7em !important; }
   .wp-block-separator.is-style-dots::before {
     color: currentColor;
-    font-size: calc(var(--gridd-typo-scale) * 1em); }
+    font-size: calc(var(--gridd-typo-scale, 1.26) * 1em); }

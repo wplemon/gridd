@@ -116,15 +116,15 @@
 .gridd-grid-selectable button {
   display: block;
   height: 65px;
-  border: 1px dotted rgba(0, 0, 0, .25);
+  border: 1px dotted rgba(0, 0, 0, 0.25);
   background-color: #f2f2f2;
   border-radius: 0;
   box-shadow: none; }
   .gridd-grid-selectable button:focus {
     outline: none; }
   .gridd-grid-selectable button.ds-selected {
-    background-color: rgba(0, 0, 0, .25);
-    background-image: linear-gradient(135deg, rgba(0, 0, 0, .5) 10%, transparent 10%, transparent 50%, rgba(0, 0, 0, .5) 50%, rgba(0, 0, 0, .5) 60%, transparent 60%, transparent 100%);
+    background-color: rgba(0, 0, 0, 0.25);
+    background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 10%, transparent 10%, transparent 50%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 60%, transparent 60%, transparent 100%);
     background-size: 5px 5px; }
 
 .grid-selected-part {
@@ -138,7 +138,7 @@
   .grid-selected-part.editing {
     z-index: 0; }
   .grid-selected-part .inner {
-    box-shadow: inset 0px 1px 10px 0px rgba(0, 0, 0, .2);
+    box-shadow: inset 0px 1px 10px 0px rgba(0, 0, 0, 0.2);
     color: #fff;
     justify-content: center;
     display: flex;
@@ -154,8 +154,7 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      -webkit-transform: translateX(-50%) translateY(-50%);
-              transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
       border-radius: 3px;
       overflow: hidden; }
       .grid-selected-part .inner .actions .add,
@@ -164,7 +163,7 @@
       .grid-selected-part .inner .actions .resize {
         background: #fff;
         padding: 4px;
-        border: 1px solid rgba(0, 0, 0, .3); }
+        border: 1px solid rgba(0, 0, 0, 0.3); }
         .grid-selected-part .inner .actions .add .dashicons,
         .grid-selected-part .inner .actions .delete .dashicons,
         .grid-selected-part .inner .actions .edit .dashicons,

@@ -62,9 +62,9 @@ figure {
 	margin-bottom: 1em;
 
 	&.alignfull {
-		margin-left: calc(0px - var(--gridd-content-padding-left));
-		margin-right: calc(0px - var(--gridd-content-padding-right));
-		width: calc(100% + var(--gridd-content-padding-left) + var(--gridd-content-padding-right));
+		margin-left: calc(0px - var(--gridd-content-padding-left, 20px));
+		margin-right: calc(0px - var(--gridd-content-padding-right, 20px));
+		width: calc(100% + var(--gridd-content-padding-left, 20px) + var(--gridd-content-padding-right, 20px));
 	}
 }
 

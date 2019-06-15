@@ -4,9 +4,9 @@
 .edd_downloads_list {
 	// display: -ms-grid;
 	display: grid;
-	// -ms-grid-columns: repeat(auto-fit, minmax(var(--gridd-edd-grid-min-col-width), 1fr));
-	grid-template-columns: repeat(auto-fit, minmax(var(--gridd-edd-grid-min-col-width), 1fr));
-	grid-gap: var(--gridd-edd-grid-gap);
+	// -ms-grid-columns: repeat(auto-fit, minmax(var(--gridd-edd-grid-min-col-width, 15em), 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(var(--gridd-edd-grid-min-col-width, 15em), 1fr));
+	grid-gap: var(--gridd-edd-grid-gap, 1.5em);
 	padding-bottom: 3em;
 
 	// @for $i from 1 through 5 {
@@ -34,8 +34,8 @@
 			padding-right: 0;
 
 			.entry-title {
-				padding-left: var(--gridd-edd-grid-inner-padding);
-				padding-right: var(--gridd-edd-grid-inner-padding);
+				padding-left: var(--gridd-edd-grid-inner-padding, 1.5em);
+				padding-right: var(--gridd-edd-grid-inner-padding, 1.5em);
 			}
 		}
 
@@ -43,7 +43,7 @@
 			// align-self: flex-end;
 			width: 100%;
 			margin-bottom: 1em;
-			padding: 0 var(--gridd-edd-grid-inner-padding);
+			padding: 0 var(--gridd-edd-grid-inner-padding, 1.5em);
 			text-align: center;
 
 			.gridd-excerpt-container {
@@ -62,13 +62,13 @@
 	}
 
 	.edd_download_inner {
-		padding: var(--gridd-edd-grid-inner-padding);
+		padding: var(--gridd-edd-grid-inner-padding, 1.5em);
 		width: 100%;
 
 		.edd_download_image {
-			margin-left: calc(0px - var(--gridd-edd-grid-inner-padding));
-			margin-right: calc(0px - var(--gridd-edd-grid-inner-padding));
-			margin-top: calc(0px - var(--gridd-edd-grid-inner-padding));
+			margin-left: calc(0px - var(--gridd-edd-grid-inner-padding, 1.5em));
+			margin-right: calc(0px - var(--gridd-edd-grid-inner-padding, 1.5em));
+			margin-top: calc(0px - var(--gridd-edd-grid-inner-padding, 1.5em));
 
 			>a {
 				display: block;
@@ -104,7 +104,7 @@
 		padding: 1.5em;
 
 		>legend {
-			font-size: calc(1em * var(--gridd-typo-scale));
+			font-size: calc(1em * var(--gridd-typo-scale, 1.26));
 			padding: 0 .7em;
 		}
 
@@ -114,7 +114,7 @@
 		}
 
 		.edd-description {
-			font-size: calc(1em / var(--gridd-typo-scale));
+			font-size: calc(1em / var(--gridd-typo-scale, 1.26));
 		}
 	}
 }
@@ -170,7 +170,7 @@
 
 .widget_edd_cart_widget {
 	.edd-cart-item {
-		font-size: calc(1em / var(--gridd-typo-scale));
+		font-size: calc(1em / var(--gridd-typo-scale, 1.26));
 		border-bottom: 1px solid rgba(0,0,0,.1);
 		padding: .5em 0;
 	}

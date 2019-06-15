@@ -1,13 +1,13 @@
 .gridd-tp-footer.gridd-tp {
-	background-color: var(--gridd-footer-bg);
-	border-top: var(--gridd-footer-border-top-width) solid var(--gridd-footer-border-top-color);
-	padding-top: var(--gridd-footer-grid-gap);
+	background-color: var(--gridd-footer-bg, #fff);
+	border-top: var(--gridd-footer-border-top-width, 1px) solid var(--gridd-footer-border-top-color, rgba(0,0,0,.1));
+	padding-top: var(--gridd-footer-grid-gap, 0);
 
 	.inner {
 		// display:-ms-grid;
 		display: grid;
-		grid-gap: var(--gridd-footer-grid-gap);
+		grid-gap: var(--gridd-footer-grid-gap, 0);
 		width: 100%;
-		max-width: var(--gridd-footer-max-width);
+		max-width: var(--gridd-footer-max-width, 100%);
 	}
 }

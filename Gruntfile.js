@@ -6,6 +6,9 @@ module.exports = function( grunt ) {
         // Compile CSS
         sass: {
             main: {
+				options: {
+					sourcemap: 'none'
+				},
 				files: [ {
 					expand: true,
 					cwd: 'assets/css/',
@@ -16,6 +19,9 @@ module.exports = function( grunt ) {
 				} ]
             },
             gridParts: {
+				options: {
+					sourcemap: 'none'
+				},
 				files: [ {
 					expand: true,
 					cwd: 'grid-parts',
@@ -74,20 +80,6 @@ module.exports = function( grunt ) {
 			}
 		},
 
-		postcss: {
-			options: {
-				processors: [
-					require( 'postcss-cssnext' )()
-				]
-			},
-			assetsCSS: {
-				src: 'assets/**/*.css'
-			},
-			gridPartsCSS: {
-				src: 'grid-parts/**/*.css'
-			}
-		},
-
 		// Watch task (run with "grunt watch")
         watch: {
             cssMain: {
@@ -95,13 +87,13 @@ module.exports = function( grunt ) {
 					'assets/css/*.scss',
 					'assets/css/**/*.scss'
                 ],
-                tasks: [ 'sass:main', 'postcss:assetsCSS', 'cssmin' ]
+                tasks: [ 'sass:main', 'cssmin' ]
 			},
             cssGridParts: {
                 files: [
 					'grid-parts/**/**.scss'
                 ],
-                tasks: [ 'sass:gridParts', 'postcss:gridPartsCSS', 'cssmin' ]
+                tasks: [ 'sass:gridParts', 'cssmin' ]
 			},
             js: {
                 files: [
@@ -116,14 +108,11 @@ module.exports = function( grunt ) {
     });
 
     grunt.loadNpmTasks( 'grunt-contrib-sass' );
-    grunt.loadNpmTasks( 'grunt-contrib-concat' );
     grunt.loadNpmTasks( 'grunt-contrib-uglify' );
     grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
 	grunt.loadNpmTasks( 'grunt-contrib-watch' );
-	grunt.loadNpmTasks( 'grunt-postcss' );
-	grunt.loadNpmTasks( 'grunt-po2mo' );
 
-	grunt.registerTask( 'default', [ 'sass:main', 'sass:gridParts', 'postcss:assetsCSS', 'postcss:gridPartsCSS', 'cssmin', 'uglify' ] );
-	grunt.registerTask( 'css', [ 'sass:main', 'sass:gridParts', 'postcss:assetsCSS', 'postcss:gridPartsCSS', 'cssmin' ] );
+	grunt.registerTask( 'default', [ 'sass:main', 'sass:gridParts', 'cssmin', 'uglify' ] );
+	grunt.registerTask( 'css', [ 'sass:main', 'sass:gridParts', 'cssmin' ] );
 	grunt.registerTask( 'js', [ 'uglify' ] );
 };

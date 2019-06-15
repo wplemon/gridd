@@ -17,7 +17,7 @@ nav {
     top: 100%;
     right: 0;
     min-width: 15em;
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .16);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.16);
     z-index: 5;
     display: none; }
     .gridd-navigation ul ul {
@@ -63,8 +63,7 @@ nav {
     .gridd-navigation .gridd-toggle.toggled-on {
       opacity: 1; }
       .gridd-navigation .gridd-toggle.toggled-on svg {
-        -webkit-transform: rotate(180deg);
-                transform: rotate(180deg); }
+        transform: rotate(180deg); }
       .gridd-navigation .gridd-toggle.toggled-on + ul {
         display: block; }
 

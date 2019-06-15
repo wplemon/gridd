@@ -2,49 +2,49 @@ a.custom-logo-link:hover {
   border-bottom: none; }
 
 .gridd-tp-header_branding.gridd-tp {
-  background-color: var(--gridd-branding-bg);
+  background-color: var(--gridd-branding-bg, #fff);
   display: flex;
   width: 100%;
-  padding: var(--gridd-branding-padding);
-  justify-content: var(--gridd-branding-horizontal-align);
-  align-items: var(--gridd-branding-vertical-align); }
+  padding: var(--gridd-branding-padding, 0.5em);
+  justify-content: var(--gridd-branding-horizontal-align, left);
+  align-items: var(--gridd-branding-vertical-align, center); }
   .gridd-tp-header_branding.gridd-tp.inline .site-title {
-    padding-left: var(--gridd-branding-elements-padding);
-    padding-right: var(--gridd-branding-elements-padding); }
+    padding-left: var(--gridd-branding-elements-padding, 0.5em);
+    padding-right: var(--gridd-branding-elements-padding, 0.5em); }
   .gridd-tp-header_branding.gridd-tp.vertical {
     flex-wrap: wrap; }
     .gridd-tp-header_branding.gridd-tp.vertical > * {
       display: flex;
       width: 100%;
-      justify-content: var(--gridd-branding-horizontal-align); }
+      justify-content: var(--gridd-branding-horizontal-align, left); }
     .gridd-tp-header_branding.gridd-tp.vertical .site-title {
-      padding-top: var(--gridd-branding-elements-padding);
-      padding-bottom: var(--gridd-branding-elements-padding); }
+      padding-top: var(--gridd-branding-elements-padding, 0.5em);
+      padding-bottom: var(--gridd-branding-elements-padding, 0.5em); }
   .gridd-tp-header_branding.gridd-tp .site-title,
   .gridd-tp-header_branding.gridd-tp .site-description {
     margin: 0; }
   .gridd-tp-header_branding.gridd-tp .site-description {
-    font-size: var(--gridd-tagline-size); }
+    font-size: var(--gridd-tagline-size, 1em); }
   .gridd-tp-header_branding.gridd-tp .site-description,
   .gridd-tp-header_branding.gridd-tp .site-title,
   .gridd-tp-header_branding.gridd-tp .site-title a,
   .gridd-tp-header_branding.gridd-tp .site-title a:visited,
   .gridd-tp-header_branding.gridd-tp .site-title a:hover,
   .gridd-tp-header_branding.gridd-tp .site-title a:visited:hover {
-    color: var(--header-textcolor); }
+    color: var(--header-textcolor, #000); }
   .gridd-tp-header_branding.gridd-tp .site-title {
     line-height: 1;
     font-size: var(--gridd-sitetitle-size); }
     .gridd-tp-header_branding.gridd-tp .site-title a {
       text-decoration: none;
-      color: var(--header-textcolor); }
+      color: var(--header-textcolor, #000); }
   .gridd-tp-header_branding.gridd-tp a:hover {
     outline: none; }
   .gridd-tp-header_branding.gridd-tp a:focus {
     background: transparent;
     outline: none; }
   .gridd-tp-header_branding.gridd-tp .custom-logo-link {
-    max-width: var(--gridd-logo-max-width);
+    max-width: var(--gridd-logo-max-width, 100px);
     line-height: 0;
     max-height: 100%;
     display: block; }

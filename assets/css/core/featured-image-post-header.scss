@@ -1,20 +1,20 @@
 .gridd-featured-image-post-header {
-	margin-left: calc(0px - var(--gridd-content-padding-left));
-	margin-right: calc(0px - var(--gridd-content-padding-right));
+	margin-left: calc(0px - var(--gridd-content-padding-left, 20px));
+	margin-right: calc(0px - var(--gridd-content-padding-right, 20px));
 	position: relative;
 	overflow: hidden;
-	text-shadow: 0 1px 2px var(--gridd-image-header-overlay-color);
+	text-shadow: 0 1px 2px var(--gridd-image-header-overlay-color, rgba(42,84,126,0.8));
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	min-height: var(--gridd-image-header-min-height);
+	min-height: var(--gridd-image-header-min-height, 87vh);
 
 	&:after {
 		position: absolute;
-		background: var(--gridd-image-header-overlay-color);
+		background: var(--gridd-image-header-overlay-color, rgba(42,84,126,0.8));
 		content: "\020";
 		width: 100%;
 		height: 100%;
@@ -28,7 +28,7 @@
 .gridd-featured-image-post-header-image-wrapper {
 	&:after {
 		position: absolute;
-		background: var(--gridd-image-header-overlay-color);
+		background: var(--gridd-image-header-overlay-color, rgba(42,84,126,0.8));
 		content: "\020";
 		width: 100%;
 		height: 100%;
@@ -58,7 +58,7 @@
 	bottom: 0;
 	padding: 1em;
 	z-index: 2;
-	color: var(--gridd-image-header-text-color);
+	color: var(--gridd-image-header-text-color, #fff);
 	width: 100%;
 
 	*,
@@ -66,11 +66,11 @@
 	a:visited,
 	a:hover,
 	a:visited:hover {
-		color: var(--gridd-image-header-text-color);
+		color: var(--gridd-image-header-text-color, #fff);
 	}
 
 	.inner {
-		max-width: var(--gridd-content-max-width-calculated);
+		max-width: var(--gridd-content-max-width-calculated, 700px);
 		margin-left: auto;
 		margin-right: auto;
 	}

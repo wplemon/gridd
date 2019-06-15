@@ -5,7 +5,7 @@
   z-index: 1; }
   .site-main .sticky:before {
     content: " ";
-    background: var(--gridd-links-color);
+    background: var(--gridd-links-color, #0f5e97);
     opacity: .065;
     position: absolute;
     left: 0;

@@ -20,6 +20,6 @@
 	}
 
 	.post-date {
-		font-size: calc(1em / var(--gridd-typo-scale));
+		font-size: calc(1em / var(--gridd-typo-scale, 1.26));
 	}
 }

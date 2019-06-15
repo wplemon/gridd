@@ -24,13 +24,9 @@
   "devDependencies": {
     "grunt": "*",
     "grunt-contrib-clean": "*",
-    "grunt-contrib-concat": "*",
     "grunt-contrib-cssmin": "*",
     "grunt-contrib-sass": "*",
     "grunt-contrib-uglify": "*",
-    "grunt-contrib-watch": "*",
-    "grunt-postcss": "*",
-    "postcss-clean": "*",
-    "postcss-cssnext": "*"
+    "grunt-contrib-watch": "*"
   }
 }
