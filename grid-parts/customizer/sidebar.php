@@ -27,48 +27,26 @@ function gridd_sidebar_customizer_options( $id ) {
 
 	$sanitization = new Sanitize();
 
-	/**
-	 * Add Customizer sections.
-	 *
-	 * @since 1.2
-	 */
-	add_action(
-		'customize_register',
-		/**
-		 * Register sections.
-		 *
-		 * @since 1.2
-		 * @param WP_Customize The WordPress Customizer main object.
-		 * @return void
-		 */
-		function( $wp_customize ) use ( $id ) {
+	/* translators: The number of the widget area. */
+	$label = get_theme_mod( "gridd_grid_widget_area_{$id}_name", sprintf( esc_html__( 'Widget Area %d', 'gridd' ), intval( $id ) ) );
 
-			/* translators: The number of the widget area. */
-			$label = get_theme_mod( "gridd_grid_widget_area_{$id}_name", sprintf( esc_html__( 'Widget Area %d', 'gridd' ), intval( $id ) ) );
-
-			$wp_customize->add_section(
-				new \Kirki\Module\Custom_Sections\Section_Outer(
-					$wp_customize,
-					"gridd_grid_part_details_sidebar_$id",
-					[
-						/* translators: The grid-part label. */
-						'title'       => sprintf( esc_html__( '%s Advanced Options', 'gridd' ), $label ),
-						'panel'       => 'gridd_hidden_panel',
-						'description' => Customizer::section_description(
-							"gridd_grid_part_details_sidebar_$id",
-							[
-								'plus' => [
-									esc_html__( 'Selecting from an array of WCAG-compliant colors for text', 'gridd' ),
-									esc_html__( 'Selecting from an array of WCAG-compliant colors for links', 'gridd' ),
-									esc_html__( 'Visibility Options: Choose specific post-IDs or category/tag/term IDs to show this grid-part', 'gridd' ),
-								],
-								'docs' => 'https://wplemon.github.io/gridd/grid-parts/widget-area.html',
-							]
-						),
-					]
-				)
-			);
-		}
+	Customizer::add_outer_section(
+		"gridd_grid_part_details_sidebar_$id",
+		[
+			/* translators: The grid-part label. */
+			'title'       => sprintf( esc_html__( '%s Advanced Options', 'gridd' ), $label ),
+			'description' => Customizer::section_description(
+				"gridd_grid_part_details_sidebar_$id",
+				[
+					'plus' => [
+						esc_html__( 'Selecting from an array of WCAG-compliant colors for text', 'gridd' ),
+						esc_html__( 'Selecting from an array of WCAG-compliant colors for links', 'gridd' ),
+						esc_html__( 'Visibility Options: Choose specific post-IDs or category/tag/term IDs to show this grid-part', 'gridd' ),
+					],
+					'docs' => 'https://wplemon.github.io/gridd/grid-parts/widget-area.html',
+				]
+			),
+		]
 	);
 
 	/**

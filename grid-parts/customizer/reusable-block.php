@@ -39,46 +39,28 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 	$sanitization = new Sanitize();
 
 	/**
-	 * Add Customizer sections.
-	 *
-	 * @since 1.2
+	 * Add Customizer Sections.
 	 */
-	add_action(
-		'customize_register',
-		/**
-		 * Register sections.
-		 *
-		 * @since 1.2
-		 * @param WP_Customize The WordPress Customizer main object.
-		 * @return void
-		 */
-		function( $wp_customize ) use ( $id ) {
-			$wp_customize->add_section(
-				new \Kirki\Module\Custom_Sections\Section_Outer(
-					$wp_customize,
-					"gridd_grid_part_details_reusable_block_$id",
-					[
-						'title'       => sprintf(
-							/* translators: The grid-part label. */
-							esc_html__( '%s Options', 'gridd' ),
-							/* translators: The reusable block number. */
-							sprintf( esc_html__( 'Reusable Block %d', 'gridd' ), absint( $id ) )
-						),
-						'panel'       => 'gridd_hidden_panel',
-						'description' => Customizer::section_description(
-							'gridd_grid_part_details_footer_copyright',
-							[
-								'plus' => [
-									esc_html__( 'Selecting from an array of WCAG-compliant colors for text', 'gridd' ),
-									esc_html__( 'Selecting from an array of WCAG-compliant colors for links', 'gridd' ),
-								],
-								'docs' => 'https://wplemon.github.io/gridd/grid-parts/reusable-block.html',
-							]
-						),
-					]
-				)
-			);
-		}
+	Customizer::add_outer_section(
+		"gridd_grid_part_details_reusable_block_$id",
+		[
+			'title'       => sprintf(
+				/* translators: The grid-part label. */
+				esc_html__( '%s Options', 'gridd' ),
+				/* translators: The reusable block number. */
+				sprintf( esc_html__( 'Reusable Block %d', 'gridd' ), absint( $id ) )
+			),
+			'description' => Customizer::section_description(
+				'gridd_grid_part_details_footer_copyright',
+				[
+					'plus' => [
+						esc_html__( 'Selecting from an array of WCAG-compliant colors for text', 'gridd' ),
+						esc_html__( 'Selecting from an array of WCAG-compliant colors for links', 'gridd' ),
+					],
+					'docs' => 'https://wplemon.github.io/gridd/grid-parts/reusable-block.html',
+				]
+			),
+		]
 	);
 
 	Customizer::add_field(
