@@ -163,7 +163,7 @@ Customizer::add_field(
 		'section'         => 'gridd_grid_part_details_header_branding',
 		'priority'        => 50,
 		'default'         => [
-			'font-family' => 'Noto Serif',
+			'font-family' => 'sans-serif',
 			'font-weight' => 700,
 		],
 		'transport'       => 'auto',
