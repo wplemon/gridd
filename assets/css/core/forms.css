@@ -55,13 +55,8 @@ textarea {
       border: none;
       border-bottom: 1px solid currentColor;
       border-radius: 0;
-      margin-left: -1em;
-      padding-left: 1.5em;
       transition: all 200ms;
       opacity: .7; }
-      .rtl .search-form > label > input.search-field {
-        padding-right: 1.5em;
-        padding-left: .5em; }
       .search-form > label > input.search-field:hover, .search-form > label > input.search-field:focus {
         opacity: 1; }
         .search-form > label > input.search-field:hover + .gridd-search-icon, .search-form > label > input.search-field:focus + .gridd-search-icon {

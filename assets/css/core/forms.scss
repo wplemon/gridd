@@ -51,14 +51,14 @@ textarea {
 			border: none;
 			border-bottom: 1px solid currentColor;
 			border-radius: 0;
-			margin-left: -1em;
-			padding-left: 1.5em;
+			// margin-left: -1em;
+			// padding-left: 1.5em;
 			transition: all 200ms;
 			opacity: .7;
 
 			.rtl & {
-				padding-right: 1.5em;
-				padding-left: .5em;
+				// padding-right: 1.5em;
+				// padding-left: .5em;
 			}
 
 			&:hover,
