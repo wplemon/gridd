@@ -21,15 +21,6 @@ $padding = get_theme_mod(
 		'right' => '1em',
 	]
 );
-$style->add_vars(
-	[
-		'--gridd-header-search-bg'            => get_theme_mod( 'gridd_grid_part_details_header_bg_color', '#ffffff' ),
-		'--gridd-header-search-padding-left'  => $padding['left'],
-		'--gridd-header-search-padding-right' => $padding['right'],
-		'--gridd-header-search-font-size'     => get_theme_mod( 'gridd_grid_part_details_header_search_font_size', 1 ) . 'em',
-		'--gridd-header-search-color'         => get_theme_mod( 'gridd_grid_part_details_header_search_color', '#000000' ),
-	]
-);
 ?>
 
 <div <?php Theme::print_attributes( [ 'class' => 'gridd-tp gridd-tp-header_search' ], 'wrapper-header_search' ); ?>>

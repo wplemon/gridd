@@ -32,16 +32,6 @@ $style->add_string(
 // Add the stylesheet.
 $style->add_file( get_theme_file_path( 'grid-parts/styles/footer/styles.min.css' ) );
 
-// Add css-vars.
-$style->add_vars(
-	[
-		'--gridd-footer-bg'               => get_theme_mod( 'gridd_grid_footer_background_color', '#ffffff' ),
-		'--gridd-footer-border-top-width' => get_theme_mod( 'gridd_grid_footer_border_top_width', 1 ) . 'px',
-		'--gridd-footer-border-top-color' => get_theme_mod( 'gridd_grid_footer_border_top_color', 'rgba(0,0,0,.1)' ),
-		'--gridd-footer-max-width'        => get_theme_mod( 'gridd_grid_footer_max_width', '' ),
-	]
-);
-
 $attrs = [
 	'class' => 'gridd-tp gridd-tp-footer',
 	'role'  => 'contentinfo',

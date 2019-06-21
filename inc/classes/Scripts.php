@@ -180,18 +180,6 @@ class Scripts {
 
 		$style = Style::get_instance( 'main-styles' );
 
-		$style->add_vars(
-			[
-				'--gridd-typo-scale'        => get_theme_mod( 'gridd_type_scale', 1.26 ),
-				'--gridd-text-color'        => get_theme_mod( 'gridd_text_color', '#000000' ),
-				'--gridd-links-color'       => get_theme_mod( 'gridd_links_color', '#0f5e97' ),
-				'--gridd-font-size'         => get_theme_mod( 'gridd_body_font_size', 18 ) . 'px',
-				'--gridd-typo-ratio'        => get_theme_mod( 'gridd_fluid_typography_ratio', .25 ),
-				'--gridd-links-hover-color' => get_theme_mod( 'gridd_links_hover_color', '#541cfc' ),
-				'--gridd-grid-max-width'    => get_theme_mod( 'gridd_grid_max_width', '' ),
-				'--gridd-content-max-width' => get_theme_mod( 'gridd_grid_content_max_width', '45em' ),
-			]
-		);
 		$style->add_file( get_theme_file_path( 'assets/css/core/normalize.min.css' ) );
 		$style->add_file( get_theme_file_path( 'assets/css/core/elements.min.css' ) );
 		$style->add_file( get_theme_file_path( 'assets/css/core/forms.min.css' ) );
@@ -215,11 +203,6 @@ class Scripts {
 
 		// EDD.
 		if ( class_exists( 'Easy_Digital_Downloads' ) ) {
-			$style->add_vars(
-				[
-					'--gridd-edd-grid-gap' => get_theme_mod( 'gridd_edd_archive_grid_gap', 1.5 ) . 'em',
-				]
-			);
 			$style->add_file( get_theme_file_path( 'assets/css/plugins/edd.min.css' ) );
 			if ( AMP::is_active() ) {
 				$style->add_file( get_theme_file_path( 'assets/css/plugins/amp-edd.min.css' ) );
@@ -363,13 +346,6 @@ class Scripts {
 		$styles = '';
 		$style  = Style::get_instance( "widget/$widget_id_base/$sidebar_id/$widget_id" );
 
-		$style->add_vars(
-			[
-				'--gridd-typo-scale'  => get_theme_mod( 'gridd_type_scale', 1.26 ),
-				'--gridd-links-color' => get_theme_mod( 'gridd_links_color', '#0f5e97' ),
-			]
-		);
-
 		switch ( $widget_id_base ) {
 			case 'nav_menu':
 				$widget_output = str_replace( 'widget_nav_menu', 'widget_nav_menu gridd-nav-vertical', $widget_output );
@@ -377,13 +353,6 @@ class Scripts {
 				$style->add_string( Navigation::get_global_styles() );
 				$style->add_file( get_theme_file_path( 'assets/css/widgets/widget-navigation-menu.min.css' ) );
 				$style->replace( 'ID', $id );
-				$style->add_vars(
-					[
-						"--gridd-sidebar-{$id}-bg"    => get_theme_mod( "gridd_grid_sidebar_{$id}_background_color", '#ffffff' ),
-						"--gridd-sidebar-{$id}-links-color" => get_theme_mod( "gridd_grid_sidebar_{$id}_links_color", '#0f5e97' ),
-						"--gridd-sidebar-{$id}-color" => get_theme_mod( "gridd_grid_sidebar_{$id}_color", '#000000' ),
-					]
-				);
 				break;
 
 			default:
