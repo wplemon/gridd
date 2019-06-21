@@ -9,9 +9,6 @@
 use Gridd\Grid_Part\Header;
 use Gridd\Style;
 use Gridd\Theme;
-
-$style = Style::get_instance( 'grid-part/header/search' );
-$style->add_file( get_theme_file_path( 'grid-parts/styles/header/styles-header-search.min.css' ) );
 ?>
 
 <div <?php Theme::print_attributes( [ 'class' => 'gridd-tp gridd-tp-header_search' ], 'wrapper-header_search' ); ?>>
@@ -19,7 +16,9 @@ $style->add_file( get_theme_file_path( 'grid-parts/styles/header/styles-header-s
 	/**
 	 * Print styles.
 	 */
-	$style->the_css( 'gridd-inline-css-header-search' );
+	Style::get_instance( 'grid-part/header/search' )
+		->add_file( get_theme_file_path( 'grid-parts/styles/header/styles-header-search.min.css' ) )
+		->the_css( 'gridd-inline-css-header-search' );
 	?>
 
 	<div class="gridd-header-search inner" style="display:flex;align-items:center;width:100%;">

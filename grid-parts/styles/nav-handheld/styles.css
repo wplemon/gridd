@@ -80,7 +80,6 @@ body {
   #gridd-handheld-search-wrapper .search-form {
     height: 100%; }
     #gridd-handheld-search-wrapper .search-form input {
-      border-bottom: none;
       margin-left: 0; }
     #gridd-handheld-search-wrapper .search-form label {
       display: flex;
