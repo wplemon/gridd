@@ -36,6 +36,13 @@ You can install the theme using the WordPress Administration menu. For more info
 
 == Changelog ==
 
+= 1.1.7 =
+
+* Fix: Improve accessibility of search forms
+* Fix: Updated the Kirki framework to v3.0.44
+* Fix: Updated editor block styles
+* Fix: Changed default font-family to sans-serif.
+
 = 1.1.6 =
 
 * Fix: Handheld navigation behaviour on Safari.
