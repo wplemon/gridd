@@ -1,6 +1,6 @@
 .gridd-tp-breadcrumbs {
   background-color: var(--gridd-breadcrumbs-bg, #fff);
-  font-size: var(--gridd-breadcrumbs-font-size, 1em); }
+  font-size: calc(var(--gridd-breadcrumbs-font-size) * 1em); }
   .gridd-tp-breadcrumbs li,
   .gridd-tp-breadcrumbs li a,
   .gridd-tp-breadcrumbs li a:visited {

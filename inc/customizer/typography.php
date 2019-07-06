@@ -181,7 +181,7 @@ Customizer::add_field(
 		'default'     => 18,
 		'priority'    => 60,
 		'transport'   => 'postMessage',
-		'css_vars'    => [ '--gridd-font-size', '$px' ],
+		'css_vars'    => '--gridd-font-size',
 		'choices'     => [
 			'min'    => 13,
 			'max'    => 40,

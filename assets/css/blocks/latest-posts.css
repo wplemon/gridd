@@ -101,6 +101,10 @@
   color: #6c7781;
   font-size: 1em; }
 
+.wp-block-latest-posts__post-excerpt {
+  margin-top: 8px;
+  margin-bottom: 1em; }
+
 .wp-block-latest-posts.is-grid li {
   margin: 0 1em 1em 0; }
 @media (min-width: 600px) {

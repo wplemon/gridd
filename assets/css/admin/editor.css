@@ -4,12 +4,12 @@
 
 .block-editor .edit-post-visual-editor.editor-styles-wrapper,
 .edit-post-visual-editor.editor-styles-wrapper {
-  font-size: calc(var(--gridd-font-size, 18px) + var(--gridd-typo-ratio, 0.25) * 1vw);
+  font-size: calc((var(--gridd-font-size, 18) * 1px) + var(--gridd-typo-ratio, 0.25) * 1vw);
   color: var(--gridd-text-color, #000);
   background-color: var(--gridd-content-bg, #fff); }
   .block-editor .edit-post-visual-editor.editor-styles-wrapper p,
   .edit-post-visual-editor.editor-styles-wrapper p {
-    font-size: calc(var(--gridd-font-size, 18px) + var(--gridd-typo-ratio, 0.25) * 1vw); }
+    font-size: calc((var(--gridd-font-size, 18) * 1px) + var(--gridd-typo-ratio, 0.25) * 1vw); }
   .block-editor .edit-post-visual-editor.editor-styles-wrapper h1,
   .edit-post-visual-editor.editor-styles-wrapper h1 {
     font-size: calc(var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * 1em); }

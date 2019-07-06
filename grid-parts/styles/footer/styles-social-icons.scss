@@ -5,8 +5,8 @@
 
 	a {
 		display: block;
-		width: var(--gridd-footer-social-icons-size, 1em);
-		padding: var(--gridd-footer-social-icons-padding, 0.5em);
+		width: calc(var(--gridd-footer-social-icons-size) * 1em);
+		padding: calc(var(--gridd-footer-social-icons-padding, 0.5) * 1em);
 		box-sizing: content-box;
 		line-height: 1;
 		color: var(--gridd-footer-social-icons-color, #000);

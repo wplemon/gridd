@@ -4,9 +4,9 @@
 .edd_downloads_list {
 	// display: -ms-grid;
 	display: grid;
-	// -ms-grid-columns: repeat(auto-fit, minmax(var(--gridd-edd-grid-min-col-width, 15em), 1fr));
-	grid-template-columns: repeat(auto-fit, minmax(var(--gridd-edd-grid-min-col-width, 15em), 1fr));
-	grid-gap: var(--gridd-edd-grid-gap, 1.5em);
+	// -ms-grid-columns: repeat(auto-fit, minmax(calc(var(--gridd-edd-grid-min-col-width, 15) * 1em), 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(calc(var(--gridd-edd-grid-min-col-width, 15) * 1em), 1fr));
+	grid-gap: calc(var(--gridd-edd-grid-gap, 1.5) * 1em);
 	padding-bottom: 3em;
 
 	// @for $i from 1 through 5 {
@@ -34,8 +34,8 @@
 			padding-right: 0;
 
 			.entry-title {
-				padding-left: var(--gridd-edd-grid-inner-padding, 1.5em);
-				padding-right: var(--gridd-edd-grid-inner-padding, 1.5em);
+				padding-left: calc(var(--gridd-edd-grid-inner-padding, 1.5) * em);
+				padding-right: calc(var(--gridd-edd-grid-inner-padding, 1.5) * em);
 			}
 		}
 
@@ -43,7 +43,7 @@
 			// align-self: flex-end;
 			width: 100%;
 			margin-bottom: 1em;
-			padding: 0 var(--gridd-edd-grid-inner-padding, 1.5em);
+			padding: 0 calc(var(--gridd-edd-grid-inner-padding, 1.5) * em);
 			text-align: center;
 
 			.gridd-excerpt-container {
@@ -62,13 +62,13 @@
 	}
 
 	.edd_download_inner {
-		padding: var(--gridd-edd-grid-inner-padding, 1.5em);
+		padding: calc(var(--gridd-edd-grid-inner-padding, 1.5) * em);
 		width: 100%;
 
 		.edd_download_image {
-			margin-left: calc(0px - var(--gridd-edd-grid-inner-padding, 1.5em));
-			margin-right: calc(0px - var(--gridd-edd-grid-inner-padding, 1.5em));
-			margin-top: calc(0px - var(--gridd-edd-grid-inner-padding, 1.5em));
+			margin-left: calc(0px - calc(var(--gridd-edd-grid-inner-padding, 1.5) * em));
+			margin-right: calc(0px - calc(var(--gridd-edd-grid-inner-padding, 1.5) * em));
+			margin-top: calc(0px - calc(var(--gridd-edd-grid-inner-padding, 1.5) * em));
 
 			>a {
 				display: block;

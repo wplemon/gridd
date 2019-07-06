@@ -50,7 +50,7 @@ Customizer::add_field(
 		'section'   => 'gridd_grid_part_details_header_search',
 		'default'   => 1,
 		'transport' => 'postMessage',
-		'css_vars'  => [ '--gridd-header-search-font-size', '$em' ],
+		'css_vars'  => '--gridd-header-search-font-size',
 		'choices'   => [
 			'min'    => .5,
 			'max'    => 4,

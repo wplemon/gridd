@@ -31,7 +31,7 @@ Customizer::add_field(
 		'section'     => 'gridd_edd',
 		'default'     => 15,
 		'transport'   => 'postMessage',
-		'css_vars'    => [ '--gridd-edd-grid-min-col-width', '$em' ],
+		'css_vars'    => '--gridd-edd-grid-min-col-width',
 		'choices'     => [
 			'min'    => 10,
 			'max'    => 30,
@@ -50,7 +50,7 @@ Customizer::add_field(
 		'section'     => 'gridd_edd',
 		'default'     => 1.5,
 		'transport'   => 'postMessage',
-		'css_vars'    => [ '--gridd-edd-grid-gap', '$em' ],
+		'css_vars'    => '--gridd-edd-grid-gap',
 		'choices'     => [
 			'min'    => 0,
 			'max'    => 10,

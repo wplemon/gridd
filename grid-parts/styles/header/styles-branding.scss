@@ -14,8 +14,8 @@ a.custom-logo-link {
 
 	&.inline {
 		.site-title {
-			padding-left: var(--gridd-branding-elements-padding, 0.5em);
-			padding-right: var(--gridd-branding-elements-padding, 0.5em);
+			padding-left: calc(var(--gridd-branding-elements-padding, 0.5) * 1em);
+			padding-right: calc(var(--gridd-branding-elements-padding, 0.5) * 1em);
 		}
 	}
 
@@ -29,8 +29,8 @@ a.custom-logo-link {
 		}
 
 		.site-title {
-			padding-top: var(--gridd-branding-elements-padding, 0.5em);
-			padding-bottom: var(--gridd-branding-elements-padding, 0.5em);
+			padding-top: calc(var(--gridd-branding-elements-padding, 0.5) * 1em);
+			padding-bottom: calc(var(--gridd-branding-elements-padding, 0.5) * 1em);
 		}
 	}
 
@@ -40,7 +40,7 @@ a.custom-logo-link {
 	}
 
 	.site-description {
-		font-size: var(--gridd-tagline-size, 1em);
+		font-size: calc(var(--gridd-tagline-size, 1) * 1em);
 	}
 
 	.site-description,
@@ -54,7 +54,7 @@ a.custom-logo-link {
 
 	.site-title {
 		line-height: 1;
-		font-size: var(--gridd-sitetitle-size);
+		font-size: calc(var(--gridd-sitetitle-size, 2) * 1em);
 
 		a {
 			text-decoration: none;
@@ -74,7 +74,7 @@ a.custom-logo-link {
 	}
 
 	.custom-logo-link {
-		max-width: var(--gridd-logo-max-width, 100px);
+		max-width: calc(var(--gridd-logo-max-width, 100) * 1px);
 		line-height: 0;
 		max-height: 100%;
 		display: block;

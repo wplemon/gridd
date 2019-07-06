@@ -116,7 +116,7 @@ Customizer::add_field(
 
 Customizer::add_field(
 	[
-		'type'              => 'text',
+		'type'              => 'dimension',
 		'settings'          => 'gridd_grid_header_branding_padding',
 		'label'             => esc_html__( 'Padding', 'gridd' ),
 		'tooltip'           => __( 'For details on how padding works, please refer to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
@@ -144,7 +144,7 @@ Customizer::add_field(
 			'suffix' => 'px',
 		],
 		'transport'       => 'postMessage',
-		'css_vars'        => [ '--gridd-logo-max-width', '$px' ],
+		'css_vars'        => '--gridd-logo-max-width',
 		'active_callback' => [
 			[
 				'setting'  => 'custom_logo',
@@ -191,7 +191,7 @@ Customizer::add_field(
 		'default'         => 2,
 		'transport'       => 'postMessage',
 		'active_callback' => 'display_header_text',
-		'css_vars'        => [ '--gridd-sitetitle-size', '$em' ],
+		'css_vars'        => '--gridd-sitetitle-size',
 		'choices'         => [
 			'min'    => 1,
 			'max'    => 10,
@@ -211,7 +211,7 @@ Customizer::add_field(
 		'default'         => 1,
 		'transport'       => 'postMessage',
 		'active_callback' => 'display_header_text',
-		'css_vars'        => [ '--gridd-tagline-size', '$em' ],
+		'css_vars'        => '--gridd-tagline-size',
 		'choices'         => [
 			'min'    => 1,
 			'max'    => 5,
@@ -254,7 +254,7 @@ Customizer::add_field(
 		'priority'        => 90,
 		'default'         => .5,
 		'transport'       => 'postMessage',
-		'css_vars'        => [ '--gridd-branding-elements-padding', '$em' ],
+		'css_vars'        => '--gridd-branding-elements-padding',
 		'choices'         => [
 			'min'    => 0,
 			'max'    => 5,

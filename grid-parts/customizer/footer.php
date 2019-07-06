@@ -112,7 +112,7 @@ Customizer::add_field(
 		'section'   => 'gridd_grid_part_details_footer',
 		'default'   => 1,
 		'transport' => 'postMessage',
-		'css_vars'  => [ '--gridd-footer-border-top-width', '$px' ],
+		'css_vars'  => '--gridd-footer-border-top-width',
 		'priority'  => 50,
 		'choices'   => [
 			'min'    => 0,

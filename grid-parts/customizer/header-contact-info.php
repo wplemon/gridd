@@ -87,7 +87,7 @@ Customizer::add_field(
 		'section'   => 'gridd_grid_part_details_header_contact_info',
 		'default'   => .85,
 		'transport' => 'postMessage',
-		'css_vars'  => [ '--gridd-header-contact-font-size', '$em' ],
+		'css_vars'  => '--gridd-header-contact-font-size',
 		'choices'   => [
 			'min'    => .5,
 			'max'    => 2,
