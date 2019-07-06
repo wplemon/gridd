@@ -112,16 +112,6 @@ class Content extends Grid_Part {
 				'right'  => '20px',
 			]
 		);
-		$style->add_vars(
-			[
-				'--gridd-content-padding-top'    => $padding['top'],
-				'--gridd-content-padding-bottom' => $padding['bottom'],
-				'--gridd-content-padding-left'   => $padding['left'],
-				'--gridd-content-padding-right'  => $padding['right'],
-				'--gridd-content-max-width'      => get_theme_mod( 'gridd_grid_content_max_width', '45em' ),
-				'--gridd-content-bg'             => get_theme_mod( 'gridd_grid_content_background_color', '#ffffff' ),
-			]
-		);
 		$style->add_file( get_theme_file_path( 'grid-parts/styles/content/styles.min.css' ) );
 		$style->add_string( '@media only screen and (min-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . '){' );
 		$style->add_file( get_theme_file_path( 'grid-parts/styles/content/styles-large.min.css' ) );

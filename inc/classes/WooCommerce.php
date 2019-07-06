@@ -97,16 +97,6 @@ class WooCommerce {
 
 		$style = Style::get_instance( 'woocommerce' );
 
-		$style->add_vars(
-			[
-				'--gridd-woo-catalog-product-min-width' => get_theme_mod( 'gridd_woocommerce_product_catalog_min_width', '250px' ),
-				'--gridd-typo-scale'                    => get_theme_mod( 'gridd_type_scale', 1.26 ),
-				'--gridd-text-color'                    => get_theme_mod( 'gridd_text_color', '#000000' ),
-				'--gridd-links-color'                   => get_theme_mod( 'gridd_links_color', '#005ea5' ),
-				'--gridd-links-hover-color'             => get_theme_mod( 'gridd_links_hover_color', '#2900a3' ),
-			]
-		);
-
 		// Add the main woo styles.
 		$style->add_file( get_theme_file_path( 'assets/css/plugins/woocommerce.min.css' ) );
 

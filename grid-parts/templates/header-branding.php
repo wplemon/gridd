@@ -10,19 +10,6 @@ use Gridd\Style;
 use Gridd\Theme;
 
 $style = Style::get_instance( 'grid-part/header/branding' );
-$style->add_vars(
-	[
-		'--gridd-branding-bg'               => get_theme_mod( 'gridd_grid_header_branding_background_color', '#ffffff' ),
-		'--gridd-branding-horizontal-align' => get_theme_mod( 'gridd_grid_header_branding_horizontal_align', 'left' ),
-		'--gridd-branding-vertical-align'   => get_theme_mod( 'gridd_grid_header_branding_vertical_align', 'center' ),
-		'--gridd-branding-padding'          => get_theme_mod( 'gridd_grid_header_branding_padding', '0.5em' ),
-		'--gridd-branding-elements-padding' => get_theme_mod( 'gridd_branding_inline_spacing', 1 ) . 'em',
-		'--gridd-logo-max-width'            => get_theme_mod( 'gridd_logo_max_width', 100 ) . 'px',
-		'--gridd-sitetitle-size'            => get_theme_mod( 'gridd_branding_sitetitle_size', 2 ) . 'em',
-		'--gridd-tagline-size'              => get_theme_mod( 'gridd_branding_tagline_size', 1 ) . 'em',
-		'--header-textcolor'                => get_header_textcolor(),
-	]
-);
 $style->add_string( ':root{--header-textcolor:#' . esc_attr( trim( get_header_textcolor(), '#' ) ) . ';}' );
 $style->add_file( get_theme_file_path( 'grid-parts/styles/header/styles-branding.min.css' ) );
 $style->the_css( 'gridd-inline-css-header-branding' );
