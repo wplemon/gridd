@@ -11,11 +11,11 @@ textarea {
 }
 
 html {
-	font-size: var(--gridd-font-size, 18px);
+	font-size: calc(var(--gridd-font-size, 18) * 1px);
 }
 
 body {
-	font-size: calc(var(--gridd-font-size, 18px) + var(--gridd-typo-ratio, 0.25) * 1vw);
+	font-size: calc((var(--gridd-font-size, 18) * 1px) + var(--gridd-typo-ratio, 0.25) * 1vw);
 	color: var(--gridd-text-color, #000);
 }
 

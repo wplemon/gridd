@@ -78,7 +78,7 @@ Customizer::add_field(
 		'section'   => 'gridd_grid_part_details_social_media',
 		'default'   => 1,
 		'transport' => 'postMessage',
-		'css_vars'  => [ '--gridd-header-social-icons-size', '$em' ],
+		'css_vars'  => '--gridd-header-social-icons-size',
 		'choices'   => [
 			'min'    => .3,
 			'max'    => 3,
@@ -97,7 +97,7 @@ Customizer::add_field(
 		'section'   => 'gridd_grid_part_details_social_media',
 		'default'   => .5,
 		'transport' => 'postMessage',
-		'css_vars'  => [ '--gridd-header-social-icons-padding', '$em' ],
+		'css_vars'  => '--gridd-header-social-icons-padding',
 		'choices'   => [
 			'min'    => 0,
 			'max'    => 2,

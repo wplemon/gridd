@@ -5,12 +5,12 @@
 
 .block-editor .edit-post-visual-editor.editor-styles-wrapper,
 .edit-post-visual-editor.editor-styles-wrapper {
-	font-size: calc(var(--gridd-font-size, 18px) + var(--gridd-typo-ratio, 0.25) * 1vw);
+	font-size: calc((var(--gridd-font-size, 18) * 1px) + var(--gridd-typo-ratio, 0.25) * 1vw);
 	color: var(--gridd-text-color, #000);
 	background-color: var(--gridd-content-bg, #fff);
 
 	p {
-		font-size: calc(var(--gridd-font-size, 18px) + var(--gridd-typo-ratio, 0.25) * 1vw);
+		font-size: calc((var(--gridd-font-size, 18) * 1px) + var(--gridd-typo-ratio, 0.25) * 1vw);
 	}
 
 	h1 {

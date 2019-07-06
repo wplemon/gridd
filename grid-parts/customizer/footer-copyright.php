@@ -117,7 +117,7 @@ Customizer::add_field(
 		'section'   => 'gridd_grid_part_details_footer_copyright',
 		'default'   => 1,
 		'transport' => 'postMessage',
-		'css_vars'  => [ '--gridd-footer-copyright-font-size', '$em' ],
+		'css_vars'  => '--gridd-footer-copyright-font-size',
 		'priority'  => 140,
 		'choices'   => [
 			'min'    => .5,

@@ -1,6 +1,6 @@
 .gridd-tp-footer.gridd-tp {
 	background-color: var(--gridd-footer-bg, #fff);
-	border-top: var(--gridd-footer-border-top-width, 1px) solid var(--gridd-footer-border-top-color, rgba(0,0,0,.1));
+	border-top: calc(var(--gridd-footer-border-top-width, 1) * 1px) solid var(--gridd-footer-border-top-color, rgba(0,0,0,.1));
 	padding-top: var(--gridd-footer-grid-gap, 0);
 
 	.inner {
