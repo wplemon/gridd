@@ -12,13 +12,22 @@
 
 namespace Kirki\Module;
 
-use Kirki\Core\Kirki;
+use Kirki\Compatibility\Kirki;
 use Kirki\URL;
 
 /**
  * Adds styles to the customizer.
  */
 class Field_Dependencies {
+
+	/**
+	 * An array of field dependencies.
+	 *
+	 * @access private
+	 * @since 1.0
+	 * @var array
+	 */
+	private $dependencies = [];
 
 	/**
 	 * Constructor.
@@ -57,12 +66,13 @@ class Field_Dependencies {
 			}
 	
 			if ( ! empty( $args['required'] ) ) {
+				$this->dependencies[ $args['settings'] ] = $args['required'];
 				$args['active_callback'] = '__return_true';
-				return;
+				return $args;
 			}
 			// No need to proceed any further if we're using the default value.
 			if ( '__return_true' === $args['active_callback'] ) {
-				return;
+				return $args;
 			}
 
 			// Make sure the function is callable, otherwise fallback to __return_true.
@@ -83,5 +93,6 @@ class Field_Dependencies {
 	 */
 	public function field_dependencies() {
 		wp_enqueue_script( 'kirki_field_dependencies', URL::get_from_path( __DIR__ . '/assets/scripts/script.js' ), [ 'jquery', 'customize-base', 'customize-controls' ], '4.0', true );
+		wp_localize_script( 'kirki_field_dependencies', 'kirkiControlDependencies', $this->dependencies );
 	}
 }

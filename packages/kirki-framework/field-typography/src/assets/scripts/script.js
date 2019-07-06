@@ -24,27 +24,32 @@ function kirkiTypographyCompositeControlFontProperties( id, value ) {
 			if ( -1 !== variant.indexOf( 'i' ) ) {
 				hasItalics = true;
 			}
-			variant = 'regular' === variant || 'italic' === variant ? 400 : parseInt( variant );
+			variant = 'regular' === variant || 'italic' === variant ? 400 : parseInt( variant, 10 );
 			if ( -1 === fontWeights.indexOf( variant ) ) {
-				fontWeights.push( parseInt( variant ) );
+				fontWeights.push( parseInt( variant, 10 ) );
 			}
 
-			if ( hasItalics && control.active() ) {
-				fontStyleControl.activate();
-			} else {
-				fontStyleControl.deactivate();
+			if ( ! hasItalics && fontStyleControl ) {
+				fontStyleControl.setting.set( 'normal' );
 			}
+
+			// if ( hasItalics && control.active() ) {
+			// 	fontStyleControl.activate();
+			// } else {
+			// 	fontStyleControl.deactivate();
+			// }
 		} );
 
 		/**
 		 * If the selected font-family doesn't support the selected font-weight, switch to a supported one.
 		 */
-		if ( -1 === fontWeights.indexOf( parseInt( value['font-weight'] ) ) ) {
+		if ( -1 === fontWeights.indexOf( parseInt( value['font-weight'], 10 ) ) ) {
 
 			// Find the font-weight closest to our previous value.
 			closest = fontWeights.reduce( function( prev, curr ) {
-				return ( Math.abs( curr - parseInt( value['font-weight'] ) ) < Math.abs( prev - parseInt( value['font-weight'] ) ) ? curr : prev );
+				return ( Math.abs( curr - parseInt( value['font-weight'], 10 ) ) < Math.abs( prev - parseInt( value['font-weight'], 10 ) ) ? curr : prev );
 			} );
+			fontWeightControl.doSelectAction( 'selectOption', closest.toString() );
 			fontWeightControl.setting.set( closest.toString() );
 		}
 
@@ -60,18 +65,28 @@ function kirkiTypographyCompositeControlFontProperties( id, value ) {
 		/**
 		 * Hide/show font-weight options depending on which are available for this font-family.
 		 */
-		_.each( [ 100, 200, 300, 400, 500, 600, 700, 800, 900 ], function( weight ) {
-			fontWeightControl.container.find( '[value=' + weight + ']' ).attr( 'disabled', -1 === fontWeights.indexOf( weight ) );
-		} );
+		if ( fontWeightControl ) {
+			_.each( [ 100, 200, 300, 400, 500, 600, 700, 800, 900 ], function( weight ) {
+				if ( -1 === fontWeights.indexOf( weight ) ) {
+					fontWeightControl.doSelectAction( 'enableOption', weight.toString() );
+				} else {
+					fontWeightControl.doSelectAction( 'disableOption', weight.toString() );
+				}
+			} );
+		}
 	}
 
 	wp.hooks.addAction(
 		'kirki.dynamicControl.initKirkiControl',
 		'kirki',
 		function( controlInit ) {
-			if ( id + '[font-weight]' === controlInit.id ) {
+			if ( fontWeightControl && id + '[font-weight]' === controlInit.id ) {
 				_.each( [ 100, 200, 300, 400, 500, 600, 700, 800, 900 ], function( weight ) {
-					fontWeightControl.container.find( '[value=' + weight + ']' ).attr( 'disabled', -1 === fontWeights.indexOf( weight ) );
+					if ( -1 === fontWeights.indexOf( weight ) ) {
+						fontWeightControl.doSelectAction( 'enableOption', weight.toString() );
+					} else {
+						fontWeightControl.doSelectAction( 'disableOption', weight.toString() );
+					}
 				} );
 			}
 		}

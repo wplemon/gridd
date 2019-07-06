@@ -12,7 +12,7 @@
 
 namespace Kirki\Control;
 
-use Kirki\Core\Kirki;
+use Kirki\Compatibility\Kirki;
 use Kirki\URL;
 
 /**
@@ -63,15 +63,6 @@ class Base extends \WP_Customize_Control {
 	 * @var string
 	 */
 	public $kirki_config = 'global';
-
-	/**
-	 * Whitelisting the "required" argument for use in Kirki modules.
-	 *
-	 * @since 1.0
-	 * @access public
-	 * @var array
-	 */
-	public $required = [];
 
 	/**
 	 * Whitelisting the "preset" argument for use in Kirki modules.
@@ -164,9 +155,6 @@ class Base extends \WP_Customize_Control {
 		if ( isset( $this->default ) ) {
 			$this->json['default'] = $this->default;
 		}
-
-		// Required.
-		$this->json['required'] = $this->required;
 
 		// Output.
 		$this->json['output'] = $this->output;

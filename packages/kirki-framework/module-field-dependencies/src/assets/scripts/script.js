@@ -5,8 +5,12 @@ var kirkiDependencies = {
 	init: function() {
 		var self = this;
 
-		wp.customize.control.each( function( control ) {
-			self.showKirkiControl( control );
+		_.each( window.kirkiControlDependencies, function( requires, controlID ) {
+			var control = wp.customize.control( controlID );
+			if ( control ) {
+				wp.customize.control( controlID ).params.required = requires;
+				self.showKirkiControl( control );
+			}
 		} );
 
 		_.each( self.listenTo, function( slaves, master ) {
@@ -38,7 +42,7 @@ var kirkiDependencies = {
 	 *
 	 * @since 3.0.17
 	 * @param {string|object} control - The control-id or the control object.
-	 * @returns {bool}
+	 * @returns {bool} - Whether the control should be shown or not.
 	 */
 	showKirkiControl: function( control ) {
 		var self     = this,
@@ -78,6 +82,7 @@ var kirkiDependencies = {
 	 * @param {Object} control - The control object.
 	 * @param {bool}   isOption - Whether it's an option or not.
 	 * @param {string} relation - Can be one of 'AND' or 'OR'.
+	 * @returns {bool} - Returns the results of the condition checks.
 	 */
 	checkCondition: function( requirement, control, isOption, relation ) {
 		var self          = this,
@@ -138,7 +143,7 @@ var kirkiDependencies = {
 	 * @param {mixed} value2 - The 2nd value.
 	 * @param {string} operator - The comparison to use.
 	 * @param {string} choice - If we want to check an item in an object value.
-	 * @returns {bool}
+	 * @returns {bool} - Returns the evaluation result.
 	 */
 	evaluate: function( value1, value2, operator, choice ) {
 		var found = false;

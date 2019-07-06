@@ -11,7 +11,8 @@
 
 namespace Kirki\Module\CSS;
 
-use Kirki\Core\Values;
+use Kirki\Compatibility\Values;
+use Kirki\Compatibility\Kirki;
 
 /**
  * Handles field CSS output.
@@ -104,7 +105,7 @@ class Output {
 	 * @return string|array
 	 */
 	protected function apply_value_pattern( $output, $value ) {
-		if ( isset( $output['value_pattern'] ) && ! empty( $output['value_pattern'] ) && is_string( $output['value_pattern'] ) ) {
+		if ( isset( $output['value_pattern'] ) && is_string( $output['value_pattern'] ) ) {
 			if ( ! is_array( $value ) ) {
 				$value = str_replace( '$', $value, $output['value_pattern'] );
 			}

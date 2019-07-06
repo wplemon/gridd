@@ -1,4 +1,4 @@
-/* global kirkiPostMessageFields, WebFont */
+/* global kirkiPostMessageFields */
 var kirkiPostMessage = {
 
 	/**
@@ -107,7 +107,7 @@ var kirkiPostMessage = {
 		 *
 		 * @since 3.0.26
 		 * @param {string} url - The URL.
-		 * @returns {string}
+		 * @returns {string} - Returns the URL.
 		 */
 		backgroundImageValue: function( url ) {
 			return ( -1 === url.indexOf( 'url(' ) ) ? 'url(' + url + ')' : url;
@@ -128,123 +128,67 @@ var kirkiPostMessage = {
 		 * @param {Object} output - The output (js_vars) argument.
 		 * @param {mixed}  value - The value.
 		 * @param {string} controlType - The control-type.
-		 * @returns {string}
+		 * @returns {string} - Returns CSS as a string.
 		 */
 		fromOutput: function( output, value, controlType ) {
 			var styles      = '',
-				googleFont  = '',
 				mediaQuery  = false,
 				processedValue;
 
 			try {
 				value = JSON.parse( value );
-			} catch ( e ) {
-				console.log( {
-					value: value,
-					error: e
-				} );
-			}
+			} catch ( e ) {} // eslint-disable-line no-empty
 
 			if ( output.js_callback && 'function' === typeof window[ output.js_callback ] ) {
 				value = window[ output.js_callback[0] ]( value, output.js_callback[1] );
 			}
-			switch ( controlType ) {
-				case 'kirki-typography':
-					styles += output.element + '{';
-					_.each( value, function( val, key ) {
-						if ( output.choice && key !== output.choice ) {
-							return;
-						}
-						processedValue = kirkiPostMessage.util.processValue( output, val );
-						if ( false !== processedValue ) {
-							styles += key + ':' + processedValue + ';';
-						}
-					} );
-					styles += '}';
 
-					// Check if this is a googlefont so that we may load it.
-					if ( ! _.isUndefined( WebFont ) && value['font-family'] ) {
+			// Apply the kirkiPostMessageStylesOutput filter.
+			styles = wp.hooks.applyFilters( 'kirkiPostMessageStylesOutput', styles, value, output, controlType );
 
-						// Calculate the googlefont params.
-						googleFont = value['font-family'].replace( /\"/g, '&quot;' );
-						if ( value['font-weight'] && value['font-style'] ) {
-							googleFont += ':' + value['font-weight'];
-							if ( 'italic' === value['font-style'] ) {
-								googleFont += 'i';
-							}
-						} else if ( value.variant ) {
-							if ( 'regular' === value.variant ) {
-								googleFont += ':400';
-							} else if ( 'italic' === value.variant ) {
-								googleFont += ':400i';
-							} else {
-								googleFont += ':' + value.variant;
-							}
-						}
-						googleFont += ':cyrillic,cyrillic-ext,devanagari,greek,greek-ext,khmer,latin,latin-ext,vietnamese,hebrew,arabic,bengali,gujarati,tamil,telugu,thai';
-						WebFont.load( {
-							google: {
-								families: [ googleFont ]
-							}
-						} );
-					}
-					break;
-				case 'kirki-background':
-				case 'kirki-dimensions':
-				case 'kirki-multicolor':
-				case 'kirki-sortable':
-					styles += output.element + '{';
-					_.each( value, function( val, key ) {
-						if ( output.choice && key !== output.choice ) {
-							return;
-						}
-						if ( 'background-image' === key ) {
-							val = kirkiPostMessage.util.backgroundImageValue( val );
-						}
-
-						processedValue = kirkiPostMessage.util.processValue( output, val );
-
-						if ( false !== processedValue ) {
-
-							// Mostly used for padding, margin & position properties.
-							if ( output.property ) {
-								styles += output.property;
-								if ( '' !== output.property && ( 'top' === key || 'bottom' === key || 'left' === key || 'right' === key ) ) {
-									styles += '-' + key;
-								}
-								styles += ':' + processedValue + ';';
-							} else {
-								styles += key + ':' + processedValue + ';';
-							}
-						}
-					} );
-					styles += '}';
-					break;
-				default:
-					if ( 'kirki-image' === controlType ) {
-						value = ( ! _.isUndefined( value.url ) ) ? kirkiPostMessage.util.backgroundImageValue( value.url ) : kirkiPostMessage.util.backgroundImageValue( value );
-					}
-					if ( _.isObject( value ) ) {
+			if ( '' === styles ) {
+				switch ( controlType ) {
+					case 'kirki-multicolor':
+					case 'kirki-sortable':
 						styles += output.element + '{';
 						_.each( value, function( val, key ) {
-							var property;
 							if ( output.choice && key !== output.choice ) {
 								return;
 							}
 							processedValue = kirkiPostMessage.util.processValue( output, val );
-							property       = output.property ? output.property : key;
+
 							if ( false !== processedValue ) {
-								styles += property + ':' + processedValue + ';';
+								styles += output.property ? output.property + '-' + key + ':' + processedValue + ';' : key + ':' + processedValue + ';';
 							}
 						} );
 						styles += '}';
-					} else {
-						processedValue = kirkiPostMessage.util.processValue( output, value );
-						if ( false !== processedValue ) {
-							styles += output.element + '{' + output.property + ':' + processedValue + ';}';
+						break;
+					default:
+						if ( 'kirki-image' === controlType ) {
+							value = ( ! _.isUndefined( value.url ) ) ? kirkiPostMessage.util.backgroundImageValue( value.url ) : kirkiPostMessage.util.backgroundImageValue( value );
 						}
-					}
-					break;
+						if ( _.isObject( value ) ) {
+							styles += output.element + '{';
+							_.each( value, function( val, key ) {
+								var property;
+								if ( output.choice && key !== output.choice ) {
+									return;
+								}
+								processedValue = kirkiPostMessage.util.processValue( output, val );
+								property       = output.property ? output.property : key;
+								if ( false !== processedValue ) {
+									styles += property + ':' + processedValue + ';';
+								}
+							} );
+							styles += '}';
+						} else {
+							processedValue = kirkiPostMessage.util.processValue( output, value );
+							if ( false !== processedValue ) {
+								styles += output.element + '{' + output.property + ':' + processedValue + ';}';
+							}
+						}
+						break;
+				}
 			}
 
 			// Get the media-query.
@@ -278,7 +222,7 @@ var kirkiPostMessage = {
 		 * @since 3.0.26
 		 * @param {Object} output - The output (js_vars) argument.
 		 * @param {mixed}  value - The value.
-		 * @returns {string}
+		 * @returns {void}
 		 */
 		fromOutput: function( output, value ) {
 
@@ -320,7 +264,7 @@ var kirkiPostMessage = {
 		 * @since 3.0.21
 		 * @param {Object} output - The output (js_vars) argument.
 		 * @param {mixed}  value - The value.
-		 * @returns {string}
+		 * @returns {void}
 		 */
 		fromOutput: function( output, value ) {
 			if ( 'undefined' === typeof output.class || 'undefined' === typeof output.value ) {

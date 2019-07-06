@@ -6,13 +6,13 @@
  * @category    Core
  * @author      Ari Stathopoulos (@aristath)
  * @copyright   Copyright (c) 2019, Ari Stathopoulos (@aristath)
- * @license    https://opensource.org/licenses/MIT
+ * @license     https://opensource.org/licenses/MIT
  * @since       1.0
  */
 
 namespace Kirki\Compatibility;
 
-use Kirki\Core\Kirki;
+use Kirki\Compatibility\Kirki;
 
 /**
  * Please do not use this class directly.
@@ -31,7 +31,7 @@ class Field {
 	/**
 	 * The ID of the kirki_config we're using.
 	 *
-	 * @see Kirki\Core\Config
+	 * @see Kirki\Compatibility\Config
 	 * @access protected
 	 * @var string
 	 */
@@ -242,7 +242,7 @@ class Field {
 	 * @access public
 	 * @param string $config_id    The ID of the config we want to use.
 	 *                             Defaults to "global".
-	 *                             Configs are handled by the Kirki\Core\Config class.
+	 *                             Configs are handled by the Kirki\Compatibility\Config class.
 	 * @param array  $args         The arguments of the field.
 	 */
 	public function __construct( $config_id = 'global', $args = [] ) {
