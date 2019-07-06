@@ -13,17 +13,15 @@ use Gridd\Theme;
 if ( is_front_page() || is_home() ) {
 	return;
 }
-
-// Add styles.
-$style = Style::get_instance( 'grid-part/breadcrumbs' );
-$style->add_file( get_theme_file_path( 'grid-parts/styles/breadcrumbs/styles.min.css' ) );
 ?>
 <div <?php Theme::print_attributes( [ 'class' => 'gridd-tp gridd-tp-breadcrumbs' ], 'wrapper-breadcrumbs' ); ?>>
 	<?php
 	/**
 	 * Print styles.
 	 */
-	$style->the_css( 'gridd-inline-css-breadcrumbs' );
+	Style::get_instance( 'grid-part/breadcrumbs' )
+		->add_file( get_theme_file_path( 'grid-parts/styles/breadcrumbs/styles.min.css' ) )
+		->the_css( 'gridd-inline-css-breadcrumbs' );
 	?>
 	<div class="inner">
 		<?php

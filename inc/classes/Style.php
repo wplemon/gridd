@@ -102,10 +102,11 @@ class Style {
 	 * @access public
 	 * @since 1.0
 	 * @param string $css The CSS to add.
-	 * @return void
+	 * @return Style
 	 */
 	public function add_string( $css ) {
 		$this->css .= (string) $css;
+		return $this;
 	}
 
 	/**
@@ -114,12 +115,13 @@ class Style {
 	 * @access public
 	 * @since 1.0
 	 * @param string $path Absolute path to a file.
-	 * @return void
+	 * @return Style
 	 */
 	public function add_file( $path ) {
 		if ( file_exists( $path ) ) {
 			$this->css .= Theme::get_fcontents( $path, true );
 		}
+		return $this;
 	}
 
 	/**

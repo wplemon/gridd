@@ -45,8 +45,8 @@ Customizer::add_field(
 		'section'     => 'gridd_typography',
 		'priority'    => 10,
 		'default'     => [
-			'font-family' => 'Noto Serif',
-			'variant'     => 'regular',
+			'font-family' => 'sans-serif',
+			'font-weight' => 400,
 		],
 		'transport'   => 'auto',
 		'output'      => [
@@ -78,8 +78,8 @@ Customizer::add_field(
 		'section'     => 'gridd_typography',
 		'priority'    => 20,
 		'default'     => [
-			'font-family' => 'Noto Serif',
-			'variant'     => '700',
+			'font-family' => 'sans-serif',
+			'variant'     => 700,
 		],
 		'transport'   => 'auto',
 		'output'      => [

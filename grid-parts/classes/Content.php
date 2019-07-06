@@ -102,7 +102,6 @@ class Content extends Grid_Part {
 	 * @return void
 	 */
 	public static function print_styles() {
-		$style   = Style::get_instance( 'grid-part/content' );
 		$padding = get_theme_mod(
 			'gridd_grid_content_padding',
 			[
@@ -112,20 +111,20 @@ class Content extends Grid_Part {
 				'right'  => '20px',
 			]
 		);
-		$style->add_file( get_theme_file_path( 'grid-parts/styles/content/styles.min.css' ) );
-		$style->add_string( '@media only screen and (min-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . '){' );
-		$style->add_file( get_theme_file_path( 'grid-parts/styles/content/styles-large.min.css' ) );
-		$style->add_string( '}' );
-		$style->add_string( ':root{--gridd-content-max-width-calculated:var(--gridd-content-max-width, 45em);}' );
-
-		/**
-		 * This CSS is just a hack to overcome a bug in the CSS minifier
-		 * that strips units from zero valus, making the calc() function invalid.
-		 * The same CSS is commented-out in the default.scss file for reference.
-		 * Once the bug in the minifier is fixed we can remove this.
-		 */
-		$style->add_string( '.site-main .entry-content .alignfull,.site-main .entry-footer .alignfull,.site-main .entry-header .alignfull,.site-main .gridd-contain .alignfull{transform:translateX(calc(0px - var(--gridd-content-padding-left)));}' );
-		$style->the_css( 'gridd-inline-css-content' );
+		Style::get_instance( 'grid-part/content' )
+			->add_file( get_theme_file_path( 'grid-parts/styles/content/styles.min.css' ) )
+			->add_string( '@media only screen and (min-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . '){' )
+			->add_file( get_theme_file_path( 'grid-parts/styles/content/styles-large.min.css' ) )
+			->add_string( '}' )
+			->add_string( ':root{--gridd-content-max-width-calculated:var(--gridd-content-max-width, 45em);}' )
+			/**
+			 * This CSS is just a hack to overcome a bug in the CSS minifier
+			 * that strips units from zero valus, making the calc() function invalid.
+			 * The same CSS is commented-out in the default.scss file for reference.
+			 * Once the bug in the minifier is fixed we can remove this.
+			 */
+			->add_string( '.site-main .entry-content .alignfull,.site-main .entry-footer .alignfull,.site-main .entry-header .alignfull,.site-main .gridd-contain .alignfull{transform:translateX(calc(0px - var(--gridd-content-padding-left)));}' )
+			->the_css( 'gridd-inline-css-content' );
 	}
 
 	/**
