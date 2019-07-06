@@ -30,7 +30,7 @@ Customizer::add_outer_section(
 
 Customizer::add_field(
 	[
-		'type'        => 'text',
+		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_breadcrumbs_padding',
 		'label'       => esc_html__( 'Padding', 'gridd' ),
 		'description' => esc_html__( 'Inner padding for this grid-part. Use any valid CSS value.', 'gridd' ),
