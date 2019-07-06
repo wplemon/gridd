@@ -10,7 +10,7 @@
  *
  * @since 1.0
  */
-define( 'GRIDD_VERSION', '1.1.7' );
+define( 'GRIDD_VERSION', '1.1.8' );
 
 /**
  * Gracefully fail if the user is on an old PHP version
