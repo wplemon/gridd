@@ -1172,6 +1172,52 @@
         ]
     },
     {
+        "name": "kirki-framework/l10n",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/kirki-framework/l10n.git",
+            "reference": "6aa25316f3a11f6ec491389cdd7d6dee13edbef8"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/kirki-framework/l10n/zipball/6aa25316f3a11f6ec491389cdd7d6dee13edbef8",
+            "reference": "6aa25316f3a11f6ec491389cdd7d6dee13edbef8",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6"
+        },
+        "time": "2019-07-01T18:57:20+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Kirki\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Ari Stathopoulos",
+                "email": "aristath@gmail.com",
+                "homepage": "http://aristath.github.io",
+                "role": "Developer"
+            }
+        ],
+        "description": "Allows loading a 2nd textdomain inside a theme.",
+        "homepage": "https://aristath.github.io/kirki",
+        "keywords": [
+            "customizer",
+            "framework",
+            "wordpress"
+        ]
+    },
+    {
         "name": "kirki-framework/module-css",
         "version": "dev-master",
         "version_normalized": "9999999-dev",

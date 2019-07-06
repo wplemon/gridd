@@ -43,7 +43,8 @@
     "kirki-framework/module-postmessage": "dev-master",
     "kirki-framework/module-selective-refresh": "dev-master",
     "kirki-framework/module-tooltips": "dev-master",
-    "kirki-framework/module-webfonts": "dev-master"
+    "kirki-framework/module-webfonts": "dev-master",
+    "kirki-framework/l10n": "dev-master"
   },
   "require-dev": {
     "composer/installers": "~1.0",

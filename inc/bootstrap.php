@@ -31,11 +31,11 @@ if ( ! class_exists( 'ariColor' ) ) {
 if ( ! class_exists( 'Kirki' ) ) {
 	require_once get_template_directory() . '/packages/autoload.php';
 
-	$kirki          = \Kirki\Core\Framework::get_instance();
-	$kirki->modules = new \Kirki\Core\Modules();
+	$kirki          = \Kirki\Compatibility\Framework::get_instance();
+	$kirki->modules = new \Kirki\Compatibility\Modules();
 	new \Kirki\Compatibility\Aliases();
 	new \Kirki\Compatibility\Kirki();
-	new \Kirki\Core\L10n();
+	new \Kirki\L10n();
 }
 
 /**
