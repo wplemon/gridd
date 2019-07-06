@@ -1,0 +1,8 @@
+.gridd-header-search {
+  background-color: var(--gridd-header-search-bg);
+  padding-left: var(--gridd-header-search-padding-left);
+  padding-right: var(--gridd-header-search-padding-right); }
+
+.gridd-header-search form.search-form {
+  font-size: var(--gridd-header-search-font-size);
+  color: var(--gridd-header-search-color); }
