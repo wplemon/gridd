@@ -34,7 +34,7 @@ if ( ! class_exists( 'Kirki' ) ) {
 	$kirki          = \Kirki\Core\Framework::get_instance();
 	$kirki->modules = new \Kirki\Core\Modules();
 	new \Kirki\Compatibility\Aliases();
-	new \Kirki\Core\Kirki();
+	new \Kirki\Compatibility\Kirki();
 	new \Kirki\Core\L10n();
 }
 

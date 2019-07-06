@@ -246,7 +246,7 @@ class Customizer {
 		if ( isset( $args['icon'] ) ) {
 			unset( $args['icon'] );
 		}
-		\Kirki\Core\Kirki::add_panel( $id, $args );
+		\Kirki\Compatibility\Kirki::add_panel( $id, $args );
 	}
 
 	/**
@@ -265,7 +265,7 @@ class Customizer {
 			unset( $args['icon'] );
 		}
 
-		\Kirki\Core\Kirki::add_section( $id, apply_filters( 'gridd_section_args', $args ) );
+		\Kirki\Compatibility\Kirki::add_section( $id, apply_filters( 'gridd_section_args', $args ) );
 	}
 
 	/**
@@ -308,7 +308,7 @@ class Customizer {
 			}
 		}
 
-		\Kirki\Core\Kirki::add_field( 'gridd', $args );
+		\Kirki\Compatibility\Kirki::add_field( 'gridd', $args );
 		if ( 'gridd_grid' === $args['type'] ) {
 			self::$grid_controls[ $args['settings'] ] = $args;
 		}
