@@ -12,6 +12,8 @@
 
 namespace Kirki\Core;
 
+use Kirki\Compatibility\Kirki;
+
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -21,6 +23,17 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Telemetry implementation.
  */
 final class Telemetry {
+
+	/**
+	 * An array of all control types.
+	 *
+	 * @static
+	 * @access private
+	 * @since 4.0
+	 * @var array
+	 */
+	private static $types = [];
+
 
 	/**
 	 * Constructor.
@@ -35,6 +48,7 @@ final class Telemetry {
 			return;
 		}
 
+		add_action( 'kirki_field_init', [ $this, 'field_init' ], 10, 2 );
 		add_action( 'init', [ $this, 'init' ] );
 		add_action( 'admin_notices', [ $this, 'admin_notice' ] );
 	}
@@ -120,7 +134,7 @@ final class Telemetry {
 		?>
 		<div class="notice notice-info kirki-telemetry">
 			<h3><strong><?php esc_html_e( 'Help us improve Kirki.', 'kirki' ); ?></strong></h3>
-			<p style="max-width: 76em;"><?php _e( 'Help us begin a dialogue with theme developers, collaborate and improve both the theme you are using and the Kirki framework by agreeing to send anonymous data. <strong>The data is completely anonymous and we will never collect any identifyable information about you or your website.</strong>', 'kirki' ); // phpcs:ignore WordPress.Security.EscapeOutput ?></p>
+			<p style="max-width: 76em;"><?php _e( 'Sharing anonymous data helps improve both the theme you are using and the Kirki framework. <strong>The data is completely anonymous and we will never collect any identifiable information about you or your website.</strong>', 'kirki' ); // phpcs:ignore WordPress.Security.EscapeOutput ?></p>
 			<table class="data-to-send hidden">
 				<thead>
 					<tr>
@@ -202,13 +216,15 @@ final class Telemetry {
 			$php_version = "{$php_version[0]}.{$php_version[1]}";
 		}
 
+		$this->get_field_types();
+
 		// Build data and return the array.
 		return [
 			'phpVer'      => $php_version,
 			'themeName'   => $theme->get( 'Name' ),
 			'themeAuthor' => $theme->get( 'Author' ),
 			'themeURI'    => $theme->get( 'ThemeURI' ),
-			'fieldTypes'  => $this->get_field_types(),
+			'fieldTypes'  => self::$types,
 		];
 	}
 
@@ -223,10 +239,28 @@ final class Telemetry {
 		$types = [];
 		foreach ( Kirki::$fields as $field ) {
 			if ( isset( $field['type'] ) ) {
-				$types[] = $field['type'];
+				self::$types[] = $field['type'];
 			}
 		}
-		return $types;
+	}
+
+	/**
+	 * Runs when a field gets added.
+	 * Adds fields to this object so their styles can later be generated.
+	 *
+	 * @access public
+	 * @since 1.0
+	 * @param array  $args   The field args.
+	 * @param Object $object The field object.
+	 * @return void
+	 */
+	public function field_init( $args, $object ) {
+		if ( ! isset( $args['type'] ) && isset( $object->type )) {
+			$args['type'] = $object->type;
+		}
+		if ( isset( $args['type'] ) ) {
+			self::$types[] = $args['type'];
+		}
 	}
 
 	/**
