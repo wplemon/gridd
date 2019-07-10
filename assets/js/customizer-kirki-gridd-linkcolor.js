@@ -56,6 +56,49 @@ wp.customize.controlConstructor['gridd-wcag-lc'] = wp.customize.Control.extend({
 	},
 
 	/**
+	 * Embed the control.
+	 *
+	 * Overrides the embed() method to do nothing,
+	 * so that the control isn't embedded on load,
+	 * unless the containing section is already expanded.
+	 *
+	 * @since 1.1.0
+	 * @returns {void}
+	 */
+	embed: function() {
+		var control   = this,
+			sectionId = control.section();
+
+		if ( ! sectionId ) {
+			return;
+		}
+		wp.customize.section( sectionId, function( section ) {
+			section.expanded.bind( function( expanded ) {
+				if ( expanded ) {
+					control.actuallyEmbed();
+				}
+			} );
+		} );
+	},
+
+	/**
+	 * Deferred embedding of control.
+	 *
+	 * This function is called in Section.onChangeExpanded() so the control
+	 * will only get embedded when the Section is first expanded.
+	 *
+	 * @since 1.1.0
+	 * @return {void}
+	 */
+	actuallyEmbed: function() {
+		if ( 'resolved' === this.deferred.embedded.state() ) {
+			return;
+		}
+		this.renderContent();
+		this.deferred.embedded.resolve();
+	},
+
+	/**
 	 * Init functionality for auto.
 	 *
 	 * @since 1.0
