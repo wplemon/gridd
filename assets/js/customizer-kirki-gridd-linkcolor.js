@@ -42,8 +42,6 @@ wp.customize.controlConstructor['gridd-wcag-lc'] = wp.customize.Control.extend({
 	 * @returns {void}
 	 */
 	ready: function() {
-		var control      = this,
-			currentValue = this.setting.get();
 
 		// Set initial hue.
 		this.setHue();
@@ -52,7 +50,7 @@ wp.customize.controlConstructor['gridd-wcag-lc'] = wp.customize.Control.extend({
 		// no reason to run the debounced method here.
 		this.updateColors( false );
 
-		control.initAuto();
+		this.initAuto();
 	},
 
 	/**
@@ -77,8 +75,8 @@ wp.customize.controlConstructor['gridd-wcag-lc'] = wp.customize.Control.extend({
 				if ( expanded ) {
 					control.actuallyEmbed();
 				}
-			} );
-		} );
+			});
+		});
 	},
 
 	/**

@@ -1,7 +1,7 @@
 /**
  * Handle togglers.
  */
-function griddToggleButtonClick( id ) {
+function griddToggleButtonClick( id ) { // eslint-disable-line no-unused-vars
 	var el = document.querySelector( 'button[data-uid="' + id + '"]' );
 
 	griddNavToggleFocusByEl( el );
@@ -15,7 +15,7 @@ function griddToggleButtonClick( id ) {
 	} else {
 		el.setAttribute( 'aria-expanded', 'false' );
 	}
-};
+}
 
 window.onload = function() {
 	var griddNavLinks = document.querySelectorAll( '.menu-item a' ),
