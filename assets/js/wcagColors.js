@@ -281,7 +281,6 @@ wcagColors = {
 		// using the intermediate value X for the second largest component of this color.
 		h_ = h / 60;
 		x  = c * ( 1 - Math.abs( ( h_ % 2 ) - 1 ) );
-		r1, g1, b1;
 
 		if ( 'undefined' === typeof h || isNaN( h ) || null === h ) {
 			r1 = g1 = b1 = 0;

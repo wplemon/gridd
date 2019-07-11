@@ -185,7 +185,9 @@ wp.customize.controlConstructor['gridd-wcag-lc'] = wp.customize.Control.extend({
 	 */
 	queryColors: function( rating ) {
 		var backgroundMinContrast,
-			surroundingTextMinContrast;
+			surroundingTextMinContrast,
+			backgroundColor      = wp.customize( this.params.choices.backgroundColor ).get(),
+			backgroundColorProps = wcagColors.getColorProperties( backgroundColor );
 
 		switch ( rating ) {
 			case 'AAA':
@@ -209,7 +211,9 @@ wp.customize.controlConstructor['gridd-wcag-lc'] = wp.customize.Control.extend({
 				maxHueDiff: 3,
 				stepDiff: 3,
 				stepSaturation: 0.025,
-				stepLightness: 0.025
+				stepLightness: 0.025,
+				minLightness: 0.5 < backgroundColorProps.l ? 0 : 0.5,
+				maxLightness: 0.5 < backgroundColorProps.l ? 0.5 : 1
 			});
 		}
 
