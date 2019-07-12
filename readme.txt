@@ -36,6 +36,14 @@ You can install the theme using the WordPress Administration menu. For more info
 
 == Changelog ==
 
+= 1.1.9 =
+
+* Fix: Improved Customizer performance.
+* Fix: Accessibility improvement: Removed `<title>` tags from SVGs.
+* Fix: Update DragSelect script to v1.12.1.
+* Fix: Branding typography control was always hidden.
+* Fix: Group block inner-container alignment.
+
 = 1.1.8 =
 
 * Fix: Styles for undefined values.
