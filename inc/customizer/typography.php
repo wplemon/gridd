@@ -16,12 +16,11 @@ $sanitization = new Sanitize();
 Customizer::add_section(
 	'gridd_typography',
 	[
-		'title'       => esc_html__( 'Typography & Links', 'gridd' ),
+		'title'       => esc_html__( 'Typography', 'gridd' ),
 		'description' => Customizer::section_description(
 			'gridd_typography',
 			[
 				'plus' => [
-					esc_html__( 'Selecting from an array of WCAG-compliant colors for text, headers and links', 'gridd' ),
 					esc_html__( 'Adjustable typography scales', 'gridd' ),
 					esc_html__( 'Links decoration (underlined/not-underlined) for content and headers separately.', 'gridd' ),
 				],
@@ -104,67 +103,6 @@ Customizer::add_field(
 				'google' => [ 'popularity' ],
 			],
 		],
-	]
-);
-
-Customizer::add_field(
-	[
-		'type'              => 'gridd-wcag-tc',
-		'settings'          => 'gridd_text_color',
-		'label'             => esc_html__( 'Text Color', 'gridd' ),
-		'description'       => esc_html__( 'Select the color used for your text. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
-		'section'           => 'gridd_typography',
-		'priority'          => 30,
-		'default'           => '#000000',
-		'css_vars'          => '--gridd-text-color',
-		'transport'         => 'postMessage',
-		'choices'           => [
-			'setting' => 'gridd_grid_content_background_color',
-		],
-		'sanitize_callback' => [ $sanitization, 'color_hex' ],
-	]
-);
-
-Customizer::add_field(
-	[
-		'settings'          => 'gridd_links_color',
-		'type'              => 'gridd-wcag-lc',
-		'label'             => esc_html__( 'Links Color', 'gridd' ),
-		'description'       => esc_html__( 'Select the hue for you links. The color will be auto-calculated to ensure maximum readability according to WCAG.', 'gridd' ),
-		'section'           => 'gridd_typography',
-		'transport'         => 'postMessage',
-		'priority'          => 40,
-		'choices'           => [
-			'alpha' => false,
-		],
-		'default'           => '#0f5e97',
-		'choices'           => [
-			'backgroundColor' => 'gridd_grid_content_background_color',
-			'textColor'       => 'gridd_text_color',
-		],
-		'css_vars'          => '--gridd-links-color',
-		'sanitize_callback' => [ $sanitization, 'color_hex' ],
-	]
-);
-
-Customizer::add_field(
-	[
-		'settings'          => 'gridd_links_hover_color',
-		'type'              => 'gridd-wcag-lc',
-		'label'             => esc_html__( 'Links Hover Color', 'gridd' ),
-		'section'           => 'gridd_typography',
-		'transport'         => 'postMessage',
-		'priority'          => 50,
-		'choices'           => [
-			'alpha' => false,
-		],
-		'default'           => '#541cfc',
-		'css_vars'          => '--gridd-links-hover-color',
-		'choices'           => [
-			'backgroundColor' => 'gridd_grid_content_background_color',
-			'textColor'       => 'gridd_text_color',
-		],
-		'sanitize_callback' => [ $sanitization, 'color_hex' ],
 	]
 );
 

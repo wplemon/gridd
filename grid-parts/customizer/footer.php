@@ -24,7 +24,7 @@ Customizer::add_section(
 				'docs' => 'https://wplemon.github.io/gridd/grid-parts/footer.html',
 			]
 		),
-		'priority'    => 25,
+		'priority'    => 26,
 		'panel'       => 'gridd_options',
 	]
 );
