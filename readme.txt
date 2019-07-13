@@ -43,6 +43,8 @@ You can install the theme using the WordPress Administration menu. For more info
 * Fix: Update DragSelect script to v1.12.1.
 * Fix: Branding typography control was always hidden.
 * Fix: Group block inner-container alignment.
+* Fix: Style for initial notice when a menu is not assigned to a navigation grid-part.
+* Fix: Moved text & link color options to the content section.
 
 = 1.1.8 =
 
