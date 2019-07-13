@@ -1,9 +1,0 @@
-{
-  "extends": "wordpress",
-  "env": { "es6": true },
-  "parserOptions": { "ecmaVersion": 6 },
-  "rules": {
-    "space-in-parens": ["error", "always", { "exceptions": ["empty", "{}"] }],
-    "camelcase": ["error", { "properties": "never" }]
-  }
-}

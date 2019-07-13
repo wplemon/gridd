@@ -172,7 +172,6 @@ Customizer::add_field(
 				'element' => [ '.site-title', '.site-title a', '.site-description' ],
 			],
 		],
-		'active_callback' => 'display_header_text',
 		'choices'         => [
 			'fonts' => [
 				'google' => [ 'popularity' ],
