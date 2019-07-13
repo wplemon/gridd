@@ -148,7 +148,7 @@ foreach ( $responsive_mode_parts as $responsive_mode_part ) {
 				);
 				?>
 			<?php elseif ( current_user_can( 'edit_theme_options' ) ) : ?>
-				<div style="background:#FFEBEE;border:1px solid #EF9A9A;color:#B71C1C;font-size:14px;padding:12px;text-align:center;">
+				<div style="background:#E8F5F9;border-left: 4px solid $41A0CD;color:#000;font-size:14px;padding:12px;">
 					<?php
 					/* translators: The navigation number. */
 					printf( esc_html__( 'Please assign a menu to the "Navigation %d" menu.', 'gridd' ), absint( $id ) );
