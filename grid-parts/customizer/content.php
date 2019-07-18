@@ -6,18 +6,26 @@
  */
 
 use Gridd\Customizer;
+use Gridd\Customizer\Sanitize;
 
-Customizer::add_outer_section(
+$sanitization = new Sanitize();
+
+Customizer::add_section(
 	'gridd_grid_part_details_content',
 	[
 		/* translators: The grid-part label. */
-		'title'       => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Content', 'gridd' ) ),
+		'title'       => esc_html__( 'Content', 'gridd' ),
 		'description' => Customizer::section_description(
 			'gridd_grid_part_details_content',
 			[
+				'plus' => [
+					esc_html__( 'Selecting from an array of WCAG-compliant colors for text, headers and links', 'gridd' ),
+				],
 				'docs' => 'https://wplemon.github.io/gridd/grid-parts/content.html',
 			]
 		),
+		'priority'    => 25,
+		'panel'       => 'gridd_options',
 	]
 );
 
@@ -73,6 +81,67 @@ Customizer::add_field(
 		'choices'   => [
 			'alpha' => true,
 		],
+	]
+);
+
+Customizer::add_field(
+	[
+		'type'              => 'gridd-wcag-tc',
+		'settings'          => 'gridd_text_color',
+		'label'             => esc_html__( 'Text Color', 'gridd' ),
+		'description'       => esc_html__( 'Select the color used for your text. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
+		'section'           => 'gridd_grid_part_details_content',
+		'priority'          => 40,
+		'default'           => '#000000',
+		'css_vars'          => '--gridd-text-color',
+		'transport'         => 'postMessage',
+		'choices'           => [
+			'setting' => 'gridd_grid_content_background_color',
+		],
+		'sanitize_callback' => [ $sanitization, 'color_hex' ],
+	]
+);
+
+Customizer::add_field(
+	[
+		'settings'          => 'gridd_links_color',
+		'type'              => 'gridd-wcag-lc',
+		'label'             => esc_html__( 'Links Color', 'gridd' ),
+		'description'       => esc_html__( 'Select the hue for you links. The color will be auto-calculated to ensure maximum readability according to WCAG.', 'gridd' ),
+		'section'           => 'gridd_grid_part_details_content',
+		'transport'         => 'postMessage',
+		'priority'          => 50,
+		'choices'           => [
+			'alpha' => false,
+		],
+		'default'           => '#0f5e97',
+		'choices'           => [
+			'backgroundColor' => 'gridd_grid_content_background_color',
+			'textColor'       => 'gridd_text_color',
+		],
+		'css_vars'          => '--gridd-links-color',
+		'sanitize_callback' => [ $sanitization, 'color_hex' ],
+	]
+);
+
+Customizer::add_field(
+	[
+		'settings'          => 'gridd_links_hover_color',
+		'type'              => 'gridd-wcag-lc',
+		'label'             => esc_html__( 'Links Hover Color', 'gridd' ),
+		'section'           => 'gridd_grid_part_details_content',
+		'transport'         => 'postMessage',
+		'priority'          => 60,
+		'choices'           => [
+			'alpha' => false,
+		],
+		'default'           => '#541cfc',
+		'css_vars'          => '--gridd-links-hover-color',
+		'choices'           => [
+			'backgroundColor' => 'gridd_grid_content_background_color',
+			'textColor'       => 'gridd_text_color',
+		],
+		'sanitize_callback' => [ $sanitization, 'color_hex' ],
 	]
 );
 

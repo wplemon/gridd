@@ -42,8 +42,6 @@ wp.customize.controlConstructor['gridd-wcag-lc'] = wp.customize.Control.extend({
 	 * @returns {void}
 	 */
 	ready: function() {
-		var control      = this,
-			currentValue = this.setting.get();
 
 		// Set initial hue.
 		this.setHue();
@@ -52,7 +50,50 @@ wp.customize.controlConstructor['gridd-wcag-lc'] = wp.customize.Control.extend({
 		// no reason to run the debounced method here.
 		this.updateColors( false );
 
-		control.initAuto();
+		this.initAuto();
+	},
+
+	/**
+	 * Embed the control.
+	 *
+	 * Overrides the embed() method to do nothing,
+	 * so that the control isn't embedded on load,
+	 * unless the containing section is already expanded.
+	 *
+	 * @since 1.1.0
+	 * @returns {void}
+	 */
+	embed: function() {
+		var control   = this,
+			sectionId = control.section();
+
+		if ( ! sectionId ) {
+			return;
+		}
+		wp.customize.section( sectionId, function( section ) {
+			section.expanded.bind( function( expanded ) {
+				if ( expanded ) {
+					control.actuallyEmbed();
+				}
+			});
+		});
+	},
+
+	/**
+	 * Deferred embedding of control.
+	 *
+	 * This function is called in Section.onChangeExpanded() so the control
+	 * will only get embedded when the Section is first expanded.
+	 *
+	 * @since 1.1.0
+	 * @return {void}
+	 */
+	actuallyEmbed: function() {
+		if ( 'resolved' === this.deferred.embedded.state() ) {
+			return;
+		}
+		this.renderContent();
+		this.deferred.embedded.resolve();
 	},
 
 	/**
@@ -144,7 +185,9 @@ wp.customize.controlConstructor['gridd-wcag-lc'] = wp.customize.Control.extend({
 	 */
 	queryColors: function( rating ) {
 		var backgroundMinContrast,
-			surroundingTextMinContrast;
+			surroundingTextMinContrast,
+			backgroundColor      = wp.customize( this.params.choices.backgroundColor ).get(),
+			backgroundColorProps = wcagColors.getColorProperties( backgroundColor );
 
 		switch ( rating ) {
 			case 'AAA':
@@ -168,7 +211,9 @@ wp.customize.controlConstructor['gridd-wcag-lc'] = wp.customize.Control.extend({
 				maxHueDiff: 3,
 				stepDiff: 3,
 				stepSaturation: 0.025,
-				stepLightness: 0.025
+				stepLightness: 0.025,
+				minLightness: 0.5 < backgroundColorProps.l ? 0 : 0.5,
+				maxLightness: 0.5 < backgroundColorProps.l ? 0.5 : 1
 			});
 		}
 

@@ -1,3 +1,4 @@
+/* eslint no-useless-escape: 0 */
 function griddResponsiveFullWidthVideo() {
     var iFrames = document.querySelectorAll( 'iframe' ),
 

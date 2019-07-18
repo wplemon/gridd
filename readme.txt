@@ -5,7 +5,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 Requires at least: 4.9
 Tested up to: 5.2
 Requires PHP: 5.6
-Stable tag: 1.1.8
+Stable tag: 1.1.9
 License: GNU General Public License v2.0 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,6 +35,16 @@ Gridd is a flexible, inclusive theme with a strong focus on performance, accessi
 You can install the theme using the WordPress Administration menu. For more information on installing themes please refer to [this article](https://codex.wordpress.org/Using_Themes#Adding_New_Themes).
 
 == Changelog ==
+
+= 1.1.9 =
+
+* Fix: Improved Customizer performance.
+* Fix: Accessibility improvement: Removed `<title>` tags from SVGs.
+* Fix: Update DragSelect script to v1.12.1.
+* Fix: Branding typography control was always hidden.
+* Fix: Group block inner-container alignment.
+* Fix: Style for initial notice when a menu is not assigned to a navigation grid-part.
+* Fix: Moved text & link color options to the content section.
 
 = 1.1.8 =
 

@@ -3,7 +3,7 @@ var opts;
 window.griddSupportsPassive = false;
 try {
 	opts = Object.defineProperty({}, 'passive', {
-		get: function() {
+		get: function() { // eslint-disable-line getter-return
 			window.griddSupportsPassive = true;
 		}
 	});

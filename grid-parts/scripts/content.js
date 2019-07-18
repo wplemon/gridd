@@ -5,7 +5,7 @@ var griddComputeEm = function() {
 		contentWidth,
 		maxWidthEm,
 		width;
-	
+
 	contentWidth = style.getPropertyValue( '--gridd-content-max-width' );
 	contentWidth = contentWidth && '' !== contentWidth ? contentWidth : '45em';
 	maxWidthEm   = -1 === contentWidth.indexOf( 'rem' ) && -1 !== contentWidth.indexOf( 'em' );

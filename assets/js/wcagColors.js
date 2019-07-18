@@ -47,6 +47,8 @@ wcagColors = {
 		params.minHueDiff     = params.minHueDiff || 0;
 		params.maxHueDiff     = params.maxHueDiff || 360;
 		params.stepHue        = params.stepHue || 15;
+		params.minLightness   = params.minLightness || 0;
+		params.maxLightness   = params.maxLightness || 1.001;
 
 		if ( 0 === params.maxHueDiff ) {
 			return this.getAllColorsForHue( params.hue, params );
@@ -201,7 +203,7 @@ wcagColors = {
 			color;
 
 		for ( saturation = args.minSaturation; args.maxSaturation >= saturation; saturation += args.stepSaturation ) {
-			for ( lightness = 0; 1.001 >= lightness; lightness += args.stepLightness ) {
+			for ( lightness = args.minLightness; args.maxLightness >= lightness; lightness += args.stepLightness ) {
 				if ( 0 <= hue && 359 >= hue ) {
 					color = this.hslToRgb( hue, saturation, lightness );
 					colors.push({
@@ -279,7 +281,6 @@ wcagColors = {
 		// using the intermediate value X for the second largest component of this color.
 		h_ = h / 60;
 		x  = c * ( 1 - Math.abs( ( h_ % 2 ) - 1 ) );
-		r1, g1, b1;
 
 		if ( 'undefined' === typeof h || isNaN( h ) || null === h ) {
 			r1 = g1 = b1 = 0;

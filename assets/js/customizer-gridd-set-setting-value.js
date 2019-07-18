@@ -2,7 +2,7 @@
 /**
  * Based on the kirkiSetSettingValue object with some minor tweaks.
  */
-var griddSetSettingValue = {
+var griddSetSettingValue = { // eslint-disable-line no-unused-vars
 
 	/**
 	 * Set the value of the control.
@@ -36,7 +36,7 @@ var griddSetSettingValue = {
 			'background_repeat' === setting ||
 			'background_repeat' === setting ||
 			'background_size' === setting ||
-			'background_attachment'
+			'background_attachment' === setting
 		) {
 			$this.setValue( setting, value );
 		}
