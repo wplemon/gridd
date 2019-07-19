@@ -15,7 +15,7 @@ Customizer::add_section(
 			'gridd_grid_part_details_nav-handheld',
 			[
 				'plus' => [
-					esc_html__( 'Additional item: axpandable widget-area with custom icon', 'gridd' ),
+					esc_html__( 'Additional item: expandable widget-area with custom icon', 'gridd' ),
 				],
 				'docs' => 'https://wplemon.github.io/gridd/grid-parts/mobile-navigation.html',
 			]
