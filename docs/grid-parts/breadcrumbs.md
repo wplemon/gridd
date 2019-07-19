@@ -25,7 +25,7 @@ If you want your breadcrumbs to align with the content or any other grid-part th
 
 <img src="https://wplemon.github.io/gridd/uploads/breadcrumbs-3.png" alt="" style="max-width:300px">
 
-You can adjust the font-size of your breadcrumbs using the slider in this control. The selected size is relevant to the size defined as your main body font-size. So if your main content uses a font-size of `16px`, setting this value to `1` will make your breadcrumbs have the exact same size. If your body font-size is set to `20px` and your breadcrumbs are `0.5em`, then your breadcrumbs will have a size of `10px`.
+You can adjust the font-size of your breadcrumbs using the slider in this control. The selected size is relative to the size defined as your main body font-size. So if your main content uses a font-size of `16px`, setting this value to `1` will make your breadcrumbs have the exact same size. If your body font-size is set to `20px` and your breadcrumbs are `0.5em`, then your breadcrumbs will have a size of `10px`.
 
 ## Background Color & Text Color
 

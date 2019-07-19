@@ -248,7 +248,7 @@ Customizer::add_field(
 		'settings'        => 'gridd_branding_inline_spacing',
 		'type'            => 'slider',
 		'label'           => esc_html__( 'Spacing between elements', 'gridd' ),
-		'tooltip'         => esc_html__( 'This value is relevant to the site-title font-size.', 'gridd' ),
+		'tooltip'         => esc_html__( 'This value is relative to the site-title font-size.', 'gridd' ),
 		'section'         => 'gridd_grid_part_details_header_branding',
 		'priority'        => 90,
 		'default'         => .5,

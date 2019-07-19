@@ -17,7 +17,7 @@ On the top you’ll be able to add your custom content, You an add text and link
 
 When changing the “Background Color” setitng, the Gridd theme will automatically select the color for your text to ensure maximum readability and compliance with WCAG regulations.
 
-The font-size setting is relevant to your main font-size, so a value of 1em will make your contact information have the same size as your main content.
+The font-size setting is relative to your main font-size, so a value of 1em will make your contact information have the same size as your main content.
 
 Similarly to other grid parts you can change the padding for this grid-part to add some spacing around your content.
 
