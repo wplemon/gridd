@@ -5,7 +5,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 Requires at least: 4.9
 Tested up to: 5.2
 Requires PHP: 5.6
-Stable tag: 1.1.9
+Stable tag: 1.1.10
 License: GNU General Public License v2.0 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,6 +35,12 @@ Gridd is a flexible, inclusive theme with a strong focus on performance, accessi
 You can install the theme using the WordPress Administration menu. For more information on installing themes please refer to [this article](https://codex.wordpress.org/Using_Themes#Adding_New_Themes).
 
 == Changelog ==
+
+= 1.1.10 =
+
+* Fix: Text typos.
+* Fix: Customizer performance improvement.
+* Update: New screenshot.
 
 = 1.1.9 =
 
@@ -171,4 +177,4 @@ You can install the theme using the WordPress Administration menu. For more info
 * wcagColors: Script by Aristeidis Stathopoulos (https://aristath.github.io/wcagColors/) licensed under [MIT](https://opensource.org/licenses/MIT)
 * Underscores: Parts of the theme's PHP originated in the Underscores starter theme (https://underscores.me/) by Automattic (https://automattic.com/) licenced under [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
 * Mythic: The graceful fallback script for old PHP & WP versions originated in the Mythic starter theme (https://themehybrid.com/themes/mythic) by Justin Tadlock (https://themehybrid.com) licenced under [GPL 2.0](https://www.gnu.org/licenses/gpl-2.0.html)
-* Screenshot: Image included in the screenshot from https://stocksnap.io/photo/WUGSHQ3NII licenced under [CC0](https://creativecommons.org/share-your-work/public-domain/cc0/)
+* Screenshot: Image included in the screenshot from https://affecttheverb.com/disabledandhere/ licenced under [CC-BY-4](https://creativecommons.org/licenses/by/4.0/)

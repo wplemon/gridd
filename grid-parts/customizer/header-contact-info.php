@@ -83,7 +83,7 @@ Customizer::add_field(
 		'type'      => 'slider',
 		'settings'  => 'gridd_grid_part_details_header_contact_info_font_size',
 		'label'     => esc_html__( 'Font Size', 'gridd' ),
-		'tooltip'   => esc_html__( 'The value selected here is relevant to your body font-size, so a value of 1em will be the same size as your content.', 'gridd' ),
+		'tooltip'   => esc_html__( 'The value selected here is relative to your body font-size, so a value of 1em will be the same size as your content.', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_header_contact_info',
 		'default'   => .85,
 		'transport' => 'postMessage',
