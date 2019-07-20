@@ -36,6 +36,12 @@ You can install the theme using the WordPress Administration menu. For more info
 
 == Changelog ==
 
+= 1.1.10 =
+
+* Fix: Text typos.
+* Fix: Customizer performance improvement.
+* Update: New screenshot.
+
 = 1.1.9 =
 
 * Fix: Improved Customizer performance.
