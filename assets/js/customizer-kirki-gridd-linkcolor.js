@@ -210,8 +210,8 @@ wp.customize.controlConstructor['gridd-wcag-lc'] = wp.customize.Control.extend({
 				minHueDiff: 0,
 				maxHueDiff: 3,
 				stepDiff: 3,
-				stepSaturation: 0.025,
-				stepLightness: 0.025,
+				stepSaturation: 0.5,
+				stepLightness: 0.5,
 				minLightness: 0.5 < backgroundColorProps.l ? 0 : 0.5,
 				maxLightness: 0.5 < backgroundColorProps.l ? 0.5 : 1
 			});
