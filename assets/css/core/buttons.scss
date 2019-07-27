@@ -5,8 +5,8 @@ a.button,
 a.button:visited,
 a.comment-reply-link,
 button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+input[type=button],
+input[type=reset],
+input[type=submit] {
 	@include button();
 }

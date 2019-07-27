@@ -62,17 +62,48 @@
 	position: relative;
 	border: 2px solid; //currentColor;
 	background: none;
+	cursor: pointer;
+	position: relative;
 
 	&:active,
 	&:hover {
-		cursor: pointer;
 		outline: none;
 		text-decoration: none;
-		box-shadow: 0px 1px 1px 0px;
 	}
 
-	&:focus {
-		box-shadow: inset 0px 1px 1px 0px;
+	&:focus,
+	&:hover,
+	&:active {
+
+		&:before,
+		&:after {
+			content: '';
+			position: absolute;
+			width: 1.5em;
+			height: calc(100% - .5em);
+			border-radius: 50%;
+			top: .25em;
+			opacity: .3;
+		}
+
+		&:before {
+			left: .5em;
+			box-shadow: -4px 0 currentColor;
+		}
+
+		&:after {
+			right: .5em;
+			box-shadow: 4px 0 currentColor;
+		}
+	}
+
+	&:focus,
+	&:active {
+
+		&:before,
+		&:after {
+			opacity: 1;
+		}
 	}
 }
 

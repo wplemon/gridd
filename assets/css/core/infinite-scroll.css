@@ -23,11 +23,25 @@ body #infinite-handle {
       transition: all 150ms ease-in-out;
       position: relative;
       border: 2px solid;
-      background: none; }
+      background: none;
+      cursor: pointer;
+      position: relative; }
       body #infinite-handle span button:active, body #infinite-handle span button:hover {
-        cursor: pointer;
         outline: none;
-        text-decoration: none;
-        box-shadow: 0px 1px 1px 0px; }
-      body #infinite-handle span button:focus {
-        box-shadow: inset 0px 1px 1px 0px; }
+        text-decoration: none; }
+      body #infinite-handle span button:focus:before, body #infinite-handle span button:focus:after, body #infinite-handle span button:hover:before, body #infinite-handle span button:hover:after, body #infinite-handle span button:active:before, body #infinite-handle span button:active:after {
+        content: '';
+        position: absolute;
+        width: 1.5em;
+        height: calc(100% - .5em);
+        border-radius: 50%;
+        top: .25em;
+        opacity: .3; }
+      body #infinite-handle span button:focus:before, body #infinite-handle span button:hover:before, body #infinite-handle span button:active:before {
+        left: .5em;
+        box-shadow: -4px 0 currentColor; }
+      body #infinite-handle span button:focus:after, body #infinite-handle span button:hover:after, body #infinite-handle span button:active:after {
+        right: .5em;
+        box-shadow: 4px 0 currentColor; }
+      body #infinite-handle span button:focus:before, body #infinite-handle span button:focus:after, body #infinite-handle span button:active:before, body #infinite-handle span button:active:after {
+        opacity: 1; }
