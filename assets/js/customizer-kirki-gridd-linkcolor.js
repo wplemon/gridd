@@ -208,10 +208,10 @@ wp.customize.controlConstructor['gridd-wcag-lc'] = wp.customize.Control.extend({
 			this.allColors = wcagColors.getAll({
 				hue: this.hue,
 				minHueDiff: 0,
-				maxHueDiff: 3,
-				stepDiff: 3,
-				stepSaturation: 0.5,
-				stepLightness: 0.5,
+				maxHueDiff: 5,
+				stepDiff: 5,
+				stepSaturation: 0.25,
+				stepLightness: 0.25,
 				minLightness: 0.5 < backgroundColorProps.l ? 0 : 0.5,
 				maxLightness: 0.5 < backgroundColorProps.l ? 0.5 : 1
 			});
@@ -224,7 +224,7 @@ wp.customize.controlConstructor['gridd-wcag-lc'] = wp.customize.Control.extend({
 			color: wp.customize( this.params.choices.textColor ).get(),
 			minContrast: surroundingTextMinContrast
 		})
-		.sortBy( 's' ) // Sort colors by contrast.
+		.sortBy( 's' ) // Sort colors by saturation.
 		.getHexArray();
 	},
 
@@ -236,7 +236,6 @@ wp.customize.controlConstructor['gridd-wcag-lc'] = wp.customize.Control.extend({
 	 * @returns {void}
 	 */
 	updateColors: function( updateValue ) {
-		var i;
 		this.allColors  = false;
 		this.colors     = {
 			AAA: this.queryColors( 'AAA' ),
@@ -244,10 +243,6 @@ wp.customize.controlConstructor['gridd-wcag-lc'] = wp.customize.Control.extend({
 			A: this.queryColors( 'A' )
 		};
 
-		// Remove duplicates from AA list.
-		for ( i = 0; i < this.colors.AAA.length; i++ ) {
-			this.colors.AA.splice( this.colors.AA.indexOf( this.colors.AAA[ i ] ), 1 );
-		}
 		if ( updateValue ) {
 			this.updateColorValue();
 		}
