@@ -100,8 +100,6 @@
     border-collapse: inherit;
     background-color: transparent;
     border-bottom: 1px solid #f3f4f5; }
-    .wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
-      background-color: #f3f4f5; }
     .wp-block-table.is-style-stripes.has-subtle-light-gray-background-color tbody tr:nth-child(odd) {
       background-color: #f3f4f5; }
     .wp-block-table.is-style-stripes.has-subtle-pale-green-background-color tbody tr:nth-child(odd) {
@@ -124,5 +122,5 @@
 
 .wp-block-table {
   min-width: 30em; }
-  .wp-block-table.is-style-stripes tr:nth-child(2n+1) {
+  .wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
     background-color: rgba(0, 0, 0, 0.1); }

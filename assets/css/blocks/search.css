@@ -76,8 +76,6 @@
     width: 100%; }
   .wp-block-search .wp-block-search__input {
     flex-grow: 1; }
-  .wp-block-search .wp-block-search__button {
-    margin-left: 10px; }
 
 .wp-block-search .wp-block-search__label {
   font-weight: bold; }
