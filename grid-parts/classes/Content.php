@@ -112,11 +112,8 @@ class Content extends Grid_Part {
 			]
 		);
 		Style::get_instance( 'grid-part/content' )
-			->add_file( get_theme_file_path( 'grid-parts/styles/content/styles.min.css' ) )
-			->add_string( '@media only screen and (min-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . '){' )
-			->add_file( get_theme_file_path( 'grid-parts/styles/content/styles-large.min.css' ) )
-			->add_string( '}' )
 			->add_string( ':root{--gridd-content-max-width-calculated:var(--gridd-content-max-width, 45em);}' )
+			->add_file( get_theme_file_path( 'grid-parts/styles/content/styles.min.css' ) )
 			/**
 			 * This CSS is just a hack to overcome a bug in the CSS minifier
 			 * that strips units from zero valus, making the calc() function invalid.
