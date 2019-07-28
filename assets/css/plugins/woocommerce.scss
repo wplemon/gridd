@@ -150,5 +150,13 @@
 
 .woocommerce-product-gallery__wrapper {
   display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  
+  .gridd-woo-gallery-image-count-1 & {
+    grid-template-columns: 1fr;
+  }
+
+  .gridd-woo-gallery-image-count-0 & {
+    display: none;
+  }
 }

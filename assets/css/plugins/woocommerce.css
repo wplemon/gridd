@@ -89,3 +89,7 @@
 .woocommerce-product-gallery__wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; }
+  .gridd-woo-gallery-image-count-1 .woocommerce-product-gallery__wrapper {
+    grid-template-columns: 1fr; }
+  .gridd-woo-gallery-image-count-0 .woocommerce-product-gallery__wrapper {
+    display: none; }

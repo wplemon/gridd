@@ -46,7 +46,7 @@ class WooCommerce {
 		add_filter( 'loop_shop_per_page', [ $this, 'products_per_page' ] );
 
 		// Columns filters.
-		add_filter( 'woocommerce_product_thumbnails_columns', '__return_false' );
+		add_filter( 'woocommerce_single_product_image_gallery_classes', [ $this, 'single_product_image_gallery_classes' ] );
 		add_filter( 'loop_shop_columns', '__return_zero' );
 
 		// Related Products.
@@ -220,6 +220,28 @@ class WooCommerce {
 	 */
 	public function front_shop_page_title( $page_title ) {
 		return ( is_shop() && (int) get_option( 'page_on_front' ) === (int) wc_get_page_id( 'shop' ) ) ? '' : $page_title;
+	}
+
+	/**
+	 * Filters image-gallery classes for single products.
+	 *
+	 * @access public
+	 * @since 1.1.11
+	 * @param array $classes An array of CSS classes for the element.
+	 * @return array
+	 */
+	public function single_product_image_gallery_classes( $classes ) {
+		global $product;
+		$attachment_ids    = $product->get_gallery_image_ids();
+		$post_thumbnail_id = $product->get_image_id();
+
+		$total_image_count = $post_thumbnail_id ? 1 : 0;
+		if ( $attachment_ids && is_array( $attachment_ids ) ) {
+			$total_image_count += count( $attachment_ids );
+		}
+
+		$classes[] = 'gridd-woo-gallery-image-count-' . $total_image_count;
+		return $classes;
 	}
 }
 
