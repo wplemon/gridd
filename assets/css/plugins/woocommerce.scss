@@ -74,7 +74,27 @@
 					width: 100%;
 				}
 			}
-    }
+		}
+		
+		.woocommerce-tabs {
+			ul.tabs {
+				li {
+					&.active,
+					&:not(.active) {
+						background: var(--gridd-content-bg);
+
+						a {
+							color: currentColor;
+						}
+					}
+					&:not(.active) {
+						a {
+							opacity: .5;
+						}
+					}
+				}
+			}
+		}	
   }
 
   &.single-product {
@@ -83,7 +103,7 @@
     }
   }
 
-  .woocommerce-tabs {
+	.woocommerce-tabs {
     ul.tabs {
 			display: flex;
 			font-size: calc(1em / var(--gridd-typo-scale, 1.26));
@@ -97,7 +117,7 @@
           &:focus {
             background: none;
           }
-        }
+				}
       }
     }
   }
