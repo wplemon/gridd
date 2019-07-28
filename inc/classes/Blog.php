@@ -205,7 +205,7 @@ class Blog {
 				$remove_parts = [ 'post-category', 'post-tags', 'post-date-author', 'part-post-comments-link' ];
 				foreach ( $remove_parts as $remove_part ) {
 					$key = array_search( $remove_part, $parts, true );
-					if ( false !== key ) {
+					if ( false !== $key ) {
 						unset( $parts[ $key ] );
 					}
 				}
