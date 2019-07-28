@@ -56,7 +56,8 @@ textarea {
       border-bottom: 1px solid currentColor;
       border-radius: 0;
       transition: all 200ms;
-      opacity: .7; }
+      opacity: .7;
+      width: 100%; }
       .search-form > label > input.search-field:hover, .search-form > label > input.search-field:focus {
         opacity: 1; }
         .search-form > label > input.search-field:hover + .gridd-search-icon, .search-form > label > input.search-field:focus + .gridd-search-icon {
@@ -74,3 +75,7 @@ textarea {
   .search-form .search-field {
     height: 100%;
     border-radius: 0; }
+
+.search-submit.search-submit {
+  border: none;
+  padding: 0 .5em; }

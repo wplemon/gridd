@@ -48,10 +48,10 @@
 			width: 100%;
 			max-height: 100%;
 			overflow: auto;
-			padding: 40px 10px 9px;
+			// padding: 40px 10px 9px;
 			color: $white;
 			text-align: center;
-			font-size: $default-font-size;
+			// font-size: $default-font-size;
 			background: linear-gradient(0deg, rgba($color: $black, $alpha: 0.7) 0, rgba($color: $black, $alpha: 0.3) 70%, transparent);
 
 			img {
@@ -129,7 +129,7 @@
 	// Apply max-width to floated items that have no intrinsic width.
 	&.alignleft,
 	&.alignright {
-		max-width: $content-width / 2;
+		// max-width: $content-width / 2;
 		width: 100%;
 	}
 

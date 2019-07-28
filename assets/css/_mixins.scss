@@ -62,16 +62,17 @@
 	position: relative;
 	border: 2px solid; //currentColor;
 	background: none;
+	cursor: pointer;
+	position: relative;
 
 	&:active,
 	&:hover {
-		cursor: pointer;
 		outline: none;
 		text-decoration: none;
-		box-shadow: 0px 1px 1px 0px;
 	}
 
-	&:focus {
+	&:focus,
+	&:active {
 		box-shadow: inset 0px 1px 1px 0px;
 	}
 }

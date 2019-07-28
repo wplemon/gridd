@@ -119,8 +119,5 @@
 .wp-block-columns.alignfull {
   padding-left: var(--gridd-content-padding-left, 20px);
   padding-right: var(--gridd-content-padding-right, 20px); }
-.wp-block-columns .wp-block-column {
-  margin: 0;
-  padding: 1em; }
 .site-main .entry-content > .wp-block-columns:not(.alignfull):not(.alignwide):not(.alignleft):not(.alignright) {
   max-width: calc(var(--gridd-content-max-width-calculated, 700px) + 2em); }

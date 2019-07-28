@@ -32,3 +32,8 @@
 
 a.comment-reply-link {
   display: inline-block; }
+
+#comment {
+  background: var(--gridd-content-bg);
+  color: currentColor;
+  border-color: currentColor; }

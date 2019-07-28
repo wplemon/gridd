@@ -5,7 +5,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 Requires at least: 4.9
 Tested up to: 5.2
 Requires PHP: 5.6
-Stable tag: 1.1.10
+Stable tag: 1.1.11
 License: GNU General Public License v2.0 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,6 +35,18 @@ Gridd is a flexible, inclusive theme with a strong focus on performance, accessi
 You can install the theme using the WordPress Administration menu. For more information on installing themes please refer to [this article](https://codex.wordpress.org/Using_Themes#Adding_New_Themes).
 
 == Changelog ==
+
+= 1.1.11 =
+
+* Fix: Improved block styles to further reduce their size.
+* Fix: Content width when using percent (%) values.
+* Fix: Improved the accessibility-colors script for automatic link colors selection.
+* Fix: Improved comment form styles for dark backgrounds.
+* Fix: Gutenberg styles were updated to include the most recent tweaks for new blocks.
+* Fix: Improved searchform styles.
+* Fix: PHP Warning when viewing some post-formats.
+* Fix: Visibility of WooCommerce product images when there is a single image (no gallery) inside single posts.
+* Fix: WooCommerce tabs styles.
 
 = 1.1.10 =
 

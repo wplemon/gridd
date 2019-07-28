@@ -23,11 +23,11 @@ body #infinite-handle {
       transition: all 150ms ease-in-out;
       position: relative;
       border: 2px solid;
-      background: none; }
+      background: none;
+      cursor: pointer;
+      position: relative; }
       body #infinite-handle span button:active, body #infinite-handle span button:hover {
-        cursor: pointer;
         outline: none;
-        text-decoration: none;
-        box-shadow: 0px 1px 1px 0px; }
-      body #infinite-handle span button:focus {
+        text-decoration: none; }
+      body #infinite-handle span button:focus, body #infinite-handle span button:active {
         box-shadow: inset 0px 1px 1px 0px; }

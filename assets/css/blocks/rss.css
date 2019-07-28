@@ -81,25 +81,12 @@
   padding: 0;
   list-style: none; }
   .wp-block-rss.is-grid li {
-    margin: 0 16px 16px 0;
     width: 100%; }
-@media (min-width: 600px) {
-  .wp-block-rss.columns-2 li {
-    width: calc(( 100% / 2 ) - 16px); }
-  .wp-block-rss.columns-3 li {
-    width: calc(( 100% / 3 ) - 16px); }
-  .wp-block-rss.columns-4 li {
-    width: calc(( 100% / 4 ) - 16px); }
-  .wp-block-rss.columns-5 li {
-    width: calc(( 100% / 5 ) - 16px); }
-  .wp-block-rss.columns-6 li {
-    width: calc(( 100% / 6 ) - 16px); } }
 
 .wp-block-rss__item-publish-date,
 .wp-block-rss__item-author {
   display: block;
-  color: #6c7781;
-  font-size: 1em; }
+  color: #6c7781; }
 
 .wp-block-rss.is-grid li {
   margin: 0 1em 1em 0; }

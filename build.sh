@@ -12,6 +12,7 @@ rm -rf gridd/assets/css/blocks/block-library
 rm -rf gridd/.sass-cache
 rm -rf gridd/node_modules
 rm -rf gridd/.git
+rm -f gridd/.eslintrc.js
 rm -f gridd/.browserslistrc
 rm -f gridd/.editorconfig
 rm -f gridd/.eslintignore

@@ -11,14 +11,15 @@
 @import "../variables";
 
 .wp-block-button__link {
-	background-color: $very-dark-gray;
+	background-color: var(--gridd-text-color);
 	border-radius: 3em;
 	font-size: 1em;
 	padding: .5em 1em;
+	position: relative;
 
 	// Make sure buttons text remains visible if user doesn't select a text color.
 	&:not(.has-text-color) {
-		color: $very-light-gray;
+		color: currentColor;
 
 		&.has {
 
@@ -38,7 +39,7 @@
 		&:hover,
 		&:visited:focus,
 		&:visited:hover {
-			color: $very-light-gray;
+			color: currentColor;
 		}
 	}
 }

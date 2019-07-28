@@ -72,7 +72,7 @@ Customizer::add_field(
 		'type'      => 'color',
 		'settings'  => 'gridd_grid_content_background_color',
 		'label'     => esc_html__( 'Background Color', 'gridd' ),
-		'tooltip'   => esc_html__( 'Always prefer light backgrounds with dark text for increased accessibility', 'gridd' ),
+		'tooltip'   => esc_html__( 'Always prefer light backgrounds with dark text for increased accessibility.', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_content',
 		'default'   => '#ffffff',
 		'css_vars'  => '--gridd-content-bg',

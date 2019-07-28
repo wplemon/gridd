@@ -114,8 +114,6 @@
     line-height: 1.25;
     z-index: 1;
     margin-bottom: 0;
-    max-width: 610px;
-    padding: 14px;
     text-align: center; }
     .wp-block-cover-image h2 a,
     .wp-block-cover-image h2 a:hover,
@@ -197,7 +195,6 @@
   .wp-block-cover-image.alignleft, .wp-block-cover-image.alignright,
   .wp-block-cover.alignleft,
   .wp-block-cover.alignright {
-    max-width: 305px;
     width: 100%; }
   .wp-block-cover-image::after,
   .wp-block-cover::after {

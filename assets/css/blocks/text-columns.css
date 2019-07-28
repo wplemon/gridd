@@ -74,7 +74,6 @@
   .wp-block-text-columns.aligncenter {
     display: flex; }
   .wp-block-text-columns .wp-block-column {
-    margin: 0 16px;
     padding: 0; }
     .wp-block-text-columns .wp-block-column:first-child {
       margin-left: 0; }

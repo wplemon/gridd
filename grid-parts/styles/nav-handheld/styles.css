@@ -51,6 +51,8 @@ body {
   .gridd-nav-handheld-btn[aria-expanded=true] + #gridd-handheld-menu-wrapper,
   .gridd-nav-handheld-btn[aria-expanded=true] + #gridd-handheld-cart-wrapper {
     display: block; }
+  .gridd-nav-handheld-btn:before, .gridd-nav-handheld-btn:after {
+    display: none; }
 
 #gridd-handheld-search-wrapper,
 #gridd-handheld-menu-wrapper,

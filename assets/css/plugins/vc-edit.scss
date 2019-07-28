@@ -1,14 +1,15 @@
 @import "vc-vars";
 
 .site-main .entry-content.vc-main-sortable-container {
-	> .vc_element,
-	> .vc_welcome,
-	> #vc_no-content-helper {
+
+	>.vc_element,
+	>.vc_welcome,
+	>#vc_no-content-helper {
 		max-width: 100%;
 		padding-left: 0;
 		padding-right: 0;
 
-		> .vc_row {
+		>.vc_row {
 			margin-left: auto;
 			margin-right: auto;
 			max-width: var(--gridd-content-max-width-calculated, 700px);
@@ -19,7 +20,7 @@
 // Color tweaks for slightly better a11y.
 .compose-mode {
 	.vc_controls {
-		> .vc_controls-cc {
+		>.vc_controls-cc {
 			background-color: $green;
 		}
 	}
@@ -43,7 +44,8 @@
 	.vc_controls-column,
 	.vc_controls-container,
 	.vc_controls-row {
-		> div {
+		>div {
+
 			.vc_control-btn .vc_btn-content,
 			.vc_btn-content {
 				background-color: $orange;
@@ -55,7 +57,7 @@
 				}
 			}
 
-			> .vc_parent {
+			>.vc_parent {
 				.vc_control-btn {
 					.vc_btn-content {
 						background-color: $blue;
