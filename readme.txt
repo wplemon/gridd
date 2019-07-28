@@ -36,6 +36,18 @@ You can install the theme using the WordPress Administration menu. For more info
 
 == Changelog ==
 
+= 1.1.11 =
+
+* Fix: Improved block styles to further reduce their size.
+* Fix: Content width when using percent (%) values.
+* Fix: Improved the accessibility-colors script for automatic link colors selection.
+* Fix: Improved comment form styles for dark backgrounds.
+* Fix: Gutenberg styles were updated to include the most recent tweaks for new blocks.
+* Fix: Improved searchform styles.
+* Fix: PHP Warning when viewing some post-formats.
+* Fix: Visibility of WooCommerce product images when there is a single image (no gallery) inside single posts.
+* Fix: WooCommerce tabs styles.
+
 = 1.1.10 =
 
 * Fix: Text typos.
