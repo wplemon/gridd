@@ -85,7 +85,10 @@
 
   .woocommerce-tabs {
     ul.tabs {
-      li {
+			display: flex;
+			font-size: calc(1em / var(--gridd-typo-scale, 1.26));
+
+			li {
 
         a,
         a:visited {
