@@ -36,6 +36,10 @@ You can install the theme using the WordPress Administration menu. For more info
 
 == Changelog ==
 
+= 1.1.12 =
+
+* Fix: JS conflict in the customizer when Gutenberg installed as a plugin.
+
 = 1.1.11 =
 
 * Fix: Improved block styles to further reduce their size.
