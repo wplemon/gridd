@@ -37,7 +37,6 @@ class Nav_Handheld extends Grid_Part {
 	 * @return void
 	 */
 	public function init() {
-		$this->register_rest_api_partials();
 		add_action( 'widgets_init', [ $this, 'register_sidebar' ] );
 		add_action( 'gridd_the_grid_part', [ $this, 'render' ] );
 		add_action( 'gridd_the_partial', [ $this, 'the_partial' ] );
