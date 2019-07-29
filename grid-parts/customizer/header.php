@@ -52,7 +52,7 @@ Customizer::add_field(
 		'type'              => 'gridd_grid',
 		'grid-part'         => 'header',
 		'label'             => esc_html__( 'Grid Settings', 'gridd' ),
-		'description'       => __( 'Edit settings for your footer grid. For more information and documentation on how the grid works, please read <a href="https://wplemon.github.io/gridd/the-grid-control.html" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
+		'description'       => __( 'Edit settings for your header grid. For more information and documentation on how the grid works, please read <a href="https://wplemon.github.io/gridd/the-grid-control.html" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
 		'default'           => Header::get_grid_defaults(),
 		'choices'           => [
 			'parts' => Header::get_header_grid_parts(),
