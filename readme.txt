@@ -39,6 +39,9 @@ You can install the theme using the WordPress Administration menu. For more info
 = 1.1.12 =
 
 * Fix: JS conflict in the customizer when Gutenberg installed as a plugin.
+* Fix: Typo in the main header grid's description.
+* Fix: Header-Image control description.
+* Fix: Removed Mobile Navigation from Deferred Parts.
 
 = 1.1.11 =
 
