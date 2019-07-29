@@ -155,6 +155,9 @@ class Customizer {
 				'nonce'         => wp_create_nonce( 'gridd-template-preview' ),
 				'ajax_url'      => admin_url( 'admin-ajax.php' ),
 				'nestedGrids'   => Grid_Parts::get_instance()->get_grids(),
+				'l10n'          => [
+					'headerImageDescription' => esc_html__( 'Choose a background image for your header. Please note that the image will only be visible if the grid parts in your header use transparent colors, or if you are using a grid-gap for your header grid.', 'gridd' ),
+				],
 			]
 		);
 	}
