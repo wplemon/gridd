@@ -101,5 +101,13 @@
 			}
 			e.preventDefault();
 		});
+
+		/**
+		 * We're hardcoding this because WordPress-Core in its infinite wisdom
+		 * doesn't allow filtering the description or anything else for the header-background-image control.
+		 *
+		 * @since 1.1.12
+		 */
+		jQuery( '#customize-control-header_image .customize-control-description' ).html( griddTemplatePreviewScript.l10n.headerImageDescription );
 	});
 }() );

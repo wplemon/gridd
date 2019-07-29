@@ -118,22 +118,6 @@ class Nav_Handheld extends Grid_Part {
 	}
 
 	/**
-	 * Registers the partial(s) for the REST API.
-	 *
-	 * @access public
-	 * @since 1.1
-	 * @return void
-	 */
-	public function register_rest_api_partials() {
-		Rest::register_partial(
-			[
-				'id'    => 'nav-handheld',
-				'label' => esc_html__( 'Mobile Navigation', 'gridd' ),
-			]
-		);
-	}
-
-	/**
 	 * Adds the script to the footer.
 	 *
 	 * @access public
