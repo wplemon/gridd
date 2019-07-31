@@ -134,7 +134,12 @@ Customizer::add_field(
 		'type'        => 'slider',
 		'settings'    => 'gridd_fluid_typography_ratio',
 		'label'       => esc_html__( 'Fluid typography Ratio', 'gridd' ),
-		'description' => '<details><summary style="color:#0085ba">' . esc_html__( 'Details', 'gridd' ) . '</summary>' . esc_html__( 'Defines by how much your font-size will change depending on the screen-size. Larger values will increase the font-size more on bigger screens. Set to 0 if you do not want the font-size to change depending on the screen-size.', 'gridd' ) . '</details>',
+		'description' => Customizer::get_control_description(
+			[
+				'short'   => '',
+				'details' => esc_html__( 'Defines by how much your font-size will change depending on the screen-size. Larger values will increase the font-size more on bigger screens. Set to 0 if you do not want the font-size to change depending on the screen-size.', 'gridd' )
+			]
+		 ),
 		/* translators: "Read this article" link. */
 		'tooltip'     => sprintf( esc_html__( 'Need more Information? %s', 'gridd' ), '<a href="https://wplemon.github.io/gridd/fluid-typography.html" target="_blank">' . esc_html__( 'Read this article.', 'gridd' ) ),
 		'section'     => 'gridd_typography',

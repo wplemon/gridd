@@ -182,6 +182,35 @@ class Customizer {
 	}
 
 	/**
+	 * Gets the control description.
+	 *
+	 * @static
+	 * @access public
+	 * @since 1.0
+	 * @param array $params The description parameters.
+	 * @return string
+	 */
+	public static function get_control_description( $args ) {
+		$description = '';
+
+		if ( is_array( $args ) ) {
+			if ( isset( $args['short'] ) ) {
+				$description .= $args['short'];
+			}
+			if ( isset( $args['details'] ) ) {
+				$label = esc_html__( 'Details', 'gridd' );
+				if ( isset( $args['label'] ) ) {
+					$label = $args['label'];
+				}
+				$description .= '<details><summary style="color:#0085ba">' . $label . '</summary>';
+				$description .= $args['details'];
+				$description .= '</details>';
+			}
+		}
+		return $description;
+	}
+
+	/**
 	 * Helper method to avoid writing the same code over and over and over and over again.
 	 *
 	 * @static
