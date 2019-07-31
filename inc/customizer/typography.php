@@ -137,11 +137,13 @@ Customizer::add_field(
 		'description' => Customizer::get_control_description(
 			[
 				'short'   => '',
-				'details' => esc_html__( 'Defines by how much your font-size will change depending on the screen-size. Larger values will increase the font-size more on bigger screens. Set to 0 if you do not want the font-size to change depending on the screen-size.', 'gridd' )
+				'details' => sprintf(
+					/* Translators: link attributes. */
+					__( 'Defines by how much your font-size will change depending on the screen-size. Larger values will increase the font-size more on bigger screens. Set to 0 if you do not want the font-size to change depending on the screen-size. Need more Information? <a %s>Read this article</a>', 'gridd' ),
+					'href="https://wplemon.github.io/gridd/fluid-typography.html" target="_blank"'
+				),	
 			]
-		 ),
-		/* translators: "Read this article" link. */
-		'tooltip'     => sprintf( esc_html__( 'Need more Information? %s', 'gridd' ), '<a href="https://wplemon.github.io/gridd/fluid-typography.html" target="_blank">' . esc_html__( 'Read this article.', 'gridd' ) ),
+		),
 		'section'     => 'gridd_typography',
 		'default'     => 0.25,
 		'priority'    => 70,
