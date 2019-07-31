@@ -192,6 +192,13 @@ class Customizer {
 	 * @return string      The final HTML.
 	 */
 	public static function section_description( $id, $args ) {
+
+		/**
+		 * We're experimenting for now without these buttons.
+		 * So we'll just early exit here and not run the code below.
+		 */
+		return;
+
 		$args = apply_filters( 'gridd_section_description', $args, $id );
 
 		$boxes   = '';
