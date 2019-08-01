@@ -103,7 +103,10 @@ function griddGetContrastColor( bg ) {
 	_.each( griddCustomizerVars.autoText, function( textColor, backgroundColor ) {
 		wp.customize( backgroundColor, function( value ) {
 			value.bind( function( to ) {
-				window.parent.window.wp.customize.control( textColor ).setting.set( griddGetContrastColor( to ) );
+				var contr = window.parent.window.wp.customize.control( textColor );
+				if ( contr ) {
+					contr.setting.set( griddGetContrastColor( to ) );
+				}
 			});
 		});
 	});
