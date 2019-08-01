@@ -16,12 +16,15 @@ use Gridd\Widget_Output_Filters;
 use Gridd\Rest;
 use Gridd\Rest_Routes;
 
-/**
- * If Kirki isn't loaded as a plugin, load the included version.
- */
-if ( ! class_exists( 'Kirki' ) ) {
-	require_once __DIR__ . '/kirki/kirki.php';
-}
+require_once get_template_directory() . '/inc/classes/ariColor.php';
+require_once get_template_directory() . '/packages/autoload.php';
+
+new \Kirki\Compatibility\Framework();
+new \Kirki\Compatibility\Modules();
+new \Kirki\Compatibility\Aliases();
+new \Kirki\Compatibility\Scripts();
+new \Kirki\Compatibility\Deprecated();
+new \Kirki\Data\Option();
 
 /**
  * The Gridd Autoloader.
