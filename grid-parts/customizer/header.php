@@ -129,7 +129,19 @@ Customizer::add_field(
 
 Customizer::add_field(
 	[
-		'type'              => 'radio',
+		'type'      => 'checkbox',
+		'settings'  => 'gridd_grid_part_details_header_parts_background_override',
+		'label'     => esc_html__( 'Override Header Parts Background', 'gridd' ),
+		'description' => esc_html__( 'Enable this option to force-override the background color of all grid-parts in your header.', 'gridd' ),
+		'section'   => 'gridd_grid_part_details_header',
+		'default'   => false,
+		'priority'  => 82,
+	]
+);
+
+Customizer::add_field(
+	[
+		'type'              => 'select',
 		'settings'          => 'gridd_grid_header_box_shadow',
 		'label'             => esc_html__( 'Drop Shadow Intensity', 'gridd' ),
 		'tooltip'           => esc_html__( 'Set to "None" to disable the shadow, or increase the intensity for a more dramatic effect.', 'gridd' ),

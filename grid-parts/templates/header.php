@@ -44,6 +44,11 @@ if ( $header_bg_img ) {
 	$style->add_string( '.gridd-tp.gridd-tp-header{background-image:url(\'' . esc_url_raw( $header_bg_img ) . '\');background-size:cover;background-position:center center;}' );
 }
 
+// Force-override parts background images.
+if ( get_theme_mod( 'gridd_grid_part_details_header_parts_background_override', false ) ) {
+	$style->add_string( '.gridd-tp.gridd-tp-header .gridd-tp,.gridd-tp.gridd-tp-header .gridd-tp inner{background:none !important;}' );
+}
+
 $wrapper_class  = 'gridd-tp gridd-tp-header';
 $wrapper_class .= get_theme_mod( 'gridd_header_sticky', false ) ? ' gridd-sticky' : '';
 $attrs          = [

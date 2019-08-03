@@ -115,6 +115,17 @@ Customizer::add_field(
 
 Customizer::add_field(
 	[
+		'type'      => 'checkbox',
+		'settings'  => 'gridd_grid_part_details_footer_parts_background_override',
+		'label'     => esc_html__( 'Override Footer Parts Background', 'gridd' ),
+		'description' => esc_html__( 'Enable this option to force-override the background color of all grid-parts in your footer.', 'gridd' ),
+		'section'   => 'gridd_grid_part_details_footer',
+		'default'   => false,
+	]
+);
+
+Customizer::add_field(
+	[
 		'type'      => 'slider',
 		'settings'  => 'gridd_grid_footer_border_top_width',
 		'label'     => esc_html__( 'Border-Top Width', 'gridd' ),
