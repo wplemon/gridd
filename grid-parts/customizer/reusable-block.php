@@ -78,7 +78,12 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 			'type'        => 'dimension',
 			'settings'    => "gridd_grid_reusable_block_{$id}_padding",
 			'label'       => esc_html__( 'Padding', 'gridd' ),
-			'description' => __( 'Inner padding for this grid-part. Use any valid CSS value. For details on how padding works, please refer to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
+			'description' => Customizer::get_control_description(
+				[
+					'short'   => '',
+					'details' => esc_html__( 'Use any valid CSS value. For details on how padding works, please refer to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
+				]
+			),
 			'section'     => "gridd_grid_part_details_reusable_block_$id",
 			'default'     => '1em',
 			'transport'   => 'postMessage',
@@ -90,7 +95,6 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 		[
 			'type'        => 'color',
 			'label'       => esc_html__( 'Background Color', 'gridd' ),
-			'description' => esc_html__( 'Controls the overall background color for this grid-part.', 'gridd' ),
 			'settings'    => "gridd_grid_reusable_block_{$id}_bg_color",
 			'section'     => "gridd_grid_part_details_reusable_block_$id",
 			'default'     => '#ffffff',
@@ -111,7 +115,6 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 				'setting' => "gridd_grid_reusable_block_{$id}_bg_color",
 			],
 			'label'             => esc_html__( 'Text Color', 'gridd' ),
-			'description'       => esc_html__( 'Select the color used for your text. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
 			'priority'          => 30,
 			'default'           => '#000000',
 			'css_vars'          => "--gridd-reusable-block-$id-color",
@@ -125,7 +128,6 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 			'type'              => 'gridd-wcag-lc',
 			'settings'          => "gridd_grid_reusable_block_{$id}_links_color",
 			'label'             => esc_html__( 'Links Color', 'gridd' ),
-			'description'       => esc_html__( 'Select the color used for your links. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
 			'section'           => "gridd_grid_part_details_reusable_block_$id",
 			'default'           => '#0f5e97',
 			'priority'          => 40,

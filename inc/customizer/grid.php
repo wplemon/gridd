@@ -49,7 +49,7 @@ add_action(
 Customizer::add_section(
 	'gridd_grid',
 	[
-		'title'       => esc_html__( 'Grid', 'gridd' ),
+		'title'       => esc_html__( 'Site Grid', 'gridd' ),
 		'priority'    => 22,
 		'description' => Customizer::section_description(
 			'gridd_grid',
@@ -76,8 +76,12 @@ Customizer::add_field(
 		'section'           => 'gridd_grid',
 		'type'              => 'gridd_grid',
 		'grid-part'         => false,
-		'label'             => esc_html__( 'Grid Settings', 'gridd' ),
-		'description'       => __( 'Edit settings for the grid. For more information and documentation on how the grid works, please read <a href="https://wplemon.github.io/gridd/the-grid-control.html" target="_blank">this article</a>.', 'gridd' ),
+		'label'             => esc_html__( 'Global Site Grid', 'gridd' ),
+		'description' => Customizer::get_control_description(
+			[
+				'details' => __( 'The settings in this control apply to all your pages. You can add columns and rows, define their sizes, and also add or remove grid-parts on your site. For more information and documentation on how the grid works, please read <a href="https://wplemon.github.io/gridd/the-grid-control.html" target="_blank">this article</a>.', 'gridd' ),
+			]
+		),
 		'default'           => Grid::get_grid_default_value(),
 		'priority'          => 10,
 		'sanitize_callback' => [ $sanitization, 'grid' ],
@@ -92,9 +96,8 @@ Customizer::add_field(
 	[
 		'type'        => 'dimension',
 		'settings'    => 'gridd_mobile_breakpoint',
-		'label'       => esc_html__( 'Mobile Breakpoint', 'gridd' ),
-		'description' => esc_html__( 'The breakpoint that separates mobile views from desktop views. Use a valid CSS unit.', 'gridd' ),
-		'tooltip'     => __( 'Screen sizes below the breakpoint defined will get a stacked view instead of grid.', 'gridd' ),
+		'label'       => esc_html__( 'Grid Mobile Breakpoint', 'gridd' ),
+		'description' => esc_html__( 'The threshold below which mobile layouts will be used.', 'gridd' ),
 		'section'     => 'gridd_grid',
 		'priority'    => 20,
 		'default'     => '992px',
@@ -106,8 +109,11 @@ Customizer::add_field(
 		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_gap',
 		'label'       => esc_html__( 'Grid Container Gap', 'gridd' ),
-		'description' => esc_html__( 'Adds a gap between your grid-parts, both horizontally and vertically.', 'gridd' ),
-		'tooltip'     => __( 'For more information please read <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
+		'description' => Customizer::get_control_description(
+			[
+				'details' => __( 'Adds a gap between your grid-parts, both horizontally and vertically. For more information please read <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
+			]
+		),
 		'section'     => 'gridd_grid',
 		'default'     => '0',
 		'transport'   => 'auto',
@@ -126,8 +132,11 @@ Customizer::add_field(
 		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_max_width',
 		'label'       => esc_html__( 'Grid Container max-width', 'gridd' ),
-		'description' => esc_html__( 'The maximum width for this grid.', 'gridd' ),
-		'tooltip'     => esc_html__( 'By setting the max-width to something other than 100% you can build a boxed layout.', 'gridd' ),
+		'description' => Customizer::get_control_description(
+			[
+				'details' => esc_html__( 'You can define the maximum width for this grid here. By setting the max-width to something other than 100% you can build a boxed layout.', 'gridd' )
+			]
+		),
 		'section'     => 'gridd_grid',
 		'default'     => '',
 		'priority'    => 40,
@@ -147,8 +156,12 @@ Customizer::add_field(
 		'type'        => 'sortable',
 		'settings'    => 'gridd_grid_load_order',
 		'label'       => esc_html__( 'Grid Parts Load Order', 'gridd' ),
-		'description' => esc_html__( 'Changes the order in which parts get loaded. This only affects the mobile views and SEO.', 'gridd' ),
-		'tooltip'     => esc_html__( 'Your content should always be near the top. You can place secondary items lower in the load order', 'gridd' ),
+		'description' => Customizer::get_control_description(
+			[
+				'short'   => '',
+				'details' => esc_html__( 'Changes the order in which parts get loaded. This only affects the mobile views and SEO. Important: Your content should always be near the top. You can place secondary items lower in the load order', 'gridd' ),
+			]
+		),
 		'section'     => 'gridd_grid',
 		'default'     => array_keys( $sortable_parts ),
 		'priority'    => 900,

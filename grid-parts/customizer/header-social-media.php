@@ -93,7 +93,7 @@ Customizer::add_field(
 		'type'      => 'slider',
 		'settings'  => 'gridd_grid_part_details_social_icons_padding',
 		'label'     => esc_html__( 'Padding', 'gridd' ),
-		'tooltip'   => esc_html__( 'Change the padding for your social-media icons. Controls how large the clickable area will be, and also the spacing between icons.', 'gridd' ),
+		'tooltip'   => esc_html__( ' Controls how large the clickable area will be and the spacing between icons.', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_social_media',
 		'default'   => .5,
 		'transport' => 'postMessage',

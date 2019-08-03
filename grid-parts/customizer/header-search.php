@@ -27,7 +27,12 @@ Customizer::add_field(
 		'type'      => 'dimensions',
 		'settings'  => 'gridd_grid_part_details_header_search_padding',
 		'label'     => esc_html__( 'Padding', 'gridd' ),
-		'tooltip'   => esc_html__( 'Select the left and right padding for this grid-part. Vertically there is no padding because the searchform occupies the whole height of this area.', 'gridd' ),
+		'description' => Customizer::get_control_description(
+			[
+				'short'   => '',
+				'details' => esc_html__( 'Select the left and right padding for this grid-part. Vertically there is no padding because the searchform occupies the whole height of this area.', 'gridd' ),
+			]
+		),
 		'section'   => 'gridd_grid_part_details_header_search',
 		'default'   => [
 			'left'  => '1em',

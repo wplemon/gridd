@@ -40,7 +40,6 @@ Customizer::add_field(
 		'type'        => 'typography',
 		'settings'    => 'gridd_body_typography',
 		'label'       => esc_html__( 'Body Typography', 'gridd' ),
-		'description' => esc_html__( 'Edit the font-family used for the body of your site. This applies to all text except the headers which have a separate setting.', 'gridd' ),
 		'section'     => 'gridd_typography',
 		'priority'    => 10,
 		'default'     => [
@@ -73,7 +72,6 @@ Customizer::add_field(
 		'type'        => 'typography',
 		'settings'    => 'gridd_headers_typography',
 		'label'       => esc_html__( 'Headers Typography', 'gridd' ),
-		'description' => esc_html__( 'Edit the font-family used for all headers on your site.', 'gridd' ),
 		'section'     => 'gridd_typography',
 		'priority'    => 20,
 		'default'     => [
@@ -114,7 +112,7 @@ Customizer::add_field(
 		'type'        => 'slider',
 		'settings'    => 'gridd_body_font_size',
 		'label'       => esc_html__( 'Body Font-Size', 'gridd' ),
-		'description' => esc_html__( 'Choose the main font-size for your content. We recommend you a font-size greater than 18px to ensure greater readability.', 'gridd' ),
+		'description' => esc_html__( 'We recommend you a font-size greater than 18px to ensure greater readability.', 'gridd' ),
 		'section'     => 'gridd_typography',
 		'default'     => 18,
 		'priority'    => 60,

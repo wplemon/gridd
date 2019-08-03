@@ -51,8 +51,13 @@ Customizer::add_field(
 		'section'           => 'gridd_grid_part_details_header',
 		'type'              => 'gridd_grid',
 		'grid-part'         => 'header',
-		'label'             => esc_html__( 'Grid Settings', 'gridd' ),
-		'description'       => __( 'Edit settings for your header grid. For more information and documentation on how the grid works, please read <a href="https://wplemon.github.io/gridd/the-grid-control.html" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
+		'label'             => esc_html__( 'Header Grid', 'gridd' ),
+		'description' => Customizer::get_control_description(
+			[
+				'short'   => '',
+				'details' => __( 'You can add columns and rows, define their sizes, and also add or remove grid-parts on your site. For more information and documentation on how the grid works, please read <a href="https://wplemon.github.io/gridd/the-grid-control.html" target="_blank">this article</a>.', 'gridd' ),
+			]
+		),
 		'default'           => Header::get_grid_defaults(),
 		'choices'           => [
 			'parts' => Header::get_header_grid_parts(),
@@ -76,9 +81,7 @@ Customizer::add_field(
 	[
 		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_header_max_width',
-		'label'       => esc_html__( 'Max-Width', 'gridd' ),
-		'description' => esc_html__( 'The maximum width that the contents of this grid-part can use.', 'gridd' ),
-		'description' => __( 'Use any valid CSS value like <code>50em</code>, <code>800px</code> or <code>100%</code>.', 'gridd' ),
+		'label'       => esc_html__( 'Header Maximum Width', 'gridd' ),
 		'section'     => 'gridd_grid_part_details_header',
 		'default'     => '',
 		'priority'    => 20,
@@ -92,8 +95,11 @@ Customizer::add_field(
 		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_header_grid_gap',
 		'label'       => esc_html__( 'Grid Gap', 'gridd' ),
-		'description' => __( 'Adds a gap between your grid-parts, both horizontally and vertically. For more information please read <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
-		'tooltip'     => esc_html__( 'If you have a background-color or background-image defined for your header, then these will be visible through these gaps which creates a unique appearance since each grid-part looks separate.', 'gridd' ),
+		'description' => Customizer::get_control_description(
+			[
+				'details' => __( 'Adds a gap between your grid-parts, both horizontally and vertically. If you have a background-color or background-image defined for your header, then these will be visible through these gaps which creates a unique appearance since each grid-part looks separate. For more information please read <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
+			]
+		),
 		'section'     => 'gridd_grid_part_details_header',
 		'default'     => '0',
 		'priority'    => 30,
@@ -107,7 +113,11 @@ Customizer::add_field(
 		'type'      => 'color',
 		'settings'  => 'gridd_grid_part_details_header_background_color',
 		'label'     => esc_html__( 'Background Color', 'gridd' ),
-		'tooltip'   => esc_html__( 'Choose a background color for the header. Individual grid-parts can override this by setting their own background color for their area. If you are using a grid-gap the color defined here will be visible between grid-parts.', 'gridd' ),
+		'description' => Customizer::get_control_description(
+			[
+				'details' => esc_html__( 'Choose a background color for the header. Individual grid-parts can override this by setting their own background color for their area. If you are using a grid-gap the color defined here will be visible between grid-parts.', 'gridd' ),
+			]
+		),
 		'section'   => 'gridd_grid_part_details_header',
 		'default'   => '#ffffff',
 		'transport' => 'postMessage',
@@ -125,7 +135,7 @@ Customizer::add_field(
 		'type'              => 'radio',
 		'settings'          => 'gridd_grid_header_box_shadow',
 		'label'             => esc_html__( 'Drop Shadow Intensity', 'gridd' ),
-		'tooltip'           => esc_html__( 'Set to "None" if you want to disable the shadow for this grid-part, or increase the intensity for a more dramatic effect.', 'gridd' ),
+		'tooltip'           => esc_html__( 'Set to "None" to disable the shadow, or increase the intensity for a more dramatic effect.', 'gridd' ),
 		'section'           => 'gridd_grid_part_details_header',
 		'default'           => '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
 		'transport'         => 'postMessage',

@@ -37,7 +37,6 @@ Customizer::add_field(
 		'type'            => 'checkbox',
 		'settings'        => 'gridd_grid_nav-handheld_enable',
 		'label'           => esc_html__( 'Enable Mobile Navigation', 'gridd' ),
-		'description'     => esc_html__( 'Enables the mobile navigation for devices smaller than the breakpoint defined in your grid settings.', 'gridd' ),
 		'section'         => 'gridd_grid_part_details_nav-handheld',
 		'default'         => true,
 		'transport'       => 'postMessage',
@@ -58,7 +57,6 @@ Customizer::add_field(
 		'type'            => 'sortable',
 		'settings'        => 'gridd_grid_nav-handheld_parts',
 		'label'           => esc_html__( 'Mobile Navigation active parts & order', 'gridd' ),
-		'description'     => esc_html__( 'Enable and disable parts of the mobile navigation, and reorder them at will.', 'gridd' ),
 		'section'         => 'gridd_grid_part_details_nav-handheld',
 		'default'         => [ 'menu', 'home', 'search' ],
 		'choices'         => $parts,
@@ -87,7 +85,11 @@ Customizer::add_field(
 		'type'            => 'checkbox',
 		'settings'        => 'gridd_grid_nav-handheld_hide_labels',
 		'label'           => esc_attr__( 'Hide Labels', 'gridd' ),
-		'tooltip'         => __( 'Enable this option if you want to hide the button labels. If labels are hidden, they only become available to screen-readers.', 'gridd' ),
+		'description' => Customizer::get_control_description(
+			[
+				'details' => esc_html__( 'Enable this option if you want to hide the button labels. If labels are hidden, they only become available to screen-readers.', 'gridd' ),
+			]
+		),
 		'section'         => 'gridd_grid_part_details_nav-handheld',
 		'default'         => false,
 		'transport'       => 'postMessage',

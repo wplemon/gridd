@@ -33,7 +33,11 @@ Customizer::add_field(
 		'type'              => 'editor',
 		'settings'          => 'gridd_grid_part_details_header_contact_info',
 		'label'             => esc_html__( 'Content', 'gridd' ),
-		'tooltip'           => esc_html__( 'Enter any text you want - usually your contact info or important announcements that you want your visitors to see.', 'gridd' ),
+		'description' => Customizer::get_control_description(
+			[
+				'details' => esc_html__( 'Enter any text you want - usually your contact info or important announcements that you want your visitors to see.', 'gridd' ),
+			]
+		),
 		'section'           => 'gridd_grid_part_details_header_contact_info',
 		'default'           => __( 'Email: <a href="mailto:contact@example.com">contact@example.com</a>. Phone: +1-541-754-3010', 'gridd' ),
 		'transport'         => 'postMessage',
@@ -102,7 +106,12 @@ Customizer::add_field(
 		'type'      => 'dimension',
 		'settings'  => 'gridd_grid_part_details_header_contact_info_padding',
 		'label'     => esc_html__( 'Padding', 'gridd' ),
-		'tooltip'   => __( 'For details on how padding works, please refer to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
+		'description' => Customizer::get_control_description(
+			[
+				'short'   => '',
+				'details' => esc_html__( 'Use any valid CSS value. For details on how padding works, please refer to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
+			]
+		),
 		'section'   => 'gridd_grid_part_details_header_contact_info',
 		'default'   => '10px',
 		'transport' => 'postMessage',

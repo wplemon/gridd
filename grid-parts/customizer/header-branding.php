@@ -119,7 +119,12 @@ Customizer::add_field(
 		'type'              => 'dimension',
 		'settings'          => 'gridd_grid_header_branding_padding',
 		'label'             => esc_html__( 'Padding', 'gridd' ),
-		'tooltip'           => __( 'For details on how padding works, please refer to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
+		'description' => Customizer::get_control_description(
+			[
+				'short'   => '',
+				'details' => esc_html__( 'Use any valid CSS value. For details on how padding works, please refer to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
+			]
+		),
 		'section'           => 'gridd_grid_part_details_header_branding',
 		'priority'          => 30,
 		'default'           => '0.5em',

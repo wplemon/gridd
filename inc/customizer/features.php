@@ -63,7 +63,6 @@ Customizer::add_field(
 		'type'              => 'radio',
 		'settings'          => 'gridd_featured_image_mode_singular',
 		'label'             => esc_attr__( 'Featured Images Mode in Single Posts', 'gridd' ),
-		'description'       => esc_html__( 'Select how featured images will be displayed in single post-types (Applies to all post-types).', 'gridd' ),
 		'section'           => 'gridd_features',
 		'default'           => 'overlay',
 		'transport'         => 'refresh',
@@ -103,7 +102,7 @@ Customizer::add_field(
 	[
 		'type'            => 'dimension',
 		'settings'        => 'gridd_featured_image_overlay_min_height',
-		'label'           => esc_attr__( 'Overlay mode minimum height', 'gridd' ),
+		'label'           => esc_attr__( 'Featured image minimum height', 'gridd' ),
 		'section'         => 'gridd_features',
 		'default'         => 'overlay',
 		'transport'       => 'postMessage',
@@ -140,7 +139,6 @@ Customizer::add_field(
 		'type'              => 'gridd-wcag-tc',
 		'settings'          => 'gridd_featured_image_overlay_text_color',
 		'label'             => esc_html__( 'Text Color', 'gridd' ),
-		'description'       => esc_html__( 'Select the color used for your text. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
 		'section'           => 'gridd_features',
 		'priority'          => 20,
 		'default'           => '#fff',
@@ -264,7 +262,12 @@ add_action(
 				'type'        => 'multicheck',
 				'settings'    => 'gridd_rest_api_partials',
 				'label'       => esc_attr__( 'Deferred Parts', 'gridd' ),
-				'description' => esc_html__( 'Select the parts that should be loaded after the initial request. Non-essential parts can be added here.', 'gridd' ),
+				'description' => Customizer::get_control_description(
+					[
+						'short'   => '',
+						'details' => esc_html__( 'Select the parts that should be loaded after the initial request. Non-essential parts can be added here. This can speed-up the initial page-load and users on slower connections can start consuming your content faster.', 'gridd' ),
+					]
+				),
 				'section'     => 'gridd_features',
 				'priority'    => 70,
 				'multiple'    => 999,

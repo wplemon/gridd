@@ -33,8 +33,12 @@ Customizer::add_field(
 		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_breadcrumbs_padding',
 		'label'       => esc_html__( 'Padding', 'gridd' ),
-		'description' => esc_html__( 'Inner padding for this grid-part. Use any valid CSS value.', 'gridd' ),
-		'tooltip'     => __( 'For details on how padding works, please refer to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
+		'description' => Customizer::get_control_description(
+			[
+				'short'   => '',
+				'details' => esc_html__( 'Use any valid CSS value. For details on how padding works, please refer to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
+			]
+		),
 		'section'     => 'gridd_grid_part_details_breadcrumbs',
 		'default'     => '1em',
 		'transport'   => 'postMessage',
@@ -46,9 +50,7 @@ Customizer::add_field(
 	[
 		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_breadcrumbs_max_width',
-		'label'       => esc_html__( 'Max-Width', 'gridd' ),
-		'description' => esc_html__( 'The maximum width that the contents of this grid-part can use.', 'gridd' ),
-		'tooltip'     => __( 'Use any valid CSS value like <code>50em</code>, <code>800px</code> or <code>100%</code>.', 'gridd' ),
+		'label'       => esc_html__( 'Breadcrumbs Maximum Width', 'gridd' ),
 		'section'     => 'gridd_grid_part_details_breadcrumbs',
 		'default'     => '',
 		'css_vars'    => '--gridd-breadcrumbs-max-width',
@@ -61,7 +63,12 @@ Customizer::add_field(
 		'type'      => 'slider',
 		'settings'  => 'gridd_grid_breadcrumbs_font_size',
 		'label'     => esc_html__( 'Font Size', 'gridd' ),
-		'tooltip'   => esc_html__( 'Controls the font-size for your breadcrumbs. This value is relative to the body font-size, so a value of 1em will have the same size as your content.', 'gridd' ),
+		'description' => Customizer::get_control_description(
+			[
+				'short'   => '',
+				'details' => esc_html__( 'Controls the font-size for your breadcrumbs. This value is relative to the body font-size, so a value of 1em will have the same size as your content.', 'gridd' ),
+			]
+		),
 		'section'   => 'gridd_grid_part_details_breadcrumbs',
 		'default'   => 1,
 		'transport' => 'postMessage',
