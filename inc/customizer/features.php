@@ -36,10 +36,9 @@ Customizer::add_section(
 
 Customizer::add_field(
 	[
-		'type'              => 'radio',
+		'type'              => 'select',
 		'settings'          => 'gridd_featured_image_mode_archive',
 		'label'             => esc_attr__( 'Featured Images Mode in Archives', 'gridd' ),
-		'description'       => esc_html__( 'Select how featured images will be displayed in post-archives.', 'gridd' ),
 		'section'           => 'gridd_features',
 		'default'           => 'alignwide',
 		'transport'         => 'refresh',
@@ -60,7 +59,7 @@ Customizer::add_field(
 
 Customizer::add_field(
 	[
-		'type'              => 'radio',
+		'type'              => 'select',
 		'settings'          => 'gridd_featured_image_mode_singular',
 		'label'             => esc_attr__( 'Featured Images Mode in Single Posts', 'gridd' ),
 		'section'           => 'gridd_features',

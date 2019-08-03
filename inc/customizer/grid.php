@@ -27,12 +27,20 @@ add_action(
 		// Move the background-color control.
 		$wp_customize->get_control( 'background_color' )->section     = 'gridd_grid';
 		$wp_customize->get_control( 'background_color' )->priority    = 90;
-		$wp_customize->get_control( 'background_color' )->description = esc_html__( 'Background is visible under transparent grid-parts, or if the grid is not set to 100% width.', 'gridd' );
+		$wp_customize->get_control( 'background_color' )->description = Customizer::get_control_description(
+			[
+				esc_html__( 'Background will only be seen when grid-parts have a transparent background color, or if the site grid is not set to 100% width.', 'gridd' ),
+			]
+		);
 
 		// Move the background-image control.
 		$wp_customize->get_control( 'background_image' )->section       = 'gridd_grid';
 		$wp_customize->get_control( 'background_image' )->priority      = 90;
-		$wp_customize->get_control( 'background_image' )->description   = esc_html__( 'Background is visible under transparent grid-parts, or if the grid is not set to 100% width.', 'gridd' );
+		$wp_customize->get_control( 'background_image' )->description   = Customizer::get_control_description(
+			[
+				esc_html__( 'Background will only be seen when grid-parts have a transparent background color, or if the site grid is not set to 100% width.', 'gridd' ),
+			]
+		);
 		$wp_customize->get_control( 'background_preset' )->section      = 'gridd_grid';
 		$wp_customize->get_control( 'background_preset' )->priority     = 90;
 		$wp_customize->get_control( 'background_position' )->section    = 'gridd_grid';
@@ -131,12 +139,8 @@ Customizer::add_field(
 	[
 		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_max_width',
-		'label'       => esc_html__( 'Grid Container max-width', 'gridd' ),
-		'description' => Customizer::get_control_description(
-			[
-				'details' => esc_html__( 'You can define the maximum width for this grid here. By setting the max-width to something other than 100% you can build a boxed layout.', 'gridd' )
-			]
-		),
+		'label'       => esc_html__( 'Site Maximum Width', 'gridd' ),
+		'description' => esc_html__( 'Set the value to something other than 100% to use a boxed layout.', 'gridd' ),
 		'section'     => 'gridd_grid',
 		'default'     => '',
 		'priority'    => 40,
