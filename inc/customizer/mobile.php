@@ -17,9 +17,6 @@ Customizer::add_section(
 		'description' => Customizer::section_description(
 			'gridd_mobile',
 			[
-				'plus' => [
-					esc_html__( 'Additional item: expandable widget-area with custom icon', 'gridd' ),
-				],
 				'docs' => 'https://wplemon.github.io/gridd/grid-parts/mobile-navigation.html',
 			]
 		),

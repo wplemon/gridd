@@ -21,12 +21,6 @@ Customizer::add_section(
 		'description' => Customizer::section_description(
 			'gridd_typography',
 			[
-				'plus' => [
-					esc_html__( 'Fixed mode for featured images with custom height', 'gridd' ),
-					esc_html__( 'Anchor links in headers ', 'gridd' ),
-					esc_html__( 'Scroll to top button', 'gridd' ),
-					esc_html__( 'Enable more custom widget-areas and customize their titles for easier identification', 'gridd' ),
-				],
 				'docs' => 'https://wplemon.github.io/gridd/customizer-sections/theme-features.html',
 			]
 		),

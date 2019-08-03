@@ -20,10 +20,6 @@ Customizer::add_section(
 		'description' => Customizer::section_description(
 			'gridd_typography',
 			[
-				'plus' => [
-					esc_html__( 'Adjustable typography scales', 'gridd' ),
-					esc_html__( 'Links decoration (underlined/not-underlined) for content and headers separately.', 'gridd' ),
-				],
 				'docs' => 'https://wplemon.github.io/gridd/customizer-sections/typography.html',
 			]
 		),

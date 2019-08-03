@@ -18,9 +18,6 @@ Customizer::add_section(
 		'description' => Customizer::section_description(
 			'gridd_grid_part_details_footer',
 			[
-				'plus' => [
-					esc_html__( 'Separate grid for mobile devices', 'gridd' ),
-				],
 				'docs' => 'https://wplemon.github.io/gridd/grid-parts/footer.html',
 			]
 		),

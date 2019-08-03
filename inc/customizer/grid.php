@@ -62,10 +62,6 @@ Customizer::add_section(
 		'description' => Customizer::section_description(
 			'gridd_grid',
 			[
-				'plus' => [
-					esc_html__( 'Separate grid for mobile devices', 'gridd' ),
-					esc_html__( 'Grid-parts can overlap', 'gridd' ),
-				],
 				'docs' => 'https://wplemon.github.io/gridd/customizer-sections/grid.html',
 				'tip'  => sprintf(
 					/* translators: Link to the blocks-management screen. */

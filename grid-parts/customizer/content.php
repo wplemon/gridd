@@ -18,9 +18,6 @@ Customizer::add_section(
 		'description' => Customizer::section_description(
 			'gridd_grid_part_details_content',
 			[
-				'plus' => [
-					esc_html__( 'Selecting from an array of WCAG-compliant colors for text, headers and links', 'gridd' ),
-				],
 				'docs' => 'https://wplemon.github.io/gridd/grid-parts/content.html',
 			]
 		),
