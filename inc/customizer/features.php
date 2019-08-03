@@ -193,18 +193,18 @@ $post_types = get_post_types(
 foreach ( $post_types as $post_type_id => $post_type_obj ) {
 	Customizer::add_field(
 		[
-			'type'      => 'checkbox',
-			'settings'  => "gridd_archive_display_grid_$post_type_id",
-			'label'     => sprintf(
+			'type'            => 'checkbox',
+			'settings'        => "gridd_archive_display_grid_$post_type_id",
+			'label'           => sprintf(
 				/* translators: The post-type name. */
 				esc_attr__( 'Display "%s" archives as a grid', 'gridd' ),
 				$post_type_obj->labels->name
 			),
-			'section'   => 'gridd_features',
-			'default'   => false,
-			'transport' => 'refresh',
-			'priority'  => 50,
-			'output'    => [
+			'section'         => 'gridd_features',
+			'default'         => false,
+			'transport'       => 'refresh',
+			'priority'        => 50,
+			'output'          => [
 				[
 					'element'       => ".gridd-post-type-archive-$post_type_id #main",
 					'property'      => 'display',
@@ -236,12 +236,9 @@ foreach ( $post_types as $post_type_id => $post_type_obj ) {
 					'value_pattern' => '1',
 				],
 			],
-			/**
-			 * WIP
 			'active_callback' => function() use ( $post_type_id ) {
 				return is_post_type_archive( $post_type_id ) || is_home() || is_category() || is_tag();
 			},
-			*/
 		]
 	);
 }
