@@ -60,7 +60,7 @@ function gridd_compat_message() {
 function gridd_switch_theme( $old_name ) {
 
 	switch_theme( $old_name ? $old_name : WP_DEFAULT_THEME );
-	unset( $_GET['activated'] );
+	unset( $_GET['activated'] ); // phpcs:ignore WordPress.Security.NonceVerification
 	add_action( 'admin_notices', 'gridd_upgrade_notice' );
 }
 
@@ -93,7 +93,7 @@ function gridd_load_customize() {
  * @return void
  */
 function gridd_preview() {
-	if ( isset( $_GET['preview'] ) ) { // WPCS: CSRF ok.
+	if ( isset( $_GET['preview'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
 		wp_die( esc_html( gridd_compat_message() ) );
 	}
 }

@@ -39,6 +39,6 @@ $wrapper_class .= ( has_custom_logo() ) ? ' has-logo' : '';
 	<?php endif; ?>
 	<?php $description = get_bloginfo( 'description', 'display' ); ?>
 	<?php if ( $description || is_customize_preview() ) : ?>
-		<p class="site-description<?php echo ( ! display_header_text() ) ? ' hidden' : ''; ?>"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+		<p class="site-description<?php echo ( ! display_header_text() ) ? ' hidden' : ''; ?>"><?php echo wp_kses_post( $description ); ?></p>
 	<?php endif; ?>
 </div>
