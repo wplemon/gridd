@@ -49,7 +49,7 @@ Customizer::add_field(
 		'type'              => 'gridd_grid',
 		'grid-part'         => 'header',
 		'label'             => esc_html__( 'Header Grid', 'gridd' ),
-		'description' => Customizer::get_control_description(
+		'description'       => Customizer::get_control_description(
 			[
 				'short'   => '',
 				'details' => __( 'You can add columns and rows, define their sizes, and also add or remove grid-parts on your site. For more information and documentation on how the grid works, please read <a href="https://wplemon.github.io/gridd/the-grid-control.html" target="_blank">this article</a>.', 'gridd' ),
@@ -76,14 +76,14 @@ Customizer::add_field(
 
 Customizer::add_field(
 	[
-		'type'        => 'dimension',
-		'settings'    => 'gridd_grid_header_max_width',
-		'label'       => esc_html__( 'Header Maximum Width', 'gridd' ),
-		'section'     => 'gridd_grid_part_details_header',
-		'default'     => '',
-		'priority'    => 20,
-		'css_vars'    => '--gridd-header-max-width',
-		'transport'   => 'postMessage',
+		'type'      => 'dimension',
+		'settings'  => 'gridd_grid_header_max_width',
+		'label'     => esc_html__( 'Header Maximum Width', 'gridd' ),
+		'section'   => 'gridd_grid_part_details_header',
+		'default'   => '',
+		'priority'  => 20,
+		'css_vars'  => '--gridd-header-max-width',
+		'transport' => 'postMessage',
 	]
 );
 
@@ -107,35 +107,35 @@ Customizer::add_field(
 
 Customizer::add_field(
 	[
-		'type'      => 'color',
-		'settings'  => 'gridd_grid_part_details_header_background_color',
-		'label'     => esc_html__( 'Background Color', 'gridd' ),
+		'type'        => 'color',
+		'settings'    => 'gridd_grid_part_details_header_background_color',
+		'label'       => esc_html__( 'Background Color', 'gridd' ),
 		'description' => Customizer::get_control_description(
 			[
 				'details' => esc_html__( 'Choose a background color for the header. Individual grid-parts can override this by setting their own background color for their area. If you are using a grid-gap the color defined here will be visible between grid-parts.', 'gridd' ),
 			]
 		),
-		'section'   => 'gridd_grid_part_details_header',
-		'default'   => '#ffffff',
-		'transport' => 'postMessage',
-		'priority'  => 40,
-		'css_vars'  => '--gridd-header-bg',
-		'choices'   => [
+		'section'     => 'gridd_grid_part_details_header',
+		'default'     => '#ffffff',
+		'transport'   => 'postMessage',
+		'priority'    => 40,
+		'css_vars'    => '--gridd-header-bg',
+		'choices'     => [
 			'alpha' => true,
 		],
-		'priority'  => 70,
+		'priority'    => 70,
 	]
 );
 
 Customizer::add_field(
 	[
-		'type'      => 'checkbox',
-		'settings'  => 'gridd_grid_part_details_header_parts_background_override',
-		'label'     => esc_html__( 'Override Header Parts Background', 'gridd' ),
+		'type'        => 'checkbox',
+		'settings'    => 'gridd_grid_part_details_header_parts_background_override',
+		'label'       => esc_html__( 'Override Header Parts Background', 'gridd' ),
 		'description' => esc_html__( 'Enable this option to force-override the background color of all grid-parts in your header.', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_header',
-		'default'   => false,
-		'priority'  => 82,
+		'section'     => 'gridd_grid_part_details_header',
+		'default'     => false,
+		'priority'    => 82,
 	]
 );
 

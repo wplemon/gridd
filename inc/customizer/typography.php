@@ -33,17 +33,17 @@ Customizer::add_section(
  */
 Customizer::add_field(
 	[
-		'type'        => 'typography',
-		'settings'    => 'gridd_body_typography',
-		'label'       => esc_html__( 'Body Typography', 'gridd' ),
-		'section'     => 'gridd_typography',
-		'priority'    => 10,
-		'default'     => [
+		'type'      => 'typography',
+		'settings'  => 'gridd_body_typography',
+		'label'     => esc_html__( 'Body Typography', 'gridd' ),
+		'section'   => 'gridd_typography',
+		'priority'  => 10,
+		'default'   => [
 			'font-family' => 'sans-serif',
 			'font-weight' => 400,
 		],
-		'transport'   => 'auto',
-		'output'      => [
+		'transport' => 'auto',
+		'output'    => [
 			[
 				'element' => 'body',
 			],
@@ -52,7 +52,7 @@ Customizer::add_field(
 				'context' => [ 'editor' ],
 			],
 		],
-		'choices'     => [
+		'choices'   => [
 			'fonts' => [
 				'google' => [ 'popularity' ],
 			],
@@ -65,17 +65,17 @@ Customizer::add_field(
  */
 Customizer::add_field(
 	[
-		'type'        => 'typography',
-		'settings'    => 'gridd_headers_typography',
-		'label'       => esc_html__( 'Headers Typography', 'gridd' ),
-		'section'     => 'gridd_typography',
-		'priority'    => 20,
-		'default'     => [
+		'type'      => 'typography',
+		'settings'  => 'gridd_headers_typography',
+		'label'     => esc_html__( 'Headers Typography', 'gridd' ),
+		'section'   => 'gridd_typography',
+		'priority'  => 20,
+		'default'   => [
 			'font-family' => 'sans-serif',
 			'variant'     => 700,
 		],
-		'transport'   => 'auto',
-		'output'      => [
+		'transport' => 'auto',
+		'output'    => [
 			[
 				'element' => 'h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,.site-title',
 			],
@@ -92,7 +92,7 @@ Customizer::add_field(
 				],
 			],
 		],
-		'choices'     => [
+		'choices'   => [
 			'fonts' => [
 				'google' => [ 'popularity' ],
 			],
@@ -135,7 +135,7 @@ Customizer::add_field(
 					/* Translators: link attributes. */
 					__( 'Defines by how much your font-size will change depending on the screen-size. Larger values will increase the font-size more on bigger screens. Set to 0 if you do not want the font-size to change depending on the screen-size. Need more Information? <a %s>Read this article</a>', 'gridd' ),
 					'href="https://wplemon.github.io/gridd/fluid-typography.html" target="_blank"'
-				),	
+				),
 			]
 		),
 		'section'     => 'gridd_typography',

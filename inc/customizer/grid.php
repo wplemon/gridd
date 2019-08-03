@@ -81,7 +81,7 @@ Customizer::add_field(
 		'type'              => 'gridd_grid',
 		'grid-part'         => false,
 		'label'             => esc_html__( 'Global Site Grid', 'gridd' ),
-		'description' => Customizer::get_control_description(
+		'description'       => Customizer::get_control_description(
 			[
 				'details' => __( 'The settings in this control apply to all your pages. You can add columns and rows, define their sizes, and also add or remove grid-parts on your site. For more information and documentation on how the grid works, please read <a href="https://wplemon.github.io/gridd/the-grid-control.html" target="_blank">this article</a>.', 'gridd' ),
 			]

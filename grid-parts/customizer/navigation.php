@@ -83,7 +83,7 @@ function gridd_nav_customizer_options( $id ) {
 			'type'              => 'radio',
 			'settings'          => "gridd_grid_nav_{$id}_responsive_behavior",
 			'label'             => esc_html__( 'Responsive Behavior', 'gridd' ),
-			'description' => Customizer::get_control_description(
+			'description'       => Customizer::get_control_description(
 				[
 					'details' => sprintf(
 						/* translators: The link properies. */
@@ -129,14 +129,14 @@ function gridd_nav_customizer_options( $id ) {
 
 	Customizer::add_field(
 		[
-			'type'        => 'color',
-			'label'       => esc_html__( 'Background Color', 'gridd' ),
-			'settings'    => "gridd_grid_nav_{$id}_bg_color",
-			'section'     => "gridd_grid_part_details_nav_$id",
-			'default'     => '#ffffff',
-			'transport'   => 'postMessage',
-			'css_vars'    => "--gridd-nav-$id-bg",
-			'choices'     => [
+			'type'      => 'color',
+			'label'     => esc_html__( 'Background Color', 'gridd' ),
+			'settings'  => "gridd_grid_nav_{$id}_bg_color",
+			'section'   => "gridd_grid_part_details_nav_$id",
+			'default'   => '#ffffff',
+			'transport' => 'postMessage',
+			'css_vars'  => "--gridd-nav-$id-bg",
+			'choices'   => [
 				'alpha' => true,
 			],
 		]
@@ -199,7 +199,7 @@ function gridd_nav_customizer_options( $id ) {
 			'type'              => 'radio-buttonset',
 			'settings'          => "gridd_grid_nav_{$id}_justify_content",
 			'label'             => esc_html__( 'Justify Items', 'gridd' ),
-			'description' => Customizer::get_control_description(
+			'description'       => Customizer::get_control_description(
 				[
 					'short'   => '',
 					'details' => esc_html__( 'Choose how menu items will be spread horizontally inside the menu container. This helps distribute extra free space left over when all the items on a line have reached their maximum size. It also exerts some control over the alignment of items when they overflow the line.', 'gridd' ),

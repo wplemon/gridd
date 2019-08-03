@@ -28,14 +28,14 @@ Customizer::add_section(
 
 Customizer::add_field(
 	[
-		'type'        => 'dimension',
-		'settings'    => 'gridd_grid_content_max_width',
-		'label'       => esc_html__( 'Content Maximum Width', 'gridd' ),
-		'section'     => 'gridd_grid_part_details_content',
-		'default'     => '45em',
-		'css_vars'    => '--gridd-content-max-width',
-		'transport'   => 'postMessage',
-		'priority'    => 10,
+		'type'      => 'dimension',
+		'settings'  => 'gridd_grid_content_max_width',
+		'label'     => esc_html__( 'Content Maximum Width', 'gridd' ),
+		'section'   => 'gridd_grid_part_details_content',
+		'default'   => '45em',
+		'css_vars'  => '--gridd-content-max-width',
+		'transport' => 'postMessage',
+		'priority'  => 10,
 	]
 );
 

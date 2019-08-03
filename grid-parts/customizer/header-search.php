@@ -24,22 +24,22 @@ Customizer::add_outer_section(
 
 Customizer::add_field(
 	[
-		'type'      => 'dimensions',
-		'settings'  => 'gridd_grid_part_details_header_search_padding',
-		'label'     => esc_html__( 'Padding', 'gridd' ),
+		'type'        => 'dimensions',
+		'settings'    => 'gridd_grid_part_details_header_search_padding',
+		'label'       => esc_html__( 'Padding', 'gridd' ),
 		'description' => Customizer::get_control_description(
 			[
 				'short'   => '',
 				'details' => esc_html__( 'Select the left and right padding for this grid-part. Vertically there is no padding because the searchform occupies the whole height of this area.', 'gridd' ),
 			]
 		),
-		'section'   => 'gridd_grid_part_details_header_search',
-		'default'   => [
+		'section'     => 'gridd_grid_part_details_header_search',
+		'default'     => [
 			'left'  => '1em',
 			'right' => '1em',
 		],
-		'transport' => 'postMessage',
-		'css_vars'  => [
+		'transport'   => 'postMessage',
+		'css_vars'    => [
 			[ '--gridd-header-search-padding-left', '$', 'left' ],
 			[ '--gridd-header-search-padding-right', '$', 'right' ],
 		],

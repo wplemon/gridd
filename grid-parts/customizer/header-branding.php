@@ -119,7 +119,7 @@ Customizer::add_field(
 		'type'              => 'dimension',
 		'settings'          => 'gridd_grid_header_branding_padding',
 		'label'             => esc_html__( 'Padding', 'gridd' ),
-		'description' => Customizer::get_control_description(
+		'description'       => Customizer::get_control_description(
 			[
 				'short'   => '',
 				'details' => esc_html__( 'Use any valid CSS value. For details on how padding works, please refer to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
@@ -162,22 +162,22 @@ Customizer::add_field(
 
 Customizer::add_field(
 	[
-		'settings'        => 'gridd_branding_typography',
-		'type'            => 'typography',
-		'label'           => esc_html__( 'Site Title & Tagline Typography', 'gridd' ),
-		'section'         => 'gridd_grid_part_details_header_branding',
-		'priority'        => 50,
-		'default'         => [
+		'settings'  => 'gridd_branding_typography',
+		'type'      => 'typography',
+		'label'     => esc_html__( 'Site Title & Tagline Typography', 'gridd' ),
+		'section'   => 'gridd_grid_part_details_header_branding',
+		'priority'  => 50,
+		'default'   => [
 			'font-family' => 'sans-serif',
 			'font-weight' => 700,
 		],
-		'transport'       => 'auto',
-		'output'          => [
+		'transport' => 'auto',
+		'output'    => [
 			[
 				'element' => [ '.site-title', '.site-title a', '.site-description' ],
 			],
 		],
-		'choices'         => [
+		'choices'   => [
 			'fonts' => [
 				'google' => [ 'popularity' ],
 			],

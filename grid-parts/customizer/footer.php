@@ -33,7 +33,7 @@ Customizer::add_field(
 		'type'              => 'gridd_grid',
 		'grid-part'         => 'footer',
 		'label'             => esc_html__( 'Footer Grid', 'gridd' ),
-		'description' => Customizer::get_control_description(
+		'description'       => Customizer::get_control_description(
 			[
 				'short'   => '',
 				'details' => __( 'You can add columns and rows, define their sizes, and also add or remove grid-parts on your site. For more information and documentation on how the grid works, please read <a href="https://wplemon.github.io/gridd/the-grid-control.html" target="_blank">this article</a>.', 'gridd' ),
@@ -49,13 +49,13 @@ Customizer::add_field(
 
 Customizer::add_field(
 	[
-		'type'        => 'dimension',
-		'settings'    => 'gridd_grid_footer_max_width',
-		'label'       => esc_html__( 'Footer Maximum Width', 'gridd' ),
-		'section'     => 'gridd_grid_part_details_footer',
-		'default'     => '',
-		'transport'   => 'postMessage',
-		'css_vars'    => '--gridd-footer-max-width',
+		'type'      => 'dimension',
+		'settings'  => 'gridd_grid_footer_max_width',
+		'label'     => esc_html__( 'Footer Maximum Width', 'gridd' ),
+		'section'   => 'gridd_grid_part_details_footer',
+		'default'   => '',
+		'transport' => 'postMessage',
+		'css_vars'  => '--gridd-footer-max-width',
 	]
 );
 
@@ -95,19 +95,19 @@ Customizer::add_field(
 
 Customizer::add_field(
 	[
-		'type'      => 'color',
-		'settings'  => 'gridd_grid_footer_background_color',
-		'label'     => esc_html__( 'Background Color', 'gridd' ),
+		'type'        => 'color',
+		'settings'    => 'gridd_grid_footer_background_color',
+		'label'       => esc_html__( 'Background Color', 'gridd' ),
 		'description' => Customizer::get_control_description(
 			[
 				'details' => esc_html__( 'Individual grid-parts can override this by setting their own background color for their area. If you are using a grid-gap the color defined here will be visible between grid-parts. If the color you have selected here is not visible, individual grid-parts may be using a solid background color.', 'gridd' ),
 			]
 		),
-		'section'   => 'gridd_grid_part_details_footer',
-		'default'   => '#ffffff',
-		'transport' => 'postMessage',
-		'css_vars'  => '--gridd-footer-bg',
-		'choices'   => [
+		'section'     => 'gridd_grid_part_details_footer',
+		'default'     => '#ffffff',
+		'transport'   => 'postMessage',
+		'css_vars'    => '--gridd-footer-bg',
+		'choices'     => [
 			'alpha' => true,
 		],
 	]
@@ -115,12 +115,12 @@ Customizer::add_field(
 
 Customizer::add_field(
 	[
-		'type'      => 'checkbox',
-		'settings'  => 'gridd_grid_part_details_footer_parts_background_override',
-		'label'     => esc_html__( 'Override Footer Parts Background', 'gridd' ),
+		'type'        => 'checkbox',
+		'settings'    => 'gridd_grid_part_details_footer_parts_background_override',
+		'label'       => esc_html__( 'Override Footer Parts Background', 'gridd' ),
 		'description' => esc_html__( 'Enable this option to force-override the background color of all grid-parts in your footer.', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_footer',
-		'default'   => false,
+		'section'     => 'gridd_grid_part_details_footer',
+		'default'     => false,
 	]
 );
 

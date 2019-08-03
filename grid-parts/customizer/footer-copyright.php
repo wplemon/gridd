@@ -110,21 +110,21 @@ Customizer::add_field(
 
 Customizer::add_field(
 	[
-		'type'      => 'slider',
-		'settings'  => 'gridd_grid_footer_copyright_text_font_size',
-		'label'     => esc_html__( 'Font Size', 'gridd' ),
+		'type'        => 'slider',
+		'settings'    => 'gridd_grid_footer_copyright_text_font_size',
+		'label'       => esc_html__( 'Font Size', 'gridd' ),
 		'description' => Customizer::get_control_description(
 			[
 				'short'   => '',
 				'details' => esc_html__( 'The font-size defined here is relative to the body font-size so a size of 1em will be the same ssize as your content.', 'gridd' ),
 			]
 		),
-		'section'   => 'gridd_grid_part_details_footer_copyright',
-		'default'   => 1,
-		'transport' => 'postMessage',
-		'css_vars'  => '--gridd-footer-copyright-font-size',
-		'priority'  => 140,
-		'choices'   => [
+		'section'     => 'gridd_grid_part_details_footer_copyright',
+		'default'     => 1,
+		'transport'   => 'postMessage',
+		'css_vars'    => '--gridd-footer-copyright-font-size',
+		'priority'    => 140,
+		'choices'     => [
 			'min'    => .5,
 			'max'    => 2,
 			'step'   => .01,

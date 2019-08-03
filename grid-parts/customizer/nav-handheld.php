@@ -67,7 +67,7 @@ Customizer::add_field(
 		'type'            => 'checkbox',
 		'settings'        => 'gridd_grid_nav-handheld_hide_labels',
 		'label'           => esc_attr__( 'Hide Labels', 'gridd' ),
-		'description' => Customizer::get_control_description(
+		'description'     => Customizer::get_control_description(
 			[
 				'details' => esc_html__( 'Enable this option if you want to hide the button labels. If labels are hidden, they only become available to screen-readers.', 'gridd' ),
 			]

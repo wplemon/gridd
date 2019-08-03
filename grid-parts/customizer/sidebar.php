@@ -64,18 +64,18 @@ function gridd_sidebar_customizer_options( $id ) {
 
 	Customizer::add_field(
 		[
-			'type'        => 'color',
-			'settings'    => "gridd_grid_sidebar_{$id}_background_color",
-			'label'       => esc_html__( 'Background Color', 'gridd' ),
-			'section'     => "gridd_grid_part_details_sidebar_$id",
-			'default'     => '#ffffff',
-			'priority'    => 10,
-			'transport'   => 'postMessage',
-			'choices'     => [
+			'type'      => 'color',
+			'settings'  => "gridd_grid_sidebar_{$id}_background_color",
+			'label'     => esc_html__( 'Background Color', 'gridd' ),
+			'section'   => "gridd_grid_part_details_sidebar_$id",
+			'default'   => '#ffffff',
+			'priority'  => 10,
+			'transport' => 'postMessage',
+			'choices'   => [
 				'alpha' => true,
 			],
-			'css_vars'    => "--gridd-sidebar-{$id}-bg",
-			'choices'     => [
+			'css_vars'  => "--gridd-sidebar-{$id}-bg",
+			'choices'   => [
 				'alpha' => true,
 			],
 		]
@@ -140,14 +140,14 @@ function gridd_sidebar_customizer_options( $id ) {
 
 	Customizer::add_field(
 		[
-			'type'        => 'dimension',
-			'settings'    => "gridd_grid_sidebar_{$id}_widgets_margin",
-			'label'       => esc_html__( 'Margin between widgets', 'gridd' ),
-			'section'     => "gridd_grid_part_details_sidebar_$id",
-			'priority'    => 43,
-			'default'     => '1em',
-			'transport'   => 'postMessage',
-			'css_vars'    => "--gridd-sidebar-{$id}-margin",
+			'type'      => 'dimension',
+			'settings'  => "gridd_grid_sidebar_{$id}_widgets_margin",
+			'label'     => esc_html__( 'Margin between widgets', 'gridd' ),
+			'section'   => "gridd_grid_part_details_sidebar_$id",
+			'priority'  => 43,
+			'default'   => '1em',
+			'transport' => 'postMessage',
+			'css_vars'  => "--gridd-sidebar-{$id}-margin",
 		]
 	);
 }
