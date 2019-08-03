@@ -88,7 +88,7 @@ function gridd_nav_customizer_options( $id ) {
 					'details' => sprintf(
 						/* translators: The link properies. */
 						__( 'Select how this navigation should behave in smaller screens. We recommend you hide navigations on mobile and instead use the <a %s>separate mobile-navigation menu</a>.', 'gridd' ),
-						'href="#" class="button-gridd-focus global-focus" data-context="section" data-focus="gridd_grid_part_details_nav-handheld"'
+						'href="#" class="button-gridd-focus global-focus" data-context="section" data-focus="gridd_mobile"'
 					),
 				]
 			),
