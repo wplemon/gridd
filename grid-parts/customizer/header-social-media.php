@@ -90,15 +90,15 @@ Customizer::add_field(
 
 Customizer::add_field(
 	[
-		'type'      => 'slider',
-		'settings'  => 'gridd_grid_part_details_social_icons_padding',
-		'label'     => esc_html__( 'Padding', 'gridd' ),
-		'tooltip'   => esc_html__( ' Controls how large the clickable area will be and the spacing between icons.', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_social_media',
-		'default'   => .5,
-		'transport' => 'postMessage',
-		'css_vars'  => '--gridd-header-social-icons-padding',
-		'choices'   => [
+		'type'        => 'slider',
+		'settings'    => 'gridd_grid_part_details_social_icons_padding',
+		'label'       => esc_html__( 'Padding', 'gridd' ),
+		'description' => esc_html__( ' Controls how large the clickable area will be and the spacing between icons.', 'gridd' ),
+		'section'     => 'gridd_grid_part_details_social_media',
+		'default'     => .5,
+		'transport'   => 'postMessage',
+		'css_vars'    => '--gridd-header-social-icons-padding',
+		'choices'     => [
 			'min'    => 0,
 			'max'    => 2,
 			'step'   => .01,

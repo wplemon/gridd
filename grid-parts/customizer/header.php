@@ -144,7 +144,7 @@ Customizer::add_field(
 		'type'              => 'select',
 		'settings'          => 'gridd_grid_header_box_shadow',
 		'label'             => esc_html__( 'Drop Shadow Intensity', 'gridd' ),
-		'tooltip'           => esc_html__( 'Set to "None" to disable the shadow, or increase the intensity for a more dramatic effect.', 'gridd' ),
+		'description'       => esc_html__( 'Set to "None" to disable the shadow, or increase the intensity for a more dramatic effect.', 'gridd' ),
 		'section'           => 'gridd_grid_part_details_header',
 		'default'           => '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
 		'transport'         => 'postMessage',
@@ -164,14 +164,14 @@ Customizer::add_field(
 
 Customizer::add_field(
 	[
-		'type'      => 'toggle',
-		'settings'  => 'gridd_header_sticky',
-		'label'     => esc_html__( 'Sticky on Large Devices', 'gridd' ),
-		'tooltip'   => esc_html__( 'Enable to stick this area to the top of the page when users scroll-down on devices larger than the breakpoint you defined in your main grid.', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_header',
-		'default'   => false,
-		'transport' => 'refresh',
-		'priority'  => 60,
+		'type'        => 'toggle',
+		'settings'    => 'gridd_header_sticky',
+		'label'       => esc_html__( 'Sticky on Large Devices', 'gridd' ),
+		'description' => esc_html__( 'Enable to stick this area to the top of the page when users scroll-down on devices larger than the breakpoint you defined in your main grid.', 'gridd' ),
+		'section'     => 'gridd_grid_part_details_header',
+		'default'     => false,
+		'transport'   => 'refresh',
+		'priority'    => 60,
 	]
 );
 
@@ -180,7 +180,7 @@ Customizer::add_field(
 		'type'            => 'toggle',
 		'settings'        => 'gridd_header_sticky_mobile',
 		'label'           => esc_html__( 'Sticky on Small Devices', 'gridd' ),
-		'tooltip'         => esc_html__( 'Enable to stick this area to the top of the page when users scroll-down on devices smaller than the breakpoint you defined in your main grid.', 'gridd' ),
+		'description'     => esc_html__( 'Enable to stick this area to the top of the page when users scroll-down on devices smaller than the breakpoint you defined in your main grid.', 'gridd' ),
 		'section'         => 'gridd_grid_part_details_header',
 		'default'         => false,
 		'transport'       => 'refresh',

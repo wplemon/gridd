@@ -48,15 +48,15 @@ Customizer::add_field(
 
 Customizer::add_field(
 	[
-		'type'      => 'slider',
-		'settings'  => 'gridd_grid_part_details_header_search_font_size',
-		'label'     => esc_html__( 'Font Size', 'gridd' ),
-		'tooltip'   => esc_html__( 'The value selected here is relative to your body font-size, so a value of 1em will be the same size as your content.', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_header_search',
-		'default'   => 1,
-		'transport' => 'postMessage',
-		'css_vars'  => '--gridd-header-search-font-size',
-		'choices'   => [
+		'type'        => 'slider',
+		'settings'    => 'gridd_grid_part_details_header_search_font_size',
+		'label'       => esc_html__( 'Font Size', 'gridd' ),
+		'description' => esc_html__( 'The value selected here is relative to your body font-size, so a value of 1em will be the same size as your content.', 'gridd' ),
+		'section'     => 'gridd_grid_part_details_header_search',
+		'default'     => 1,
+		'transport'   => 'postMessage',
+		'css_vars'    => '--gridd-header-search-font-size',
+		'choices'     => [
 			'min'    => .5,
 			'max'    => 4,
 			'step'   => .01,
