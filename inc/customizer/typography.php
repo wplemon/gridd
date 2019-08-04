@@ -127,7 +127,7 @@ Customizer::add_field(
 	[
 		'type'        => 'slider',
 		'settings'    => 'gridd_fluid_typography_ratio',
-		'label'       => esc_html__( 'Fluid typography Ratio', 'gridd' ),
+		'label'       => esc_html__( 'Fluid Typography Ratio', 'gridd' ),
 		'description' => Customizer::get_control_description(
 			[
 				'short'   => '',

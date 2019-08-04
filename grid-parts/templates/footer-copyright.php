@@ -12,7 +12,7 @@ use Gridd\Theme;
 // Add styles.
 Style::get_instance( 'grid-part/footer/copyright' )
 	->add_file( get_theme_file_path( 'grid-parts/styles/footer/styles-copyright.min.css' ) )
-	->add_var(
+	->add_vars(
 		[
 			'--gridd-footer-padding'               => get_theme_mod( 'gridd_grid_footer_padding', '1em' ),
 			'--gridd-footer-copyright-bg'          => get_theme_mod( 'gridd_grid_footer_copyright_bg_color', '#fff' ),
