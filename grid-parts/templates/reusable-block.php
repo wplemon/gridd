@@ -19,6 +19,15 @@ $style->add_file( get_theme_file_path( 'grid-parts/styles/reusable-block/styles.
 
 // Replace ID with $gridd_reusable_block_id.
 $style->replace( 'ID', $gridd_reusable_block_id );
+
+// Add vars to replace.
+$style->add_vars(
+	[
+		"--gridd-reusable-block-$gridd_reusable_block_id-bg"      => get_theme_mod( "gridd_grid_reusable_block_{$gridd_reusable_block_id}_bg_color", '#ffffff' ),
+		"--gridd-reusable-block-$gridd_reusable_block_id-color"   => get_theme_mod( "gridd_grid_reusable_block_{$gridd_reusable_block_id}_color", '#000000' ),
+		"--gridd-reusable-block-$gridd_reusable_block_id-padding" => get_theme_mod( "gridd_grid_reusable_block_{$gridd_reusable_block_id}_padding", '1em' ),
+	]
+);
 ?>
 
 <div <?php Theme::print_attributes( [ 'class' => "gridd-tp gridd-tp-reusable-block gridd-tp-reusable_block_$gridd_reusable_block_id" ], "reusable_block_$gridd_reusable_block_id" ); ?>>

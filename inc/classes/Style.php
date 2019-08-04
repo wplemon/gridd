@@ -196,8 +196,10 @@ class Style {
 			return $this->css;
 		}
 
-		foreach ( $this->vars as $name => $value ) {
-			$this->replace_css_var( $name, $value );
+		if ( apply_filters( 'gridd_replace_css_vars', false ) ) {
+			foreach ( $this->vars as $name => $value ) {
+				$this->replace_css_var( $name, $value );
+			}
 		}
 
 		return apply_filters( 'gridd_style_css', $this->css, $this->context );
