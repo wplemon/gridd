@@ -237,7 +237,15 @@ foreach ( $post_types as $post_type_id => $post_type_obj ) {
 				],
 			],
 			'active_callback' => function() use ( $post_type_id ) {
-				return is_post_type_archive( $post_type_id ) || is_home() || is_category() || is_tag();
+				if ( is_post_type_archive( $post_type_id ) ) {
+					return true;
+				}
+				if ( 'post' === $post_type_id ) {
+					if ( is_home() || is_category() || is_tag() ) {
+						return true;
+					}
+				}
+				return false;
 			},
 		]
 	);
@@ -248,7 +256,7 @@ Customizer::add_field(
 		'type'        => 'textarea',
 		'settings'    => 'gridd_excerpt_more',
 		'label'       => esc_attr__( 'Read More link', 'gridd' ),
-		'description' => esc_html__( 'Available placeholder: %s for the post-title.', 'gridd' ), // phpcs:ignore WordPress.WP.I18n.MissingTranslatorsComment
+		'description' => esc_html__( 'If you want to include the post title in your read-more link, you can use "%s" (without the quotes) and it will be replaced with the post\'s title.', 'gridd' ), // phpcs:ignore WordPress.WP.I18n.MissingTranslatorsComment
 		'section'     => 'gridd_features',
 		'priority'    => 60,
 		/* translators: %s: Name of current post. Only visible to screen readers */
