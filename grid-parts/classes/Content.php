@@ -121,6 +121,15 @@ class Content extends Grid_Part {
 			 * Once the bug in the minifier is fixed we can remove this.
 			 */
 			->add_string( '.site-main .entry-content .alignfull,.site-main .entry-footer .alignfull,.site-main .entry-header .alignfull,.site-main .gridd-contain .alignfull{transform:translateX(calc(0px - var(--gridd-content-padding-left, 20px)));}' )
+			->add_vars(
+				[
+					'--gridd-content-padding-top'    => $padding['top'],
+					'--gridd-content-padding-right'  => $padding['right'],
+					'--gridd-content-padding-bottom' => $padding['bottom'],
+					'--gridd-content-padding-left'   => $padding['left'],
+					'--gridd-content-bg'             => get_theme_mod( 'gridd_grid_content_background_color', '#fff' ),
+				]
+			)
 			->the_css( 'gridd-inline-css-content' );
 	}
 

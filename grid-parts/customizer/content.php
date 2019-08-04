@@ -18,9 +18,6 @@ Customizer::add_section(
 		'description' => Customizer::section_description(
 			'gridd_grid_part_details_content',
 			[
-				'plus' => [
-					esc_html__( 'Selecting from an array of WCAG-compliant colors for text, headers and links', 'gridd' ),
-				],
 				'docs' => 'https://wplemon.github.io/gridd/grid-parts/content.html',
 			]
 		),
@@ -31,16 +28,14 @@ Customizer::add_section(
 
 Customizer::add_field(
 	[
-		'type'        => 'dimension',
-		'settings'    => 'gridd_grid_content_max_width',
-		'label'       => esc_html__( 'Max-Width', 'gridd' ),
-		'description' => esc_html__( 'The maximum width that the contents of this grid-part can use.', 'gridd' ),
-		'description' => __( 'Use any valid CSS value like <code>50em</code>, <code>800px</code> or <code>100%</code>.', 'gridd' ),
-		'section'     => 'gridd_grid_part_details_content',
-		'default'     => '45em',
-		'css_vars'    => '--gridd-content-max-width',
-		'transport'   => 'postMessage',
-		'priority'    => 10,
+		'type'      => 'dimension',
+		'settings'  => 'gridd_grid_content_max_width',
+		'label'     => esc_html__( 'Content Maximum Width', 'gridd' ),
+		'section'   => 'gridd_grid_part_details_content',
+		'default'   => '45em',
+		'css_vars'  => '--gridd-content-max-width',
+		'transport' => 'postMessage',
+		'priority'  => 10,
 	]
 );
 
@@ -48,7 +43,7 @@ Customizer::add_field(
 	[
 		'type'      => 'dimensions',
 		'settings'  => 'gridd_grid_content_padding',
-		'label'     => esc_html__( 'Container Padding', 'gridd' ),
+		'label'     => esc_html__( 'Content Padding', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_content',
 		'default'   => [
 			'top'    => '0px',
@@ -72,7 +67,6 @@ Customizer::add_field(
 		'type'      => 'color',
 		'settings'  => 'gridd_grid_content_background_color',
 		'label'     => esc_html__( 'Background Color', 'gridd' ),
-		'tooltip'   => esc_html__( 'Always prefer light backgrounds with dark text for increased accessibility.', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_content',
 		'default'   => '#ffffff',
 		'css_vars'  => '--gridd-content-bg',
@@ -89,7 +83,6 @@ Customizer::add_field(
 		'type'              => 'gridd-wcag-tc',
 		'settings'          => 'gridd_text_color',
 		'label'             => esc_html__( 'Text Color', 'gridd' ),
-		'description'       => esc_html__( 'Select the color used for your text. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
 		'section'           => 'gridd_grid_part_details_content',
 		'priority'          => 40,
 		'default'           => '#000000',

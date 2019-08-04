@@ -24,17 +24,22 @@ Customizer::add_outer_section(
 
 Customizer::add_field(
 	[
-		'type'      => 'dimensions',
-		'settings'  => 'gridd_grid_part_details_header_search_padding',
-		'label'     => esc_html__( 'Padding', 'gridd' ),
-		'tooltip'   => esc_html__( 'Select the left and right padding for this grid-part. Vertically there is no padding because the searchform occupies the whole height of this area.', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_header_search',
-		'default'   => [
+		'type'        => 'dimensions',
+		'settings'    => 'gridd_grid_part_details_header_search_padding',
+		'label'       => esc_html__( 'Padding', 'gridd' ),
+		'description' => Customizer::get_control_description(
+			[
+				'short'   => '',
+				'details' => esc_html__( 'Select the left and right padding for this grid-part. Vertically there is no padding because the searchform occupies the whole height of this area.', 'gridd' ),
+			]
+		),
+		'section'     => 'gridd_grid_part_details_header_search',
+		'default'     => [
 			'left'  => '1em',
 			'right' => '1em',
 		],
-		'transport' => 'postMessage',
-		'css_vars'  => [
+		'transport'   => 'postMessage',
+		'css_vars'    => [
 			[ '--gridd-header-search-padding-left', '$', 'left' ],
 			[ '--gridd-header-search-padding-right', '$', 'right' ],
 		],
@@ -43,15 +48,15 @@ Customizer::add_field(
 
 Customizer::add_field(
 	[
-		'type'      => 'slider',
-		'settings'  => 'gridd_grid_part_details_header_search_font_size',
-		'label'     => esc_html__( 'Font Size', 'gridd' ),
-		'tooltip'   => esc_html__( 'The value selected here is relative to your body font-size, so a value of 1em will be the same size as your content.', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_header_search',
-		'default'   => 1,
-		'transport' => 'postMessage',
-		'css_vars'  => '--gridd-header-search-font-size',
-		'choices'   => [
+		'type'        => 'slider',
+		'settings'    => 'gridd_grid_part_details_header_search_font_size',
+		'label'       => esc_html__( 'Font Size', 'gridd' ),
+		'description' => esc_html__( 'The value selected here is relative to your body font-size, so a value of 1em will be the same size as your content.', 'gridd' ),
+		'section'     => 'gridd_grid_part_details_header_search',
+		'default'     => 1,
+		'transport'   => 'postMessage',
+		'css_vars'    => '--gridd-header-search-font-size',
+		'choices'     => [
 			'min'    => .5,
 			'max'    => 4,
 			'step'   => .01,

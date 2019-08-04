@@ -27,12 +27,20 @@ add_action(
 		// Move the background-color control.
 		$wp_customize->get_control( 'background_color' )->section     = 'gridd_grid';
 		$wp_customize->get_control( 'background_color' )->priority    = 90;
-		$wp_customize->get_control( 'background_color' )->description = esc_html__( 'Background is visible under transparent grid-parts, or if the grid is not set to 100% width.', 'gridd' );
+		$wp_customize->get_control( 'background_color' )->description = Customizer::get_control_description(
+			[
+				esc_html__( 'Background will only be seen when grid-parts have a transparent background color, or if the site grid is not set to 100% width.', 'gridd' ),
+			]
+		);
 
 		// Move the background-image control.
 		$wp_customize->get_control( 'background_image' )->section       = 'gridd_grid';
 		$wp_customize->get_control( 'background_image' )->priority      = 90;
-		$wp_customize->get_control( 'background_image' )->description   = esc_html__( 'Background is visible under transparent grid-parts, or if the grid is not set to 100% width.', 'gridd' );
+		$wp_customize->get_control( 'background_image' )->description   = Customizer::get_control_description(
+			[
+				esc_html__( 'Background will only be seen when grid-parts have a transparent background color, or if the site grid is not set to 100% width.', 'gridd' ),
+			]
+		);
 		$wp_customize->get_control( 'background_preset' )->section      = 'gridd_grid';
 		$wp_customize->get_control( 'background_preset' )->priority     = 90;
 		$wp_customize->get_control( 'background_position' )->section    = 'gridd_grid';
@@ -49,15 +57,11 @@ add_action(
 Customizer::add_section(
 	'gridd_grid',
 	[
-		'title'       => esc_html__( 'Grid', 'gridd' ),
+		'title'       => esc_html__( 'Site Grid', 'gridd' ),
 		'priority'    => 22,
 		'description' => Customizer::section_description(
 			'gridd_grid',
 			[
-				'plus' => [
-					esc_html__( 'Separate grid for mobile devices', 'gridd' ),
-					esc_html__( 'Grid-parts can overlap', 'gridd' ),
-				],
 				'docs' => 'https://wplemon.github.io/gridd/customizer-sections/grid.html',
 				'tip'  => sprintf(
 					/* translators: Link to the blocks-management screen. */
@@ -76,8 +80,12 @@ Customizer::add_field(
 		'section'           => 'gridd_grid',
 		'type'              => 'gridd_grid',
 		'grid-part'         => false,
-		'label'             => esc_html__( 'Grid Settings', 'gridd' ),
-		'description'       => __( 'Edit settings for the grid. For more information and documentation on how the grid works, please read <a href="https://wplemon.github.io/gridd/the-grid-control.html" target="_blank">this article</a>.', 'gridd' ),
+		'label'             => esc_html__( 'Global Site Grid', 'gridd' ),
+		'description'       => Customizer::get_control_description(
+			[
+				'details' => __( 'The settings in this control apply to all your pages. You can add columns and rows, define their sizes, and also add or remove grid-parts on your site. For more information and documentation on how the grid works, please read <a href="https://wplemon.github.io/gridd/the-grid-control.html" target="_blank">this article</a>.', 'gridd' ),
+			]
+		),
 		'default'           => Grid::get_grid_default_value(),
 		'priority'          => 10,
 		'sanitize_callback' => [ $sanitization, 'grid' ],
@@ -91,23 +99,13 @@ Customizer::add_field(
 Customizer::add_field(
 	[
 		'type'        => 'dimension',
-		'settings'    => 'gridd_mobile_breakpoint',
-		'label'       => esc_html__( 'Mobile Breakpoint', 'gridd' ),
-		'description' => esc_html__( 'The breakpoint that separates mobile views from desktop views. Use a valid CSS unit.', 'gridd' ),
-		'tooltip'     => __( 'Screen sizes below the breakpoint defined will get a stacked view instead of grid.', 'gridd' ),
-		'section'     => 'gridd_grid',
-		'priority'    => 20,
-		'default'     => '992px',
-	]
-);
-
-Customizer::add_field(
-	[
-		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_gap',
 		'label'       => esc_html__( 'Grid Container Gap', 'gridd' ),
-		'description' => esc_html__( 'Adds a gap between your grid-parts, both horizontally and vertically.', 'gridd' ),
-		'tooltip'     => __( 'For more information please read <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
+		'description' => Customizer::get_control_description(
+			[
+				'details' => __( 'Adds a gap between your grid-parts, both horizontally and vertically. For more information please read <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
+			]
+		),
 		'section'     => 'gridd_grid',
 		'default'     => '0',
 		'transport'   => 'auto',
@@ -125,34 +123,13 @@ Customizer::add_field(
 	[
 		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_max_width',
-		'label'       => esc_html__( 'Grid Container max-width', 'gridd' ),
-		'description' => esc_html__( 'The maximum width for this grid.', 'gridd' ),
-		'tooltip'     => esc_html__( 'By setting the max-width to something other than 100% you can build a boxed layout.', 'gridd' ),
+		'label'       => esc_html__( 'Site Maximum Width', 'gridd' ),
+		'description' => esc_html__( 'Set the value to something other than 100% to use a boxed layout.', 'gridd' ),
 		'section'     => 'gridd_grid',
 		'default'     => '',
 		'priority'    => 40,
 		'transport'   => 'postMessage',
 		'css_vars'    => '--gridd-grid-max-width',
-	]
-);
-
-$parts          = Grid_Parts::get_instance()->get_parts();
-$sortable_parts = [];
-foreach ( $parts as $part ) {
-	$sortable_parts[ $part['id'] ] = $part['label'];
-}
-
-Customizer::add_field(
-	[
-		'type'        => 'sortable',
-		'settings'    => 'gridd_grid_load_order',
-		'label'       => esc_html__( 'Grid Parts Load Order', 'gridd' ),
-		'description' => esc_html__( 'Changes the order in which parts get loaded. This only affects the mobile views and SEO.', 'gridd' ),
-		'tooltip'     => esc_html__( 'Your content should always be near the top. You can place secondary items lower in the load order', 'gridd' ),
-		'section'     => 'gridd_grid',
-		'default'     => array_keys( $sortable_parts ),
-		'priority'    => 900,
-		'choices'     => $sortable_parts,
 	]
 );
 

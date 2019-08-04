@@ -12,6 +12,16 @@ use Gridd\Theme;
 // Add styles.
 Style::get_instance( 'grid-part/footer/copyright' )
 	->add_file( get_theme_file_path( 'grid-parts/styles/footer/styles-copyright.min.css' ) )
+	->add_var(
+		[
+			'--gridd-footer-padding'               => get_theme_mod( 'gridd_grid_footer_padding', '1em' ),
+			'--gridd-footer-copyright-bg'          => get_theme_mod( 'gridd_grid_footer_copyright_bg_color', '#fff' ),
+			'--gridd-footer-copyright-color'       => get_theme_mod( 'gridd_grid_footer_copyright_color', '#000' ),
+			'--gridd-footer-copyright-font-size'   => get_theme_mod( 'gridd_grid_footer_copyright_text_font_size', '1em' ),
+			'--gridd-footer-copyright-text-align'  => get_theme_mod( 'gridd_grid_footer_copyright_text_align', 'left' ),
+			'--gridd-footer-copyright-links-color' => get_theme_mod( 'gridd_grid_footer_copyright_links_color', '#0f5e97' ),
+		]
+	)
 	->the_css( 'gridd-inline-css-footer-copyright' );
 ?>
 

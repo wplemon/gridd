@@ -94,6 +94,7 @@ class Style {
 	 */
 	public function add_vars( $vars ) {
 		$this->vars = apply_filters( 'gridd_style_vars', array_merge( $this->vars, $vars ), $this->context );
+		return $this;
 	}
 
 	/**
@@ -144,6 +145,44 @@ class Style {
 	}
 
 	/**
+	 * Replace a CSS variable in the CSS.
+	 *
+	 * @access public
+	 * @since 1.0
+	 * @param string|array $var_name The var-name.
+	 * @param string|array $value    The value.
+	 * @return void
+	 */
+	public function replace_css_var( $var_name, $value ) {
+		$this->replace( "var($var_name)", $value );
+
+		// Check if we have var(--foo,fallback) and replace matches.
+		$match_counter = preg_match_all( "/var\($var_name.*\)/U", $this->css, $matches );
+		if ( $match_counter ) {
+			
+			// Make sure to only go through different fallback values.
+			$matches = array_unique( $matches[0] );
+
+			// Loop through all different fallback value instances.
+			foreach ( $matches as $match ) {
+				$match_replace = $value;
+				
+				// When fallbacks are vars themselves we need to add a closing ) because of the regex.
+				$match .= ( 1 < substr_count( $match, 'var(' ) ) ? ')' : '';
+
+				// If value is empty, extract the fallback.
+				if ( '' === $value ) {
+					// Remove the last trailing ) that is there because of the regex.
+					$fallback      = explode( "var($var_name,", $match );
+					$match_replace = substr( $fallback[1], 0, -1 );
+				}
+
+				$this->css = str_replace( $match, $match_replace, $this->css );
+			}
+		}
+	}
+
+	/**
 	 * Gets the CSS, replacing all vars.
 	 *
 	 * @access public
@@ -157,12 +196,12 @@ class Style {
 			return $this->css;
 		}
 
-		/**
-		 * WIP: Replace css-vars.
-		foreach ( $this->vars as $name => $value ) {
-			$this->replace( "var($name)", $value );
+		if ( apply_filters( 'gridd_replace_css_vars', false ) ) {
+			foreach ( $this->vars as $name => $value ) {
+				$this->replace_css_var( $name, $value );
+			}
 		}
-		*/
+
 		return apply_filters( 'gridd_style_css', $this->css, $this->context );
 	}
 

@@ -58,10 +58,30 @@ if ( false !== strpos( $responsive_mode, 'mobile-hidden' ) ) {
 // Replace ID with $id.
 $style->replace( 'ID', $id );
 
+// Add vars to replace.
+$style->add_vars(
+	[
+		"--gridd-nav-$id-bg"                  => get_theme_mod( "gridd_grid_nav_{$id}_bg_color", '#ffffff' ),
+		"--gridd-nav-$id-font-size"           => get_theme_mod( "gridd_grid_nav_{$id}_font_size", 1 ),
+		"--gridd-nav-$id-padding"             => get_theme_mod( "gridd_grid_nav_{$id}_padding", '1em' ),
+		"--gridd-nav-$id-justify"             => get_theme_mod( "gridd_grid_nav_{$id}_justify_content", 'center' ),
+		"--gridd-nav-$id-accent"              => get_theme_mod( "gridd_grid_nav_{$id}_accent_color", '#0f5e97' ),
+		"--gridd-nav-$id-color"               => get_theme_mod( "gridd_grid_nav_{$id}_items_color", '#000000' ),
+		"--gridd-nav-$id-collapsed-icon-size" => get_theme_mod( "gridd_grid_nav_{$id}_collapse_icon_size", 1 ),
+		"--gridd-nav-$id-submenu-bg"          => get_theme_mod( "gridd_grid_nav_{$id}_bg_color", '#ffffff' ),
+	]
+);
+
 if ( class_exists( 'ariColor' ) ) {
 	$color = \ariColor::newColor( get_theme_mod( "gridd_grid_nav_{$id}_bg_color", '#ffffff' ) )->getNew( 'alpha', 1 )->toCSS( 'hex' );
 	if ( ! is_customize_preview() ) {
 		$style->add_string( ":root{--gridd-nav-$id-submenu-bg:$color;}" );
+
+		$style->add_vars(
+			[
+				"--gridd-nav-$id-submenu-bg" => $color,
+			]
+		);
 	}
 }
 

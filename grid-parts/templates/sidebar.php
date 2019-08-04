@@ -17,6 +17,13 @@ if ( ! Sidebar::$global_styles_added ) {
 $style->add_file( get_theme_file_path( 'grid-parts/styles/sidebar/styles.min.css' ) );
 $style->replace( 'ID', absint( $sidebar_id ) );
 
+$style->add_vars(
+	[
+		"--gridd-sidebar-{$sidebar_id}-bg"          => get_theme_mod( "gridd_grid_sidebar_{$sidebar_id}_background_color", '#ffffff' ),
+		"--gridd-sidebar-{$sidebar_id}-links-color" => get_theme_mod( "gridd_grid_sidebar_{$sidebar_id}_links_color", '#0f5e97' ),
+		"--gridd-sidebar-{$sidebar_id}-color"       => get_theme_mod( "gridd_grid_sidebar_{$sidebar_id}_color", '#000000' ),
+	]
+);
 $attrs = [
 	'class' => 'gridd-tp gridd-tp-sidebar gridd-tp-sidebar_' . absint( $sidebar_id ),
 	'role'  => 'complementary',

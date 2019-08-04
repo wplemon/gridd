@@ -21,12 +21,6 @@ Customizer::add_section(
 		'description' => Customizer::section_description(
 			'gridd_typography',
 			[
-				'plus' => [
-					esc_html__( 'Fixed mode for featured images with custom height', 'gridd' ),
-					esc_html__( 'Anchor links in headers ', 'gridd' ),
-					esc_html__( 'Scroll to top button', 'gridd' ),
-					esc_html__( 'Enable more custom widget-areas and customize their titles for easier identification', 'gridd' ),
-				],
 				'docs' => 'https://wplemon.github.io/gridd/customizer-sections/theme-features.html',
 			]
 		),
@@ -36,10 +30,9 @@ Customizer::add_section(
 
 Customizer::add_field(
 	[
-		'type'              => 'radio',
+		'type'              => 'select',
 		'settings'          => 'gridd_featured_image_mode_archive',
 		'label'             => esc_attr__( 'Featured Images Mode in Archives', 'gridd' ),
-		'description'       => esc_html__( 'Select how featured images will be displayed in post-archives.', 'gridd' ),
 		'section'           => 'gridd_features',
 		'default'           => 'alignwide',
 		'transport'         => 'refresh',
@@ -49,9 +42,12 @@ Customizer::add_field(
 			'gridd-contain' => esc_attr__( 'Normal', 'gridd' ),
 			'alignwide'     => esc_attr__( 'Wide', 'gridd' ),
 		],
+		/**
+		 * WIP
 		'active_callback'   => function() {
 			return ( is_archive() || is_home() );
 		},
+		*/
 		'sanitize_callback' => function( $value ) {
 			return ( 'hidden' === $value || 'gridd-contain' === $value || 'alignwide' === $value ) ? $value : 'alignwide';
 		},
@@ -60,10 +56,9 @@ Customizer::add_field(
 
 Customizer::add_field(
 	[
-		'type'              => 'radio',
+		'type'              => 'select',
 		'settings'          => 'gridd_featured_image_mode_singular',
 		'label'             => esc_attr__( 'Featured Images Mode in Single Posts', 'gridd' ),
-		'description'       => esc_html__( 'Select how featured images will be displayed in single post-types (Applies to all post-types).', 'gridd' ),
 		'section'           => 'gridd_features',
 		'default'           => 'overlay',
 		'transport'         => 'refresh',
@@ -75,9 +70,12 @@ Customizer::add_field(
 			'alignfull'     => esc_attr__( 'Full Width', 'gridd' ),
 			'overlay'       => esc_attr__( 'Overlay', 'gridd' ),
 		],
+		/**
+		 * WIP
 		'active_callback'   => function() {
 			return is_singular();
 		},
+		*/
 		'sanitize_callback' => function( $value ) {
 			return ( 'hidden' === $value || 'gridd-contain' === $value || 'alignwide' === $value || 'alignfull' === $value || 'overlay' === $value ) ? $value : 'overlay';
 		},
@@ -88,13 +86,14 @@ Customizer::add_field(
 	[
 		'type'            => 'checkbox',
 		'settings'        => 'gridd_featured_image_overlay_color_from_image',
-		'label'           => esc_attr__( 'Use Image Colors', 'gridd' ),
+		'label'           => esc_html__( 'Use Image Colors', 'gridd' ),
+		'description'     => esc_html__( 'Applies to single posts', 'gridd' ),
 		'section'         => 'gridd_features',
 		'default'         => true,
 		'transport'       => 'refresh',
 		'priority'        => 20,
 		'active_callback' => function() {
-			return is_singular() && 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' ) && function_exists( 'jetpack_require_lib' );
+			return 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' ) && function_exists( 'jetpack_require_lib' );
 		},
 	]
 );
@@ -103,7 +102,8 @@ Customizer::add_field(
 	[
 		'type'            => 'dimension',
 		'settings'        => 'gridd_featured_image_overlay_min_height',
-		'label'           => esc_attr__( 'Overlay mode minimum height', 'gridd' ),
+		'label'           => esc_attr__( 'Featured image minimum height', 'gridd' ),
+		'description'     => esc_html__( 'Applies to single posts', 'gridd' ),
 		'section'         => 'gridd_features',
 		'default'         => 'overlay',
 		'transport'       => 'postMessage',
@@ -111,7 +111,7 @@ Customizer::add_field(
 		'default'         => '87vh',
 		'css_vars'        => '--gridd-image-header-min-height',
 		'active_callback' => function() {
-			return is_singular() && 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' );
+			return 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' );
 		},
 	]
 );
@@ -121,6 +121,7 @@ Customizer::add_field(
 		'type'            => 'color',
 		'settings'        => 'gridd_featured_image_overlay_background_color',
 		'label'           => esc_attr__( 'Overlay Color', 'gridd' ),
+		'description'     => esc_html__( 'Applies to single posts', 'gridd' ),
 		'section'         => 'gridd_features',
 		'default'         => 'rgba(42,84,126,0.8)',
 		'css_vars'        => '--gridd-image-header-overlay-color',
@@ -130,7 +131,7 @@ Customizer::add_field(
 			'alpha' => true,
 		],
 		'active_callback' => function() {
-			return is_singular() && 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' ) && ( ! get_theme_mod( 'gridd_featured_image_overlay_color_from_image', true ) || ! function_exists( 'jetpack_require_lib' ) );
+			return 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' ) && ( ! get_theme_mod( 'gridd_featured_image_overlay_color_from_image', true ) || ! function_exists( 'jetpack_require_lib' ) );
 		},
 	]
 );
@@ -139,8 +140,8 @@ Customizer::add_field(
 	[
 		'type'              => 'gridd-wcag-tc',
 		'settings'          => 'gridd_featured_image_overlay_text_color',
-		'label'             => esc_html__( 'Text Color', 'gridd' ),
-		'description'       => esc_html__( 'Select the color used for your text. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
+		'label'             => esc_html__( 'Feature Image Overlay Text Color', 'gridd' ),
+		'description'       => esc_html__( 'Applies to single posts', 'gridd' ),
 		'section'           => 'gridd_features',
 		'priority'          => 20,
 		'default'           => '#fff',
@@ -151,7 +152,7 @@ Customizer::add_field(
 		],
 		'sanitize_callback' => [ $sanitization, 'color_hex' ],
 		'active_callback'   => function() {
-			return is_singular() && 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' ) && ( ! get_theme_mod( 'gridd_featured_image_overlay_color_from_image', true ) || ! function_exists( 'jetpack_require_lib' ) );
+			return 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' ) && ( ! get_theme_mod( 'gridd_featured_image_overlay_color_from_image', true ) || ! function_exists( 'jetpack_require_lib' ) );
 		},
 	]
 );
@@ -236,7 +237,15 @@ foreach ( $post_types as $post_type_id => $post_type_obj ) {
 				],
 			],
 			'active_callback' => function() use ( $post_type_id ) {
-				return is_post_type_archive( $post_type_id ) || is_home() || is_category() || is_tag();
+				if ( is_post_type_archive( $post_type_id ) ) {
+					return true;
+				}
+				if ( 'post' === $post_type_id ) {
+					if ( is_home() || is_category() || is_tag() ) {
+						return true;
+					}
+				}
+				return false;
 			},
 		]
 	);
@@ -247,7 +256,7 @@ Customizer::add_field(
 		'type'        => 'textarea',
 		'settings'    => 'gridd_excerpt_more',
 		'label'       => esc_attr__( 'Read More link', 'gridd' ),
-		'description' => esc_html__( 'Available placeholder: %s for the post-title.', 'gridd' ), // phpcs:ignore WordPress.WP.I18n.MissingTranslatorsComment
+		'description' => esc_html__( 'If you want to include the post title in your read-more link, you can use "%s" (without the quotes) and it will be replaced with the post\'s title.', 'gridd' ), // phpcs:ignore WordPress.WP.I18n.MissingTranslatorsComment
 		'section'     => 'gridd_features',
 		'priority'    => 60,
 		/* translators: %s: Name of current post. Only visible to screen readers */
@@ -264,7 +273,12 @@ add_action(
 				'type'        => 'multicheck',
 				'settings'    => 'gridd_rest_api_partials',
 				'label'       => esc_attr__( 'Deferred Parts', 'gridd' ),
-				'description' => esc_html__( 'Select the parts that should be loaded after the initial request. Non-essential parts can be added here.', 'gridd' ),
+				'description' => Customizer::get_control_description(
+					[
+						'short'   => '',
+						'details' => esc_html__( 'Select the parts that should be loaded after the initial request. Non-essential parts can be added here. This can speed-up the initial page-load and users on slower connections can start consuming your content faster.', 'gridd' ),
+					]
+				),
 				'section'     => 'gridd_features',
 				'priority'    => 70,
 				'multiple'    => 999,

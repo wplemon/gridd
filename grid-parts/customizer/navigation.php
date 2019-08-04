@@ -83,10 +83,14 @@ function gridd_nav_customizer_options( $id ) {
 			'type'              => 'radio',
 			'settings'          => "gridd_grid_nav_{$id}_responsive_behavior",
 			'label'             => esc_html__( 'Responsive Behavior', 'gridd' ),
-			'description'       => sprintf(
-				/* translators: The link properies. */
-				__( 'Select how this navigation should behave in smaller screens. We recommend you hide navigations on mobile and instead use the <a%s>separate mobile-navigation menu</a>.', 'gridd' ),
-				' href="#" class="button-gridd-focus global-focus" data-context="section" data-focus="gridd_grid_part_details_nav-handheld"'
+			'description'       => Customizer::get_control_description(
+				[
+					'details' => sprintf(
+						/* translators: The link properies. */
+						__( 'Select how this navigation should behave in smaller screens. We recommend you hide navigations on mobile and instead use the <a %s>separate mobile-navigation menu</a>.', 'gridd' ),
+						'href="#" class="button-gridd-focus global-focus" data-context="section" data-focus="gridd_mobile"'
+					),
+				]
 			),
 			'section'           => "gridd_grid_part_details_nav_$id",
 			'default'           => 'desktop-normal mobile-hidden',
@@ -110,7 +114,12 @@ function gridd_nav_customizer_options( $id ) {
 			'type'        => 'dimension',
 			'settings'    => "gridd_grid_nav_{$id}_padding",
 			'label'       => esc_html__( 'Padding', 'gridd' ),
-			'description' => __( 'Inner padding for this grid-part. Use any valid CSS value. For details on how padding works, please refer to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
+			'description' => Customizer::get_control_description(
+				[
+					'short'   => '',
+					'details' => esc_html__( 'Use any valid CSS value. For details on how padding works, please refer to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
+				]
+			),
 			'section'     => "gridd_grid_part_details_nav_$id",
 			'default'     => '1em',
 			'transport'   => 'postMessage',
@@ -120,15 +129,14 @@ function gridd_nav_customizer_options( $id ) {
 
 	Customizer::add_field(
 		[
-			'type'        => 'color',
-			'label'       => esc_html__( 'Background Color', 'gridd' ),
-			'description' => esc_html__( 'Controls the overall background color for this grid-part.', 'gridd' ),
-			'settings'    => "gridd_grid_nav_{$id}_bg_color",
-			'section'     => "gridd_grid_part_details_nav_$id",
-			'default'     => '#ffffff',
-			'transport'   => 'postMessage',
-			'css_vars'    => "--gridd-nav-$id-bg",
-			'choices'     => [
+			'type'      => 'color',
+			'label'     => esc_html__( 'Background Color', 'gridd' ),
+			'settings'  => "gridd_grid_nav_{$id}_bg_color",
+			'section'   => "gridd_grid_part_details_nav_$id",
+			'default'   => '#ffffff',
+			'transport' => 'postMessage',
+			'css_vars'  => "--gridd-nav-$id-bg",
+			'choices'   => [
 				'alpha' => true,
 			],
 		]
@@ -138,7 +146,6 @@ function gridd_nav_customizer_options( $id ) {
 		[
 			'type'              => 'gridd-wcag-tc',
 			'label'             => esc_html__( 'Items Color', 'gridd' ),
-			'description'       => esc_html__( 'Select the color used for your menu items. Please choose a color with sufficient contrast with the selected background-color.', 'gridd' ),
 			'settings'          => "gridd_grid_nav_{$id}_items_color",
 			'section'           => "gridd_grid_part_details_nav_$id",
 			'choices'           => [
@@ -192,8 +199,12 @@ function gridd_nav_customizer_options( $id ) {
 			'type'              => 'radio-buttonset',
 			'settings'          => "gridd_grid_nav_{$id}_justify_content",
 			'label'             => esc_html__( 'Justify Items', 'gridd' ),
-			'description'       => esc_html__( 'Choose how menu items will be spread horizontally inside the menu container.', 'gridd' ),
-			'tooltip'           => esc_html__( 'This helps distribute extra free space left over when all the items on a line have reached their maximum size. It also exerts some control over the alignment of items when they overflow the line.', 'gridd' ),
+			'description'       => Customizer::get_control_description(
+				[
+					'short'   => '',
+					'details' => esc_html__( 'Choose how menu items will be spread horizontally inside the menu container. This helps distribute extra free space left over when all the items on a line have reached their maximum size. It also exerts some control over the alignment of items when they overflow the line.', 'gridd' ),
+				]
+			),
 			'section'           => "gridd_grid_part_details_nav_$id",
 			'default'           => 'center',
 			'transport'         => 'postMessage',
@@ -256,7 +267,6 @@ function gridd_nav_customizer_options( $id ) {
 			'type'              => 'radio-buttonset',
 			'settings'          => "gridd_grid_nav_{$id}_expand_icon",
 			'label'             => esc_html__( 'Expand Icon', 'gridd' ),
-			'description'       => esc_html__( 'Select the icon that should be used to expand the navigation.', 'gridd' ),
 			'section'           => "gridd_grid_part_details_nav_$id",
 			'default'           => 'menu-1',
 			'transport'         => 'refresh',
@@ -284,7 +294,6 @@ function gridd_nav_customizer_options( $id ) {
 			'type'            => 'checkbox',
 			'settings'        => "gridd_grid_nav_{$id}_expand_icon_boxed",
 			'label'           => esc_html__( 'Boxed Expand Icon', 'gridd' ),
-			'description'     => esc_html__( 'Enable this option if you want to "box" the expand icon.', 'gridd' ),
 			'section'         => "gridd_grid_part_details_nav_$id",
 			'default'         => false,
 			'transport'       => 'refresh',
@@ -308,7 +317,6 @@ function gridd_nav_customizer_options( $id ) {
 			'type'              => 'select',
 			'settings'          => "gridd_grid_nav_{$id}_expand_icon_position",
 			'label'             => esc_html__( 'Expand Icon Position', 'gridd' ),
-			'description'       => esc_html__( 'Changes the position of the collapsed-menu icon inside the area.', 'gridd' ),
 			'section'           => "gridd_grid_part_details_nav_$id",
 			'default'           => 'center-right',
 			'transport'         => 'refresh',

@@ -18,9 +18,6 @@ Customizer::add_section(
 		'description' => Customizer::section_description(
 			'gridd_grid_part_details_footer',
 			[
-				'plus' => [
-					esc_html__( 'Separate grid for mobile devices', 'gridd' ),
-				],
 				'docs' => 'https://wplemon.github.io/gridd/grid-parts/footer.html',
 			]
 		),
@@ -35,8 +32,13 @@ Customizer::add_field(
 		'section'           => 'gridd_grid_part_details_footer',
 		'type'              => 'gridd_grid',
 		'grid-part'         => 'footer',
-		'label'             => esc_html__( 'Grid Settings', 'gridd' ),
-		'description'       => __( 'Edit settings for your footer grid. For more information and documentation on how the grid works, please read <a href="https://wplemon.github.io/gridd/the-grid-control.html" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
+		'label'             => esc_html__( 'Footer Grid', 'gridd' ),
+		'description'       => Customizer::get_control_description(
+			[
+				'short'   => '',
+				'details' => __( 'You can add columns and rows, define their sizes, and also add or remove grid-parts on your site. For more information and documentation on how the grid works, please read <a href="https://wplemon.github.io/gridd/the-grid-control.html" target="_blank">this article</a>.', 'gridd' ),
+			]
+		),
 		'default'           => Footer::get_grid_defaults(),
 		'choices'           => [
 			'parts' => Footer::get_footer_grid_parts(),
@@ -47,15 +49,13 @@ Customizer::add_field(
 
 Customizer::add_field(
 	[
-		'type'        => 'dimension',
-		'settings'    => 'gridd_grid_footer_max_width',
-		'label'       => esc_html__( 'Max-Width', 'gridd' ),
-		'description' => esc_html__( 'The maximum width that the contents of this grid-part can use.', 'gridd' ),
-		'tooltip'     => __( 'Use any valid CSS value like <code>50em</code>, <code>800px</code> or <code>100%</code>.', 'gridd' ),
-		'section'     => 'gridd_grid_part_details_footer',
-		'default'     => '',
-		'transport'   => 'postMessage',
-		'css_vars'    => '--gridd-footer-max-width',
+		'type'      => 'dimension',
+		'settings'  => 'gridd_grid_footer_max_width',
+		'label'     => esc_html__( 'Footer Maximum Width', 'gridd' ),
+		'section'   => 'gridd_grid_part_details_footer',
+		'default'   => '',
+		'transport' => 'postMessage',
+		'css_vars'  => '--gridd-footer-max-width',
 	]
 );
 
@@ -64,8 +64,11 @@ Customizer::add_field(
 		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_footer_grid_gap',
 		'label'       => esc_html__( 'Grid Gap', 'gridd' ),
-		'description' => esc_html__( 'Adds a gap between your grid-parts, both horizontally and vertically.', 'gridd' ),
-		'tooltip'     => __( 'For more information please read <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
+		'description' => Customizer::get_control_description(
+			[
+				'details' => __( 'Adds a gap between your grid-parts, both horizontally and vertically. For more information please read <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
+			]
+		),
 		'section'     => 'gridd_grid_part_details_footer',
 		'default'     => '0',
 		'css_vars'    => '--gridd-footer-grid-gap',
@@ -78,8 +81,11 @@ Customizer::add_field(
 		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_footer_padding',
 		'label'       => esc_html__( 'Padding', 'gridd' ),
-		'description' => esc_html__( 'Inner padding for all parts in the footer.', 'gridd' ),
-		'tooltip'     => __( 'For details on how padding works, please refer to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
+		'description' => Customizer::get_control_description(
+			[
+				'details' => esc_html__( 'Inner padding for all parts in the footer.', 'gridd' ) . ' ' . __( 'For details on how padding works, please refer to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
+			]
+		),
 		'section'     => 'gridd_grid_part_details_footer',
 		'default'     => '1em',
 		'transport'   => 'postMessage',
@@ -89,17 +95,32 @@ Customizer::add_field(
 
 Customizer::add_field(
 	[
-		'type'      => 'color',
-		'settings'  => 'gridd_grid_footer_background_color',
-		'label'     => esc_html__( 'Background Color', 'gridd' ),
-		'tooltip'   => esc_html__( 'Individual grid-parts can override this by setting their own background color for their area. If you are using a grid-gap the color defined here will be visible between grid-parts.', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_footer',
-		'default'   => '#ffffff',
-		'transport' => 'postMessage',
-		'css_vars'  => '--gridd-footer-bg',
-		'choices'   => [
+		'type'        => 'color',
+		'settings'    => 'gridd_grid_footer_background_color',
+		'label'       => esc_html__( 'Background Color', 'gridd' ),
+		'description' => Customizer::get_control_description(
+			[
+				'details' => esc_html__( 'Individual grid-parts can override this by setting their own background color for their area. If you are using a grid-gap the color defined here will be visible between grid-parts. If the color you have selected here is not visible, individual grid-parts may be using a solid background color.', 'gridd' ),
+			]
+		),
+		'section'     => 'gridd_grid_part_details_footer',
+		'default'     => '#ffffff',
+		'transport'   => 'postMessage',
+		'css_vars'    => '--gridd-footer-bg',
+		'choices'     => [
 			'alpha' => true,
 		],
+	]
+);
+
+Customizer::add_field(
+	[
+		'type'        => 'checkbox',
+		'settings'    => 'gridd_grid_part_details_footer_parts_background_override',
+		'label'       => esc_html__( 'Override Footer Parts Background', 'gridd' ),
+		'description' => esc_html__( 'Enable this option to force-override the background color of all grid-parts in your footer.', 'gridd' ),
+		'section'     => 'gridd_grid_part_details_footer',
+		'default'     => false,
 	]
 );
 
@@ -108,7 +129,6 @@ Customizer::add_field(
 		'type'      => 'slider',
 		'settings'  => 'gridd_grid_footer_border_top_width',
 		'label'     => esc_html__( 'Border-Top Width', 'gridd' ),
-		'tooltip'   => esc_html__( 'You can make the top border of the footer ticker or thinner by adjusting this value. Set to 0 to disable the top border.', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_footer',
 		'default'   => 1,
 		'transport' => 'postMessage',
