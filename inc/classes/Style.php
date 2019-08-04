@@ -94,6 +94,7 @@ class Style {
 	 */
 	public function add_vars( $vars ) {
 		$this->vars = apply_filters( 'gridd_style_vars', array_merge( $this->vars, $vars ), $this->context );
+		return $this;
 	}
 
 	/**
