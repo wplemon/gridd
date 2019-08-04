@@ -179,6 +179,7 @@ class Style {
 				$this->css = str_replace( $match, $match_replace, $this->css );
 			}
 		}
+		return $this;
 	}
 
 	/**
