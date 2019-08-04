@@ -1,3 +1,7 @@
+## 1.1.15
+
+* Fix: Typo.
+
 ## 1.1.14
 
 * New: Add option to override grid-parts background in the header.
