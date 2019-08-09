@@ -1,13 +1,21 @@
 .admin-bar .gridd-tp.gridd-sticky {
-  top: 32px; }
-  @media screen and (max-width: 782px) {
-    .admin-bar .gridd-tp.gridd-sticky {
-      top: 46px; } }
-  @media screen and (max-width: 600px) {
-    .admin-bar .gridd-tp.gridd-sticky {
-      top: 0; } }
+  top: 32px;
+}
+@media screen and (max-width: 782px) {
+  .admin-bar .gridd-tp.gridd-sticky {
+    top: 46px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .admin-bar .gridd-tp.gridd-sticky {
+    top: 0;
+  }
+}
 .admin-bar #gridd-handheld-search-wrapper,
 .admin-bar #gridd-handheld-widget-area-wrapper,
 .admin-bar #gridd-handheld-menu-wrapper,
 .admin-bar #gridd-handheld-cart-wrapper {
-  max-height: calc(100vh - 86px); }
+  max-height: calc(100vh - 86px);
+}
+
+/*# sourceMappingURL=adminbar.css.map */

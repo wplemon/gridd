@@ -72,11 +72,16 @@
 .wp-block-group.has-background {
   padding: 20px 30px;
   margin-top: 0;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+}
 
 .wp-block-group .wp-block-columns {
-  margin-bottom: 0; }
+  margin-bottom: 0;
+}
 
 .wp-block-group__inner-container {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+}
+
+/*# sourceMappingURL=group.css.map */

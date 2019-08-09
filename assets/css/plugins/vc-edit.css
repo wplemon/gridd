@@ -3,22 +3,27 @@
 .site-main .entry-content.vc-main-sortable-container > #vc_no-content-helper {
   max-width: 100%;
   padding-left: 0;
-  padding-right: 0; }
-  .site-main .entry-content.vc-main-sortable-container > .vc_element > .vc_row,
-  .site-main .entry-content.vc-main-sortable-container > .vc_welcome > .vc_row,
-  .site-main .entry-content.vc-main-sortable-container > #vc_no-content-helper > .vc_row {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: var(--gridd-content-max-width-calculated, 700px); }
+  padding-right: 0;
+}
+.site-main .entry-content.vc-main-sortable-container > .vc_element > .vc_row,
+.site-main .entry-content.vc-main-sortable-container > .vc_welcome > .vc_row,
+.site-main .entry-content.vc-main-sortable-container > #vc_no-content-helper > .vc_row {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--gridd-content-max-width-calculated, 700px);
+}
 
 .compose-mode .vc_controls > .vc_controls-cc {
-  background-color: #0a5; }
+  background-color: #0a5;
+}
 .compose-mode .vc_element-name .vc_btn-content {
-  font-size: 13px !important; }
+  font-size: 13px !important;
+}
 .compose-mode .vc_control-btn .vc_btn-content:hover,
 .compose-mode .vc_child-element-move .vc_btn-content:hover,
 .compose-mode .vc_element-move .vc_btn-content:hover {
-  background-color: #00773c; }
+  background-color: #00773c;
+}
 .compose-mode .vc_controls-column > div .vc_control-btn .vc_btn-content,
 .compose-mode .vc_controls-column > div .vc_btn-content,
 .compose-mode .vc_controls-container > div .vc_control-btn .vc_btn-content,
@@ -26,34 +31,44 @@
 .compose-mode .vc_controls-row > div .vc_control-btn .vc_btn-content,
 .compose-mode .vc_controls-row > div .vc_btn-content {
   background-color: #e65722;
-  border-color: #e65722; }
-  .compose-mode .vc_controls-column > div .vc_control-btn .vc_btn-content:hover,
-  .compose-mode .vc_controls-column > div .vc_btn-content:hover,
-  .compose-mode .vc_controls-container > div .vc_control-btn .vc_btn-content:hover,
-  .compose-mode .vc_controls-container > div .vc_btn-content:hover,
-  .compose-mode .vc_controls-row > div .vc_control-btn .vc_btn-content:hover,
-  .compose-mode .vc_controls-row > div .vc_btn-content:hover {
-    background-color: #bf4416;
-    border-color: #bf4416; }
+  border-color: #e65722;
+}
+.compose-mode .vc_controls-column > div .vc_control-btn .vc_btn-content:hover,
+.compose-mode .vc_controls-column > div .vc_btn-content:hover,
+.compose-mode .vc_controls-container > div .vc_control-btn .vc_btn-content:hover,
+.compose-mode .vc_controls-container > div .vc_btn-content:hover,
+.compose-mode .vc_controls-row > div .vc_control-btn .vc_btn-content:hover,
+.compose-mode .vc_controls-row > div .vc_btn-content:hover {
+  background-color: #bf4416;
+  border-color: #bf4416;
+}
 .compose-mode .vc_controls-column > div > .vc_parent .vc_control-btn .vc_btn-content,
 .compose-mode .vc_controls-container > div > .vc_parent .vc_control-btn .vc_btn-content,
 .compose-mode .vc_controls-row > div > .vc_parent .vc_control-btn .vc_btn-content {
   background-color: #0f4880;
-  border-color: #0f4880; }
-  .compose-mode .vc_controls-column > div > .vc_parent .vc_control-btn .vc_btn-content:hover,
-  .compose-mode .vc_controls-container > div > .vc_parent .vc_control-btn .vc_btn-content:hover,
-  .compose-mode .vc_controls-row > div > .vc_parent .vc_control-btn .vc_btn-content:hover {
-    background-color: #0a2e52;
-    border-color: #0a2e52; }
+  border-color: #0f4880;
+}
+.compose-mode .vc_controls-column > div > .vc_parent .vc_control-btn .vc_btn-content:hover,
+.compose-mode .vc_controls-container > div > .vc_parent .vc_control-btn .vc_btn-content:hover,
+.compose-mode .vc_controls-row > div > .vc_parent .vc_control-btn .vc_btn-content:hover {
+  background-color: #0a2e52;
+  border-color: #0a2e52;
+}
 .compose-mode .vc_control-btn-append:before {
-  border-bottom-color: #e65722; }
+  border-bottom-color: #e65722;
+}
 
 .vc_add-element-not-empty-button {
-  background-color: #b381b3; }
-  .vc_add-element-not-empty-button:hover {
-    background-color: #a061a0; }
+  background-color: #b381b3;
+}
+.vc_add-element-not-empty-button:hover {
+  background-color: #a061a0;
+}
 
 .vc_btn-primary,
 a.vc_btn-primary,
 button.vc_btn-primary {
-  background-color: #1460aa; }
+  background-color: #1460aa;
+}
+
+/*# sourceMappingURL=vc-edit.css.map */

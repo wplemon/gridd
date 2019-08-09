@@ -71,9 +71,13 @@
  */
 .wp-block-audio audio {
   width: 100%;
-  min-width: 300px; }
+  min-width: 300px;
+}
 
 .wp-block-audio figcaption {
   color: #555d66;
   font-size: 1em;
-  text-align: center; }
+  text-align: center;
+}
+
+/*# sourceMappingURL=audio.css.map */
