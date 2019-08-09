@@ -119,6 +119,11 @@ class Scripts {
 			get_theme_file_path( 'assets/js/css-vars-polyfill.min.js' ),
 		];
 
+		// Comments.
+		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+			$scripts[] = ABSPATH . WPINC . '/js/comment-reply.min.js';
+		}
+
 		$scripts = apply_filters( 'gridd_footer_inline_script_paths', $scripts );
 
 		echo '<script>';
@@ -140,11 +145,6 @@ class Scripts {
 
 		if ( AMP::is_active() ) {
 			return;
-		}
-
-		// Comments.
-		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-			wp_enqueue_script( 'comment-reply' );
 		}
 
 		// Dequeue wp-core blocks styles. These will be added inline.
