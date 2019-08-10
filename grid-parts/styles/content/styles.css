@@ -100,5 +100,8 @@
 .gridd-tp-content {
   background-color: var(--gridd-content-bg, #fff);
 }
+.gridd-tp-content select {
+  background-color: var(--gridd-content-bg, #fff);
+}
 
 /*# sourceMappingURL=styles.css.map */
