@@ -95,13 +95,13 @@
   position: relative;
   font-style: normal;
 }
-.wp-block-quote[style*="text-align:right"], .wp-block-quote[style*="text-align: right"] {
+.wp-block-quote.has-text-align-right, .wp-block-quote.has-text-align-right {
   border-left: none;
   border-right: 4px solid #000;
   padding-left: 0;
   padding-right: 1em;
 }
-.wp-block-quote[style*="text-align:center"], .wp-block-quote[style*="text-align: center"] {
+.wp-block-quote.has-text-align-center, .wp-block-quote.has-text-align-center {
   border: none;
   padding-left: 0;
 }

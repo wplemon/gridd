@@ -74,7 +74,7 @@
   border-bottom-width: 1px;
 }
 .wp-block-separator.is-style-dots {
-  background: none;
+  background: none !important;
   border: none;
   text-align: center;
   max-width: none;
@@ -83,6 +83,7 @@
 }
 .wp-block-separator.is-style-dots::before {
   content: "···";
+  color: currentColor;
   letter-spacing: 2em;
   padding-left: 2em;
   font-family: serif;
@@ -96,6 +97,13 @@
 }
 .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
   max-width: 100px;
+}
+.wp-block-separator.has-background:not(.is-style-dots) {
+  border-bottom: none;
+  height: 1px;
+}
+.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots) {
+  height: 2px;
 }
 
 .wp-block-separator {
