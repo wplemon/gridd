@@ -268,42 +268,37 @@ class Theme {
 			'editor-color-palette',
 			[
 				[
-					'name'  => esc_attr__( 'White', 'gridd' ),
-					'slug'  => 'theme-white',
-					'color' => '#fff',
+					'name'  => esc_html__( 'Pale Pink', 'gridd' ),
+					'slug'  => 'pale-pink',
+					'color' => '#f78da7',
 				],
 				[
-					'name'  => esc_attr__( 'Black', 'gridd' ),
-					'slug'  => 'theme-black',
-					'color' => '#000',
-				],
-				[
-					'name'  => esc_attr__( 'Vivid Red', 'gridd' ),
+					'name'  => esc_html__( 'Vivid Red', 'gridd' ),
 					'slug'  => 'vivid-red',
 					'color' => '#cf2e2e',
 				],
 				[
-					'name'  => esc_attr__( 'Luminous Vivid Orange', 'gridd' ),
+					'name'  => esc_html__( 'Luminous Vivid Orange', 'gridd' ),
 					'slug'  => 'luminous-vivid-orange',
 					'color' => '#ff6900',
 				],
 				[
-					'name'  => esc_attr__( 'Luminous Vivid Amber', 'gridd' ),
+					'name'  => esc_html__( 'Luminous Vivid Amber', 'gridd' ),
 					'slug'  => 'luminous-vivid-amber',
 					'color' => '#fcb900',
 				],
 				[
-					'name'  => esc_attr__( 'Light Green Cyan', 'gridd' ),
+					'name'  => esc_html__( 'Light Green Cyan', 'gridd' ),
 					'slug'  => 'light-green-cyan',
 					'color' => '#7bdcb5',
 				],
 				[
-					'name'  => esc_attr__( 'Vivid Green Cyan', 'gridd' ),
+					'name'  => esc_html__( 'Vivid Green Cyan', 'gridd' ),
 					'slug'  => 'vivid-green-cyan',
 					'color' => '#00d084',
 				],
 				[
-					'name'  => esc_attr__( 'Pale Cyan Blue', 'gridd' ),
+					'name'  => esc_html__( 'Pale Cyan Blue', 'gridd' ),
 					'slug'  => 'pale-cyan-blue',
 					'color' => '#8ed1fc',
 				],
@@ -313,9 +308,9 @@ class Theme {
 					'color' => '#0693e3',
 				],
 				[
-					'name'  => esc_attr__( 'Very Light Gray', 'gridd' ),
+					'name'  => esc_html__( 'Very Light Gray', 'gridd' ),
 					'slug'  => 'very-light-gray',
-					'color' => '#eee',
+					'color' => '#eeeeee',
 				],
 				[
 					'name'  => esc_html__( 'Cyan Bluish Gray', 'gridd' ),
@@ -323,12 +318,7 @@ class Theme {
 					'color' => '#abb8c3',
 				],
 				[
-					'name'  => esc_attr__( 'Blue Gray', 'gridd' ),
-					'slug'  => 'blue-gray',
-					'color' => '#546E7A',
-				],
-				[
-					'name'  => esc_attr__( 'Very Dark Gray', 'gridd' ),
+					'name'  => esc_html__( 'Very Dark Gray', 'gridd' ),
 					'slug'  => 'very-dark-gray',
 					'color' => '#313131',
 				],
@@ -366,7 +356,7 @@ class Theme {
 		$max_width = get_theme_mod( 'gridd_grid_content_max_width', '45em' );
 
 		if ( false === strpos( $max_width, 'calc' ) ) {
-			
+
 			// If width is defined in pixels then this is easy.
 			if ( false !== strpos( $max_width, 'px' ) ) {
 				$gridd_content_width = intval( $max_width );
