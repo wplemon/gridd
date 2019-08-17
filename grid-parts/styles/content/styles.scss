@@ -77,21 +77,6 @@
 			max-width: 100% !important;
 		}
 	}
-
-	.wp-block-group {
-		>* {
-			margin-left: auto;
-			margin-right: auto;
-		}
-
-		.wp-block-columns:not(.alignfull):not(.alignwide) {
-			max-width: calc(var(--gridd-content-max-width-calculated, 700px) + 2em);
-		}
-
-		.wp-block-column {
-			flex-basis: 50%;
-		}
-	}
 }
 
 .gridd-tp-content {

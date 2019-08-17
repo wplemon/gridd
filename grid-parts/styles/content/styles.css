@@ -86,16 +86,6 @@
 .site-main .gridd-contain > * {
   max-width: 100% !important;
 }
-.site-main .wp-block-group > * {
-  margin-left: auto;
-  margin-right: auto;
-}
-.site-main .wp-block-group .wp-block-columns:not(.alignfull):not(.alignwide) {
-  max-width: calc(var(--gridd-content-max-width-calculated, 700px) + 2em);
-}
-.site-main .wp-block-group .wp-block-column {
-  flex-basis: 50%;
-}
 
 .gridd-tp-content {
   background-color: var(--gridd-content-bg, #fff);
