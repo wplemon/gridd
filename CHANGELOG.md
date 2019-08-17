@@ -8,6 +8,7 @@
 * Fix: Group block styles.
 * Fix: Center-aligned elements inside group blocks.
 * Fix: Customizer description typo.
+* Update: Updated dragselect to v1.12.2
 
 ## 1.1.15
 

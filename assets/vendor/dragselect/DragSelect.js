@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-// v 1.12.1
+// v 1.12.2
 // @ts-check
 
 /* 
@@ -88,6 +88,7 @@ function () {
    * @param {object} options - The options object.
    * @param {HTMLElement | SVGElement | Document} [options.area=document] area in which you can drag. If not provided it will be the whole document
    * @param {number} [options.autoScrollSpeed=1] Speed in which the area scrolls while selecting (if available). Unit is pixel per movement. Default = 1
+   * @param {number} [options.zoom=1] Zoom scale factor (in case of using CSS style transform: scale() which messes with real positions). Unit scale zoom. Default = 1
    * @param {Function} [options.callback=(selected, event) => {}] a callback function that gets fired when the element is dropped. This callback gets a property which is an array that holds all selected nodes. The second property passed is the event object.
    * @param {boolean} [options.customStyles=false] if set to true, no styles (except for position absolute) will be applied by default
    * @param {string} [options.hoverClass=ds-hover] the class assigned to the mouse hovered items
@@ -140,7 +141,9 @@ function () {
         _ref$selector = _ref.selector,
         selector = _ref$selector === void 0 ? undefined : _ref$selector,
         _ref$selectorClass = _ref.selectorClass,
-        selectorClass = _ref$selectorClass === void 0 ? 'ds-selector' : _ref$selectorClass;
+        selectorClass = _ref$selectorClass === void 0 ? 'ds-selector' : _ref$selectorClass,
+        _ref$zoom = _ref.zoom,
+        zoom = _ref$zoom === void 0 ? 1 : _ref$zoom;
 
     _classCallCheck(this, DragSelect);
 
@@ -204,7 +207,8 @@ function () {
     this.moveCallback = onDragMove;
     this.callback = callback;
     this.area = this._handleArea(area);
-    this.customStyles = customStyles; // Selector
+    this.customStyles = customStyles;
+    this.zoom = zoom; // Selector
 
     this.selector = selector || this._createSelector();
     this.selector.classList.add(this.selectorClass);
@@ -221,8 +225,10 @@ function () {
     value: function _handleArea(area) {
       if (area === document) return area; // Area has to have a special position attribute for calculations
 
-      var computedArea = getComputedStyle(area);
-      var isPositioned = computedArea.position === 'absolute' || computedArea.position === 'relative' || computedArea.position === 'fixed';
+      var computedStyles = getComputedStyle(area);
+      area.computedBorder = parseInt(computedStyles.borderWidth);
+      var position = computedStyles.position;
+      var isPositioned = position === 'absolute' || position === 'relative' || position === 'fixed';
 
       if (!isPositioned) {
         area.style.position = 'relative';
@@ -398,11 +404,12 @@ function () {
     value: function startUp(event) {
       // touchmove handler
       if (event.type === 'touchstart') // Call preventDefault() to prevent double click issue, see https://github.com/ThibaultJanBeyer/DragSelect/pull/29 & https://developer.mozilla.org/vi/docs/Web/API/Touch_events/Supporting_both_TouchEvent_and_MouseEvent
-        event.preventDefault(); // callback
+        event.preventDefault();
+      if (this._isRightClick(event)) return;
+      if (this._isScrollbarClick(event, this.area)) return; // callback
 
       this.onDragStartBegin(event);
       if (this._breaked) return false;
-      if (this._isRightClick(event)) return;
       this.mouseInteraction = true;
       this.selector.style.display = 'block';
       if (this._isMultiSelectKeyPressed(event)) this._prevSelected = this._selected.slice(); // #9
@@ -423,7 +430,9 @@ function () {
         passive: false
       });
       this.area.addEventListener('mousemove', this._handleMove);
-      this.area.addEventListener('touchmove', this._handleMove);
+      this.area.addEventListener('touchmove', this._handleMove, {
+        passive: false
+      });
       document.addEventListener('mouseup', this._end);
       document.addEventListener('touchend', this._end);
     }
@@ -498,7 +507,7 @@ function () {
 
       this._updatePos(this.selector, selectorPos);
 
-      this.checkIfInsideSelection(); // scroll area if area is scrollable
+      this.checkIfInsideSelection(null); // scroll area if area is scrollable
 
       this._autoScroll(event);
     }
@@ -607,8 +616,8 @@ function () {
         var selectable = this.selectables[i];
         var scroll = this.getScroll(this.area);
         var selectionRect = {
-          y: this.selector.getBoundingClientRect().top + scroll.y,
-          x: this.selector.getBoundingClientRect().left + scroll.x,
+          y: this.selector.getBoundingClientRect().top / this.zoom + scroll.y,
+          x: this.selector.getBoundingClientRect().left / this.zoom + scroll.x,
           h: this.selector.offsetHeight,
           w: this.selector.offsetWidth
         };
@@ -757,10 +766,10 @@ function () {
     value: function _isElementTouching(element, selectionRect, scroll) {
       var rect = element.getBoundingClientRect();
       var elementRect = {
-        y: rect.top + scroll.y,
-        x: rect.left + scroll.x,
-        h: rect.height,
-        w: rect.width
+        y: rect.top / this.zoom + scroll.y,
+        x: rect.left / this.zoom + scroll.x,
+        h: rect.height / this.zoom,
+        w: rect.width / this.zoom
       }; // Axis-Aligned Bounding Box Colision Detection.
       // Imagine following Example:
       //    b01
@@ -861,7 +870,9 @@ function () {
       document.removeEventListener('mouseup', this._end);
       document.removeEventListener('touchend', this._end);
       this.area.removeEventListener('mousemove', this._handleMove);
-      this.area.removeEventListener('touchmove', this._handleMove);
+      this.area.removeEventListener('touchmove', this._handleMove, {
+        passive: false
+      });
       this.area.addEventListener('mousedown', this._startUp);
       this.area.addEventListener('touchstart', this._startUp, {
         passive: false
@@ -1158,10 +1169,6 @@ function () {
   }, {
     key: "_isRightClick",
     value: function _isRightClick(event) {
-      if (!event) {
-        return false;
-      }
-
       var isRightMB = false;
 
       if ('which' in event) {
@@ -1173,6 +1180,26 @@ function () {
       }
 
       return isRightMB;
+    }
+    /**
+     * Based on a click event object in an area,
+     * checks if the click was triggered onto a scrollbar.
+     * @param {object} event – the event object
+     * @param {(HTMLElement|SVGElement|any)} area – containing area / document if none
+     * @return {boolean}
+     * @private
+     */
+
+  }, {
+    key: "_isScrollbarClick",
+    value: function _isScrollbarClick(event, area) {
+      var cPos = this._getCursorPos(event, area);
+
+      var areaRect = this.getAreaRect(area);
+      var border = area.computedBorder || 0;
+      if (areaRect.width + border <= cPos.x) return true;
+      if (areaRect.height + border <= cPos.y) return true;
+      return false;
     }
     /**
      * Transforms a nodelist or single node to an array
@@ -1252,8 +1279,8 @@ function () {
 
       return {
         // if it’s constrained in an area the area should be substracted calculate
-        x: cPos.x - areaRect.left - docScroll.x,
-        y: cPos.y - areaRect.top - docScroll.y
+        x: (cPos.x - areaRect.left - docScroll.x) / this.zoom,
+        y: (cPos.y - areaRect.top - docScroll.y) / this.zoom
       };
     }
     /**
@@ -1357,8 +1384,8 @@ function () {
         left: rect.left,
         bottom: rect.bottom,
         right: rect.right,
-        width: rect.width,
-        height: rect.height
+        width: area.clientWidth || rect.width,
+        height: area.clientHeight || rect.height
       };
     }
     /**
