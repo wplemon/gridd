@@ -197,7 +197,7 @@ foreach ( $post_types as $post_type_id => $post_type_obj ) {
 			'settings'        => "gridd_archive_display_grid_$post_type_id",
 			'label'           => sprintf(
 				/* translators: The post-type name. */
-				esc_attr__( 'Display "%s" archives as a grid', 'gridd' ),
+				esc_html__( 'Display "%s" archives as a grid', 'gridd' ),
 				$post_type_obj->labels->name
 			),
 			'section'         => 'gridd_features',

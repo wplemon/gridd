@@ -2,38 +2,52 @@
   list-style: none;
   list-style-type: none;
   margin: 0;
-  padding: 0; }
-  .comment-list .children {
-    list-style: none;
-    list-style-type: none; }
-  .comment-list .pingback {
-    font-size: 0.85rem;
-    border-bottom: 1px solid #ededed; }
-    .comment-list .pingback .edit-link {
-      font-size: 0.75rem; }
-  .comment-list .edit-link {
-    float: right; }
+  padding: 0;
+}
+.comment-list .children {
+  list-style: none;
+  list-style-type: none;
+}
+.comment-list .pingback {
+  font-size: 0.85rem;
+  border-bottom: 1px solid #ededed;
+}
+.comment-list .pingback .edit-link {
+  font-size: 0.75rem;
+}
+.comment-list .edit-link {
+  float: right;
+}
 
 .comment-meta .comment-metadata {
-  font-size: calc(1em / var(--gridd-typo-scale, 1.26)); }
+  font-size: calc(1em / var(--gridd-typo-scale, 1.26));
+}
 
 .comment-body {
   padding: 1em 0;
   margin-bottom: 1em;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
 
 .comment-content {
-  word-wrap: break-word; }
-  .comment-content a {
-    word-wrap: break-word; }
+  word-wrap: break-word;
+}
+.comment-content a {
+  word-wrap: break-word;
+}
 
 .bypostauthor {
-  display: block; }
+  display: block;
+}
 
 a.comment-reply-link {
-  display: inline-block; }
+  display: inline-block;
+}
 
 #comment {
   background: var(--gridd-content-bg);
   color: currentColor;
-  border-color: currentColor; }
+  border-color: currentColor;
+}
+
+/*# sourceMappingURL=comments.css.map */

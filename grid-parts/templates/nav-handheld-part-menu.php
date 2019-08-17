@@ -23,7 +23,7 @@ $style->add_vars(
 );
 $label_class = get_theme_mod( 'gridd_grid_nav-handheld_hide_labels', false ) ? 'screen-reader-text' : 'label';
 ?>
-<nav id="gridd-handheld-nav" class="gridd-nav-vertical" role="navigation" aria-label="<?php esc_attr_e( 'Handheld Navigation', 'gridd' ); ?>">
+<nav id="gridd-handheld-nav" class="gridd-nav-vertical" role="navigation">
 	<?php
 	/**
 	 * Prints the button.
@@ -36,7 +36,7 @@ $label_class = get_theme_mod( 'gridd_grid_nav-handheld_hide_labels', false ) ? '
 			'context'           => [ 'menu-handheld' ],
 			'expanded_state_id' => 'griddHandheldNavMenu',
 			'expanded'          => 'false',
-			'label'             => '<svg class="gridd-inline-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"/></svg><span class="' . $label_class . '">' . esc_html__( 'Menu', 'gridd' ) . '</span>',
+			'label'             => '<svg aria-hidden="true" class="gridd-inline-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"/></svg><span class="' . $label_class . '">' . esc_html__( 'Menu', 'gridd' ) . '</span>',
 			'classes'           => [ 'gridd-nav-handheld-btn' ],
 		]
 	);

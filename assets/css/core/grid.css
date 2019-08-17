@@ -2,7 +2,8 @@
   width: 100%;
   max-width: var(--gridd-grid-max-width, 100%);
   margin: auto;
-  min-height: 100vh; }
+  min-height: 100vh;
+}
 
 .gridd-tp {
   min-width: 0;
@@ -11,8 +12,12 @@
   justify-content: center;
   flex-wrap: nowrap;
   transition: all 100ms ease-in-out;
-  overflow: hidden; }
-  .gridd-tp.gridd-sticky {
-    position: sticky;
-    top: 0;
-    z-index: 999; }
+  overflow: hidden;
+}
+.gridd-tp.gridd-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+/*# sourceMappingURL=grid.css.map */

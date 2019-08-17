@@ -6,6 +6,10 @@
   max-width: 100%;
   align-items: center;
   padding: var(--gridd-header-contact-padding, 10px);
-  color: var(--gridd-header-contact-color, #000); }
-  .gridd-tp-header_contact_info.gridd-tp a {
-    color: var(--gridd-header-contact-color, #000); }
+  color: var(--gridd-header-contact-color, #000);
+}
+.gridd-tp-header_contact_info.gridd-tp a {
+  color: var(--gridd-header-contact-color, #000);
+}
+
+/*# sourceMappingURL=styles-contact-info.css.map */

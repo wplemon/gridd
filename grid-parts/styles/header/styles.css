@@ -5,8 +5,12 @@
   overflow: visible;
   z-index: 1000;
   background-color: var(--gridd-header-bg, #fff);
-  box-shadow: var(--gridd-header-box-shadow, var(--gridd-header-box-shadow-default)); }
-  .gridd-tp-header.gridd-tp > .inner {
-    width: 100%;
-    max-width: var(--gridd-header-max-width, 100%);
-    grid-gap: var(--gridd-header-grid-gap, 0); }
+  box-shadow: var(--gridd-header-box-shadow, var(--gridd-header-box-shadow-default));
+}
+.gridd-tp-header.gridd-tp > .inner {
+  width: 100%;
+  max-width: var(--gridd-header-max-width, 100%);
+  grid-gap: var(--gridd-header-grid-gap, 0);
+}
+
+/*# sourceMappingURL=styles.css.map */

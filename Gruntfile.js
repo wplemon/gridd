@@ -6,9 +6,9 @@ module.exports = function( grunt ) {
         // Compile CSS
         sass: {
             main: {
-				options: {
-					sourcemap: 'none'
-				},
+				// options: {
+				// 	sourcemap: 'none'
+				// },
 				files: [ {
 					expand: true,
 					cwd: 'assets/css/',
@@ -19,9 +19,9 @@ module.exports = function( grunt ) {
 				} ]
             },
             gridParts: {
-				options: {
-					sourcemap: 'none'
-				},
+				// options: {
+				// 	sourcemap: 'none'
+				// },
 				files: [ {
 					expand: true,
 					cwd: 'grid-parts',
