@@ -6,7 +6,8 @@
 * Fix: Inlining the comment-reply link instead of enqueueing as a separate request.
 * Fix: `<select>` element styles when using a dark background.
 * Fix: Group block styles.
-* Fix: Typo.
+* Fix: Center-aligned elements inside group blocks.
+* Fix: Customizer description typo.
 
 ## 1.1.15
 

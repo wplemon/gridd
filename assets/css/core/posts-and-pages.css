@@ -41,4 +41,8 @@
   font-size: calc(1em / var(--gridd-typo-scale, 1.26));
 }
 
+.has-text-align-center {
+  text-align: center;
+}
+
 /*# sourceMappingURL=posts-and-pages.css.map */
