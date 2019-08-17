@@ -7,6 +7,7 @@
 
 .has-pale-pink-background-color.has-pale-pink-background-color {
   background-color: #f78da7;
+  border-color: #f78da7;
 }
 
 .has-vivid-red-color.has-vivid-red-color {
@@ -18,6 +19,7 @@
 
 .has-vivid-red-background-color.has-vivid-red-background-color {
   background-color: #cf2e2e;
+  border-color: #cf2e2e;
 }
 
 .has-luminous-vivid-orange-color.has-luminous-vivid-orange-color {
@@ -29,6 +31,7 @@
 
 .has-luminous-vivid-orange-background-color.has-luminous-vivid-orange-background-color {
   background-color: #ff6900;
+  border-color: #ff6900;
 }
 
 .has-luminous-vivid-amber-color.has-luminous-vivid-amber-color {
@@ -40,6 +43,7 @@
 
 .has-luminous-vivid-amber-background-color.has-luminous-vivid-amber-background-color {
   background-color: #fcb900;
+  border-color: #fcb900;
 }
 
 .has-light-green-cyan-color.has-light-green-cyan-color {
@@ -51,6 +55,7 @@
 
 .has-light-green-cyan-background-color.has-light-green-cyan-background-color {
   background-color: #7bdcb5;
+  border-color: #7bdcb5;
 }
 
 .has-vivid-green-cyan-color.has-vivid-green-cyan-color {
@@ -62,6 +67,7 @@
 
 .has-vivid-green-cyan-background-color.has-vivid-green-cyan-background-color {
   background-color: #00d084;
+  border-color: #00d084;
 }
 
 .has-pale-cyan-blue-color.has-pale-cyan-blue-color {
@@ -73,6 +79,7 @@
 
 .has-pale-cyan-blue-background-color.has-pale-cyan-blue-background-color {
   background-color: #8ed1fc;
+  border-color: #8ed1fc;
 }
 
 .has-vivid-cyan-blue-color.has-vivid-cyan-blue-color {
@@ -84,6 +91,7 @@
 
 .has-vivid-cyan-blue-background-color.has-vivid-cyan-blue-background-color {
   background-color: #0693e3;
+  border-color: #0693e3;
 }
 
 .has-very-light-gray-color.has-very-light-gray-color {
@@ -95,6 +103,7 @@
 
 .has-very-light-gray-background-color.has-very-light-gray-background-color {
   background-color: #eee;
+  border-color: #eee;
 }
 
 .has-cyan-bluish-gray-color.has-cyan-bluish-gray-color {
@@ -106,6 +115,7 @@
 
 .has-cyan-bluish-gray-background-color.has-cyan-bluish-gray-background-color {
   background-color: #abb8c3;
+  border-color: #abb8c3;
 }
 
 .has-very-dark-gray-color.has-very-dark-gray-color {
@@ -117,6 +127,7 @@
 
 .has-very-dark-gray-background-color.has-very-dark-gray-background-color {
   background-color: #313131;
+  border-color: #313131;
 }
 
 .has-theme-cyan-color.has-theme-cyan-color {
@@ -128,6 +139,7 @@
 
 .has-theme-cyan-background-color.has-theme-cyan-background-color {
   background-color: #26C6DA;
+  border-color: #26C6DA;
 }
 
 .has-theme-white-color.has-theme-white-color {
@@ -139,6 +151,7 @@
 
 .has-theme-white-background-color.has-theme-white-background-color {
   background-color: #fff;
+  border-color: #fff;
 }
 
 .has-blue-gray-color.has-blue-gray-color {
@@ -150,6 +163,7 @@
 
 .has-blue-gray-background-color.has-blue-gray-background-color {
   background-color: #546E7A;
+  border-color: #546E7A;
 }
 
 .has-theme-black-color.has-theme-black-color {
@@ -161,6 +175,7 @@
 
 .has-theme-black-background-color.has-theme-black-background-color {
   background-color: #000;
+  border-color: #000;
 }
 
 /*# sourceMappingURL=blocks-custom-colors.css.map */
