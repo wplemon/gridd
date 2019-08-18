@@ -1,9 +1,8 @@
 ## 1.1.16
 
 * New: Added slide-up mode for header searchform.
+* New: Partial support for IE11.
 * Fix: Improved accessibility for handheld navigation.
-* Fix: Added polyfill for css-vars in IE.
-* Fix: Submenus not expanding in IE11 (JS "closest" function polyfill).
 * Fix: Inlining the comment-reply link instead of enqueueing as a separate request.
 * Fix: `<select>` element styles when using a dark background.
 * Fix: Group block styles.
