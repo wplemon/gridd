@@ -16,15 +16,9 @@ $sanitization = new Sanitize();
 Customizer::add_section(
 	'gridd_features',
 	[
-		'title'       => esc_attr__( 'Theme Features', 'gridd' ),
-		'priority'    => 28,
-		'description' => Customizer::section_description(
-			'gridd_typography',
-			[
-				'docs' => 'https://wplemon.github.io/gridd/customizer-sections/theme-features.html',
-			]
-		),
-		'panel'       => 'gridd_options',
+		'title'    => esc_attr__( 'Theme Features', 'gridd' ),
+		'priority' => 28,
+		'panel'    => 'gridd_options',
 	]
 );
 
@@ -197,7 +191,7 @@ foreach ( $post_types as $post_type_id => $post_type_obj ) {
 			'settings'        => "gridd_archive_display_grid_$post_type_id",
 			'label'           => sprintf(
 				/* translators: The post-type name. */
-				esc_attr__( 'Display "%s" archives as a grid', 'gridd' ),
+				esc_html__( 'Display "%s" archives as a grid', 'gridd' ),
 				$post_type_obj->labels->name
 			),
 			'section'         => 'gridd_features',

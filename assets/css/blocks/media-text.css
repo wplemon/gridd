@@ -74,39 +74,48 @@
   grid-template-rows: auto;
   align-items: center;
   grid-template-areas: "media-text-media media-text-content";
-  grid-template-columns: 50% auto; }
-  .wp-block-media-text.has-media-on-the-right {
-    grid-template-areas: "media-text-content media-text-media";
-    grid-template-columns: auto 50%; }
+  grid-template-columns: 50% auto;
+}
+.wp-block-media-text.has-media-on-the-right {
+  grid-template-areas: "media-text-content media-text-media";
+  grid-template-columns: auto 50%;
+}
 
 .wp-block-media-text.is-vertically-aligned-top {
-  align-items: start; }
+  align-items: start;
+}
 
 .wp-block-media-text.is-vertically-aligned-center {
-  align-items: center; }
+  align-items: center;
+}
 
 .wp-block-media-text.is-vertically-aligned-bottom {
-  align-items: end; }
+  align-items: end;
+}
 
 .wp-block-media-text .wp-block-media-text__media {
   grid-area: media-text-media;
-  margin: 0; }
+  margin: 0;
+}
 
 .wp-block-media-text .wp-block-media-text__content {
   word-break: break-word;
   grid-area: media-text-content;
-  padding: 0 8% 0 8%; }
+  padding: 0 8% 0 8%;
+}
 
 .wp-block-media-text > figure > img,
 .wp-block-media-text > figure > video {
   max-width: unset;
   width: 100%;
-  vertical-align: middle; }
+  vertical-align: middle;
+}
 
 .wp-block-media-text.is-image-fill figure {
   height: 100%;
   min-height: 250px;
-  background-size: cover; }
+  background-size: cover;
+}
 
 .wp-block-media-text.is-image-fill figure > img {
   position: absolute;
@@ -116,7 +125,8 @@
   margin: -1px;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
-  border: 0; }
+  border: 0;
+}
 
 /*
 * Here we here not able to use a mobile first CSS approach.
@@ -128,7 +138,12 @@
 @media (max-width: 600px) {
   .wp-block-media-text.is-stacked-on-mobile {
     grid-template-columns: 100% !important;
-    grid-template-areas: "media-text-media" "media-text-content"; }
+    grid-template-areas: "media-text-media" "media-text-content";
+  }
 
   .wp-block-media-text.is-stacked-on-mobile.has-media-on-the-right {
-    grid-template-areas: "media-text-content" "media-text-media"; } }
+    grid-template-areas: "media-text-content" "media-text-media";
+  }
+}
+
+/*# sourceMappingURL=media-text.css.map */

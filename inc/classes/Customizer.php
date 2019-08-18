@@ -211,63 +211,19 @@ class Customizer {
 	}
 
 	/**
-	 * Helper method to avoid writing the same code over and over and over and over again.
+	 * This is only kept here for backwards-compatibility
+	 * in order to avoid PHP errors in case a child theme uses this method.
 	 *
 	 * @static
 	 * @access public
 	 * @since 1.0
+	 * @deprecated 1.1.16
 	 * @param string $id   The section-ID.
 	 * @param array  $args The arguments [pro=>[''], docs=>'', tip=>''].
 	 * @return string      The final HTML.
 	 */
 	public static function section_description( $id, $args ) {
-
-		/**
-		 * We're experimenting for now without these buttons.
-		 * So we'll just early exit here and not run the code below.
-		 */
-		return;
-
-		$args = apply_filters( 'gridd_section_description', $args, $id );
-
-		$boxes   = '';
-		$buttons = '';
-		$args    = wp_parse_args(
-			$args,
-			[
-				'plus' => false,
-				'docs' => false,
-				'tip'  => false,
-			]
-		);
-
-		if ( ! $args['plus'] && ! $args['docs'] && ! $args['tip'] ) {
-			return;
-		}
-
-		if ( $args['plus'] ) {
-			$buttons .= '<button class="gridd-section-description-trigger gridd-plus" data-context="gridd-plus">' . esc_html__( 'Plus Features', 'gridd' ) . '</button>';
-
-			$boxes .= '<div class="gridd-section-description" aria-expanded="false" data-context="gridd-plus">';
-			$boxes .= __( '<a href="https://wplemon.com/gridd-plus" rel="noopener noreferrer nofollow" target="_blank">Upgrade to Plus</a> for extra options:', 'gridd' );
-			$boxes .= '<ul>';
-			foreach ( $args['plus'] as $feature ) {
-				$boxes .= '<li>' . $feature . '</li>';
-			}
-			$boxes .= '</ul>';
-			$boxes .= '</div>';
-		}
-
-		if ( $args['tip'] ) {
-			$buttons .= '<button class="gridd-section-description-trigger gridd-tip" data-context="gridd-tip">' . esc_html__( 'Tip', 'gridd' ) . '</button>';
-			$boxes   .= '<div class="gridd-section-description" aria-expanded="false" data-context="gridd-tip">' . $args['tip'] . '</div>';
-		}
-
-		if ( $args['docs'] ) {
-			$buttons .= '<a href="' . $args['docs'] . '" target="_blank" rel="noopener noreferrer nofollow" class="gridd-section-description-trigger gridd-docs" data-context="gridd-docs">' . esc_html__( 'Documentation', 'gridd' ) . '</a>';
-		}
-
-		return '<div class="gridd-section-description-wrapper">' . $buttons . $boxes . '</div>';
+		return '';
 	}
 
 	/**

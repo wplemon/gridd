@@ -34,18 +34,7 @@ function gridd_sidebar_customizer_options( $id ) {
 		"gridd_grid_part_details_sidebar_$id",
 		[
 			/* translators: The grid-part label. */
-			'title'       => sprintf( esc_html__( '%s Advanced Options', 'gridd' ), $label ),
-			'description' => Customizer::section_description(
-				"gridd_grid_part_details_sidebar_$id",
-				[
-					'plus' => [
-						esc_html__( 'Selecting from an array of WCAG-compliant colors for text', 'gridd' ),
-						esc_html__( 'Selecting from an array of WCAG-compliant colors for links', 'gridd' ),
-						esc_html__( 'Visibility Options: Choose specific post-IDs or category/tag/term IDs to show this grid-part', 'gridd' ),
-					],
-					'docs' => 'https://wplemon.github.io/gridd/grid-parts/widget-area.html',
-				]
-			),
+			'title' => sprintf( esc_html__( '%s Advanced Options', 'gridd' ), $label ),
 		]
 	);
 
@@ -127,8 +116,12 @@ function gridd_sidebar_customizer_options( $id ) {
 			'description' => Customizer::get_control_description(
 				[
 					'short'   => '',
-					'details' => esc_html__( 'Use any valid CSS value. For details on how padding works, please refer to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
-				]
+					'details' => sprintf(
+						/* translators: Link properties. */
+						__( 'Use any valid CSS value. For details on how padding works, please refer to <a %s>this article</a>.', 'gridd' ),
+						'href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow"'
+					),
+					]
 			),
 			'section'     => "gridd_grid_part_details_sidebar_$id",
 			'priority'    => 40,

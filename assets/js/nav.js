@@ -1,4 +1,26 @@
 /**
+ * Polyfill for "closest" function in older IE versions.
+ *
+ * @since 1.1.16
+ * @link https://developer.mozilla.org/en-US/docs/Web/API/Element/closest#Polyfill
+ */
+if ( ! Element.prototype.matches ) {
+	Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector;
+}
+if ( ! Element.prototype.closest ) {
+	Element.prototype.closest = function( s ) {
+		var el = this;
+		do {
+			if ( el.matches( s ) ) {
+				return el;
+			}
+			el = el.parentElement || el.parentNode;
+		} while ( null !== el && 1 === el.nodeType );
+		return null;
+	};
+}
+
+/**
  * Handle togglers.
  */
 function griddToggleButtonClick( id ) { // eslint-disable-line no-unused-vars

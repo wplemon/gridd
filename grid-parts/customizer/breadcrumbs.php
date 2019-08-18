@@ -14,17 +14,7 @@ Customizer::add_outer_section(
 	'gridd_grid_part_details_breadcrumbs',
 	[
 		/* translators: The grid-part label. */
-		'title'       => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Breadcrumbs', 'gridd' ) ),
-		'description' => Customizer::section_description(
-			'gridd_grid_part_details_breadcrumbs',
-			[
-				'plus' => [
-					esc_html__( 'Selecting from an array of WCAG-compliant colors for text', 'gridd' ),
-					esc_html__( 'Adjustable spacing between breadcrumbs.', 'gridd' ),
-				],
-				'docs' => 'https://wplemon.github.io/gridd/grid-parts/breadcrumbs.html',
-			]
-		),
+		'title' => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Breadcrumbs', 'gridd' ) ),
 	]
 );
 
@@ -36,7 +26,11 @@ Customizer::add_field(
 		'description' => Customizer::get_control_description(
 			[
 				'short'   => '',
-				'details' => esc_html__( 'Use any valid CSS value. For details on how padding works, please refer to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
+				'details' => sprintf(
+					/* translators: Link properties. */
+					__( 'Use any valid CSS value. For details on how padding works, please refer to <a %s>this article</a>.', 'gridd' ),
+					'href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow"'
+				),
 			]
 		),
 		'section'     => 'gridd_grid_part_details_breadcrumbs',
@@ -55,30 +49,6 @@ Customizer::add_field(
 		'default'   => '',
 		'css_vars'  => '--gridd-breadcrumbs-max-width',
 		'transport' => 'postMessage',
-	]
-);
-
-Customizer::add_field(
-	[
-		'type'        => 'slider',
-		'settings'    => 'gridd_grid_breadcrumbs_font_size',
-		'label'       => esc_html__( 'Font Size', 'gridd' ),
-		'description' => Customizer::get_control_description(
-			[
-				'short'   => '',
-				'details' => esc_html__( 'Controls the font-size for your breadcrumbs. This value is relative to the body font-size, so a value of 1em will have the same size as your content.', 'gridd' ),
-			]
-		),
-		'section'     => 'gridd_grid_part_details_breadcrumbs',
-		'default'     => 1,
-		'transport'   => 'postMessage',
-		'css_vars'    => '--gridd-breadcrumbs-font-size',
-		'choices'     => [
-			'min'    => .5,
-			'max'    => 2,
-			'step'   => .01,
-			'suffix' => 'em',
-		],
 	]
 );
 

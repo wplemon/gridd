@@ -76,28 +76,38 @@
   font-weight: 100;
   margin: 0.05em 0.1em 0 0;
   text-transform: uppercase;
-  font-style: normal; }
+  font-style: normal;
+}
 
 .has-drop-cap:not(:focus)::after {
   content: "";
   display: table;
   clear: both;
-  padding-top: 14px; }
+  padding-top: 14px;
+}
 
 p.has-text-color a {
-  color: inherit; }
+  color: inherit;
+}
 
 .is-small-text {
-  font-size: calc(1em / var(--gridd-typo-scale, 1.26)); }
+  font-size: calc(1em / var(--gridd-typo-scale, 1.26));
+}
 
 .is-regular-text {
-  font-size: var(--gridd-em, 1em); }
+  font-size: var(--gridd-em, 1em);
+}
 
 .is-large-text {
-  font-size: calc(var(--gridd-typo-scale, 1.26) * 1em); }
+  font-size: calc(var(--gridd-typo-scale, 1.26) * 1em);
+}
 
 .is-larger-text {
-  font-size: calc(var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * 1em); }
+  font-size: calc(var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * 1em);
+}
 
 p.has-background {
-  padding: 1.5em 2em; }
+  padding: 1.5em 2em;
+}
+
+/*# sourceMappingURL=paragraph.css.map */

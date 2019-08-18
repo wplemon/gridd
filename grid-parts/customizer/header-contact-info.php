@@ -15,16 +15,7 @@ Customizer::add_outer_section(
 	'gridd_grid_part_details_header_contact_info',
 	[
 		/* translators: The grid-part label. */
-		'title'       => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Header Contact Info', 'gridd' ) ),
-		'description' => Customizer::section_description(
-			'gridd_grid_part_details_header_contact_info',
-			[
-				'plus' => [
-					esc_html__( 'Selecting from an array of WCAG-compliant colors for text', 'gridd' ),
-				],
-				'docs' => 'https://wplemon.github.io/gridd/grid-parts/contact-information.html',
-			]
-		),
+		'title' => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Header Contact Info', 'gridd' ) ),
 	]
 );
 
@@ -109,7 +100,11 @@ Customizer::add_field(
 		'description' => Customizer::get_control_description(
 			[
 				'short'   => '',
-				'details' => esc_html__( 'Use any valid CSS value. For details on how padding works, please refer to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
+				'details' => sprintf(
+					/* translators: Link properties. */
+					__( 'Use any valid CSS value. For details on how padding works, please refer to <a %s>this article</a>.', 'gridd' ),
+					'href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow"'
+				),
 			]
 		),
 		'section'     => 'gridd_grid_part_details_header_contact_info',

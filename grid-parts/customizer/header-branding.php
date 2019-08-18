@@ -61,13 +61,7 @@ Customizer::add_outer_section(
 	'gridd_grid_part_details_header_branding',
 	[
 		/* translators: The grid-part label. */
-		'title'       => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Site Branding', 'gridd' ) ),
-		'description' => Customizer::section_description(
-			'gridd_grid_part_details_header_branding',
-			[
-				'docs' => 'https://wplemon.github.io/gridd/grid-parts/branding.html',
-			]
-		),
+		'title' => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Site Branding', 'gridd' ) ),
 	]
 );
 
@@ -122,7 +116,11 @@ Customizer::add_field(
 		'description'       => Customizer::get_control_description(
 			[
 				'short'   => '',
-				'details' => esc_html__( 'Use any valid CSS value. For details on how padding works, please refer to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
+				'details' => sprintf(
+					/* translators: Link properties. */
+					__( 'Use any valid CSS value. For details on how padding works, please refer to <a %s>this article</a>.', 'gridd' ),
+					'href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow"'
+				),
 			]
 		),
 		'section'           => 'gridd_grid_part_details_header_branding',

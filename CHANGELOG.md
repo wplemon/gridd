@@ -1,3 +1,18 @@
+## 1.1.16
+
+* New: Added slide-up mode for header searchform.
+* New: Partial support for IE11.
+* Fix: Improved accessibility for handheld navigation.
+* Fix: Inlining the comment-reply link instead of enqueueing as a separate request.
+* Fix: `<select>` element styles when using a dark background.
+* Fix: Group block styles.
+* Fix: Center-aligned elements inside group blocks.
+* Fix: Customizer description typo.
+* Fix: Accessibility improvements for button blocks.
+* Fix: Improved breadcrumbs styles.
+* Update: Updated dragselect to v1.12.2
+* Update: Block styles for compatibility with latest Gutenberg plugin versions.
+
 ## 1.1.15
 
 * Fix: Typo.

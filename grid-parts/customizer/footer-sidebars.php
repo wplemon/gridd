@@ -30,21 +30,11 @@ function gridd_add_footer_widget_area_options( $id ) {
 	Customizer::add_outer_section(
 		"gridd_grid_part_details_footer_sidebar_$id",
 		[
-			'title'       => sprintf(
+			'title' => sprintf(
 				/* translators: The grid-part label. */
 				esc_html__( '%s Options', 'gridd' ),
 				/* translators: The number of the footer widget area. */
 				sprintf( esc_html__( 'Footer Sidebar %d', 'gridd' ), absint( $id ) )
-			),
-			'description' => Customizer::section_description(
-				"gridd_grid_part_details_footer_sidebar_$id",
-				[
-					'plus' => [
-						esc_html__( 'Selecting from an array of WCAG-compliant colors for text', 'gridd' ),
-						esc_html__( 'Selecting from an array of WCAG-compliant colors for links', 'gridd' ),
-					],
-					'docs' => 'https://wplemon.github.io/gridd/grid-parts/footer.html',
-				]
 			),
 		]
 	);

@@ -1,3 +1,4 @@
+docs/ export-ignore
 ./docs/ export-ignore
 ./assets/css/blocks/block-library/ export-ignore
 .sass-cache/ export-ignore
@@ -6,7 +7,7 @@
 .browserslistrc export-ignore
 .editorconfig export-ignore
 .eslintignore export-ignore
-.eslintrc.json export-ignore
+.eslintrc.js export-ignore
 .gitignore export-ignore
 .gitmodules export-ignore
 package-lock.json export-ignore

@@ -11,11 +11,13 @@
 @import "../variables";
 
 .wp-block-button__link {
-	background-color: var(--gridd-text-color);
+	// background-color: var(--gridd-text-color);
 	border-radius: 3em;
 	font-size: 1em;
 	padding: .5em 1em;
 	position: relative;
+	border: 2px solid;
+	background: none;
 
 	// Make sure buttons text remains visible if user doesn't select a text color.
 	&:not(.has-text-color) {
@@ -40,6 +42,41 @@
 		&:visited:focus,
 		&:visited:hover {
 			color: currentColor;
+		}
+	}
+
+	&:focus,
+	&:hover,
+	&:active {
+
+		&:before,
+		&:after {
+			content: '';
+			position: absolute;
+			width: 1.5em;
+			height: calc(100% - .5em);
+			border-radius: 50%;
+			top: .25em;
+			opacity: .3;
+		}
+
+		&:before {
+			left: .5em;
+			box-shadow: -4px 0 currentColor;
+		}
+
+		&:after {
+			right: .5em;
+			box-shadow: 4px 0 currentColor;
+		}
+	}
+
+	&:focus,
+	&:active {
+
+		&:before,
+		&:after {
+			opacity: 1;
 		}
 	}
 }

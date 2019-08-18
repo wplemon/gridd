@@ -44,21 +44,11 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 	Customizer::add_outer_section(
 		"gridd_grid_part_details_reusable_block_$id",
 		[
-			'title'       => sprintf(
+			'title' => sprintf(
 				/* translators: The grid-part label. */
 				esc_html__( '%s Options', 'gridd' ),
 				/* translators: The reusable block number. */
 				sprintf( esc_html__( 'Reusable Block %d', 'gridd' ), absint( $id ) )
-			),
-			'description' => Customizer::section_description(
-				'gridd_grid_part_details_footer_copyright',
-				[
-					'plus' => [
-						esc_html__( 'Selecting from an array of WCAG-compliant colors for text', 'gridd' ),
-						esc_html__( 'Selecting from an array of WCAG-compliant colors for links', 'gridd' ),
-					],
-					'docs' => 'https://wplemon.github.io/gridd/grid-parts/reusable-block.html',
-				]
 			),
 		]
 	);
@@ -81,8 +71,12 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 			'description' => Customizer::get_control_description(
 				[
 					'short'   => '',
-					'details' => esc_html__( 'Use any valid CSS value. For details on how padding works, please refer to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
-				]
+					'details' => sprintf(
+						/* translators: Link properties. */
+						__( 'Use any valid CSS value. For details on how padding works, please refer to <a %s>this article</a>.', 'gridd' ),
+						'href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow"'
+					),
+					]
 			),
 			'section'     => "gridd_grid_part_details_reusable_block_$id",
 			'default'     => '1em',

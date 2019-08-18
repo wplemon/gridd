@@ -22,7 +22,7 @@ $colors: (
 
 @mixin griddColorSet( $colorName ) {
 	color: map-get( $colors, $colorName);
-	
+
 	&:hover,
 	&:focus,
 	&:active,
@@ -38,11 +38,16 @@ $colors: (
 	background-color: map-get( $colors, $colorName);
 }
 
+@mixin griddBorderColorSet( $colorName ) {
+	border-color: map-get( $colors, $colorName);
+}
+
 @each $colorName in $colorNames {
 	.has-#{$colorName}-color.has-#{$colorName}-color {
 		@include griddColorSet( $colorName );
-	}		
+	}
 	.has-#{$colorName}-background-color.has-#{$colorName}-background-color {
 		@include griddBackgroundColorSet( $colorName );
+		@include griddBorderColorSet( $colorName );
 	}
 }
