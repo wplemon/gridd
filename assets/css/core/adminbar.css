@@ -1,10 +1,13 @@
-.admin-bar .gridd-tp.gridd-sticky {
-  top: 32px;
+.admin-bar {
+  --adminbar-height: 32px;
 }
 @media screen and (max-width: 782px) {
-  .admin-bar .gridd-tp.gridd-sticky {
-    top: 46px;
+  .admin-bar {
+    --adminbar-height: 46px;
   }
+}
+.admin-bar .gridd-tp.gridd-sticky {
+  top: var(--adminbar-height);
 }
 @media screen and (max-width: 600px) {
   .admin-bar .gridd-tp.gridd-sticky {

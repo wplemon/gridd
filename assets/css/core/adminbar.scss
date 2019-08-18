@@ -1,11 +1,12 @@
 .admin-bar {
+	--adminbar-height: 32px;
+
+	@media screen and (max-width: 782px) {
+		--adminbar-height: 46px;
+	}
 
 	.gridd-tp.gridd-sticky {
-		top: 32px;
-
-		@media screen and (max-width: 782px) {
-			top: 46px;
-		}
+		top: var(--adminbar-height);
 
 		@media screen and (max-width: 600px) {
 			top: 0;
