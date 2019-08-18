@@ -35,7 +35,7 @@ nav.breadcrumbs li {
 nav.breadcrumbs .breadcrumbs__crumb + .breadcrumbs__crumb:before {
   content: "›";
   opacity: 0.5;
-  padding: 0 calc(var(--gridd-breadcrumbs-whitespace, 1) / 2 * 1em);
+  padding: 0 0.75em;
 }
 nav.breadcrumbs .breadcrumbs__crumb:last-child {
   opacity: 0.7;
