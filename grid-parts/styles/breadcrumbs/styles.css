@@ -5,7 +5,9 @@
 }
 .gridd-tp-breadcrumbs li,
 .gridd-tp-breadcrumbs li a,
-.gridd-tp-breadcrumbs li a:visited {
+.gridd-tp-breadcrumbs li a:visited,
+.gridd-tp-breadcrumbs li a:hover,
+.gridd-tp-breadcrumbs li a:focus {
   color: var(--gridd-breadcrumbs-color, #000);
 }
 .gridd-tp-breadcrumbs .inner {
@@ -20,10 +22,6 @@ nav.breadcrumbs {
   z-index: 2;
   width: 100%;
 }
-nav.breadcrumbs a {
-  font-weight: bold;
-  text-decoration: none;
-}
 nav.breadcrumbs ul {
   margin: 0;
   padding: 0;
@@ -37,7 +35,7 @@ nav.breadcrumbs li {
 nav.breadcrumbs .breadcrumbs__crumb + .breadcrumbs__crumb:before {
   content: "›";
   opacity: 0.5;
-  padding: 0 0.75em;
+  padding: 0 calc(var(--gridd-breadcrumbs-whitespace, 1) / 2 * 1em);
 }
 nav.breadcrumbs .breadcrumbs__crumb:last-child {
   opacity: 0.7;

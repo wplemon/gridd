@@ -4,7 +4,9 @@
 
 	li,
 	li a,
-	li a:visited {
+	li a:visited,
+	li a:hover,
+	li a:focus {
 		color: var(--gridd-breadcrumbs-color, #000);
 	}
 
@@ -20,11 +22,6 @@
 nav.breadcrumbs {
 	z-index: 2;
 	width: 100%;
-
-	a {
-		font-weight: bold;
-		text-decoration: none;
-	}
 
 	ul {
 		margin: 0;
@@ -43,7 +40,7 @@ nav.breadcrumbs {
 			&:before {
 				content: '\203A';
 				opacity: 0.5;
-				padding: 0 0.75em;
+				padding: 0 calc(var(--gridd-breadcrumbs-whitespace, 1) / 2 * 1em);
 			}
 		}
 

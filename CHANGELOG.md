@@ -9,6 +9,7 @@
 * Fix: Center-aligned elements inside group blocks.
 * Fix: Customizer description typo.
 * Fix: Accessibility improvements for button blocks.
+* Fix: Improved breadcrumbs styles.
 * Update: Updated dragselect to v1.12.2
 * Update: Block styles for compatibility with latest Gutenberg plugin versions.
 
