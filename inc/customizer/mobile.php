@@ -13,15 +13,9 @@ $grid_parts = Grid_Parts::get_instance()->get_parts();
 Customizer::add_section(
 	'gridd_mobile',
 	[
-		'title'       => esc_html__( 'Mobile', 'gridd' ),
-		'description' => Customizer::section_description(
-			'gridd_mobile',
-			[
-				'docs' => 'https://wplemon.github.io/gridd/grid-parts/mobile-navigation.html',
-			]
-		),
-		'priority'    => 26,
-		'panel'       => 'gridd_options',
+		'title'    => esc_html__( 'Mobile', 'gridd' ),
+		'priority' => 26,
+		'panel'    => 'gridd_options',
 	]
 );
 

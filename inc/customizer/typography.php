@@ -16,15 +16,9 @@ $sanitization = new Sanitize();
 Customizer::add_section(
 	'gridd_typography',
 	[
-		'title'       => esc_html__( 'Typography', 'gridd' ),
-		'description' => Customizer::section_description(
-			'gridd_typography',
-			[
-				'docs' => 'https://wplemon.github.io/gridd/customizer-sections/typography.html',
-			]
-		),
-		'priority'    => 20,
-		'panel'       => 'gridd_options',
+		'title'    => esc_html__( 'Typography', 'gridd' ),
+		'priority' => 20,
+		'panel'    => 'gridd_options',
 	]
 );
 

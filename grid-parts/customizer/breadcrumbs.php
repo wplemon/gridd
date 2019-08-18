@@ -14,17 +14,7 @@ Customizer::add_outer_section(
 	'gridd_grid_part_details_breadcrumbs',
 	[
 		/* translators: The grid-part label. */
-		'title'       => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Breadcrumbs', 'gridd' ) ),
-		'description' => Customizer::section_description(
-			'gridd_grid_part_details_breadcrumbs',
-			[
-				'plus' => [
-					esc_html__( 'Selecting from an array of WCAG-compliant colors for text', 'gridd' ),
-					esc_html__( 'Adjustable spacing between breadcrumbs.', 'gridd' ),
-				],
-				'docs' => 'https://wplemon.github.io/gridd/grid-parts/breadcrumbs.html',
-			]
-		),
+		'title' => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Breadcrumbs', 'gridd' ) ),
 	]
 );
 

@@ -12,13 +12,7 @@ Customizer::add_outer_section(
 	'gridd_grid_part_details_header_search',
 	[
 		/* translators: The grid-part label. */
-		'title'       => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Header Search', 'gridd' ) ),
-		'description' => Customizer::section_description(
-			'gridd_grid_part_details_header_search',
-			[
-				'docs' => 'https://wplemon.github.io/gridd/grid-parts/search.html',
-			]
-		),
+		'title' => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Header Search', 'gridd' ) ),
 	]
 );
 

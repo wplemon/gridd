@@ -57,20 +57,9 @@ add_action(
 Customizer::add_section(
 	'gridd_grid',
 	[
-		'title'       => esc_html__( 'Site Grid', 'gridd' ),
-		'priority'    => 22,
-		'description' => Customizer::section_description(
-			'gridd_grid',
-			[
-				'docs' => 'https://wplemon.github.io/gridd/customizer-sections/grid.html',
-				'tip'  => sprintf(
-					/* translators: Link to the blocks-management screen. */
-					__( 'Did you know you can place reusable blocks anywhere in your grid? <a href="%s" target="_blank">Click here</a> to manage your reusable blocks.', 'gridd' ),
-					esc_url( admin_url( 'edit.php?post_type=wp_block' ) )
-				),
-			]
-		),
-		'panel'       => 'gridd_options',
+		'title'    => esc_html__( 'Site Grid', 'gridd' ),
+		'priority' => 22,
+		'panel'    => 'gridd_options',
 	]
 );
 

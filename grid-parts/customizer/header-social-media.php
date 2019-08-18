@@ -19,13 +19,7 @@ Customizer::add_outer_section(
 	'gridd_grid_part_details_social_media',
 	[
 		/* translators: The grid-part label. */
-		'title'       => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Header Contact Info', 'gridd' ) ),
-		'description' => Customizer::section_description(
-			'gridd_grid_part_details_social_media',
-			[
-				'docs' => 'https://wplemon.github.io/gridd/grid-parts/social-media.html',
-			]
-		),
+		'title' => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Header Contact Info', 'gridd' ) ),
 	]
 );
 

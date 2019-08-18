@@ -44,21 +44,11 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 	Customizer::add_outer_section(
 		"gridd_grid_part_details_reusable_block_$id",
 		[
-			'title'       => sprintf(
+			'title' => sprintf(
 				/* translators: The grid-part label. */
 				esc_html__( '%s Options', 'gridd' ),
 				/* translators: The reusable block number. */
 				sprintf( esc_html__( 'Reusable Block %d', 'gridd' ), absint( $id ) )
-			),
-			'description' => Customizer::section_description(
-				'gridd_grid_part_details_footer_copyright',
-				[
-					'plus' => [
-						esc_html__( 'Selecting from an array of WCAG-compliant colors for text', 'gridd' ),
-						esc_html__( 'Selecting from an array of WCAG-compliant colors for links', 'gridd' ),
-					],
-					'docs' => 'https://wplemon.github.io/gridd/grid-parts/reusable-block.html',
-				]
 			),
 		]
 	);

@@ -14,15 +14,9 @@ Customizer::add_section(
 	'gridd_grid_part_details_content',
 	[
 		/* translators: The grid-part label. */
-		'title'       => esc_html__( 'Content', 'gridd' ),
-		'description' => Customizer::section_description(
-			'gridd_grid_part_details_content',
-			[
-				'docs' => 'https://wplemon.github.io/gridd/grid-parts/content.html',
-			]
-		),
-		'priority'    => 25,
-		'panel'       => 'gridd_options',
+		'title'    => esc_html__( 'Content', 'gridd' ),
+		'priority' => 25,
+		'panel'    => 'gridd_options',
 	]
 );
 

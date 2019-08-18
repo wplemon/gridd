@@ -30,15 +30,9 @@ add_action(
 Customizer::add_section(
 	'gridd_grid_part_details_header',
 	[
-		'title'       => esc_html__( 'Header', 'gridd' ),
-		'description' => Customizer::section_description(
-			'gridd_grid_part_details_header',
-			[
-				'docs' => 'https://wplemon.github.io/gridd/grid-parts/header.html',
-			]
-		),
-		'priority'    => 24,
-		'panel'       => 'gridd_options',
+		'title'    => esc_html__( 'Header', 'gridd' ),
+		'priority' => 24,
+		'panel'    => 'gridd_options',
 	]
 );
 

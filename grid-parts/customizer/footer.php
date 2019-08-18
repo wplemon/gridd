@@ -14,15 +14,9 @@ $sanitization = new Sanitize();
 Customizer::add_section(
 	'gridd_grid_part_details_footer',
 	[
-		'title'       => esc_html__( 'Footer', 'gridd' ),
-		'description' => Customizer::section_description(
-			'gridd_grid_part_details_footer',
-			[
-				'docs' => 'https://wplemon.github.io/gridd/grid-parts/footer.html',
-			]
-		),
-		'priority'    => 26,
-		'panel'       => 'gridd_options',
+		'title'    => esc_html__( 'Footer', 'gridd' ),
+		'priority' => 26,
+		'panel'    => 'gridd_options',
 	]
 );
 

@@ -44,23 +44,11 @@ function gridd_nav_customizer_options( $id ) {
 	Customizer::add_outer_section(
 		"gridd_grid_part_details_nav_$id",
 		[
-			'title'       => sprintf(
+			'title' => sprintf(
 				/* translators: The grid-part label. */
 				esc_html__( '%s Options', 'gridd' ),
 				/* translators: The navigation number. */
 				sprintf( esc_html__( 'Navigation %d', 'gridd' ), absint( $id ) )
-			),
-			'description' => Customizer::section_description(
-				"gridd_grid_part_details_nav_$id",
-				[
-					'plus' => [
-						esc_html__( 'More extensive control over colors', 'gridd' ),
-						esc_html__( 'WooCommerce Cart inside the navigation', 'gridd' ),
-						esc_html__( 'font-size adjustments', 'gridd' ),
-					],
-					'tip'  => '<p>' . esc_html__( 'Try to keep your horizontal navigation as short as possible and avoid hierarchical menus.', 'gridd' ) . '</p><p>' . esc_html__( 'Verical menus provide a better user experience for hierarchical (nested) menus.', 'gridd' ) . '</p>',
-					'docs' => 'https://wplemon.github.io/gridd/grid-parts/navigation.html',
-				]
 			),
 		]
 	);
