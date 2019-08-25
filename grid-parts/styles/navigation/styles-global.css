@@ -80,6 +80,7 @@ nav {
 }
 .gridd-navigation .gridd-toggle.toggled-on + ul {
   display: block;
+  width: 100%;
 }
 
 .gridd-nav-vertical .gridd-navigation .gridd-toggle,
