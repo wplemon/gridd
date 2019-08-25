@@ -46,7 +46,7 @@ class Grid extends \Kirki_Control_Base {
 			[
 				'l10n'        => [
 					'add'    => esc_attr__( 'Add', 'gridd' ),
-					'resize' => esc_attr__( 'Resize', 'gridd' ),
+					'resize' => esc_attr__( 'Move/Resize', 'gridd' ),
 					'edit'   => esc_attr__( 'Edit', 'gridd' ),
 					'delete' => esc_attr__( 'Delete', 'gridd' ),
 					'whatis' => [

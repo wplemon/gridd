@@ -449,9 +449,9 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 	 */
 	getActionsHTML: function( id ) {
 		var control      = this,
-			resizeButton = '<button class="resize" data-part="' + id + '"><span class="dashicons dashicons-grid-view"></span><span class="screen-reader-text">' + griddGridControl.l10n.resize + '</span></button>',
-			editButton   = '<button class="edit button-gridd-focus" data-part="' + id + '"><span class="dashicons dashicons-admin-generic"></span><span class="screen-reader-text">' + griddGridControl.l10n.edit + '</span></button>',
-			deleteButton = '<button class="delete" data-part="' + id + '"><span class="trash dashicons dashicons-trash"></span><span class="screen-reader-text">' + griddGridControl.l10n.delete + '</span></button>',
+			resizeButton = '<button class="resize" data-part="' + id + '" title="' + griddGridControl.l10n.resize + '"><span class="dashicons dashicons-grid-view"></span><span class="screen-reader-text">' + griddGridControl.l10n.resize + '</span></button>',
+			editButton   = '<button class="edit button-gridd-focus" data-part="' + id + '" title="' + griddGridControl.l10n.edit + '"><span class="dashicons dashicons-admin-generic"></span><span class="screen-reader-text">' + griddGridControl.l10n.edit + '</span></button>',
+			deleteButton = '<button class="delete" data-part="' + id + '" title="' + griddGridControl.l10n.delete + '"><span class="trash dashicons dashicons-trash"></span><span class="screen-reader-text">' + griddGridControl.l10n.delete + '</span></button>',
 			html;
 
 		// Don't allow deleting the content, header & footer.
