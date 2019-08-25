@@ -54,8 +54,11 @@ Customizer::add_field(
 			'parts' => Header::get_header_grid_parts(),
 		],
 		'sanitize_callback' => [ $sanitization, 'grid' ],
-		'transport'         => 'postMessage',
 		'priority'          => 10,
+		/**
+		 * Deactivated the partial-refresh due to https://github.com/wplemon/gridd/issues/89
+		 *
+		'transport'         => 'postMessage',
 		'partial_refresh'   => [
 			'gridd_header_grid_part_renderer' => [
 				'selector'            => '.gridd-tp.gridd-tp-header',
@@ -65,6 +68,7 @@ Customizer::add_field(
 				},
 			],
 		],
+		*/
 	]
 );
 

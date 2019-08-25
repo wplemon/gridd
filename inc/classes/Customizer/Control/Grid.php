@@ -46,15 +46,9 @@ class Grid extends \Kirki_Control_Base {
 			[
 				'l10n'        => [
 					'add'    => esc_attr__( 'Add', 'gridd' ),
-					'resize' => esc_attr__( 'Resize', 'gridd' ),
+					'resize' => esc_attr__( 'Move/Resize', 'gridd' ),
 					'edit'   => esc_attr__( 'Edit', 'gridd' ),
 					'delete' => esc_attr__( 'Delete', 'gridd' ),
-					'whatis' => [
-						/* translators: The Column number. */
-						'columnWidth' => esc_attr__( 'Column %d Width', 'gridd' ),
-						/* translators: The Row number. */
-						'rowHeight'   => esc_attr__( 'Row %d Height', 'gridd' ),
-					],
 				],
 				'nestedParts' => Grid_Parts::get_instance()->get_grids(),
 			]
@@ -126,7 +120,6 @@ class Grid extends \Kirki_Control_Base {
 						</button>
 					</div>
 
-					<button class="grid-whatis"><span class="dashicons dashicons-editor-help"></span></button>
 					<div class="gridd-grid-builder-columns"></div>
 					<div class="gridd-grid-builder-rows"></div>
 
@@ -148,6 +141,7 @@ class Grid extends \Kirki_Control_Base {
 						</div>
 					</div>
 				</div>
+				<div class="gridd-grid-part-move-helper"><?php esc_html_e( 'Click on an empty area to move the grid-part, or click-and-drag across multiple empty areas to resize it.', 'gridd' ); ?></div>
 			</div>
 		</div>
 

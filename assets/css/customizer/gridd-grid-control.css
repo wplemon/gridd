@@ -5,22 +5,12 @@
 .customize-control-gridd_grid {
   margin: 2em 0;
 }
-.customize-control-gridd_grid .grid-whatis {
-  grid-row: 2/3;
-  grid-column: 2/3;
-  padding: 0;
-}
 .customize-control-gridd_grid .gridd-grid-builder-grids-wrapper {
   display: grid;
   grid-template-columns: 1fr 46px;
   grid-gap: 7px;
 }
-.customize-control-gridd_grid .gridd-grid-builder-grids-wrapper.whatis .gridd-grid-builder-columns input,
-.customize-control-gridd_grid .gridd-grid-builder-grids-wrapper.whatis .gridd-grid-builder-rows input {
-  display: none;
-}
-.customize-control-gridd_grid .gridd-grid-builder-grids-wrapper.whatis .gridd-grid-builder-columns .whatis,
-.customize-control-gridd_grid .gridd-grid-builder-grids-wrapper.whatis .gridd-grid-builder-rows .whatis {
+.customize-control-gridd_grid .gridd-grid-builder-grids-wrapper.editing-parts + .gridd-grid-part-move-helper {
   display: block;
 }
 .customize-control-gridd_grid .map-builder-actions {
@@ -41,9 +31,7 @@
   height: 25px;
 }
 .customize-control-gridd_grid .gridd-grid-builder-columns input,
-.customize-control-gridd_grid .gridd-grid-builder-columns .whatis,
-.customize-control-gridd_grid .gridd-grid-builder-rows input,
-.customize-control-gridd_grid .gridd-grid-builder-rows .whatis {
+.customize-control-gridd_grid .gridd-grid-builder-rows input {
   background: none;
   box-shadow: none;
   border: 1px dotted #999;
@@ -52,20 +40,10 @@
   font-size: 12px;
 }
 .customize-control-gridd_grid .gridd-grid-builder-columns input:active, .customize-control-gridd_grid .gridd-grid-builder-columns input:focus, .customize-control-gridd_grid .gridd-grid-builder-columns input:hover,
-.customize-control-gridd_grid .gridd-grid-builder-columns .whatis:active,
-.customize-control-gridd_grid .gridd-grid-builder-columns .whatis:focus,
-.customize-control-gridd_grid .gridd-grid-builder-columns .whatis:hover,
 .customize-control-gridd_grid .gridd-grid-builder-rows input:active,
 .customize-control-gridd_grid .gridd-grid-builder-rows input:focus,
-.customize-control-gridd_grid .gridd-grid-builder-rows input:hover,
-.customize-control-gridd_grid .gridd-grid-builder-rows .whatis:active,
-.customize-control-gridd_grid .gridd-grid-builder-rows .whatis:focus,
-.customize-control-gridd_grid .gridd-grid-builder-rows .whatis:hover {
+.customize-control-gridd_grid .gridd-grid-builder-rows input:hover {
   background: #fff;
-}
-.customize-control-gridd_grid .gridd-grid-builder-columns .whatis,
-.customize-control-gridd_grid .gridd-grid-builder-rows .whatis {
-  display: none;
 }
 .customize-control-gridd_grid .gridd-grid-builder-columns {
   grid-column: 1/2;
@@ -101,6 +79,13 @@
   grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 2;
+}
+.customize-control-gridd_grid .gridd-grid-part-move-helper {
+  display: none;
+  margin-top: -20px;
+  padding: 5px 12px;
+  background: #fff;
+  border-left: 5px solid #46B450;
 }
 .customize-control-gridd_grid.fixed-position {
   position: fixed;
