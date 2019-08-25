@@ -1,3 +1,13 @@
+## 1.1.17
+
+* Fix: Horizontal padding on submenus when navigation is on vertical mode.
+* Fix: Adding widgets on the header grid was not showing the widget areas in the customizer due to a partial refresh instead of a full refresh of the preview pane.
+* Fix: Minor styling fixes for navigation parts.
+* Fix: Added titles to buttons in the grid control to make it easier to understand what they do when they get hovered.
+* Fix: Removed google-plus from list of social networks.
+* Fix: Styling fixes for the header-search grid-part.
+* Fix: Size of video embeds.
+
 ## 1.1.16
 
 * New: Added slide-up mode for header searchform.
