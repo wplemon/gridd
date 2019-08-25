@@ -13,6 +13,12 @@
 		display: grid;
 		grid-template-columns: 1fr 46px;
 		grid-gap: 7px;
+
+		&.editing-parts {
+			+.gridd-grid-part-move-helper {
+				display: block;
+			}
+		}
 	}
 
 	// The add/remove row/column buttons.
@@ -96,6 +102,14 @@
 			grid-row-start: 1;
 			grid-row-end: 2;
 		}
+	}
+
+	.gridd-grid-part-move-helper {
+		display: none;
+		margin-top: -20px;
+		padding: 5px 12px;
+		background: #fff;
+		border-left: 5px solid #46B450;
 	}
 
 	&.fixed-position {

@@ -299,7 +299,7 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 				control.gridVal.gridTemplate.columns[ i ] = 'auto';
 				control.save();
 			}
-			container.append( '<input type="text" data-column-css="' + i + '" value="' + control.gridVal.gridTemplate.columns[ i ] + '"><span class="whatis">' + griddGridControl.l10n.whatis.columnWidth.replace( '%d', i + 1 ) + '</span>' );
+			container.append( '<input type="text" data-column-css="' + i + '" value="' + control.gridVal.gridTemplate.columns[ i ] + '">' );
 		}
 		container.css( 'grid-template-columns', 'repeat(' + control.gridVal.columns + ', 1fr)' );
 
@@ -329,7 +329,7 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 				control.gridVal.gridTemplate.rows[ i ] = 'auto';
 				control.save();
 			}
-			container.append( '<input type="text" data-row-css="' + i + '" value="' + control.gridVal.gridTemplate.rows[ i ] + '"><span class="whatis">' + griddGridControl.l10n.whatis.rowHeight.replace( '%d', i + 1 ) + '</span>' );
+			container.append( '<input type="text" data-row-css="' + i + '" value="' + control.gridVal.gridTemplate.rows[ i ] + '">' );
 		}
 		container.css( 'grid-template-rows', 'repeat(' + control.gridVal.rows + ', 1fr)' );
 
@@ -405,11 +405,13 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 		if ( control.editingPart ) {
 
 			control.container.find( '.gridd-grid-builder-grids' ).addClass( 'editing-parts' );
+			control.container.find( '.gridd-grid-builder-grids-wrapper' ).addClass( 'editing-parts' );
 
 			// Add .editing class to the preview in the grid.
 			control.container.find( '.grid-selected-part.selected-part-' + control.editingPart ).addClass( 'editing' );
 		} else {
 			control.container.find( '.gridd-grid-builder-grids' ).removeClass( 'editing-parts' );
+			control.container.find( '.gridd-grid-builder-grids-wrapper' ).removeClass( 'editing-parts' );
 		}
 
 		selectedContainer.css( 'grid-template-columns', 'repeat(' + control.gridVal.columns + ', 1fr)' );
@@ -574,6 +576,7 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 			// Add .editing class to the preview in the grid.
 			control.container.find( '.grid-selected-part' ).removeClass( 'editing' );
 			control.container.find( '.gridd-grid-builder-grids' ).removeClass( 'editing-parts' );
+			control.container.find( '.gridd-grid-builder-grids-wrapper' ).removeClass( 'editing-parts' );
 
 			// Toggle class to hide the advanced options.
 			control.dragSelect.clearSelection();

@@ -7,6 +7,7 @@
 * Fix: Removed google-plus from list of social networks.
 * Fix: Styling fixes for the header-search grid-part.
 * Fix: Size of video embeds.
+* Fix: Various improvements to the Grid control.
 
 ## 1.1.16
 
