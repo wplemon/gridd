@@ -7,5 +7,9 @@
 .gridd-tp-nav_ID ul.menu > li > ul {
   font-size: calc(1em / var(--gridd-typo-scale, 1.26));
 }
+.gridd-tp-nav_ID ul.menu > li > ul a {
+  padding-left: calc(var(--gridd-nav-1-items-padding) * var(--gridd-typo-scale,1.26));
+  padding-right: calc(var(--gridd-nav-1-items-padding) * var(--gridd-typo-scale,1.26));
+}
 
 /*# sourceMappingURL=styles-vertical.css.map */
