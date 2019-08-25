@@ -5,11 +5,6 @@
 .customize-control-gridd_grid {
   margin: 2em 0;
 }
-.customize-control-gridd_grid .grid-whatis {
-  grid-row: 2/3;
-  grid-column: 2/3;
-  padding: 0;
-}
 .customize-control-gridd_grid .gridd-grid-builder-grids-wrapper {
   display: grid;
   grid-template-columns: 1fr 46px;

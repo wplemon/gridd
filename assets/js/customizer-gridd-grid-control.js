@@ -52,7 +52,6 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 		control.gridButtons();
 		control.selectPartButtons();
 		control.setPartsFromAllGridControls();
-		control.helpButton();
 	},
 
 	/**
@@ -723,14 +722,6 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 			} else {
 				delete control.gridVal.areas[ part ];
 			}
-		});
-	},
-
-	helpButton: function() {
-		var control = this;
-		control.container.find( '.grid-whatis' ).on( 'click', function( e ) {
-			e.preventDefault();
-			control.container.find( '.gridd-grid-builder-grids-wrapper' ).toggleClass( 'whatis' );
 		});
 	},
 

@@ -7,12 +7,6 @@
 .customize-control-gridd_grid {
 	margin: 2em 0;
 
-	.grid-whatis {
-		grid-row: 2 / 3;
-		grid-column: 2 / 3;
-		padding: 0;
-	}
-
 	// The grid wrapper for everything.
 	.gridd-grid-builder-grids-wrapper {
 		// display: -ms-grid;
@@ -47,7 +41,7 @@
 			margin: 0;
 			height: 35px;
 			display: inline-block;
-			
+
 			svg {
 				width: 25px;
 				height: 25px;

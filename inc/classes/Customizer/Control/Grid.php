@@ -126,7 +126,6 @@ class Grid extends \Kirki_Control_Base {
 						</button>
 					</div>
 
-					<button class="grid-whatis"><span class="dashicons dashicons-editor-help"></span></button>
 					<div class="gridd-grid-builder-columns"></div>
 					<div class="gridd-grid-builder-rows"></div>
 
