@@ -37,6 +37,7 @@
 .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a,
 .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a:visited {
   color: var(--gridd-sidebar-ID-color, #000);
+  border-bottom: 2px solid transparent;
 }
 .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a:hover, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a:focus, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a.focus, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a.toggled-on,
 .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a:visited:hover,
@@ -44,14 +45,14 @@
 .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a:visited.focus,
 .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a:visited.toggled-on {
   color: var(--gridd-sidebar-ID-bg, #fff);
-  border-bottom: 2px solid var(--gridd-sidebar-ID-bg, #fff);
+  border-bottom-color: var(--gridd-sidebar-ID-bg, #fff);
 }
 .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a:hover ~ .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a:focus ~ .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a.focus ~ .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a.toggled-on ~ .gridd-toggle,
 .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a:visited:hover ~ .gridd-toggle,
 .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a:visited:focus ~ .gridd-toggle,
 .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a:visited.focus ~ .gridd-toggle,
 .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a:visited.toggled-on ~ .gridd-toggle {
-  border-bottom: 2px solid var(--gridd-sidebar-ID-bg, #fff);
+  border-bottom-color: var(--gridd-sidebar-ID-bg, #fff);
 }
 .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a:hover ~ .gridd-toggle svg, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a:focus ~ .gridd-toggle svg, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a.focus ~ .gridd-toggle svg, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a.toggled-on ~ .gridd-toggle svg,
 .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a:visited:hover ~ .gridd-toggle svg,
@@ -62,19 +63,20 @@
 }
 .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation .gridd-toggle {
   color: var(--gridd-sidebar-ID-color, #000);
+  border-bottom: 2px solid transparent;
 }
 .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation .gridd-toggle svg {
   fill: var(--gridd-sidebar-ID-color, #000);
 }
 .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation .gridd-toggle:hover, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation .gridd-toggle:focus, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation .gridd-toggle.focus, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation .gridd-toggle.toggled-on {
   color: var(--gridd-sidebar-ID-bg, #fff);
-  border-bottom: 2px solid var(--gridd-sidebar-ID-bg, #fff);
+  border-bottom-color: var(--gridd-sidebar-ID-bg, #fff);
 }
 .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation .gridd-toggle:hover svg, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation .gridd-toggle:focus svg, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation .gridd-toggle.focus svg, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation .gridd-toggle.toggled-on svg {
   fill: var(--gridd-sidebar-ID-bg, #fff);
 }
 .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation .gridd-toggle.toggled-on {
-  border-bottom: 2px solid var(--gridd-sidebar-ID-bg, #fff);
+  border-bottom-color: var(--gridd-sidebar-ID-bg, #fff);
 }
 .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation .gridd-toggle.toggled-on svg {
   fill: var(--gridd-sidebar-ID-bg, #fff);
