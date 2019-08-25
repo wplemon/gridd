@@ -6,6 +6,7 @@ function griddResponsiveFullWidthVideo() {
 		videoSources = [
 			'https?://((m|www)\.)?youtube\.com/watch',
 			'https?://((m|www)\.)?youtube\.com/playlist',
+			'https?://((m|www)\.)?youtube\.com/embed',
 			'https?://youtu\.be/',
 			'https?://(.+\.)?vimeo\.com/',
 			'https?://(www\.)?dailymotion\.com/',
@@ -23,13 +24,21 @@ function griddResponsiveFullWidthVideo() {
 			var src = el.getAttribute( 'src' ),
 				height = el.getAttribute( 'height' ),
 				width = el.getAttribute( 'width' ),
+				calcWidth = el.offsetWidth,
 				calcHeight;
 
-			if ( src.match( source ) ) {
-				if ( width && height ) {
-					calcHeight = ( el.offsetWidth / width ) * height;
-					el.style.height = calcHeight + 'px';
-				}
+			/**
+			 * If this is a child of .wp-block-embed__wrapper,
+			 * get the width of the container.
+			 */
+			if ( el.parentNode.classList.contains( 'wp-block-embed__wrapper' ) ) {
+				calcWidth = el.parentNode.offsetWidth;
+				el.style.width = calcWidth + 'px';
+			}
+
+			if ( src.match( source ) && width && height ) {
+				calcHeight = ( calcWidth / width ) * height;
+				el.style.height = calcHeight + 'px';
 			}
 		});
 	});
