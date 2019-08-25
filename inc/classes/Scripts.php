@@ -93,7 +93,7 @@ class Scripts {
 		 * We'll use this to populate the $blocks property of this object
 		 * and enque the CSS needed for them.
 		 */
-		add_filter( 'render_block', [ $this, 'render_block' ], 10, 2 );		
+		add_filter( 'render_block', [ $this, 'render_block' ], 10, 2 );
 	}
 
 	/**
@@ -191,6 +191,11 @@ class Scripts {
 		$style->add_file( get_theme_file_path( 'assets/css/core/grid.min.css' ) );
 		$style->add_file( get_theme_file_path( 'assets/css/core/layout.min.css' ) );
 		$style->add_file( get_theme_file_path( 'assets/css/core/links.min.css' ) );
+
+		// Styles specific to the customizer preview pane.
+		if ( is_customize_preview() ) {
+			$style->add_file( get_theme_file_path( 'assets/css/customizer/preview.min.css' ) );
+		}
 
 		// Adminbar.
 		if ( is_admin_bar_showing() ) {
