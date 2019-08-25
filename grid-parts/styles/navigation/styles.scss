@@ -18,84 +18,83 @@
 		ul {
 			background-color: $submenuBackground;
 		}
+	}
 
+	li {
 
-		li {
+		&.current-menu-item,
+		&.current-page-item,
+		&.current_page_item,
+		&.current-page-ancestor,
+		&.current-menu-ancestor,
+		&.current-menu-parent,
+		&.current-page-parent,
+		&.current_page_parent,
+		&.current_page_ancestor {
 
-			&.current-menu-item,
-			&.current-page-item,
-			&.current_page_item,
-			&.current-page-ancestor,
-			&.current-menu-ancestor,
-			&.current-menu-parent,
-			&.current-page-parent,
-			&.current_page_parent,
-			&.current_page_ancestor {
+			>a,
+			>a:visited {
+				color: $accentColor;
+				border-bottom: 2px solid;
+			}
 
-				>a,
-				>a:visited {
-					color: $accentColor;
-					border-bottom: 2px solid;
-				}
+			.gridd-toggle {
+				color: $accentColor;
 
-				.gridd-toggle {
-					color: $accentColor;
-
-					svg {
-						fill: $accentColor;
-					}
+				svg {
+					fill: $accentColor;
 				}
 			}
 		}
+	}
 
-		a,
-		a:visited {
-			color: $itemsColor;
-			border-bottom: 2px solid transparent;
+	a,
+	a:visited {
+		color: $itemsColor;
+		border-bottom: 2px solid transparent;
 
-			&:hover,
-			&:focus,
-			&.focus,
-			&.toggled-on {
-				color: $accentColor;
+		&:hover,
+		&:focus,
+		&.focus,
+		&.toggled-on {
+			color: $accentColor;
+			border-bottom-color: $accentColor;
+
+			~.gridd-toggle {
 				border-bottom-color: $accentColor;
 
-				~.gridd-toggle {
-					border-bottom-color: $accentColor;
-
-					svg {
-						fill: $accentColor;
-					}
+				svg {
+					fill: $accentColor;
 				}
 			}
 		}
+	}
 
-		.gridd-toggle {
-			color: $itemsColor;
-			border-bottom: 2px solid transparent;
+	.gridd-toggle {
+		color: $itemsColor;
+		border-bottom: 2px solid transparent;
+
+		svg {
+			fill: $itemsColor;
+		}
+
+		&:hover,
+		&:focus,
+		&.focus,
+		&.toggled-on {
+			color: $accentColor;
+			border-bottom-color: $accentColor;
 
 			svg {
-				fill: $itemsColor;
+				fill: $accentColor;
 			}
+		}
 
-			&:hover,
-			&:focus,
-			&.focus,
-			&.toggled-on {
-				color: $accentColor;
-				border-bottom-color: $accentColor;
+		&.toggled-on {
+			border-bottom-color: $accentColor;
 
-				svg {
-					fill: $accentColor;
-				}
-			}
-
-			&.toggled-on {
-				border-bottom-color: $accentColor;
-
-				svg {
-					fill: $accentColor;
-				}
+			svg {
+				fill: $accentColor;
 			}
 		}
 	}
