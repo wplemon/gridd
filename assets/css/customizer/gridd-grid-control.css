@@ -10,14 +10,6 @@
   grid-template-columns: 1fr 46px;
   grid-gap: 7px;
 }
-.customize-control-gridd_grid .gridd-grid-builder-grids-wrapper.whatis .gridd-grid-builder-columns input,
-.customize-control-gridd_grid .gridd-grid-builder-grids-wrapper.whatis .gridd-grid-builder-rows input {
-  display: none;
-}
-.customize-control-gridd_grid .gridd-grid-builder-grids-wrapper.whatis .gridd-grid-builder-columns .whatis,
-.customize-control-gridd_grid .gridd-grid-builder-grids-wrapper.whatis .gridd-grid-builder-rows .whatis {
-  display: block;
-}
 .customize-control-gridd_grid .map-builder-actions {
   grid-column: 1/3;
   grid-row: 1/2;
@@ -36,9 +28,7 @@
   height: 25px;
 }
 .customize-control-gridd_grid .gridd-grid-builder-columns input,
-.customize-control-gridd_grid .gridd-grid-builder-columns .whatis,
-.customize-control-gridd_grid .gridd-grid-builder-rows input,
-.customize-control-gridd_grid .gridd-grid-builder-rows .whatis {
+.customize-control-gridd_grid .gridd-grid-builder-rows input {
   background: none;
   box-shadow: none;
   border: 1px dotted #999;
@@ -47,20 +37,10 @@
   font-size: 12px;
 }
 .customize-control-gridd_grid .gridd-grid-builder-columns input:active, .customize-control-gridd_grid .gridd-grid-builder-columns input:focus, .customize-control-gridd_grid .gridd-grid-builder-columns input:hover,
-.customize-control-gridd_grid .gridd-grid-builder-columns .whatis:active,
-.customize-control-gridd_grid .gridd-grid-builder-columns .whatis:focus,
-.customize-control-gridd_grid .gridd-grid-builder-columns .whatis:hover,
 .customize-control-gridd_grid .gridd-grid-builder-rows input:active,
 .customize-control-gridd_grid .gridd-grid-builder-rows input:focus,
-.customize-control-gridd_grid .gridd-grid-builder-rows input:hover,
-.customize-control-gridd_grid .gridd-grid-builder-rows .whatis:active,
-.customize-control-gridd_grid .gridd-grid-builder-rows .whatis:focus,
-.customize-control-gridd_grid .gridd-grid-builder-rows .whatis:hover {
+.customize-control-gridd_grid .gridd-grid-builder-rows input:hover {
   background: #fff;
-}
-.customize-control-gridd_grid .gridd-grid-builder-columns .whatis,
-.customize-control-gridd_grid .gridd-grid-builder-rows .whatis {
-  display: none;
 }
 .customize-control-gridd_grid .gridd-grid-builder-columns {
   grid-column: 1/2;

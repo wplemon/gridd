@@ -13,18 +13,6 @@
 		display: grid;
 		grid-template-columns: 1fr 46px;
 		grid-gap: 7px;
-
-		&.whatis {
-			.gridd-grid-builder-columns,
-			.gridd-grid-builder-rows {
-				input {
-					display: none;
-				}
-				.whatis {
-					display: block;
-				}
-			}
-		}
 	}
 
 	// The add/remove row/column buttons.
@@ -51,8 +39,7 @@
 
 	.gridd-grid-builder-columns,
 	.gridd-grid-builder-rows {
-		input,
-		.whatis {
+		input {
 			background: none;
 			box-shadow: none;
 			border: 1px dotted #999;
@@ -66,9 +53,6 @@
 				background: #fff;
 			}
 		}
-		.whatis {
-			display: none;
-		}
 	}
 
 	// The columns width inputs wrapper.
@@ -78,6 +62,7 @@
 		display: grid;
 		grid-gap: 0;
 	}
+
 	// The rows width inputs wrapper.
 	.gridd-grid-builder-rows {
 		grid-column: 2 / 3;
@@ -155,7 +140,7 @@
 	button {
 		display: block;
 		height: 65px;
-		border: 1px dotted rgba(0,0,0,.25);
+		border: 1px dotted rgba(0, 0, 0, .25);
 		background-color: #f2f2f2;
 		border-radius: 0;
 		box-shadow: none;
@@ -165,8 +150,8 @@
 		}
 
 		&.ds-selected {
-			background-color: rgba(0,0,0,.25);
-			background-image: linear-gradient(135deg, rgba(0,0,0,.5) 10%, transparent 10%, transparent 50%, rgba(0,0,0,.5) 50%, rgba(0,0,0,.5) 60%, transparent 60%, transparent 100%);
+			background-color: rgba(0, 0, 0, .25);
+			background-image: linear-gradient(135deg, rgba(0, 0, 0, .5) 10%, transparent 10%, transparent 50%, rgba(0, 0, 0, .5) 50%, rgba(0, 0, 0, .5) 60%, transparent 60%, transparent 100%);
 			background-size: 5px 5px;
 		}
 	}
@@ -189,7 +174,7 @@
 	}
 
 	.inner {
-		box-shadow: inset 0px 1px 10px 0px rgba(0,0,0,0.2);
+		box-shadow: inset 0px 1px 10px 0px rgba(0, 0, 0, 0.2);
 		color: #fff;
 		justify-content: center;
 		display: flex;
@@ -199,6 +184,7 @@
 		word-break: break-all;
 		// border-radius: 3px;
 		position: relative;
+
 		// font-size: 10px;
 		// WIP
 		// background-color: #666 !important;
@@ -223,7 +209,7 @@
 			.resize {
 				background: #fff;
 				padding: 4px;
-				border: 1px solid rgba(0,0,0,.3);
+				border: 1px solid rgba(0, 0, 0, .3);
 
 				.dashicons {
 					font-size: 15px;
