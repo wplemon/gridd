@@ -343,6 +343,27 @@ function gridd_nav_customizer_options( $id ) {
 			},
 		]
 	);
+
+	Customizer::add_field(
+		[
+			'type'              => 'radio-buttonset',
+			'settings'          => "gridd_grid_nav_{$id}_style",
+			'label'             => esc_html__( 'Hover/Focus Styles', 'gridd' ),
+			'section'           => "gridd_grid_part_details_nav_$id",
+			'default'           => 'default',
+			'transport'         => 'refresh',
+			'choices'           => [
+				'default' => esc_html__( 'Default', 'gridd' ),
+				'alt1'    => esc_html__( 'Bottom Lines', 'gridd' ),
+			],
+			'sanitize_callback' => function( $value ) {
+				if ( ! in_array( $value, [ 'default', 'alt1' ], true ) ) {
+					return 'default';
+				}
+				return $value;
+			},
+		]
+	);
 }
 
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */
