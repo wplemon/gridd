@@ -78,7 +78,7 @@ Customizer::add_field(
 		'settings'  => 'gridd_grid_header_max_width',
 		'label'     => esc_html__( 'Header Maximum Width', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_header',
-		'default'   => '',
+		'default'   => '45em',
 		'priority'  => 20,
 		'css_vars'  => '--gridd-header-max-width',
 		'transport' => 'postMessage',
