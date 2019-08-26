@@ -129,7 +129,7 @@ Customizer::add_field(
 		'settings'          => 'gridd_grid_footer_copyright_text_align',
 		'label'             => esc_html__( 'Text Alignment', 'gridd' ),
 		'section'           => 'gridd_grid_part_details_footer_copyright',
-		'default'           => 'left',
+		'default'           => 'center',
 		'transport'         => 'postMessage',
 		'css_vars'          => '--gridd-footer-copyright-text-align',
 		'priority'          => 150,
