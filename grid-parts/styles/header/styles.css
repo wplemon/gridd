@@ -9,8 +9,9 @@
 }
 .gridd-tp-header.gridd-tp > .inner {
   width: 100%;
-  max-width: var(--gridd-header-max-width, 100%);
+  max-width: var(--gridd-header-max-width, 47em);
   grid-gap: var(--gridd-header-grid-gap, 0);
+  padding: var(--gridd-header-padding, 0 1em);
 }
 
 /*# sourceMappingURL=styles.css.map */

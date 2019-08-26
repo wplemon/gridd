@@ -78,9 +78,22 @@ Customizer::add_field(
 		'settings'  => 'gridd_grid_header_max_width',
 		'label'     => esc_html__( 'Header Maximum Width', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_header',
-		'default'   => '45em',
+		'default'   => '47em',
 		'priority'  => 20,
 		'css_vars'  => '--gridd-header-max-width',
+		'transport' => 'postMessage',
+	]
+);
+
+Customizer::add_field(
+	[
+		'type'      => 'dimension',
+		'settings'  => 'gridd_grid_header_padding',
+		'label'     => esc_html__( 'Header Padding', 'gridd' ),
+		'section'   => 'gridd_grid_part_details_header',
+		'default'   => '0 1em',
+		'priority'  => 20,
+		'css_vars'  => '--gridd-header-padding',
 		'transport' => 'postMessage',
 	]
 );

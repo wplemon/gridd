@@ -6,7 +6,7 @@ a.custom-logo-link:hover {
   background-color: var(--gridd-branding-bg, #fff);
   display: flex;
   width: 100%;
-  padding: var(--gridd-branding-padding, 0.5em);
+  padding: var(--gridd-branding-padding, 0);
   justify-content: var(--gridd-branding-horizontal-align, left);
   align-items: var(--gridd-branding-vertical-align, center);
 }

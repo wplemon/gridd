@@ -15,7 +15,7 @@ $style->add_file( get_theme_file_path( 'grid-parts/styles/header/styles-branding
 $style->add_vars(
 	[
 		'--gridd-branding-bg'               => get_theme_mod( 'gridd_grid_header_branding_background_color', '#fff' ),
-		'--gridd-branding-padding'          => get_theme_mod( 'gridd_grid_header_branding_padding', '0.5em' ),
+		'--gridd-branding-padding'          => get_theme_mod( 'gridd_grid_header_branding_padding', '0' ),
 		'--gridd-branding-horizontal-align' => get_theme_mod( 'gridd_grid_header_branding_horizontal_align', 'left' ),
 		'--gridd-branding-vertical-align'   => get_theme_mod( 'gridd_grid_header_branding_vertical_align', 'center' ),
 		'--gridd-branding-elements-padding' => get_theme_mod( 'gridd_branding_inline_spacing', '0.5' ),

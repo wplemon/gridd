@@ -54,7 +54,7 @@ $style->add_vars(
 	[
 		'--gridd-header-bg'         => get_theme_mod( 'gridd_grid_part_details_header_background_color', '#ffffff' ),
 		'--gridd-header-box-shadow' => get_theme_mod( 'gridd_grid_header_box_shadow', '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)' ),
-		'--gridd-header-max-width'  => get_theme_mod( 'gridd_grid_header_max_width', '45em' ),
+		'--gridd-header-max-width'  => get_theme_mod( 'gridd_grid_header_max_width', '47em' ),
 		'--gridd-header-grid-gap'   => get_theme_mod( 'gridd_grid_header_grid_gap', '0' ),
 	]
 );

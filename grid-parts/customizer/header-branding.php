@@ -125,7 +125,7 @@ Customizer::add_field(
 		),
 		'section'           => 'gridd_grid_part_details_header_branding',
 		'priority'          => 30,
-		'default'           => '0.5em',
+		'default'           => '0',
 		'transport'         => 'postMessage',
 		'css_vars'          => '--gridd-branding-padding',
 		'sanitize_callback' => 'esc_attr', // Though not exactly accurate, in this case it sanitizes the CSS value properly.
