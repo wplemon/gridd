@@ -1,3 +1,9 @@
+## 1.1.18
+
+* Fix: Changed default values for some options for more reasonable results when the theme is first installed.
+* New: Added a new header-padding option.
+* New: Added a new option for navigation hover/focus styles.
+
 ## 1.1.17
 
 * Fix: Horizontal padding on submenus when navigation is on vertical mode.
