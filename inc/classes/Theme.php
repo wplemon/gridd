@@ -154,6 +154,8 @@ class Theme {
 			$classes[] = 'gridd-post-type-archive-' . get_post_type();
 		}
 
+		$classes[] = 'gridd-links-a11y-mode-' . get_theme_mod( 'gridd_links_a11y_mode', 'outline-dashed' );
+
 		return $classes;
 	}
 

@@ -174,4 +174,24 @@ Customizer::add_field(
 	]
 );
 
+/**
+ * Links accessibility mode.
+ */
+Customizer::add_field(
+	[
+		'settings'          => 'gridd_links_a11y_mode',
+		'type'              => 'radio',
+		'label'             => esc_attr__( 'Links Accessibility Mode', 'gridd' ),
+		'description'       => esc_attr__( 'Change the hover and active states styling for links.', 'gridd' ),
+		'section'           => 'gridd_typography',
+		'default'           => 'outline-dashed',
+		'transport'         => 'refresh',
+		'priority'          => 100,
+		'choices'           => [
+			'outline-dashed' => esc_html__( 'Outline - Dashed', 'gridd' ),
+			'box-shadow'     => esc_html__( 'Solid Box Shadow', 'gridd' ),
+		],
+	]
+);
+
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */
