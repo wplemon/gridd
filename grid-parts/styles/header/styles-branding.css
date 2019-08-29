@@ -31,7 +31,7 @@ a.custom-logo-link:hover {
   margin: 0;
 }
 .gridd-tp-header_branding.gridd-tp .site-description {
-  font-size: calc(var(--gridd-tagline-size, 1) * 1em);
+  font-size: calc(var(--gridd-tagline-size, 1) * 1rem);
 }
 .gridd-tp-header_branding.gridd-tp .site-description,
 .gridd-tp-header_branding.gridd-tp .site-title,
@@ -43,7 +43,7 @@ a.custom-logo-link:hover {
 }
 .gridd-tp-header_branding.gridd-tp .site-title {
   line-height: 1;
-  font-size: calc(var(--gridd-sitetitle-size, 2) * 1em);
+  font-size: calc(var(--gridd-sitetitle-size, 2) * 1rem);
 }
 .gridd-tp-header_branding.gridd-tp .site-title a {
   text-decoration: none;

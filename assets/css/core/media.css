@@ -23,7 +23,7 @@ object {
   max-width: 100%;
   padding-bottom: 0.5em;
   color: var(--gridd-text-color, #000);
-  font-size: calc(1em / var(--gridd-typo-scale, 1.26));
+  font-size: calc(1rem / var(--gridd-typo-scale, 1.26));
 }
 .wp-caption img[class*=wp-image-],
 .wp-block-image img[class*=wp-image-] {
@@ -91,7 +91,7 @@ object {
   width: 100%;
 }
 .gallery-item .gallery-caption {
-  font-size: 0.85em;
+  font-size: 0.85rem;
   width: 100%;
   height: 100%;
 }
@@ -101,7 +101,7 @@ object {
 }
 
 .wp-block-cover .wp-block-cover-text {
-  font-size: calc(var(--gridd-typo-scale, 1.26) * 1em);
+  font-size: calc(var(--gridd-typo-scale, 1.26) * 1rem);
 }
 
 /*# sourceMappingURL=media.css.map */

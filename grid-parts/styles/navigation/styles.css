@@ -1,7 +1,7 @@
 .gridd-tp-nav_ID {
   background-color: var(--gridd-nav-ID-bg, #fff);
   overflow: visible;
-  font-size: var(--gridd-nav-ID-font-size, 1em);
+  font-size: var(--gridd-nav-ID-font-size, 1rem);
 }
 .gridd-tp-nav_ID .inner {
   padding: var(--gridd-nav-ID-padding, 1em);

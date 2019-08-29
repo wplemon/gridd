@@ -14,7 +14,7 @@
   padding: 0;
 }
 .woocommerce.post-type-archive-product #main > ul .woocommerce-loop-product__title {
-  font-size: 1em;
+  font-size: 1rem;
   text-decoration: none;
 }
 
@@ -56,7 +56,7 @@
   border-radius: 100%;
   background-color: #77a464;
   color: #fff;
-  font-size: 0.857em;
+  font-size: 0.857rem;
   z-index: 9;
 }
 .woocommerce #content .product .tabs.wp-tabs,

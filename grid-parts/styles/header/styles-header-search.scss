@@ -2,7 +2,7 @@
 	background-color: var(--gridd-header-search-bg, #ffffff);
 
 	form.search-form {
-		font-size: calc(var(--gridd-header-search-font-size, 1) * 1em);
+		font-size: calc(var(--gridd-header-search-font-size, 1) * 1rem);
 		color: var(--gridd-header-search-color, #000000);
 	}
 
