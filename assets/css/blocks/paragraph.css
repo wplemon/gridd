@@ -91,19 +91,19 @@ p.has-text-color a {
 }
 
 .is-small-text {
-  font-size: calc(1rem / var(--gridd-typo-scale, 1.26));
+  font-size: calc(1em / var(--gridd-typo-scale, 1.26));
 }
 
 .is-regular-text {
-  font-size: var(--gridd-em, 1rem);
+  font-size: var(--gridd-em, 1em);
 }
 
 .is-large-text {
-  font-size: calc(var(--gridd-typo-scale, 1.26) * 1rem);
+  font-size: calc(var(--gridd-typo-scale, 1.26) * 1em);
 }
 
 .is-larger-text {
-  font-size: calc(var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * 1rem);
+  font-size: calc(var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * 1em);
 }
 
 p.has-background {

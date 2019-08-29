@@ -3,7 +3,7 @@
 // when the style is included inline in the document.
 $element:           ".gridd-tp-nav_ID" !default;
 $backgroundColor:   var(--gridd-nav-ID-bg, #fff) !default;
-$fontSize:          var(--gridd-nav-ID-font-size, 1rem) !default;
+$fontSize:          var(--gridd-nav-ID-font-size, 1em) !default;
 $padding:           var(--gridd-nav-ID-padding, 1em) !default;
 $justify:           var(--gridd-nav-ID-justify, center) !default;
 $submenuBackground: var(--gridd-nav-ID-submenu-bg, #fff) !default;

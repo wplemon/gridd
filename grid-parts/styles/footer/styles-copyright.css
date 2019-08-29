@@ -5,7 +5,7 @@
   padding: var(--gridd-footer-padding, 1em);
   background-color: var(--gridd-footer-copyright-bg, #fff);
   color: var(--gridd-footer-copyright-color, #000);
-  font-size: calc(var(--gridd-footer-copyright-font-size) * 1rem);
+  font-size: calc(var(--gridd-footer-copyright-font-size) * 1em);
   width: 100%;
   text-align: var(--gridd-footer-copyright-text-align, center);
 }

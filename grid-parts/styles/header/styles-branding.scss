@@ -40,7 +40,7 @@ a.custom-logo-link {
 	}
 
 	.site-description {
-		font-size: calc(var(--gridd-tagline-size, 1) * 1rem);
+		font-size: calc(var(--gridd-tagline-size, 1) * 1em);
 	}
 
 	.site-description,
@@ -54,7 +54,7 @@ a.custom-logo-link {
 
 	.site-title {
 		line-height: 1;
-		font-size: calc(var(--gridd-sitetitle-size, 2) * 1rem);
+		font-size: calc(var(--gridd-sitetitle-size, 2) * 1em);
 
 		a {
 			text-decoration: none;

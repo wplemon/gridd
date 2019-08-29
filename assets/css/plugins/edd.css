@@ -92,14 +92,14 @@
   padding: 1.5em;
 }
 #edd_purchase_form > fieldset > legend {
-  font-size: calc(1rem * var(--gridd-typo-scale, 1.26));
+  font-size: calc(1em * var(--gridd-typo-scale, 1.26));
   padding: 0 0.7em;
 }
 #edd_purchase_form > fieldset > p {
   display: grid;
 }
 #edd_purchase_form > fieldset .edd-description {
-  font-size: calc(1rem / var(--gridd-typo-scale, 1.26));
+  font-size: calc(1em / var(--gridd-typo-scale, 1.26));
 }
 
 .edd_price_options {
@@ -141,7 +141,7 @@
 }
 
 .widget_edd_cart_widget .edd-cart-item {
-  font-size: calc(1rem / var(--gridd-typo-scale, 1.26));
+  font-size: calc(1em / var(--gridd-typo-scale, 1.26));
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding: 0.5em 0;
 }

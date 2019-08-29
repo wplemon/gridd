@@ -30,7 +30,7 @@ object {
 	// background-color: rgba(128, 128, 128, .1);
 	padding-bottom: 0.5em;
 	color: var(--gridd-text-color, #000);
-	font-size: calc(1rem / var(--gridd-typo-scale, 1.26));
+	font-size: calc(1em / var(--gridd-typo-scale, 1.26));
 
 	img[class*="wp-image-"] {
 		@include center-block;
@@ -85,7 +85,7 @@ object {
 	}
 
 	.gallery-caption {
-		font-size: 0.85rem;
+		font-size: 0.85em;
 		width: 100%;
 		height: 100%;
 	}
@@ -97,6 +97,6 @@ object {
 
 .wp-block-cover {
 	.wp-block-cover-text {
-		font-size: calc(var(--gridd-typo-scale, 1.26) * 1rem);
+		font-size: calc(var(--gridd-typo-scale, 1.26) * 1em);
 	}
 }

@@ -25,7 +25,7 @@
 .entry-footer {
   display: flex;
   flex-wrap: wrap;
-  font-size: 0.85rem;
+  font-size: 0.85em;
 }
 .entry-footer > * {
   margin-right: 2.5em;
@@ -38,7 +38,7 @@
 .entry-meta {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
-  font-size: calc(1rem / var(--gridd-typo-scale, 1.26));
+  font-size: calc(1em / var(--gridd-typo-scale, 1.26));
 }
 
 .has-text-align-center {

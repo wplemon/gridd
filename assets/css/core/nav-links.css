@@ -9,7 +9,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  font-size: 1rem;
+  font-size: 1em;
   padding: 1em 0;
 }
 .nav-links:before {

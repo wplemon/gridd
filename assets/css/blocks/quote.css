@@ -116,12 +116,12 @@
   margin: 0 0 1em;
 }
 .wp-block-quote.is-style-large p, .wp-block-quote.is-large p {
-  font-size: calc(var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * 1rem);
+  font-size: calc(var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * 1em);
 }
 .wp-block-quote.is-style-large cite,
 .wp-block-quote.is-style-large footer, .wp-block-quote.is-large cite,
 .wp-block-quote.is-large footer {
-  font-size: calc(var(--gridd-typo-scale, 1.26) * 1rem);
+  font-size: calc(var(--gridd-typo-scale, 1.26) * 1em);
 }
 .wp-block-quote cite,
 .wp-block-quote footer, .wp-block-quote__citation {

@@ -27,7 +27,7 @@
 .woocommerce .products ul li.product a.added_to_cart,
 .woocommerce ul.products li.product a.added_to_cart {
   text-align: center;
-  font-size: calc(1rem / var(--gridd-typo-scale, 1.26));
+  font-size: calc(1em / var(--gridd-typo-scale, 1.26));
 }
 .woocommerce .products ul li.product .add_to_cart,
 .woocommerce .products ul li.product .add_to_cart_button,
@@ -72,7 +72,7 @@
 }
 .woocommerce .woocommerce-tabs ul.tabs {
   display: flex;
-  font-size: calc(1rem / var(--gridd-typo-scale, 1.26));
+  font-size: calc(1em / var(--gridd-typo-scale, 1.26));
 }
 .woocommerce .woocommerce-tabs ul.tabs li a:active, .woocommerce .woocommerce-tabs ul.tabs li a:focus,
 .woocommerce .woocommerce-tabs ul.tabs li a:visited:active,
@@ -80,7 +80,7 @@
   background: none;
 }
 .woocommerce span.onsale {
-  font-size: calc(1rem / var(--gridd-typo-scale, 1.26));
+  font-size: calc(1em / var(--gridd-typo-scale, 1.26));
   min-height: 0;
   min-width: 0;
   top: 0;
