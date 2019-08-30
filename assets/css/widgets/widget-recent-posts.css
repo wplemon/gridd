@@ -15,7 +15,7 @@
   text-decoration: none;
 }
 .widget_recent_entries .post-date {
-  font-size: calc(1em / var(--gridd-typo-scale, 1.26));
+  font-size: var(--fs-1d-ts-tr);
 }
 
 /*# sourceMappingURL=widget-recent-posts.css.map */

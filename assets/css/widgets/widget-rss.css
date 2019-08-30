@@ -16,11 +16,11 @@
   padding-bottom: 0;
 }
 .widget_rss > ul > li > a.rsswidget {
-  font-size: calc(var(--gridd-typo-scale, 1.26) * 1em);
+  font-size: var(--fs-1x-ts-tr);
 }
 .widget_rss > ul > li > .rss-date,
 .widget_rss > ul > li > cite {
-  font-size: calc(1em / var(--gridd-typo-scale, 1.26));
+  font-size: var(--fs-1d-ts-tr);
   display: block;
 }
 

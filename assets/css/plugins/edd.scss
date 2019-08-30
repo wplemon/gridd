@@ -104,7 +104,7 @@
 		padding: 1.5em;
 
 		>legend {
-			font-size: calc(1em * var(--gridd-typo-scale, 1.26));
+			font-size: calc(1em * var(--ts));
 			padding: 0 .7em;
 		}
 
@@ -114,7 +114,7 @@
 		}
 
 		.edd-description {
-			font-size: calc(1em / var(--gridd-typo-scale, 1.26));
+			font-size: var(--fs-1d-ts-tr);
 		}
 	}
 }
@@ -170,7 +170,7 @@
 
 .widget_edd_cart_widget {
 	.edd-cart-item {
-		font-size: calc(1em / var(--gridd-typo-scale, 1.26));
+		font-size: var(--fs-1d-ts-tr);
 		border-bottom: 1px solid rgba(0, 0, 0, .1);
 		padding: .5em 0;
 	}

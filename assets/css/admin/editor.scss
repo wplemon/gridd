@@ -1,50 +1,51 @@
+@import "../core/base";
 .editor-post-title__block .editor-post-title__input {
-	font-size: calc(var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * 1em);
+	font-size: var(--fs-4x-ts-tr);
 	color: var(--gridd-text-color, #000);
 }
 
 .block-editor .edit-post-visual-editor.editor-styles-wrapper,
 .edit-post-visual-editor.editor-styles-wrapper {
-	font-size: calc((var(--gridd-font-size, 18) * 1px) + var(--gridd-typo-ratio, 0.25) * 1vw);
+	font-size: var(--fs-tr);
 	color: var(--gridd-text-color, #000);
 	background-color: var(--gridd-content-bg, #fff);
 
 	p {
-		font-size: calc((var(--gridd-font-size, 18) * 1px) + var(--gridd-typo-ratio, 0.25) * 1vw);
+		font-size: var(--fs-tr);
 	}
 
 	h1 {
-		font-size: calc(var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * 1em);
+		font-size: var(--fs-4x-ts-tr);
 	}
 
 	h2 {
-		font-size: calc(var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * 1em);
+		font-size: var(--fs-3x-ts-tr);
 	}
 
 	h3 {
-		font-size: calc(var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * 1em);
+		font-size: var(--fs-2x-ts-tr);
 	}
 
 	h4 {
-		font-size: calc(var(--gridd-typo-scale, 1.26) * 1em);
+		font-size: var(--fs-1x-ts-tr);
 	}
 
 	h5 {
-		font-size: calc(1em / var(--gridd-typo-scale, 1.26));
+		font-size: var(--fs-1d-ts-tr);
 	}
 
 	h6 {
-		font-size: calc(1em / var(--gridd-typo-scale, 1.26) / var(--gridd-typo-scale, 1.26));
+		font-size: var(--fs-2d-ts-tr);
 	}
 
 	.smaller,
 	smaller {
-		font-size: calc(1em / var(--gridd-typo-scale, 1.26) / var(--gridd-typo-scale, 1.26) / var(--gridd-typo-scale, 1.26));
+		font-size: var(--fs-3d-ts-tr);
 	}
 
 	.smallest,
 	smallest {
-		font-size: calc(1em / var(--gridd-typo-scale, 1.26) / var(--gridd-typo-scale, 1.26) / var(--gridd-typo-scale, 1.26) / var(--gridd-typo-scale, 1.26));
+		font-size: var(--fs-4d-ts-tr);
 	}
 
 	a,
@@ -70,12 +71,12 @@
 		max-width: 100%;
 		width: 100%;
 		color: var(--gridd-text-color, #000);
-		font-size: calc(1em / var(--gridd-typo-scale, 1.26));
+		font-size: var(--fs-1d-ts-tr);
 	}
 
 	.wp-block-quote__citation {
 		color: var(--gridd-text-color, #000);
-		font-size: calc(1em / var(--gridd-typo-scale, 1.26));
+		font-size: var(--fs-1d-ts-tr);
 	}
 
 	.wp-block-quote:not(.is-large):not(.is-style-large) {
@@ -93,14 +94,14 @@
 
 	.wp-block-cover {
 		.wp-block-cover-text {
-			font-size: calc(var(--gridd-typo-scale, 1.26) * 1em);
+			font-size: var(--fs-1x-ts-tr);
 		}
 	}
 }
 
 .block-editor .editor-post-title__block .editor-post-title__input,
 .editor-post-title__block .editor-post-title__input {
-	font-size: calc(var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * 1em);
+	font-size: var(--fs-4x-ts-tr);
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce {

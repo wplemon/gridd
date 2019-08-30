@@ -1,0 +1,18 @@
+:root {
+  --fs: var(--gridd-font-size, 18);
+  --fs-px: calc(var(--fs) * 1px);
+  --ts: var(--gridd-typo-scale, 1.26);
+  --tr: var(--gridd-typo-ratio, 0.25);
+  --fs-tr: calc(var(--fs-px) + var(--tr) * 1vw);
+  --fs-4x-ts-tr: calc(var(--ts) * var(--ts) * var(--ts) * var(--ts) * var(--fs-tr));
+  --fs-3x-ts-tr: calc(var(--ts) * var(--ts) * var(--ts) * var(--fs-tr));
+  --fs-2x-ts-tr: calc(var(--ts) * var(--ts) * var(--fs-tr));
+  --fs-1x-ts-tr: calc(var(--ts) * var(--fs-tr));
+  --fs-0x-ts-tr: var(--fs-tr);
+  --fs-1d-ts-tr: calc(var(--fs-tr) / var(--ts));
+  --fs-2d-ts-tr: calc(var(--fs-tr) / var(--ts) / var(--ts));
+  --fs-3d-ts-tr: calc(var(--fs-tr) / var(--ts) / var(--ts) / var(--ts));
+  --fs-4d-ts-tr: calc(var(--fs-tr) / var(--ts) / var(--ts) / var(--ts) / var(--ts));
+}
+
+/*# sourceMappingURL=base.css.map */

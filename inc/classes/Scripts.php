@@ -181,6 +181,7 @@ class Scripts {
 
 		$style = Style::get_instance( 'main-styles' );
 
+		$style->add_file( get_theme_file_path( 'assets/css/core/base.min.css' ) );
 		$style->add_file( get_theme_file_path( 'assets/css/core/normalize.min.css' ) );
 		$style->add_file( get_theme_file_path( 'assets/css/core/elements.min.css' ) );
 		$style->add_file( get_theme_file_path( 'assets/css/core/forms.min.css' ) );

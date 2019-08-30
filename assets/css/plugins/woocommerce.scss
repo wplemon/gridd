@@ -30,7 +30,7 @@
 
 				&.added_to_cart {
 					text-align: center;
-					font-size: calc(1em / var(--gridd-typo-scale, 1.26));
+					font-size: var(--fs-1d-ts-tr);
 				}
 			}
 
@@ -108,7 +108,7 @@
 	.woocommerce-tabs {
 		ul.tabs {
 			display: flex;
-			font-size: calc(1em / var(--gridd-typo-scale, 1.26));
+			font-size: var(--fs-1d-ts-tr);
 
 			li {
 
@@ -125,7 +125,7 @@
 	}
 
 	span.onsale {
-		font-size: calc(1em / var(--gridd-typo-scale, 1.26));
+		font-size: var(--fs-1d-ts-tr);
 		min-height: 0;
 		min-width: 0;
 		top: 0;

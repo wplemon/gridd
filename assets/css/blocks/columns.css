@@ -94,16 +94,16 @@
 }
 @media (min-width: 600px) {
   .wp-block-column {
-    flex-basis: calc(50% - 1em);
+    flex-basis: calc(50% - var(--fs-tr));
     flex-grow: 0;
   }
   .wp-block-column:nth-child(even) {
-    margin-left: 2em;
+    margin-left: calc($grid-size-large * 2);
   }
 }
 @media (min-width: 782px) {
   .wp-block-column:not(:first-child) {
-    margin-left: 2em;
+    margin-left: calc($grid-size-large * 2);
   }
 }
 

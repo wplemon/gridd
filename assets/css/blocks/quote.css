@@ -90,7 +90,7 @@
 .wp-block-quote cite,
 .wp-block-quote footer, .wp-block-quote__citation {
   color: #6c7781;
-  font-size: 1em;
+  font-size: var(--fs-tr);
   margin-top: 1em;
   position: relative;
   font-style: normal;
@@ -110,18 +110,18 @@
 }
 
 .wp-block-quote {
-  margin: calc(var(--gridd-typo-scale, 1.26) * 1em) 0;
+  margin: var(--fs-1x-ts-tr) 0;
 }
 .wp-block-quote.is-style-large, .wp-block-quote.is-large {
   margin: 0 0 1em;
 }
 .wp-block-quote.is-style-large p, .wp-block-quote.is-large p {
-  font-size: calc(var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * 1em);
+  font-size: var(--fs-2x-ts-tr);
 }
 .wp-block-quote.is-style-large cite,
 .wp-block-quote.is-style-large footer, .wp-block-quote.is-large cite,
 .wp-block-quote.is-large footer {
-  font-size: calc(var(--gridd-typo-scale, 1.26) * 1em);
+  font-size: var(--fs-1x-ts-tr);
 }
 .wp-block-quote cite,
 .wp-block-quote footer, .wp-block-quote__citation {

@@ -9,7 +9,7 @@
 @import "block-library/paragraph/style.scss";
 
 .is-small-text {
-	font-size: calc(1em / var(--gridd-typo-scale, 1.26));
+	font-size: var(--fs-1d-ts-tr);
 }
 
 .is-regular-text {
@@ -17,11 +17,11 @@
 }
 
 .is-large-text {
-	font-size: calc(var(--gridd-typo-scale, 1.26) * 1em);
+	font-size: var(--fs-1x-ts-tr);
 }
 
 .is-larger-text {
-	font-size: calc(var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * 1em);
+	font-size: var(--fs-2x-ts-tr);
 }
 
 p.has-background {

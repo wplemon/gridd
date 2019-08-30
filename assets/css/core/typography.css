@@ -8,12 +8,12 @@ textarea {
   line-height: 1.5;
 }
 
-html {
-  font-size: calc(var(--gridd-font-size, 18) * 1px);
+:root {
+  font-size: var(--fs-px);
 }
 
 body {
-  font-size: calc((var(--gridd-font-size, 18) * 1px) + var(--gridd-typo-ratio, 0.25) * 1vw);
+  font-size: var(--fs-tr);
   color: var(--gridd-text-color, #000);
 }
 
@@ -102,45 +102,45 @@ big {
 
 .h1,
 h1 {
-  font-size: calc(var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * 1em);
+  font-size: var(--fs-4x-ts-tr);
 }
 
 .h2,
 h2 {
-  font-size: calc(var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * 1em);
+  font-size: var(--fs-3x-ts-tr);
 }
 
 .h3,
 h3,
 .has-large-font-size {
-  font-size: calc(var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * 1em);
+  font-size: var(--fs-2x-ts-tr);
 }
 
 .h4,
 h4,
 .has-medium-font-size {
-  font-size: calc(var(--gridd-typo-scale, 1.26) * 1em);
+  font-size: var(--fs-1x-ts-tr);
 }
 
 .h5,
 h5,
 .has-small-font-size {
-  font-size: calc(1em / var(--gridd-typo-scale, 1.26));
+  font-size: var(--fs-1d-ts-tr);
 }
 
 .h6,
 h6 {
-  font-size: calc(1em / var(--gridd-typo-scale, 1.26) / var(--gridd-typo-scale, 1.26));
+  font-size: var(--fs-2d-ts-tr);
 }
 
 .smaller,
 smaller {
-  font-size: calc(1em / var(--gridd-typo-scale, 1.26) / var(--gridd-typo-scale, 1.26) / var(--gridd-typo-scale, 1.26));
+  font-size: var(--fs-3d-ts-tr);
 }
 
 .smallest,
 smallest {
-  font-size: calc(1em / var(--gridd-typo-scale, 1.26) / var(--gridd-typo-scale, 1.26) / var(--gridd-typo-scale, 1.26) / var(--gridd-typo-scale, 1.26));
+  font-size: var(--fs-4d-ts-tr);
 }
 
 /*# sourceMappingURL=typography.css.map */
