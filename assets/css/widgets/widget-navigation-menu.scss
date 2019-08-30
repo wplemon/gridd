@@ -4,17 +4,17 @@
 $element: ".gridd-tp-sidebar_ID .widget_nav_menu";
 
 // Basic vars.
-$backgroundColor: var(--gridd-sidebar-ID-bg, #fff);
+$backgroundColor: var(--wa-ID-bg, #fff);
 $fontSize: 1em;
 $padding: .5rem;
 $justify: flex-start;
-$itemsColor: var(--gridd-sidebar-ID-color, #000);
+$itemsColor: var(--wa-ID-cl, #000);
 
 // Submenu
-$submenuBackground: var(--gridd-sidebar-ID-bg, #fff);
+$submenuBackground: var(--wa-ID-bg, #fff);
 
 // Accent
-$accentColor: var(--gridd-sidebar-ID-bg, #fff);
+$accentColor: var(--wa-ID-bg, #fff);
 
 // @import "../../../grid-parts/styles/navigation/styles-global.scss";
 @import "../../../grid-parts/styles/navigation/styles.scss";

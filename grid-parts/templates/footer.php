@@ -40,10 +40,10 @@ if ( get_theme_mod( 'gridd_grid_part_details_footer_parts_background_override', 
 // Add css-variables to be replaced.
 $style->add_vars(
 	[
-		'--gridd-footer-bg'               => get_theme_mod( 'gridd_grid_footer_background_color', '#ffffff' ),
-		'--gridd-footer-border-top-width' => get_theme_mod( 'gridd_grid_footer_border_top_width', 1 ),
-		'--gridd-footer-border-top-color' => get_theme_mod( 'gridd_grid_footer_border_top_color', 'rgba(0,0,0,.1)' ),
-		'--gridd-footer-max-width'        => get_theme_mod( 'gridd_grid_footer_max_width', '' ),
+		'--ft-bg'               => get_theme_mod( 'gridd_grid_footer_background_color', '#ffffff' ),
+		'--ft-bt-w' => get_theme_mod( 'gridd_grid_footer_border_top_width', 1 ),
+		'--ft-bt-cl' => get_theme_mod( 'gridd_grid_footer_border_top_color', 'rgba(0,0,0,.1)' ),
+		'--ft-mw'        => get_theme_mod( 'gridd_grid_footer_max_width', '' ),
 	]
 );
 

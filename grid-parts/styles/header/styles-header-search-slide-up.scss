@@ -5,12 +5,12 @@
 		display: block;
 		width: 100%;
 		height: 100%;
-		padding: 0 var(--gridd-header-search-padding-left, 1em) 0 var(--gridd-header-search-padding-right, 1em);
+		padding: 0 var(--h-s-pd-l, 1em) 0 var(--h-s-pd-r, 1em);
 		border-radius: 0;
 
 		svg,
 		path {
-			fill: var(--gridd-header-search-color, #000000);
+			fill: var(--h-s-cl, #000000);
 		}
 
 		&[aria-expanded=true] {
@@ -35,7 +35,7 @@
 	transition: margin-bottom 100ms ease-in;
 	left: 0;
 	width: 100%;
-	background-color: var(--gridd-header-search-bg, #ffffff);
+	background-color: var(--h-s-bg, #ffffff);
 	padding: calc(1.5em + 54px) 1.5em; // The additional 54px vertically accomodate for the mobile nav.
 	z-index: 99999;
 }

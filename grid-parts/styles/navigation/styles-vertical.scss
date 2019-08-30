@@ -14,8 +14,8 @@
 				>ul {
 					font-size: var(--fs-1d-ts-tr);
 					a {
-						padding-left: calc(var(--gridd-nav-1-items-padding) * var(--ts));
-						padding-right: calc(var(--gridd-nav-1-items-padding) * var(--ts));
+						padding-left: calc(var(--nv-1-ipd) * var(--ts));
+						padding-right: calc(var(--nv-1-ipd) * var(--ts));
 					}
 				}
 			}

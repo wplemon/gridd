@@ -33,7 +33,7 @@
 }
 
 .alignwide {
-  width: calc(var(--gridd-content-max-width-calculated, 700px) + 25%);
+  width: calc(var(--c-mw-c, 700px) + 25%);
   max-width: 100%;
 }
 

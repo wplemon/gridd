@@ -8,7 +8,7 @@ var griddComputeEm = function() {
 		maxWidthCh,
 		width;
 
-	contentWidth = style.getPropertyValue( '--gridd-content-max-width' );
+	contentWidth = style.getPropertyValue( '--c-mw' );
 	contentWidth = contentWidth && '' !== contentWidth ? contentWidth : '45em';
 	maxWidthEm   = -1 === contentWidth.indexOf( 'rem' ) && -1 !== contentWidth.indexOf( 'em' );
 	maxWidthCh   = -1 !== contentWidth.indexOf( 'ch' );
@@ -18,8 +18,7 @@ var griddComputeEm = function() {
 		width = parseFloat( getComputedStyle( el, null ).width.replace( 'px', '' ) ) + 'px';
 	}
 
-	root.style.setProperty( '--gridd-em', em );
-	root.style.setProperty( '--gridd-content-max-width-calculated', width );
+	root.style.setProperty( '--c-mw-c', width );
 };
 
 window.addEventListener( 'resize', function() {

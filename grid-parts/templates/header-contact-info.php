@@ -13,11 +13,11 @@ $style = Style::get_instance( 'grid-part/header/contact-info' );
 $style->add_file( get_theme_file_path( 'grid-parts/styles/header/styles-contact-info.min.css' ) );
 $style->add_vars(
 	[
-		'--gridd-header-contact-bg'         => get_theme_mod( 'gridd_grid_part_details_header_contact_info_background_color', '#ffffff' ),
-		'--gridd-header-contact-font-size'  => get_theme_mod( 'gridd_grid_part_details_header_contact_info_font_size', .85 ) . 'em',
-		'--gridd-header-contact-text-align' => get_theme_mod( 'gridd_grid_part_details_header_contact_text_align', 'flex-start' ),
-		'--gridd-header-contact-padding'    => get_theme_mod( 'gridd_grid_part_details_header_contact_info_padding', '10px' ),
-		'--gridd-header-contact-color'      => get_theme_mod( 'gridd_grid_part_details_header_contact_info_text_color', '#000000' ),
+		'--h-cnt-bg'         => get_theme_mod( 'gridd_grid_part_details_header_contact_info_background_color', '#ffffff' ),
+		'--h-cnt-fs'  => get_theme_mod( 'gridd_grid_part_details_header_contact_info_font_size', .85 ) . 'em',
+		'--h-cnt-ta' => get_theme_mod( 'gridd_grid_part_details_header_contact_text_align', 'flex-start' ),
+		'--h-cnt-pd'    => get_theme_mod( 'gridd_grid_part_details_header_contact_info_padding', '10px' ),
+		'--h-cnt-cl'      => get_theme_mod( 'gridd_grid_part_details_header_contact_info_text_color', '#000000' ),
 	]
 );
 // Print styles.

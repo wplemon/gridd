@@ -1,14 +1,14 @@
 @import "../core/base";
 .editor-post-title__block .editor-post-title__input {
 	font-size: var(--fs-4x-ts-tr);
-	color: var(--gridd-text-color, #000);
+	color: var(--tc, #000);
 }
 
 .block-editor .edit-post-visual-editor.editor-styles-wrapper,
 .edit-post-visual-editor.editor-styles-wrapper {
 	font-size: var(--fs-tr);
-	color: var(--gridd-text-color, #000);
-	background-color: var(--gridd-content-bg, #fff);
+	color: var(--tc, #000);
+	background-color: var(--c-bg, #fff);
 
 	p {
 		font-size: var(--fs-tr);
@@ -50,14 +50,14 @@
 
 	a,
 	a:visited {
-		color: var(--gridd-links-color, #0f5e97);
+		color: var(--lc, #0f5e97);
 		-webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
 		transition: all 100ms ease-in-out;
 
 		&:active,
 		&:focus,
 		&:hover {
-			color: var(--gridd-links-hover-color, #541cfc);
+			color: var(--lch, #541cfc);
 			outline: thin dotted;
 		}
 
@@ -70,12 +70,12 @@
 	.wp-block-image figcaption {
 		max-width: 100%;
 		width: 100%;
-		color: var(--gridd-text-color, #000);
+		color: var(--tc, #000);
 		font-size: var(--fs-1d-ts-tr);
 	}
 
 	.wp-block-quote__citation {
-		color: var(--gridd-text-color, #000);
+		color: var(--tc, #000);
 		font-size: var(--fs-1d-ts-tr);
 	}
 
@@ -85,7 +85,7 @@
 
 	.wp-block-quote,
 	.wp-block-pullquote {
-		color: var(--gridd-text-color, #000);
+		color: var(--tc, #000);
 		border-top-color: currentColor;
 		border-bottom-color: currentColor;
 		border-left-color: currentColor;
@@ -106,16 +106,16 @@
 
 .wp-block-freeform.block-library-rich-text__tinymce {
 	a {
-		color: var(--gridd-links-color, #0f5e97);
+		color: var(--lc, #0f5e97);
 	}
 }
 
 .wp-block {
 	&:not([data-align="full"]) {
-		max-width: var(--gridd-content-max-width-calculated, 700px);
+		max-width: var(--c-mw-c, 700px);
 	}
 
 	&[data-align="wide"] {
-		max-width: calc(var(--gridd-content-max-width-calculated, 700px) + 25%);
+		max-width: calc(var(--c-mw-c, 700px) + 25%);
 	}
 }

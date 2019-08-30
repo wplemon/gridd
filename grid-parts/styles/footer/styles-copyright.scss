@@ -2,19 +2,19 @@
 	width: 100%;
 
 	.site-info {
-		padding: var(--gridd-footer-padding, 1em);
-		background-color: var(--gridd-footer-copyright-bg, #fff);
-		color: var(--gridd-footer-copyright-color, #000);
-		font-size: calc(var(--gridd-footer-copyright-font-size) * 1em);
+		padding: var(--ft-pd, 1em);
+		background-color: var(--ft-cp-bg, #fff);
+		color: var(--ft-cp-cl, #000);
+		font-size: calc(var(--ft-cp-fs) * 1em);
 		width: 100%;
-		text-align: var(--gridd-footer-copyright-text-align, center);
+		text-align: var(--ft-cp-ta, center);
 
 		a,
 		a:visited {
-			color: var(--gridd-footer-copyright-links-color, #0f5e97);
+			color: var(--ft-cp-lc, #0f5e97);
 
 			&:hover {
-				color: var(--gridd-footer-copyright-links-color, #0f5e97);
+				color: var(--ft-cp-lc, #0f5e97);
 			}
 		}
 	}

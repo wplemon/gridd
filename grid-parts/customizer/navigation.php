@@ -115,7 +115,7 @@ function gridd_nav_customizer_options( $id ) {
 			'section'     => "gridd_grid_part_details_nav_$id",
 			'default'     => '1em',
 			'transport'   => 'postMessage',
-			'css_vars'    => "--gridd-nav-$id-padding",
+			'css_vars'    => "--nv-$id-pd",
 		]
 	);
 
@@ -127,7 +127,7 @@ function gridd_nav_customizer_options( $id ) {
 			'section'   => "gridd_grid_part_details_nav_$id",
 			'default'   => '#ffffff',
 			'transport' => 'postMessage',
-			'css_vars'  => "--gridd-nav-$id-bg",
+			'css_vars'  => "--nv-$id-bg",
 			'choices'   => [
 				'alpha' => true,
 			],
@@ -145,7 +145,7 @@ function gridd_nav_customizer_options( $id ) {
 			],
 			'default'           => '#000000',
 			'transport'         => 'postMessage',
-			'css_vars'          => "--gridd-nav-$id-color",
+			'css_vars'          => "--nv-$id-cl",
 			'sanitize_callback' => [ $sanitization, 'color_hex' ],
 		]
 	);
@@ -159,7 +159,7 @@ function gridd_nav_customizer_options( $id ) {
 			'section'           => "gridd_grid_part_details_nav_$id",
 			'default'           => '#0f5e97',
 			'transport'         => 'postMessage',
-			'css_vars'          => "--gridd-nav-$id-accent",
+			'css_vars'          => "--nv-$id-acl",
 			'choices'           => [
 				'backgroundColor' => "gridd_grid_nav_{$id}_bg_color",
 				'textColor'       => "gridd_grid_nav_{$id}_items_color",
@@ -200,7 +200,7 @@ function gridd_nav_customizer_options( $id ) {
 			'section'           => "gridd_grid_part_details_nav_$id",
 			'default'           => 'center',
 			'transport'         => 'postMessage',
-			'css_vars'          => "--gridd-nav-$id-justify",
+			'css_vars'          => "--nv-$id-j",
 			'active_callback'   => [
 				[
 					'setting'  => "gridd_grid_nav_{$id}_vertical",

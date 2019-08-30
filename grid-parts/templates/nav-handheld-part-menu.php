@@ -16,9 +16,9 @@ $style->add_file( get_theme_file_path( 'grid-parts/styles/nav-handheld/styles-na
 $style->the_css( 'gridd-inline-css-nav-handheld-menu' );
 $style->add_vars(
 	[
-		'--gridd-text-color'  => get_theme_mod( 'gridd_text_color', '#000000' ),
-		'--gridd-links-color' => get_theme_mod( 'gridd_links_color', '#0f5e97' ),
-		'--gridd-content-bg'  => get_theme_mod( 'gridd_grid_content_background_color', '#ffffff' ),
+		'--tc'  => get_theme_mod( 'gridd_text_color', '#000000' ),
+		'--lc' => get_theme_mod( 'gridd_links_color', '#0f5e97' ),
+		'--c-bg'  => get_theme_mod( 'gridd_grid_content_background_color', '#ffffff' ),
 	]
 );
 $label_class = get_theme_mod( 'gridd_grid_nav-handheld_hide_labels', false ) ? 'screen-reader-text' : 'label';

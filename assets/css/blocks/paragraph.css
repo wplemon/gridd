@@ -95,7 +95,7 @@ p.has-text-color a {
 }
 
 .is-regular-text {
-  font-size: var(--gridd-em, 1em);
+  font-size: var(--fs-tr);
 }
 
 .is-large-text {

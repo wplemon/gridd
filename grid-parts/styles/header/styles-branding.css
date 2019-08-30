@@ -3,16 +3,16 @@ a.custom-logo-link:hover {
 }
 
 .gridd-tp-header_branding.gridd-tp {
-  background-color: var(--gridd-branding-bg, #fff);
+  background-color: var(--h-br-bg, #fff);
   display: flex;
   width: 100%;
-  padding: var(--gridd-branding-padding, 0);
-  justify-content: var(--gridd-branding-horizontal-align, left);
-  align-items: var(--gridd-branding-vertical-align, center);
+  padding: var(--h-br-pd, 0);
+  justify-content: var(--h-br-ha, left);
+  align-items: var(--h-br-va, center);
 }
 .gridd-tp-header_branding.gridd-tp.inline .site-title {
-  padding-left: calc(var(--gridd-branding-elements-padding, 0.5) * 1em);
-  padding-right: calc(var(--gridd-branding-elements-padding, 0.5) * 1em);
+  padding-left: calc(var(--h-br-epd, 0.5) * 1em);
+  padding-right: calc(var(--h-br-epd, 0.5) * 1em);
 }
 .gridd-tp-header_branding.gridd-tp.vertical {
   flex-wrap: wrap;
@@ -20,18 +20,18 @@ a.custom-logo-link:hover {
 .gridd-tp-header_branding.gridd-tp.vertical > * {
   display: flex;
   width: 100%;
-  justify-content: var(--gridd-branding-horizontal-align, left);
+  justify-content: var(--h-br-ha, left);
 }
 .gridd-tp-header_branding.gridd-tp.vertical .site-title {
-  padding-top: calc(var(--gridd-branding-elements-padding, 0.5) * 1em);
-  padding-bottom: calc(var(--gridd-branding-elements-padding, 0.5) * 1em);
+  padding-top: calc(var(--h-br-epd, 0.5) * 1em);
+  padding-bottom: calc(var(--h-br-epd, 0.5) * 1em);
 }
 .gridd-tp-header_branding.gridd-tp .site-title,
 .gridd-tp-header_branding.gridd-tp .site-description {
   margin: 0;
 }
 .gridd-tp-header_branding.gridd-tp .site-description {
-  font-size: calc(var(--gridd-tagline-size, 1) * 1em);
+  font-size: calc(var(--h-br-tls, 1) * 1em);
 }
 .gridd-tp-header_branding.gridd-tp .site-description,
 .gridd-tp-header_branding.gridd-tp .site-title,
@@ -43,7 +43,7 @@ a.custom-logo-link:hover {
 }
 .gridd-tp-header_branding.gridd-tp .site-title {
   line-height: 1;
-  font-size: calc(var(--gridd-sitetitle-size, 2) * 1em);
+  font-size: calc(var(--h-br-sts, 2) * 1em);
 }
 .gridd-tp-header_branding.gridd-tp .site-title a {
   text-decoration: none;
@@ -57,7 +57,7 @@ a.custom-logo-link:hover {
   outline: none;
 }
 .gridd-tp-header_branding.gridd-tp .custom-logo-link {
-  max-width: calc(var(--gridd-logo-max-width, 100) * 1px);
+  max-width: calc(var(--h-br-mw, 100) * 1px);
   line-height: 0;
   max-height: 100%;
   display: block;

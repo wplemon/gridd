@@ -134,11 +134,11 @@
 }
 
 .wp-block-columns.alignfull {
-  padding-left: var(--gridd-content-padding-left, 20px);
-  padding-right: var(--gridd-content-padding-right, 20px);
+  padding-left: var(--c-pd-l, 20px);
+  padding-right: var(--c-pd-r, 20px);
 }
 .site-main .entry-content > .wp-block-columns:not(.alignfull):not(.alignwide):not(.alignleft):not(.alignright) {
-  max-width: calc(var(--gridd-content-max-width-calculated, 700px) + 2em);
+  max-width: calc(var(--c-mw-c, 700px) + 2em);
 }
 
 /*# sourceMappingURL=columns.css.map */

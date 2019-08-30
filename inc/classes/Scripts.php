@@ -263,17 +263,16 @@ class Scripts {
 
 		$style->add_vars(
 			[
-				'--gridd-typo-scale'        => get_theme_mod( 'gridd_type_scale', 1.26 ),
-				'--gridd-text-color'        => get_theme_mod( 'gridd_text_color', '#000000' ),
-				'--gridd-links-color'       => get_theme_mod( 'gridd_links_color', '#0f5e97' ),
-				'--gridd-font-size'         => get_theme_mod( 'gridd_body_font_size', 18 ),
-				'--gridd-typo-ratio'        => get_theme_mod( 'gridd_fluid_typography_ratio', .25 ),
-				'--gridd-links-hover-color' => get_theme_mod( 'gridd_links_hover_color', '#541cfc' ),
-				'--gridd-grid-max-width'    => get_theme_mod( 'gridd_grid_max_width', '' ),
-				'--gridd-content-max-width' => get_theme_mod( 'gridd_grid_content_max_width', '45em' ),
-				'--gridd-edd-grid-gap' => get_theme_mod( 'gridd_edd_archive_grid_gap', 1.5 ),
-				'--gridd-typo-scale'  => get_theme_mod( 'gridd_type_scale', 1.26 ),
-				'--gridd-links-color' => get_theme_mod( 'gridd_links_color', '#0f5e97' ),
+				'--ts'     => get_theme_mod( 'gridd_type_scale', 1.26 ),
+				'--tc'     => get_theme_mod( 'gridd_text_color', '#000000' ),
+				'--lc'     => get_theme_mod( 'gridd_links_color', '#0f5e97' ),
+				'--fs'     => get_theme_mod( 'gridd_body_font_size', 18 ),
+				'--tr'     => get_theme_mod( 'gridd_fluid_typography_ratio', .25 ),
+				'--lch'    => get_theme_mod( 'gridd_links_hover_color', '#541cfc' ),
+				'--mw'     => get_theme_mod( 'gridd_grid_max_width', '' ),
+				'--c-mw'   => get_theme_mod( 'gridd_grid_content_max_width', '45em' ),
+				'--edd-gg' => get_theme_mod( 'gridd_edd_archive_grid_gap', 1.5 ),
+				'--lc'     => get_theme_mod( 'gridd_links_color', '#0f5e97' ),
 			]
 		);
 
@@ -329,7 +328,7 @@ class Scripts {
 	 */
 	public function admin_footer_editor_styles() {
 		global $content_width;
-		echo '<style>:root{--gridd-content-max-width-calculated:' . absint( $content_width ) . 'px;}</style>';
+		echo '<style>:root{--c-mw-c:' . absint( $content_width ) . 'px;}</style>';
 	}
 
 	/**

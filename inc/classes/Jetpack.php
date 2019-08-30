@@ -165,7 +165,7 @@ class Jetpack {
 				if ( 2 < $color_obj->saturation ) {
 					$color_obj = $color_obj->getNew( 'saturation', 75 );
 				}
-				echo '<style>:root{--gridd-image-header-overlay-color:' . esc_attr( $color_obj->getNew( 'alpha', .85 )->toCSS( 'rgba' ) ) . ';--gridd-image-header-text-color:#fff;}</style>';
+				echo '<style>:root{--im-hoc:' . esc_attr( $color_obj->getNew( 'alpha', .85 )->toCSS( 'rgba' ) ) . ';--im-htc:#fff;}</style>';
 			}
 		}
 	}

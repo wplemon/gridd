@@ -42,7 +42,7 @@ function griddGetContrastColor( bg ) {
 
 	_.each( [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ], function( i ) {
 		var setting = 'gridd_grid_nav_' + i + '_bg_color',
-			cssVar  = '--gridd-nav-' + i + '-submenu-bg';
+			cssVar  = '--nv-' + i + '-sbg';
 
 		wp.customize( setting, function( value ) {
 			document.body.style.setProperty( cssVar, jQuery.Color( value.get() ).alpha( 1 ).toHexString( false ) );

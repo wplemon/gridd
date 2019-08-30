@@ -1,20 +1,20 @@
 .gridd-tp-social_media.gridd-tp {
-	background-color: var(--gridd-header-social-icons-bg, #fff);
+	background-color: var(--h-si-bg, #fff);
 	align-items: center;
-	justify-content: var(--gridd-header-social-icons-text-align, flex-end);
+	justify-content: var(--h-si-ta, flex-end);
 
 	a {
 		display: block;
-		max-width: calc(var(--gridd-header-social-icons-size, 1) * 1em);
-		padding: calc(var(--gridd-header-social-icons-padding, 0.5) * 1em);
+		max-width: calc(var(--h-si-sz, 1) * 1em);
+		padding: calc(var(--h-si-pd, 0.5) * 1em);
 		box-sizing: content-box;
 		line-height: 1;
-		color: var(--gridd-header-social-icons-color, #000);
+		color: var(--h-si-cl, #000);
 	}
 
 	svg {
-		fill: var(--gridd-header-social-icons-color, #000);
-		max-width: calc(var(--gridd-header-social-icons-size, 1) * 1em);
+		fill: var(--h-si-cl, #000);
+		max-width: calc(var(--h-si-sz, 1) * 1em);
 		width: 100%;
 	}
 }

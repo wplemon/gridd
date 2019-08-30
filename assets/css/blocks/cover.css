@@ -281,7 +281,7 @@
 .wp-block-cover h2,
 .wp-block-cover .wp-block-cover-image-text,
 .wp-block-cover .wp-block-cover-text {
-  max-width: var(--gridd-content-max-width-calculated, 700px);
+  max-width: var(--c-mw-c, 700px);
   padding: 1em;
 }
 .wp-block-cover-image .wp-block-cover__inner-container > *,
@@ -291,7 +291,7 @@
 .wp-block-cover-image.alignleft, .wp-block-cover-image.alignright,
 .wp-block-cover.alignleft,
 .wp-block-cover.alignright {
-  max-width: calc(var(--gridd-content-max-width-calculated, 700px) / 2);
+  max-width: calc(var(--c-mw-c, 700px) / 2);
 }
 
 /*# sourceMappingURL=cover.css.map */

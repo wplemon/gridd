@@ -103,7 +103,7 @@ Customizer::add_field(
 		'transport'       => 'postMessage',
 		'priority'        => 20,
 		'default'         => '87vh',
-		'css_vars'        => '--gridd-image-header-min-height',
+		'css_vars'        => '--im-hmh',
 		'active_callback' => function() {
 			return 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' );
 		},
@@ -118,7 +118,7 @@ Customizer::add_field(
 		'description'     => esc_html__( 'Applies to single posts', 'gridd' ),
 		'section'         => 'gridd_features',
 		'default'         => 'rgba(42,84,126,0.8)',
-		'css_vars'        => '--gridd-image-header-overlay-color',
+		'css_vars'        => '--im-hoc',
 		'transport'       => 'postMessage',
 		'priority'        => 20,
 		'choices'         => [
@@ -139,7 +139,7 @@ Customizer::add_field(
 		'section'           => 'gridd_features',
 		'priority'          => 20,
 		'default'           => '#fff',
-		'css_vars'          => '--gridd-image-header-text-color',
+		'css_vars'          => '--im-htc',
 		'transport'         => 'postMessage',
 		'choices'           => [
 			'setting' => 'gridd_featured_image_overlay_background_color',

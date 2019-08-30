@@ -1,10 +1,10 @@
 .gridd-site-wrapper a {
-  color: var(--gridd-links-color, #0f5e97);
+  color: var(--lc, #0f5e97);
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
   transition: all 100ms ease-in-out;
 }
 .gridd-site-wrapper a:active, .gridd-site-wrapper a:focus, .gridd-site-wrapper a:hover {
-  color: var(--gridd-links-hover-color, #541cfc);
+  color: var(--lch, #541cfc);
   outline: thin dotted;
 }
 .gridd-site-wrapper a:focus {

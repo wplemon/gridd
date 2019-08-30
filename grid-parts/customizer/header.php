@@ -80,7 +80,7 @@ Customizer::add_field(
 		'section'   => 'gridd_grid_part_details_header',
 		'default'   => '47em',
 		'priority'  => 20,
-		'css_vars'  => '--gridd-header-max-width',
+		'css_vars'  => '--h-mw',
 		'transport' => 'postMessage',
 	]
 );
@@ -93,7 +93,7 @@ Customizer::add_field(
 		'section'   => 'gridd_grid_part_details_header',
 		'default'   => '0 1em',
 		'priority'  => 20,
-		'css_vars'  => '--gridd-header-padding',
+		'css_vars'  => '--h-pd',
 		'transport' => 'postMessage',
 	]
 );
@@ -111,7 +111,7 @@ Customizer::add_field(
 		'section'     => 'gridd_grid_part_details_header',
 		'default'     => '0',
 		'priority'    => 30,
-		'css_vars'    => '--gridd-header-grid-gap',
+		'css_vars'    => '--h-gg',
 		'transport'   => 'postMessage',
 	]
 );
@@ -130,7 +130,7 @@ Customizer::add_field(
 		'default'     => '#ffffff',
 		'transport'   => 'postMessage',
 		'priority'    => 40,
-		'css_vars'    => '--gridd-header-bg',
+		'css_vars'    => '--h-bg',
 		'choices'     => [
 			'alpha' => true,
 		],
@@ -159,7 +159,7 @@ Customizer::add_field(
 		'section'           => 'gridd_grid_part_details_header',
 		'default'           => '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
 		'transport'         => 'postMessage',
-		'css_vars'          => '--gridd-header-box-shadow',
+		'css_vars'          => '--h-bs',
 		'priority'          => 50,
 		'choices'           => [
 			'none' => esc_html__( 'None', 'gridd' ),

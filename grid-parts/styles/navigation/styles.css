@@ -1,19 +1,19 @@
 .gridd-tp-nav_ID {
-  background-color: var(--gridd-nav-ID-bg, #fff);
+  background-color: var(--nv-ID-bg, #fff);
   overflow: visible;
-  font-size: var(--gridd-nav-ID-font-size, 1em);
+  font-size: var(--nv-ID-fs, 1em);
 }
 .gridd-tp-nav_ID .inner {
-  padding: var(--gridd-nav-ID-padding, 1em);
+  padding: var(--nv-ID-pd, 1em);
   width: 100%;
   position: relative;
   display: flex;
 }
 .gridd-tp-nav_ID .gridd-navigation {
-  justify-content: var(--gridd-nav-ID-justify, center);
+  justify-content: var(--nv-ID-j, center);
 }
 .gridd-tp-nav_ID .gridd-navigation ul {
-  background-color: var(--gridd-nav-ID-submenu-bg, #fff);
+  background-color: var(--nv-ID-sbg, #fff);
 }
 .gridd-tp-nav_ID li.current-menu-item > a,
 .gridd-tp-nav_ID li.current-menu-item > a:visited, .gridd-tp-nav_ID li.current-page-item > a,
@@ -25,18 +25,18 @@
 .gridd-tp-nav_ID li.current-page-parent > a:visited, .gridd-tp-nav_ID li.current_page_parent > a,
 .gridd-tp-nav_ID li.current_page_parent > a:visited, .gridd-tp-nav_ID li.current_page_ancestor > a,
 .gridd-tp-nav_ID li.current_page_ancestor > a:visited {
-  color: var(--gridd-nav-ID-accent, #0f5e97);
+  color: var(--nv-ID-acl, #0f5e97);
   border-bottom: 2px solid;
 }
 .gridd-tp-nav_ID li.current-menu-item .gridd-toggle, .gridd-tp-nav_ID li.current-page-item .gridd-toggle, .gridd-tp-nav_ID li.current_page_item .gridd-toggle, .gridd-tp-nav_ID li.current-page-ancestor .gridd-toggle, .gridd-tp-nav_ID li.current-menu-ancestor .gridd-toggle, .gridd-tp-nav_ID li.current-menu-parent .gridd-toggle, .gridd-tp-nav_ID li.current-page-parent .gridd-toggle, .gridd-tp-nav_ID li.current_page_parent .gridd-toggle, .gridd-tp-nav_ID li.current_page_ancestor .gridd-toggle {
-  color: var(--gridd-nav-ID-accent, #0f5e97);
+  color: var(--nv-ID-acl, #0f5e97);
 }
 .gridd-tp-nav_ID li.current-menu-item .gridd-toggle svg, .gridd-tp-nav_ID li.current-page-item .gridd-toggle svg, .gridd-tp-nav_ID li.current_page_item .gridd-toggle svg, .gridd-tp-nav_ID li.current-page-ancestor .gridd-toggle svg, .gridd-tp-nav_ID li.current-menu-ancestor .gridd-toggle svg, .gridd-tp-nav_ID li.current-menu-parent .gridd-toggle svg, .gridd-tp-nav_ID li.current-page-parent .gridd-toggle svg, .gridd-tp-nav_ID li.current_page_parent .gridd-toggle svg, .gridd-tp-nav_ID li.current_page_ancestor .gridd-toggle svg {
-  fill: var(--gridd-nav-ID-accent, #0f5e97);
+  fill: var(--nv-ID-acl, #0f5e97);
 }
 .gridd-tp-nav_ID a,
 .gridd-tp-nav_ID a:visited {
-  color: var(--gridd-nav-ID-color, #000);
+  color: var(--nv-ID-cl, #000);
   border-bottom: 2px solid transparent;
 }
 .gridd-tp-nav_ID a:hover, .gridd-tp-nav_ID a:focus, .gridd-tp-nav_ID a.focus, .gridd-tp-nav_ID a.toggled-on,
@@ -44,42 +44,42 @@
 .gridd-tp-nav_ID a:visited:focus,
 .gridd-tp-nav_ID a:visited.focus,
 .gridd-tp-nav_ID a:visited.toggled-on {
-  color: var(--gridd-nav-ID-accent, #0f5e97);
-  border-bottom-color: var(--gridd-nav-ID-accent, #0f5e97);
+  color: var(--nv-ID-acl, #0f5e97);
+  border-bottom-color: var(--nv-ID-acl, #0f5e97);
 }
 .gridd-tp-nav_ID a:hover ~ .gridd-toggle, .gridd-tp-nav_ID a:focus ~ .gridd-toggle, .gridd-tp-nav_ID a.focus ~ .gridd-toggle, .gridd-tp-nav_ID a.toggled-on ~ .gridd-toggle,
 .gridd-tp-nav_ID a:visited:hover ~ .gridd-toggle,
 .gridd-tp-nav_ID a:visited:focus ~ .gridd-toggle,
 .gridd-tp-nav_ID a:visited.focus ~ .gridd-toggle,
 .gridd-tp-nav_ID a:visited.toggled-on ~ .gridd-toggle {
-  border-bottom-color: var(--gridd-nav-ID-accent, #0f5e97);
+  border-bottom-color: var(--nv-ID-acl, #0f5e97);
 }
 .gridd-tp-nav_ID a:hover ~ .gridd-toggle svg, .gridd-tp-nav_ID a:focus ~ .gridd-toggle svg, .gridd-tp-nav_ID a.focus ~ .gridd-toggle svg, .gridd-tp-nav_ID a.toggled-on ~ .gridd-toggle svg,
 .gridd-tp-nav_ID a:visited:hover ~ .gridd-toggle svg,
 .gridd-tp-nav_ID a:visited:focus ~ .gridd-toggle svg,
 .gridd-tp-nav_ID a:visited.focus ~ .gridd-toggle svg,
 .gridd-tp-nav_ID a:visited.toggled-on ~ .gridd-toggle svg {
-  fill: var(--gridd-nav-ID-accent, #0f5e97);
+  fill: var(--nv-ID-acl, #0f5e97);
 }
 .gridd-tp-nav_ID .gridd-toggle {
-  color: var(--gridd-nav-ID-color, #000);
+  color: var(--nv-ID-cl, #000);
   border-bottom: 2px solid transparent;
 }
 .gridd-tp-nav_ID .gridd-toggle svg {
-  fill: var(--gridd-nav-ID-color, #000);
+  fill: var(--nv-ID-cl, #000);
 }
 .gridd-tp-nav_ID .gridd-toggle:hover, .gridd-tp-nav_ID .gridd-toggle:focus, .gridd-tp-nav_ID .gridd-toggle.focus, .gridd-tp-nav_ID .gridd-toggle.toggled-on {
-  color: var(--gridd-nav-ID-accent, #0f5e97);
-  border-bottom-color: var(--gridd-nav-ID-accent, #0f5e97);
+  color: var(--nv-ID-acl, #0f5e97);
+  border-bottom-color: var(--nv-ID-acl, #0f5e97);
 }
 .gridd-tp-nav_ID .gridd-toggle:hover svg, .gridd-tp-nav_ID .gridd-toggle:focus svg, .gridd-tp-nav_ID .gridd-toggle.focus svg, .gridd-tp-nav_ID .gridd-toggle.toggled-on svg {
-  fill: var(--gridd-nav-ID-accent, #0f5e97);
+  fill: var(--nv-ID-acl, #0f5e97);
 }
 .gridd-tp-nav_ID .gridd-toggle.toggled-on {
-  border-bottom-color: var(--gridd-nav-ID-accent, #0f5e97);
+  border-bottom-color: var(--nv-ID-acl, #0f5e97);
 }
 .gridd-tp-nav_ID .gridd-toggle.toggled-on svg {
-  fill: var(--gridd-nav-ID-accent, #0f5e97);
+  fill: var(--nv-ID-acl, #0f5e97);
 }
 .gridd-tp-nav_ID .gridd-toggle-navigation {
   display: none;

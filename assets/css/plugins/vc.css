@@ -15,7 +15,7 @@
   display: flex;
 }
 .vc_row.wpb_row[data-vc-full-width-init=true] > *, .vc_row.wpb_row[data-vc-full-width=true] > * {
-  max-width: var(--gridd-content-max-width-calculated, 700px);
+  max-width: var(--c-mw-c, 700px);
   padding-left: 1em;
   padding-right: 1em;
 }

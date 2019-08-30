@@ -20,10 +20,10 @@ $style->replace( 'ID', $sidebar_id );
 // Add css-variables to be replaced.
 $style->add_vars(
 	[
-		'--gridd-footer-padding'                         => get_theme_mod( 'gridd_grid_footer_padding', '1em' ),
-		"--gridd-footer-sidebar-$sidebar_id-bg"          => get_theme_mod( "gridd_grid_footer_sidebar_{$sidebar_id}_bg_color", '#fff' ),
-		"--gridd-footer-sidebar-$sidebar_id-color"       => get_theme_mod( "gridd_grid_footer_sidebar_{$sidebar_id}_color", '#000' ),
-		"--gridd-footer-sidebar-$sidebar_id-links-color" => get_theme_mod( "gridd_grid_footer_sidebar_{$sidebar_id}_links_color", '#0f5e97' ),
+		'--ft-pd'                => get_theme_mod( 'gridd_grid_footer_padding', '1em' ),
+		"--ft-wa-$sidebar_id-bg" => get_theme_mod( "gridd_grid_footer_sidebar_{$sidebar_id}_bg_color", '#fff' ),
+		"--ft-wa-$sidebar_id-cl" => get_theme_mod( "gridd_grid_footer_sidebar_{$sidebar_id}_color", '#000' ),
+		"--ft-wa-$sidebar_id-lc" => get_theme_mod( "gridd_grid_footer_sidebar_{$sidebar_id}_links_color", '#0f5e97' ),
 	]
 );
 ?>

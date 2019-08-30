@@ -45,7 +45,7 @@ a.comment-reply-link {
 }
 
 #comment {
-  background: var(--gridd-content-bg);
+  background: var(--c-bg);
   color: currentColor;
   border-color: currentColor;
 }
