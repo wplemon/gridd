@@ -94,4 +94,9 @@
   background-color: var(--gridd-content-bg, #fff);
 }
 
+#content-width-calc-helper {
+  width: 100%;
+  max-width: var(--gridd-content-max-width);
+}
+
 /*# sourceMappingURL=styles.css.map */
