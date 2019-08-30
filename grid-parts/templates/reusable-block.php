@@ -23,8 +23,8 @@ $style->replace( 'ID', $gridd_reusable_block_id );
 // Add vars to replace.
 $style->add_vars(
 	[
-		"--rb-$gridd_reusable_block_id-bg"      => get_theme_mod( "gridd_grid_reusable_block_{$gridd_reusable_block_id}_bg_color", '#ffffff' ),
-		"--rb-$gridd_reusable_block_id-cl"   => get_theme_mod( "gridd_grid_reusable_block_{$gridd_reusable_block_id}_color", '#000000' ),
+		"--rb-$gridd_reusable_block_id-bg" => get_theme_mod( "gridd_grid_reusable_block_{$gridd_reusable_block_id}_bg_color", '#ffffff' ),
+		"--rb-$gridd_reusable_block_id-cl" => get_theme_mod( "gridd_grid_reusable_block_{$gridd_reusable_block_id}_color", '#000000' ),
 		"--rb-$gridd_reusable_block_id-pd" => get_theme_mod( "gridd_grid_reusable_block_{$gridd_reusable_block_id}_padding", '1em' ),
 	]
 );

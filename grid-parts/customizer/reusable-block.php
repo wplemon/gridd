@@ -76,7 +76,7 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 						__( 'Use any valid CSS value. For details on how padding works, please refer to <a %s>this article</a>.', 'gridd' ),
 						'href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow"'
 					),
-					]
+				]
 			),
 			'section'     => "gridd_grid_part_details_reusable_block_$id",
 			'default'     => '1em',

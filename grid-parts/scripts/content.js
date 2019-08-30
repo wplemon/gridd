@@ -1,7 +1,6 @@
 var griddComputeEm = function() {
 	var root  = document.querySelectorAll( ':root' )[0],
 		style = getComputedStyle( document.body ),
-		em    = style.getPropertyValue( 'font-size' ),
 		el    = document.getElementById( 'content-width-calc-helper' ),
 		contentWidth,
 		maxWidthEm,

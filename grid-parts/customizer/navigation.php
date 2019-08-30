@@ -110,7 +110,7 @@ function gridd_nav_customizer_options( $id ) {
 						__( 'Use any valid CSS value. For details on how padding works, please refer to <a %s>this article</a>.', 'gridd' ),
 						'href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow"'
 					),
-					]
+				]
 			),
 			'section'     => "gridd_grid_part_details_nav_$id",
 			'default'     => '1em',

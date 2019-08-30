@@ -51,7 +51,7 @@ if ( false !== strpos( $responsive_mode, 'icon' ) ) {
 }
 
 // Add alternative hover/focus styles if needed.
-if ( 'alt1' === get_theme_mod( "gridd_grid_nav_{$id}_style", ) ) {
+if ( 'alt1' === get_theme_mod( "gridd_grid_nav_{$id}_style", 'default') ) {
 	$style->add_file( get_theme_file_path( 'grid-parts/styles/navigation/styles-hover-alt.min.css' ) );
 }
 
@@ -66,14 +66,14 @@ $style->replace( 'ID', $id );
 // Add vars to replace.
 $style->add_vars(
 	[
-		"--nv-$id-bg"                  => get_theme_mod( "gridd_grid_nav_{$id}_bg_color", '#ffffff' ),
-		"--nv-$id-fs"           => get_theme_mod( "gridd_grid_nav_{$id}_font_size", 1 ),
-		"--nv-$id-pd"             => get_theme_mod( "gridd_grid_nav_{$id}_padding", '1em' ),
-		"--nv-$id-j"             => get_theme_mod( "gridd_grid_nav_{$id}_justify_content", 'center' ),
-		"--nv-$id-acl"              => get_theme_mod( "gridd_grid_nav_{$id}_accent_color", '#0f5e97' ),
-		"--nv-$id-cl"               => get_theme_mod( "gridd_grid_nav_{$id}_items_color", '#000000' ),
+		"--nv-$id-bg"  => get_theme_mod( "gridd_grid_nav_{$id}_bg_color", '#ffffff' ),
+		"--nv-$id-fs"  => get_theme_mod( "gridd_grid_nav_{$id}_font_size", 1 ),
+		"--nv-$id-pd"  => get_theme_mod( "gridd_grid_nav_{$id}_padding", '1em' ),
+		"--nv-$id-j"   => get_theme_mod( "gridd_grid_nav_{$id}_justify_content", 'center' ),
+		"--nv-$id-acl" => get_theme_mod( "gridd_grid_nav_{$id}_accent_color", '#0f5e97' ),
+		"--nv-$id-cl"  => get_theme_mod( "gridd_grid_nav_{$id}_items_color", '#000000' ),
 		"--nv-$id-cis" => get_theme_mod( "gridd_grid_nav_{$id}_collapse_icon_size", 1 ),
-		"--nv-$id-sbg"          => get_theme_mod( "gridd_grid_nav_{$id}_bg_color", '#ffffff' ),
+		"--nv-$id-sbg" => get_theme_mod( "gridd_grid_nav_{$id}_bg_color", '#ffffff' ),
 	]
 );
 

@@ -23,11 +23,11 @@ if ( is_front_page() || is_home() ) {
 		->add_file( get_theme_file_path( 'grid-parts/styles/breadcrumbs/styles.min.css' ) )
 		->add_vars(
 			[
-				'--brd-bg'         => get_theme_mod( 'gridd_grid_breadcrumbs_background_color', '#fff' ),
-				'--brd-fs'  => get_theme_mod( 'gridd_grid_breadcrumbs_font_size', '1' ),
-				'--brd-cl'      => get_theme_mod( 'gridd_grid_breadcrumbs_color', '#000' ),
-				'--brd-pd'    => get_theme_mod( 'gridd_grid_breadcrumbs_padding', '1em' ),
-				'--brd-mw'  => get_theme_mod( 'gridd_grid_breadcrumbs_max_width', '100%' ),
+				'--brd-bg' => get_theme_mod( 'gridd_grid_breadcrumbs_background_color', '#fff' ),
+				'--brd-fs' => get_theme_mod( 'gridd_grid_breadcrumbs_font_size', '1' ),
+				'--brd-cl' => get_theme_mod( 'gridd_grid_breadcrumbs_color', '#000' ),
+				'--brd-pd' => get_theme_mod( 'gridd_grid_breadcrumbs_padding', '1em' ),
+				'--brd-mw' => get_theme_mod( 'gridd_grid_breadcrumbs_max_width', '100%' ),
 				'--brd-ta' => get_theme_mod( 'gridd_grid_breadcrumbs_text_align', 'center' ),
 			]
 		)

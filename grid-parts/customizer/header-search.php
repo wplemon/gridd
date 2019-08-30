@@ -18,14 +18,14 @@ Customizer::add_outer_section(
 
 Customizer::add_field(
 	[
-		'type'        => 'radio-buttonset',
-		'settings'    => 'gridd_grid_part_details_header_search_mode',
-		'label'       => esc_html__( 'Search Mode', 'gridd' ),
-		'section'     => 'gridd_grid_part_details_header_search',
-		'default'     => 'form',
-		'transport'   => 'refresh',
-		'choices'     => [
-			'form'  => esc_html__( 'Form', 'gridd' ),
+		'type'      => 'radio-buttonset',
+		'settings'  => 'gridd_grid_part_details_header_search_mode',
+		'label'     => esc_html__( 'Search Mode', 'gridd' ),
+		'section'   => 'gridd_grid_part_details_header_search',
+		'default'   => 'form',
+		'transport' => 'refresh',
+		'choices'   => [
+			'form'     => esc_html__( 'Form', 'gridd' ),
 			'slide-up' => esc_html__( 'Slide Up', 'gridd' ),
 		],
 	]
