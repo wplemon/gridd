@@ -1,205 +1,264 @@
 ## 1.1.18
 
-* Fix: Removed duplicate comments link.
-* Fix: Changed default values for some options for more reasonable results when the theme is first installed.
-* New: Added a new header-padding option.
-* New: Added a new option for navigation hover/focus styles.
+### Fixed
+* Removed duplicate comments link.
+* Changed default values for some options for more reasonable results when the theme is first installed.
 
-## 1.1.17
+### Changed
+* Improved default font stack.
+* Refactored the changelog following principles from https://keepachangelog.com/en/1.0.0/
 
-* Fix: Horizontal padding on submenus when navigation is on vertical mode.
-* Fix: Adding widgets on the header grid was not showing the widget areas in the customizer due to a partial refresh instead of a full refresh of the preview pane.
-* Fix: Minor styling fixes for navigation parts.
-* Fix: Added titles to buttons in the grid control to make it easier to understand what they do when they get hovered.
-* Fix: Removed google-plus from list of social networks.
-* Fix: Styling fixes for the header-search grid-part.
-* Fix: Size of video embeds.
-* Fix: Various improvements to the Grid control.
+### Added
+* New header-padding option.
+* New option for navigation hover/focus styles.
+* Upgrader implementation to handle future option changes.
+* Checkboxes to enable/disable custom typography options.
 
-## 1.1.16
+## 1.1.17 - 2019-18-25
 
-* New: Added slide-up mode for header searchform.
-* New: Partial support for IE11.
-* Fix: Improved accessibility for handheld navigation.
-* Fix: Inlining the comment-reply link instead of enqueueing as a separate request.
-* Fix: `<select>` element styles when using a dark background.
-* Fix: Group block styles.
-* Fix: Center-aligned elements inside group blocks.
-* Fix: Customizer description typo.
-* Fix: Accessibility improvements for button blocks.
-* Fix: Improved breadcrumbs styles.
-* Update: Updated dragselect to v1.12.2
-* Update: Block styles for compatibility with latest Gutenberg plugin versions.
+### Fixed
+* Horizontal padding on submenus when navigation is on vertical mode.
+* Adding widgets on the header grid was not showing the widget areas in the customizer due to a partial refresh instead of a full refresh of the preview pane.
+* Minor styling fixes for navigation parts.
+* Added titles to buttons in the grid control to make it easier to understand what they do when they get hovered.
+* Removed google-plus from list of social networks.
+* Styling fixes for the header-search grid-part.
+* Size of video embeds.
+* Various improvements to the Grid control.
 
-## 1.1.15
+## 1.1.16 - 2019-08-18
 
-* Fix: Typo.
+### Fixed
+* Improved accessibility for handheld navigation.
+* Inlining the comment-reply link instead of enqueueing as a separate request.
+* `<select>` element styles when using a dark background.
+* Group block styles.
+* Center-aligned elements inside group blocks.
+* Customizer description typo.
+* Accessibility improvements for button blocks.
+* Improved breadcrumbs styles.
 
-## 1.1.14
+### Added
+* Added slide-up mode for header searchform.
+* Partial support for IE11.
 
-* New: Add option to override grid-parts background in the header.
-* New: Add option to override grid-parts background in the footer.
-* New: Added a new "Mobile" section in re-organized settings in the customizer.
-* New: Added Changelog file.
-* Fix: Improved customizer control descriptions & labels.
-* Fix: Improved customizer styles.
-* Fix: Changed some settings from radios to dropdowns to clean-up the UI.
-* Fix: Show featured image options for single posts & archives regardless of the preview pane context in the customizer.
-* Fix: Description of WordPress-Core background-color control (moved to the main grid section).
-* Fix: Renamed "Grid" section to "Site Grid".
-* Fix: Removed plus & docs buttons on the top of sections.
+### Changed
+* Updated dragselect to v1.12.2
+* Block styles for compatibility with latest Gutenberg plugin versions.
 
-## 1.1.13
+## 1.1.15 - 2019-08-04
 
-* Fix: Error in nav-handheld.
+### Fixed
+* Typos
 
-## 1.1.12
+## 1.1.14 - 2019-08-04
 
-* Fix: JS conflict in the customizer when Gutenberg installed as a plugin.
-* Fix: Typo in the main header grid's description.
-* Fix: Header-Image control description.
-* Fix: Removed Mobile Navigation from Deferred Parts.
+### Fixed
+* Improved customizer control descriptions & labels.
+* Improved customizer styles.
+* Changed some settings from radios to dropdowns to clean-up the UI.
+* Show featured image options for single posts & archives regardless of the preview pane context in the customizer.
+* Description of WordPress-Core background-color control (moved to the main grid section).
 
-## 1.1.11
+### Added
+* Add option to override grid-parts background in the header.
+* Add option to override grid-parts background in the footer.
+* Added a new "Mobile" section in re-organized settings in the customizer.
+* Added Changelog file.
 
-* Fix: Improved block styles to further reduce their size.
-* Fix: Content width when using percent (%) values.
-* Fix: Improved the accessibility-colors script for automatic link colors selection.
-* Fix: Improved comment form styles for dark backgrounds.
-* Fix: Gutenberg styles were updated to include the most recent tweaks for new blocks.
-* Fix: Improved searchform styles.
-* Fix: PHP Warning when viewing some post-formats.
-* Fix: Visibility of WooCommerce product images when there is a single image (no gallery) inside single posts.
-* Fix: WooCommerce tabs styles.
+### Changed
+* Renamed "Grid" section to "Site Grid".
+* Removed plus & docs buttons on the top of sections.
 
-## 1.1.10
+## 1.1.13 - 2019-07-29
 
-* Fix: Text typos.
-* Fix: Customizer performance improvement.
-* Update: New screenshot.
+### Fixed
+* Error in nav-handheld.
 
-## 1.1.9
+## 1.1.12 - 2019-07-29
 
-* Fix: Improved Customizer performance.
-* Fix: Accessibility improvement: Removed `<title>` tags from SVGs.
-* Fix: Update DragSelect script to v1.12.1.
-* Fix: Branding typography control was always hidden.
-* Fix: Group block inner-container alignment.
-* Fix: Style for initial notice when a menu is not assigned to a navigation grid-part.
-* Fix: Moved text & link color options to the content section.
+### Fixed
+* JS conflict in the customizer when Gutenberg installed as a plugin.
+* Typo in the main header grid's description.
+* Header-Image control description.
+* Removed Mobile Navigation from Deferred Parts.
 
-## 1.1.8
+## 1.1.11 - 2019-07-28
 
-* Fix: Styles for undefined values.
-* Fix: Content width when using `em` units.
+### Fixed
+* Improved block styles to further reduce their size.
+* Content width when using percent (%) values.
+* Improved the accessibility-colors script for automatic link colors selection.
+* Improved comment form styles for dark backgrounds.
+* Gutenberg styles were updated to include the most recent tweaks for new blocks.
+* Improved searchform styles.
+* PHP Warning when viewing some post-formats.
+* Visibility of WooCommerce product images when there is a single image (no gallery) inside single posts.
+* WooCommerce tabs styles.
+
+## 1.1.10 - 2019-07-20
+
+### Fixed
+* Text typos.
+* Customizer performance improvement.
+
+### Changed
+* New screenshot.
+
+## 1.1.9 - 2019-07-18
+
+### Fixed
+* Improved Customizer performance.
+* Accessibility improvement: Removed `<title>` tags from SVGs.
+* Update DragSelect script to v1.12.1.
+* Branding typography control was always hidden.
+* Group block inner-container alignment.
+* Style for initial notice when a menu is not assigned to a navigation grid-part.
+* Moved text & link color options to the content section.
+
+## 1.1.8 - 2019-07-06
+
+### Fixed
+* Styles for undefined values.
+* Content width when using `em` units.
 
 
-## 1.1.7
+## 1.1.7 - 2019-06-30
 
-* Fix: Improve accessibility of search forms
-* Fix: Updated the Kirki framework to v3.0.44
-* Fix: Updated editor block styles
-* Fix: Changed default font-family to sans-serif.
+### Fixed
+* Improve accessibility of search forms
+* Updated the Kirki framework to v3.0.44
+* Updated editor block styles
+* Changed default font-family to sans-serif.
 
-## 1.1.6
+## 1.1.6 - 2019-06-17
 
-* Fix: Handheld navigation behaviour on Safari.
-* Dev: Added fallback values to all CSS custom-properties.
+### Fixed
+* Handheld navigation behaviour on Safari.
+* Added fallback values to all CSS custom-properties.
 
-## 1.1.5
+## 1.1.5 - 2019-06-09
 
-* Fix: googlefonts enqueueing issue when the site URL changes, or if the protocol (http/https) changes
+### Fixed
+* Googlefonts enqueueing issue when the site URL changes, or if the protocol (http/https) changes
 
-## 1.1.4
+## 1.1.4 - 2019-05-21
 
-* Fix: Documentation Links
-* Fix: Minimum WordPress version required is 5.0 - fixed fallback method for previous versions of WordPress.
+### Fixed
+* Documentation Links
+* Minimum WordPress version required is 5.0 - fixed fallback method for previous versions of WordPress.
 
-## 1.1
+## 1.1.3 - 2019-05-18
 
-* Fix: Accessibility improvements
+### Fixed
+* Accessibility improvements
 
-## 1.1.2
+## 1.1.2 - 2019-05-15
 
-* Fix: Properly escape the read-me link for blog excerpts.
+### Fixed
+* Properly escape the read-me link for blog excerpts.
 
-## 1.1.1
+## 1.1.1 - 2019-05-11
 
-* Fix: WooCommerce categories widget styles
-* Fix: Simplify & improve styles for widget lists.
-* Fix: Improve styles for products-search widget.
-* Fix: Improve WooCommerce price-filter widget styles.
-* Fix: No edit links in products.
-* Fix: WooCommerce product slides.
-* Fix: WooCommerce image thumbnails in carousels.
-* Fix: WooCommerce `.onsale` tags styling.
-* Fix: blocks alignment in cover block.
-* Fix: Added product-searchform template for WooCommerce.
-* Fix: Content-width calculation when using `em` values for the main content area's max-width setting.
-* Fix: Updated Block styles from latest Gutenberg-dev version.
-* Fix: Simplified color palette.
-* Fix: Updated block styles.
-* New: Added support for the new "Group" editor block.
-* New: Added option to hide page-title on the frontpage.
+### Fixed
+* WooCommerce categories widget styles
+* Simplify & improve styles for widget lists.
+* Improve styles for products-search widget.
+* Improve WooCommerce price-filter widget styles.
+* No edit links in products.
+* WooCommerce product slides.
+* WooCommerce image thumbnails in carousels.
+* WooCommerce `.onsale` tags styling.
+* blocks alignment in cover block.
+* Added product-searchform template for WooCommerce.
+* Content-width calculation when using `em` values for the main content area's max-width setting.
+* Updated Block styles from latest Gutenberg-dev version.
+* Simplified color palette.
+* Updated block styles.
 
-## 1.1
+### Added
+* Added support for the new "Group" editor block.
+* Added option to hide page-title on the frontpage.
 
-* New: Implemented lazy-loaded grid-parts using the REST API.
-* Fix: Improved and simplified the navigation styles.
-* Fix: Better implementation for toggle buttons in menus.
+## 1.1 - 2019-04-06
 
-## 1.0.8
+### Fixed
+* Improved and simplified the navigation styles.
+* Better implementation for toggle buttons in menus.
 
-* Fix: Custom CSS priority
-* Fix: CSS overflow fix for mobile navigation.
-* Fix: Collapsed naviation position.
-* Fix: Cover block focal-point when using a reusable editor block as a separate grid-part.
-* Fix: Remove non-existing grid-parts (deleted reusable blocks) from the grid control in the customizer.
-* Fix: Removed incomplete implementations for Layer-Slider and Revolution-Slider.
-* New: Added option to enable boxed mode for navigation toggle button.
-* New: Added edit links to reusable blocks.
-* New: Added links-color setting to reusable blocks.
-* New: Added `gridd_print_attributes` filter.
+### Added
+* Implemented lazy-loaded grid-parts using the REST API.
 
-## 1.0.7
+## 1.0.8 - 2019-04-03
 
-* Fix: Naviation depth is no longer limited to 3.
-* Fix: CSS cleanup
-* New: Added `gridd_get_toggle_button` filter.
+### Fixed
+* Custom CSS priority
+* CSS overflow fix for mobile navigation.
+* Collapsed naviation position.
+* Cover block focal-point when using a reusable editor block as a separate grid-part.
+* Remove non-existing grid-parts (deleted reusable blocks) from the grid control in the customizer.
+* Removed incomplete implementations for Layer-Slider and Revolution-Slider.
 
-## 1.0.6
+### Added
+* Added option to enable boxed mode for navigation toggle button.
+* Added edit links to reusable blocks.
+* Added links-color setting to reusable blocks.
+* Added `gridd_print_attributes` filter.
 
-* Fix: Customizer bugfix
+## 1.0.7 - 2019-03-16
 
-## 1.0.5
+### Fixed
+* Naviation depth is no longer limited to 3.
+* CSS cleanup
 
-* Fix: Improved navigation styles.
-* Fix: The grid-parts order control now has a live preview.
-* Fix: Minor CSS fixes & cleanup.
+### Added
+* Added `gridd_get_toggle_button` filter.
 
-## 1.0.4
+## 1.0.6 - 2019-03-16
 
-* New: Added a new "Overlay" mode for featured images on single posts
-* New: Added support for Jetpack's `Tonesque` library.
-* Fix: Minor CSS fixes & cleanups.
+### Fixed
+* Customizer bugfix
 
-## 1.0.3
+## 1.0.5 - 2019-03-14
 
-* New: Added grid parts for reusable Gutenberg Blocks.
-* New: Added custom templates.
+### Fixed
+* Improved navigation styles.
+* The grid-parts order control now has a live preview.
+* Minor CSS fixes & cleanup.
 
-## 1.0.2
+## 1.0.4 - 2019-03-10
 
-* New: CSS for blocks is now only loaded for active blocks.
-* New: Added option for collapsed navigation label.
-* Fix: Various CSS styling fixes.
+### Fixed
+* Minor CSS fixes & cleanups.
 
-## 1.0.1
+### Added
+* Added a new "Overlay" mode for featured images on single posts
+* Added support for Jetpack's `Tonesque` library.
 
-* New: Added the "Features" section in the customizer.
-* New: Implemented grid for archives.
-* Fix: Various performance tweaks for CSS loading.
+## 1.0.3 - 2019-03-05
 
-## 1.0
+### Added
+* Added grid parts for reusable Gutenberg Blocks.
+* Added custom templates.
+
+## 1.0.2 - 2019-02-23
+
+### Fixed
+* Various CSS styling fixes.
+
+### Added
+* CSS for blocks is now only loaded for active blocks.
+* Added option for collapsed navigation label.
+
+## 1.0.1 - 2019-02-11
+
+### Fixed
+* Various performance tweaks for CSS loading.
+
+### Added
+* Added the "Features" section in the customizer.
+* Implemented grid for archives.
+
+## 1.0 - 2019-02-04
 
 * Initial Release
