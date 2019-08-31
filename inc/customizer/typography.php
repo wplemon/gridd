@@ -23,6 +23,20 @@ Customizer::add_section(
 );
 
 /**
+ * Body typography switch.
+ */
+Customizer::add_field(
+	[
+		'type'      => 'checkbox',
+		'settings'  => 'custom_body_typography',
+		'label'     => esc_html__( 'Custom Body Typography', 'gridd' ),
+		'section'   => 'gridd_typography',
+		'priority'  => 9,
+		'default'   => false,
+	]
+);
+
+/**
  * Body typography.
  */
 Customizer::add_field(
@@ -39,7 +53,7 @@ Customizer::add_field(
 		'transport' => 'auto',
 		'output'    => [
 			[
-				'element' => 'body',
+				'element' => 'body:not(.gridd-has-system-body-typography)'
 			],
 			[
 				'element' => '.edit-post-visual-editor.editor-styles-wrapper',
@@ -51,6 +65,23 @@ Customizer::add_field(
 				'google' => [ 'popularity' ],
 			],
 		],
+		'active_callback' => function() {
+			return get_theme_mod( 'custom_body_typography' );
+		},
+	]
+);
+
+/**
+ * Body typography switch.
+ */
+Customizer::add_field(
+	[
+		'type'      => 'checkbox',
+		'settings'  => 'custom_headers_typography',
+		'label'     => esc_html__( 'Custom Headers Typography', 'gridd' ),
+		'section'   => 'gridd_typography',
+		'priority'  => 19,
+		'default'   => false,
 	]
 );
 
@@ -71,7 +102,20 @@ Customizer::add_field(
 		'transport' => 'auto',
 		'output'    => [
 			[
-				'element' => 'h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,.site-title',
+				'element' => [
+					'body:not(.gridd-has-system-headers-typography) h1',
+					'body:not(.gridd-has-system-headers-typography) h2',
+					'body:not(.gridd-has-system-headers-typography) h3',
+					'body:not(.gridd-has-system-headers-typography) h4',
+					'body:not(.gridd-has-system-headers-typography) h5',
+					'body:not(.gridd-has-system-headers-typography) h6',
+					'body:not(.gridd-has-system-headers-typography) .h1',
+					'body:not(.gridd-has-system-headers-typography) .h2',
+					'body:not(.gridd-has-system-headers-typography) .h3',
+					'body:not(.gridd-has-system-headers-typography) .h4',
+					'body:not(.gridd-has-system-headers-typography) .h5',
+					'body:not(.gridd-has-system-headers-typography) .h6',
+				],
 			],
 			[
 				'context' => [ 'editor' ],
@@ -91,6 +135,9 @@ Customizer::add_field(
 				'google' => [ 'popularity' ],
 			],
 		],
+		'active_callback' => function() {
+			return get_theme_mod( 'custom_headers_typography' );
+		},
 	]
 );
 

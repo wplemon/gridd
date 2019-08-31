@@ -154,6 +154,9 @@ class Theme {
 			$classes[] = 'gridd-post-type-archive-' . get_post_type();
 		}
 
+		$classes[] = get_theme_mod( 'custom_body_typography' ) ? 'gridd-has-custom-body-typography' : 'gridd-has-system-body-typography';
+		$classes[] = get_theme_mod( 'custom_headers_typography' ) ? 'gridd-has-custom-headers-typography' : 'gridd-has-system-headers-typography';
+
 		return $classes;
 	}
 
