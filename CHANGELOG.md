@@ -11,6 +11,7 @@
 * Improved default font stack.
 * Improved css-variables names.
 * Refactored the changelog following principles from https://keepachangelog.com/en/1.0.0/
+* Removed backup-fonts styles. They are no longer needed since google-fonts are not served via Google's CDN.
 
 ### Added
 * New header-padding option.
