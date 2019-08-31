@@ -18,6 +18,7 @@
 * New option for navigation hover/focus styles.
 * Upgrader implementation to handle future option changes.
 * Checkboxes to enable/disable custom typography options.
+* New option to allow users to disable editor styles.
 
 ## 1.1.17 - 2019-18-25
 

@@ -283,4 +283,18 @@ add_action(
 		);
 	}
 );
+
+Customizer::add_field(
+	[
+		'type'            => 'checkbox',
+		'settings'        => 'disable_editor_styles',
+		'label'           => esc_html__( 'Disable Editor Styles', 'gridd' ),
+		'description'     => esc_html__( 'Enable this option to prevent the theme from styling the posts editor to match your options, and instead uses the default WordPress styles for the editor.', 'gridd' ),
+		'section'         => 'gridd_features',
+		'default'         => false,
+		'transport'       => 'postMessage',
+		'priority'        => 999,
+	]
+);
+
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */

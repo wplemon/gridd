@@ -260,9 +260,11 @@ class Theme {
 		 */
 		add_theme_support( 'align-wide' );
 		add_theme_support( 'wp-block-styles' );
-		add_theme_support( 'editor-styles' );
-		if ( 50 > \ariColor::newColor( get_theme_mod( 'gridd_grid_content_background_color', '#ffffff' ) )->lightness ) {
-			add_theme_support( 'dark-editor-style' );
+		if ( ! get_theme_mod( 'disable_editor_styles' ) ) {
+			add_theme_support( 'editor-styles' );
+			if ( 50 > \ariColor::newColor( get_theme_mod( 'gridd_grid_content_background_color', '#ffffff' ) )->lightness ) {
+				add_theme_support( 'dark-editor-style' );
+			}
 		}
 		add_theme_support( 'responsive-embeds' );
 		add_editor_style( 'assets/css/admin/editor.min.css' );

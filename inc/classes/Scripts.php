@@ -79,11 +79,13 @@ class Scripts {
 		add_action( 'wp_head', [ $this, 'inline_styles' ] );
 
 		// Admin styles for the aditor.
-		add_action( 'admin_enqueue_scripts', [ $this, 'editor_styles' ] );
+		if ( ! get_theme_mod( 'disable_editor_styles' ) ) {
+			add_action( 'admin_enqueue_scripts', [ $this, 'editor_styles' ] );
+			add_action( 'admin_footer', [ $this, 'admin_footer_editor_styles' ] );
+		}
 
 		// Add inline scripts.
 		add_action( 'gridd_footer_inline_scripts', [ $this, 'add_user_agent_inline_script' ] );
-		add_action( 'admin_footer', [ $this, 'admin_footer_editor_styles' ] );
 
 		// Add widget styles.
 		add_filter( 'gridd_widget_output', [ $this, 'widget_output' ], 10, 4 );

@@ -55,7 +55,7 @@ Customizer::add_field(
 			[
 				'element' => 'body:not(.gridd-has-system-body-typography)',
 			],
-			[
+			get_theme_mod( 'disable_editor_styles' ) ? [] : [
 				'element' => '.edit-post-visual-editor.editor-styles-wrapper',
 				'context' => [ 'editor' ],
 			],
@@ -117,7 +117,7 @@ Customizer::add_field(
 					'body:not(.gridd-has-system-headers-typography) .h6',
 				],
 			],
-			[
+			get_theme_mod( 'disable_editor_styles' ) ? [] : [
 				'context' => [ 'editor' ],
 				'element' => [
 					'.editor-post-title__block .editor-post-title__input',
