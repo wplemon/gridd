@@ -3,9 +3,13 @@
 ### Fixed
 * Removed duplicate comments link.
 * Changed default values for some options for more reasonable results when the theme is first installed.
+* Improved content-width calculation when using `em` or `ch` units.
+* Navigation styling (wrong css-vars used for 2nd navigation).
+* Coding Standards fixes
 
 ### Changed
 * Improved default font stack.
+* Improved css-variables names.
 * Refactored the changelog following principles from https://keepachangelog.com/en/1.0.0/
 
 ### Added
