@@ -1,4 +1,4 @@
-<?php
+<?php // phpcs:ignoreFile WordPress.Files.FileName
 /**
  * Run upgrades for version 1.1.18
  *

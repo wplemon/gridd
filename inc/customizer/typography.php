@@ -27,12 +27,12 @@ Customizer::add_section(
  */
 Customizer::add_field(
 	[
-		'type'      => 'checkbox',
-		'settings'  => 'custom_body_typography',
-		'label'     => esc_html__( 'Custom Body Typography', 'gridd' ),
-		'section'   => 'gridd_typography',
-		'priority'  => 9,
-		'default'   => false,
+		'type'     => 'checkbox',
+		'settings' => 'custom_body_typography',
+		'label'    => esc_html__( 'Custom Body Typography', 'gridd' ),
+		'section'  => 'gridd_typography',
+		'priority' => 9,
+		'default'  => false,
 	]
 );
 
@@ -41,26 +41,26 @@ Customizer::add_field(
  */
 Customizer::add_field(
 	[
-		'type'      => 'typography',
-		'settings'  => 'gridd_body_typography',
-		'label'     => esc_html__( 'Body Typography', 'gridd' ),
-		'section'   => 'gridd_typography',
-		'priority'  => 10,
-		'default'   => [
+		'type'            => 'typography',
+		'settings'        => 'gridd_body_typography',
+		'label'           => esc_html__( 'Body Typography', 'gridd' ),
+		'section'         => 'gridd_typography',
+		'priority'        => 10,
+		'default'         => [
 			'font-family' => 'sans-serif',
 			'font-weight' => 400,
 		],
-		'transport' => 'auto',
-		'output'    => [
+		'transport'       => 'auto',
+		'output'          => [
 			[
-				'element' => 'body:not(.gridd-has-system-body-typography)'
+				'element' => 'body:not(.gridd-has-system-body-typography)',
 			],
 			[
 				'element' => '.edit-post-visual-editor.editor-styles-wrapper',
 				'context' => [ 'editor' ],
 			],
 		],
-		'choices'   => [
+		'choices'         => [
 			'fonts' => [
 				'google' => [ 'popularity' ],
 			],
@@ -76,12 +76,12 @@ Customizer::add_field(
  */
 Customizer::add_field(
 	[
-		'type'      => 'checkbox',
-		'settings'  => 'custom_headers_typography',
-		'label'     => esc_html__( 'Custom Headers Typography', 'gridd' ),
-		'section'   => 'gridd_typography',
-		'priority'  => 19,
-		'default'   => false,
+		'type'     => 'checkbox',
+		'settings' => 'custom_headers_typography',
+		'label'    => esc_html__( 'Custom Headers Typography', 'gridd' ),
+		'section'  => 'gridd_typography',
+		'priority' => 19,
+		'default'  => false,
 	]
 );
 
@@ -90,17 +90,17 @@ Customizer::add_field(
  */
 Customizer::add_field(
 	[
-		'type'      => 'typography',
-		'settings'  => 'gridd_headers_typography',
-		'label'     => esc_html__( 'Headers Typography', 'gridd' ),
-		'section'   => 'gridd_typography',
-		'priority'  => 20,
-		'default'   => [
+		'type'            => 'typography',
+		'settings'        => 'gridd_headers_typography',
+		'label'           => esc_html__( 'Headers Typography', 'gridd' ),
+		'section'         => 'gridd_typography',
+		'priority'        => 20,
+		'default'         => [
 			'font-family' => 'sans-serif',
 			'variant'     => 700,
 		],
-		'transport' => 'auto',
-		'output'    => [
+		'transport'       => 'auto',
+		'output'          => [
 			[
 				'element' => [
 					'body:not(.gridd-has-system-headers-typography) h1',
@@ -130,7 +130,7 @@ Customizer::add_field(
 				],
 			],
 		],
-		'choices'   => [
+		'choices'         => [
 			'fonts' => [
 				'google' => [ 'popularity' ],
 			],

@@ -1,4 +1,4 @@
-<?php
+<?php // phpcs:ignoreFile WordPress.Files.FileName
 /**
  * Handle theme-options changes on upgrades.
  *
