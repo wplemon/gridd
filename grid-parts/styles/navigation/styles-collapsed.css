@@ -48,13 +48,9 @@
 .gridd-tp-nav_ID .gridd-toggle-navigation:hover, .gridd-tp-nav_ID .gridd-toggle-navigation:focus, .gridd-tp-nav_ID .gridd-toggle-navigation.focus, .gridd-tp-nav_ID .gridd-toggle-navigation.toggled-on {
   background: none;
   box-shadow: none;
-  color: currentColor;
 }
 .gridd-tp-nav_ID .gridd-toggle-navigation:hover svg, .gridd-tp-nav_ID .gridd-toggle-navigation:focus svg, .gridd-tp-nav_ID .gridd-toggle-navigation.focus svg, .gridd-tp-nav_ID .gridd-toggle-navigation.toggled-on svg {
   fill: currentColor;
-}
-.gridd-tp-nav_ID .gridd-toggle-navigation:not(.gridd-nav-toggle-boxed):hover, .gridd-tp-nav_ID .gridd-toggle-navigation:not(.gridd-nav-toggle-boxed):focus, .gridd-tp-nav_ID .gridd-toggle-navigation:not(.gridd-nav-toggle-boxed).focus, .gridd-tp-nav_ID .gridd-toggle-navigation:not(.gridd-nav-toggle-boxed).toggled-on {
-  outline: 1px dotted;
 }
 .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed:hover, .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed:focus, .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed.focus, .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed.toggled-on {
   color: var(--nv-ID-acl, #0f5e97);
