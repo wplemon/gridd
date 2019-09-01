@@ -1,6 +1,7 @@
 .gridd-nav-handheld-btn[aria-expanded="true"]+#gridd-handheld-menu-wrapper {
 	display: flex;
 	align-content: flex-start;
+	box-shadow: 0 0 2em 1px;
 }
 
 $element: "#gridd-handheld-menu-wrapper";
@@ -16,10 +17,10 @@ $itemsColor: var(--tc, #000);
 
 #nav-handheld {
 	max-height: calc(100vh - 66px);
-	overflow-y: scroll;
+	overflow-y: hidden;
 	width: 100%;
 }
 
 #gridd-handheld-menu-wrapper {
-	overflow-y: scroll;
+	overflow-y: auto;
 }
