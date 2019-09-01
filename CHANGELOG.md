@@ -6,16 +6,19 @@
 * Improved content-width calculation when using `em` or `ch` units.
 * Navigation styling (wrong css-vars used for 2nd navigation).
 * Coding Standards fixes
+* Improved accessible styles for default links and menus.
+* Vertical scollbars for mobile navigation containers.
 
 ### Changed
 * Improved default font stack.
 * Improved css-variables names.
 * Refactored the changelog following principles from https://keepachangelog.com/en/1.0.0/
 * Removed backup-fonts styles. They are no longer needed since google-fonts are not served via Google's CDN.
+* Improved default link styles for better accessibility.
+* Changed the move/resize icon for grid-parts inside the grid control.
 
 ### Added
 * New header-padding option.
-* New option for navigation hover/focus styles.
 * Upgrader implementation to handle future option changes.
 * Checkboxes to enable/disable custom typography options.
 * New option to allow users to disable editor styles.
