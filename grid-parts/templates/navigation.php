@@ -51,9 +51,12 @@ if ( false !== strpos( $responsive_mode, 'icon' ) ) {
 }
 
 // Add alternative hover/focus styles if needed.
+/**
+ * WIP
 if ( 'alt1' === get_theme_mod( "gridd_grid_nav_{$id}_style", 'default' ) ) {
 	$style->add_file( get_theme_file_path( 'grid-parts/styles/navigation/styles-hover-alt.min.css' ) );
 }
+*/
 
 // Hide on mobile.
 if ( false !== strpos( $responsive_mode, 'mobile-hidden' ) ) {

@@ -16,23 +16,30 @@ input[type=submit] {
   cursor: pointer;
   position: relative;
 }
-.button:active, .button:hover,
+.button:active, .button:hover, .button:focus,
 a.button:active,
 a.button:hover,
+a.button:focus,
 a.button:visited:active,
 a.button:visited:hover,
+a.button:visited:focus,
 a.comment-reply-link:active,
 a.comment-reply-link:hover,
+a.comment-reply-link:focus,
 button:active,
 button:hover,
+button:focus,
 input[type=button]:active,
 input[type=button]:hover,
+input[type=button]:focus,
 input[type=reset]:active,
 input[type=reset]:hover,
+input[type=reset]:focus,
 input[type=submit]:active,
-input[type=submit]:hover {
+input[type=submit]:hover,
+input[type=submit]:focus {
   outline: none;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 .button:focus, .button:active,
 a.button:focus,

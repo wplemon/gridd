@@ -59,6 +59,20 @@ nav {
 		text-decoration: none;
 		width: 100%;
 		min-height: 3em;
+
+		&:hover,
+		&:focus,
+		&:active {
+			box-shadow: 0 1px;
+		}
+	}
+
+	a,
+	a:hover,
+	a:focus,
+	a:active,
+	.gridd-toggle {
+		outline: none;
 	}
 
 	.menu-item-has-children,
@@ -87,15 +101,15 @@ nav {
 
 		&:hover,
 		&:focus,
-		&.focus,
+		&:active,
 		&.toggled-on {
 			opacity: 1;
-			box-shadow: none;
-			outline: 1px dotted;
+			box-shadow: 0 1px;
 		}
 
 		&.toggled-on {
 			opacity: 1;
+
 
 			svg {
 				transform: rotate(180deg);

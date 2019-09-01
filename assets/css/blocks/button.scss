@@ -5,19 +5,20 @@
 @import "block-library/mixins";
 @import "block-library/z-index";
 @import "block-library/mixins";
+@import "../mixins";
 
 @import "block-library/button/style.scss";
 
 @import "../variables";
 
 .wp-block-button__link {
+	@include button();
 	// background-color: var(--tc);
-	border-radius: 3em;
-	font-size: 1em;
-	padding: .5em 1em;
-	position: relative;
-	border: 2px solid;
-	background: none;
+	// border-radius: 3em;
+	// font-size: 1em;
+	// padding: .5em 1em;
+	// position: relative;
+	// background: none;
 
 	// Make sure buttons text remains visible if user doesn't select a text color.
 	&:not(.has-text-color) {

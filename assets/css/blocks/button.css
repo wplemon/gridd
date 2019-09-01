@@ -105,12 +105,22 @@
 }
 
 .wp-block-button__link {
-  border-radius: 3em;
-  font-size: 1em;
-  padding: 0.5em 1em;
+  text-decoration: none !important;
+  border-radius: 2.5em;
+  padding: 0.35em 1.25em;
+  transition: all 150ms ease-in-out;
   position: relative;
   border: 2px solid;
   background: none;
+  cursor: pointer;
+  position: relative;
+}
+.wp-block-button__link:active, .wp-block-button__link:hover, .wp-block-button__link:focus {
+  outline: none;
+  text-decoration: none !important;
+}
+.wp-block-button__link:focus, .wp-block-button__link:active {
+  box-shadow: inset 0px 1px 1px 0px;
 }
 .wp-block-button__link:not(.has-text-color) {
   color: currentColor;

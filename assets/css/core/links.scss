@@ -1,20 +1,25 @@
-.gridd-site-wrapper {
-	a {
-		color: var(--lc, #0f5e97);
-		-webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
-		transition: all 100ms ease-in-out;
+a,
+a:visited {
+	text-decoration: none;
+	border-bottom: 1px solid;
+	color: var(--lc, #0f5e97);
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
 
-		&:active,
-		&:focus,
-		&:hover {
-			color: var(--lch, #541cfc);
-			outline: thin dotted;
-		}
+	&:hover,
+	&:active,
+	&:focus {
+		color: var(--lch, #541cfc);
+	}
 
-		&:focus {
-			outline: 1px dashed;
-			outline-offset: 1px;
-		}
+	&:hover {
+		border-bottom-width: 2px;
+	}
+
+	&:focus,
+	&:active {
+		outline: 2px solid;
+		outline-offset: .1em;
+		border-bottom: none;
 	}
 }
 

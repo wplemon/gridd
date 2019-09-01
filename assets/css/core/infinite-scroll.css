@@ -31,9 +31,9 @@ body #infinite-handle span button {
   cursor: pointer;
   position: relative;
 }
-body #infinite-handle span button:active, body #infinite-handle span button:hover {
+body #infinite-handle span button:active, body #infinite-handle span button:hover, body #infinite-handle span button:focus {
   outline: none;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 body #infinite-handle span button:focus, body #infinite-handle span button:active {
   box-shadow: inset 0px 1px 1px 0px;

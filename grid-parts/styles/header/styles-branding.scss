@@ -1,7 +1,8 @@
-a.custom-logo-link {
-	&:hover {
-		border-bottom: none;
-	}
+a.custom-logo-link,
+a.custom-logo-link:hover,
+a.custom-logo-link:focus,
+a.custom-logo-link:active {
+	border-bottom: none;
 }
 
 .gridd-tp-header_branding.gridd-tp {
