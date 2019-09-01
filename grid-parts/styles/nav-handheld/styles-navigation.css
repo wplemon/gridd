@@ -1,7 +1,6 @@
 .gridd-nav-handheld-btn[aria-expanded=true] + #gridd-handheld-menu-wrapper {
   display: flex;
   align-content: flex-start;
-  box-shadow: 0 0 2em 1px;
 }
 
 #gridd-handheld-menu-wrapper {
