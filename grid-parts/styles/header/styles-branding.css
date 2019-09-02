@@ -52,12 +52,19 @@ a.custom-logo-link:active {
   text-decoration: none;
   color: var(--header-textcolor, #000);
 }
+.gridd-tp-header_branding.gridd-tp a {
+  border-bottom-width: 0;
+}
 .gridd-tp-header_branding.gridd-tp a:hover {
   outline: none;
+  border-bottom-width: 0;
+  box-shadow: none;
 }
 .gridd-tp-header_branding.gridd-tp a:focus {
   background: transparent;
   outline: none;
+  border-bottom-width: 0;
+  box-shadow: none;
 }
 .gridd-tp-header_branding.gridd-tp .custom-logo-link {
   max-width: calc(var(--h-br-mw, 100) * 1px);

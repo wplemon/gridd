@@ -64,13 +64,18 @@ a.custom-logo-link:active {
 	}
 
 	a {
+		border-bottom-width: 0;
 		&:hover {
 			outline: none;
+			border-bottom-width: 0;
+			box-shadow: none;
 		}
 
 		&:focus {
 			background: transparent;
 			outline: none;
+			border-bottom-width: 0;
+			box-shadow: none;
 		}
 	}
 

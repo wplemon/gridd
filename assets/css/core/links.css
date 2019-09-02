@@ -13,18 +13,20 @@ a:visited:focus {
 }
 a:hover,
 a:visited:hover {
-  border-bottom-width: 2px;
+  box-shadow: 0 1px;
 }
 a:focus, a:active,
 a:visited:focus,
 a:visited:active {
   outline: 2px solid;
   outline-offset: 0.1em;
-  border-bottom: none;
+  border-bottom-color: transparent;
 }
 
 .entry-title a {
   text-decoration: none;
+  border-bottom-width: 0;
+  box-shadow: none;
 }
 
 /*# sourceMappingURL=links.css.map */

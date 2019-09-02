@@ -69,9 +69,6 @@
 /**
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
-.wp-block-button {
-  color: #fff;
-}
 .wp-block-button.aligncenter {
   text-align: center;
 }

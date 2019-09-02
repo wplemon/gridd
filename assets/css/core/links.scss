@@ -12,19 +12,21 @@ a:visited {
 	}
 
 	&:hover {
-		border-bottom-width: 2px;
+		box-shadow: 0 1px;
 	}
 
 	&:focus,
 	&:active {
 		outline: 2px solid;
 		outline-offset: .1em;
-		border-bottom: none;
+		border-bottom-color: transparent;
 	}
 }
 
 .entry-title {
 	a {
 		text-decoration: none;
+		border-bottom-width: 0;
+		box-shadow: none;
 	}
 }
