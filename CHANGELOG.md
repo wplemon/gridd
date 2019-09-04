@@ -23,6 +23,9 @@
 * Checkboxes to enable/disable custom typography options.
 * New option to allow users to disable editor styles.
 
+### Removed
+* Edit link from post titles.
+
 ## 1.1.17 - 2019-18-25
 
 ### Fixed
