@@ -122,7 +122,7 @@
 
 .wp-block-embed figcaption {
   color: #555d66;
-  font-size: 1em;
+  font-size: var(--fs-tr);
   text-align: center;
 }
 

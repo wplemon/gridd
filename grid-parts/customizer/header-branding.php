@@ -101,7 +101,7 @@ Customizer::add_field(
 		'priority'  => 10,
 		'default'   => '#ffffff',
 		'transport' => 'postMessage',
-		'css_vars'  => '--gridd-branding-bg',
+		'css_vars'  => '--h-br-bg',
 		'choices'   => [
 			'alpha' => true,
 		],
@@ -125,9 +125,9 @@ Customizer::add_field(
 		),
 		'section'           => 'gridd_grid_part_details_header_branding',
 		'priority'          => 30,
-		'default'           => '0.5em',
+		'default'           => '0',
 		'transport'         => 'postMessage',
-		'css_vars'          => '--gridd-branding-padding',
+		'css_vars'          => '--h-br-pd',
 		'sanitize_callback' => 'esc_attr', // Though not exactly accurate, in this case it sanitizes the CSS value properly.
 	]
 );
@@ -147,7 +147,7 @@ Customizer::add_field(
 			'suffix' => 'px',
 		],
 		'transport'       => 'postMessage',
-		'css_vars'        => '--gridd-logo-max-width',
+		'css_vars'        => '--h-br-mw',
 		'active_callback' => [
 			[
 				'setting'  => 'custom_logo',
@@ -193,7 +193,7 @@ Customizer::add_field(
 		'default'         => 2,
 		'transport'       => 'postMessage',
 		'active_callback' => 'display_header_text',
-		'css_vars'        => '--gridd-sitetitle-size',
+		'css_vars'        => '--h-br-sts',
 		'choices'         => [
 			'min'    => 1,
 			'max'    => 10,
@@ -213,7 +213,7 @@ Customizer::add_field(
 		'default'         => 1,
 		'transport'       => 'postMessage',
 		'active_callback' => 'display_header_text',
-		'css_vars'        => '--gridd-tagline-size',
+		'css_vars'        => '--h-br-tls',
 		'choices'         => [
 			'min'    => 1,
 			'max'    => 5,
@@ -256,7 +256,7 @@ Customizer::add_field(
 		'priority'        => 90,
 		'default'         => .5,
 		'transport'       => 'postMessage',
-		'css_vars'        => '--gridd-branding-elements-padding',
+		'css_vars'        => '--h-br-epd',
 		'choices'         => [
 			'min'    => 0,
 			'max'    => 5,
@@ -276,7 +276,7 @@ Customizer::add_field(
 		'priority'          => 100,
 		'default'           => 'left',
 		'transport'         => 'auto',
-		'css_vars'          => '--gridd-branding-horizontal-align',
+		'css_vars'          => '--h-br-ha',
 		'transport'         => 'postMessage',
 		'choices'           => [
 			'left'   => esc_html__( 'Left', 'gridd' ),
@@ -298,7 +298,7 @@ Customizer::add_field(
 		'priority'          => 110,
 		'default'           => 'center',
 		'transport'         => 'auto',
-		'css_vars'          => '--gridd-branding-vertical-align',
+		'css_vars'          => '--h-br-va',
 		'transport'         => 'postMessage',
 		'choices'           => [
 			'flex-start' => esc_html__( 'Top', 'gridd' ),

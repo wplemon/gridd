@@ -1,21 +1,22 @@
-a.custom-logo-link {
-	&:hover {
-		border-bottom: none;
-	}
+a.custom-logo-link,
+a.custom-logo-link:hover,
+a.custom-logo-link:focus,
+a.custom-logo-link:active {
+	border-bottom: none;
 }
 
 .gridd-tp-header_branding.gridd-tp {
-	background-color: var(--gridd-branding-bg, #fff);
+	background-color: var(--h-br-bg, #fff);
 	display: flex;
 	width: 100%;
-	padding: var(--gridd-branding-padding, 0.5em);
-	justify-content: var(--gridd-branding-horizontal-align, left);
-	align-items: var(--gridd-branding-vertical-align, center);
+	padding: var(--h-br-pd, 0);
+	justify-content: var(--h-br-ha, left);
+	align-items: var(--h-br-va, center);
 
 	&.inline {
 		.site-title {
-			padding-left: calc(var(--gridd-branding-elements-padding, 0.5) * 1em);
-			padding-right: calc(var(--gridd-branding-elements-padding, 0.5) * 1em);
+			padding-left: calc(var(--h-br-epd, 0.5) * 1em);
+			padding-right: calc(var(--h-br-epd, 0.5) * 1em);
 		}
 	}
 
@@ -25,12 +26,12 @@ a.custom-logo-link {
 		>* {
 			display: flex;
 			width: 100%;
-			justify-content: var(--gridd-branding-horizontal-align, left);
+			justify-content: var(--h-br-ha, left);
 		}
 
 		.site-title {
-			padding-top: calc(var(--gridd-branding-elements-padding, 0.5) * 1em);
-			padding-bottom: calc(var(--gridd-branding-elements-padding, 0.5) * 1em);
+			padding-top: calc(var(--h-br-epd, 0.5) * 1em);
+			padding-bottom: calc(var(--h-br-epd, 0.5) * 1em);
 		}
 	}
 
@@ -40,7 +41,7 @@ a.custom-logo-link {
 	}
 
 	.site-description {
-		font-size: calc(var(--gridd-tagline-size, 1) * 1em);
+		font-size: calc(var(--h-br-tls, 1) * 1em);
 	}
 
 	.site-description,
@@ -54,7 +55,7 @@ a.custom-logo-link {
 
 	.site-title {
 		line-height: 1;
-		font-size: calc(var(--gridd-sitetitle-size, 2) * 1em);
+		font-size: calc(var(--h-br-sts, 2) * 1em);
 
 		a {
 			text-decoration: none;
@@ -63,18 +64,23 @@ a.custom-logo-link {
 	}
 
 	a {
+		border-bottom-width: 0;
 		&:hover {
 			outline: none;
+			border-bottom-width: 0;
+			box-shadow: none;
 		}
 
 		&:focus {
 			background: transparent;
 			outline: none;
+			border-bottom-width: 0;
+			box-shadow: none;
 		}
 	}
 
 	.custom-logo-link {
-		max-width: calc(var(--gridd-logo-max-width, 100) * 1px);
+		max-width: calc(var(--h-br-mw, 100) * 1px);
 		line-height: 0;
 		max-height: 100%;
 		display: block;

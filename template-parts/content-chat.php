@@ -16,7 +16,4 @@ $parts = Blog::get_post_parts();
 	<?php foreach ( $parts as $part ) : ?>
 		<?php Theme::get_template_part( 'template-parts/part-' . $part ); ?>
 	<?php endforeach; ?>
-	<footer class="entry-footer container">
-		<?php Theme::get_template_part( 'template-parts/entry-footer', get_post_type( $post->ID ) ); ?>
-	</footer>
 </article>

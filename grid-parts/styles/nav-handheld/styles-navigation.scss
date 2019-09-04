@@ -4,22 +4,22 @@
 }
 
 $element: "#gridd-handheld-menu-wrapper";
-$backgroundColor: var(--gridd-content-bg, #fff);
+$backgroundColor: var(--c-bg, #fff);
 $fontSize: 1em;
 $padding: 1em;
 $justify: center;
-$submenuBackground: var(--gridd-content-bg, #fff);
-$accentColor: var(--gridd-links-color, #0f5e97);
-$itemsColor: var(--gridd-text-color, #000);
+$submenuBackground: var(--c-bg, #fff);
+$accentColor: var(--lc, #0f5e97);
+$itemsColor: var(--tc, #000);
 
 @import "../navigation/styles.scss";
 
 #nav-handheld {
 	max-height: calc(100vh - 66px);
-	overflow-y: scroll;
+	overflow-y: hidden;
 	width: 100%;
 }
 
 #gridd-handheld-menu-wrapper {
-	overflow-y: scroll;
+	overflow-y: auto;
 }

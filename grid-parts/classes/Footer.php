@@ -3,7 +3,7 @@
  * Gridd Footer grid-part
  *
  * @package Gridd
- * 
+ *
  * phpcs:ignoreFile WordPress.Files.FileName
  */
 
@@ -119,10 +119,7 @@ class Footer extends Grid_Part {
 					'cells' => [ [ 1, 3 ] ],
 				],
 				'footer_copyright'    => [
-					'cells' => [ [ 2, 1 ], [ 2, 2 ] ],
-				],
-				'footer_social_media' => [
-					'cells' => [ [ 2, 3 ] ],
+					'cells' => [ [ 2, 1 ], [ 2, 2 ], [ 2, 3 ] ],
 				],
 			],
 			'gridTemplate' => [

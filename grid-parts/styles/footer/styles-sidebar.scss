@@ -2,29 +2,29 @@
 // The ID will be replaced by the actual sidebar-ID via PHP
 // when the style is included inline in the document.
 .gridd-tp-footer_sidebar_ID {
-	background-color: var(--gridd-footer-sidebar-ID-bg, #fff);
-	padding: var(--gridd-footer-padding, 1em);
+	background-color: var(--ft-wa-ID-bg, #fff);
+	padding: var(--ft-pd, 1em);
 	flex-direction: column;
 	justify-content: flex-start;
 
 	.widget,
 	.wp-caption {
 		width: 100%;
-		color: var(--gridd-footer-sidebar-ID-color, #000);
+		color: var(--ft-wa-ID-cl, #000);
 	}
 
 	h1, h2, h3, h4, h5, h6,
 	.h1, .h2, .h3, .h4, .h5,
 	.h6 {
-		color: var(--gridd-footer-sidebar-ID-color, #000);
+		color: var(--ft-wa-ID-cl, #000);
 	}
 
 	a,
 	a:visited {
-		color: var(--gridd-footer-sidebar-ID-links-color, #0f5e97);
+		color: var(--ft-wa-ID-lc, #0f5e97);
 
 		&:focus {
-			color: var(--gridd-footer-sidebar-ID-links-color, #0f5e97);
+			color: var(--ft-wa-ID-lc, #0f5e97);
 		}
 	}
 }

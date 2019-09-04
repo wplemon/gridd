@@ -63,7 +63,7 @@ function gridd_sidebar_customizer_options( $id ) {
 			'choices'   => [
 				'alpha' => true,
 			],
-			'css_vars'  => "--gridd-sidebar-{$id}-bg",
+			'css_vars'  => "--wa-{$id}-bg",
 			'choices'   => [
 				'alpha' => true,
 			],
@@ -82,7 +82,7 @@ function gridd_sidebar_customizer_options( $id ) {
 			'choices'           => [
 				'setting' => "gridd_grid_sidebar_{$id}_background_color",
 			],
-			'css_vars'          => "--gridd-sidebar-{$id}-color",
+			'css_vars'          => "--wa-{$id}-cl",
 			'sanitize_callback' => [ $sanitization, 'color_hex' ],
 		]
 	);
@@ -99,7 +99,7 @@ function gridd_sidebar_customizer_options( $id ) {
 			'choices'           => [
 				'alpha' => true,
 			],
-			'css_vars'          => "--gridd-sidebar-{$id}-links-color",
+			'css_vars'          => "--wa-{$id}-lc",
 			'choices'           => [
 				'backgroundColor' => "gridd_grid_sidebar_{$id}_background_color",
 				'textColor'       => "gridd_grid_sidebar_{$id}_color",
@@ -121,13 +121,13 @@ function gridd_sidebar_customizer_options( $id ) {
 						__( 'Use any valid CSS value. For details on how padding works, please refer to <a %s>this article</a>.', 'gridd' ),
 						'href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow"'
 					),
-					]
+				]
 			),
 			'section'     => "gridd_grid_part_details_sidebar_$id",
 			'priority'    => 40,
 			'default'     => '1em',
 			'transport'   => 'postMessage',
-			'css_vars'    => "--gridd-sidebar-{$id}-padding",
+			'css_vars'    => "--wa-{$id}-pd",
 		]
 	);
 
@@ -140,7 +140,7 @@ function gridd_sidebar_customizer_options( $id ) {
 			'priority'  => 43,
 			'default'   => '1em',
 			'transport' => 'postMessage',
-			'css_vars'  => "--gridd-sidebar-{$id}-margin",
+			'css_vars'  => "--wa-{$id}-mr",
 		]
 	);
 }

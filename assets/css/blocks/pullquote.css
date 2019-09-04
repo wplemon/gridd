@@ -119,7 +119,7 @@
 .wp-block-pullquote footer, .wp-block-pullquote__citation {
   color: #40464d;
   text-transform: uppercase;
-  font-size: 1em;
+  font-size: var(--fs-tr);
   font-style: normal;
 }
 
@@ -129,13 +129,13 @@
   color: currentColor;
 }
 .wp-block-pullquote.alignleft, .wp-block-pullquote.alignright {
-  max-width: calc(var(--gridd-content-max-width-calculated, 700px) / 2);
+  max-width: calc(var(--c-mw-c, 700px) / 2);
 }
 .wp-block-pullquote.alignleft p, .wp-block-pullquote.alignright p {
-  font-size: calc(var(--gridd-typo-scale, 1.26) * 1em);
+  font-size: var(--fs-1x-ts-tr);
 }
 .wp-block-pullquote p {
-  font-size: calc(var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * 1em);
+  font-size: var(--fs-2x-ts-tr);
 }
 .wp-block-pullquote blockquote {
   border-left: none;
@@ -145,7 +145,7 @@
 }
 
 .wp-block-pullquote.is-style-solid-color blockquote p {
-  font-size: calc(var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * 1em);
+  font-size: var(--fs-2x-ts-tr);
 }
 
 /*# sourceMappingURL=pullquote.css.map */

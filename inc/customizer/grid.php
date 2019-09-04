@@ -118,7 +118,7 @@ Customizer::add_field(
 		'default'     => '',
 		'priority'    => 40,
 		'transport'   => 'postMessage',
-		'css_vars'    => '--gridd-grid-max-width',
+		'css_vars'    => '--mw',
 	]
 );
 

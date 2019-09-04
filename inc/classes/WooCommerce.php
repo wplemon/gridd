@@ -117,14 +117,14 @@ class WooCommerce {
 
 		$style->add_vars(
 			[
-				'--gridd-woo-catalog-product-min-width' => get_theme_mod( 'gridd_woocommerce_product_catalog_min_width', '250px' ),
-				'--gridd-typo-scale'                    => get_theme_mod( 'gridd_type_scale', 1.26 ),
-				'--gridd-text-color'                    => get_theme_mod( 'gridd_text_color', '#000000' ),
-				'--gridd-links-color'                   => get_theme_mod( 'gridd_links_color', '#005ea5' ),
-				'--gridd-links-hover-color'             => get_theme_mod( 'gridd_links_hover_color', '#2900a3' ),
+				'--woo-cpmw' => get_theme_mod( 'gridd_woocommerce_product_catalog_min_width', '250px' ),
+				'--ts'       => get_theme_mod( 'gridd_type_scale', 1.26 ),
+				'--tc'       => get_theme_mod( 'gridd_text_color', '#000000' ),
+				'--lc'       => get_theme_mod( 'gridd_links_color', '#005ea5' ),
+				'--lch'      => get_theme_mod( 'gridd_links_hover_color', '#2900a3' ),
 			]
 		);
-		
+
 		$style->the_css( 'gridd-inline-css-wc' );
 	}
 

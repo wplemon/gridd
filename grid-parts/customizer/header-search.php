@@ -18,14 +18,14 @@ Customizer::add_outer_section(
 
 Customizer::add_field(
 	[
-		'type'        => 'radio-buttonset',
-		'settings'    => 'gridd_grid_part_details_header_search_mode',
-		'label'       => esc_html__( 'Search Mode', 'gridd' ),
-		'section'     => 'gridd_grid_part_details_header_search',
-		'default'     => 'form',
-		'transport'   => 'refresh',
-		'choices'     => [
-			'form'  => esc_html__( 'Form', 'gridd' ),
+		'type'      => 'radio-buttonset',
+		'settings'  => 'gridd_grid_part_details_header_search_mode',
+		'label'     => esc_html__( 'Search Mode', 'gridd' ),
+		'section'   => 'gridd_grid_part_details_header_search',
+		'default'   => 'form',
+		'transport' => 'refresh',
+		'choices'   => [
+			'form'     => esc_html__( 'Form', 'gridd' ),
 			'slide-up' => esc_html__( 'Slide Up', 'gridd' ),
 		],
 	]
@@ -49,8 +49,8 @@ Customizer::add_field(
 		],
 		'transport'   => 'postMessage',
 		'css_vars'    => [
-			[ '--gridd-header-search-padding-left', '$', 'left' ],
-			[ '--gridd-header-search-padding-right', '$', 'right' ],
+			[ '--h-s-pd-l', '$', 'left' ],
+			[ '--h-s-pd-r', '$', 'right' ],
 		],
 	]
 );
@@ -64,7 +64,7 @@ Customizer::add_field(
 		'section'     => 'gridd_grid_part_details_header_search',
 		'default'     => 1,
 		'transport'   => 'postMessage',
-		'css_vars'    => '--gridd-header-search-font-size',
+		'css_vars'    => '--h-s-fs',
 		'choices'     => [
 			'min'    => .5,
 			'max'    => 4,
@@ -82,7 +82,7 @@ Customizer::add_field(
 		'section'   => 'gridd_grid_part_details_header_search',
 		'default'   => '#ffffff',
 		'transport' => 'postMessage',
-		'css_vars'  => '--gridd-header-search-bg',
+		'css_vars'  => '--h-s-bg',
 		'choices'   => [
 			'alpha' => true,
 		],
@@ -97,7 +97,7 @@ Customizer::add_field(
 		'section'   => 'gridd_grid_part_details_header_search',
 		'default'   => '#000000',
 		'transport' => 'postMessage',
-		'css_vars'  => '--gridd-header-search-color',
+		'css_vars'  => '--h-s-cl',
 	]
 );
 

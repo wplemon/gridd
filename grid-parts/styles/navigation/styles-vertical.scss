@@ -12,10 +12,10 @@
 
 			>li {
 				>ul {
-					font-size: calc(1em / var(--gridd-typo-scale, 1.26));
+					font-size: var(--fs-1d-ts-tr);
 					a {
-						padding-left: calc(var(--gridd-nav-1-items-padding) * var(--gridd-typo-scale,1.26));
-						padding-right: calc(var(--gridd-nav-1-items-padding) * var(--gridd-typo-scale,1.26));
+						padding-left: calc(var(--nv-1-ipd) * var(--ts));
+						padding-right: calc(var(--nv-1-ipd) * var(--ts));
 					}
 				}
 			}

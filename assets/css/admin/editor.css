@@ -1,59 +1,87 @@
+:root {
+  --fs: var(--gridd-font-size, 18);
+  --fs-px: calc(var(--fs) * 1px);
+  --ts: var(--gridd-typo-scale, 1.26);
+  --tr: var(--gridd-typo-ratio, 0.25);
+  --fs-tr: calc(var(--fs-px) + var(--tr) * 1vw);
+  --gridd-content-max-width: var(--c-mw);
+  --gridd-content-max-width-calculated: var(--c-mw-c);
+  --gridd-text-color: var(--tc);
+  --gridd-links-color: var(--lc);
+  --lch: var(--lch);
+  --gridd-content-bg: var(--c-bg);
+  --gridd-content-padding-left: var(--c-pd-l);
+  --gridd-content-padding-right: var(--c-pd-r);
+  --gridd-content-padding-top: var(--c-pd-t);
+  --gridd-content-padding-bottom: var(--c-pd-b);
+  --gridd-grid-max-width: var(--mw);
+  --fs-4x-ts-tr: calc(var(--ts) * var(--ts) * var(--ts) * var(--ts) * var(--fs-tr));
+  --fs-3x-ts-tr: calc(var(--ts) * var(--ts) * var(--ts) * var(--fs-tr));
+  --fs-2x-ts-tr: calc(var(--ts) * var(--ts) * var(--fs-tr));
+  --fs-1x-ts-tr: calc(var(--ts) * var(--fs-tr));
+  --fs-0x-ts-tr: var(--fs-tr);
+  --fs-1d-ts-tr: calc(var(--fs-tr) / var(--ts));
+  --fs-2d-ts-tr: calc(var(--fs-tr) / var(--ts) / var(--ts));
+  --fs-3d-ts-tr: calc(var(--fs-tr) / var(--ts) / var(--ts) / var(--ts));
+  --fs-4d-ts-tr: calc(var(--fs-tr) / var(--ts) / var(--ts) / var(--ts) / var(--ts));
+}
+
 .editor-post-title__block .editor-post-title__input {
-  font-size: calc(var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * 1em);
-  color: var(--gridd-text-color, #000);
+  font-size: var(--fs-4x-ts-tr);
+  color: var(--tc, #000);
 }
 
 .block-editor .edit-post-visual-editor.editor-styles-wrapper,
 .edit-post-visual-editor.editor-styles-wrapper {
-  font-size: calc((var(--gridd-font-size, 18) * 1px) + var(--gridd-typo-ratio, 0.25) * 1vw);
-  color: var(--gridd-text-color, #000);
-  background-color: var(--gridd-content-bg, #fff);
+  font-size: var(--fs-tr);
+  color: var(--tc, #000);
+  background-color: var(--c-bg, #fff);
 }
 .block-editor .edit-post-visual-editor.editor-styles-wrapper p,
 .edit-post-visual-editor.editor-styles-wrapper p {
-  font-size: calc((var(--gridd-font-size, 18) * 1px) + var(--gridd-typo-ratio, 0.25) * 1vw);
+  font-size: var(--fs-tr);
 }
 .block-editor .edit-post-visual-editor.editor-styles-wrapper h1,
 .edit-post-visual-editor.editor-styles-wrapper h1 {
-  font-size: calc(var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * 1em);
+  font-size: var(--fs-4x-ts-tr);
 }
 .block-editor .edit-post-visual-editor.editor-styles-wrapper h2,
 .edit-post-visual-editor.editor-styles-wrapper h2 {
-  font-size: calc(var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * 1em);
+  font-size: var(--fs-3x-ts-tr);
 }
 .block-editor .edit-post-visual-editor.editor-styles-wrapper h3,
 .edit-post-visual-editor.editor-styles-wrapper h3 {
-  font-size: calc(var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * 1em);
+  font-size: var(--fs-2x-ts-tr);
 }
 .block-editor .edit-post-visual-editor.editor-styles-wrapper h4,
 .edit-post-visual-editor.editor-styles-wrapper h4 {
-  font-size: calc(var(--gridd-typo-scale, 1.26) * 1em);
+  font-size: var(--fs-1x-ts-tr);
 }
 .block-editor .edit-post-visual-editor.editor-styles-wrapper h5,
 .edit-post-visual-editor.editor-styles-wrapper h5 {
-  font-size: calc(1em / var(--gridd-typo-scale, 1.26));
+  font-size: var(--fs-1d-ts-tr);
 }
 .block-editor .edit-post-visual-editor.editor-styles-wrapper h6,
 .edit-post-visual-editor.editor-styles-wrapper h6 {
-  font-size: calc(1em / var(--gridd-typo-scale, 1.26) / var(--gridd-typo-scale, 1.26));
+  font-size: var(--fs-2d-ts-tr);
 }
 .block-editor .edit-post-visual-editor.editor-styles-wrapper .smaller,
 .block-editor .edit-post-visual-editor.editor-styles-wrapper smaller,
 .edit-post-visual-editor.editor-styles-wrapper .smaller,
 .edit-post-visual-editor.editor-styles-wrapper smaller {
-  font-size: calc(1em / var(--gridd-typo-scale, 1.26) / var(--gridd-typo-scale, 1.26) / var(--gridd-typo-scale, 1.26));
+  font-size: var(--fs-3d-ts-tr);
 }
 .block-editor .edit-post-visual-editor.editor-styles-wrapper .smallest,
 .block-editor .edit-post-visual-editor.editor-styles-wrapper smallest,
 .edit-post-visual-editor.editor-styles-wrapper .smallest,
 .edit-post-visual-editor.editor-styles-wrapper smallest {
-  font-size: calc(1em / var(--gridd-typo-scale, 1.26) / var(--gridd-typo-scale, 1.26) / var(--gridd-typo-scale, 1.26) / var(--gridd-typo-scale, 1.26));
+  font-size: var(--fs-4d-ts-tr);
 }
 .block-editor .edit-post-visual-editor.editor-styles-wrapper a,
 .block-editor .edit-post-visual-editor.editor-styles-wrapper a:visited,
 .edit-post-visual-editor.editor-styles-wrapper a,
 .edit-post-visual-editor.editor-styles-wrapper a:visited {
-  color: var(--gridd-links-color, #0f5e97);
+  color: var(--lc, #0f5e97);
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
   transition: all 100ms ease-in-out;
 }
@@ -67,7 +95,7 @@
 .edit-post-visual-editor.editor-styles-wrapper a:visited:active,
 .edit-post-visual-editor.editor-styles-wrapper a:visited:focus,
 .edit-post-visual-editor.editor-styles-wrapper a:visited:hover {
-  color: var(--gridd-links-hover-color, #541cfc);
+  color: var(--lch, #541cfc);
   outline: thin dotted;
 }
 .block-editor .edit-post-visual-editor.editor-styles-wrapper a:focus,
@@ -82,13 +110,13 @@
 .edit-post-visual-editor.editor-styles-wrapper .wp-block-image figcaption {
   max-width: 100%;
   width: 100%;
-  color: var(--gridd-text-color, #000);
-  font-size: calc(1em / var(--gridd-typo-scale, 1.26));
+  color: var(--tc, #000);
+  font-size: var(--fs-1d-ts-tr);
 }
 .block-editor .edit-post-visual-editor.editor-styles-wrapper .wp-block-quote__citation,
 .edit-post-visual-editor.editor-styles-wrapper .wp-block-quote__citation {
-  color: var(--gridd-text-color, #000);
-  font-size: calc(1em / var(--gridd-typo-scale, 1.26));
+  color: var(--tc, #000);
+  font-size: var(--fs-1d-ts-tr);
 }
 .block-editor .edit-post-visual-editor.editor-styles-wrapper .wp-block-quote:not(.is-large):not(.is-style-large),
 .edit-post-visual-editor.editor-styles-wrapper .wp-block-quote:not(.is-large):not(.is-style-large) {
@@ -98,7 +126,7 @@
 .block-editor .edit-post-visual-editor.editor-styles-wrapper .wp-block-pullquote,
 .edit-post-visual-editor.editor-styles-wrapper .wp-block-quote,
 .edit-post-visual-editor.editor-styles-wrapper .wp-block-pullquote {
-  color: var(--gridd-text-color, #000);
+  color: var(--tc, #000);
   border-top-color: currentColor;
   border-bottom-color: currentColor;
   border-left-color: currentColor;
@@ -106,23 +134,23 @@
 }
 .block-editor .edit-post-visual-editor.editor-styles-wrapper .wp-block-cover .wp-block-cover-text,
 .edit-post-visual-editor.editor-styles-wrapper .wp-block-cover .wp-block-cover-text {
-  font-size: calc(var(--gridd-typo-scale, 1.26) * 1em);
+  font-size: var(--fs-1x-ts-tr);
 }
 
 .block-editor .editor-post-title__block .editor-post-title__input,
 .editor-post-title__block .editor-post-title__input {
-  font-size: calc(var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * var(--gridd-typo-scale, 1.26) * 1em);
+  font-size: var(--fs-4x-ts-tr);
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce a {
-  color: var(--gridd-links-color, #0f5e97);
+  color: var(--lc, #0f5e97);
 }
 
 .wp-block:not([data-align=full]) {
-  max-width: var(--gridd-content-max-width-calculated, 700px);
+  max-width: var(--c-mw-c, 700px);
 }
 .wp-block[data-align=wide] {
-  max-width: calc(var(--gridd-content-max-width-calculated, 700px) + 25%);
+  max-width: calc(var(--c-mw-c, 700px) + 25%);
 }
 
 /*# sourceMappingURL=editor.css.map */

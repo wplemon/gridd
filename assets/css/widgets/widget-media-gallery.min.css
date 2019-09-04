@@ -1,1 +1,1 @@
-.widget.widget_media_gallery{font-size:calc(1em / var(--gridd-typo-scale,1.26))}.widget.widget_media_gallery a{filter:none}
+.widget.widget_media_gallery{font-size:var(--fs-1d-ts-tr)}.widget.widget_media_gallery a{filter:none}

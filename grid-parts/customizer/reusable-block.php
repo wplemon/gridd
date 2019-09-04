@@ -76,12 +76,12 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 						__( 'Use any valid CSS value. For details on how padding works, please refer to <a %s>this article</a>.', 'gridd' ),
 						'href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow"'
 					),
-					]
+				]
 			),
 			'section'     => "gridd_grid_part_details_reusable_block_$id",
 			'default'     => '1em',
 			'transport'   => 'postMessage',
-			'css_vars'    => "--gridd-reusable-block-$id-padding",
+			'css_vars'    => "--rb-$id-pd",
 		]
 	);
 
@@ -93,7 +93,7 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 			'section'   => "gridd_grid_part_details_reusable_block_$id",
 			'default'   => '#ffffff',
 			'transport' => 'postMessage',
-			'css_vars'  => "--gridd-reusable-block-$id-bg",
+			'css_vars'  => "--rb-$id-bg",
 			'choices'   => [
 				'alpha' => true,
 			],
@@ -111,7 +111,7 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 			'label'             => esc_html__( 'Text Color', 'gridd' ),
 			'priority'          => 30,
 			'default'           => '#000000',
-			'css_vars'          => "--gridd-reusable-block-$id-color",
+			'css_vars'          => "--rb-$id-cl",
 			'transport'         => 'postMessage',
 			'sanitize_callback' => [ $sanitization, 'color_hex' ],
 		]
@@ -129,7 +129,7 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 			'choices'           => [
 				'alpha' => false,
 			],
-			'css_vars'          => "--gridd-reusable-block-{$id}-links-color",
+			'css_vars'          => "--rb-{$id}-lc",
 			'choices'           => [
 				'backgroundColor' => "gridd_grid_reusable_block_{$id}_bg_color",
 				'textColor'       => "gridd_grid_reusable_block_{$id}_color",

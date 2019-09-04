@@ -29,8 +29,8 @@ object {
 	max-width: 100%;
 	// background-color: rgba(128, 128, 128, .1);
 	padding-bottom: 0.5em;
-	color: var(--gridd-text-color, #000);
-	font-size: calc(1em / var(--gridd-typo-scale, 1.26));
+	color: var(--tc, #000);
+	font-size: var(--fs-1d-ts-tr);
 
 	img[class*="wp-image-"] {
 		@include center-block;
@@ -97,6 +97,6 @@ object {
 
 .wp-block-cover {
 	.wp-block-cover-text {
-		font-size: calc(var(--gridd-typo-scale, 1.26) * 1em);
+		font-size: var(--fs-1x-ts-tr);
 	}
 }

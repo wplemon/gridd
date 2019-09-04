@@ -27,7 +27,7 @@
 
 .comment-meta {
 	.comment-metadata {
-		font-size: calc(1em / var(--gridd-typo-scale, 1.26));
+		font-size: var(--fs-1d-ts-tr);
 	}
 }
 
@@ -54,7 +54,7 @@ a.comment-reply-link {
 }
 
 #comment {
-	background: var(--gridd-content-bg);
+	background: var(--c-bg);
 	color: currentColor;
 	border-color: currentColor;
 }

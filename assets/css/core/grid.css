@@ -1,6 +1,6 @@
 .gridd-site-wrapper {
   width: 100%;
-  max-width: var(--gridd-grid-max-width, 100%);
+  max-width: var(--mw, 100%);
   margin: auto;
   min-height: 100vh;
 }

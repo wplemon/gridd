@@ -19,9 +19,9 @@ $style->replace( 'ID', absint( $sidebar_id ) );
 
 $style->add_vars(
 	[
-		"--gridd-sidebar-{$sidebar_id}-bg"          => get_theme_mod( "gridd_grid_sidebar_{$sidebar_id}_background_color", '#ffffff' ),
-		"--gridd-sidebar-{$sidebar_id}-links-color" => get_theme_mod( "gridd_grid_sidebar_{$sidebar_id}_links_color", '#0f5e97' ),
-		"--gridd-sidebar-{$sidebar_id}-color"       => get_theme_mod( "gridd_grid_sidebar_{$sidebar_id}_color", '#000000' ),
+		"--wa-{$sidebar_id}-bg" => get_theme_mod( "gridd_grid_sidebar_{$sidebar_id}_background_color", '#ffffff' ),
+		"--wa-{$sidebar_id}-lc" => get_theme_mod( "gridd_grid_sidebar_{$sidebar_id}_links_color", '#0f5e97' ),
+		"--wa-{$sidebar_id}-cl" => get_theme_mod( "gridd_grid_sidebar_{$sidebar_id}_color", '#000000' ),
 	]
 );
 $attrs = [

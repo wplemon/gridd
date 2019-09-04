@@ -114,7 +114,7 @@
 }
 .wp-block-separator.is-style-dots::before {
   color: currentColor;
-  font-size: calc(var(--gridd-typo-scale, 1.26) * 1em);
+  font-size: var(--fs-1x-ts-tr);
 }
 
 /*# sourceMappingURL=separator.css.map */

@@ -66,9 +66,10 @@
 	position: relative;
 
 	&:active,
-	&:hover {
+	&:hover,
+	&:focus {
 		outline: none;
-		text-decoration: none;
+		text-decoration: none !important;
 	}
 
 	&:focus,

@@ -17,7 +17,7 @@
 		display: flex;
 
 		>* {
-			max-width: var(--gridd-content-max-width-calculated, 700px);
+			max-width: var(--c-mw-c, 700px);
 			padding-left: 1em;
 			padding-right: 1em;
 		}

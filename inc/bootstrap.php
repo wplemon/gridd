@@ -15,7 +15,7 @@ use Gridd\AMP;
 use Gridd\Widget_Output_Filters;
 use Gridd\Rest;
 use Gridd\Rest_Routes;
-
+use Gridd\Upgrade;
 /**
  * If Kirki isn't loaded as a plugin, load the included version.
  */
@@ -120,6 +120,13 @@ new Rest();
  * @since 1.1
  */
 new Rest_Routes();
+
+/**
+ * Run theme upgrades.
+ *
+ * @since 1.1.18
+ */
+new Upgrade();
 
 /**
  * Integrates WPBakery Builder in the theme.

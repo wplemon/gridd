@@ -55,7 +55,7 @@ Customizer::add_field(
 		'section'   => 'gridd_grid_part_details_footer_copyright',
 		'default'   => '#ffffff',
 		'transport' => 'postMessage',
-		'css_vars'  => '--gridd-footer-copyright-bg',
+		'css_vars'  => '--ft-cp-bg',
 		'priority'  => 110,
 		'choices'   => [
 			'alpha' => true,
@@ -71,7 +71,7 @@ Customizer::add_field(
 		'section'           => 'gridd_grid_part_details_footer_copyright',
 		'default'           => '#000000',
 		'transport'         => 'postMessage',
-		'css_vars'          => '--gridd-footer-copyright-color',
+		'css_vars'          => '--ft-cp-cl',
 		'priority'          => 120,
 		'choices'           => [
 			'setting' => 'gridd_grid_footer_copyright_bg_color',
@@ -88,7 +88,7 @@ Customizer::add_field(
 		'section'           => 'gridd_grid_part_details_footer_copyright',
 		'default'           => '#0f5e97',
 		'transport'         => 'postMessage',
-		'css_vars'          => '--gridd-footer-copyright-links-color',
+		'css_vars'          => '--ft-cp-lc',
 		'priority'          => 130,
 		'choices'           => [
 			'backgroundColor' => 'gridd_grid_footer_copyright_bg_color',
@@ -112,7 +112,7 @@ Customizer::add_field(
 		'section'     => 'gridd_grid_part_details_footer_copyright',
 		'default'     => 1,
 		'transport'   => 'postMessage',
-		'css_vars'    => '--gridd-footer-copyright-font-size',
+		'css_vars'    => '--ft-cp-fs',
 		'priority'    => 140,
 		'choices'     => [
 			'min'    => .5,
@@ -129,9 +129,9 @@ Customizer::add_field(
 		'settings'          => 'gridd_grid_footer_copyright_text_align',
 		'label'             => esc_html__( 'Text Alignment', 'gridd' ),
 		'section'           => 'gridd_grid_part_details_footer_copyright',
-		'default'           => 'left',
+		'default'           => 'center',
 		'transport'         => 'postMessage',
-		'css_vars'          => '--gridd-footer-copyright-text-align',
+		'css_vars'          => '--ft-cp-ta',
 		'priority'          => 150,
 		'choices'           => [
 			'left'   => esc_html__( 'Left', 'gridd' ),

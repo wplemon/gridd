@@ -5,7 +5,7 @@ parent: Customizer Sections
 nav_order: 1
 ---
 
-Typography is probably one of the most important (if not the most important) parts of your design.  
+Typography is probably one of the most important (if not the most important) parts of your design.
 The Gridd theme includes a dedicated section for your typography settings, with settings that allow you to make decisions and achieve a great result easy and efficiently.
 
 ## Body & Headers Typography
@@ -84,14 +84,3 @@ For advanced typography scales, [Gridd Plus](https://wplemon.com/gridd-plus) is 
 In Gridd Plus in addition to the basic typography scales you have access to more presets.
 
 You can even use your own, completely custom typography scale simply by setting the preset to “custom” and adjusting a slider to find the perfect fit for your site.
-
-## Links Decoration
-
-For links-decoration options, [Gridd Plus](https://wplemon.com/gridd-plus) is required.
-{: .label .label-yellow }
-
-<img src="https://wplemon.github.io/gridd/uploads/typo12.png" alt="Links decoration options." style="max-width:300px">
-
-In Gridd Plus you have the option to disable underline links for your content.
-
-There’s even a separate setting to enable underlined links for headers.

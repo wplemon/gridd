@@ -49,7 +49,7 @@ Customizer::add_field(
 		'section'   => 'gridd_grid_part_details_footer',
 		'default'   => '',
 		'transport' => 'postMessage',
-		'css_vars'  => '--gridd-footer-max-width',
+		'css_vars'  => '--ft-mw',
 	]
 );
 
@@ -65,7 +65,7 @@ Customizer::add_field(
 		),
 		'section'     => 'gridd_grid_part_details_footer',
 		'default'     => '0',
-		'css_vars'    => '--gridd-footer-grid-gap',
+		'css_vars'    => '--ft-gg',
 		'transport'   => 'postMessage',
 	]
 );
@@ -83,7 +83,7 @@ Customizer::add_field(
 		'section'     => 'gridd_grid_part_details_footer',
 		'default'     => '1em',
 		'transport'   => 'postMessage',
-		'css_vars'    => '--gridd-footer-padding',
+		'css_vars'    => '--ft-pd',
 	]
 );
 
@@ -100,7 +100,7 @@ Customizer::add_field(
 		'section'     => 'gridd_grid_part_details_footer',
 		'default'     => '#ffffff',
 		'transport'   => 'postMessage',
-		'css_vars'    => '--gridd-footer-bg',
+		'css_vars'    => '--ft-bg',
 		'choices'     => [
 			'alpha' => true,
 		],
@@ -126,7 +126,7 @@ Customizer::add_field(
 		'section'   => 'gridd_grid_part_details_footer',
 		'default'   => 1,
 		'transport' => 'postMessage',
-		'css_vars'  => '--gridd-footer-border-top-width',
+		'css_vars'  => '--ft-bt-w',
 		'priority'  => 50,
 		'choices'   => [
 			'min'    => 0,
@@ -146,7 +146,7 @@ Customizer::add_field(
 		'default'         => 'rgba(0,0,0,.1)',
 		'priority'        => 60,
 		'transport'       => 'postMessage',
-		'css_vars'        => '--gridd-footer-border-top-color',
+		'css_vars'        => '--ft-bt-cl',
 		'choices'         => [
 			'alpha' => true,
 		],

@@ -36,7 +36,7 @@ Customizer::add_field(
 		'section'     => 'gridd_grid_part_details_breadcrumbs',
 		'default'     => '1em',
 		'transport'   => 'postMessage',
-		'css_vars'    => '--gridd-breadcrumbs-padding',
+		'css_vars'    => '--brd-pd',
 	]
 );
 
@@ -47,7 +47,7 @@ Customizer::add_field(
 		'label'     => esc_html__( 'Breadcrumbs Maximum Width', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_breadcrumbs',
 		'default'   => '',
-		'css_vars'  => '--gridd-breadcrumbs-max-width',
+		'css_vars'  => '--brd-mw',
 		'transport' => 'postMessage',
 	]
 );
@@ -60,7 +60,7 @@ Customizer::add_field(
 		'section'   => 'gridd_grid_part_details_breadcrumbs',
 		'default'   => '#ffffff',
 		'transport' => 'postMessage',
-		'css_vars'  => '--gridd-breadcrumbs-bg',
+		'css_vars'  => '--brd-bg',
 		'choices'   => [
 			'alpha' => true,
 		],
@@ -73,7 +73,7 @@ Customizer::add_field(
 		'settings'          => 'gridd_grid_breadcrumbs_color',
 		'label'             => esc_html__( 'Text Color', 'gridd' ),
 		'section'           => 'gridd_grid_part_details_breadcrumbs',
-		'css_vars'          => '--gridd-breadcrumbs-color',
+		'css_vars'          => '--brd-cl',
 		'default'           => '#000000',
 		'transport'         => 'postMessage',
 		'choices'           => [
@@ -91,7 +91,7 @@ Customizer::add_field(
 		'section'           => 'gridd_grid_part_details_breadcrumbs',
 		'default'           => 'center',
 		'transport'         => 'postMessage',
-		'css_vars'          => '--gridd-breadcrumbs-text-align',
+		'css_vars'          => '--brd-ta',
 		'choices'           => [
 			'left'   => esc_html__( 'Left', 'gridd' ),
 			'center' => esc_html__( 'Center', 'gridd' ),

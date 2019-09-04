@@ -50,7 +50,7 @@ Customizer::add_field(
 		'section'   => 'gridd_grid_part_details_header_contact_info',
 		'default'   => '#ffffff',
 		'transport' => 'postMessage',
-		'css_vars'  => '--gridd-header-contact-bg',
+		'css_vars'  => '--h-cnt-bg',
 		'choices'   => [
 			'alpha' => true,
 		],
@@ -68,7 +68,7 @@ Customizer::add_field(
 		],
 		'default'           => '#000000',
 		'transport'         => 'postMessage',
-		'css_vars'          => '--gridd-header-contact-color',
+		'css_vars'          => '--h-cnt-cl',
 		'sanitize_callback' => [ $sanitization, 'color_hex' ],
 	]
 );
@@ -82,7 +82,7 @@ Customizer::add_field(
 		'section'     => 'gridd_grid_part_details_header_contact_info',
 		'default'     => .85,
 		'transport'   => 'postMessage',
-		'css_vars'    => '--gridd-header-contact-font-size',
+		'css_vars'    => '--h-cnt-fs',
 		'choices'     => [
 			'min'    => .5,
 			'max'    => 2,
@@ -110,7 +110,7 @@ Customizer::add_field(
 		'section'     => 'gridd_grid_part_details_header_contact_info',
 		'default'     => '10px',
 		'transport'   => 'postMessage',
-		'css_vars'    => '--gridd-header-contact-padding',
+		'css_vars'    => '--h-cnt-pd',
 	]
 );
 
@@ -122,7 +122,7 @@ Customizer::add_field(
 		'section'           => 'gridd_grid_part_details_header_contact_info',
 		'default'           => 'flex-start',
 		'transport'         => 'postMessage',
-		'css_vars'          => '--gridd-header-contact-text-align',
+		'css_vars'          => '--h-cnt-ta',
 		'choices'           => [
 			'flex-start' => esc_html__( 'Left', 'gridd' ),
 			'center'     => esc_html__( 'Center', 'gridd' ),

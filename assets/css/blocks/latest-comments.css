@@ -96,7 +96,7 @@
 }
 
 .wp-block-latest-comments__comment {
-  font-size: calc(1em / var(--gridd-typo-scale, 1.26));
+  font-size: var(--fs-1d-ts-tr);
 }
 .has-avatars .wp-block-latest-comments__comment {
   min-height: 2em;
@@ -107,13 +107,13 @@
 }
 
 .wp-block-latest-comments__comment-excerpt p {
-  font-size: calc(1em / var(--gridd-typo-scale, 1.26));
+  font-size: var(--fs-1d-ts-tr);
   margin: 0.25em 0 1em;
 }
 
 .wp-block-latest-comments__comment-date {
   color: currentColor;
-  font-size: calc(1em / var(--gridd-typo-scale, 1.26) / var(--gridd-typo-scale, 1.26));
+  font-size: var(--fs-2d-ts-tr);
 }
 
 .wp-block-latest-comments .avatar,

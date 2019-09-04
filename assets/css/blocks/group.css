@@ -80,7 +80,7 @@
   margin-right: auto;
 }
 .wp-block-group .wp-block-columns:not(.alignfull):not(.alignwide) {
-  max-width: calc(var(--gridd-content-max-width-calculated, 700px) + 2em);
+  max-width: calc(var(--c-mw-c, 700px) + 2em);
 }
 
 .wp-block-group__inner-container > * {

@@ -5,3 +5,4 @@ assets/js/vendor
 vendor/
 node_modules/
 inc/kirki/
+assets/js/css-vars-polyfill.js

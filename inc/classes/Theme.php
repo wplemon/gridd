@@ -154,6 +154,9 @@ class Theme {
 			$classes[] = 'gridd-post-type-archive-' . get_post_type();
 		}
 
+		$classes[] = get_theme_mod( 'custom_body_typography' ) ? 'gridd-has-custom-body-typography' : 'gridd-has-system-body-typography';
+		$classes[] = get_theme_mod( 'custom_headers_typography' ) ? 'gridd-has-custom-headers-typography' : 'gridd-has-system-headers-typography';
+
 		return $classes;
 	}
 
@@ -257,9 +260,11 @@ class Theme {
 		 */
 		add_theme_support( 'align-wide' );
 		add_theme_support( 'wp-block-styles' );
-		add_theme_support( 'editor-styles' );
-		if ( 50 > \ariColor::newColor( get_theme_mod( 'gridd_grid_content_background_color', '#ffffff' ) )->lightness ) {
-			add_theme_support( 'dark-editor-style' );
+		if ( ! get_theme_mod( 'disable_editor_styles' ) ) {
+			add_theme_support( 'editor-styles' );
+			if ( 50 > \ariColor::newColor( get_theme_mod( 'gridd_grid_content_background_color', '#ffffff' ) )->lightness ) {
+				add_theme_support( 'dark-editor-style' );
+			}
 		}
 		add_theme_support( 'responsive-embeds' );
 		add_editor_style( 'assets/css/admin/editor.min.css' );

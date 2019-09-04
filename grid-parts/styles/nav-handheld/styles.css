@@ -59,6 +59,8 @@ body {
 .gridd-nav-handheld-btn[aria-expanded=true] + #gridd-handheld-menu-wrapper,
 .gridd-nav-handheld-btn[aria-expanded=true] + #gridd-handheld-cart-wrapper {
   display: block;
+  box-shadow: 0 0 2em 0;
+  background: var(--c-bg);
 }
 .gridd-nav-handheld-btn:before, .gridd-nav-handheld-btn:after {
   display: none;
@@ -77,7 +79,7 @@ body {
   max-height: calc(100vh - 54px);
   flex-wrap: wrap;
   align-items: flex-end;
-  overflow-y: scroll;
+  overflow-y: auto;
   box-shadow: 0 -10px 15px 0 rgba(0, 0, 0, 0.12);
 }
 #gridd-handheld-search-wrapper.expanded,

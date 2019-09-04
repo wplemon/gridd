@@ -1,19 +1,32 @@
-.gridd-site-wrapper a {
-  color: var(--gridd-links-color, #0f5e97);
+a,
+a:visited {
+  text-decoration: none;
+  border-bottom: 1px solid;
+  color: var(--lc, #0f5e97);
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
-  transition: all 100ms ease-in-out;
 }
-.gridd-site-wrapper a:active, .gridd-site-wrapper a:focus, .gridd-site-wrapper a:hover {
-  color: var(--gridd-links-hover-color, #541cfc);
-  outline: thin dotted;
+a:hover, a:active, a:focus,
+a:visited:hover,
+a:visited:active,
+a:visited:focus {
+  color: var(--lch, #541cfc);
 }
-.gridd-site-wrapper a:focus {
-  outline: 1px dashed;
-  outline-offset: 1px;
+a:hover,
+a:visited:hover {
+  box-shadow: 0 1px;
+}
+a:focus, a:active,
+a:visited:focus,
+a:visited:active {
+  outline: 2px solid;
+  outline-offset: 2px;
+  border-bottom-color: transparent;
 }
 
 .entry-title a {
   text-decoration: none;
+  border-bottom-width: 0;
+  box-shadow: none;
 }
 
 /*# sourceMappingURL=links.css.map */

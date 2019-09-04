@@ -91,12 +91,12 @@
 .wp-block-latest-posts__post-date {
   display: block;
   color: #6c7781;
-  font-size: 1em;
+  font-size: var(--fs-tr);
 }
 
 .wp-block-latest-posts__post-excerpt {
   margin-top: 8px;
-  margin-bottom: 1em;
+  margin-bottom: var(--fs-tr);
 }
 
 .wp-block-latest-posts.is-grid li {

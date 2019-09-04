@@ -3,7 +3,7 @@
  * Gridd Content grid-part
  *
  * @package Gridd
- * 
+ *
  * phpcs:ignoreFile WordPress.Files.FileName
  */
 
@@ -112,7 +112,7 @@ class Content extends Grid_Part {
 			]
 		);
 		Style::get_instance( 'grid-part/content' )
-			->add_string( ':root{--gridd-content-max-width-calculated:var(--gridd-content-max-width, 45em);}' )
+			->add_string( ':root{--c-mw-c:var(--c-mw, 45em);}' )
 			->add_file( get_theme_file_path( 'grid-parts/styles/content/styles.min.css' ) )
 			/**
 			 * This CSS is just a hack to overcome a bug in the CSS minifier
@@ -120,14 +120,14 @@ class Content extends Grid_Part {
 			 * The same CSS is commented-out in the default.scss file for reference.
 			 * Once the bug in the minifier is fixed we can remove this.
 			 */
-			->add_string( '.site-main .entry-content .alignfull,.site-main .entry-footer .alignfull,.site-main .entry-header .alignfull,.site-main .gridd-contain .alignfull{transform:translateX(calc(0px - var(--gridd-content-padding-left, 20px)));}' )
+			->add_string( '.site-main .entry-content .alignfull,.site-main .entry-footer .alignfull,.site-main .entry-header .alignfull,.site-main .gridd-contain .alignfull{transform:translateX(calc(0px - var(--c-pd-l, 20px)));}' )
 			->add_vars(
 				[
-					'--gridd-content-padding-top'    => $padding['top'],
-					'--gridd-content-padding-right'  => $padding['right'],
-					'--gridd-content-padding-bottom' => $padding['bottom'],
-					'--gridd-content-padding-left'   => $padding['left'],
-					'--gridd-content-bg'             => get_theme_mod( 'gridd_grid_content_background_color', '#fff' ),
+					'--c-pd-t' => $padding['top'],
+					'--c-pd-r' => $padding['right'],
+					'--c-pd-b' => $padding['bottom'],
+					'--c-pd-l' => $padding['left'],
+					'--c-bg'   => get_theme_mod( 'gridd_grid_content_background_color', '#fff' ),
 				]
 			)
 			->the_css( 'gridd-inline-css-content' );

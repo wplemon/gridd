@@ -1,18 +1,18 @@
 .gridd-tp-breadcrumbs {
-	background-color: var(--gridd-breadcrumbs-bg, #fff);
+	background-color: var(--brd-bg, #fff);
 
 	li,
 	li a,
 	li a:visited,
 	li a:hover,
 	li a:focus {
-		color: var(--gridd-breadcrumbs-color, #000);
+		color: var(--brd-cl, #000);
 	}
 
 	.inner {
-		padding: var(--gridd-breadcrumbs-padding, 1em);
+		padding: var(--brd-pd, 1em);
 		width: 100%;
-		max-width: var(--gridd-breadcrumbs-max-width, 100%);
+		max-width: var(--brd-mw, 100%);
 		display: flex;
 		align-items: center;
 	}
@@ -27,7 +27,7 @@ nav.breadcrumbs {
 		padding: 0;
 		list-style: none;
 		list-style-type: none;
-		text-align: var(--gridd-breadcrumbs-text-align, center);
+		text-align: var(--brd-ta, center);
 	}
 
 	li {

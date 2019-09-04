@@ -72,7 +72,7 @@ Customizer::add_field(
 		'section'   => 'gridd_grid_part_details_social_media',
 		'default'   => 1,
 		'transport' => 'postMessage',
-		'css_vars'  => '--gridd-header-social-icons-size',
+		'css_vars'  => '--h-si-sz',
 		'choices'   => [
 			'min'    => .3,
 			'max'    => 3,
@@ -91,7 +91,7 @@ Customizer::add_field(
 		'section'     => 'gridd_grid_part_details_social_media',
 		'default'     => .5,
 		'transport'   => 'postMessage',
-		'css_vars'    => '--gridd-header-social-icons-padding',
+		'css_vars'    => '--h-si-pd',
 		'choices'     => [
 			'min'    => 0,
 			'max'    => 2,
@@ -109,7 +109,7 @@ Customizer::add_field(
 		'section'   => 'gridd_grid_part_details_social_media',
 		'default'   => '#ffffff',
 		'transport' => 'postMessage',
-		'css_vars'  => '--gridd-header-social-icons-bg',
+		'css_vars'  => '--h-si-bg',
 		'choices'   => [
 			'alpha' => true,
 		],
@@ -124,7 +124,7 @@ Customizer::add_field(
 		'section'   => 'gridd_grid_part_details_social_media',
 		'default'   => '#000000',
 		'transport' => 'postMessage',
-		'css_vars'  => '--gridd-header-social-icons-color',
+		'css_vars'  => '--h-si-cl',
 		'choices'   => [
 			'alpha' => true,
 		],
@@ -139,7 +139,7 @@ Customizer::add_field(
 		'section'           => 'gridd_grid_part_details_social_media',
 		'default'           => 'flex-end',
 		'transport'         => 'postMessage',
-		'css_vars'          => '--gridd-header-social-icons-text-align',
+		'css_vars'          => '--h-si-ta',
 		'choices'           => [
 			'flex-start' => esc_html__( 'Left', 'gridd' ),
 			'center'     => esc_html__( 'Center', 'gridd' ),

@@ -27,11 +27,11 @@ $style->add_file( get_theme_file_path( 'grid-parts/styles/header/styles-social-i
 // Add css-vars to be replaced.
 $style->add_vars(
 	[
-		'--gridd-header-social-icons-bg'         => get_theme_mod( 'gridd_grid_part_details_social_icons_background_color', '#ffffff' ),
-		'--gridd-header-social-icons-text-align' => get_theme_mod( 'gridd_grid_part_details_social_icons_icons_text_align', 'right' ),
-		'--gridd-header-social-icons-size'       => get_theme_mod( 'gridd_grid_part_details_social_icons_size', .85 ),
-		'--gridd-header-social-icons-padding'    => get_theme_mod( 'gridd_grid_part_details_social_icons_padding', .5 ),
-		'--gridd-header-social-icons-color'      => get_theme_mod( 'gridd_grid_part_details_social_icons_icons_color', '#000000' ),
+		'--h-si-bg' => get_theme_mod( 'gridd_grid_part_details_social_icons_background_color', '#ffffff' ),
+		'--h-si-ta' => get_theme_mod( 'gridd_grid_part_details_social_icons_icons_text_align', 'right' ),
+		'--h-si-sz' => get_theme_mod( 'gridd_grid_part_details_social_icons_size', .85 ),
+		'--h-si-pd' => get_theme_mod( 'gridd_grid_part_details_social_icons_padding', .5 ),
+		'--h-si-cl' => get_theme_mod( 'gridd_grid_part_details_social_icons_icons_color', '#000000' ),
 	]
 );
 ?>

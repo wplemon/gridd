@@ -27,7 +27,7 @@ Customizer::add_field(
 		'label'     => esc_html__( 'Content Maximum Width', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_content',
 		'default'   => '45em',
-		'css_vars'  => '--gridd-content-max-width',
+		'css_vars'  => '--c-mw',
 		'transport' => 'postMessage',
 		'priority'  => 10,
 	]
@@ -46,10 +46,10 @@ Customizer::add_field(
 			'right'  => '20px',
 		],
 		'css_vars'  => [
-			[ '--gridd-content-padding-top', '$', 'top' ],
-			[ '--gridd-content-padding-bottom', '$', 'bottom' ],
-			[ '--gridd-content-padding-left', '$', 'left' ],
-			[ '--gridd-content-padding-right', '$', 'right' ],
+			[ '--c-pd-t', '$', 'top' ],
+			[ '--c-pd-b', '$', 'bottom' ],
+			[ '--c-pd-l', '$', 'left' ],
+			[ '--c-pd-r', '$', 'right' ],
 		],
 		'transport' => 'postMessage',
 		'priority'  => 15,
@@ -63,7 +63,7 @@ Customizer::add_field(
 		'label'     => esc_html__( 'Background Color', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_content',
 		'default'   => '#ffffff',
-		'css_vars'  => '--gridd-content-bg',
+		'css_vars'  => '--c-bg',
 		'transport' => 'postMessage',
 		'priority'  => 30,
 		'choices'   => [
@@ -80,7 +80,7 @@ Customizer::add_field(
 		'section'           => 'gridd_grid_part_details_content',
 		'priority'          => 40,
 		'default'           => '#000000',
-		'css_vars'          => '--gridd-text-color',
+		'css_vars'          => '--tc',
 		'transport'         => 'postMessage',
 		'choices'           => [
 			'setting' => 'gridd_grid_content_background_color',
@@ -106,7 +106,7 @@ Customizer::add_field(
 			'backgroundColor' => 'gridd_grid_content_background_color',
 			'textColor'       => 'gridd_text_color',
 		],
-		'css_vars'          => '--gridd-links-color',
+		'css_vars'          => '--lc',
 		'sanitize_callback' => [ $sanitization, 'color_hex' ],
 	]
 );
@@ -123,7 +123,7 @@ Customizer::add_field(
 			'alpha' => false,
 		],
 		'default'           => '#541cfc',
-		'css_vars'          => '--gridd-links-hover-color',
+		'css_vars'          => '--lch',
 		'choices'           => [
 			'backgroundColor' => 'gridd_grid_content_background_color',
 			'textColor'       => 'gridd_text_color',
