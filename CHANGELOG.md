@@ -1,4 +1,4 @@
-## 1.1.18
+## 1.1.18 - 2019-09-04
 
 ### Fixed
 * Removed duplicate comments link.
@@ -26,7 +26,7 @@
 ### Removed
 * Edit link from post titles.
 
-## 1.1.17 - 2019-18-25
+## 1.1.17 - 2019-08-25
 
 ### Fixed
 * Horizontal padding on submenus when navigation is on vertical mode.
