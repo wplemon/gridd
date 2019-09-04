@@ -19,7 +19,7 @@ a:focus, a:active,
 a:visited:focus,
 a:visited:active {
   outline: 2px solid;
-  outline-offset: 0.1em;
+  outline-offset: 2px;
   border-bottom-color: transparent;
 }
 

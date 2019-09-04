@@ -49,6 +49,7 @@
 	&:focus,
 	&:hover,
 	&:active {
+		border-bottom-color: currentColor;
 
 		&:before,
 		&:after {

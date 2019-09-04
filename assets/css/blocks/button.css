@@ -128,6 +128,9 @@
 .wp-block-button__link:not(.has-text-color):visited, .wp-block-button__link:not(.has-text-color):focus, .wp-block-button__link:not(.has-text-color):hover, .wp-block-button__link:not(.has-text-color):visited:focus, .wp-block-button__link:not(.has-text-color):visited:hover {
   color: currentColor;
 }
+.wp-block-button__link:focus, .wp-block-button__link:hover, .wp-block-button__link:active {
+  border-bottom-color: currentColor;
+}
 .wp-block-button__link:focus:before, .wp-block-button__link:focus:after, .wp-block-button__link:hover:before, .wp-block-button__link:hover:after, .wp-block-button__link:active:before, .wp-block-button__link:active:after {
   content: "";
   position: absolute;
