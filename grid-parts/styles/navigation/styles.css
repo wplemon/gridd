@@ -53,6 +53,7 @@
 .gridd-tp-nav_ID a:visited.focus ~ .gridd-toggle,
 .gridd-tp-nav_ID a:visited.toggled-on ~ .gridd-toggle {
   border-bottom-color: var(--nv-ID-acl, #0f5e97);
+  color: var(--nv-ID-acl, #0f5e97);
 }
 .gridd-tp-nav_ID a:hover ~ .gridd-toggle svg, .gridd-tp-nav_ID a:focus ~ .gridd-toggle svg, .gridd-tp-nav_ID a.focus ~ .gridd-toggle svg, .gridd-tp-nav_ID a.toggled-on ~ .gridd-toggle svg,
 .gridd-tp-nav_ID a:visited:hover ~ .gridd-toggle svg,

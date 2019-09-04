@@ -58,6 +58,7 @@
 #gridd-handheld-menu-wrapper a:visited.focus ~ .gridd-toggle,
 #gridd-handheld-menu-wrapper a:visited.toggled-on ~ .gridd-toggle {
   border-bottom-color: var(--lc, #0f5e97);
+  color: var(--lc, #0f5e97);
 }
 #gridd-handheld-menu-wrapper a:hover ~ .gridd-toggle svg, #gridd-handheld-menu-wrapper a:focus ~ .gridd-toggle svg, #gridd-handheld-menu-wrapper a.focus ~ .gridd-toggle svg, #gridd-handheld-menu-wrapper a.toggled-on ~ .gridd-toggle svg,
 #gridd-handheld-menu-wrapper a:visited:hover ~ .gridd-toggle svg,
