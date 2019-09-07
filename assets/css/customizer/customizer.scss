@@ -138,12 +138,14 @@ h3.gridd-customizer-section-title {
 }
 
 .customize-control-kirki-radio-image {
-	label {
-		width: 50%;
+	.image {
+		label {
+			width: 50%;
 
-		img {
-			padding: 10px;
-			box-sizing: border-box;
+			img {
+				padding: 10px;
+				box-sizing: border-box;
+			}
 		}
 	}
 }
@@ -165,7 +167,8 @@ h3.gridd-customizer-section-title {
 				width: 20px;
 			}
 		}
-		.switch-input:checked + label {
+
+		.switch-input:checked+label {
 			svg {
 				fill: #fff;
 			}

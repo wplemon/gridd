@@ -94,10 +94,10 @@ h3.gridd-customizer-section-title {
   text-transform: uppercase;
 }
 
-.customize-control-kirki-radio-image label {
+.customize-control-kirki-radio-image .image label {
   width: 50%;
 }
-.customize-control-kirki-radio-image label img {
+.customize-control-kirki-radio-image .image label img {
   padding: 10px;
   box-sizing: border-box;
 }

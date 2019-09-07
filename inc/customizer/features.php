@@ -54,24 +54,45 @@ Customizer::add_section(
  */
 Customizer::add_field(
 	[
+		'type'              => 'radio-image',
+		'settings'          => 'gridd_archive_post_mode',
+		'label'             => esc_attr__( 'Posts Mode', 'gridd' ),
+		'description'       => esc_html__( 'Please note that changes may not be visible if your posts don\'t have a featured image, and on mobiles they will fall-back to the default mode.', 'gridd' ),
+		'section'           => 'gridd_features_archive',
+		'default'           => 'default',
+		'transport'         => 'refresh',
+		'priority'          => 10,
+		'choices'           => [
+			'default' => get_template_directory_uri() . '/assets/images/archive-post-mode/default.png',
+			'card'    => get_template_directory_uri() . '/assets/images/archive-post-mode/card.png',
+		],
+		'sanitize_callback' => function( $value ) {
+			return ( 'default' === $value || 'card' === $value ) ? $value : 'default';
+		},
+	]
+);
+
+Customizer::add_field(
+	[
 		'type'              => 'select',
 		'settings'          => 'gridd_featured_image_mode_archive',
 		'label'             => esc_attr__( 'Featured Images Mode in Archives', 'gridd' ),
 		'section'           => 'gridd_features_archive',
 		'default'           => 'alignwide',
 		'transport'         => 'refresh',
-		'priority'          => 10,
+		'priority'          => 20,
 		'choices'           => [
 			'hidden'        => esc_attr__( 'Hidden', 'gridd' ),
 			'gridd-contain' => esc_attr__( 'Normal', 'gridd' ),
 			'alignwide'     => esc_attr__( 'Wide', 'gridd' ),
 		],
-		/**
-		 * WIP
-		'active_callback'   => function() {
-			return ( is_archive() || is_home() );
-		},
-		*/
+		'active_callback'   => [
+			[
+				'setting'  => 'gridd_archive_post_mode',
+				'value'    => 'default',
+				'operator' => '===',
+			]
+		],
 		'sanitize_callback' => function( $value ) {
 			return ( 'hidden' === $value || 'gridd-contain' === $value || 'alignwide' === $value ) ? $value : 'alignwide';
 		},
@@ -80,14 +101,21 @@ Customizer::add_field(
 
 Customizer::add_field(
 	[
-		'type'        => 'checkbox',
-		'settings'    => 'gridd_archives_display_full_post',
-		'label'       => esc_attr__( 'Show full post in archives', 'gridd' ),
-		'description' => '',
-		'section'     => 'gridd_features_archive',
-		'default'     => false,
-		'priority'    => 20,
-		'transport'   => 'refresh',
+		'type'            => 'checkbox',
+		'settings'        => 'gridd_archives_display_full_post',
+		'label'           => esc_attr__( 'Show full post in archives', 'gridd' ),
+		'description'     => '',
+		'section'         => 'gridd_features_archive',
+		'default'         => false,
+		'priority'        => 30,
+		'transport'       => 'refresh',
+		'active_callback' => [
+			[
+				'setting'  => 'gridd_archive_post_mode',
+				'value'    => 'default',
+				'operator' => '===',
+			]
+		],
 	]
 );
 
@@ -112,7 +140,7 @@ foreach ( $post_types as $post_type_id => $post_type_obj ) {
 			'section'         => 'gridd_features_archive',
 			'default'         => false,
 			'transport'       => 'refresh',
-			'priority'        => 30,
+			'priority'        => 40,
 			'output'          => [
 				[
 					'element'       => ".gridd-post-type-archive-$post_type_id #main",
@@ -145,17 +173,13 @@ foreach ( $post_types as $post_type_id => $post_type_obj ) {
 					'value_pattern' => '1',
 				],
 			],
-			'active_callback' => function() use ( $post_type_id ) {
-				if ( is_post_type_archive( $post_type_id ) ) {
-					return true;
-				}
-				if ( 'post' === $post_type_id ) {
-					if ( is_home() || is_category() || is_tag() ) {
-						return true;
-					}
-				}
-				return false;
-			},
+			'active_callback' => [
+				[
+					'setting'  => 'gridd_archive_post_mode',
+					'value'    => 'default',
+					'operator' => '===',
+				]
+			],
 		]
 	);
 }
@@ -167,11 +191,44 @@ Customizer::add_field(
 		'label'       => esc_attr__( 'Read More link', 'gridd' ),
 		'description' => esc_html__( 'If you want to include the post title in your read-more link, you can use "%s" (without the quotes) and it will be replaced with the post\'s title.', 'gridd' ), // phpcs:ignore WordPress.WP.I18n.MissingTranslatorsComment
 		'section'     => 'gridd_features_archive',
-		'priority'    => 40,
+		'priority'    => 50,
 		/* translators: %s: Name of current post. Only visible to screen readers */
 		'default'     => __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'gridd' ),
 		'transport'   => 'refresh',
 	]
+);
+
+Customizer::add_field(
+	[
+		'type'              => 'slider',
+		'settings'          => 'archive_card_image_width',
+		'label'             => esc_attr__( 'Image Width', 'gridd' ),
+		'description'       => esc_html__( 'Width of the featured image in relation to the global width (percentage).', 'gridd' ),
+		'section'           => 'gridd_features_archive',
+		'default'           => 50,
+		'transport'         => 'auto',
+		'priority'          => 30,
+		'choices'           => [
+			'min'    => 20,
+			'max'    => 80,
+			'step'   => 1,
+			'suffix' => '%',
+		],
+		'output'          => [
+			[
+				'element'       => '.gridd-post-mode-card',
+				'property'      => '--a-crd-img-w',
+				'value_pattern' => '$%',
+			],
+		],
+		'active_callback' => [
+			[
+				'setting'  => 'gridd_archive_post_mode',
+				'value'    => 'card',
+				'operator' => '===',
+			]
+		],
+]
 );
 
 /**
