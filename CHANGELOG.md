@@ -1,3 +1,11 @@
+## 1.1.19
+
+### Changed
+* Reorganized customizer settings in the "Theme Features" section.
+
+### Added
+* Card mode for post-archives.
+
 ## 1.1.18 - 2019-09-04
 
 ### Fixed
