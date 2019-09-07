@@ -1,5 +1,8 @@
 ## 1.1.19
 
+### Fixed
+* Removed underline for featured-image links.
+
 ### Changed
 * Reorganized customizer settings in the "Theme Features" section.
 

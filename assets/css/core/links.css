@@ -22,6 +22,14 @@ a:visited:active {
   outline-offset: 2px;
   border-bottom-color: transparent;
 }
+a.post-thumbnail,
+a:visited.post-thumbnail {
+  border-bottom: 0;
+}
+a.post-thumbnail:hover,
+a:visited.post-thumbnail:hover {
+  box-shadow: none;
+}
 
 .entry-title a {
   text-decoration: none;

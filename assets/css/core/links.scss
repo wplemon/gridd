@@ -21,6 +21,14 @@ a:visited {
 		outline-offset: 2px;
 		border-bottom-color: transparent;
 	}
+
+	&.post-thumbnail {
+		border-bottom: 0;
+
+		&:hover {
+			box-shadow: none;
+		}
+	}
 }
 
 .entry-title {
