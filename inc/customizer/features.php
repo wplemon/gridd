@@ -55,7 +55,7 @@ Customizer::add_section(
 Customizer::add_field(
 	[
 		'type'              => 'radio-image',
-		'settings'          => 'gridd_archive_post_mode',
+		'settings'          => 'archive_post_mode',
 		'label'             => esc_attr__( 'Posts Mode', 'gridd' ),
 		'description'       => esc_html__( 'Please note that changes may not be visible if your posts don\'t have a featured image, and on mobiles they will fall-back to the default mode.', 'gridd' ),
 		'section'           => 'gridd_features_archive',
@@ -88,7 +88,7 @@ Customizer::add_field(
 		],
 		'active_callback'   => [
 			[
-				'setting'  => 'gridd_archive_post_mode',
+				'setting'  => 'archive_post_mode',
 				'value'    => 'default',
 				'operator' => '===',
 			]
@@ -111,7 +111,7 @@ Customizer::add_field(
 		'transport'       => 'refresh',
 		'active_callback' => [
 			[
-				'setting'  => 'gridd_archive_post_mode',
+				'setting'  => 'archive_post_mode',
 				'value'    => 'default',
 				'operator' => '===',
 			]
@@ -175,7 +175,7 @@ foreach ( $post_types as $post_type_id => $post_type_obj ) {
 			],
 			'active_callback' => [
 				[
-					'setting'  => 'gridd_archive_post_mode',
+					'setting'  => 'archive_post_mode',
 					'value'    => 'default',
 					'operator' => '===',
 				]
@@ -223,7 +223,7 @@ Customizer::add_field(
 		],
 		'active_callback' => [
 			[
-				'setting'  => 'gridd_archive_post_mode',
+				'setting'  => 'archive_post_mode',
 				'value'    => 'card',
 				'operator' => '===',
 			]
