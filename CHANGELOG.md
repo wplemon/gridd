@@ -2,6 +2,7 @@
 
 ### Fixed
 * Removed underline for featured-image links.
+* Color for widget-nav-menu toggles.
 
 ### Changed
 * Reorganized customizer settings in the "Theme Features" section.
