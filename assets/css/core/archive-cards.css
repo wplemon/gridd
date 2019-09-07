@@ -1,5 +1,5 @@
 article.gridd-post-mode-card {
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: var(--a-crd-img-w, 50%) 1fr;
   grid-gap: 0 1em;
   align-items: flex-start;
 }

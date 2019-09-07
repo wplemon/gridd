@@ -197,6 +197,39 @@ Customizer::add_field(
 	]
 );
 
+Customizer::add_field(
+	[
+		'type'              => 'slider',
+		'settings'          => 'archive_card_image_width',
+		'label'             => esc_attr__( 'Image Width', 'gridd' ),
+		'description'       => esc_html__( 'Width of the featured image in relation to the global width (percentage).', 'gridd' ),
+		'section'           => 'gridd_features_archive',
+		'default'           => 50,
+		'transport'         => 'auto',
+		'priority'          => 30,
+		'choices'           => [
+			'min'    => 20,
+			'max'    => 80,
+			'step'   => 1,
+			'suffix' => '%',
+		],
+		'output'          => [
+			[
+				'element'       => '.gridd-post-mode-card',
+				'property'      => '--a-crd-img-w',
+				'value_pattern' => '$%',
+			],
+		],
+		'active_callback' => [
+			[
+				'setting'  => 'gridd_archive_post_mode',
+				'value'    => 'card',
+				'operator' => '===',
+			]
+		],
+]
+);
+
 /**
  * Options for single posts.
  */
