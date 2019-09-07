@@ -82,4 +82,24 @@ q {
   font-style: italic;
 }
 
+.entry-tags,
+.entry-date-author,
+.entry-category,
+.entry-comments-link,
+.page-links {
+  font-size: var(--fs-1d-ts-tr);
+}
+
+.entry-comments-link .comments-link {
+  display: flex;
+}
+.entry-comments-link svg {
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+}
+.entry-comments-link .label {
+  padding: 0 0.5em;
+}
+
 /*# sourceMappingURL=elements.css.map */

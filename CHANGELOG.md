@@ -3,6 +3,7 @@
 ### Fixed
 * Removed underline for featured-image links.
 * Color for widget-nav-menu toggles.
+* "Leave a Comment" link not visible in post-archives.
 
 ### Changed
 * Reorganized customizer settings in the "Theme Features" section.
