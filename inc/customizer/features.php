@@ -57,6 +57,7 @@ Customizer::add_field(
 		'type'              => 'radio-image',
 		'settings'          => 'gridd_archive_post_mode',
 		'label'             => esc_attr__( 'Posts Mode', 'gridd' ),
+		'description'       => esc_html__( 'Please note that changes may not be visible if your posts don\'t have a featured image, and on mobiles they will fall-back to the default mode.', 'gridd' ),
 		'section'           => 'gridd_features_archive',
 		'default'           => 'default',
 		'transport'         => 'refresh',
