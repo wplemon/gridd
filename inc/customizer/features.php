@@ -49,6 +49,9 @@ Customizer::add_section(
 	]
 );
 
+/**
+ * Options for post-archives.
+ */
 Customizer::add_field(
 	[
 		'type'              => 'select',
@@ -77,128 +80,13 @@ Customizer::add_field(
 
 Customizer::add_field(
 	[
-		'type'              => 'select',
-		'settings'          => 'gridd_featured_image_mode_singular',
-		'label'             => esc_attr__( 'Featured Images Mode in Single Posts', 'gridd' ),
-		'section'           => 'gridd_features_single_post',
-		'default'           => 'overlay',
-		'transport'         => 'refresh',
-		'priority'          => 20,
-		'choices'           => [
-			'hidden'        => esc_attr__( 'Hidden', 'gridd' ),
-			'gridd-contain' => esc_attr__( 'Normal', 'gridd' ),
-			'alignwide'     => esc_attr__( 'Wide', 'gridd' ),
-			'alignfull'     => esc_attr__( 'Full Width', 'gridd' ),
-			'overlay'       => esc_attr__( 'Overlay', 'gridd' ),
-		],
-		/**
-		 * WIP
-		'active_callback'   => function() {
-			return is_singular();
-		},
-		*/
-		'sanitize_callback' => function( $value ) {
-			return ( 'hidden' === $value || 'gridd-contain' === $value || 'alignwide' === $value || 'alignfull' === $value || 'overlay' === $value ) ? $value : 'overlay';
-		},
-	]
-);
-
-Customizer::add_field(
-	[
-		'type'            => 'checkbox',
-		'settings'        => 'gridd_featured_image_overlay_color_from_image',
-		'label'           => esc_html__( 'Use Image Colors', 'gridd' ),
-		// 'description'     => esc_html__( 'Applies to single posts', 'gridd' ),
-		'section'         => 'gridd_features_single_post',
-		'default'         => true,
-		'transport'       => 'refresh',
-		'priority'        => 20,
-		'active_callback' => function() {
-			return 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' ) && function_exists( 'jetpack_require_lib' );
-		},
-	]
-);
-
-Customizer::add_field(
-	[
-		'type'            => 'dimension',
-		'settings'        => 'gridd_featured_image_overlay_min_height',
-		'label'           => esc_attr__( 'Featured image minimum height', 'gridd' ),
-		// 'description'     => esc_html__( 'Applies to single posts', 'gridd' ),
-		'section'         => 'gridd_features_single_post',
-		'default'         => 'overlay',
-		'transport'       => 'postMessage',
-		'priority'        => 20,
-		'default'         => '87vh',
-		'css_vars'        => '--im-hmh',
-		'active_callback' => function() {
-			return 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' );
-		},
-	]
-);
-
-Customizer::add_field(
-	[
-		'type'            => 'color',
-		'settings'        => 'gridd_featured_image_overlay_background_color',
-		'label'           => esc_attr__( 'Overlay Color', 'gridd' ),
-		// 'description'     => esc_html__( 'Applies to single posts', 'gridd' ),
-		'section'         => 'gridd_features_single_post',
-		'default'         => 'rgba(42,84,126,0.8)',
-		'css_vars'        => '--im-hoc',
-		'transport'       => 'postMessage',
-		'priority'        => 20,
-		'choices'         => [
-			'alpha' => true,
-		],
-		'active_callback' => function() {
-			return 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' ) && ( ! get_theme_mod( 'gridd_featured_image_overlay_color_from_image', true ) || ! function_exists( 'jetpack_require_lib' ) );
-		},
-	]
-);
-
-Customizer::add_field(
-	[
-		'type'              => 'gridd-wcag-tc',
-		'settings'          => 'gridd_featured_image_overlay_text_color',
-		'label'             => esc_html__( 'Feature Image Overlay Text Color', 'gridd' ),
-		// 'description'       => esc_html__( 'Applies to single posts', 'gridd' ),
-		'section'           => 'gridd_features_single_post',
-		'priority'          => 20,
-		'default'           => '#fff',
-		'css_vars'          => '--im-htc',
-		'transport'         => 'postMessage',
-		'choices'           => [
-			'setting' => 'gridd_featured_image_overlay_background_color',
-		],
-		'sanitize_callback' => [ $sanitization, 'color_hex' ],
-		'active_callback'   => function() {
-			return 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' ) && ( ! get_theme_mod( 'gridd_featured_image_overlay_color_from_image', true ) || ! function_exists( 'jetpack_require_lib' ) );
-		},
-	]
-);
-
-Customizer::add_field(
-	[
-		'type'      => 'checkbox',
-		'settings'  => 'gridd_show_next_prev',
-		'label'     => esc_attr__( 'Show Next/Previous Post in single posts', 'gridd' ),
-		'section'   => 'gridd_features_single_post',
-		'default'   => true,
-		'priority'  => 30,
-		'transport' => 'refresh',
-	]
-);
-
-Customizer::add_field(
-	[
 		'type'        => 'checkbox',
 		'settings'    => 'gridd_archives_display_full_post',
 		'label'       => esc_attr__( 'Show full post in archives', 'gridd' ),
 		'description' => '',
 		'section'     => 'gridd_features_archive',
 		'default'     => false,
-		'priority'    => 40,
+		'priority'    => 20,
 		'transport'   => 'refresh',
 	]
 );
@@ -224,7 +112,7 @@ foreach ( $post_types as $post_type_id => $post_type_obj ) {
 			'section'         => 'gridd_features_archive',
 			'default'         => false,
 			'transport'       => 'refresh',
-			'priority'        => 50,
+			'priority'        => 30,
 			'output'          => [
 				[
 					'element'       => ".gridd-post-type-archive-$post_type_id #main",
@@ -279,10 +167,128 @@ Customizer::add_field(
 		'label'       => esc_attr__( 'Read More link', 'gridd' ),
 		'description' => esc_html__( 'If you want to include the post title in your read-more link, you can use "%s" (without the quotes) and it will be replaced with the post\'s title.', 'gridd' ), // phpcs:ignore WordPress.WP.I18n.MissingTranslatorsComment
 		'section'     => 'gridd_features_archive',
-		'priority'    => 60,
+		'priority'    => 40,
 		/* translators: %s: Name of current post. Only visible to screen readers */
 		'default'     => __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'gridd' ),
 		'transport'   => 'refresh',
+	]
+);
+
+/**
+ * Options for single posts.
+ */
+Customizer::add_field(
+	[
+		'type'              => 'select',
+		'settings'          => 'gridd_featured_image_mode_singular',
+		'label'             => esc_attr__( 'Featured Images Mode in Single Posts', 'gridd' ),
+		'section'           => 'gridd_features_single_post',
+		'default'           => 'overlay',
+		'transport'         => 'refresh',
+		'priority'          => 10,
+		'choices'           => [
+			'hidden'        => esc_attr__( 'Hidden', 'gridd' ),
+			'gridd-contain' => esc_attr__( 'Normal', 'gridd' ),
+			'alignwide'     => esc_attr__( 'Wide', 'gridd' ),
+			'alignfull'     => esc_attr__( 'Full Width', 'gridd' ),
+			'overlay'       => esc_attr__( 'Overlay', 'gridd' ),
+		],
+		/**
+		 * WIP
+		'active_callback'   => function() {
+			return is_singular();
+		},
+		*/
+		'sanitize_callback' => function( $value ) {
+			return ( 'hidden' === $value || 'gridd-contain' === $value || 'alignwide' === $value || 'alignfull' === $value || 'overlay' === $value ) ? $value : 'overlay';
+		},
+	]
+);
+
+Customizer::add_field(
+	[
+		'type'            => 'checkbox',
+		'settings'        => 'gridd_featured_image_overlay_color_from_image',
+		'label'           => esc_html__( 'Use Image Colors', 'gridd' ),
+		// 'description'     => esc_html__( 'Applies to single posts', 'gridd' ),
+		'section'         => 'gridd_features_single_post',
+		'default'         => true,
+		'transport'       => 'refresh',
+		'priority'        => 20,
+		'active_callback' => function() {
+			return 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' ) && function_exists( 'jetpack_require_lib' );
+		},
+	]
+);
+
+Customizer::add_field(
+	[
+		'type'            => 'dimension',
+		'settings'        => 'gridd_featured_image_overlay_min_height',
+		'label'           => esc_attr__( 'Featured image minimum height', 'gridd' ),
+		// 'description'     => esc_html__( 'Applies to single posts', 'gridd' ),
+		'section'         => 'gridd_features_single_post',
+		'default'         => 'overlay',
+		'transport'       => 'postMessage',
+		'priority'        => 30,
+		'default'         => '87vh',
+		'css_vars'        => '--im-hmh',
+		'active_callback' => function() {
+			return 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' );
+		},
+	]
+);
+
+Customizer::add_field(
+	[
+		'type'            => 'color',
+		'settings'        => 'gridd_featured_image_overlay_background_color',
+		'label'           => esc_attr__( 'Overlay Color', 'gridd' ),
+		// 'description'     => esc_html__( 'Applies to single posts', 'gridd' ),
+		'section'         => 'gridd_features_single_post',
+		'default'         => 'rgba(42,84,126,0.8)',
+		'css_vars'        => '--im-hoc',
+		'transport'       => 'postMessage',
+		'priority'        => 40,
+		'choices'         => [
+			'alpha' => true,
+		],
+		'active_callback' => function() {
+			return 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' ) && ( ! get_theme_mod( 'gridd_featured_image_overlay_color_from_image', true ) || ! function_exists( 'jetpack_require_lib' ) );
+		},
+	]
+);
+
+Customizer::add_field(
+	[
+		'type'              => 'gridd-wcag-tc',
+		'settings'          => 'gridd_featured_image_overlay_text_color',
+		'label'             => esc_html__( 'Feature Image Overlay Text Color', 'gridd' ),
+		// 'description'       => esc_html__( 'Applies to single posts', 'gridd' ),
+		'section'           => 'gridd_features_single_post',
+		'priority'          => 50,
+		'default'           => '#fff',
+		'css_vars'          => '--im-htc',
+		'transport'         => 'postMessage',
+		'choices'           => [
+			'setting' => 'gridd_featured_image_overlay_background_color',
+		],
+		'sanitize_callback' => [ $sanitization, 'color_hex' ],
+		'active_callback'   => function() {
+			return 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' ) && ( ! get_theme_mod( 'gridd_featured_image_overlay_color_from_image', true ) || ! function_exists( 'jetpack_require_lib' ) );
+		},
+	]
+);
+
+Customizer::add_field(
+	[
+		'type'      => 'checkbox',
+		'settings'  => 'gridd_show_next_prev',
+		'label'     => esc_attr__( 'Show Next/Previous Post in single posts', 'gridd' ),
+		'section'   => 'gridd_features_single_post',
+		'default'   => true,
+		'priority'  => 60,
+		'transport' => 'refresh',
 	]
 );
 
