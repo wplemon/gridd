@@ -263,11 +263,6 @@ class Scripts {
 			$style->add_file( get_theme_file_path( 'assets/css/core/can-edit-post.min.css' ) );
 		}
 
-		// If we're on an archive and we want to use cards, add extra styles.
-		if ( ( is_archive() || is_home() ) && 'card' === get_theme_mod( 'gridd_archive_post_mode', 'default' ) ) {
-			$style->add_file( get_theme_file_path( 'assets/css/core/archive-cards.min.css' ) );
-		}
-
 		$style->add_vars(
 			[
 				'--ts'     => get_theme_mod( 'gridd_type_scale', 1.26 ),
