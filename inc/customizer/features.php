@@ -22,12 +22,39 @@ Customizer::add_section(
 	]
 );
 
+Customizer::add_section(
+	'gridd_features_global',
+	[
+		'title'    => esc_attr__( 'Global Settings', 'gridd' ),
+		'priority' => 1,
+		'section'  => 'gridd_features',
+	]
+);
+
+Customizer::add_section(
+	'gridd_features_archive',
+	[
+		'title'    => esc_attr__( 'Post Archives Options', 'gridd' ),
+		'priority' => 1,
+		'section'  => 'gridd_features',
+	]
+);
+
+Customizer::add_section(
+	'gridd_features_single_post',
+	[
+		'title'    => esc_attr__( 'Single Posts Options', 'gridd' ),
+		'priority' => 1,
+		'section'  => 'gridd_features',
+	]
+);
+
 Customizer::add_field(
 	[
 		'type'              => 'select',
 		'settings'          => 'gridd_featured_image_mode_archive',
 		'label'             => esc_attr__( 'Featured Images Mode in Archives', 'gridd' ),
-		'section'           => 'gridd_features',
+		'section'           => 'gridd_features_archive',
 		'default'           => 'alignwide',
 		'transport'         => 'refresh',
 		'priority'          => 10,
@@ -53,7 +80,7 @@ Customizer::add_field(
 		'type'              => 'select',
 		'settings'          => 'gridd_featured_image_mode_singular',
 		'label'             => esc_attr__( 'Featured Images Mode in Single Posts', 'gridd' ),
-		'section'           => 'gridd_features',
+		'section'           => 'gridd_features_single_post',
 		'default'           => 'overlay',
 		'transport'         => 'refresh',
 		'priority'          => 20,
@@ -81,8 +108,8 @@ Customizer::add_field(
 		'type'            => 'checkbox',
 		'settings'        => 'gridd_featured_image_overlay_color_from_image',
 		'label'           => esc_html__( 'Use Image Colors', 'gridd' ),
-		'description'     => esc_html__( 'Applies to single posts', 'gridd' ),
-		'section'         => 'gridd_features',
+		// 'description'     => esc_html__( 'Applies to single posts', 'gridd' ),
+		'section'         => 'gridd_features_single_post',
 		'default'         => true,
 		'transport'       => 'refresh',
 		'priority'        => 20,
@@ -97,8 +124,8 @@ Customizer::add_field(
 		'type'            => 'dimension',
 		'settings'        => 'gridd_featured_image_overlay_min_height',
 		'label'           => esc_attr__( 'Featured image minimum height', 'gridd' ),
-		'description'     => esc_html__( 'Applies to single posts', 'gridd' ),
-		'section'         => 'gridd_features',
+		// 'description'     => esc_html__( 'Applies to single posts', 'gridd' ),
+		'section'         => 'gridd_features_single_post',
 		'default'         => 'overlay',
 		'transport'       => 'postMessage',
 		'priority'        => 20,
@@ -115,8 +142,8 @@ Customizer::add_field(
 		'type'            => 'color',
 		'settings'        => 'gridd_featured_image_overlay_background_color',
 		'label'           => esc_attr__( 'Overlay Color', 'gridd' ),
-		'description'     => esc_html__( 'Applies to single posts', 'gridd' ),
-		'section'         => 'gridd_features',
+		// 'description'     => esc_html__( 'Applies to single posts', 'gridd' ),
+		'section'         => 'gridd_features_single_post',
 		'default'         => 'rgba(42,84,126,0.8)',
 		'css_vars'        => '--im-hoc',
 		'transport'       => 'postMessage',
@@ -135,8 +162,8 @@ Customizer::add_field(
 		'type'              => 'gridd-wcag-tc',
 		'settings'          => 'gridd_featured_image_overlay_text_color',
 		'label'             => esc_html__( 'Feature Image Overlay Text Color', 'gridd' ),
-		'description'       => esc_html__( 'Applies to single posts', 'gridd' ),
-		'section'           => 'gridd_features',
+		// 'description'       => esc_html__( 'Applies to single posts', 'gridd' ),
+		'section'           => 'gridd_features_single_post',
 		'priority'          => 20,
 		'default'           => '#fff',
 		'css_vars'          => '--im-htc',
@@ -156,7 +183,7 @@ Customizer::add_field(
 		'type'      => 'checkbox',
 		'settings'  => 'gridd_show_next_prev',
 		'label'     => esc_attr__( 'Show Next/Previous Post in single posts', 'gridd' ),
-		'section'   => 'gridd_features',
+		'section'   => 'gridd_features_single_post',
 		'default'   => true,
 		'priority'  => 30,
 		'transport' => 'refresh',
@@ -169,7 +196,7 @@ Customizer::add_field(
 		'settings'    => 'gridd_archives_display_full_post',
 		'label'       => esc_attr__( 'Show full post in archives', 'gridd' ),
 		'description' => '',
-		'section'     => 'gridd_features',
+		'section'     => 'gridd_features_archive',
 		'default'     => false,
 		'priority'    => 40,
 		'transport'   => 'refresh',
@@ -194,7 +221,7 @@ foreach ( $post_types as $post_type_id => $post_type_obj ) {
 				esc_html__( 'Display "%s" archives as a grid', 'gridd' ),
 				$post_type_obj->labels->name
 			),
-			'section'         => 'gridd_features',
+			'section'         => 'gridd_features_archive',
 			'default'         => false,
 			'transport'       => 'refresh',
 			'priority'        => 50,
@@ -251,7 +278,7 @@ Customizer::add_field(
 		'settings'    => 'gridd_excerpt_more',
 		'label'       => esc_attr__( 'Read More link', 'gridd' ),
 		'description' => esc_html__( 'If you want to include the post title in your read-more link, you can use "%s" (without the quotes) and it will be replaced with the post\'s title.', 'gridd' ), // phpcs:ignore WordPress.WP.I18n.MissingTranslatorsComment
-		'section'     => 'gridd_features',
+		'section'     => 'gridd_features_archive',
 		'priority'    => 60,
 		/* translators: %s: Name of current post. Only visible to screen readers */
 		'default'     => __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'gridd' ),
