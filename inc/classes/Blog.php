@@ -39,6 +39,7 @@ class Blog {
 		add_filter( 'wp_list_categories', [ $this, 'list_categories' ] );
 		add_filter( 'gridd_get_post_parts', [ $this, 'gridd_get_post_parts_filter' ] );
 		add_action( 'gridd_get_template_part', [ $this, 'hide_title_on_pages' ], 10, 2 );
+		add_filter( 'post_class', [ $this, 'archives_post_mode_class' ] );
 	}
 
 	/**
@@ -120,7 +121,7 @@ class Blog {
 					'post-category',
 					'post-tags',
 					'post-comments-link'
-				];	
+				];
 			}
 
 			self::$post_parts = apply_filters( 'gridd_get_post_parts', $defaults );
@@ -130,7 +131,7 @@ class Blog {
 
 	/**
 	 * Comments link.
-	 * 
+	 *
 	 * @static
 	 * @access public
 	 * @since 1.0
@@ -233,6 +234,21 @@ class Blog {
 	 */
 	public static function hide_title_on_pages( $custom_path, $slug, $name = null ) {
 		return 'template-parts/part-post-title' === $slug && \is_front_page() && ! \is_home() && \get_theme_mod( 'gridd_hide_home_title', true ) ? true : $custom_path;
+	}
+
+	/**
+	 * Adds extra classes on <article> tags using the "post_class" filter.
+	 *
+	 * @access public
+	 * @since 1.1.19
+	 * @param array $classes The classes for this element.
+	 * @return array
+	 */
+	public function archives_post_mode_class( $classes ) {
+		if ( is_archive() || is_home() ) {
+			$classes[] = 'gridd-post-mode-' . get_theme_mod( 'gridd_archive_post_mode', 'default' );
+		}
+		return $classes;
 	}
 }
 
