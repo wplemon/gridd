@@ -53,6 +53,7 @@
 .gridd-tp-sidebar_ID .widget_nav_menu a:visited.focus ~ .gridd-toggle,
 .gridd-tp-sidebar_ID .widget_nav_menu a:visited.toggled-on ~ .gridd-toggle {
   border-bottom-color: var(--wa-ID-bg, #fff);
+  color: var(--wa-ID-bg, #fff);
 }
 .gridd-tp-sidebar_ID .widget_nav_menu a:hover ~ .gridd-toggle svg, .gridd-tp-sidebar_ID .widget_nav_menu a:focus ~ .gridd-toggle svg, .gridd-tp-sidebar_ID .widget_nav_menu a.focus ~ .gridd-toggle svg, .gridd-tp-sidebar_ID .widget_nav_menu a.toggled-on ~ .gridd-toggle svg,
 .gridd-tp-sidebar_ID .widget_nav_menu a:visited:hover ~ .gridd-toggle svg,
