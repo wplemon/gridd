@@ -246,7 +246,7 @@ class Blog {
 	 */
 	public function archives_post_mode_class( $classes ) {
 		if ( is_archive() || is_home() ) {
-			$classes[] = 'gridd-post-mode-' . get_theme_mod( 'gridd_archive_post_mode', 'default' );
+			$classes[] = 'gridd-post-mode-' . get_theme_mod( 'archive_post_mode', 'default' );
 		}
 		return $classes;
 	}

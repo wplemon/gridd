@@ -33,7 +33,7 @@ $style->add_string( '@media only screen and (min-width:' . get_theme_mod( 'gridd
 $style->add_file( get_theme_file_path( 'grid-parts/styles/header-large.min.css' ) );
 
 // If we're on an archive and we want to use cards, add extra styles.
-if ( ( is_archive() || is_home() ) && 'card' === get_theme_mod( 'gridd_archive_post_mode', 'default' ) ) {
+if ( ( is_archive() || is_home() ) && 'card' === get_theme_mod( 'archive_post_mode', 'default' ) ) {
 	$style->add_file( get_theme_file_path( 'assets/css/core/archive-cards.min.css' ) );
 }
 
