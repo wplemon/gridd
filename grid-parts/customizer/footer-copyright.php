@@ -21,7 +21,7 @@ new \Kirki\Section(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Control\Editor(
 	[
 		'type'              => 'editor',
 		'settings'          => 'gridd_copyright_text',
