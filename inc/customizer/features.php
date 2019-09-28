@@ -198,7 +198,7 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
 		'type'            => 'slider',
 		'settings'        => 'archive_card_image_width',

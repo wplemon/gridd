@@ -56,7 +56,7 @@ new \Kirki\Field\Dimensions(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
 		'type'        => 'slider',
 		'settings'    => 'gridd_grid_part_details_header_search_font_size',

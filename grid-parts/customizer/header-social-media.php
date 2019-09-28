@@ -65,7 +65,7 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
 		'type'      => 'slider',
 		'settings'  => 'gridd_grid_part_details_social_icons_size',
@@ -83,7 +83,7 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
 		'type'        => 'slider',
 		'settings'    => 'gridd_grid_part_details_social_icons_padding',

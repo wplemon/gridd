@@ -99,7 +99,7 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
 		'type'        => 'slider',
 		'settings'    => 'gridd_grid_footer_copyright_text_font_size',

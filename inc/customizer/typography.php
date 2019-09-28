@@ -146,7 +146,7 @@ Customizer::add_field(
 /**
  * Body typography.
  */
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
 		'type'        => 'slider',
 		'settings'    => 'gridd_body_font_size',
@@ -166,7 +166,7 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
 		'type'        => 'slider',
 		'settings'    => 'gridd_fluid_typography_ratio',

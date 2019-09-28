@@ -22,7 +22,7 @@ new \Kirki\Section(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
 		'type'        => 'slider',
 		'settings'    => 'gridd_edd_grid_min_col_width',
@@ -41,7 +41,7 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
 		'type'        => 'slider',
 		'settings'    => 'gridd_edd_archive_grid_gap',
@@ -60,7 +60,7 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
 		'type'      => 'slider',
 		'settings'  => 'gridd_edd_product_grid_inner_padding',

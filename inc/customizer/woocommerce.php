@@ -25,7 +25,7 @@ new \Kirki\Field\Dimension(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
 		'type'     => 'slider',
 		'settings' => 'gridd_woocommerce_product_catalog_per_page',

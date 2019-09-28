@@ -133,7 +133,7 @@ new \Kirki\Field\Dimension(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
 		'settings'        => 'gridd_logo_max_width',
 		'type'            => 'slider',
@@ -185,7 +185,7 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
 		'settings'        => 'gridd_branding_sitetitle_size',
 		'type'            => 'slider',
@@ -205,7 +205,7 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
 		'settings'        => 'gridd_branding_tagline_size',
 		'type'            => 'slider',
@@ -248,7 +248,7 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
 		'settings'        => 'gridd_branding_inline_spacing',
 		'type'            => 'slider',
