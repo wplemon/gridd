@@ -71,7 +71,6 @@
  */
 pre.wp-block-verse {
   white-space: nowrap;
-  overflow: auto;
-}
+  overflow: auto; }
 
 /*# sourceMappingURL=verse.css.map */

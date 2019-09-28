@@ -23,7 +23,6 @@
   --fs-1d-ts-tr: calc(var(--fs-tr) / var(--ts));
   --fs-2d-ts-tr: calc(var(--fs-tr) / var(--ts) / var(--ts));
   --fs-3d-ts-tr: calc(var(--fs-tr) / var(--ts) / var(--ts) / var(--ts));
-  --fs-4d-ts-tr: calc(var(--fs-tr) / var(--ts) / var(--ts) / var(--ts) / var(--ts));
-}
+  --fs-4d-ts-tr: calc(var(--fs-tr) / var(--ts) / var(--ts) / var(--ts) / var(--ts)); }
 
 /*# sourceMappingURL=base.css.map */

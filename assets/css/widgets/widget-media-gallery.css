@@ -1,8 +1,6 @@
 .widget.widget_media_gallery {
-  font-size: var(--fs-1d-ts-tr);
-}
-.widget.widget_media_gallery a {
-  filter: none;
-}
+  font-size: var(--fs-1d-ts-tr); }
+  .widget.widget_media_gallery a {
+    filter: none; }
 
 /*# sourceMappingURL=widget-media-gallery.css.map */

@@ -1,12 +1,9 @@
 .gridd-header-search {
-  background-color: var(--h-s-bg, #ffffff);
-}
-.gridd-header-search form.search-form {
-  font-size: calc(var(--h-s-fs, 1) * 1em);
-  color: var(--h-s-cl, #000000);
-}
-.gridd-header-search .search-submit:focus, .gridd-header-search .search-submit:hover, .gridd-header-search .search-submit:active {
-  box-shadow: none;
-}
+  background-color: var(--h-s-bg, #ffffff); }
+  .gridd-header-search form.search-form {
+    font-size: calc(var(--h-s-fs, 1) * 1em);
+    color: var(--h-s-cl, #000000); }
+  .gridd-header-search .search-submit:focus, .gridd-header-search .search-submit:hover, .gridd-header-search .search-submit:active {
+    box-shadow: none; }
 
 /*# sourceMappingURL=styles-header-search.css.map */
