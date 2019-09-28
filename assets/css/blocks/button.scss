@@ -21,10 +21,6 @@
 	// position: relative;
 	// background: none;
 
-	&:hover {
-		color: var(--c-bg);
-	}
-
 	// Make sure buttons text remains visible if user doesn't select a text color.
 	&:not(.has-text-color) {
 		&.has {
@@ -44,6 +40,7 @@
 	&:focus,
 	&:hover,
 	&:active {
+		color: var(--c-bg);
 
 		&:before,
 		&:after {
