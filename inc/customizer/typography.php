@@ -47,7 +47,7 @@ Customizer::add_field(
 		'section'         => 'gridd_typography',
 		'priority'        => 10,
 		'default'         => [
-			'font-family' => 'sans-serif',
+			'font-family' => '',
 			'font-weight' => 400,
 		],
 		'transport'       => 'auto',
@@ -62,7 +62,8 @@ Customizer::add_field(
 		],
 		'choices'         => [
 			'fonts' => [
-				'google' => [ 'popularity' ],
+				'google'   => [ 'popularity' ],
+				'standard' => [],
 			],
 		],
 		'active_callback' => function() {
@@ -96,7 +97,7 @@ Customizer::add_field(
 		'section'         => 'gridd_typography',
 		'priority'        => 20,
 		'default'         => [
-			'font-family' => 'sans-serif',
+			'font-family' => '',
 			'variant'     => 700,
 		],
 		'transport'       => 'auto',
@@ -132,7 +133,8 @@ Customizer::add_field(
 		],
 		'choices'         => [
 			'fonts' => [
-				'google' => [ 'popularity' ],
+				'google'   => [ 'popularity' ],
+				'standard' => [],
 			],
 		],
 		'active_callback' => function() {

@@ -166,7 +166,7 @@ Customizer::add_field(
 		'section'   => 'gridd_grid_part_details_header_branding',
 		'priority'  => 50,
 		'default'   => [
-			'font-family' => 'sans-serif',
+			'font-family' => '',
 			'font-weight' => 700,
 		],
 		'transport' => 'auto',
@@ -177,7 +177,8 @@ Customizer::add_field(
 		],
 		'choices'   => [
 			'fonts' => [
-				'google' => [ 'popularity' ],
+				'google'   => [ 'popularity' ],
+				'standard' => [],
 			],
 		],
 	]
