@@ -13,17 +13,20 @@
 
 .wp-block-button__link {
 	@include button();
-	// background-color: var(--tc);
+	background-color: var(--tc);
+	color: var(--c-bg);
 	// border-radius: 3em;
 	// font-size: 1em;
 	// padding: .5em 1em;
 	// position: relative;
 	// background: none;
 
+	&:hover {
+		color: var(--c-bg);
+	}
+
 	// Make sure buttons text remains visible if user doesn't select a text color.
 	&:not(.has-text-color) {
-		color: currentColor;
-
 		&.has {
 
 			&-pale-pink,
@@ -36,20 +39,11 @@
 				}
 			}
 		}
-
-		&:visited,
-		&:focus,
-		&:hover,
-		&:visited:focus,
-		&:visited:hover {
-			color: currentColor;
-		}
 	}
 
 	&:focus,
 	&:hover,
 	&:active {
-		border-bottom-color: currentColor;
 
 		&:before,
 		&:after {
@@ -64,12 +58,12 @@
 
 		&:before {
 			left: .5em;
-			box-shadow: -4px 0 currentColor;
+			box-shadow: -4px 0;
 		}
 
 		&:after {
 			right: .5em;
-			box-shadow: 4px 0 currentColor;
+			box-shadow: 4px 0;
 		}
 	}
 
@@ -83,6 +77,7 @@
 	}
 }
 
-.is-style-outline {
+.is-style-outline .wp-block-button__link {
 	color: currentColor;
+	border-color: currentColor;
 }
