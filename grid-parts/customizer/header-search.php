@@ -32,7 +32,7 @@ new \Kirki\Field\Radio_Buttonset(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Dimensions(
 	[
 		'type'        => 'dimensions',
 		'settings'    => 'gridd_grid_part_details_header_search_padding',

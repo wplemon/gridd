@@ -33,7 +33,7 @@ new \Kirki\Field\Dimension(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Dimensions(
 	[
 		'type'      => 'dimensions',
 		'settings'  => 'gridd_grid_content_padding',
