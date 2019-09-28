@@ -187,7 +187,7 @@ function gridd_nav_customizer_options( $id ) {
 		]
 	);
 
-	Customizer::add_field(
+	new \Kirki\Field\Radio_Buttonset(
 		[
 			'type'              => 'radio-buttonset',
 			'settings'          => "gridd_grid_nav_{$id}_justify_content",
@@ -255,7 +255,7 @@ function gridd_nav_customizer_options( $id ) {
 		]
 	);
 
-	Customizer::add_field(
+	new \Kirki\Field\Radio_Buttonset(
 		[
 			'type'              => 'radio-buttonset',
 			'settings'          => "gridd_grid_nav_{$id}_expand_icon",
@@ -347,7 +347,7 @@ function gridd_nav_customizer_options( $id ) {
 
 	/**
 	 * WIP
-	Customizer::add_field(
+	new \Kirki\Field\Radio_Buttonset(
 		[
 			'type'              => 'radio-buttonset',
 			'settings'          => "gridd_grid_nav_{$id}_style",

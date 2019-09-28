@@ -84,7 +84,7 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Radio_Buttonset(
 	[
 		'type'              => 'radio-buttonset',
 		'settings'          => 'gridd_grid_breadcrumbs_text_align',

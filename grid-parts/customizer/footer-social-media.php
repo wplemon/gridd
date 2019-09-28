@@ -129,7 +129,7 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Radio_Buttonset(
 	[
 		'type'              => 'radio-buttonset',
 		'settings'          => 'gridd_grid_part_details_footer_social_icons_icons_text_align',

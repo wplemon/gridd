@@ -115,7 +115,7 @@ new \Kirki\Field\Dimension(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Radio_Buttonset(
 	[
 		'type'              => 'radio-buttonset',
 		'settings'          => 'gridd_grid_part_details_header_contact_text_align',
