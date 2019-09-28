@@ -21,7 +21,7 @@ new \Kirki\Section(
 	]
 );
 
-new \Kirki\Control\Editor(
+new \Kirki\Field\Editor(
 	[
 		'type'              => 'editor',
 		'settings'          => 'gridd_copyright_text',

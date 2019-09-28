@@ -20,7 +20,7 @@ new \Kirki\Section(
 	]
 );
 
-new \Kirki\Control\Editor(
+new \Kirki\Field\Editor(
 	[
 		'type'              => 'editor',
 		'settings'          => 'gridd_grid_part_details_header_contact_info',
