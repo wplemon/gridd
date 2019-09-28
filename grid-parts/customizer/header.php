@@ -27,7 +27,7 @@ add_action(
 	}
 );
 
-Customizer::add_section(
+new \Kirki\Section(
 	'gridd_grid_part_details_header',
 	[
 		'title'    => esc_html__( 'Header', 'gridd' ),

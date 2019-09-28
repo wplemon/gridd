@@ -54,7 +54,7 @@ add_action(
 	}
 );
 
-Customizer::add_section(
+new \Kirki\Section(
 	'gridd_grid',
 	[
 		'title'    => esc_html__( 'Site Grid', 'gridd' ),

@@ -10,7 +10,7 @@ use Gridd\Grid_Parts;
 
 $grid_parts = Grid_Parts::get_instance()->get_parts();
 
-Customizer::add_section(
+new \Kirki\Section(
 	'gridd_mobile',
 	[
 		'title'    => esc_html__( 'Mobile', 'gridd' ),

@@ -12,7 +12,7 @@ if ( ! class_exists( 'Easy_Digital_Downloads' ) ) {
 	return;
 }
 
-Customizer::add_section(
+new \Kirki\Section(
 	'gridd_edd',
 	[
 		'title'       => esc_html__( 'EDD Grid', 'gridd' ),

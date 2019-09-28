@@ -13,7 +13,7 @@ use Gridd\Grid_Part\Sidebar;
 
 $sanitization = new Sanitize();
 
-Customizer::add_section(
+new \Kirki\Section(
 	'gridd_features',
 	[
 		'title'    => esc_attr__( 'Theme Features', 'gridd' ),
@@ -22,7 +22,7 @@ Customizer::add_section(
 	]
 );
 
-Customizer::add_section(
+new \Kirki\Section(
 	'gridd_features_global',
 	[
 		'title'    => esc_attr__( 'Global Settings', 'gridd' ),
@@ -31,7 +31,7 @@ Customizer::add_section(
 	]
 );
 
-Customizer::add_section(
+new \Kirki\Section(
 	'gridd_features_archive',
 	[
 		'title'    => esc_attr__( 'Post Archives Options', 'gridd' ),
@@ -40,7 +40,7 @@ Customizer::add_section(
 	]
 );
 
-Customizer::add_section(
+new \Kirki\Section(
 	'gridd_features_single_post',
 	[
 		'title'    => esc_attr__( 'Single Posts Options', 'gridd' ),

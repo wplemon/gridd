@@ -13,7 +13,7 @@ $sanitization = new Sanitize();
 /**
  * Add the Theme-Options panel.
  */
-Customizer::add_section(
+new \Kirki\Section(
 	'gridd_typography',
 	[
 		'title'    => esc_html__( 'Typography', 'gridd' ),

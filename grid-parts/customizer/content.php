@@ -10,7 +10,7 @@ use Gridd\Customizer\Sanitize;
 
 $sanitization = new Sanitize();
 
-Customizer::add_section(
+new \Kirki\Section(
 	'gridd_grid_part_details_content',
 	[
 		/* translators: The grid-part label. */

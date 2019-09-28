@@ -14,7 +14,7 @@ namespace Gridd;
  *
  * @since 1.0
  */
-Customizer::add_panel(
+new \Kirki\Panel(
 	'gridd_options',
 	[
 		'title'    => esc_html__( 'Theme Options', 'gridd' ),
@@ -27,7 +27,7 @@ Customizer::add_panel(
  *
  * @since 1.0.3
  */
-Customizer::add_panel(
+new \Kirki\Panel(
 	'gridd_hidden_panel',
 	[
 		'title'    => '',
@@ -41,7 +41,7 @@ Customizer::add_panel(
  * @since 1.0
  */
 if ( ! Theme::is_plus_active() ) {
-	Customizer::add_section(
+	new \Kirki\Section(
 		'gridd_get_plus',
 		[
 			'title'       => esc_html__( 'Gridd Plus', 'gridd' ),
