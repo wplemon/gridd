@@ -1,7 +1,8 @@
 @charset "UTF-8";
 .main-nav-wrapper {
   position: relative;
-  min-height: 2.75rem; }
+  min-height: 2.75rem;
+}
 
 .nav-links {
   position: relative;
@@ -9,22 +10,27 @@
   flex-wrap: wrap;
   justify-content: space-between;
   font-size: 1em;
-  padding: 1em 0; }
-  .nav-links:before {
-    content: "";
-    opacity: .1;
-    border-top: 1px solid currentColor;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%; }
-  .nav-links a {
-    text-decoration: none; }
-  .nav-links .nav-previous a:before {
-    content: "ΓÇ╣";
-    padding-right: 0.5em; }
-  .nav-links .nav-next a:after {
-    content: "ΓÇ║";
-    padding-left: 0.5em; }
+  padding: 1em 0;
+}
+.nav-links:before {
+  content: "";
+  opacity: 0.1;
+  border-top: 1px solid currentColor;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.nav-links a {
+  text-decoration: none;
+}
+.nav-links .nav-previous a:before {
+  content: "‹";
+  padding-right: 0.5em;
+}
+.nav-links .nav-next a:after {
+  content: "›";
+  padding-left: 0.5em;
+}
 
 /*# sourceMappingURL=nav-links.css.map */

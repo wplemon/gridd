@@ -1,6 +1,7 @@
 .i-amphtml-layout-responsive,
 [layout=responsive][width][height]:not(.i-amphtml-layout-responsive),
 [width][height][sizes]:not(.i-amphtml-layout-responsive) {
-  margin: auto; }
+  margin: auto;
+}
 
 /*# sourceMappingURL=amp.css.map */

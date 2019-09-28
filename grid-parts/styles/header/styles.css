@@ -5,11 +5,13 @@
   overflow: visible;
   z-index: 1000;
   background-color: var(--h-bg, #fff);
-  box-shadow: var(--h-bs, var(--h-bs-default)); }
-  .gridd-tp-header.gridd-tp > .inner {
-    width: 100%;
-    max-width: var(--h-mw, 47em);
-    grid-gap: var(--h-gg, 0);
-    padding: var(--h-pd, 0 1em); }
+  box-shadow: var(--h-bs, var(--h-bs-default));
+}
+.gridd-tp-header.gridd-tp > .inner {
+  width: 100%;
+  max-width: var(--h-mw, 47em);
+  grid-gap: var(--h-gg, 0);
+  padding: var(--h-pd, 0 1em);
+}
 
 /*# sourceMappingURL=styles.css.map */

@@ -6,8 +6,10 @@
   max-width: 100%;
   align-items: center;
   padding: var(--h-cnt-pd, 10px);
-  color: var(--h-cnt-cl, #000); }
-  .gridd-tp-header_contact_info.gridd-tp a {
-    color: var(--h-cnt-cl, #000); }
+  color: var(--h-cnt-cl, #000);
+}
+.gridd-tp-header_contact_info.gridd-tp a {
+  color: var(--h-cnt-cl, #000);
+}
 
 /*# sourceMappingURL=styles-contact-info.css.map */

@@ -1,15 +1,18 @@
 .gridd-tp-footer_social_media.gridd-tp {
   background-color: var(--ft-si-bg, #fff);
   align-items: center;
-  justify-content: var(--ft-si-ta, flex-end); }
-  .gridd-tp-footer_social_media.gridd-tp a {
-    display: block;
-    width: calc(var(--ft-si-sz) * 1em);
-    padding: calc(var(--ft-si-pd, 0.5) * 1em);
-    box-sizing: content-box;
-    line-height: 1;
-    color: var(--ft-si-cl, #000); }
-  .gridd-tp-footer_social_media.gridd-tp svg {
-    fill: var(--ft-si-cl, #000); }
+  justify-content: var(--ft-si-ta, flex-end);
+}
+.gridd-tp-footer_social_media.gridd-tp a {
+  display: block;
+  width: calc(var(--ft-si-sz) * 1em);
+  padding: calc(var(--ft-si-pd, 0.5) * 1em);
+  box-sizing: content-box;
+  line-height: 1;
+  color: var(--ft-si-cl, #000);
+}
+.gridd-tp-footer_social_media.gridd-tp svg {
+  fill: var(--ft-si-cl, #000);
+}
 
 /*# sourceMappingURL=styles-social-icons.css.map */

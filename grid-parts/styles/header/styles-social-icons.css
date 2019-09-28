@@ -1,17 +1,20 @@
 .gridd-tp-social_media.gridd-tp {
   background-color: var(--h-si-bg, #fff);
   align-items: center;
-  justify-content: var(--h-si-ta, flex-end); }
-  .gridd-tp-social_media.gridd-tp a {
-    display: block;
-    max-width: calc(var(--h-si-sz, 1) * 1em);
-    padding: calc(var(--h-si-pd, 0.5) * 1em);
-    box-sizing: content-box;
-    line-height: 1;
-    color: var(--h-si-cl, #000); }
-  .gridd-tp-social_media.gridd-tp svg {
-    fill: var(--h-si-cl, #000);
-    max-width: calc(var(--h-si-sz, 1) * 1em);
-    width: 100%; }
+  justify-content: var(--h-si-ta, flex-end);
+}
+.gridd-tp-social_media.gridd-tp a {
+  display: block;
+  max-width: calc(var(--h-si-sz, 1) * 1em);
+  padding: calc(var(--h-si-pd, 0.5) * 1em);
+  box-sizing: content-box;
+  line-height: 1;
+  color: var(--h-si-cl, #000);
+}
+.gridd-tp-social_media.gridd-tp svg {
+  fill: var(--h-si-cl, #000);
+  max-width: calc(var(--h-si-sz, 1) * 1em);
+  width: 100%;
+}
 
 /*# sourceMappingURL=styles-social-icons.css.map */
