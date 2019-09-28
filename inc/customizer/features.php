@@ -91,7 +91,7 @@ Customizer::add_field(
 				'setting'  => 'archive_post_mode',
 				'value'    => 'default',
 				'operator' => '===',
-			]
+			],
 		],
 		'sanitize_callback' => function( $value ) {
 			return ( 'hidden' === $value || 'gridd-contain' === $value || 'alignwide' === $value ) ? $value : 'alignwide';
@@ -114,7 +114,7 @@ Customizer::add_field(
 				'setting'  => 'archive_post_mode',
 				'value'    => 'default',
 				'operator' => '===',
-			]
+			],
 		],
 	]
 );
@@ -178,7 +178,7 @@ foreach ( $post_types as $post_type_id => $post_type_obj ) {
 					'setting'  => 'archive_post_mode',
 					'value'    => 'default',
 					'operator' => '===',
-				]
+				],
 			],
 		]
 	);
@@ -200,15 +200,15 @@ Customizer::add_field(
 
 Customizer::add_field(
 	[
-		'type'              => 'slider',
-		'settings'          => 'archive_card_image_width',
-		'label'             => esc_attr__( 'Image Width', 'gridd' ),
-		'description'       => esc_html__( 'Width of the featured image in relation to the global width (percentage).', 'gridd' ),
-		'section'           => 'gridd_features_archive',
-		'default'           => 50,
-		'transport'         => 'auto',
-		'priority'          => 30,
-		'choices'           => [
+		'type'            => 'slider',
+		'settings'        => 'archive_card_image_width',
+		'label'           => esc_attr__( 'Image Width', 'gridd' ),
+		'description'     => esc_html__( 'Width of the featured image in relation to the global width (percentage).', 'gridd' ),
+		'section'         => 'gridd_features_archive',
+		'default'         => 50,
+		'transport'       => 'auto',
+		'priority'        => 30,
+		'choices'         => [
 			'min'    => 20,
 			'max'    => 80,
 			'step'   => 1,
@@ -226,9 +226,9 @@ Customizer::add_field(
 				'setting'  => 'archive_post_mode',
 				'value'    => 'card',
 				'operator' => '===',
-			]
+			],
 		],
-]
+	]
 );
 
 /**
@@ -267,7 +267,6 @@ Customizer::add_field(
 		'type'            => 'checkbox',
 		'settings'        => 'gridd_featured_image_overlay_color_from_image',
 		'label'           => esc_html__( 'Use Image Colors', 'gridd' ),
-		// 'description'     => esc_html__( 'Applies to single posts', 'gridd' ),
 		'section'         => 'gridd_features_single_post',
 		'default'         => true,
 		'transport'       => 'refresh',
@@ -283,7 +282,6 @@ Customizer::add_field(
 		'type'            => 'dimension',
 		'settings'        => 'gridd_featured_image_overlay_min_height',
 		'label'           => esc_attr__( 'Featured image minimum height', 'gridd' ),
-		// 'description'     => esc_html__( 'Applies to single posts', 'gridd' ),
 		'section'         => 'gridd_features_single_post',
 		'default'         => 'overlay',
 		'transport'       => 'postMessage',
@@ -301,7 +299,6 @@ Customizer::add_field(
 		'type'            => 'color',
 		'settings'        => 'gridd_featured_image_overlay_background_color',
 		'label'           => esc_attr__( 'Overlay Color', 'gridd' ),
-		// 'description'     => esc_html__( 'Applies to single posts', 'gridd' ),
 		'section'         => 'gridd_features_single_post',
 		'default'         => 'rgba(42,84,126,0.8)',
 		'css_vars'        => '--im-hoc',
@@ -321,7 +318,6 @@ Customizer::add_field(
 		'type'              => 'gridd-wcag-tc',
 		'settings'          => 'gridd_featured_image_overlay_text_color',
 		'label'             => esc_html__( 'Feature Image Overlay Text Color', 'gridd' ),
-		// 'description'       => esc_html__( 'Applies to single posts', 'gridd' ),
 		'section'           => 'gridd_features_single_post',
 		'priority'          => 50,
 		'default'           => '#fff',
@@ -376,14 +372,14 @@ add_action(
 
 Customizer::add_field(
 	[
-		'type'            => 'checkbox',
-		'settings'        => 'disable_editor_styles',
-		'label'           => esc_html__( 'Disable Editor Styles', 'gridd' ),
-		'description'     => esc_html__( 'Enable this option to prevent the theme from styling the posts editor to match your options, and instead uses the default WordPress styles for the editor.', 'gridd' ),
-		'section'         => 'gridd_features',
-		'default'         => false,
-		'transport'       => 'postMessage',
-		'priority'        => 999,
+		'type'        => 'checkbox',
+		'settings'    => 'disable_editor_styles',
+		'label'       => esc_html__( 'Disable Editor Styles', 'gridd' ),
+		'description' => esc_html__( 'Enable this option to prevent the theme from styling the posts editor to match your options, and instead uses the default WordPress styles for the editor.', 'gridd' ),
+		'section'     => 'gridd_features',
+		'default'     => false,
+		'transport'   => 'postMessage',
+		'priority'    => 999,
 	]
 );
 
