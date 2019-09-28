@@ -7,6 +7,7 @@
 
 ### Changed
 * Reorganized customizer settings in the "Theme Features" section.
+* Improved button styles.
 
 ### Added
 * Card mode for post-archives.
