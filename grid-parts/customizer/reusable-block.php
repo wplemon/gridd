@@ -64,7 +64,7 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 		]
 	);
 
-	Customizer::add_field(
+	new \Kirki\Field\Dimension(
 		[
 			'type'        => 'dimension',
 			'settings'    => "gridd_grid_reusable_block_{$id}_padding",

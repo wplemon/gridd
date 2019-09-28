@@ -93,7 +93,7 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Dimension(
 	[
 		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_part_details_header_contact_info_padding',

@@ -20,7 +20,7 @@ new \Kirki\Section(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Dimension(
 	[
 		'type'      => 'dimension',
 		'settings'  => 'gridd_grid_content_max_width',

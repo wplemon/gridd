@@ -277,7 +277,7 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Dimension(
 	[
 		'type'            => 'dimension',
 		'settings'        => 'gridd_featured_image_overlay_min_height',

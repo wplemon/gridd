@@ -12,7 +12,7 @@ if ( ! class_exists( 'WooCommerce' ) ) {
 	return;
 }
 
-Customizer::add_field(
+new \Kirki\Field\Dimension(
 	[
 		'type'        => 'dimension',
 		'settings'    => 'gridd_woocommerce_product_catalog_min_width',

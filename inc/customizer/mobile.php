@@ -25,7 +25,7 @@ foreach ( $parts as $part ) {
 	$sortable_parts[ $part['id'] ] = $part['label'];
 }
 
-Customizer::add_field(
+new \Kirki\Field\Dimension(
 	[
 		'type'        => 'dimension',
 		'settings'    => 'gridd_mobile_breakpoint',

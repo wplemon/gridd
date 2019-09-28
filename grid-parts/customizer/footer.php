@@ -41,7 +41,7 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Dimension(
 	[
 		'type'      => 'dimension',
 		'settings'  => 'gridd_grid_footer_max_width',
@@ -53,7 +53,7 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Dimension(
 	[
 		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_footer_grid_gap',
@@ -70,7 +70,7 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Dimension(
 	[
 		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_footer_padding',

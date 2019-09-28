@@ -98,7 +98,7 @@ function gridd_nav_customizer_options( $id ) {
 		]
 	);
 
-	Customizer::add_field(
+	new \Kirki\Field\Dimension(
 		[
 			'type'        => 'dimension',
 			'settings'    => "gridd_grid_nav_{$id}_padding",
