@@ -48,7 +48,7 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Color(
 	[
 		'type'      => 'color',
 		'settings'  => 'gridd_grid_footer_copyright_bg_color',

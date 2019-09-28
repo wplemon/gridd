@@ -120,7 +120,7 @@ function gridd_nav_customizer_options( $id ) {
 		]
 	);
 
-	Customizer::add_field(
+	new \Kirki\Field\Color(
 		[
 			'type'      => 'color',
 			'label'     => esc_html__( 'Background Color', 'gridd' ),

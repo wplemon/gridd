@@ -294,7 +294,7 @@ new \Kirki\Field\Dimension(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Color(
 	[
 		'type'            => 'color',
 		'settings'        => 'gridd_featured_image_overlay_background_color',

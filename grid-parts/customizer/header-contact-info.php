@@ -43,7 +43,7 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Color(
 	[
 		'type'      => 'color',
 		'settings'  => 'gridd_grid_part_details_header_contact_info_background_color',

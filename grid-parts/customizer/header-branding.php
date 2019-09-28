@@ -93,7 +93,7 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Color(
 	[
 		'type'      => 'color',
 		'settings'  => 'gridd_grid_header_branding_background_color',

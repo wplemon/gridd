@@ -53,7 +53,7 @@ new \Kirki\Field\Dimension(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Color(
 	[
 		'type'      => 'color',
 		'settings'  => 'gridd_grid_breadcrumbs_background_color',

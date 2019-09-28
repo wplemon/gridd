@@ -41,7 +41,7 @@ function gridd_add_footer_widget_area_options( $id ) {
 	);
 
 	// Background Color.
-	Customizer::add_field(
+	new \Kirki\Field\Color(
 		[
 			'type'      => 'color',
 			'settings'  => "gridd_grid_footer_sidebar_{$id}_bg_color",

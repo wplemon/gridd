@@ -56,7 +56,7 @@ new \Kirki\Field\Dimensions(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Color(
 	[
 		'type'      => 'color',
 		'settings'  => 'gridd_grid_content_background_color',

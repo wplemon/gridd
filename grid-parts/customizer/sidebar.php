@@ -52,7 +52,7 @@ function gridd_sidebar_customizer_options( $id ) {
 		]
 	);
 
-	Customizer::add_field(
+	new \Kirki\Field\Color(
 		[
 			'type'      => 'color',
 			'settings'  => "gridd_grid_sidebar_{$id}_background_color",

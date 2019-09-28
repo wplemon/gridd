@@ -87,7 +87,7 @@ new \Kirki\Field\Dimension(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Color(
 	[
 		'type'        => 'color',
 		'settings'    => 'gridd_grid_footer_background_color',
@@ -137,7 +137,7 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Color(
 	[
 		'type'            => 'color',
 		'settings'        => 'gridd_grid_footer_border_top_color',
