@@ -12,11 +12,12 @@ use Gridd\Customizer\Sanitize;
 $sanitization = new Sanitize();
 
 // Add section.
-Customizer::add_outer_section(
+new \Kirki\Section(
 	'gridd_grid_part_details_footer_copyright',
 	[
 		/* translators: The grid-part label. */
 		'title' => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Copyright Area', 'gridd' ) ),
+		'type'  => 'kirki-outer',
 	]
 );
 

@@ -30,11 +30,12 @@ function gridd_sidebar_customizer_options( $id ) {
 	/* translators: The number of the widget area. */
 	$label = get_theme_mod( "gridd_grid_widget_area_{$id}_name", sprintf( esc_html__( 'Widget Area %d', 'gridd' ), intval( $id ) ) );
 
-	Customizer::add_outer_section(
+	new \Kirki\Section(
 		"gridd_grid_part_details_sidebar_$id",
 		[
 			/* translators: The grid-part label. */
 			'title' => sprintf( esc_html__( '%s Advanced Options', 'gridd' ), $label ),
+			'type'  => 'kirki-outer',
 		]
 	);
 

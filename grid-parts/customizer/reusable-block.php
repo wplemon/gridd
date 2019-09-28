@@ -41,7 +41,7 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 	/**
 	 * Add Customizer Sections.
 	 */
-	Customizer::add_outer_section(
+	new \Kirki\Section(
 		"gridd_grid_part_details_reusable_block_$id",
 		[
 			'title' => sprintf(
@@ -50,6 +50,7 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 				/* translators: The reusable block number. */
 				sprintf( esc_html__( 'Reusable Block %d', 'gridd' ), absint( $id ) )
 			),
+			'type'  => 'kirki-outer',
 		]
 	);
 

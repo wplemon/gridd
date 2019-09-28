@@ -41,7 +41,7 @@ function gridd_nav_customizer_options( $id ) {
 	/**
 	 * Add Customizer Sections.
 	 */
-	Customizer::add_outer_section(
+	new \Kirki\Section(
 		"gridd_grid_part_details_nav_$id",
 		[
 			'title' => sprintf(
@@ -50,6 +50,7 @@ function gridd_nav_customizer_options( $id ) {
 				/* translators: The navigation number. */
 				sprintf( esc_html__( 'Navigation %d', 'gridd' ), absint( $id ) )
 			),
+			'type'  => 'kirki-outer',
 		]
 	);
 

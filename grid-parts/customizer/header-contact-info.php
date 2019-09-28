@@ -11,11 +11,12 @@ use Gridd\Customizer\Sanitize;
 
 $sanitization = new Sanitize();
 
-Customizer::add_outer_section(
+new \Kirki\Section(
 	'gridd_grid_part_details_header_contact_info',
 	[
 		/* translators: The grid-part label. */
 		'title' => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Header Contact Info', 'gridd' ) ),
+		'type'  => 'kirki-outer',
 	]
 );
 

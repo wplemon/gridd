@@ -8,11 +8,12 @@
 use Gridd\Grid_Part\Header;
 use Gridd\Customizer;
 
-Customizer::add_outer_section(
+new \Kirki\Section(
 	'gridd_grid_part_details_header_search',
 	[
 		/* translators: The grid-part label. */
 		'title' => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Header Search', 'gridd' ) ),
+		'type'  => 'kirki-outer',
 	]
 );
 

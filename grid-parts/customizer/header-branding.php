@@ -57,11 +57,12 @@ add_action(
 	}
 );
 
-Customizer::add_outer_section(
+new \Kirki\Section(
 	'gridd_grid_part_details_header_branding',
 	[
 		/* translators: The grid-part label. */
 		'title' => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Site Branding', 'gridd' ) ),
+		'type'  => 'kirki-outer',
 	]
 );
 
