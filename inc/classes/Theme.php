@@ -131,6 +131,7 @@ class Theme {
 		add_filter( 'body_class', [ $this, 'body_class' ] );
 		add_action( 'after_setup_theme', [ $this, 'setup' ] );
 		add_action( 'after_setup_theme', [ $this, 'content_width' ], 0 );
+		add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_block_editor_assets' ], 1, 1 );
 	}
 
 	/**
@@ -541,6 +542,17 @@ class Theme {
 			echo ( $i ) ? ' ' : '';
 			echo esc_html( $key ) . '="' . esc_attr( $value ) . '"';
 		}
+	}
+
+	/**
+	 * Enqueue extra assets for the editor.
+	 *
+	 * @access public
+	 * @since 1.0.19
+	 * @return void
+	 */
+	public function enqueue_block_editor_assets() {
+		wp_enqueue_script( 'gridd-block-editor-script', get_theme_file_uri( '/assets/js/editor-script-block.js' ), array( 'wp-blocks', 'wp-dom' ), GRIDD_VERSION, true );
 	}
 }
 
