@@ -263,21 +263,6 @@ class Scripts {
 			$style->add_file( get_theme_file_path( 'assets/css/core/can-edit-post.min.css' ) );
 		}
 
-		$style->add_vars(
-			[
-				'--ts'     => get_theme_mod( 'gridd_type_scale', 1.26 ),
-				'--tc'     => get_theme_mod( 'gridd_text_color', '#000000' ),
-				'--lc'     => get_theme_mod( 'gridd_links_color', '#0f5e97' ),
-				'--fs'     => get_theme_mod( 'gridd_body_font_size', 18 ),
-				'--tr'     => get_theme_mod( 'gridd_fluid_typography_ratio', .25 ),
-				'--lch'    => get_theme_mod( 'gridd_links_hover_color', '#541cfc' ),
-				'--mw'     => get_theme_mod( 'gridd_grid_max_width', '' ),
-				'--c-mw'   => get_theme_mod( 'gridd_grid_content_max_width', '45em' ),
-				'--edd-gg' => get_theme_mod( 'gridd_edd_archive_grid_gap', 1.5 ),
-				'--lc'     => get_theme_mod( 'gridd_links_color', '#0f5e97' ),
-			]
-		);
-
 		$style->the_css( 'gridd-inline-css-main-styles' );
 	}
 

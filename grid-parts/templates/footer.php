@@ -37,16 +37,6 @@ if ( get_theme_mod( 'gridd_grid_part_details_footer_parts_background_override', 
 	$style->add_string( '.gridd-tp.gridd-tp-footer .gridd-tp,.gridd-tp.gridd-tp-footer .gridd-tp inner,.site-info{background:none !important;}' );
 }
 
-// Add css-variables to be replaced.
-$style->add_vars(
-	[
-		'--ft-bg'    => get_theme_mod( 'gridd_grid_footer_background_color', '#ffffff' ),
-		'--ft-bt-w'  => get_theme_mod( 'gridd_grid_footer_border_top_width', 1 ),
-		'--ft-bt-cl' => get_theme_mod( 'gridd_grid_footer_border_top_color', 'rgba(0,0,0,.1)' ),
-		'--ft-mw'    => get_theme_mod( 'gridd_grid_footer_max_width', '' ),
-	]
-);
-
 $attrs = [
 	'class' => 'gridd-tp gridd-tp-footer',
 	'role'  => 'contentinfo',

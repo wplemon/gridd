@@ -21,17 +21,6 @@ $icons = gridd_social_icons_svg();
 // Init Style class.
 $style = Style::get_instance( 'grid-part/footer/social-media' );
 
-// Add css-vars to be replaced.
-$style->add_vars(
-	[
-		'--ft-si-bg' => get_theme_mod( 'gridd_grid_part_details_footer_social_icons_background_color', '#fff' ),
-		'--ft-si-ta' => get_theme_mod( 'gridd_grid_part_details_footer_social_icons_icons_text_align', 'flex-end' ),
-		'--ft-si-sz' => get_theme_mod( 'gridd_grid_part_details_footer_social_icons_size', '1' ),
-		'--ft-si-pd' => get_theme_mod( 'gridd_grid_part_details_footer_social_icons_padding', '0.5' ),
-		'--ft-si-cl' => get_theme_mod( 'gridd_grid_part_details_footer_social_icons_icons_color', '#000' ),
-	]
-);
-
 // Add stylesheet.
 $style->add_file( get_theme_file_path( 'grid-parts/styles/footer/styles-social-icons.min.css' ) );
 ?>

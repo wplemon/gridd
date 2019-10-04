@@ -114,17 +114,6 @@ class WooCommerce {
 		if ( AMP::is_active() ) {
 			$style->add_file( get_theme_file_path( '/assets/css/plugins/amp-woo.min.css' ) );
 		}
-
-		$style->add_vars(
-			[
-				'--woo-cpmw' => get_theme_mod( 'gridd_woocommerce_product_catalog_min_width', '250px' ),
-				'--ts'       => get_theme_mod( 'gridd_type_scale', 1.26 ),
-				'--tc'       => get_theme_mod( 'gridd_text_color', '#000000' ),
-				'--lc'       => get_theme_mod( 'gridd_links_color', '#005ea5' ),
-				'--lch'      => get_theme_mod( 'gridd_links_hover_color', '#2900a3' ),
-			]
-		);
-
 		$style->the_css( 'gridd-inline-css-wc' );
 	}
 

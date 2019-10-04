@@ -12,19 +12,6 @@ use Gridd\Theme;
 $style = Style::get_instance( 'grid-part/header/branding' );
 $style->add_string( ':root{--header-textcolor:#' . esc_attr( trim( get_header_textcolor(), '#' ) ) . ';}' );
 $style->add_file( get_theme_file_path( 'grid-parts/styles/header/styles-branding.min.css' ) );
-$style->add_vars(
-	[
-		'--h-br-bg'          => get_theme_mod( 'gridd_grid_header_branding_background_color', '#fff' ),
-		'--h-br-pd'          => get_theme_mod( 'gridd_grid_header_branding_padding', '0' ),
-		'--h-br-ha'          => get_theme_mod( 'gridd_grid_header_branding_horizontal_align', 'left' ),
-		'--h-br-va'          => get_theme_mod( 'gridd_grid_header_branding_vertical_align', 'center' ),
-		'--h-br-epd'         => get_theme_mod( 'gridd_branding_inline_spacing', '0.5' ),
-		'--h-br-tls'         => get_theme_mod( 'gridd_branding_tagline_size', '1' ),
-		'--header-textcolor' => '#' . str_replace( '#', '', get_header_textcolor() ),
-		'--h-br-sts'         => get_theme_mod( 'gridd_branding_sitetitle_size', '2' ),
-		'--h-br-mw'          => get_theme_mod( 'gridd_logo_max_width', '100' ),
-	]
-);
 $style->the_css( 'gridd-inline-css-header-branding' );
 
 $wrapper_class  = 'gridd-tp gridd-tp-header_branding';
