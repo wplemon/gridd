@@ -92,10 +92,6 @@
   color: inherit;
 }
 
-.is-style-squared .wp-block-button__link {
-  border-radius: 0;
-}
-
 .is-style-outline .wp-block-button__link {
   background-color: transparent;
   border: 2px solid;
@@ -113,6 +109,7 @@
   position: relative;
   background-color: var(--tc);
   color: var(--c-bg);
+  border-radius: 4px;
 }
 .wp-block-button__link:active, .wp-block-button__link:hover, .wp-block-button__link:focus {
   outline: none;
@@ -132,7 +129,7 @@
   position: absolute;
   width: 1.5em;
   height: calc(100% - .5em);
-  border-radius: 50%;
+  border-radius: 3px;
   top: 0.25em;
   opacity: 0.3;
 }
