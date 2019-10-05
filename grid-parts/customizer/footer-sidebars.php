@@ -47,8 +47,13 @@ function gridd_add_footer_widget_area_options( $id ) {
 			'label'     => esc_html__( 'Background Color', 'gridd' ),
 			'section'   => "gridd_grid_part_details_footer_sidebar_$id",
 			'default'   => '#ffffff',
-			'transport' => 'postMessage',
-			'css_vars'  => "--ft-wa-$id-bg",
+			'transport' => 'auto',
+			'output'    => [
+				[
+					'element'  => ".gridd-tp-footer_sidebar_$id",
+					'property' => '--bg',
+				],
+			],
 			'choices'   => [
 				'alpha' => true,
 			],
@@ -63,8 +68,13 @@ function gridd_add_footer_widget_area_options( $id ) {
 			'label'             => esc_html__( 'Text Color', 'gridd' ),
 			'section'           => "gridd_grid_part_details_footer_sidebar_$id",
 			'default'           => '#000000',
-			'transport'         => 'postMessage',
-			'css_vars'          => "--ft-wa-$id-cl",
+			'transport'         => 'auto',
+			'output'            => [
+				[
+					'element'  => ".gridd-tp-footer_sidebar_$id",
+					'property' => '--cl',
+				],
+			],
 			'choices'           => [
 				'setting' => "gridd_grid_footer_sidebar_{$id}_bg_color",
 			],
@@ -80,8 +90,13 @@ function gridd_add_footer_widget_area_options( $id ) {
 			'label'             => esc_html__( 'Links Color', 'gridd' ),
 			'section'           => "gridd_grid_part_details_footer_sidebar_$id",
 			'default'           => '#0f5e97',
-			'transport'         => 'postMessage',
-			'css_vars'          => "--ft-wa-$id-lc",
+			'transport'         => 'auto',
+			'output'            => [
+				[
+					'element'  => ".gridd-tp-footer_sidebar_$id",
+					'property' => '--lc',
+				],
+			],
 			'priority'          => 20,
 			'choices'           => [
 				'backgroundColor' => "gridd_grid_footer_sidebar_{$id}_bg_color",

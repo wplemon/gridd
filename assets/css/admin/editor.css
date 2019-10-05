@@ -4,16 +4,16 @@
   --ts: var(--gridd-typo-scale, 1.26);
   --tr: var(--gridd-typo-ratio, 0.25);
   --fs-tr: calc(var(--fs-px) + var(--tr) * 1vw);
-  --gridd-content-max-width: var(--c-mw);
-  --gridd-content-max-width-calculated: var(--c-mw-c);
-  --gridd-text-color: var(--tc);
+  --gridd-content-max-width: var(--mw);
+  --gridd-content-max-width-calculated: var(--mw-c);
+  --gridd-text-color: var(--cl);
   --gridd-links-color: var(--lc);
   --lch: var(--lch);
-  --gridd-content-bg: var(--c-bg);
-  --gridd-content-padding-left: var(--c-pd-l);
-  --gridd-content-padding-right: var(--c-pd-r);
-  --gridd-content-padding-top: var(--c-pd-t);
-  --gridd-content-padding-bottom: var(--c-pd-b);
+  --gridd-content-bg: var(--bg);
+  --gridd-content-padding-left: var(--pd-h);
+  --gridd-content-padding-right: var(--pd-h);
+  --gridd-content-padding-top: var(--pd-t);
+  --gridd-content-padding-bottom: var(--pd-b);
   --gridd-grid-max-width: var(--mw);
   --fs-4x-ts-tr: calc(var(--ts) * var(--ts) * var(--ts) * var(--ts) * var(--fs-tr));
   --fs-3x-ts-tr: calc(var(--ts) * var(--ts) * var(--ts) * var(--fs-tr));
@@ -28,14 +28,14 @@
 
 .editor-post-title__block .editor-post-title__input {
   font-size: var(--fs-4x-ts-tr);
-  color: var(--tc, #000);
+  color: var(--cl, #000);
 }
 
 .block-editor .edit-post-visual-editor.editor-styles-wrapper,
 .edit-post-visual-editor.editor-styles-wrapper {
   font-size: var(--fs-tr);
-  color: var(--tc, #000);
-  background-color: var(--c-bg, #fff);
+  color: var(--cl, #000);
+  background-color: var(--bg, #fff);
 }
 .block-editor .edit-post-visual-editor.editor-styles-wrapper p,
 .edit-post-visual-editor.editor-styles-wrapper p {
@@ -83,7 +83,6 @@
 .edit-post-visual-editor.editor-styles-wrapper a:visited {
   color: var(--lc, #0f5e97);
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
-  transition: all 100ms ease-in-out;
 }
 .block-editor .edit-post-visual-editor.editor-styles-wrapper a:active, .block-editor .edit-post-visual-editor.editor-styles-wrapper a:focus, .block-editor .edit-post-visual-editor.editor-styles-wrapper a:hover,
 .block-editor .edit-post-visual-editor.editor-styles-wrapper a:visited:active,
@@ -110,12 +109,12 @@
 .edit-post-visual-editor.editor-styles-wrapper .wp-block-image figcaption {
   max-width: 100%;
   width: 100%;
-  color: var(--tc, #000);
+  color: var(--cl, #000);
   font-size: var(--fs-1d-ts-tr);
 }
 .block-editor .edit-post-visual-editor.editor-styles-wrapper .wp-block-quote__citation,
 .edit-post-visual-editor.editor-styles-wrapper .wp-block-quote__citation {
-  color: var(--tc, #000);
+  color: var(--cl, #000);
   font-size: var(--fs-1d-ts-tr);
 }
 .block-editor .edit-post-visual-editor.editor-styles-wrapper .wp-block-quote:not(.is-large):not(.is-style-large),
@@ -126,7 +125,7 @@
 .block-editor .edit-post-visual-editor.editor-styles-wrapper .wp-block-pullquote,
 .edit-post-visual-editor.editor-styles-wrapper .wp-block-quote,
 .edit-post-visual-editor.editor-styles-wrapper .wp-block-pullquote {
-  color: var(--tc, #000);
+  color: var(--cl, #000);
   border-top-color: currentColor;
   border-bottom-color: currentColor;
   border-left-color: currentColor;
@@ -147,10 +146,10 @@
 }
 
 .wp-block:not([data-align=full]) {
-  max-width: var(--c-mw-c, 700px);
+  max-width: var(--mw-c, 700px);
 }
 .wp-block[data-align=wide] {
-  max-width: calc(var(--c-mw-c, 700px) + 25%);
+  max-width: calc(var(--mw-c, 700px) + 25%);
 }
 
 /*# sourceMappingURL=editor.css.map */

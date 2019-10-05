@@ -1,7 +1,7 @@
 .gridd-tp-sidebar_ID {
-  background-color: var(--wa-ID-bg, #fff);
-  color: var(--wa-ID-cl, #000);
-  padding: var(--wa-ID-pd, 1em);
+  background-color: var(--bg, #fff);
+  color: var(--cl, #000);
+  padding: var(--pd, 1em);
 }
 .gridd-tp-sidebar_ID h1,
 .gridd-tp-sidebar_ID h2,
@@ -10,7 +10,7 @@
 .gridd-tp-sidebar_ID h5,
 .gridd-tp-sidebar_ID h6,
 .gridd-tp-sidebar_ID .widget-title {
-  color: var(--wa-ID-cl, #000);
+  color: var(--cl, #000);
 }
 .gridd-tp-sidebar_ID a,
 .gridd-tp-sidebar_ID a:hover,
@@ -18,10 +18,10 @@
 .gridd-tp-sidebar_ID a:visited:hover,
 .gridd-tp-sidebar_ID a:focus,
 .gridd-tp-sidebar_ID a:visited:focus {
-  color: var(--wa-ID-lc, #0f5e97);
+  color: var(--lc, #0f5e97);
 }
 .gridd-tp-sidebar_ID .widget {
-  margin-bottom: var(--wa-ID-mr, 1em);
+  margin-bottom: var(--mr, 1em);
 }
 
 /*# sourceMappingURL=styles.css.map */

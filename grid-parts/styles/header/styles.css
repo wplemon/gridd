@@ -1,17 +1,17 @@
-.gridd-tp-header.gridd-tp {
-  --h-bs-default: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+.gridd-tp-header {
+  --bs-default: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   display: flex;
   justify-content: center;
   overflow: visible;
   z-index: 1000;
-  background-color: var(--h-bg, #fff);
-  box-shadow: var(--h-bs, var(--h-bs-default));
+  background-color: var(--bg, #fff);
+  box-shadow: var(--bs, var(--bs-default));
 }
-.gridd-tp-header.gridd-tp > .inner {
+.gridd-tp-header > .inner {
   width: 100%;
-  max-width: var(--h-mw, 47em);
-  grid-gap: var(--h-gg, 0);
-  padding: var(--h-pd, 0 1em);
+  max-width: var(--mw, 47em);
+  grid-gap: var(--gg, 0);
+  padding: var(--pd, 0 1em);
 }
 
 /*# sourceMappingURL=styles.css.map */

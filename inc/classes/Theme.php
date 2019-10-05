@@ -359,7 +359,7 @@ class Theme {
 		$gridd_content_width = 960;
 
 		// Get the width from theme_mod.
-		$max_width = get_theme_mod( 'gridd_grid_content_max_width', '45em' );
+		$max_width = get_theme_mod( 'content_max_width', '45rem' );
 
 		if ( false === strpos( $max_width, 'calc' ) ) {
 

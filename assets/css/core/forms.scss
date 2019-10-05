@@ -53,7 +53,7 @@ textarea {
 			border-radius: 0;
 			// margin-left: -1em;
 			// padding-left: 1.5em;
-			transition: all 200ms;
+			// transition: all 200ms;
 			opacity: .7;
 			width: 100%;
 
@@ -80,7 +80,7 @@ textarea {
 		float: left;
 		opacity: .5;
 		fill: currentColor;
-		transition: all 400ms;
+		// transition: all 400ms;
 
 		.rtl & {
 			float: right;

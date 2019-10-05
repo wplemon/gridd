@@ -9,7 +9,7 @@
 			background-color: currentColor;
             margin-top: calc(2px - .25em);
         }
-        
+
         .ui-slider-range {
             height: .5em;
         }
@@ -19,7 +19,7 @@
 		.ui-widget-content {
 			background-color: currentColor;
 			opacity: .5;
-			transition: opacity 200ms;
+			// transition: opacity 200ms;
 
 			&:hover {
 				opacity: 1;

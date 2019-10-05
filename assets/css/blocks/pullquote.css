@@ -129,7 +129,7 @@
   color: currentColor;
 }
 .wp-block-pullquote.alignleft, .wp-block-pullquote.alignright {
-  max-width: calc(var(--c-mw-c, 700px) / 2);
+  max-width: calc(var(--mw-c, 700px) / 2);
 }
 .wp-block-pullquote.alignleft p, .wp-block-pullquote.alignright p {
   font-size: var(--fs-1x-ts-tr);

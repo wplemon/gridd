@@ -1,9 +1,8 @@
 a,
 a:visited {
-  text-decoration: none;
-  border-bottom: 1px solid;
   color: var(--lc, #0f5e97);
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+  text-decoration-thickness: 2px;
 }
 a:hover, a:active, a:focus,
 a:visited:hover,
@@ -11,16 +10,16 @@ a:visited:active,
 a:visited:focus {
   color: var(--lch, #541cfc);
 }
-a:hover,
-a:visited:hover {
-  box-shadow: 0 1px;
-}
 a:focus, a:active,
 a:visited:focus,
 a:visited:active {
   outline: 2px solid;
   outline-offset: 2px;
   border-bottom-color: transparent;
+}
+a:focus,
+a:visited:focus {
+  outline-width: 1px;
 }
 a.post-thumbnail,
 a:visited.post-thumbnail {

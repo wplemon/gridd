@@ -1,7 +1,6 @@
 .edit-link {
   opacity: 0.6;
   line-height: 1;
-  transition: opacity 200ms;
 }
 .edit-link a {
   display: inline-block;

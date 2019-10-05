@@ -8,8 +8,8 @@
 }
 
 .elementor-section-full_width {
-  margin-left: calc(0px - var(--c-pd-l, 20px));
-  margin-right: calc(0px - var(--c-pd-r, 20px));
+  margin-left: calc(0px - var(--pd-h, 1rem));
+  margin-right: calc(0px - var(--pd-h, 1rem));
 }
 
 /*# sourceMappingURL=elementor.css.map */

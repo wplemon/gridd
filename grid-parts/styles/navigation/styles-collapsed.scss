@@ -9,7 +9,7 @@
 		position: absolute;
 		bottom: 0;
 		transform: translateY(100%);
-		background-color: var(--nv-ID-bg, #fff);
+		background-color: var(--bg, #fff);
 		box-shadow: 0 0 5px 0 rgba(0, 0, 0, .16);
 		width: 15em;
 		max-width: 350px;
@@ -33,12 +33,12 @@
 		}
 
 		&.gridd-nav-toggle-boxed {
-			background-color: var(--nv-ID-bg, #fff);
-			color: var(--nv-ID-cl, #000);
+			background-color: var(--bg, #fff);
+			color: var(--cl, #000);
 			border-color: currentColor;
 
 			svg {
-				fill: var(--nv-ID-cl, #000);
+				fill: var(--cl, #000);
 			}
 		}
 
@@ -87,10 +87,10 @@
 			&:focus,
 			&.focus,
 			&.toggled-on {
-				color: var(--nv-ID-acl, #0f5e97);
+				color: var(--acl, #0f5e97);
 
 				svg {
-					fill: var(--nv-ID-acl, #0f5e97);
+					fill: var(--acl, #0f5e97);
 				}
 			}
 		}

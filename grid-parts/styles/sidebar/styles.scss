@@ -1,7 +1,7 @@
 .gridd-tp-sidebar_ID {
-	background-color: var(--wa-ID-bg, #fff);
-	color: var(--wa-ID-cl, #000);
-	padding: var(--wa-ID-pd, 1em);
+	background-color: var(--bg, #fff);
+	color: var(--cl, #000);
+	padding: var(--pd, 1em);
 
 	h1,
 	h2,
@@ -10,7 +10,7 @@
 	h5,
 	h6,
 	.widget-title {
-		color: var(--wa-ID-cl, #000);
+		color: var(--cl, #000);
 	}
 
 	a,
@@ -19,10 +19,10 @@
 	a:visited:hover,
 	a:focus,
 	a:visited:focus {
-		color: var(--wa-ID-lc, #0f5e97);
+		color: var(--lc, #0f5e97);
 	}
 
 	.widget {
-		margin-bottom: var(--wa-ID-mr, 1em);
+		margin-bottom: var(--mr, 1em);
 	}
 }

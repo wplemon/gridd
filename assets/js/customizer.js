@@ -109,5 +109,14 @@
 		 * @since 1.1.12
 		 */
 		jQuery( '#customize-control-header_image .customize-control-description' ).html( griddTemplatePreviewScript.l10n.headerImageDescription );
+
+		/**
+		 * Hack to hide the site-title & tagline on initial load.
+		 *
+		 * @since 1.1.19
+		 */
+		setTimeout( function() {
+			// wp.customize( 'header_textcolor' ).set( wp.customize( 'header_textcolor' ).get() );
+		}, 100 );
 	});
 }() );

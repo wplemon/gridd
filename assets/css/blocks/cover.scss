@@ -14,7 +14,7 @@
 	h2,
 	.wp-block-cover-image-text,
 	.wp-block-cover-text {
-		max-width: var(--c-mw-c, 700px);
+		max-width: var(--mw-c, 700px);
 		padding: 1em;
 	}
 
@@ -24,6 +24,6 @@
 
 	&.alignleft,
 	&.alignright {
-		max-width: calc(var(--c-mw-c, 700px) / 2);
+		max-width: calc(var(--mw-c, 700px) / 2);
 	}
 }

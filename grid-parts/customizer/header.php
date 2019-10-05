@@ -75,13 +75,18 @@ Customizer::add_field(
 Customizer::add_field(
 	[
 		'type'      => 'dimension',
-		'settings'  => 'gridd_grid_header_max_width',
+		'settings'  => 'header_max_width',
 		'label'     => esc_html__( 'Header Maximum Width', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_header',
-		'default'   => '45em',
+		'default'   => '100%',
 		'priority'  => 20,
-		'css_vars'  => '--h-mw',
-		'transport' => 'postMessage',
+		'transport' => 'auto',
+		'output'    => [
+			[
+				'element'  => '.gridd-tp-header',
+				'property' => '--mw',
+			],
+		],
 	]
 );
 
@@ -92,9 +97,14 @@ Customizer::add_field(
 		'label'     => esc_html__( 'Header Padding', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_header',
 		'default'   => '0',
-		'priority'  => 20,
-		'css_vars'  => '--h-pd',
-		'transport' => 'postMessage',
+		'priority'  => 30,
+		'transport' => 'auto',
+		'output'    => [
+			[
+				'element'  => '.gridd-tp-header',
+				'property' => '--pd',
+			],
+		],
 	]
 );
 
@@ -110,9 +120,14 @@ Customizer::add_field(
 		),
 		'section'     => 'gridd_grid_part_details_header',
 		'default'     => '0',
-		'priority'    => 30,
-		'css_vars'    => '--h-gg',
-		'transport'   => 'postMessage',
+		'priority'    => 40,
+		'transport'   => 'auto',
+		'output'      => [
+			[
+				'element'  => '.gridd-tp-header',
+				'property' => '--gg',
+			],
+		],
 	]
 );
 
@@ -128,9 +143,14 @@ Customizer::add_field(
 		),
 		'section'     => 'gridd_grid_part_details_header',
 		'default'     => '#ffffff',
-		'transport'   => 'postMessage',
-		'priority'    => 40,
-		'css_vars'    => '--h-bg',
+		'priority'    => 50,
+		'transport'   => 'auto',
+		'output'      => [
+			[
+				'element'  => '.gridd-tp-header',
+				'property' => '--bg',
+			],
+		],
 		'choices'     => [
 			'alpha' => true,
 		],
@@ -146,7 +166,7 @@ Customizer::add_field(
 		'description' => esc_html__( 'Enable this option to force-override the background color of all grid-parts in your header.', 'gridd' ),
 		'section'     => 'gridd_grid_part_details_header',
 		'default'     => false,
-		'priority'    => 82,
+		'priority'    => 60,
 	]
 );
 
@@ -159,8 +179,14 @@ Customizer::add_field(
 		'section'           => 'gridd_grid_part_details_header',
 		'default'           => '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
 		'transport'         => 'postMessage',
-		'css_vars'          => '--h-bs',
-		'priority'          => 50,
+		'transport'         => 'auto',
+		'output'            => [
+			[
+				'element'  => '.gridd-tp-header',
+				'property' => '--bs',
+			],
+		],
+		'priority'          => 70,
 		'choices'           => [
 			'none' => esc_html__( 'None', 'gridd' ),
 			'0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)' => esc_html__( 'Extra Light', 'gridd' ),
@@ -182,7 +208,7 @@ Customizer::add_field(
 		'section'     => 'gridd_grid_part_details_header',
 		'default'     => false,
 		'transport'   => 'refresh',
-		'priority'    => 60,
+		'priority'    => 80,
 	]
 );
 
@@ -195,7 +221,7 @@ Customizer::add_field(
 		'section'         => 'gridd_grid_part_details_header',
 		'default'         => false,
 		'transport'       => 'refresh',
-		'priority'        => 61,
+		'priority'        => 90,
 		'active_callback' => [
 			[
 				'setting'  => 'gridd_header_sticky',

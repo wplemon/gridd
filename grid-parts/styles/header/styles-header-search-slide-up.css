@@ -4,19 +4,26 @@
   display: block;
   width: 100%;
   height: 100%;
-  padding: 0 var(--h-s-pd-l, 1em) 0 var(--h-s-pd-r, 1em);
+  padding: 0 var(--pd, 1rem) 0 var(--pd, 1rem);
   border-radius: 0;
 }
 .gridd-header-search .gridd-toggle svg,
 .gridd-header-search .gridd-toggle path {
-  fill: var(--h-s-cl, #000000);
+  fill: var(--cl, #000000);
 }
 .gridd-header-search .gridd-toggle[aria-expanded=true] + .header-searchform-wrapper {
   visibility: visible;
   margin-bottom: 0;
 }
-.gridd-header-search .gridd-toggle:active {
+.gridd-header-search .gridd-toggle:hover, .gridd-header-search .gridd-toggle:focus, .gridd-header-search .gridd-toggle:active {
+  background-color: var(--cl);
   box-shadow: none;
+}
+.gridd-header-search .gridd-toggle:hover svg,
+.gridd-header-search .gridd-toggle:hover path, .gridd-header-search .gridd-toggle:focus svg,
+.gridd-header-search .gridd-toggle:focus path, .gridd-header-search .gridd-toggle:active svg,
+.gridd-header-search .gridd-toggle:active path {
+  fill: var(--bg);
 }
 
 .header-searchform-wrapper {
@@ -28,7 +35,7 @@
   transition: margin-bottom 100ms ease-in;
   left: 0;
   width: 100%;
-  background-color: var(--h-s-bg, #ffffff);
+  background-color: var(--bg, #ffffff);
   padding: calc(1.5em + 54px) 1.5em;
   z-index: 99999;
 }

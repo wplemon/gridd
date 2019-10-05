@@ -115,7 +115,7 @@ Customizer::add_field(
 		'label'       => esc_html__( 'Site Maximum Width', 'gridd' ),
 		'description' => esc_html__( 'Set the value to something other than 100% to use a boxed layout.', 'gridd' ),
 		'section'     => 'gridd_grid',
-		'default'     => '',
+		'default'     => '100%',
 		'priority'    => 40,
 		'transport'   => 'postMessage',
 		'css_vars'    => '--mw',

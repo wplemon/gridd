@@ -82,7 +82,7 @@
 
 					&.active,
 					&:not(.active) {
-						background: var(--c-bg);
+						background: var(--bg);
 
 						a {
 							color: currentColor;
@@ -134,7 +134,7 @@
 		padding: .5em 1em;
 		line-height: 1.5;
 		background-color: var(--lc, #0f5e97);
-		color: var(--c-bg, #fff);
+		color: var(--bg, #fff);
 	}
 }
 

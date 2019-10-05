@@ -15,7 +15,7 @@ textarea {
 
 body {
   font-size: var(--fs-tr);
-  color: var(--tc, #000);
+  color: var(--cl, #000);
   font-family: var(--system-fonts);
   font-weight: 400;
 }

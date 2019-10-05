@@ -1,5 +1,5 @@
 .gridd-tp-sidebar_ID .widget_nav_menu {
-  background-color: var(--wa-ID-bg, #fff);
+  background-color: var(--bg, #fff);
   overflow: visible;
   font-size: 1em;
 }
@@ -13,7 +13,7 @@
   justify-content: flex-start;
 }
 .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation ul {
-  background-color: var(--wa-ID-bg, #fff);
+  background-color: var(--bg, #fff);
 }
 .gridd-tp-sidebar_ID .widget_nav_menu li.current-menu-item > a,
 .gridd-tp-sidebar_ID .widget_nav_menu li.current-menu-item > a:visited, .gridd-tp-sidebar_ID .widget_nav_menu li.current-page-item > a,
@@ -25,18 +25,18 @@
 .gridd-tp-sidebar_ID .widget_nav_menu li.current-page-parent > a:visited, .gridd-tp-sidebar_ID .widget_nav_menu li.current_page_parent > a,
 .gridd-tp-sidebar_ID .widget_nav_menu li.current_page_parent > a:visited, .gridd-tp-sidebar_ID .widget_nav_menu li.current_page_ancestor > a,
 .gridd-tp-sidebar_ID .widget_nav_menu li.current_page_ancestor > a:visited {
-  color: var(--wa-ID-bg, #fff);
+  color: var(--bg, #fff);
   border-bottom: 2px solid;
 }
 .gridd-tp-sidebar_ID .widget_nav_menu li.current-menu-item .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu li.current-page-item .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu li.current_page_item .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu li.current-page-ancestor .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu li.current-menu-ancestor .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu li.current-menu-parent .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu li.current-page-parent .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu li.current_page_parent .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu li.current_page_ancestor .gridd-toggle {
-  color: var(--wa-ID-bg, #fff);
+  color: var(--bg, #fff);
 }
 .gridd-tp-sidebar_ID .widget_nav_menu li.current-menu-item .gridd-toggle svg, .gridd-tp-sidebar_ID .widget_nav_menu li.current-page-item .gridd-toggle svg, .gridd-tp-sidebar_ID .widget_nav_menu li.current_page_item .gridd-toggle svg, .gridd-tp-sidebar_ID .widget_nav_menu li.current-page-ancestor .gridd-toggle svg, .gridd-tp-sidebar_ID .widget_nav_menu li.current-menu-ancestor .gridd-toggle svg, .gridd-tp-sidebar_ID .widget_nav_menu li.current-menu-parent .gridd-toggle svg, .gridd-tp-sidebar_ID .widget_nav_menu li.current-page-parent .gridd-toggle svg, .gridd-tp-sidebar_ID .widget_nav_menu li.current_page_parent .gridd-toggle svg, .gridd-tp-sidebar_ID .widget_nav_menu li.current_page_ancestor .gridd-toggle svg {
-  fill: var(--wa-ID-bg, #fff);
+  fill: var(--bg, #fff);
 }
 .gridd-tp-sidebar_ID .widget_nav_menu a,
 .gridd-tp-sidebar_ID .widget_nav_menu a:visited {
-  color: var(--wa-ID-cl, #000);
+  color: var(--cl, #000);
   border-bottom: 2px solid transparent;
 }
 .gridd-tp-sidebar_ID .widget_nav_menu a:hover, .gridd-tp-sidebar_ID .widget_nav_menu a:focus, .gridd-tp-sidebar_ID .widget_nav_menu a.focus, .gridd-tp-sidebar_ID .widget_nav_menu a.toggled-on,
@@ -44,43 +44,43 @@
 .gridd-tp-sidebar_ID .widget_nav_menu a:visited:focus,
 .gridd-tp-sidebar_ID .widget_nav_menu a:visited.focus,
 .gridd-tp-sidebar_ID .widget_nav_menu a:visited.toggled-on {
-  color: var(--wa-ID-bg, #fff);
-  border-bottom-color: var(--wa-ID-bg, #fff);
+  color: var(--bg, #fff);
+  border-bottom-color: var(--bg, #fff);
 }
 .gridd-tp-sidebar_ID .widget_nav_menu a:hover ~ .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu a:focus ~ .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu a.focus ~ .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu a.toggled-on ~ .gridd-toggle,
 .gridd-tp-sidebar_ID .widget_nav_menu a:visited:hover ~ .gridd-toggle,
 .gridd-tp-sidebar_ID .widget_nav_menu a:visited:focus ~ .gridd-toggle,
 .gridd-tp-sidebar_ID .widget_nav_menu a:visited.focus ~ .gridd-toggle,
 .gridd-tp-sidebar_ID .widget_nav_menu a:visited.toggled-on ~ .gridd-toggle {
-  border-bottom-color: var(--wa-ID-bg, #fff);
-  color: var(--wa-ID-bg, #fff);
+  border-bottom-color: var(--bg, #fff);
+  color: var(--bg, #fff);
 }
 .gridd-tp-sidebar_ID .widget_nav_menu a:hover ~ .gridd-toggle svg, .gridd-tp-sidebar_ID .widget_nav_menu a:focus ~ .gridd-toggle svg, .gridd-tp-sidebar_ID .widget_nav_menu a.focus ~ .gridd-toggle svg, .gridd-tp-sidebar_ID .widget_nav_menu a.toggled-on ~ .gridd-toggle svg,
 .gridd-tp-sidebar_ID .widget_nav_menu a:visited:hover ~ .gridd-toggle svg,
 .gridd-tp-sidebar_ID .widget_nav_menu a:visited:focus ~ .gridd-toggle svg,
 .gridd-tp-sidebar_ID .widget_nav_menu a:visited.focus ~ .gridd-toggle svg,
 .gridd-tp-sidebar_ID .widget_nav_menu a:visited.toggled-on ~ .gridd-toggle svg {
-  fill: var(--wa-ID-bg, #fff);
+  fill: var(--bg, #fff);
 }
 .gridd-tp-sidebar_ID .widget_nav_menu .gridd-toggle {
-  color: var(--wa-ID-cl, #000);
+  color: var(--cl, #000);
   border-bottom: 2px solid transparent;
 }
 .gridd-tp-sidebar_ID .widget_nav_menu .gridd-toggle svg {
-  fill: var(--wa-ID-cl, #000);
+  fill: var(--cl, #000);
 }
 .gridd-tp-sidebar_ID .widget_nav_menu .gridd-toggle:hover, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-toggle:focus, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-toggle.focus, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-toggle.toggled-on {
-  color: var(--wa-ID-bg, #fff);
-  border-bottom-color: var(--wa-ID-bg, #fff);
+  color: var(--bg, #fff);
+  border-bottom-color: var(--bg, #fff);
 }
 .gridd-tp-sidebar_ID .widget_nav_menu .gridd-toggle:hover svg, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-toggle:focus svg, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-toggle.focus svg, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-toggle.toggled-on svg {
-  fill: var(--wa-ID-bg, #fff);
+  fill: var(--bg, #fff);
 }
 .gridd-tp-sidebar_ID .widget_nav_menu .gridd-toggle.toggled-on {
-  border-bottom-color: var(--wa-ID-bg, #fff);
+  border-bottom-color: var(--bg, #fff);
 }
 .gridd-tp-sidebar_ID .widget_nav_menu .gridd-toggle.toggled-on svg {
-  fill: var(--wa-ID-bg, #fff);
+  fill: var(--bg, #fff);
 }
 .gridd-tp-sidebar_ID .widget_nav_menu .gridd-toggle-navigation {
   display: none;
@@ -90,14 +90,14 @@
   align-items: flex-start;
 }
 .gridd-tp-sidebar_ID .widget_nav_menu ul.menu {
-  background-color: var(--wa-ID-bg, #fff);
+  background-color: var(--bg, #fff);
 }
 .gridd-tp-sidebar_ID .widget_nav_menu ul.menu > li > ul {
   font-size: var(--fs-1d-ts-tr);
 }
 .gridd-tp-sidebar_ID .widget_nav_menu ul.menu > li > ul a {
-  padding-left: calc(var(--nv-1-ipd) * var(--ts));
-  padding-right: calc(var(--nv-1-ipd) * var(--ts));
+  padding-left: calc(var(--pd) * var(--ts));
+  padding-right: calc(var(--pd) * var(--ts));
 }
 
 .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current-menu-ancestor .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current-menu-item .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current-menu-parent .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current-page-ancestor .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current-page-item .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current-page-parent .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current_page_ancestor .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current_page_item .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current_page_parent .gridd-toggle {

@@ -20,6 +20,28 @@ Customizer::add_outer_section(
 
 Customizer::add_field(
 	[
+		'type'      => 'color',
+		'settings'  => 'gridd_grid_breadcrumbs_background_color',
+		'label'     => esc_html__( 'Background Color', 'gridd' ),
+		'section'   => 'gridd_grid_part_details_breadcrumbs',
+		'default'   => '#ffffff',
+		'transport' => 'postMessage',
+		'transport' => 'auto',
+		'output'    => [
+			[
+				'element'  => '.gridd-tp-breadcrumbs',
+				'property' => '--bg',
+			],
+		],
+		'choices'   => [
+			'alpha' => true,
+		],
+		'priority' => 10,
+	]
+);
+
+Customizer::add_field(
+	[
 		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_breadcrumbs_padding',
 		'label'       => esc_html__( 'Padding', 'gridd' ),
@@ -35,8 +57,14 @@ Customizer::add_field(
 		),
 		'section'     => 'gridd_grid_part_details_breadcrumbs',
 		'default'     => '1em',
-		'transport'   => 'postMessage',
-		'css_vars'    => '--brd-pd',
+		'transport'   => 'auto',
+		'output'      => [
+			[
+				'element'  => '.gridd-tp-breadcrumbs',
+				'property' => '--pd',
+			],
+		],
+		'priority' => 20,
 	]
 );
 
@@ -46,24 +74,15 @@ Customizer::add_field(
 		'settings'  => 'gridd_grid_breadcrumbs_max_width',
 		'label'     => esc_html__( 'Breadcrumbs Maximum Width', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_breadcrumbs',
-		'default'   => '',
-		'css_vars'  => '--brd-mw',
-		'transport' => 'postMessage',
-	]
-);
-
-Customizer::add_field(
-	[
-		'type'      => 'color',
-		'settings'  => 'gridd_grid_breadcrumbs_background_color',
-		'label'     => esc_html__( 'Background Color', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_breadcrumbs',
-		'default'   => '#ffffff',
-		'transport' => 'postMessage',
-		'css_vars'  => '--brd-bg',
-		'choices'   => [
-			'alpha' => true,
+		'default'   => '100%',
+		'transport' => 'auto',
+		'output'    => [
+			[
+				'element'  => '.gridd-tp-breadcrumbs',
+				'property' => '--mw',
+			],
 		],
+		'priority' => 30,
 	]
 );
 
@@ -73,9 +92,14 @@ Customizer::add_field(
 		'settings'          => 'gridd_grid_breadcrumbs_color',
 		'label'             => esc_html__( 'Text Color', 'gridd' ),
 		'section'           => 'gridd_grid_part_details_breadcrumbs',
-		'css_vars'          => '--brd-cl',
 		'default'           => '#000000',
-		'transport'         => 'postMessage',
+		'transport'         => 'auto',
+		'output'            => [
+			[
+				'element'  => '.gridd-tp-breadcrumbs',
+				'property' => '--cl',
+			],
+		],
 		'choices'           => [
 			'setting' => 'gridd_grid_breadcrumbs_background_color',
 		],
@@ -90,8 +114,13 @@ Customizer::add_field(
 		'label'             => esc_html__( 'Alignment', 'gridd' ),
 		'section'           => 'gridd_grid_part_details_breadcrumbs',
 		'default'           => 'center',
-		'transport'         => 'postMessage',
-		'css_vars'          => '--brd-ta',
+		'transport'         => 'auto',
+		'output'            => [
+			[
+				'element'  => '.gridd-tp-breadcrumbs',
+				'property' => '--ta',
+			],
+		],
 		'choices'           => [
 			'left'   => esc_html__( 'Left', 'gridd' ),
 			'center' => esc_html__( 'Center', 'gridd' ),
@@ -100,6 +129,7 @@ Customizer::add_field(
 		'sanitize_callback' => function( $value ) {
 			return ( 'left' !== $value && 'right' !== $value && 'center' !== $value ) ? 'center' : $value;
 		},
+		'priority' => 40,
 	]
 );
 

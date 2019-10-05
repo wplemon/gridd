@@ -128,7 +128,6 @@ class Nav_Handheld extends Grid_Part {
 		$paths[] = get_theme_file_path( 'grid-parts/scripts/nav-handheld.min.js' );
 		return $paths;
 	}
-
 }
 
 new Nav_Handheld();

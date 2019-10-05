@@ -4,7 +4,7 @@
 }
 
 #gridd-handheld-menu-wrapper {
-  background-color: var(--c-bg, #fff);
+  background-color: var(--bg, #fff);
   overflow: visible;
   font-size: 1em;
 }
@@ -18,7 +18,7 @@
   justify-content: center;
 }
 #gridd-handheld-menu-wrapper .gridd-navigation ul {
-  background-color: var(--c-bg, #fff);
+  background-color: var(--bg, #fff);
 }
 #gridd-handheld-menu-wrapper li.current-menu-item > a,
 #gridd-handheld-menu-wrapper li.current-menu-item > a:visited, #gridd-handheld-menu-wrapper li.current-page-item > a,
@@ -41,7 +41,7 @@
 }
 #gridd-handheld-menu-wrapper a,
 #gridd-handheld-menu-wrapper a:visited {
-  color: var(--tc, #000);
+  color: var(--cl, #000);
   border-bottom: 2px solid transparent;
 }
 #gridd-handheld-menu-wrapper a:hover, #gridd-handheld-menu-wrapper a:focus, #gridd-handheld-menu-wrapper a.focus, #gridd-handheld-menu-wrapper a.toggled-on,
@@ -68,11 +68,11 @@
   fill: var(--lc, #0f5e97);
 }
 #gridd-handheld-menu-wrapper .gridd-toggle {
-  color: var(--tc, #000);
+  color: var(--cl, #000);
   border-bottom: 2px solid transparent;
 }
 #gridd-handheld-menu-wrapper .gridd-toggle svg {
-  fill: var(--tc, #000);
+  fill: var(--cl, #000);
 }
 #gridd-handheld-menu-wrapper .gridd-toggle:hover, #gridd-handheld-menu-wrapper .gridd-toggle:focus, #gridd-handheld-menu-wrapper .gridd-toggle.focus, #gridd-handheld-menu-wrapper .gridd-toggle.toggled-on {
   color: var(--lc, #0f5e97);

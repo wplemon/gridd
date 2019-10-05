@@ -7,7 +7,7 @@ article.gridd-post-mode-card.has-post-thumbnail {
   display: grid;
 }
 .site-main article.gridd-post-mode-card {
-  max-width: var(--c-mw-c, 700px);
+  max-width: var(--mw-c, 700px);
 }
 article.gridd-post-mode-card > * {
   grid-column-start: 2;

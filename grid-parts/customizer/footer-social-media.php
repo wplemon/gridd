@@ -58,6 +58,49 @@ Customizer::add_field(
 				},
 			],
 		],
+		'priority'        => 10,
+	]
+);
+
+Customizer::add_field(
+	[
+		'type'      => 'color',
+		'settings'  => 'gridd_grid_part_details_footer_social_icons_background_color',
+		'label'     => esc_html__( 'Background Color', 'gridd' ),
+		'section'   => 'gridd_grid_part_details_footer_social_media',
+		'default'   => '#ffffff',
+		'transport' => 'auto',
+		'output'    => [
+			[
+				'element'  => '.gridd-tp-footer_social_media',
+				'property' => '--bg',
+			],
+		],
+		'choices'   => [
+			'alpha' => true,
+		],
+		'priority'  => 20,
+	]
+);
+
+Customizer::add_field(
+	[
+		'type'      => 'color',
+		'settings'  => 'gridd_grid_part_details_footer_social_icons_icons_color',
+		'label'     => esc_html__( 'Icons Color', 'gridd' ),
+		'section'   => 'gridd_grid_part_details_footer_social_media',
+		'default'   => '#000000',
+		'transport' => 'auto',
+		'output'    => [
+			[
+				'element'  => '.gridd-tp-footer_social_media',
+				'property' => '--cl',
+			],
+		],
+		'choices'   => [
+			'alpha' => true,
+		],
+		'priority'  => 30,
 	]
 );
 
@@ -69,13 +112,20 @@ Customizer::add_field(
 		'section'   => 'gridd_grid_part_details_footer_social_media',
 		'default'   => 1,
 		'transport' => 'postMessage',
-		'css_vars'  => '--ft-si-sz',
+		'transport' => 'auto',
+		'output'    => [
+			[
+				'element'  => '.gridd-tp-footer_social_media',
+				'property' => '--sz',
+			],
+		],
 		'choices'   => [
 			'min'    => .3,
 			'max'    => 3,
 			'step'   => .01,
 			'suffix' => 'em',
 		],
+		'priority'  => 40,
 	]
 );
 
@@ -87,44 +137,20 @@ Customizer::add_field(
 		'description' => esc_html__( 'Controls how large the clickable area will be, and also the spacing between icons.', 'gridd' ),
 		'section'     => 'gridd_grid_part_details_footer_social_media',
 		'default'     => .5,
-		'transport'   => 'postMessage',
-		'css_vars'    => '--ft-si-pd',
+		'transport'   => 'auto',
+		'output'      => [
+			[
+				'element'  => '.gridd-tp-footer_social_media',
+				'property' => '--pd',
+			],
+		],
 		'choices'     => [
 			'min'    => 0,
 			'max'    => 2,
 			'step'   => .01,
 			'suffix' => 'em',
 		],
-	]
-);
-
-Customizer::add_field(
-	[
-		'type'      => 'color',
-		'settings'  => 'gridd_grid_part_details_footer_social_icons_background_color',
-		'label'     => esc_html__( 'Background Color', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_footer_social_media',
-		'default'   => '#ffffff',
-		'transport' => 'postMessage',
-		'css_vars'  => '--ft-si-bg',
-		'choices'   => [
-			'alpha' => true,
-		],
-	]
-);
-
-Customizer::add_field(
-	[
-		'type'      => 'color',
-		'settings'  => 'gridd_grid_part_details_footer_social_icons_icons_color',
-		'label'     => esc_html__( 'Icons Color', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_footer_social_media',
-		'default'   => '#000000',
-		'transport' => 'postMessage',
-		'css_vars'  => '--ft-si-cl',
-		'choices'   => [
-			'alpha' => true,
-		],
+		'priority'    => 50,
 	]
 );
 
@@ -135,8 +161,13 @@ Customizer::add_field(
 		'label'             => esc_html__( 'Icons Alignment', 'gridd' ),
 		'section'           => 'gridd_grid_part_details_footer_social_media',
 		'default'           => 'flex-end',
-		'transport'         => 'postMessage',
-		'css_vars'          => '--ft-si-ta',
+		'transport'         => 'auto',
+		'output'            => [
+			[
+				'element'  => '.gridd-tp-footer_social_media',
+				'property' => '--ta',
+			],
+		],
 		'choices'           => [
 			'flex-start' => esc_html__( 'Left', 'gridd' ),
 			'center'     => esc_html__( 'Center', 'gridd' ),
@@ -145,6 +176,7 @@ Customizer::add_field(
 		'sanitize_callback' => function( $value ) {
 			return ( 'flex-start' !== $value && 'flex-end' !== $value && 'center' !== $value ) ? 'flex-end' : $value;
 		},
+		'priority'          => 60,
 	]
 );
 

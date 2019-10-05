@@ -59,11 +59,16 @@ function gridd_sidebar_customizer_options( $id ) {
 			'section'   => "gridd_grid_part_details_sidebar_$id",
 			'default'   => '#ffffff',
 			'priority'  => 10,
-			'transport' => 'postMessage',
 			'choices'   => [
 				'alpha' => true,
 			],
-			'css_vars'  => "--wa-{$id}-bg",
+			'transport' => 'auto',
+			'output'    => [
+				[
+					'element'  => ".gridd-tp-sidebar_$id",
+					'property' => '--bg',
+				],
+			],
 			'choices'   => [
 				'alpha' => true,
 			],
@@ -78,11 +83,16 @@ function gridd_sidebar_customizer_options( $id ) {
 			'section'           => "gridd_grid_part_details_sidebar_$id",
 			'default'           => '#000000',
 			'priority'          => 20,
-			'transport'         => 'postMessage',
 			'choices'           => [
 				'setting' => "gridd_grid_sidebar_{$id}_background_color",
 			],
-			'css_vars'          => "--wa-{$id}-cl",
+			'transport'         => 'auto',
+			'output'            => [
+				[
+					'element'  => ".gridd-tp-sidebar_$id",
+					'property' => '--cl',
+				],
+			],
 			'sanitize_callback' => [ $sanitization, 'color_hex' ],
 		]
 	);
@@ -95,11 +105,16 @@ function gridd_sidebar_customizer_options( $id ) {
 			'section'           => "gridd_grid_part_details_sidebar_$id",
 			'default'           => '#0f5e97',
 			'priority'          => 30,
-			'transport'         => 'postMessage',
 			'choices'           => [
 				'alpha' => true,
 			],
-			'css_vars'          => "--wa-{$id}-lc",
+			'transport'         => 'auto',
+			'output'            => [
+				[
+					'element'  => ".gridd-tp-sidebar_$id",
+					'property' => '--lc',
+				],
+			],
 			'choices'           => [
 				'backgroundColor' => "gridd_grid_sidebar_{$id}_background_color",
 				'textColor'       => "gridd_grid_sidebar_{$id}_color",
@@ -126,8 +141,13 @@ function gridd_sidebar_customizer_options( $id ) {
 			'section'     => "gridd_grid_part_details_sidebar_$id",
 			'priority'    => 40,
 			'default'     => '1em',
-			'transport'   => 'postMessage',
-			'css_vars'    => "--wa-{$id}-pd",
+			'transport'   => 'auto',
+			'output'      => [
+				[
+					'element'  => ".gridd-tp-sidebar_$id",
+					'property' => '--pd',
+				],
+			],
 		]
 	);
 
@@ -139,8 +159,13 @@ function gridd_sidebar_customizer_options( $id ) {
 			'section'   => "gridd_grid_part_details_sidebar_$id",
 			'priority'  => 43,
 			'default'   => '1em',
-			'transport' => 'postMessage',
-			'css_vars'  => "--wa-{$id}-mr",
+			'transport' => 'auto',
+			'output'    => [
+				[
+					'element'  => ".gridd-tp-sidebar_$id",
+					'property' => '--mr',
+				],
+			],
 		]
 	);
 }

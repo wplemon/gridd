@@ -22,50 +22,19 @@ Customizer::add_section(
 
 Customizer::add_field(
 	[
-		'type'      => 'dimension',
-		'settings'  => 'gridd_grid_content_max_width',
-		'label'     => esc_html__( 'Content Maximum Width', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_content',
-		'default'   => '45em',
-		'css_vars'  => '--c-mw',
-		'transport' => 'postMessage',
-		'priority'  => 10,
-	]
-);
-
-Customizer::add_field(
-	[
-		'type'      => 'dimensions',
-		'settings'  => 'gridd_grid_content_padding',
-		'label'     => esc_html__( 'Content Padding', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_content',
-		'default'   => [
-			'top'    => '0px',
-			'bottom' => '0px',
-			'left'   => '20px',
-			'right'  => '20px',
-		],
-		'css_vars'  => [
-			[ '--c-pd-t', '$', 'top' ],
-			[ '--c-pd-b', '$', 'bottom' ],
-			[ '--c-pd-l', '$', 'left' ],
-			[ '--c-pd-r', '$', 'right' ],
-		],
-		'transport' => 'postMessage',
-		'priority'  => 15,
-	]
-);
-
-Customizer::add_field(
-	[
 		'type'      => 'color',
 		'settings'  => 'gridd_grid_content_background_color',
 		'label'     => esc_html__( 'Background Color', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_content',
 		'default'   => '#ffffff',
-		'css_vars'  => '--c-bg',
-		'transport' => 'postMessage',
-		'priority'  => 30,
+		'output'    => [
+			[
+				'element'  => '.gridd-tp-content',
+				'property' => '--bg',
+			],
+		],
+		'transport' => 'auto',
+		'priority'  => 10,
 		'choices'   => [
 			'alpha' => true,
 		],
@@ -78,10 +47,15 @@ Customizer::add_field(
 		'settings'          => 'gridd_text_color',
 		'label'             => esc_html__( 'Text Color', 'gridd' ),
 		'section'           => 'gridd_grid_part_details_content',
-		'priority'          => 40,
+		'priority'          => 20,
 		'default'           => '#000000',
-		'css_vars'          => '--tc',
-		'transport'         => 'postMessage',
+		'output'            => [
+			[
+				'element'  => ':root',
+				'property' => '--cl',
+			],
+		],
+		'transport'         => 'auto',
 		'choices'           => [
 			'setting' => 'gridd_grid_content_background_color',
 		],
@@ -96,8 +70,8 @@ Customizer::add_field(
 		'label'             => esc_html__( 'Links Color', 'gridd' ),
 		'description'       => esc_html__( 'Select the hue for you links. The color will be auto-calculated to ensure maximum readability according to WCAG.', 'gridd' ),
 		'section'           => 'gridd_grid_part_details_content',
-		'transport'         => 'postMessage',
-		'priority'          => 50,
+		'transport'         => 'auto',
+		'priority'          => 30,
 		'choices'           => [
 			'alpha' => false,
 		],
@@ -106,7 +80,12 @@ Customizer::add_field(
 			'backgroundColor' => 'gridd_grid_content_background_color',
 			'textColor'       => 'gridd_text_color',
 		],
-		'css_vars'          => '--lc',
+		'output'            => [
+			[
+				'element'  => ':root',
+				'property' => '--lc',
+			],
+		],
 		'sanitize_callback' => [ $sanitization, 'color_hex' ],
 	]
 );
@@ -117,18 +96,116 @@ Customizer::add_field(
 		'type'              => 'gridd-wcag-lc',
 		'label'             => esc_html__( 'Links Hover Color', 'gridd' ),
 		'section'           => 'gridd_grid_part_details_content',
-		'transport'         => 'postMessage',
-		'priority'          => 60,
+		'transport'         => 'auto',
+		'priority'          => 40,
 		'choices'           => [
 			'alpha' => false,
 		],
 		'default'           => '#541cfc',
-		'css_vars'          => '--lch',
+		'output'            => [
+			[
+				'element'  => ':root',
+				'property' => '--lch',
+			],
+		],
 		'choices'           => [
 			'backgroundColor' => 'gridd_grid_content_background_color',
 			'textColor'       => 'gridd_text_color',
 		],
 		'sanitize_callback' => [ $sanitization, 'color_hex' ],
+	]
+);
+
+Customizer::add_field(
+	[
+		'type'      => 'dimension',
+		'settings'  => 'content_max_width',
+		'label'     => esc_html__( 'Content Maximum Width', 'gridd' ),
+		'section'   => 'gridd_grid_part_details_content',
+		'default'   => '45rem',
+		'output'    => [
+			[
+				'element'  => ':root',
+				'property' => '--cmw',
+			],
+		],
+		'transport' => 'auto',
+		'priority'  => 50,
+	]
+);
+
+Customizer::add_field(
+	[
+		'type'      => 'slider',
+		'settings'  => 'content_padding_horizontal',
+		'label'     => esc_html__( 'Horizontal Content Padding', 'gridd' ),
+		'section'   => 'gridd_grid_part_details_content',
+		'default'   => 1,
+		'output'    => [
+			[
+				'element'       => '.gridd-tp-content',
+				'property'      => '--pd-h',
+				'value_pattern' => '$rem',
+			],
+		],
+		'choices'   => [
+			'min'    => 0,
+			'max'    => 10,
+			'step'   => 0.01,
+			'suffix' => 'rem',
+		],
+		'transport' => 'auto',
+		'priority'  => 60,
+	]
+);
+
+Customizer::add_field(
+	[
+		'type'      => 'slider',
+		'settings'  => 'content_padding_top',
+		'label'     => esc_html__( 'Top Content Padding', 'gridd' ),
+		'section'   => 'gridd_grid_part_details_content',
+		'default'   => 1,
+		'output'    => [
+			[
+				'element'       => '.gridd-tp-content',
+				'property'      => '--pd-t',
+				'value_pattern' => '$rem',
+			],
+		],
+		'choices'   => [
+			'min'    => 0,
+			'max'    => 10,
+			'step'   => 0.01,
+			'suffix' => 'rem',
+		],
+		'transport' => 'auto',
+		'priority'  => 70,
+	]
+);
+
+Customizer::add_field(
+	[
+		'type'      => 'slider',
+		'settings'  => 'content_padding_bottom',
+		'label'     => esc_html__( 'Bottom Content Padding', 'gridd' ),
+		'section'   => 'gridd_grid_part_details_content',
+		'default'   => 1,
+		'output'    => [
+			[
+				'element'       => '.gridd-tp-content',
+				'property'      => '--pd-b',
+				'value_pattern' => '$rem',
+			],
+		],
+		'choices'   => [
+			'min'    => 0,
+			'max'    => 10,
+			'step'   => 0.01,
+			'suffix' => 'rem',
+		],
+		'transport' => 'auto',
+		'priority'  => 80,
 	]
 );
 

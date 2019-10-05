@@ -112,7 +112,7 @@ class Content extends Grid_Part {
 			]
 		);
 		Style::get_instance( 'grid-part/content' )
-			->add_string( ':root{--c-mw-c:var(--c-mw, 45em);}' )
+			->add_string( ':root{--mw-c:var(--mw, 45em);}' )
 			->add_file( get_theme_file_path( 'grid-parts/styles/content/styles.min.css' ) )
 			/**
 			 * This CSS is just a hack to overcome a bug in the CSS minifier
@@ -120,7 +120,7 @@ class Content extends Grid_Part {
 			 * The same CSS is commented-out in the default.scss file for reference.
 			 * Once the bug in the minifier is fixed we can remove this.
 			 */
-			->add_string( '.site-main .entry-content .alignfull,.site-main .entry-footer .alignfull,.site-main .entry-header .alignfull,.site-main .gridd-contain .alignfull{transform:translateX(calc(0px - var(--pd-l, 20px)));}' )
+			->add_string( '.site-main .entry-content .alignfull,.site-main .entry-footer .alignfull,.site-main .entry-header .alignfull,.site-main .gridd-contain .alignfull{transform:translateX(calc(0px - var(--pd-h, 1rem)));}' )
 			->the_css( 'gridd-inline-css-content' );
 	}
 

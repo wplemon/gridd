@@ -26,7 +26,7 @@
 .woocommerce-account .woocommerce-MyAccount-navigation a {
   display: block;
   padding: 0.25em 0.7em;
-  color: var(--tc, #000);
+  color: var(--cl, #000);
   text-decoration: none;
 }
 .woocommerce-account .woocommerce-MyAccount-navigation a:hover, .woocommerce-account .woocommerce-MyAccount-navigation a:focus {

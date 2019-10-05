@@ -1,7 +1,7 @@
 .gridd-tp-reusable_block_ID {
-  padding: var(--rb-ID-pd, 1em);
-  background-color: var(--rb-ID-bg, #fff);
-  color: var(--rb-ID-cl, #000);
+  padding: var(--pd, 1em);
+  background-color: var(--bg, #fff);
+  color: var(--cl, #000);
   position: relative;
 }
 .gridd-tp-reusable_block_ID .inner {
@@ -15,7 +15,7 @@
 .gridd-tp-reusable_block_ID a:visited,
 .gridd-tp-reusable_block_ID a:hover,
 .gridd-tp-reusable_block_ID a:focus {
-  color: var(--rb-ID-lc, #0f5e97);
+  color: var(--lc, #0f5e97);
 }
 
 /*# sourceMappingURL=styles.css.map */

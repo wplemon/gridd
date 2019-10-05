@@ -21,39 +21,22 @@ Customizer::add_outer_section(
 
 Customizer::add_field(
 	[
-		'type'              => 'editor',
-		'settings'          => 'gridd_grid_part_details_header_contact_info',
-		'label'             => esc_html__( 'Content', 'gridd' ),
-		'description'       => Customizer::get_control_description(
-			[
-				'details' => esc_html__( 'Enter any text you want - usually your contact info or important announcements that you want your visitors to see.', 'gridd' ),
-			]
-		),
-		'section'           => 'gridd_grid_part_details_header_contact_info',
-		'default'           => __( 'Email: <a href="mailto:contact@example.com">contact@example.com</a>. Phone: +1-541-754-3010', 'gridd' ),
-		'transport'         => 'postMessage',
-		'js_vars'           => [
-			[
-				'element'  => '.gridd-tp-header_contact_info.gridd-tp',
-				'function' => 'html',
-			],
-		],
-		'sanitize_callback' => 'wp_kses_post',
-	]
-);
-
-Customizer::add_field(
-	[
 		'type'      => 'color',
 		'settings'  => 'gridd_grid_part_details_header_contact_info_background_color',
 		'label'     => esc_html__( 'Background Color', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_header_contact_info',
 		'default'   => '#ffffff',
-		'transport' => 'postMessage',
-		'css_vars'  => '--h-cnt-bg',
+		'transport' => 'auto',
+		'output'    => [
+			[
+				'element'  => '.gridd-tp-header_contact_info',
+				'property' => '--bg',
+			],
+		],
 		'choices'   => [
 			'alpha' => true,
 		],
+		'priority'  => 20,
 	]
 );
 
@@ -67,9 +50,15 @@ Customizer::add_field(
 			'setting' => 'gridd_grid_part_details_header_contact_info_background_color',
 		],
 		'default'           => '#000000',
-		'transport'         => 'postMessage',
-		'css_vars'          => '--h-cnt-cl',
+		'transport'         => 'auto',
+		'output'            => [
+			[
+				'element'  => '.gridd-tp-header_contact_info',
+				'property' => '--cl',
+			],
+		],
 		'sanitize_callback' => [ $sanitization, 'color_hex' ],
+		'priority'          => 30,
 	]
 );
 
@@ -81,14 +70,20 @@ Customizer::add_field(
 		'description' => esc_html__( 'The value selected here is relative to your body font-size, so a value of 1em will be the same size as your content.', 'gridd' ),
 		'section'     => 'gridd_grid_part_details_header_contact_info',
 		'default'     => .85,
-		'transport'   => 'postMessage',
-		'css_vars'    => '--h-cnt-fs',
+		'transport'   => 'auto',
+		'output'      => [
+			[
+				'element'  => '.gridd-tp-header_contact_info',
+				'property' => '--fs',
+			],
+		],
 		'choices'     => [
 			'min'    => .5,
 			'max'    => 2,
 			'step'   => .01,
 			'suffix' => 'em',
 		],
+		'priority'    => 40,
 	]
 );
 
@@ -108,9 +103,15 @@ Customizer::add_field(
 			]
 		),
 		'section'     => 'gridd_grid_part_details_header_contact_info',
-		'default'     => '10px',
-		'transport'   => 'postMessage',
-		'css_vars'    => '--h-cnt-pd',
+		'default'     => '1rem',
+		'transport'   => 'auto',
+		'output'      => [
+			[
+				'element'  => '.gridd-tp-header_contact_info',
+				'property' => '--pd',
+			],
+		],
+		'priority'    => 50,
 	]
 );
 
@@ -121,8 +122,13 @@ Customizer::add_field(
 		'label'             => esc_html__( 'Text Align', 'gridd' ),
 		'section'           => 'gridd_grid_part_details_header_contact_info',
 		'default'           => 'flex-start',
-		'transport'         => 'postMessage',
-		'css_vars'          => '--h-cnt-ta',
+		'transport'         => 'auto',
+		'output'            => [
+			[
+				'element'  => '.gridd-tp-header_contact_info',
+				'property' => '--ta',
+			],
+		],
 		'choices'           => [
 			'flex-start' => esc_html__( 'Left', 'gridd' ),
 			'center'     => esc_html__( 'Center', 'gridd' ),
@@ -131,6 +137,34 @@ Customizer::add_field(
 		'sanitize_callback' => function( $value ) {
 			return ( 'flex-start' !== $value && 'flex-end' !== $value && 'center' !== $value ) ? 'flex-start' : $value;
 		},
+		'priority'          => 60,
+	]
+);
+
+Customizer::add_field(
+	[
+		'type'              => 'code',
+		'settings'          => 'gridd_grid_part_details_header_contact_info',
+		'label'             => esc_html__( 'Content', 'gridd' ),
+		'description'       => Customizer::get_control_description(
+			[
+				'details' => esc_html__( 'Enter any text you want - usually your contact info or important announcements that you want your visitors to see.', 'gridd' ),
+			]
+		),
+		'section'           => 'gridd_grid_part_details_header_contact_info',
+		'default'           => __( 'Email: <a href="mailto:contact@example.com">contact@example.com</a>. Phone: +1-541-754-3010', 'gridd' ),
+		'transport'         => 'postMessage',
+		'js_vars'           => [
+			[
+				'element'  => '.gridd-tp-header_contact_info.gridd-tp',
+				'function' => 'html',
+			],
+		],
+		'choices'           => [
+			'language' => 'html',
+		],
+		'sanitize_callback' => 'wp_kses_post',
+		'priority'          => 10,
 	]
 );
 

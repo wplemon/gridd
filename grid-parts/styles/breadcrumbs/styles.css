@@ -1,18 +1,18 @@
 @charset "UTF-8";
 .gridd-tp-breadcrumbs {
-  background-color: var(--brd-bg, #fff);
+  background-color: var(--bg, #fff);
 }
 .gridd-tp-breadcrumbs li,
 .gridd-tp-breadcrumbs li a,
 .gridd-tp-breadcrumbs li a:visited,
 .gridd-tp-breadcrumbs li a:hover,
 .gridd-tp-breadcrumbs li a:focus {
-  color: var(--brd-cl, #000);
+  color: var(--cl, #000);
 }
 .gridd-tp-breadcrumbs .inner {
-  padding: var(--brd-pd, 1em);
+  padding: var(--pd, 1em);
   width: 100%;
-  max-width: var(--brd-mw, 100%);
+  max-width: var(--mw, 100%);
   display: flex;
   align-items: center;
 }
@@ -26,7 +26,7 @@ nav.breadcrumbs ul {
   padding: 0;
   list-style: none;
   list-style-type: none;
-  text-align: var(--brd-ta, center);
+  text-align: var(--ta, center);
 }
 nav.breadcrumbs li {
   display: inline-flex;

@@ -38,6 +38,7 @@ Customizer::add_field(
 			'parts' => Footer::get_footer_grid_parts(),
 		],
 		'sanitize_callback' => [ $sanitization, 'grid' ],
+		'priority'          => 10,
 	]
 );
 
@@ -47,9 +48,15 @@ Customizer::add_field(
 		'settings'  => 'gridd_grid_footer_max_width',
 		'label'     => esc_html__( 'Footer Maximum Width', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_footer',
-		'default'   => '',
-		'transport' => 'postMessage',
-		'css_vars'  => '--ft-mw',
+		'default'   => '100%',
+		'transport' => 'auto',
+		'output'    => [
+			[
+				'element'  => '.gridd-tp-footer',
+				'property' => '--mw',
+			],
+		],
+		'priority'  => 20,
 	]
 );
 
@@ -65,8 +72,14 @@ Customizer::add_field(
 		),
 		'section'     => 'gridd_grid_part_details_footer',
 		'default'     => '0',
-		'css_vars'    => '--ft-gg',
-		'transport'   => 'postMessage',
+		'transport'   => 'auto',
+		'output'      => [
+			[
+				'element'  => '.gridd-tp-footer',
+				'property' => '--gg',
+			],
+		],
+		'priority'    => 30,
 	]
 );
 
@@ -82,8 +95,14 @@ Customizer::add_field(
 		),
 		'section'     => 'gridd_grid_part_details_footer',
 		'default'     => '1em',
-		'transport'   => 'postMessage',
-		'css_vars'    => '--ft-pd',
+		'transport'   => 'auto',
+		'output'      => [
+			[
+				'element'  => '.gridd-tp-footer',
+				'property' => '--pd',
+			],
+		],
+		'priority'    => 40,
 	]
 );
 
@@ -99,11 +118,17 @@ Customizer::add_field(
 		),
 		'section'     => 'gridd_grid_part_details_footer',
 		'default'     => '#ffffff',
-		'transport'   => 'postMessage',
-		'css_vars'    => '--ft-bg',
+		'transport'   => 'auto',
+		'output'      => [
+			[
+				'element'  => '.gridd-tp-footer',
+				'property' => '--bg',
+			],
+		],
 		'choices'     => [
 			'alpha' => true,
 		],
+		'priority'    => 50,
 	]
 );
 
@@ -115,6 +140,7 @@ Customizer::add_field(
 		'description' => esc_html__( 'Enable this option to force-override the background color of all grid-parts in your footer.', 'gridd' ),
 		'section'     => 'gridd_grid_part_details_footer',
 		'default'     => false,
+		'priority'    => 60,
 	]
 );
 
@@ -125,8 +151,13 @@ Customizer::add_field(
 		'label'     => esc_html__( 'Border-Top Width', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_footer',
 		'default'   => 1,
-		'transport' => 'postMessage',
-		'css_vars'  => '--ft-bt-w',
+		'transport' => 'auto',
+		'output'    => [
+			[
+				'element'  => '.gridd-tp-footer',
+				'property' => '--bt-w',
+			],
+		],
 		'priority'  => 50,
 		'choices'   => [
 			'min'    => 0,
@@ -134,6 +165,7 @@ Customizer::add_field(
 			'step'   => 1,
 			'suffix' => 'px',
 		],
+		'priority'  => 70,
 	]
 );
 
@@ -145,8 +177,13 @@ Customizer::add_field(
 		'section'         => 'gridd_grid_part_details_footer',
 		'default'         => 'rgba(0,0,0,.1)',
 		'priority'        => 60,
-		'transport'       => 'postMessage',
-		'css_vars'        => '--ft-bt-cl',
+		'transport'       => 'auto',
+		'output'          => [
+			[
+				'element'  => '.gridd-tp-footer',
+				'property' => '--bt-cl',
+			],
+		],
 		'choices'         => [
 			'alpha' => true,
 		],
@@ -157,6 +194,7 @@ Customizer::add_field(
 				'value'    => 0,
 			],
 		],
+		'priority'        => 80,
 	]
 );
 

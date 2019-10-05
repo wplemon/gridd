@@ -6,17 +6,17 @@ a.custom-logo-link:active {
 }
 
 .gridd-tp-header_branding.gridd-tp {
-	background-color: var(--h-br-bg, #fff);
+	background-color: var(--bg, #fff);
 	display: flex;
 	width: 100%;
-	padding: var(--h-br-pd, 0);
-	justify-content: var(--h-br-ha, left);
-	align-items: var(--h-br-va, center);
+	padding: var(--pd, 0);
+	justify-content: var(--ha, left);
+	align-items: var(--va, center);
 
 	&.inline {
 		.site-title {
-			padding-left: calc(var(--h-br-epd, 0.5) * 1em);
-			padding-right: calc(var(--h-br-epd, 0.5) * 1em);
+			padding-left: calc(var(--epd, 0.5) * 1em);
+			padding-right: calc(var(--epd, 0.5) * 1em);
 		}
 	}
 
@@ -26,12 +26,12 @@ a.custom-logo-link:active {
 		>* {
 			display: flex;
 			width: 100%;
-			justify-content: var(--h-br-ha, left);
+			justify-content: var(--ha, left);
 		}
 
 		.site-title {
-			padding-top: calc(var(--h-br-epd, 0.5) * 1em);
-			padding-bottom: calc(var(--h-br-epd, 0.5) * 1em);
+			padding-top: calc(var(--epd, 0.5) * 1em);
+			padding-bottom: calc(var(--epd, 0.5) * 1em);
 		}
 	}
 
@@ -41,7 +41,7 @@ a.custom-logo-link:active {
 	}
 
 	.site-description {
-		font-size: calc(var(--h-br-tls, 1) * 1em);
+		font-size: calc(var(--tls, 1) * 1em);
 	}
 
 	.site-description,
@@ -55,7 +55,7 @@ a.custom-logo-link:active {
 
 	.site-title {
 		line-height: 1;
-		font-size: calc(var(--h-br-sts, 2) * 1em);
+		font-size: calc(var(--sts, 2) * 1em);
 
 		a {
 			text-decoration: none;
@@ -80,7 +80,7 @@ a.custom-logo-link:active {
 	}
 
 	.custom-logo-link {
-		max-width: calc(var(--h-br-mw, 100) * 1px);
+		max-width: calc(var(--mw, 100) * 1px);
 		line-height: 0;
 		max-height: 100%;
 		display: block;

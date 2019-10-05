@@ -2,13 +2,11 @@
 .gridd-tp-nav_ID a:hover + .gridd-toggle,
 .gridd-tp-nav_ID .gridd-toggle:hover {
   outline: none;
-  box-shadow: inset 0 -2px;
 }
 .gridd-tp-nav_ID a:focus,
 .gridd-tp-nav_ID a:focus + .gridd-toggle,
 .gridd-tp-nav_ID .gridd-toggle:focus {
   outline: none;
-  box-shadow: inset 0 -3px;
 }
 
 /*# sourceMappingURL=styles-hover-alt.css.map */

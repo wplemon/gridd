@@ -1,18 +1,18 @@
 .site-main {
-	padding: var(--c-pd-t, 0) var(--c-pd-r, 20px) var(--c-pd-b, 0) var(--c-pd-l, 20px);
+	padding: var(--pd-t, 0) var(--pd-h, 1rem) var(--pd-b, 0) var(--pd-h, 1rem);
 
 	header,
 	footer:not(.comment-meta),
 	.gridd-contain {
 		margin-left: auto;
 		margin-right: auto;
-		max-width: var(--c-mw-c, 700px);
+		max-width: var(--mw-c, 700px);
 	}
 
 	>* {
 		margin-left: auto;
 		margin-right: auto;
-		max-width: var(--c-mw-c, 700px);
+		max-width: var(--mw-c, 700px);
 	}
 
 	>article {
@@ -32,13 +32,13 @@
 		>*:not(.container) {
 			&:not(.alignfull):not(.alignwide):not(.alignleft):not(.alignright) {
 				// width: 100%;
-				max-width: var(--c-mw-c, 700px);
+				max-width: var(--mw-c, 700px);
 				margin-left: auto;
 				margin-right: auto;
 			}
 
 			&.alignleft {
-				margin-left: calc(50% - var(--c-mw-c, 700px) / 2);
+				margin-left: calc(50% - var(--mw-c, 700px) / 2);
 
 				+.alignleft {
 					margin-left: 0;
@@ -46,13 +46,13 @@
 			}
 
 			&.alignright {
-				margin-right: calc(50% - var(--c-mw-c, 700px) / 2);
+				margin-right: calc(50% - var(--mw-c, 700px) / 2);
 			}
 		}
 
 		.alignwide,
 		.alignfull {
-			max-width: calc(100% + var(--c-pd-l, 20px) + var(--c-pd-r, 20px));
+			max-width: calc(100% + 2 * var(--pd-h, 1rem));
 			margin-left: auto;
 			margin-right: auto;
 
@@ -62,13 +62,13 @@
 		}
 
 		.alignwide {
-			width: calc(var(--c-mw-c, 700px) + 25% + var(--c-pd-l, 20px) + var(--c-pd-r, 20px));
+			width: calc(var(--mw-c, 700px) + 25% + 2 * var(--pd-h, 1rem));
 			max-width: 100%;
 		}
 
 		.alignfull {
-			width: calc(100% + var(--c-pd-l, 20px) + var(--c-pd-r, 20px));
-			// transform: translateX(calc(0px - var(--c-pd-l, 20px)));
+			width: calc(100% + 2 * var(--pd-h, 1rem));
+			// transform: translateX(calc(0px - var(--pd-h, 1rem)));
 		}
 	}
 
@@ -80,13 +80,13 @@
 }
 
 .gridd-tp-content {
-	background-color: var(--c-bg, #fff);
+	background-color: var(--bg, #fff);
 
 	select {
-		background-color: var(--c-bg, #fff);
+		background-color: var(--bg, #fff);
 	}
 }
 #content-width-calc-helper {
 	width: 100%;
-	max-width: var(--c-mw);
+	max-width: var(--cmw);
 }

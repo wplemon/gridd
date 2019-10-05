@@ -100,8 +100,13 @@ Customizer::add_field(
 		'section'   => 'gridd_grid_part_details_header_branding',
 		'priority'  => 10,
 		'default'   => '#ffffff',
-		'transport' => 'postMessage',
-		'css_vars'  => '--h-br-bg',
+		'transport' => 'auto',
+		'output'    => [
+			[
+				'element'  => '.gridd-tp-header_branding',
+				'property' => '--bg',
+			],
+		],
 		'choices'   => [
 			'alpha' => true,
 		],
@@ -126,8 +131,13 @@ Customizer::add_field(
 		'section'           => 'gridd_grid_part_details_header_branding',
 		'priority'          => 30,
 		'default'           => '0',
-		'transport'         => 'postMessage',
-		'css_vars'          => '--h-br-pd',
+		'transport'         => 'auto',
+		'output'            => [
+			[
+				'element'  => '.gridd-tp-header_branding',
+				'property' => '--pd',
+			],
+		],
 		'sanitize_callback' => 'esc_attr', // Though not exactly accurate, in this case it sanitizes the CSS value properly.
 	]
 );
@@ -146,8 +156,13 @@ Customizer::add_field(
 			'step'   => 1,
 			'suffix' => 'px',
 		],
-		'transport'       => 'postMessage',
-		'css_vars'        => '--h-br-mw',
+		'transport'       => 'auto',
+		'output'          => [
+			[
+				'element'  => '.gridd-tp-header_branding',
+				'property' => '--mw',
+			],
+		],
 		'active_callback' => [
 			[
 				'setting'  => 'custom_logo',
@@ -192,9 +207,14 @@ Customizer::add_field(
 		'section'         => 'gridd_grid_part_details_header_branding',
 		'priority'        => 60,
 		'default'         => 2,
-		'transport'       => 'postMessage',
 		'active_callback' => 'display_header_text',
-		'css_vars'        => '--h-br-sts',
+		'transport'       => 'auto',
+		'output'          => [
+			[
+				'element'  => '.gridd-tp-header_branding',
+				'property' => '--sts',
+			],
+		],
 		'choices'         => [
 			'min'    => 1,
 			'max'    => 10,
@@ -212,9 +232,14 @@ Customizer::add_field(
 		'section'         => 'gridd_grid_part_details_header_branding',
 		'priority'        => 70,
 		'default'         => 1,
-		'transport'       => 'postMessage',
 		'active_callback' => 'display_header_text',
-		'css_vars'        => '--h-br-tls',
+		'transport'       => 'auto',
+		'output'          => [
+			[
+				'element'  => '.gridd-tp-header_branding',
+				'property' => '--tls',
+			],
+		],
 		'choices'         => [
 			'min'    => 1,
 			'max'    => 5,
@@ -256,8 +281,13 @@ Customizer::add_field(
 		'section'         => 'gridd_grid_part_details_header_branding',
 		'priority'        => 90,
 		'default'         => .5,
-		'transport'       => 'postMessage',
-		'css_vars'        => '--h-br-epd',
+		'transport'       => 'auto',
+		'output'          => [
+			[
+				'element'  => '.gridd-tp-header_branding',
+				'property' => '--epd',
+			],
+		],
 		'choices'         => [
 			'min'    => 0,
 			'max'    => 5,
@@ -277,7 +307,12 @@ Customizer::add_field(
 		'priority'          => 100,
 		'default'           => 'left',
 		'transport'         => 'auto',
-		'css_vars'          => '--h-br-ha',
+		'output'            => [
+			[
+				'element'  => '.gridd-tp-header_branding',
+				'property' => '--ha',
+			],
+		],
 		'transport'         => 'postMessage',
 		'choices'           => [
 			'left'   => esc_html__( 'Left', 'gridd' ),
@@ -299,7 +334,12 @@ Customizer::add_field(
 		'priority'          => 110,
 		'default'           => 'center',
 		'transport'         => 'auto',
-		'css_vars'          => '--h-br-va',
+		'output'            => [
+			[
+				'element'  => '.gridd-tp-header_branding',
+				'property' => '--va',
+			],
+		],
 		'transport'         => 'postMessage',
 		'choices'           => [
 			'flex-start' => esc_html__( 'Top', 'gridd' ),

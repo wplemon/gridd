@@ -13,8 +13,8 @@
 
 .wp-block-button__link {
 	@include button();
-	background-color: var(--tc);
-	color: var(--c-bg);
+	background-color: var(--cl);
+	color: var(--bg);
 	// border-radius: 3em;
 	// font-size: 1em;
 	// padding: .5em 1em;
@@ -41,7 +41,7 @@
 	&:focus,
 	&:hover,
 	&:active {
-		color: var(--c-bg);
+		color: var(--bg);
 
 		&:before,
 		&:after {

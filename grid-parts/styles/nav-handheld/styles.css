@@ -60,7 +60,7 @@ body {
 .gridd-nav-handheld-btn[aria-expanded=true] + #gridd-handheld-cart-wrapper {
   display: block;
   box-shadow: 0 0 2em 0;
-  background: var(--c-bg);
+  background: var(--bg);
 }
 .gridd-nav-handheld-btn:before, .gridd-nav-handheld-btn:after {
   display: none;

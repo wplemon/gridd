@@ -315,7 +315,7 @@ class Scripts {
 	 */
 	public function admin_footer_editor_styles() {
 		global $content_width;
-		echo '<style>:root{--c-mw-c:' . absint( $content_width ) . 'px;}</style>';
+		echo '<style>:root{--mw-c:' . absint( $content_width ) . 'px;}</style>';
 	}
 
 	/**

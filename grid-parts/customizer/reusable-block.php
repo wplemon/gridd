@@ -80,8 +80,13 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 			),
 			'section'     => "gridd_grid_part_details_reusable_block_$id",
 			'default'     => '1em',
-			'transport'   => 'postMessage',
-			'css_vars'    => "--rb-$id-pd",
+			'transport'   => 'auto',
+			'output'      => [
+				[
+					'element'  => ".gridd-tp-reusable_block_$id",
+					'property' => '--pd',
+				],
+			],
 		]
 	);
 
@@ -92,8 +97,13 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 			'settings'  => "gridd_grid_reusable_block_{$id}_bg_color",
 			'section'   => "gridd_grid_part_details_reusable_block_$id",
 			'default'   => '#ffffff',
-			'transport' => 'postMessage',
-			'css_vars'  => "--rb-$id-bg",
+			'transport' => 'auto',
+			'output'    => [
+				[
+					'element'  => ".gridd-tp-reusable_block_$id",
+					'property' => '--bg',
+				],
+			],
 			'choices'   => [
 				'alpha' => true,
 			],
@@ -111,8 +121,13 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 			'label'             => esc_html__( 'Text Color', 'gridd' ),
 			'priority'          => 30,
 			'default'           => '#000000',
-			'css_vars'          => "--rb-$id-cl",
-			'transport'         => 'postMessage',
+			'transport'         => 'auto',
+			'output'            => [
+				[
+					'element'  => ".gridd-tp-reusable_block_$id",
+					'property' => '--cl',
+				],
+			],
 			'sanitize_callback' => [ $sanitization, 'color_hex' ],
 		]
 	);
@@ -125,11 +140,16 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 			'section'           => "gridd_grid_part_details_reusable_block_$id",
 			'default'           => '#0f5e97',
 			'priority'          => 40,
-			'transport'         => 'postMessage',
 			'choices'           => [
 				'alpha' => false,
 			],
-			'css_vars'          => "--rb-{$id}-lc",
+			'transport'         => 'auto',
+			'output'            => [
+				[
+					'element'  => ".gridd-tp-reusable_block_$id",
+					'property' => '--lc',
+				],
+			],
 			'choices'           => [
 				'backgroundColor' => "gridd_grid_reusable_block_{$id}_bg_color",
 				'textColor'       => "gridd_grid_reusable_block_{$id}_color",

@@ -41,15 +41,22 @@ nav {
   flex-wrap: wrap;
   position: relative;
 }
+.gridd-navigation li:hover .gridd-toggle,
+.gridd-navigation .gridd-toggle[aria-expanded=true] {
+  background: var(--cl);
+}
+.gridd-navigation li:hover .gridd-toggle svg,
+.gridd-navigation li:hover .gridd-toggle path,
+.gridd-navigation .gridd-toggle[aria-expanded=true] svg,
+.gridd-navigation .gridd-toggle[aria-expanded=true] path {
+  fill: var(--bg);
+}
 .gridd-navigation a {
   padding: 0.618em 1rem;
   display: inline-block;
   text-decoration: none;
   width: 100%;
   min-height: 3em;
-}
-.gridd-navigation a:hover, .gridd-navigation a:focus, .gridd-navigation a:active {
-  box-shadow: 0 1px;
 }
 .gridd-navigation a,
 .gridd-navigation a:hover,
@@ -79,7 +86,6 @@ nav {
 }
 .gridd-navigation .gridd-toggle:hover, .gridd-navigation .gridd-toggle:focus, .gridd-navigation .gridd-toggle:active, .gridd-navigation .gridd-toggle.toggled-on {
   opacity: 1;
-  box-shadow: 0 1px;
 }
 .gridd-navigation .gridd-toggle.toggled-on {
   opacity: 1;

@@ -51,13 +51,13 @@ class AMP {
 	 * @return void
 	 */
 	public function css_vars_calc() {
-		$content_max_width                  = get_theme_mod( 'gridd_grid_part_details_content', '45em' );
+		$content_max_width                  = get_theme_mod( 'gridd_grid_part_details_content', '45rem' );
 		$main_font_size                     = get_theme_mod( 'gridd_body_font_size', 18 ) . 'px';
 		$fluid_typo_ratio                   = get_theme_mod( 'gridd_fluid_typography_ratio', 0.25 );
 		$gridd_content_max_width_calculated = $content_max_width;
 
 		// If we're using "em" for the content area'smax-width,
-		// then we needto make some calculations for the $c-mw-c css-var.
+		// then we needto make some calculations for the $mw-c css-var.
 		if ( false === strpos( $content_max_width, 'rem' ) && false !== strpos( $content_max_width, 'em' ) ) {
 
 			// Check that there are numbers in our value and that we're not using calc.
@@ -90,7 +90,7 @@ class AMP {
 
 		// We use esc_attr() for sanitization here since we want to sanitize a CSS value.
 		// Though not strictly accurate, in this case it is secure and doesn't cause any issues.
-		echo '<style>body{--c-mw-c:' . esc_attr( $gridd_content_max_width_calculated ) . ';</style>';
+		echo '<style>body{--mw-c:' . esc_attr( $gridd_content_max_width_calculated ) . ';</style>';
 	}
 
 	/**

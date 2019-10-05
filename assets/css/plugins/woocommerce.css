@@ -59,7 +59,7 @@
   width: 100%;
 }
 .woocommerce div.product .woocommerce-tabs ul.tabs li.active, .woocommerce div.product .woocommerce-tabs ul.tabs li:not(.active) {
-  background: var(--c-bg);
+  background: var(--bg);
 }
 .woocommerce div.product .woocommerce-tabs ul.tabs li.active a, .woocommerce div.product .woocommerce-tabs ul.tabs li:not(.active) a {
   color: currentColor;
@@ -89,7 +89,7 @@
   padding: 0.5em 1em;
   line-height: 1.5;
   background-color: var(--lc, #0f5e97);
-  color: var(--c-bg, #fff);
+  color: var(--bg, #fff);
 }
 
 .woocommerce div.product form.cart {

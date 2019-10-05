@@ -1,9 +1,8 @@
 a,
 a:visited {
-	text-decoration: none;
-	border-bottom: 1px solid;
 	color: var(--lc, #0f5e97);
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+	text-decoration-thickness: 2px;
 
 	&:hover,
 	&:active,
@@ -11,15 +10,15 @@ a:visited {
 		color: var(--lch, #541cfc);
 	}
 
-	&:hover {
-		box-shadow: 0 1px;
-	}
-
 	&:focus,
 	&:active {
 		outline: 2px solid;
 		outline-offset: 2px;
 		border-bottom-color: transparent;
+	}
+
+	&:focus {
+		outline-width: 1px;
 	}
 
 	&.post-thumbnail {

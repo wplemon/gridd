@@ -34,7 +34,7 @@ function griddGetContrastColor( bg ) {
 		});
 	});
 
-	wp.customize( 'gridd_grid_content_max_width', function( value ) {
+	wp.customize( 'content_max_width', function( value ) {
 		value.bind( function() {
 			griddComputeEm();
 		});
@@ -53,7 +53,7 @@ function griddGetContrastColor( bg ) {
 	});
 
 	// Compute content-max-width.
-	_.each( [ 'gridd_fluid_typography_ratio', 'gridd_grid_content_max_width', 'gridd_body_font_size' ], function( setting ) {
+	_.each( [ 'gridd_fluid_typography_ratio', 'content_max_width', 'gridd_body_font_size' ], function( setting ) {
 		wp.customize( setting, function( value ) {
 			value.bind( function( to ) { // eslint-disable-line no-unused-vars
 				setTimeout( function() {
