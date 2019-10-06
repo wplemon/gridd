@@ -17,3 +17,7 @@ packages/wptrt/**/composer.json
 packages/wptrt/**/.gitattributes
 packages/wptrt/**/.editorconfig
 packages/kirki-framework/module-webfonts/src/assets/scripts/vendor-typekit/src/*
+packages/kirki-framework/**/composer.json
+packages/kirki-framework/**/.gitignore
+packages/kirki-framework/**/package.json
+packages/kirki-framework/**/**/*.scss
