@@ -106,7 +106,7 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\ReactColor(
 	[
 		'type'        => 'color',
 		'settings'    => 'gridd_grid_footer_background_color',
@@ -125,8 +125,9 @@ Customizer::add_field(
 				'property' => '--bg',
 			],
 		],
-		'choices'     => [
-			'alpha' => true,
+		'choices'   => [
+			'formComponent' => 'TwitterPicker',
+			'colors'        => [ '#FFFFFF', '#fffcea', '#F9F9F9', '#f7f6e3', '#f7f7f7', '#f4f4e1', '#1A1A1A', '#000000', '#FF6900', '#FCB900', '#7BDCB5', '#00D084', '#8ED1FC', '#0693E3', '#ABB8C3', '#EB144C', '#F78DA7', '#9900EF' ]
 		],
 		'priority'    => 50,
 	]
@@ -150,7 +151,7 @@ Customizer::add_field(
 		'settings'  => 'gridd_grid_footer_border_top_width',
 		'label'     => esc_html__( 'Border-Top Width', 'gridd' ),
 		'section'   => 'gridd_grid_part_details_footer',
-		'default'   => 1,
+		'default'   => 0,
 		'transport' => 'auto',
 		'output'    => [
 			[
@@ -169,13 +170,13 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\ReactColor(
 	[
 		'type'            => 'color',
 		'settings'        => 'gridd_grid_footer_border_top_color',
 		'label'           => esc_html__( 'Top Border Color', 'gridd' ),
 		'section'         => 'gridd_grid_part_details_footer',
-		'default'         => 'rgba(0,0,0,.1)',
+		'default'         => '',
 		'priority'        => 60,
 		'transport'       => 'auto',
 		'output'          => [
@@ -184,8 +185,9 @@ Customizer::add_field(
 				'property' => '--bt-cl',
 			],
 		],
-		'choices'         => [
-			'alpha' => true,
+		'choices'   => [
+			'formComponent' => 'TwitterPicker',
+			'colors'        => [ '#FFFFFF', '#fffcea', '#F9F9F9', '#f7f6e3', '#f7f7f7', '#f4f4e1', '#1A1A1A', '#000000', '#FF6900', '#FCB900', '#7BDCB5', '#00D084', '#8ED1FC', '#0693E3', '#ABB8C3', '#EB144C', '#F78DA7', '#9900EF' ]
 		],
 		'active_callback' => [
 			[

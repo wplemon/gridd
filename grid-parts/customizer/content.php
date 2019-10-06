@@ -20,7 +20,7 @@ Customizer::add_section(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\ReactColor(
 	[
 		'type'      => 'color',
 		'settings'  => 'gridd_grid_content_background_color',
@@ -36,7 +36,8 @@ Customizer::add_field(
 		'transport' => 'auto',
 		'priority'  => 10,
 		'choices'   => [
-			'alpha' => true,
+			'formComponent' => 'TwitterPicker',
+			'colors'        => [ '#FFFFFF', '#fffcea', '#F9F9F9', '#f7f6e3', '#f7f7f7', '#f4f4e1', '#1A1A1A', '#000000' ]
 		],
 	]
 );
