@@ -54,32 +54,30 @@
 
 // Buttons
 @mixin button() {
-	color: currentColor;
+	color: var(--bg);
 	text-decoration: none !important;
 	border-radius: 4px;
 	padding: .35em 1.25em;
-	position: relative;
-	border: 2px solid; //currentColor;
-	background: none;
+	border: 2px solid var(--cl);
+	background: var(--cl);
 	cursor: pointer;
 	position: relative;
+	display: inline-block;
+	margin: 0;
+	text-align: center;
+	overflow-wrap: break-word;
 
 	&:active,
 	&:hover,
 	&:focus {
 		color: var(--bg);
-		background: var(--cl);
-		border-color: var(--cl);
-		outline: none;
-		text-decoration: none !important;
+		box-shadow: .1em .1em .05em var(--cl);
+		outline: none !important;
 	}
 
 	&:focus,
 	&:active {
-		color: var(--bg);
-		background: var(--cl);
-		border-color: var(--cl);
-		box-shadow: inset 0px 1px 1px 0px;
+		box-shadow: inset .05em .05em .2em .05em currentColor;
 	}
 }
 
