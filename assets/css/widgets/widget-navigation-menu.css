@@ -95,11 +95,6 @@
 .gridd-tp-sidebar_ID .widget_nav_menu ul.menu > li > ul {
   font-size: var(--fs-1d-ts-tr);
 }
-.gridd-tp-sidebar_ID .widget_nav_menu ul.menu > li > ul a {
-  padding-left: calc(var(--pd) * var(--ts));
-  padding-right: calc(var(--pd) * var(--ts));
-}
-
 .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current-menu-ancestor .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current-menu-item .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current-menu-parent .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current-page-ancestor .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current-page-item .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current-page-parent .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current_page_ancestor .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current_page_item .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current_page_parent .gridd-toggle {
   display: none;
 }
