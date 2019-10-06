@@ -1,4 +1,4 @@
-<?php // phpcs:ignoreFile WordPress.Files.FileName
+<?php // phpcs:ignore WordPress.Files.FileName
 /**
  * Handle theme-options changes on upgrades.
  *
@@ -194,6 +194,12 @@ class Upgrade {
 	private function is_upgrade() {
 		$update_from  = get_option( self::OPTION_NAME_UPGRADE_FROM );
 		$last_version = get_option( self::OPTION_NAME_VER );
+
+		if ( ! $update_from && $last_version && version_compare( GRIDD_VERSION, $last_version ) > 0 ) {
+			update_option( self::OPTION_NAME_UPGRADE_FROM, $last_version );
+			$update_from = $last_version;
+		}
+
 		return ( $update_from || ! $last_version );
 	}
 

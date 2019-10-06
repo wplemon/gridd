@@ -28,7 +28,7 @@ function gridd_add_footer_widget_area_options( $id ) {
 
 	// Add section.
 	Customizer::add_outer_section(
-		"gridd_grid_part_details_footer_sidebar_$id",
+		"grid_part_details_footer_sidebar_$id",
 		[
 			'title' => sprintf(
 				/* translators: The grid-part label. */
@@ -45,7 +45,7 @@ function gridd_add_footer_widget_area_options( $id ) {
 			'type'      => 'color',
 			'settings'  => "gridd_grid_footer_sidebar_{$id}_bg_color",
 			'label'     => esc_html__( 'Background Color', 'gridd' ),
-			'section'   => "gridd_grid_part_details_footer_sidebar_$id",
+			'section'   => "grid_part_details_footer_sidebar_$id",
 			'default'   => '#ffffff',
 			'transport' => 'auto',
 			'output'    => [
@@ -66,7 +66,7 @@ function gridd_add_footer_widget_area_options( $id ) {
 			'type'              => 'gridd-wcag-tc',
 			'settings'          => "gridd_grid_footer_sidebar_{$id}_color",
 			'label'             => esc_html__( 'Text Color', 'gridd' ),
-			'section'           => "gridd_grid_part_details_footer_sidebar_$id",
+			'section'           => "grid_part_details_footer_sidebar_$id",
 			'default'           => '#000000',
 			'transport'         => 'auto',
 			'output'            => [
@@ -88,7 +88,7 @@ function gridd_add_footer_widget_area_options( $id ) {
 			'type'              => 'gridd-wcag-lc',
 			'settings'          => "gridd_grid_footer_sidebar_{$id}_links_color",
 			'label'             => esc_html__( 'Links Color', 'gridd' ),
-			'section'           => "gridd_grid_part_details_footer_sidebar_$id",
+			'section'           => "grid_part_details_footer_sidebar_$id",
 			'default'           => '#0f5e97',
 			'transport'         => 'auto',
 			'output'            => [

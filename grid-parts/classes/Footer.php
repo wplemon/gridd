@@ -1,10 +1,8 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName
 /**
  * Gridd Footer grid-part
  *
  * @package Gridd
- *
- * phpcs:ignoreFile WordPress.Files.FileName
  */
 
 namespace Gridd\Grid_Part;
@@ -109,16 +107,16 @@ class Footer extends Grid_Part {
 			'rows'         => 2,
 			'columns'      => 3,
 			'areas'        => [
-				'footer_sidebar_1'    => [
+				'footer_sidebar_1' => [
 					'cells' => [ [ 1, 1 ] ],
 				],
-				'footer_sidebar_2'    => [
+				'footer_sidebar_2' => [
 					'cells' => [ [ 1, 2 ] ],
 				],
-				'footer_sidebar_3'    => [
+				'footer_sidebar_3' => [
 					'cells' => [ [ 1, 3 ] ],
 				],
-				'footer_copyright'    => [
+				'footer_copyright' => [
 					'cells' => [ [ 2, 1 ], [ 2, 2 ], [ 2, 3 ] ],
 				],
 			],

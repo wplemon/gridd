@@ -1,11 +1,9 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName
 /**
  * Color utilities.
  * These are a copy of the JS functions on https://aristath.github.io/wcagColors.js/
  *
  * @package Gridd
- *
- * phpcs:ignoreFile WordPress.Files.FileName
  */
 
 namespace Gridd;
@@ -68,8 +66,8 @@ class Color {
 		}
 		$color1 = \ariColor::newColor( $colors[0] );
 		$color2 = \ariColor::newColor( $colors[1] );
-		$l1 = self::get_relative_luminance( [ $color1->red, $color1->green, $color1->blue ] );
-		$l2 = self::get_relative_luminance( [ $color2->red, $color2->green, $color2->blue ] );
+		$l1     = self::get_relative_luminance( [ $color1->red, $color1->green, $color1->blue ] );
+		$l2     = self::get_relative_luminance( [ $color2->red, $color2->green, $color2->blue ] );
 		return max( ( $l1 + 0.05 ) / ( $l2 + 0.05 ), ( $l2 + 0.05 ) / ( $l1 + 0.05 ) );
 	}
 }

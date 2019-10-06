@@ -9,7 +9,7 @@ use Gridd\Grid_Part\Header;
 use Gridd\Customizer;
 
 Customizer::add_outer_section(
-	'gridd_grid_part_details_header_search',
+	'grid_part_details_header_search',
 	[
 		/* translators: The grid-part label. */
 		'title' => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Header Search', 'gridd' ) ),
@@ -19,9 +19,9 @@ Customizer::add_outer_section(
 Customizer::add_field(
 	[
 		'type'      => 'radio-buttonset',
-		'settings'  => 'gridd_grid_part_details_header_search_mode',
+		'settings'  => 'header_search_mode',
 		'label'     => esc_html__( 'Search Mode', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_header_search',
+		'section'   => 'grid_part_details_header_search',
 		'default'   => 'form',
 		'transport' => 'refresh',
 		'choices'   => [
@@ -35,9 +35,9 @@ Customizer::add_field(
 Customizer::add_field(
 	[
 		'type'      => 'color',
-		'settings'  => 'gridd_grid_part_details_header_bg_color',
+		'settings'  => 'header_search_background_color',
 		'label'     => esc_html__( 'Background Color', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_header_search',
+		'section'   => 'grid_part_details_header_search',
 		'default'   => '#ffffff',
 		'transport' => 'auto',
 		'output'    => [
@@ -56,9 +56,9 @@ Customizer::add_field(
 Customizer::add_field(
 	[
 		'type'      => 'color',
-		'settings'  => 'gridd_grid_part_details_header_search_color',
+		'settings'  => 'header_search_color',
 		'label'     => esc_html__( 'Text Color', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_header_search',
+		'section'   => 'grid_part_details_header_search',
 		'default'   => '#000000',
 		'transport' => 'auto',
 		'output'    => [
@@ -82,7 +82,7 @@ Customizer::add_field(
 				'details' => esc_html__( 'Select the horizontal padding for this grid-part. Vertically there is no padding because the searchform occupies the whole height of this area.', 'gridd' ),
 			]
 		),
-		'section'     => 'gridd_grid_part_details_header_search',
+		'section'     => 'grid_part_details_header_search',
 		'default'     => 1,
 		'transport'   => 'auto',
 		'output'      => [
@@ -105,10 +105,10 @@ Customizer::add_field(
 Customizer::add_field(
 	[
 		'type'        => 'slider',
-		'settings'    => 'gridd_grid_part_details_header_search_font_size',
+		'settings'    => 'header_search_font_size',
 		'label'       => esc_html__( 'Font Size', 'gridd' ),
 		'description' => esc_html__( 'The value selected here is relative to your body font-size, so a value of 1em will be the same size as your content.', 'gridd' ),
-		'section'     => 'gridd_grid_part_details_header_search',
+		'section'     => 'grid_part_details_header_search',
 		'default'     => 1,
 		'output'      => [
 			[

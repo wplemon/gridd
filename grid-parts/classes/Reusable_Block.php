@@ -1,10 +1,8 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName
 /**
  * Gridd Reusable-Block grid-part
  *
  * @package Gridd
- *
- * phpcs:ignoreFile WordPress.Files.FileName
  */
 
 namespace Gridd\Grid_Part;
@@ -185,6 +183,7 @@ class Reusable_Block extends Grid_Part {
 				Rest::register_partial(
 					[
 						'id'    => "reusable_block_{$block->ID}",
+						/* translators: The reusable-block name. */
 						'label' => sprintf( esc_html__( 'Block: %s', 'gridd' ), esc_html( $block->post_title ) ),
 					]
 				);

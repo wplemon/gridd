@@ -1,12 +1,10 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName
 /**
  * WooCommerce Compatibility File
  *
  * @link https://woocommerce.com/
  *
  * @package Gridd
- *
- * phpcs:ignoreFile WordPress.Files.FileName
  */
 
 namespace Gridd;

@@ -16,7 +16,7 @@ if ( ! function_exists( 'gridd_social_icons_svg' ) ) {
 }
 
 Customizer::add_outer_section(
-	'gridd_grid_part_details_social_media',
+	'grid_part_details_social_media',
 	[
 		/* translators: The grid-part label. */
 		'title' => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Header Contact Info', 'gridd' ) ),
@@ -26,10 +26,10 @@ Customizer::add_outer_section(
 Customizer::add_field(
 	[
 		'type'            => 'repeater',
-		'settings'        => 'gridd_grid_part_details_social_icons',
+		'settings'        => 'header_social_icons',
 		'label'           => esc_html__( 'Social Media Links', 'gridd' ),
 		'description'     => esc_html__( 'Add, remove and reorder your social links.', 'gridd' ),
-		'section'         => 'gridd_grid_part_details_social_media',
+		'section'         => 'grid_part_details_social_media',
 		'default'         => [],
 		'row_label'       => [
 			'type'  => 'field',
@@ -54,7 +54,7 @@ Customizer::add_field(
 		],
 		'transport'       => 'postMessage',
 		'partial_refresh' => [
-			'gridd_grid_part_details_social_icons_template' => [
+			'grid_part_details_social_icons_template' => [
 				'selector'            => '.gridd-tp-social_media',
 				'container_inclusive' => false,
 				'render_callback'     => function() {
@@ -68,9 +68,9 @@ Customizer::add_field(
 Customizer::add_field(
 	[
 		'type'      => 'color',
-		'settings'  => 'gridd_grid_part_details_social_icons_background_color',
+		'settings'  => 'header_social_icons_background_color',
 		'label'     => esc_html__( 'Background Color', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_social_media',
+		'section'   => 'grid_part_details_social_media',
 		'default'   => '#ffffff',
 		'transport' => 'auto',
 		'output'    => [
@@ -89,9 +89,9 @@ Customizer::add_field(
 Customizer::add_field(
 	[
 		'type'      => 'color',
-		'settings'  => 'gridd_grid_part_details_social_icons_icons_color',
+		'settings'  => 'header_social_icons_icons_color',
 		'label'     => esc_html__( 'Icons Color', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_social_media',
+		'section'   => 'grid_part_details_social_media',
 		'default'   => '#000000',
 		'transport' => 'auto',
 		'output'    => [
@@ -110,9 +110,9 @@ Customizer::add_field(
 Customizer::add_field(
 	[
 		'type'      => 'slider',
-		'settings'  => 'gridd_grid_part_details_social_icons_size',
+		'settings'  => 'header_social_icons_size',
 		'label'     => esc_html__( 'Size', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_social_media',
+		'section'   => 'grid_part_details_social_media',
 		'default'   => 1,
 		'transport' => 'auto',
 		'output'    => [
@@ -134,10 +134,10 @@ Customizer::add_field(
 Customizer::add_field(
 	[
 		'type'        => 'slider',
-		'settings'    => 'gridd_grid_part_details_social_icons_padding',
+		'settings'    => 'header_social_icons_padding',
 		'label'       => esc_html__( 'Padding', 'gridd' ),
 		'description' => esc_html__( ' Controls how large the clickable area will be and the spacing between icons.', 'gridd' ),
-		'section'     => 'gridd_grid_part_details_social_media',
+		'section'     => 'grid_part_details_social_media',
 		'default'     => .5,
 		'transport'   => 'auto',
 		'output'      => [
@@ -159,9 +159,9 @@ Customizer::add_field(
 Customizer::add_field(
 	[
 		'type'              => 'radio-buttonset',
-		'settings'          => 'gridd_grid_part_details_social_icons_icons_text_align',
+		'settings'          => 'header_social_icons_icons_text_align',
 		'label'             => esc_html__( 'Icons Alignment', 'gridd' ),
-		'section'           => 'gridd_grid_part_details_social_media',
+		'section'           => 'grid_part_details_social_media',
 		'default'           => 'flex-end',
 		'priority'          => 60,
 		'transport'         => 'auto',

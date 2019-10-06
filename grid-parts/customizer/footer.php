@@ -12,7 +12,7 @@ use Gridd\Grid_Part\Footer;
 $sanitization = new Sanitize();
 
 Customizer::add_section(
-	'gridd_grid_part_details_footer',
+	'grid_part_details_footer',
 	[
 		'title'    => esc_html__( 'Footer', 'gridd' ),
 		'priority' => 26,
@@ -23,7 +23,7 @@ Customizer::add_section(
 Customizer::add_field(
 	[
 		'settings'          => 'gridd_footer_grid',
-		'section'           => 'gridd_grid_part_details_footer',
+		'section'           => 'grid_part_details_footer',
 		'type'              => 'gridd_grid',
 		'grid-part'         => 'footer',
 		'label'             => esc_html__( 'Footer Grid', 'gridd' ),
@@ -47,7 +47,7 @@ Customizer::add_field(
 		'type'      => 'dimension',
 		'settings'  => 'gridd_grid_footer_max_width',
 		'label'     => esc_html__( 'Footer Maximum Width', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_footer',
+		'section'   => 'grid_part_details_footer',
 		'default'   => '100%',
 		'transport' => 'auto',
 		'output'    => [
@@ -70,7 +70,7 @@ Customizer::add_field(
 				'details' => __( 'Adds a gap between your grid-parts, both horizontally and vertically. For more information please read <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
 			]
 		),
-		'section'     => 'gridd_grid_part_details_footer',
+		'section'     => 'grid_part_details_footer',
 		'default'     => '0',
 		'transport'   => 'auto',
 		'output'      => [
@@ -93,7 +93,7 @@ Customizer::add_field(
 				'details' => esc_html__( 'Inner padding for all parts in the footer.', 'gridd' ) . ' ' . __( 'For details on how padding works, please refer to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
 			]
 		),
-		'section'     => 'gridd_grid_part_details_footer',
+		'section'     => 'grid_part_details_footer',
 		'default'     => '1em',
 		'transport'   => 'auto',
 		'output'      => [
@@ -116,7 +116,7 @@ new \Kirki\Field\ReactColor(
 				'details' => esc_html__( 'Individual grid-parts can override this by setting their own background color for their area. If you are using a grid-gap the color defined here will be visible between grid-parts. If the color you have selected here is not visible, individual grid-parts may be using a solid background color.', 'gridd' ),
 			]
 		),
-		'section'     => 'gridd_grid_part_details_footer',
+		'section'     => 'grid_part_details_footer',
 		'default'     => '#ffffff',
 		'transport'   => 'auto',
 		'output'      => [
@@ -125,9 +125,9 @@ new \Kirki\Field\ReactColor(
 				'property' => '--bg',
 			],
 		],
-		'choices'   => [
+		'choices'     => [
 			'formComponent' => 'TwitterPicker',
-			'colors'        => [ '#FFFFFF', '#fffcea', '#F9F9F9', '#f7f6e3', '#f7f7f7', '#f4f4e1', '#1A1A1A', '#000000', '#FF6900', '#FCB900', '#7BDCB5', '#00D084', '#8ED1FC', '#0693E3', '#ABB8C3', '#EB144C', '#F78DA7', '#9900EF' ]
+			'colors'        => [ '#FFFFFF', '#fffcea', '#F9F9F9', '#f7f6e3', '#f7f7f7', '#f4f4e1', '#1A1A1A', '#000000', '#FF6900', '#FCB900', '#7BDCB5', '#00D084', '#8ED1FC', '#0693E3', '#ABB8C3', '#EB144C', '#F78DA7', '#9900EF' ],
 		],
 		'priority'    => 50,
 	]
@@ -136,10 +136,10 @@ new \Kirki\Field\ReactColor(
 Customizer::add_field(
 	[
 		'type'        => 'checkbox',
-		'settings'    => 'gridd_grid_part_details_footer_parts_background_override',
+		'settings'    => 'footer_parts_background_override',
 		'label'       => esc_html__( 'Override Footer Parts Background', 'gridd' ),
 		'description' => esc_html__( 'Enable this option to force-override the background color of all grid-parts in your footer.', 'gridd' ),
-		'section'     => 'gridd_grid_part_details_footer',
+		'section'     => 'grid_part_details_footer',
 		'default'     => false,
 		'priority'    => 60,
 	]
@@ -150,7 +150,7 @@ Customizer::add_field(
 		'type'      => 'slider',
 		'settings'  => 'gridd_grid_footer_border_top_width',
 		'label'     => esc_html__( 'Border-Top Width', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_footer',
+		'section'   => 'grid_part_details_footer',
 		'default'   => 0,
 		'transport' => 'auto',
 		'output'    => [
@@ -175,7 +175,7 @@ new \Kirki\Field\ReactColor(
 		'type'            => 'color',
 		'settings'        => 'gridd_grid_footer_border_top_color',
 		'label'           => esc_html__( 'Top Border Color', 'gridd' ),
-		'section'         => 'gridd_grid_part_details_footer',
+		'section'         => 'grid_part_details_footer',
 		'default'         => '',
 		'priority'        => 60,
 		'transport'       => 'auto',
@@ -185,9 +185,9 @@ new \Kirki\Field\ReactColor(
 				'property' => '--bt-cl',
 			],
 		],
-		'choices'   => [
+		'choices'         => [
 			'formComponent' => 'TwitterPicker',
-			'colors'        => [ '#FFFFFF', '#fffcea', '#F9F9F9', '#f7f6e3', '#f7f7f7', '#f4f4e1', '#1A1A1A', '#000000', '#FF6900', '#FCB900', '#7BDCB5', '#00D084', '#8ED1FC', '#0693E3', '#ABB8C3', '#EB144C', '#F78DA7', '#9900EF' ]
+			'colors'        => [ '#FFFFFF', '#fffcea', '#F9F9F9', '#f7f6e3', '#f7f7f7', '#f4f4e1', '#1A1A1A', '#000000', '#FF6900', '#FCB900', '#7BDCB5', '#00D084', '#8ED1FC', '#0693E3', '#ABB8C3', '#EB144C', '#F78DA7', '#9900EF' ],
 		],
 		'active_callback' => [
 			[

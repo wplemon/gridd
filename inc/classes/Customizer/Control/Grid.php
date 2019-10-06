@@ -1,11 +1,9 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName
 /**
  * Gridd - the grid control.
  *
  * @package Gridd
  * @since 1.0
- *
- * phpcs:ignoreFile WordPress.Files.FileName
  */
 
 namespace Gridd\Customizer\Control;
@@ -67,9 +65,12 @@ class Grid extends \Kirki_Control_Base {
 		$grid_parts = $this->choices['parts'];
 		$value      = $this->value();
 		// Sort parts alphabetically.
-		usort( $grid_parts, function ($a, $b ) {
-			return strcmp( $a['label'], $b['label'] );
-		} );
+		usort(
+			$grid_parts,
+			function ( $a, $b ) {
+				return strcmp( $a['label'], $b['label'] );
+			}
+		);
 		?>
 		<!-- Label. -->
 		<span class="customize-control-title">

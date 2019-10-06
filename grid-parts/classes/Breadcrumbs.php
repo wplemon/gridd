@@ -1,10 +1,8 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName
 /**
  * Gridd Breadcrumbs grid-part
  *
  * @package Gridd
- *
- * phpcs:ignoreFile WordPress.Files.FileName
  */
 
 namespace Gridd\Grid_Part;
@@ -133,7 +131,7 @@ class Breadcrumbs extends Grid_Part {
 
 			// If the theme's textdomain is loaded, assign the theme's translations to the framework's textdomain.
 			if ( isset( $l10n['gridd'] ) ) {
-				$l10n[ $domain ] = $l10n['gridd']; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.OverrideProhibited
+				$l10n[ $domain ] = $l10n['gridd']; // phpcs:ignore WordPress.WP.GlobalVariablesOverride
 			}
 
 			// Always override.  We only want the theme to handle translations.
@@ -157,6 +155,6 @@ class Breadcrumbs extends Grid_Part {
 	}
 }
 
-new Breadcrumbs;
+new Breadcrumbs();
 
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */

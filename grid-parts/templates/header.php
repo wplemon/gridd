@@ -51,7 +51,7 @@ if ( $header_bg_img ) {
 }
 
 // Force-override parts background images.
-if ( get_theme_mod( 'gridd_grid_part_details_header_parts_background_override', false ) ) {
+if ( get_theme_mod( 'header_parts_background_override', false ) ) {
 	$style->add_string( '.gridd-tp.gridd-tp-header .gridd-tp,.gridd-tp.gridd-tp-header .gridd-tp .inner{background:transparent !important;background-color:none !important;}' );
 }
 

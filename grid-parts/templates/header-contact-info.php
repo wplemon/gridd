@@ -21,6 +21,6 @@ $style->the_css( 'gridd-inline-css-header-contact-info' );
 	/**
 	 * Print the text entered by the user.
 	 */
-	echo wp_kses_post( get_theme_mod( 'gridd_grid_part_details_header_contact_info', __( 'Email: <a href="mailto:contact@example.com">contact@example.com</a>. Phone: +1-541-754-3010', 'gridd' ) ) );
+	echo wp_kses_post( get_theme_mod( 'header_contact_info', __( 'Email: <a href="mailto:contact@example.com">contact@example.com</a>. Phone: +1-541-754-3010', 'gridd' ) ) );
 	?>
 </div>

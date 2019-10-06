@@ -1,17 +1,17 @@
 #customize-controls #sub-accordion-section-gridd_grid li.accordion-section .accordion-section-title,
-#customize-controls #sub-accordion-section-gridd_grid_part_details_header li.accordion-section .accordion-section-title,
-#customize-controls #sub-accordion-section-gridd_grid_part_details_footer li.accordion-section .accordion-section-title {
+#customize-controls #sub-accordion-section-grid_part_details_header li.accordion-section .accordion-section-title,
+#customize-controls #sub-accordion-section-grid_part_details_footer li.accordion-section .accordion-section-title {
   color: #333;
   background: #fff !important;
 }
 #customize-controls #sub-accordion-section-gridd_grid li.accordion-section .accordion-section-title:hover,
-#customize-controls #sub-accordion-section-gridd_grid_part_details_header li.accordion-section .accordion-section-title:hover,
-#customize-controls #sub-accordion-section-gridd_grid_part_details_footer li.accordion-section .accordion-section-title:hover {
+#customize-controls #sub-accordion-section-grid_part_details_header li.accordion-section .accordion-section-title:hover,
+#customize-controls #sub-accordion-section-grid_part_details_footer li.accordion-section .accordion-section-title:hover {
   background: #dedede !important;
 }
 #customize-controls #sub-accordion-section-gridd_grid li.accordion-section.control-section-kirki-nested h3.accordion-section-title,
-#customize-controls #sub-accordion-section-gridd_grid_part_details_header li.accordion-section.control-section-kirki-nested h3.accordion-section-title,
-#customize-controls #sub-accordion-section-gridd_grid_part_details_footer li.accordion-section.control-section-kirki-nested h3.accordion-section-title {
+#customize-controls #sub-accordion-section-grid_part_details_header li.accordion-section.control-section-kirki-nested h3.accordion-section-title,
+#customize-controls #sub-accordion-section-grid_part_details_footer li.accordion-section.control-section-kirki-nested h3.accordion-section-title {
   display: none;
 }
 #customize-controls .customize-section-description-container.section-meta .dashicons {

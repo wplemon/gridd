@@ -1,10 +1,8 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName
 /**
  * Gridd Header grid-part
  *
  * @package Gridd
- *
- * phpcs:ignoreFile WordPress.Files.FileName
  */
 
 namespace Gridd\Grid_Part;
@@ -208,9 +206,9 @@ class Header extends Grid_Part {
 	 * @return array
 	 */
 	public function footer_inline_script_paths( $paths ) {
-		$settings = Grid::get_options( 'gridd_header_grid', Header::get_grid_defaults() );
+		$settings = Grid::get_options( 'gridd_header_grid', self::get_grid_defaults() );
 		if ( isset( $settings['areas'] ) && isset( $settings['areas']['header_search'] ) && apply_filters( 'gridd_render_grid_part', true, 'header_search' ) ) {
-			$header_search_mode  = get_theme_mod( 'gridd_grid_part_details_header_search_mode', 'form' );
+			$header_search_mode = get_theme_mod( 'header_search_mode', 'form' );
 			if ( 'slide-up' === $header_search_mode ) {
 				$paths[] = get_theme_file_path( 'grid-parts/scripts/header-search.min.js' );
 			}

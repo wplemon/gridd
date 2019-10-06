@@ -1,10 +1,8 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName
 /**
  * Blog filters.
  *
  * @package Gridd
- *
- * phpcs:ignoreFile WordPress.Files.FileName
  */
 
 namespace Gridd;
@@ -71,7 +69,7 @@ class Blog {
 	 * @param array $args The comment-form args.
 	 * @return array
 	 */
-	function comment_form_defaults( $args ) {
+	public function comment_form_defaults( $args ) {
 		$args['class_submit'] .= ' wp-block-button__link';
 		return $args;
 	}
@@ -84,7 +82,7 @@ class Blog {
 	 * @param string $html The links.
 	 * @return string
 	 */
-	function list_categories( $html ) {
+	public function list_categories( $html ) {
 		return str_replace(
 			[ '</a> (', ')' ],
 			[ ' (', ')</a>' ],
@@ -102,25 +100,25 @@ class Blog {
 	 */
 	public static function get_post_parts() {
 		if ( ! self::$post_parts ) {
-			$defaults = 				[
+			$defaults = [
 				'post-title',
 				'post-date-author',
 				'post-thumbnail',
 				'post-content',
 				'post-category',
 				'post-tags',
-				'post-comments-link'
+				'post-comments-link',
 			];
 
 			if ( is_singular() ) {
-				$defaults = 				[
+				$defaults = [
 					'post-thumbnail',
 					'post-title',
 					'post-date-author',
 					'post-content',
 					'post-category',
 					'post-tags',
-					'post-comments-link'
+					'post-comments-link',
 				];
 			}
 
@@ -198,7 +196,7 @@ class Blog {
 		if ( is_singular() ) {
 			if ( 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' ) && ! is_page() ) {
 				$new_parts = [
-					'post-featured-image-header'
+					'post-featured-image-header',
 				];
 				foreach ( $parts as $part ) {
 					if ( 'post-title' !== $part && 'post-date-author' !== $part && 'post-thumbnail' !== $part ) {
@@ -207,7 +205,7 @@ class Blog {
 				}
 				$parts = $new_parts;
 			}
-			$post_format  = get_post_format();
+			$post_format = get_post_format();
 			if ( 'aside' === $post_format || 'link' === $post_format || 'quote' === $post_format || 'status' === $post_format ) {
 				$remove_parts = [ 'post-category', 'post-tags', 'post-date-author', 'part-post-comments-link' ];
 				foreach ( $remove_parts as $remove_part ) {

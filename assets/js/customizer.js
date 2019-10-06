@@ -66,22 +66,22 @@
 
 				// Loop parts in the sub-grid.
 				_.each( parts, function( part ) {
-					var section = jQuery( '#sub-accordion-section-gridd_grid_part_details_' + part ),
+					var section = jQuery( '#sub-accordion-section-grid_part_details_' + part ),
 						backBtn = section.find( '.customize-section-back' );
 
 					// Change the behavior of the back button.
 					jQuery( backBtn ).click( function( e ) {
 						if ( 'gridd_header_grid' === grid ) {
-							wp.customize.section( 'gridd_grid_part_details_header' ).focus();
+							wp.customize.section( 'grid_part_details_header' ).focus();
 							e.preventDefault();
 						} else if ( 'gridd_footer_grid' === grid ) {
-							wp.customize.section( 'gridd_grid_part_details_footer' ).focus();
+							wp.customize.section( 'grid_part_details_footer' ).focus();
 							e.preventDefault();
-						} else if ( nestedParts[ grid ] && wp.customize.section( 'gridd_grid_part_details_' + nestedParts[ grid ] ) ) {
-							wp.customize.section( 'gridd_grid_part_details_' + nestedParts[ grid ] ).focus();
+						} else if ( nestedParts[ grid ] && wp.customize.section( 'grid_part_details_' + nestedParts[ grid ] ) ) {
+							wp.customize.section( 'grid_part_details_' + nestedParts[ grid ] ).focus();
 							e.preventDefault();
-						} else if ( griddTemplatePreviewScript.nestedGrids[ grid ] && wp.customize.section( 'gridd_grid_part_details_' + griddTemplatePreviewScript.nestedGrids[ grid ] ) ) {
-							wp.customize.section( 'gridd_grid_part_details_' + griddTemplatePreviewScript.nestedGrids[ grid ] ).focus();
+						} else if ( griddTemplatePreviewScript.nestedGrids[ grid ] && wp.customize.section( 'grid_part_details_' + griddTemplatePreviewScript.nestedGrids[ grid ] ) ) {
+							wp.customize.section( 'grid_part_details_' + griddTemplatePreviewScript.nestedGrids[ grid ] ).focus();
 							e.preventDefault();
 						}
 					});

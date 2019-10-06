@@ -1,4 +1,4 @@
-<?php
+<?php // phpcs:ignoreFile
 /**
  * Image handling class.
  * Initially implemented for the Shoestrap theme
@@ -6,17 +6,15 @@
  *
  * @package Ari_Image
  * @since 1.0.0
- *
- * phpcs:ignoreFile WordPress.Files.FileName
  */
 
 namespace Gridd;
- 
+
 /**
-* The Image handling class
-*/
+ * The Image handling class
+ */
 class Image {
-	
+
 	/**
 	 * The image ID.
 	 *
@@ -25,7 +23,7 @@ class Image {
 	 * @var int
 	 */
 	protected $id;
-	
+
 	/**
 	 * The image URL.
 	 *
@@ -34,7 +32,7 @@ class Image {
 	 * @var string
 	 */
 	protected $url;
-	
+
 	/**
 	 * The image width.
 	 *
@@ -43,7 +41,7 @@ class Image {
 	 * @var int
 	 */
 	protected $width;
-	
+
 	/**
 	 * The image height.
 	 *
@@ -52,7 +50,7 @@ class Image {
 	 * @var int
 	 */
 	protected $height;
-	
+
 	/**
 	 * An array of instances.
 	 *
@@ -62,7 +60,7 @@ class Image {
 	 * @var array
 	 */
 	private static $instances = array();
-	
+
 	/**
 	 * Constructor.
 	 *
@@ -72,7 +70,7 @@ class Image {
 	 *                                If other string, assume URL.
 	 */
 	private function __construct( $image ) {
-		
+
 		$this->id     = (int) $image;
 		$image_array  = wp_get_attachment_image_src( $this->id, 'full' );
 		$this->url    = $image_array[0];
@@ -80,7 +78,7 @@ class Image {
 		$this->height = $image_array[2];
 
 	}
-	
+
 	/**
 	 * Get an instance of this object.
 	 *
@@ -92,15 +90,15 @@ class Image {
 	 * @return object
 	 */
 	public static function create( $image ) {
-		
+
 		$id = self::get_image_id( $image );
 		if ( ! isset( self::$instances[ $id ] ) ) {
 			self::$instances[ $id ] = new self( $id );
 		}
 		return self::$instances[ $id ];
-		
+
 	}
-	
+
 	/**
 	 * Get an image ID from its URL.
 	 *
@@ -116,7 +114,7 @@ class Image {
 		if ( is_numeric( $image ) ) {
 			return (int) $image;
 		}
-		
+
 		// If we got this far then the $image is a URL.
 		global $wpdb;
 		$attachment = $wpdb->get_col( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE guid='%s';", $image ) );
@@ -124,7 +122,7 @@ class Image {
 			return (int) $attachment[0];
 		}
 	}
-	
+
 	/**
 	 * return the image ID.
 	 *
@@ -172,16 +170,16 @@ class Image {
 	public function resize( $data ) {
 
 		$defaults = array(
-			'url'       => $this->url,
-			'width'     => '',
-			'height'    => '',
-			'crop'      => true,
-			'retina'    => false,
-			'resize'    => true,
+			'url'    => $this->url,
+			'width'  => '',
+			'height' => '',
+			'crop'   => true,
+			'retina' => false,
+			'resize' => true,
 		);
 
 		$settings = wp_parse_args( $data, $defaults );
-		
+
 		if ( empty( $settings['url'] ) ) {
 			return;
 		}
@@ -209,7 +207,7 @@ class Image {
 				$settings['width'] = (int) $settings['width'];
 				$settings['width'] = ( 0 >= $settings['width'] ) ? '' : $settings['width'];
 			} elseif ( ! empty( $settings['width'] ) ) {
-				$settings['height'] = $settings['width'] *$this->height / $this->width;
+				$settings['height'] = $settings['width'] * $this->height / $this->width;
 				$settings['height'] = (int) $settings['height'];
 				$settings['height'] = ( 0 >= $settings['height'] ) ? '' : $settings['height'];
 			}
@@ -220,12 +218,12 @@ class Image {
 			$results['retina'] = self::_resize( $settings['url'], $settings['width'], $settings['height'], $settings['crop'], $settings['retina'] );
 		}
 
-		return self::_resize( $settings['url'], $settings['width'], $settings['height'], $settings['crop'], false );    
+		return self::_resize( $settings['url'], $settings['width'], $settings['height'], $settings['crop'], false );
 	}
 
 	/**
-	 * Resizes an image and returns an array containing the resized URL, width, height and file type. 
-	 * Uses native Wordpress functionality.
+	 * Resizes an image and returns an array containing the resized URL, width, height and file type.
+	 * Uses native WordPress functionality.
 	 * This is a slightly modified version of http://goo.gl/9iS0CO
 	 *
 	 * @access private
@@ -238,7 +236,7 @@ class Image {
 	 *                         If an integer is used then it's used as a multiplier (@2x, @3x etc).
 	 * @return array   An array containing the resized image URL, width, height and file type.
 	 */
-	public static function _resize( $url, $width = NULL, $height = NULL, $crop = true, $retina = false ) {
+	public static function _resize( $url, $width = null, $height = null, $crop = true, $retina = false ) {
 		global $wpdb;
 
 		if ( empty( $url ) ) {
@@ -246,7 +244,7 @@ class Image {
 		}
 
 		// Get default size from database.
-		$width  = ( $width )  ? $width  : get_option( 'thumbnail_size_w' );
+		$width  = ( $width ) ? $width : get_option( 'thumbnail_size_w' );
 		$height = ( $height ) ? $height : get_option( 'thumbnail_size_h' );
 
 		// Allow for different retina sizes
@@ -266,8 +264,8 @@ class Image {
 		// File name suffix (appended to original file name)
 		$suffix_width  = ( $dest_width / $retina );
 		$suffix_height = ( $dest_height / $retina );
-		$suffix_retina = ( $retina != 1 ) ? '@' . $retina . 'x' : NULL;
-		$suffix = "{$suffix_width}x{$suffix_height}{$suffix_retina}";
+		$suffix_retina = ( $retina != 1 ) ? '@' . $retina . 'x' : null;
+		$suffix        = "{$suffix_width}x{$suffix_height}{$suffix_retina}";
 
 		// Some additional info about the image
 		$info = pathinfo( $file_path );
@@ -283,7 +281,7 @@ class Image {
 		// Suffix applied to filename
 		$suffix_width  = ( $dest_width / $retina );
 		$suffix_height = ( $dest_height / $retina );
-		$suffix_retina = ( $retina != 1 ) ? '@' . $retina . 'x' : NULL;
+		$suffix_retina = ( $retina != 1 ) ? '@' . $retina . 'x' : null;
 		$suffix        = $suffix_width . 'x' . $suffix_height . $suffix_retina;
 
 		// Get the destination file name
@@ -298,13 +296,21 @@ class Image {
 			$get_attachment = $wpdb->get_results( $query );
 
 			if ( ! $get_attachment ) {
-				return array( 'url' => $url, 'width' => $width, 'height' => $height );
+				return array(
+					'url'    => $url,
+					'width'  => $width,
+					'height' => $height,
+				);
 			}
 
-			// Load Wordpress Image Editor
+			// Load WordPress Image Editor
 			$editor = wp_get_image_editor( $file_path );
 			if ( is_wp_error( $editor ) ) {
-				return array( 'url' => $url, 'width' => $width, 'height' => $height );
+				return array(
+					'url'    => $url,
+					'width'  => $width,
+					'height' => $height,
+				);
 			}
 
 			// Get the original image size
@@ -345,11 +351,11 @@ class Image {
 			$resized_type   = $saved['mime-type'];
 
 			// Add the resized dimensions to original image metadata
-			// so we can delete our resized images when the original image is deleted 
+			// so we can delete our resized images when the original image is deleted
 			// from the Media Library.
 			$metadata = wp_get_attachment_metadata( $get_attachment[0]->ID );
 			if ( isset( $metadata['image_meta'] ) ) {
-				$metadata['image_meta']['resized_images'][] = $resized_width .'x'. $resized_height;
+				$metadata['image_meta']['resized_images'][] = $resized_width . 'x' . $resized_height;
 				wp_update_attachment_metadata( $get_attachment[0]->ID, $metadata );
 			}
 
@@ -358,14 +364,14 @@ class Image {
 				'url'    => $resized_url,
 				'width'  => $resized_width,
 				'height' => $resized_height,
-				'type'   => $resized_type
+				'type'   => $resized_type,
 			);
 		} else {
 			$image_array = array(
 				'url'    => str_replace( basename( $url ), basename( $dest_file_name ), $url ),
 				'width'  => $dest_width,
 				'height' => $dest_height,
-				'type'   => $ext
+				'type'   => $ext,
 			);
 		}
 

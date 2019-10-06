@@ -4,7 +4,7 @@
  *
  * @package Gridd
  *
- * phpcs:ignoreFile WordPress.Files.FileName
+ * phpcs:ignore WordPress.Files.FileName
  */
 
 namespace Gridd;

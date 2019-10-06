@@ -11,7 +11,7 @@ use Gridd\Customizer\Sanitize;
 $sanitization = new Sanitize();
 
 Customizer::add_outer_section(
-	'gridd_grid_part_details_breadcrumbs',
+	'grid_part_details_breadcrumbs',
 	[
 		/* translators: The grid-part label. */
 		'title' => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Breadcrumbs', 'gridd' ) ),
@@ -23,7 +23,7 @@ Customizer::add_field(
 		'type'      => 'color',
 		'settings'  => 'gridd_grid_breadcrumbs_background_color',
 		'label'     => esc_html__( 'Background Color', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_breadcrumbs',
+		'section'   => 'grid_part_details_breadcrumbs',
 		'default'   => '#ffffff',
 		'transport' => 'postMessage',
 		'transport' => 'auto',
@@ -36,7 +36,7 @@ Customizer::add_field(
 		'choices'   => [
 			'alpha' => true,
 		],
-		'priority' => 10,
+		'priority'  => 10,
 	]
 );
 
@@ -55,7 +55,7 @@ Customizer::add_field(
 				),
 			]
 		),
-		'section'     => 'gridd_grid_part_details_breadcrumbs',
+		'section'     => 'grid_part_details_breadcrumbs',
 		'default'     => '1em',
 		'transport'   => 'auto',
 		'output'      => [
@@ -64,7 +64,7 @@ Customizer::add_field(
 				'property' => '--pd',
 			],
 		],
-		'priority' => 20,
+		'priority'    => 20,
 	]
 );
 
@@ -73,7 +73,7 @@ Customizer::add_field(
 		'type'      => 'dimension',
 		'settings'  => 'gridd_grid_breadcrumbs_max_width',
 		'label'     => esc_html__( 'Breadcrumbs Maximum Width', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_breadcrumbs',
+		'section'   => 'grid_part_details_breadcrumbs',
 		'default'   => '100%',
 		'transport' => 'auto',
 		'output'    => [
@@ -82,7 +82,7 @@ Customizer::add_field(
 				'property' => '--mw',
 			],
 		],
-		'priority' => 30,
+		'priority'  => 30,
 	]
 );
 
@@ -91,7 +91,7 @@ Customizer::add_field(
 		'type'              => 'gridd-wcag-tc',
 		'settings'          => 'gridd_grid_breadcrumbs_color',
 		'label'             => esc_html__( 'Text Color', 'gridd' ),
-		'section'           => 'gridd_grid_part_details_breadcrumbs',
+		'section'           => 'grid_part_details_breadcrumbs',
 		'default'           => '#000000',
 		'transport'         => 'auto',
 		'output'            => [
@@ -112,7 +112,7 @@ Customizer::add_field(
 		'type'              => 'radio-buttonset',
 		'settings'          => 'gridd_grid_breadcrumbs_text_align',
 		'label'             => esc_html__( 'Alignment', 'gridd' ),
-		'section'           => 'gridd_grid_part_details_breadcrumbs',
+		'section'           => 'grid_part_details_breadcrumbs',
 		'default'           => 'center',
 		'transport'         => 'auto',
 		'output'            => [
@@ -129,7 +129,7 @@ Customizer::add_field(
 		'sanitize_callback' => function( $value ) {
 			return ( 'left' !== $value && 'right' !== $value && 'center' !== $value ) ? 'center' : $value;
 		},
-		'priority' => 40,
+		'priority'          => 40,
 	]
 );
 

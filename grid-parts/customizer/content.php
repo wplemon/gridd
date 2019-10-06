@@ -11,7 +11,7 @@ use Gridd\Customizer\Sanitize;
 $sanitization = new Sanitize();
 
 Customizer::add_section(
-	'gridd_grid_part_details_content',
+	'grid_part_details_content',
 	[
 		/* translators: The grid-part label. */
 		'title'    => esc_html__( 'Content', 'gridd' ),
@@ -25,7 +25,7 @@ new \Kirki\Field\ReactColor(
 		'type'      => 'color',
 		'settings'  => 'gridd_grid_content_background_color',
 		'label'     => esc_html__( 'Background Color', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_content',
+		'section'   => 'grid_part_details_content',
 		'default'   => '#ffffff',
 		'output'    => [
 			[
@@ -37,7 +37,7 @@ new \Kirki\Field\ReactColor(
 		'priority'  => 10,
 		'choices'   => [
 			'formComponent' => 'TwitterPicker',
-			'colors'        => [ '#FFFFFF', '#fffcea', '#F9F9F9', '#f7f6e3', '#f7f7f7', '#f4f4e1', '#1A1A1A', '#000000' ]
+			'colors'        => [ '#FFFFFF', '#fffcea', '#F9F9F9', '#f7f6e3', '#f7f7f7', '#f4f4e1', '#1A1A1A', '#000000' ],
 		],
 	]
 );
@@ -47,7 +47,7 @@ Customizer::add_field(
 		'type'              => 'gridd-wcag-tc',
 		'settings'          => 'gridd_text_color',
 		'label'             => esc_html__( 'Text Color', 'gridd' ),
-		'section'           => 'gridd_grid_part_details_content',
+		'section'           => 'grid_part_details_content',
 		'priority'          => 20,
 		'default'           => '#000000',
 		'output'            => [
@@ -70,7 +70,7 @@ Customizer::add_field(
 		'type'              => 'gridd-wcag-lc',
 		'label'             => esc_html__( 'Links Color', 'gridd' ),
 		'description'       => esc_html__( 'Select the hue for you links. The color will be auto-calculated to ensure maximum readability according to WCAG.', 'gridd' ),
-		'section'           => 'gridd_grid_part_details_content',
+		'section'           => 'grid_part_details_content',
 		'transport'         => 'auto',
 		'priority'          => 30,
 		'choices'           => [
@@ -96,7 +96,7 @@ Customizer::add_field(
 		'settings'          => 'gridd_links_hover_color',
 		'type'              => 'gridd-wcag-lc',
 		'label'             => esc_html__( 'Links Hover Color', 'gridd' ),
-		'section'           => 'gridd_grid_part_details_content',
+		'section'           => 'grid_part_details_content',
 		'transport'         => 'auto',
 		'priority'          => 40,
 		'choices'           => [
@@ -122,7 +122,7 @@ Customizer::add_field(
 		'type'      => 'dimension',
 		'settings'  => 'content_max_width',
 		'label'     => esc_html__( 'Content Maximum Width', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_content',
+		'section'   => 'grid_part_details_content',
 		'default'   => '45rem',
 		'output'    => [
 			[
@@ -140,7 +140,7 @@ Customizer::add_field(
 		'type'      => 'slider',
 		'settings'  => 'content_padding_horizontal',
 		'label'     => esc_html__( 'Horizontal Content Padding', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_content',
+		'section'   => 'grid_part_details_content',
 		'default'   => 1,
 		'output'    => [
 			[
@@ -165,7 +165,7 @@ Customizer::add_field(
 		'type'      => 'slider',
 		'settings'  => 'content_padding_top',
 		'label'     => esc_html__( 'Top Content Padding', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_content',
+		'section'   => 'grid_part_details_content',
 		'default'   => 1,
 		'output'    => [
 			[
@@ -190,7 +190,7 @@ Customizer::add_field(
 		'type'      => 'slider',
 		'settings'  => 'content_padding_bottom',
 		'label'     => esc_html__( 'Bottom Content Padding', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_content',
+		'section'   => 'grid_part_details_content',
 		'default'   => 1,
 		'output'    => [
 			[

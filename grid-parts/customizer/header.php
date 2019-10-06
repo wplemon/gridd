@@ -22,13 +22,13 @@ $sanitization = new Sanitize();
 add_action(
 	'customize_register',
 	function( $wp_customize ) {
-		$wp_customize->get_control( 'header_image' )->section  = 'gridd_grid_part_details_header';
+		$wp_customize->get_control( 'header_image' )->section  = 'grid_part_details_header';
 		$wp_customize->get_control( 'header_image' )->priority = 80;
 	}
 );
 
 Customizer::add_section(
-	'gridd_grid_part_details_header',
+	'grid_part_details_header',
 	[
 		'title'    => esc_html__( 'Header', 'gridd' ),
 		'priority' => 24,
@@ -39,7 +39,7 @@ Customizer::add_section(
 Customizer::add_field(
 	[
 		'settings'          => 'gridd_header_grid',
-		'section'           => 'gridd_grid_part_details_header',
+		'section'           => 'grid_part_details_header',
 		'type'              => 'gridd_grid',
 		'grid-part'         => 'header',
 		'label'             => esc_html__( 'Header Grid', 'gridd' ),
@@ -77,7 +77,7 @@ Customizer::add_field(
 		'type'      => 'dimension',
 		'settings'  => 'header_max_width',
 		'label'     => esc_html__( 'Header Maximum Width', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_header',
+		'section'   => 'grid_part_details_header',
 		'default'   => '100%',
 		'priority'  => 20,
 		'transport' => 'auto',
@@ -95,7 +95,7 @@ Customizer::add_field(
 		'type'      => 'dimension',
 		'settings'  => 'gridd_grid_header_padding',
 		'label'     => esc_html__( 'Header Padding', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_header',
+		'section'   => 'grid_part_details_header',
 		'default'   => '0',
 		'priority'  => 30,
 		'transport' => 'auto',
@@ -118,7 +118,7 @@ Customizer::add_field(
 				'details' => __( 'Adds a gap between your grid-parts, both horizontally and vertically. If you have a background-color or background-image defined for your header, then these will be visible through these gaps which creates a unique appearance since each grid-part looks separate. For more information please read <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
 			]
 		),
-		'section'     => 'gridd_grid_part_details_header',
+		'section'     => 'grid_part_details_header',
 		'default'     => '0',
 		'priority'    => 40,
 		'transport'   => 'auto',
@@ -134,14 +134,14 @@ Customizer::add_field(
 Customizer::add_field(
 	[
 		'type'        => 'color',
-		'settings'    => 'gridd_grid_part_details_header_background_color',
+		'settings'    => 'header_background_color',
 		'label'       => esc_html__( 'Background Color', 'gridd' ),
 		'description' => Customizer::get_control_description(
 			[
 				'details' => esc_html__( 'Choose a background color for the header. Individual grid-parts can override this by setting their own background color for their area. If you are using a grid-gap the color defined here will be visible between grid-parts.', 'gridd' ),
 			]
 		),
-		'section'     => 'gridd_grid_part_details_header',
+		'section'     => 'grid_part_details_header',
 		'default'     => '#ffffff',
 		'priority'    => 50,
 		'transport'   => 'auto',
@@ -161,10 +161,10 @@ Customizer::add_field(
 Customizer::add_field(
 	[
 		'type'        => 'checkbox',
-		'settings'    => 'gridd_grid_part_details_header_parts_background_override',
+		'settings'    => 'header_parts_background_override',
 		'label'       => esc_html__( 'Override Header Parts Background', 'gridd' ),
 		'description' => esc_html__( 'Enable this option to force-override the background color of all grid-parts in your header.', 'gridd' ),
-		'section'     => 'gridd_grid_part_details_header',
+		'section'     => 'grid_part_details_header',
 		'default'     => false,
 		'priority'    => 60,
 	]
@@ -176,7 +176,7 @@ Customizer::add_field(
 		'settings'          => 'gridd_grid_header_box_shadow',
 		'label'             => esc_html__( 'Drop Shadow Intensity', 'gridd' ),
 		'description'       => esc_html__( 'Set to "None" to disable the shadow, or increase the intensity for a more dramatic effect.', 'gridd' ),
-		'section'           => 'gridd_grid_part_details_header',
+		'section'           => 'grid_part_details_header',
 		'default'           => '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
 		'transport'         => 'postMessage',
 		'transport'         => 'auto',
@@ -205,7 +205,7 @@ Customizer::add_field(
 		'settings'    => 'gridd_header_sticky',
 		'label'       => esc_html__( 'Sticky on Large Devices', 'gridd' ),
 		'description' => esc_html__( 'Enable to stick this area to the top of the page when users scroll-down on devices larger than the breakpoint you defined in your main grid.', 'gridd' ),
-		'section'     => 'gridd_grid_part_details_header',
+		'section'     => 'grid_part_details_header',
 		'default'     => false,
 		'transport'   => 'refresh',
 		'priority'    => 80,
@@ -218,7 +218,7 @@ Customizer::add_field(
 		'settings'        => 'gridd_header_sticky_mobile',
 		'label'           => esc_html__( 'Sticky on Small Devices', 'gridd' ),
 		'description'     => esc_html__( 'Enable to stick this area to the top of the page when users scroll-down on devices smaller than the breakpoint you defined in your main grid.', 'gridd' ),
-		'section'         => 'gridd_grid_part_details_header',
+		'section'         => 'grid_part_details_header',
 		'default'         => false,
 		'transport'       => 'refresh',
 		'priority'        => 90,

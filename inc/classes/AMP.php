@@ -1,10 +1,8 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName
 /**
  * AMP Support & related functionality.
  *
  * @package Gridd
- *
- * phpcs:ignoreFile WordPress.Files.FileName
  */
 
 namespace Gridd;
@@ -51,7 +49,7 @@ class AMP {
 	 * @return void
 	 */
 	public function css_vars_calc() {
-		$content_max_width                  = get_theme_mod( 'gridd_grid_part_details_content', '45rem' );
+		$content_max_width                  = get_theme_mod( 'content_max_width', '45rem' );
 		$main_font_size                     = get_theme_mod( 'gridd_body_font_size', 18 ) . 'px';
 		$fluid_typo_ratio                   = get_theme_mod( 'gridd_fluid_typography_ratio', 0.25 );
 		$gridd_content_max_width_calculated = $content_max_width;

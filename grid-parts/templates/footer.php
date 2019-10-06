@@ -33,7 +33,7 @@ $style->add_string(
 $style->add_file( get_theme_file_path( 'grid-parts/styles/footer/styles.min.css' ) );
 
 // Force-override parts background images.
-if ( get_theme_mod( 'gridd_grid_part_details_footer_parts_background_override', false ) ) {
+if ( get_theme_mod( 'footer_parts_background_override', false ) ) {
 	$style->add_string( '.gridd-tp.gridd-tp-footer .gridd-tp,.gridd-tp.gridd-tp-footer .gridd-tp inner,.site-info{background:none !important;}' );
 }
 

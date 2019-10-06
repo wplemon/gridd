@@ -1,10 +1,8 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName
 /**
  * Enqueue scripts & styles.
  *
  * @package Gridd
- *
- * phpcs:ignoreFile WordPress.Files.FileName
  */
 
 namespace Gridd;
@@ -67,8 +65,8 @@ class Scripts {
 	 * @access public
 	 */
 	public function __construct() {
-		$this->script_debug   = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG );
-		$this->async_scripts  = apply_filters( 'gridd_async_scripts', $this->async_scripts );
+		$this->script_debug  = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG );
+		$this->async_scripts = apply_filters( 'gridd_async_scripts', $this->async_scripts );
 
 		add_filter( 'script_loader_tag', [ $this, 'add_async_attribute' ], 10, 2 );
 

@@ -42,7 +42,7 @@ function gridd_nav_customizer_options( $id ) {
 	 * Add Customizer Sections.
 	 */
 	Customizer::add_outer_section(
-		"gridd_grid_part_details_nav_$id",
+		"grid_part_details_nav_$id",
 		[
 			'title' => sprintf(
 				/* translators: The grid-part label. */
@@ -61,7 +61,7 @@ function gridd_nav_customizer_options( $id ) {
 			'settings' => "gridd_logo_focus_on_menu_locations_$id",
 			'type'     => 'custom',
 			'label'    => esc_html__( 'Looking for your menu items?', 'gridd' ),
-			'section'  => "gridd_grid_part_details_nav_$id",
+			'section'  => "grid_part_details_nav_$id",
 			'default'  => '<div style="margin-bottom:1em;"><button class="button-gridd-focus global-focus button button button-large" data-context="section" data-focus="menu_locations">' . esc_html__( 'Click here to edit your menus', 'gridd' ) . '</button></div>',
 		]
 	);
@@ -80,7 +80,7 @@ function gridd_nav_customizer_options( $id ) {
 					),
 				]
 			),
-			'section'           => "gridd_grid_part_details_nav_$id",
+			'section'           => "grid_part_details_nav_$id",
 			'default'           => 'desktop-normal mobile-hidden',
 			'choices'           => [
 				'desktop-normal mobile-normal' => esc_html__( 'Always visible', 'gridd' ),
@@ -112,7 +112,7 @@ function gridd_nav_customizer_options( $id ) {
 					),
 				]
 			),
-			'section'     => "gridd_grid_part_details_nav_$id",
+			'section'     => "grid_part_details_nav_$id",
 			'default'     => '1em',
 			'transport'   => 'auto',
 			'output'      => [
@@ -129,7 +129,7 @@ function gridd_nav_customizer_options( $id ) {
 			'type'      => 'color',
 			'label'     => esc_html__( 'Background Color', 'gridd' ),
 			'settings'  => "gridd_grid_nav_{$id}_bg_color",
-			'section'   => "gridd_grid_part_details_nav_$id",
+			'section'   => "grid_part_details_nav_$id",
 			'default'   => '#ffffff',
 			'transport' => 'auto',
 			'output'    => [
@@ -149,7 +149,7 @@ function gridd_nav_customizer_options( $id ) {
 			'type'              => 'gridd-wcag-tc',
 			'label'             => esc_html__( 'Items Color', 'gridd' ),
 			'settings'          => "gridd_grid_nav_{$id}_items_color",
-			'section'           => "gridd_grid_part_details_nav_$id",
+			'section'           => "grid_part_details_nav_$id",
 			'choices'           => [
 				'setting' => "gridd_grid_nav_{$id}_bg_color",
 			],
@@ -171,7 +171,7 @@ function gridd_nav_customizer_options( $id ) {
 			'label'             => esc_html__( 'Accent Color', 'gridd' ),
 			'description'       => esc_html__( 'Select the hue for you active item. The color will be auto-calculated to ensure maximum readability.', 'gridd' ),
 			'settings'          => "gridd_grid_nav_{$id}_accent_color",
-			'section'           => "gridd_grid_part_details_nav_$id",
+			'section'           => "grid_part_details_nav_$id",
 			'default'           => '#0f5e97',
 			'transport'         => 'auto',
 			'output'            => [
@@ -194,7 +194,7 @@ function gridd_nav_customizer_options( $id ) {
 			'settings'        => "gridd_grid_nav_{$id}_vertical",
 			'label'           => esc_html__( 'Enable Vertical Menu Mode', 'gridd' ),
 			'description'     => esc_html__( 'If your layout is column-based and you want a vertical side-navigation enable this option.', 'gridd' ),
-			'section'         => "gridd_grid_part_details_nav_$id",
+			'section'         => "grid_part_details_nav_$id",
 			'default'         => false,
 			'active_callback' => [
 				[
@@ -217,7 +217,7 @@ function gridd_nav_customizer_options( $id ) {
 					'details' => esc_html__( 'Choose how menu items will be spread horizontally inside the menu container. This helps distribute extra free space left over when all the items on a line have reached their maximum size. It also exerts some control over the alignment of items when they overflow the line.', 'gridd' ),
 				]
 			),
-			'section'           => "gridd_grid_part_details_nav_$id",
+			'section'           => "grid_part_details_nav_$id",
 			'default'           => 'center',
 			'transport'         => 'auto',
 			'output'            => [
@@ -260,7 +260,7 @@ function gridd_nav_customizer_options( $id ) {
 			'type'              => 'text',
 			'settings'          => "gridd_grid_nav_{$id}_expand_label",
 			'label'             => esc_html__( 'Expand Label', 'gridd' ),
-			'section'           => "gridd_grid_part_details_nav_$id",
+			'section'           => "grid_part_details_nav_$id",
 			'default'           => esc_html__( 'MENU', 'gridd' ),
 			'transport'         => 'refresh',
 			'active_callback'   => [
@@ -284,7 +284,7 @@ function gridd_nav_customizer_options( $id ) {
 			'type'              => 'radio-buttonset',
 			'settings'          => "gridd_grid_nav_{$id}_expand_icon",
 			'label'             => esc_html__( 'Expand Icon', 'gridd' ),
-			'section'           => "gridd_grid_part_details_nav_$id",
+			'section'           => "grid_part_details_nav_$id",
 			'default'           => 'menu-1',
 			'transport'         => 'refresh',
 			'choices'           => Navigation::get_expand_svgs(),
@@ -311,7 +311,7 @@ function gridd_nav_customizer_options( $id ) {
 			'type'            => 'checkbox',
 			'settings'        => "gridd_grid_nav_{$id}_expand_icon_boxed",
 			'label'           => esc_html__( 'Boxed Expand Icon', 'gridd' ),
-			'section'         => "gridd_grid_part_details_nav_$id",
+			'section'         => "grid_part_details_nav_$id",
 			'default'         => false,
 			'transport'       => 'refresh',
 			'active_callback' => [
@@ -334,7 +334,7 @@ function gridd_nav_customizer_options( $id ) {
 			'type'              => 'select',
 			'settings'          => "gridd_grid_nav_{$id}_expand_icon_position",
 			'label'             => esc_html__( 'Expand Icon Position', 'gridd' ),
-			'section'           => "gridd_grid_part_details_nav_$id",
+			'section'           => "grid_part_details_nav_$id",
 			'default'           => 'center-right',
 			'transport'         => 'refresh',
 			'choices'           => [
@@ -376,7 +376,7 @@ function gridd_nav_customizer_options( $id ) {
 			'type'              => 'radio-buttonset',
 			'settings'          => "gridd_grid_nav_{$id}_style",
 			'label'             => esc_html__( 'Hover/Focus Styles', 'gridd' ),
-			'section'           => "gridd_grid_part_details_nav_$id",
+			'section'           => "grid_part_details_nav_$id",
 			'default'           => 'default',
 			'transport'         => 'refresh',
 			'choices'           => [

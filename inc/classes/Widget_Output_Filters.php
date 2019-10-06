@@ -1,4 +1,4 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName
 /**
  * Class Widget_Output_Filters
  *
@@ -8,8 +8,6 @@
  *
  * @package Gridd
  * @see https://github.com/philipnewcomer/widget-output-filters
- *
- * phpcs:ignoreFile WordPress.Files.FileName
  */
 
 namespace Gridd;
@@ -73,8 +71,8 @@ class Widget_Output_Filters {
 		global $wp_registered_widgets;
 		$current_widget_id = $sidebar_params[0]['widget_id'];
 
-		$wp_registered_widgets[ $current_widget_id ]['original_callback'] = $wp_registered_widgets[ $current_widget_id ]['callback']; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.OverrideProhibited
-		$wp_registered_widgets[ $current_widget_id ]['callback']          = [ $this, 'display_widget' ]; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.OverrideProhibited
+		$wp_registered_widgets[ $current_widget_id ]['original_callback'] = $wp_registered_widgets[ $current_widget_id ]['callback']; // phpcs:ignore WordPress.WP.GlobalVariablesOverride
+		$wp_registered_widgets[ $current_widget_id ]['callback']          = [ $this, 'display_widget' ]; // phpcs:ignore WordPress.WP.GlobalVariablesOverride
 
 		return $sidebar_params;
 	}
@@ -94,7 +92,7 @@ class Widget_Output_Filters {
 		$widget_id         = $original_callback_params[0]['widget_id'];
 		$original_callback = $wp_registered_widgets[ $widget_id ]['original_callback'];
 
-		$wp_registered_widgets[ $widget_id ]['callback'] = $original_callback; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.OverrideProhibited
+		$wp_registered_widgets[ $widget_id ]['callback'] = $original_callback; // phpcs:ignore WordPress.WP.GlobalVariablesOverride
 
 		$widget_id_base = $original_callback[0]->id_base;
 		$sidebar_id     = $original_callback_params[0]['id'];

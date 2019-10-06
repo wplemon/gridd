@@ -13,7 +13,7 @@ $sanitization = new Sanitize();
 
 // Add section.
 Customizer::add_outer_section(
-	'gridd_grid_part_details_footer_copyright',
+	'grid_part_details_footer_copyright',
 	[
 		/* translators: The grid-part label. */
 		'title' => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Copyright Area', 'gridd' ) ),
@@ -25,7 +25,7 @@ new \Kirki\Field\ReactColor(
 		'type'      => 'color',
 		'settings'  => 'gridd_grid_footer_copyright_bg_color',
 		'label'     => esc_html__( 'Copyright area background-color', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_footer_copyright',
+		'section'   => 'grid_part_details_footer_copyright',
 		'default'   => '#ffffff',
 		'transport' => 'auto',
 		'output'    => [
@@ -37,7 +37,7 @@ new \Kirki\Field\ReactColor(
 		'priority'  => 10,
 		'choices'   => [
 			'formComponent' => 'TwitterPicker',
-			'colors'        => [ '#FFFFFF', '#fffcea', '#F9F9F9', '#f7f6e3', '#f7f7f7', '#f4f4e1', '#1A1A1A', '#000000', '#FF6900', '#FCB900', '#7BDCB5', '#00D084', '#8ED1FC', '#0693E3', '#ABB8C3', '#EB144C', '#F78DA7', '#9900EF' ]
+			'colors'        => [ '#FFFFFF', '#fffcea', '#F9F9F9', '#f7f6e3', '#f7f7f7', '#f4f4e1', '#1A1A1A', '#000000', '#FF6900', '#FCB900', '#7BDCB5', '#00D084', '#8ED1FC', '#0693E3', '#ABB8C3', '#EB144C', '#F78DA7', '#9900EF' ],
 		],
 	]
 );
@@ -47,7 +47,7 @@ Customizer::add_field(
 		'type'              => 'gridd-wcag-tc',
 		'settings'          => 'gridd_grid_footer_copyright_color',
 		'label'             => esc_html__( 'Copyright Text Color', 'gridd' ),
-		'section'           => 'gridd_grid_part_details_footer_copyright',
+		'section'           => 'grid_part_details_footer_copyright',
 		'default'           => '#000000',
 		'transport'         => 'auto',
 		'output'            => [
@@ -69,7 +69,7 @@ Customizer::add_field(
 		'type'              => 'gridd-wcag-lc',
 		'settings'          => 'gridd_grid_footer_copyright_links_color',
 		'label'             => esc_html__( 'Copyright Links Color', 'gridd' ),
-		'section'           => 'gridd_grid_part_details_footer_copyright',
+		'section'           => 'grid_part_details_footer_copyright',
 		'default'           => '#0f5e97',
 		'transport'         => 'auto',
 		'output'            => [
@@ -98,7 +98,7 @@ Customizer::add_field(
 				'details' => esc_html__( 'The font-size defined here is relative to the body font-size so a size of 1em will be the same ssize as your content.', 'gridd' ),
 			]
 		),
-		'section'     => 'gridd_grid_part_details_footer_copyright',
+		'section'     => 'grid_part_details_footer_copyright',
 		'default'     => 1,
 		'transport'   => 'auto',
 		'output'      => [
@@ -122,7 +122,7 @@ Customizer::add_field(
 		'type'              => 'radio-buttonset',
 		'settings'          => 'gridd_grid_footer_copyright_text_align',
 		'label'             => esc_html__( 'Text Alignment', 'gridd' ),
-		'section'           => 'gridd_grid_part_details_footer_copyright',
+		'section'           => 'grid_part_details_footer_copyright',
 		'default'           => 'center',
 		'transport'         => 'auto',
 		'output'            => [
@@ -149,7 +149,7 @@ Customizer::add_field(
 		'settings'          => 'gridd_copyright_text',
 		'label'             => esc_html__( 'Copyright Text', 'gridd' ),
 		'description'       => esc_html__( 'The text for your copyright area (accepts HTML).', 'gridd' ),
-		'section'           => 'gridd_grid_part_details_footer_copyright',
+		'section'           => 'grid_part_details_footer_copyright',
 		/* translators: 1: CMS name, i.e. WordPress. 2: Theme name, 3: Theme author. */
 		'default'           => sprintf( __( 'Proudly powered by %1$s | Theme: %2$s by %3$s.', 'gridd' ), '<a href="https://wordpress.org/">WordPress</a>', 'Gridd', '<a href="https://wplemon.com/" rel="nofollow">wplemon.com</a>' ),
 		'transport'         => 'postMessage',

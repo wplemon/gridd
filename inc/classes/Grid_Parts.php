@@ -1,10 +1,8 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName
 /**
  * The Grid_Parts class.
  *
  * @package Gridd
- *
- * phpcs:ignoreFile WordPress.Files.FileName
  */
 
 namespace Gridd;
@@ -224,7 +222,7 @@ class Grid_Parts {
 		// Add any missing part-IDs to the saved order.
 		// Necessary if there is no saved order, or if a new part-ID was added.
 		foreach ( $all_part_ids as $part_id ) {
-			if ( ! in_array( $part_id, $saved_order ) ) {
+			if ( ! in_array( $part_id, $saved_order, true ) ) {
 				$saved_order[] = $part_id;
 			}
 		}

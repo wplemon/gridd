@@ -1,10 +1,8 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName
 /**
  * The main theme class.
  *
  * @package Gridd
- *
- * phpcs:ignoreFile WordPress.Files.FileName
  */
 
 namespace Gridd;
@@ -467,7 +465,7 @@ class Theme {
 			$button_atts['[aria-expanded]'] = "{$args['expanded_state_id']} ? 'true' : 'false'";
 			$button_atts['on']              = "tap:AMP.setState({ {$args['expanded_state_id']}: ! {$args['expanded_state_id']} })";
 		} else {
-			$uid = rand( 0, 99 ) . substr( str_shuffle( md5( microtime() ) ), 0, 10 );
+			$uid                     = wp_rand( 0, 99 ) . substr( str_shuffle( md5( microtime() ) ), 0, 10 );
 			$button_atts['data-uid'] = $uid;
 			$button_atts['onclick']  = 'griddToggleButtonClick(\'' . $uid . '\')';
 		}

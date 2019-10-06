@@ -42,7 +42,7 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 	 * Add Customizer Sections.
 	 */
 	Customizer::add_outer_section(
-		"gridd_grid_part_details_reusable_block_$id",
+		"grid_part_details_reusable_block_$id",
 		[
 			'title' => sprintf(
 				/* translators: The grid-part label. */
@@ -58,7 +58,7 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 			'type'        => 'custom',
 			'settings'    => "gridd_grid_reusable_block_{$id}_help",
 			'description' => '<a href="' . esc_url( admin_url( 'edit.php?post_type=wp_block' ) ) . '" target="_blank">' . esc_html__( ' Manage reusable blocks', 'gridd' ) . '</a>',
-			'section'     => "gridd_grid_part_details_reusable_block_$id",
+			'section'     => "grid_part_details_reusable_block_$id",
 			'default'     => '',
 		]
 	);
@@ -78,7 +78,7 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 					),
 				]
 			),
-			'section'     => "gridd_grid_part_details_reusable_block_$id",
+			'section'     => "grid_part_details_reusable_block_$id",
 			'default'     => '1em',
 			'transport'   => 'auto',
 			'output'      => [
@@ -95,7 +95,7 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 			'type'      => 'color',
 			'label'     => esc_html__( 'Background Color', 'gridd' ),
 			'settings'  => "gridd_grid_reusable_block_{$id}_bg_color",
-			'section'   => "gridd_grid_part_details_reusable_block_$id",
+			'section'   => "grid_part_details_reusable_block_$id",
 			'default'   => '#ffffff',
 			'transport' => 'auto',
 			'output'    => [
@@ -114,7 +114,7 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 		[
 			'type'              => 'gridd-wcag-tc',
 			'settings'          => "gridd_grid_reusable_block_{$id}_color",
-			'section'           => "gridd_grid_part_details_reusable_block_$id",
+			'section'           => "grid_part_details_reusable_block_$id",
 			'choices'           => [
 				'setting' => "gridd_grid_reusable_block_{$id}_bg_color",
 			],
@@ -137,7 +137,7 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 			'type'              => 'gridd-wcag-lc',
 			'settings'          => "gridd_grid_reusable_block_{$id}_links_color",
 			'label'             => esc_html__( 'Links Color', 'gridd' ),
-			'section'           => "gridd_grid_part_details_reusable_block_$id",
+			'section'           => "grid_part_details_reusable_block_$id",
 			'default'           => '#0f5e97',
 			'priority'          => 40,
 			'choices'           => [

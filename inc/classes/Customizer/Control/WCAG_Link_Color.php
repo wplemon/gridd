@@ -1,4 +1,4 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName
 /**
  * The Control class.
  * This is a stripped-down version of the Kirki-WCAG-Link-Color control.
@@ -6,8 +6,6 @@
  *
  * @package Gridd
  * @since 1.0
- *
- * phpcs:ignoreFile WordPress.Files.FileName
  */
 
 namespace Gridd\Customizer\Control;

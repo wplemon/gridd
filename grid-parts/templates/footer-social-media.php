@@ -10,7 +10,7 @@ use Gridd\Grid_Part\Footer;
 use Gridd\Style;
 use Gridd\Theme;
 
-$setting = get_theme_mod( 'gridd_grid_part_details_footer_social_icons', [] );
+$setting = get_theme_mod( 'footer_social_icons', [] );
 if ( ! function_exists( 'gridd_social_icons_svg' ) ) {
 
 	// Include Social Icons Definitions.

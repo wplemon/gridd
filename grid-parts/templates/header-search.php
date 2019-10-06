@@ -10,10 +10,10 @@ use Gridd\Grid_Part\Header;
 use Gridd\Style;
 use Gridd\Theme;
 
-$header_search_mode  = get_theme_mod( 'gridd_grid_part_details_header_search_mode', 'form' );
+$header_search_mode  = get_theme_mod( 'header_search_mode', 'form' );
 $header_search_class = 'gridd-tp gridd-tp-header_search ' . $header_search_mode;
 $padding             = get_theme_mod(
-	'gridd_grid_part_details_header_search_padding',
+	'header_search_padding',
 	[
 		'left'  => '1em',
 		'right' => '1em',
