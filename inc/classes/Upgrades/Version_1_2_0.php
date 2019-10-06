@@ -13,7 +13,7 @@ namespace Gridd\Upgrades;
  *
  * @since 1.2.0
  */
-class Version_1_1_19 {
+class Version_1_2_0 {
 
 	/**
 	 * Constructor.

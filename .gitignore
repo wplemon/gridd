@@ -7,3 +7,13 @@ composer.lock
 gridd.zip
 docs/Gemfile.lock
 docs/_site
+
+LICENSE
+installed.json
+packages/kirki-framework/**/Gruntfile.js
+packages/kirki-framework/**/README.md
+packages/wptrt/**/*.md
+packages/wptrt/**/composer.json
+packages/wptrt/**/.gitattributes
+packages/wptrt/**/.editorconfig
+packages/kirki-framework/module-webfonts/src/assets/scripts/vendor-typekit/src/*
