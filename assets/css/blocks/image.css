@@ -72,8 +72,6 @@
 .wp-block-image {
   max-width: 100%;
   margin-bottom: 1em;
-  margin-left: 0;
-  margin-right: 0;
 }
 .wp-block-image img {
   max-width: 100%;
@@ -112,6 +110,22 @@
 .wp-block-image .aligncenter {
   margin-left: auto;
   margin-right: auto;
+}
+
+.is-style-circle-mask img {
+  border-radius: 9999px;
+}
+@supports (mask-image: none) or (-webkit-mask-image: none) {
+  .is-style-circle-mask img {
+    /* stylelint-disable */
+    mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');
+    /* stylelint-enable */
+    mask-mode: alpha;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: center;
+    border-radius: none;
+  }
 }
 
 .wp-block-image figcaption {

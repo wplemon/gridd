@@ -21,3 +21,11 @@ packages/kirki-framework/**/composer.json
 packages/kirki-framework/**/.gitignore
 packages/kirki-framework/**/package.json
 packages/kirki-framework/**/**/*.scss
+assets/css/blocks/block-library/**/*.js
+assets/css/blocks/block-library/**/*.json
+assets/css/blocks/block-library/**/editor.scss
+assets/css/blocks/block-library/**/*.php
+assets/css/blocks/block-library/**/*.snap
+assets/css/blocks/block-library/**/*.native.scss
+assets/css/blocks/block-library/style.scss
+assets/css/blocks/block-library/theme.scss

@@ -76,6 +76,7 @@
   background-size: cover;
   background-position: center center;
   min-height: 430px;
+  height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -114,17 +115,24 @@
 .wp-block-cover h2,
 .wp-block-cover .wp-block-cover-image-text,
 .wp-block-cover .wp-block-cover-text {
-  color: #fff;
   font-size: 2em;
   line-height: 1.25;
   z-index: 1;
   margin-bottom: 0;
   text-align: center;
 }
-.wp-block-cover-image h2 a,
-.wp-block-cover-image h2 a:hover,
-.wp-block-cover-image h2 a:focus,
-.wp-block-cover-image h2 a:active,
+.wp-block-cover-image h2:not(.has-text-color),
+.wp-block-cover-image .wp-block-cover-image-text,
+.wp-block-cover-image .wp-block-cover-text,
+.wp-block-cover h2:not(.has-text-color),
+.wp-block-cover .wp-block-cover-image-text,
+.wp-block-cover .wp-block-cover-text {
+  color: #fff;
+}
+.wp-block-cover-image h2:not(.has-text-color) a,
+.wp-block-cover-image h2:not(.has-text-color) a:hover,
+.wp-block-cover-image h2:not(.has-text-color) a:focus,
+.wp-block-cover-image h2:not(.has-text-color) a:active,
 .wp-block-cover-image .wp-block-cover-image-text a,
 .wp-block-cover-image .wp-block-cover-image-text a:hover,
 .wp-block-cover-image .wp-block-cover-image-text a:focus,
@@ -133,10 +141,10 @@
 .wp-block-cover-image .wp-block-cover-text a:hover,
 .wp-block-cover-image .wp-block-cover-text a:focus,
 .wp-block-cover-image .wp-block-cover-text a:active,
-.wp-block-cover h2 a,
-.wp-block-cover h2 a:hover,
-.wp-block-cover h2 a:focus,
-.wp-block-cover h2 a:active,
+.wp-block-cover h2:not(.has-text-color) a,
+.wp-block-cover h2:not(.has-text-color) a:hover,
+.wp-block-cover h2:not(.has-text-color) a:focus,
+.wp-block-cover h2:not(.has-text-color) a:active,
 .wp-block-cover .wp-block-cover-image-text a,
 .wp-block-cover .wp-block-cover-image-text a:hover,
 .wp-block-cover .wp-block-cover-image-text a:focus,
@@ -245,22 +253,22 @@
   z-index: 1;
   color: #f8f9f9;
 }
-.wp-block-cover-image p,
-.wp-block-cover-image h1,
-.wp-block-cover-image h2,
-.wp-block-cover-image h3,
-.wp-block-cover-image h4,
-.wp-block-cover-image h5,
-.wp-block-cover-image h6,
-.wp-block-cover-image .wp-block-subhead,
-.wp-block-cover p,
-.wp-block-cover h1,
-.wp-block-cover h2,
-.wp-block-cover h3,
-.wp-block-cover h4,
-.wp-block-cover h5,
-.wp-block-cover h6,
-.wp-block-cover .wp-block-subhead {
+.wp-block-cover-image p:not(.has-text-color),
+.wp-block-cover-image h1:not(.has-text-color),
+.wp-block-cover-image h2:not(.has-text-color),
+.wp-block-cover-image h3:not(.has-text-color),
+.wp-block-cover-image h4:not(.has-text-color),
+.wp-block-cover-image h5:not(.has-text-color),
+.wp-block-cover-image h6:not(.has-text-color),
+.wp-block-cover-image .wp-block-subhead:not(.has-text-color),
+.wp-block-cover p:not(.has-text-color),
+.wp-block-cover h1:not(.has-text-color),
+.wp-block-cover h2:not(.has-text-color),
+.wp-block-cover h3:not(.has-text-color),
+.wp-block-cover h4:not(.has-text-color),
+.wp-block-cover h5:not(.has-text-color),
+.wp-block-cover h6:not(.has-text-color),
+.wp-block-cover .wp-block-subhead:not(.has-text-color) {
   color: inherit;
 }
 
