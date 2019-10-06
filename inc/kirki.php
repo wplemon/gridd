@@ -25,7 +25,6 @@ require_once __DIR__ . '/class-aricolor.php'; // phpcs:ignore WPThemeReview.Core
 new \Kirki\Compatibility\Aliases();
 new \Kirki\Compatibility\Scripts();
 new \Kirki\Compatibility\Deprecated();
-new \Kirki\Data\Option();
 
 if ( ! function_exists( 'Kirki' ) ) {
 	/**
