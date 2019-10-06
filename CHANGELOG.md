@@ -1,4 +1,4 @@
-## 1.1.19
+## 1.2.0
 
 ### Fixed
 * Removed underline for featured-image links.
