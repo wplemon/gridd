@@ -18,6 +18,7 @@
   line-height: 1;
   box-sizing: content-box;
   border-radius: 0;
+  background-color: transparent;
 }
 .gridd-tp-nav_ID .gridd-toggle-navigation svg {
   width: 1em;
@@ -51,6 +52,9 @@
 }
 .gridd-tp-nav_ID .gridd-toggle-navigation:hover svg, .gridd-tp-nav_ID .gridd-toggle-navigation:focus svg, .gridd-tp-nav_ID .gridd-toggle-navigation.focus svg, .gridd-tp-nav_ID .gridd-toggle-navigation.toggled-on svg {
   fill: currentColor;
+}
+.gridd-tp-nav_ID .gridd-toggle-navigation:not(.gridd-nav-toggle-boxed):hover, .gridd-tp-nav_ID .gridd-toggle-navigation:not(.gridd-nav-toggle-boxed):focus, .gridd-tp-nav_ID .gridd-toggle-navigation:not(.gridd-nav-toggle-boxed).focus, .gridd-tp-nav_ID .gridd-toggle-navigation:not(.gridd-nav-toggle-boxed).toggled-on {
+  border-bottom-color: transparent;
 }
 .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed:hover, .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed:focus, .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed.focus, .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed.toggled-on {
   color: var(--acl, #0f5e97);

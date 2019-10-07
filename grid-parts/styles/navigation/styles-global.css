@@ -53,9 +53,11 @@ nav {
 }
 .gridd-navigation a {
   padding: 0.618em 1rem;
-  display: inline-block;
+  display: flex;
+  align-items: center;
   text-decoration: none;
   width: 100%;
+  min-width: max-content;
   min-height: 3em;
 }
 .gridd-navigation a,
@@ -81,8 +83,8 @@ nav {
   height: 3em;
 }
 .gridd-navigation .gridd-toggle svg {
-  width: 1rem;
-  height: 1rem;
+  width: 1em;
+  height: 1em;
 }
 .gridd-navigation .gridd-toggle:hover, .gridd-navigation .gridd-toggle:focus, .gridd-navigation .gridd-toggle:active, .gridd-navigation .gridd-toggle.toggled-on {
   opacity: 1;

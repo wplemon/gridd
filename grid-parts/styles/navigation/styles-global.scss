@@ -65,9 +65,11 @@ nav {
 	// Links.
 	a {
 		padding: 0.618em 1rem;
-		display: inline-block;
+		display: flex;
+		align-items: center;
 		text-decoration: none;
 		width: 100%;
+		min-width: max-content;
 		min-height: 3em;
 
 		&:hover,
@@ -105,8 +107,8 @@ nav {
 		height: 3em;
 
 		svg {
-			width: 1rem;
-			height: 1rem;
+			width: 1em;
+			height: 1em;
 		}
 
 		&:hover,

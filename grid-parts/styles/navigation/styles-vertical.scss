@@ -12,7 +12,8 @@
 
 			>li {
 				>ul {
-					font-size: var(--fs-1d-ts-tr);
+					font-size: calc(1em / var(--ts));
+
 					a {
 						// padding-left: calc(var(--ipd) * var(--ts));
 						// padding-right: calc(var(--ipd) * var(--ts));

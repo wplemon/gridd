@@ -24,7 +24,7 @@
 		line-height: 1;
 		box-sizing: content-box;
 		border-radius: 0;
-		// background-color:
+		background-color: transparent;
 		// color: currentColor;
 
 		svg {
@@ -72,12 +72,15 @@
 				fill: currentColor;
 			}
 		}
+
 		&:not(.gridd-nav-toggle-boxed) {
+
 			&:hover,
 			&:focus,
 			&.focus,
 			&.toggled-on {
 				// outline: 1px dotted;
+				border-bottom-color: transparent;
 			}
 		}
 
