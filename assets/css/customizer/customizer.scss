@@ -117,8 +117,8 @@ $purple: #826eb4;
 #input_gridd_grid_nav_1_expand_icon {
 	.switch-label {
 		svg {
-			width: 2em;
-			height: 2em;
+			width: 1em;
+			height: 1em;
 		}
 	}
 
@@ -284,5 +284,13 @@ h3.gridd-customizer-section-title {
 				background: #dedede !important;
 			}
 		}
+	}
+}
+
+#input_gridd_grid_nav_1_justify_content {
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+
+	.switch-label {
+		padding: .5em;
 	}
 }

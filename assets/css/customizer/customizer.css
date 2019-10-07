@@ -79,8 +79,8 @@
 }
 
 #input_gridd_grid_nav_1_expand_icon .switch-label svg {
-  width: 2em;
-  height: 2em;
+  width: 1em;
+  height: 1em;
 }
 #input_gridd_grid_nav_1_expand_icon .switch-input:checked + .switch-label svg {
   fill: #fff;
@@ -374,6 +374,13 @@ h3.gridd-customizer-section-title {
 
 #customize-controls .control-section.open .control-section-kirki-nested .accordion-section-title {
   background: #dedede !important;
+}
+
+#input_gridd_grid_nav_1_justify_content {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+#input_gridd_grid_nav_1_justify_content .switch-label {
+  padding: 0.5em;
 }
 
 /*# sourceMappingURL=customizer.css.map */
