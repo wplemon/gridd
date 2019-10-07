@@ -189,12 +189,7 @@ class Style {
 	 */
 	public function get_css() {
 
-		// Don't replace css-vars if we're on the customizer.
-		if ( is_customize_preview() ) {
-			return $this->css;
-		}
-
-		if ( apply_filters( 'gridd_replace_css_vars', false ) ) {
+		if ( ! is_customize_preview() && apply_filters( 'gridd_replace_css_vars', false ) ) {
 			foreach ( $this->vars as $name => $value ) {
 				$this->replace_css_var( $name, $value );
 			}
