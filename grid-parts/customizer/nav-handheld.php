@@ -23,7 +23,7 @@ Customizer::add_field(
 		'default'         => true,
 		'transport'       => 'postMessage',
 		'partial_refresh' => [
-			'gridd_grid_nav-handheld_enable_template' => [
+			'gridd_grid_nav_handheld_enable_template_enable' => [
 				'selector'            => '.gridd-tp-nav-handheld',
 				'container_inclusive' => true,
 				'render_callback'     => function() {
