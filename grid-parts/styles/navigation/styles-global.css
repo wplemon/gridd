@@ -38,7 +38,6 @@ nav {
 }
 .gridd-navigation li {
   display: flex;
-  flex-wrap: wrap;
   position: relative;
 }
 .gridd-navigation li:hover .gridd-toggle,
