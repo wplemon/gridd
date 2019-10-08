@@ -52,7 +52,7 @@ nav {
   fill: var(--bg);
 }
 .gridd-navigation a {
-  padding: 0.618em 1rem;
+  padding: 0.618em 1em;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -69,7 +69,7 @@ nav {
 }
 .gridd-navigation .menu-item-has-children > a,
 .gridd-navigation .page_item_has_children > a {
-  width: calc(100% - 2rem);
+  width: calc(100% - 2em);
 }
 .gridd-navigation .gridd-toggle {
   display: flex;
@@ -79,7 +79,7 @@ nav {
   border: none;
   box-shadow: none;
   border-radius: 0;
-  padding: 0 0.5rem;
+  padding: 0 0.5em;
   height: 3em;
 }
 .gridd-navigation .gridd-toggle svg {
