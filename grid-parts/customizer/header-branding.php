@@ -92,9 +92,8 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\ReactColor(
 	[
-		'type'      => 'color',
 		'settings'  => 'gridd_grid_header_branding_background_color',
 		'label'     => esc_html__( 'Background Color', 'gridd' ),
 		'section'   => 'grid_part_details_header_branding',
@@ -108,7 +107,7 @@ Customizer::add_field(
 			],
 		],
 		'choices'   => [
-			'alpha' => true,
+			'formComponent' => 'ChromePicker',
 		],
 	]
 );

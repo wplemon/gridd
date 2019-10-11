@@ -124,9 +124,8 @@ function gridd_nav_customizer_options( $id ) {
 		]
 	);
 
-	Customizer::add_field(
+	new \Kirki\Field\ReactColor(
 		[
-			'type'      => 'color',
 			'label'     => esc_html__( 'Background Color', 'gridd' ),
 			'settings'  => "gridd_grid_nav_{$id}_bg_color",
 			'section'   => "grid_part_details_nav_$id",
@@ -139,7 +138,7 @@ function gridd_nav_customizer_options( $id ) {
 				],
 			],
 			'choices'   => [
-				'alpha' => true,
+				'formComponent' => 'ChromePicker',
 			],
 		]
 	);

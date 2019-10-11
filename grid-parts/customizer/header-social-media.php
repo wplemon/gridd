@@ -65,9 +65,8 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\ReactColor(
 	[
-		'type'      => 'color',
 		'settings'  => 'header_social_icons_background_color',
 		'label'     => esc_html__( 'Background Color', 'gridd' ),
 		'section'   => 'grid_part_details_social_media',
@@ -80,15 +79,14 @@ Customizer::add_field(
 			],
 		],
 		'choices'   => [
-			'alpha' => true,
+			'formComponent' => 'ChromePicker',
 		],
 		'priority'  => 20,
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\ReactColor(
 	[
-		'type'      => 'color',
 		'settings'  => 'header_social_icons_icons_color',
 		'label'     => esc_html__( 'Icons Color', 'gridd' ),
 		'section'   => 'grid_part_details_social_media',
@@ -101,7 +99,7 @@ Customizer::add_field(
 			],
 		],
 		'choices'   => [
-			'alpha' => true,
+			'formComponent' => 'ChromePicker',
 		],
 		'priority'  => 30,
 	]

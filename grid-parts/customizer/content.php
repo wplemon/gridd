@@ -22,7 +22,6 @@ Customizer::add_section(
 
 new \Kirki\Field\ReactColor(
 	[
-		'type'      => 'color',
 		'settings'  => 'gridd_grid_content_background_color',
 		'label'     => esc_html__( 'Background Color', 'gridd' ),
 		'section'   => 'grid_part_details_content',

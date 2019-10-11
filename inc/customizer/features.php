@@ -294,9 +294,8 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\ReactColor(
 	[
-		'type'            => 'color',
 		'settings'        => 'gridd_featured_image_overlay_background_color',
 		'label'           => esc_attr__( 'Overlay Color', 'gridd' ),
 		'section'         => 'gridd_features_single_post',
@@ -305,7 +304,7 @@ Customizer::add_field(
 		'transport'       => 'postMessage',
 		'priority'        => 40,
 		'choices'         => [
-			'alpha' => true,
+			'formComponent' => 'ChromePicker',
 		],
 		'active_callback' => function() {
 			return 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' ) && ( ! get_theme_mod( 'gridd_featured_image_overlay_color_from_image', true ) || ! function_exists( 'jetpack_require_lib' ) );

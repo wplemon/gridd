@@ -51,9 +51,8 @@ function gridd_sidebar_customizer_options( $id ) {
 		]
 	);
 
-	Customizer::add_field(
+	new \Kirki\Field\ReactColor(
 		[
-			'type'      => 'color',
 			'settings'  => "gridd_grid_sidebar_{$id}_background_color",
 			'label'     => esc_html__( 'Background Color', 'gridd' ),
 			'section'   => "grid_part_details_sidebar_$id",
@@ -70,7 +69,7 @@ function gridd_sidebar_customizer_options( $id ) {
 				],
 			],
 			'choices'   => [
-				'alpha' => true,
+				'formComponent' => 'ChromePicker',
 			],
 		]
 	);

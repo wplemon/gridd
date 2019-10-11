@@ -108,7 +108,6 @@ Customizer::add_field(
 
 new \Kirki\Field\ReactColor(
 	[
-		'type'        => 'color',
 		'settings'    => 'gridd_grid_footer_background_color',
 		'label'       => esc_html__( 'Background Color', 'gridd' ),
 		'description' => Customizer::get_control_description(
@@ -172,7 +171,6 @@ Customizer::add_field(
 
 new \Kirki\Field\ReactColor(
 	[
-		'type'            => 'color',
 		'settings'        => 'gridd_grid_footer_border_top_color',
 		'label'           => esc_html__( 'Top Border Color', 'gridd' ),
 		'section'         => 'grid_part_details_footer',

@@ -22,7 +22,6 @@ Customizer::add_outer_section(
 
 new \Kirki\Field\ReactColor(
 	[
-		'type'      => 'color',
 		'settings'  => 'gridd_grid_footer_copyright_bg_color',
 		'label'     => esc_html__( 'Copyright area background-color', 'gridd' ),
 		'section'   => 'grid_part_details_footer_copyright',

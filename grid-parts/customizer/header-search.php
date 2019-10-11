@@ -32,9 +32,8 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\ReactColor(
 	[
-		'type'      => 'color',
 		'settings'  => 'header_search_background_color',
 		'label'     => esc_html__( 'Background Color', 'gridd' ),
 		'section'   => 'grid_part_details_header_search',
@@ -47,15 +46,14 @@ Customizer::add_field(
 			],
 		],
 		'choices'   => [
-			'alpha' => true,
+			'formComponent' => 'ChromePicker',
 		],
 		'priority'  => 20,
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\ReactColor(
 	[
-		'type'      => 'color',
 		'settings'  => 'header_search_color',
 		'label'     => esc_html__( 'Text Color', 'gridd' ),
 		'section'   => 'grid_part_details_header_search',
@@ -66,6 +64,9 @@ Customizer::add_field(
 				'element'  => '.gridd-tp-header_search',
 				'property' => '--cl',
 			],
+		],
+		'choices'   => [
+			'formComponent' => 'ChromePicker',
 		],
 		'priority'  => 30,
 	]

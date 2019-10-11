@@ -90,9 +90,8 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 		]
 	);
 
-	Customizer::add_field(
+	new \Kirki\Field\ReactColor(
 		[
-			'type'      => 'color',
 			'label'     => esc_html__( 'Background Color', 'gridd' ),
 			'settings'  => "gridd_grid_reusable_block_{$id}_bg_color",
 			'section'   => "grid_part_details_reusable_block_$id",
@@ -105,7 +104,7 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 				],
 			],
 			'choices'   => [
-				'alpha' => true,
+				'formComponent' => 'ChromePicker',
 			],
 		]
 	);

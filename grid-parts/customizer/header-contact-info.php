@@ -19,9 +19,8 @@ Customizer::add_outer_section(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\ReactColor(
 	[
-		'type'      => 'color',
 		'settings'  => 'header_contact_info_background_color',
 		'label'     => esc_html__( 'Background Color', 'gridd' ),
 		'section'   => 'grid_part_details_header_contact_info',
@@ -34,7 +33,7 @@ Customizer::add_field(
 			],
 		],
 		'choices'   => [
-			'alpha' => true,
+			'formComponent' => 'ChromePicker',
 		],
 		'priority'  => 20,
 	]
