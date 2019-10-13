@@ -63,9 +63,8 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \WPLemon\Field\WCAGLinkColor(
 	[
-		'type'              => 'gridd-wcag-lc',
 		'settings'          => 'gridd_grid_footer_copyright_links_color',
 		'label'             => esc_html__( 'Copyright Links Color', 'gridd' ),
 		'section'           => 'grid_part_details_footer_copyright',

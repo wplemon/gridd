@@ -164,9 +164,8 @@ function gridd_nav_customizer_options( $id ) {
 		]
 	);
 
-	Customizer::add_field(
+	new \WPLemon\Field\WCAGLinkColor(
 		[
-			'type'              => 'gridd-wcag-lc',
 			'label'             => esc_html__( 'Accent Color', 'gridd' ),
 			'description'       => esc_html__( 'Select the hue for you active item. The color will be auto-calculated to ensure maximum readability.', 'gridd' ),
 			'settings'          => "gridd_grid_nav_{$id}_accent_color",

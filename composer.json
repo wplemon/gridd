@@ -51,7 +51,8 @@
     "kirki-framework/module-selective-refresh": "*",
     "kirki-framework/module-tooltips": "*",
     "kirki-framework/module-webfonts": "*",
-    "wptrt/control-color-alpha": "dev-master"
+    "wptrt/control-color-alpha": "dev-master",
+    "wplemon/control-wcag-auto-linkcolor": "*"
   },
   "require-dev": {
     "composer/installers": "~1.0",

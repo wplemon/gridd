@@ -73,7 +73,6 @@ class Customizer {
 		add_action( 'customize_preview_init', [ $this, 'preview_customizer_scripts' ] );
 		add_action( 'after_setup_theme', [ $this, 'setup_grid_filters' ] );
 		add_filter( 'kirki_control_types', [ $this, 'kirki_control_types' ] );
-		add_action( 'customize_register', [ $this, 'register_control_types' ] );
 	}
 
 	/**
@@ -172,8 +171,7 @@ class Customizer {
 	 * @return void
 	 */
 	public function preview_customizer_scripts() {
-		wp_enqueue_script( 'wcag_colors', get_template_directory_uri() . '/assets/js/wcagColors.js', [], '1.0', false );
-		wp_enqueue_script( 'gridd-customizer-preview-script', get_theme_file_uri( '/assets/js/customizer-preview.js' ), [ 'jquery', 'customize-preview', 'jquery-color', 'wcag_colors' ], time(), true );
+		wp_enqueue_script( 'gridd-customizer-preview-script', get_theme_file_uri( '/assets/js/customizer-preview.js' ), [ 'jquery', 'customize-preview', 'jquery-color' ], time(), true );
 		wp_localize_script(
 			'gridd-customizer-preview-script',
 			'griddCustomizerVars',
@@ -335,33 +333,8 @@ class Customizer {
 	 * @return array
 	 */
 	public function kirki_control_types( $controls ) {
-
-		// Make sure the class exists.
-		if ( ! class_exists( '\Gridd\Customizer\Control\WCAG_Link_Color' ) ) {
-			require_once get_template_directory() . '/inc/customizer/control/class-gridd-kirki-wcag-link-color.php';
-		}
 		$controls['gridd_grid']    = '\Gridd\Customizer\Control\Grid';
-		$controls['gridd-wcag-lc'] = '\Gridd\Customizer\Control\WCAG_Link_Color';
 		return $controls;
-	}
-
-	/**
-	 * Register our control types and make them eligible for
-	 * JS templating in the Customizer.
-	 *
-	 * @since 1.0
-	 * @param object $wp_customize The Customizer object.
-	 * @return void
-	 */
-	public function register_control_types( $wp_customize ) {
-
-		// Make sure the class exists.
-		if ( ! class_exists( '\Gridd\Customizer\Control\WCAG_Link_Color' ) ) {
-			require_once get_template_directory() . '/inc/customizer/control/class-gridd-kirki-wcag-link-color.php';
-		}
-
-		// Register the control-type.
-		$wp_customize->register_control_type( 'Gridd\Customizer\Control\WCAG_Link_Color' );
 	}
 
 	/**

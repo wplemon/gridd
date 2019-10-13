@@ -4,12 +4,14 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit6d03867fc64c41f2fed04ef2527f431c
+class ComposerStaticInit73b51f81fe21551b366746fd192232fd
 {
     public static $prefixLengthsPsr4 = array (
         'W' => 
         array (
             'WPTRT\\Customize\\Control\\' => 24,
+            'WPLemon\\Field\\' => 14,
+            'WPLemon\\Control\\' => 16,
         ),
         'K' => 
         array (
@@ -28,6 +30,14 @@ class ComposerStaticInit6d03867fc64c41f2fed04ef2527f431c
         'WPTRT\\Customize\\Control\\' => 
         array (
             0 => __DIR__ . '/..' . '/wptrt/control-color-alpha/src',
+        ),
+        'WPLemon\\Field\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/wplemon/control-wcag-auto-linkcolor/src/Field',
+        ),
+        'WPLemon\\Control\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/wplemon/control-wcag-auto-linkcolor/src/Control',
         ),
         'Kirki\\Util\\' => 
         array (
@@ -113,8 +123,8 @@ class ComposerStaticInit6d03867fc64c41f2fed04ef2527f431c
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit6d03867fc64c41f2fed04ef2527f431c::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit6d03867fc64c41f2fed04ef2527f431c::$prefixDirsPsr4;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit73b51f81fe21551b366746fd192232fd::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit73b51f81fe21551b366746fd192232fd::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }

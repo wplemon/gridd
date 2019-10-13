@@ -131,9 +131,8 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 		]
 	);
 
-	Customizer::add_field(
+	new \WPLemon\Field\WCAGLinkColor(
 		[
-			'type'              => 'gridd-wcag-lc',
 			'settings'          => "gridd_grid_reusable_block_{$id}_links_color",
 			'label'             => esc_html__( 'Links Color', 'gridd' ),
 			'section'           => "grid_part_details_reusable_block_$id",

@@ -82,9 +82,8 @@ function gridd_add_footer_widget_area_options( $id ) {
 	);
 
 	// Links Color.
-	Customizer::add_field(
+	new \WPLemon\Field\WCAGLinkColor(
 		[
-			'type'              => 'gridd-wcag-lc',
 			'settings'          => "gridd_grid_footer_sidebar_{$id}_links_color",
 			'label'             => esc_html__( 'Links Color', 'gridd' ),
 			'section'           => "grid_part_details_footer_sidebar_$id",

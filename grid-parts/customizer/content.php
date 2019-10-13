@@ -63,10 +63,9 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \WPLemon\Field\WCAGLinkColor(
 	[
 		'settings'          => 'gridd_links_color',
-		'type'              => 'gridd-wcag-lc',
 		'label'             => esc_html__( 'Links Color', 'gridd' ),
 		'description'       => esc_html__( 'Select the hue for you links. The color will be auto-calculated to ensure maximum readability according to WCAG.', 'gridd' ),
 		'section'           => 'grid_part_details_content',
@@ -90,10 +89,9 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \WPLemon\Field\WCAGLinkColor(
 	[
 		'settings'          => 'gridd_links_hover_color',
-		'type'              => 'gridd-wcag-lc',
 		'label'             => esc_html__( 'Links Hover Color', 'gridd' ),
 		'section'           => 'grid_part_details_content',
 		'transport'         => 'auto',

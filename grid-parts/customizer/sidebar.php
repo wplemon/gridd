@@ -96,9 +96,8 @@ function gridd_sidebar_customizer_options( $id ) {
 		]
 	);
 
-	Customizer::add_field(
+	new \WPLemon\Field\WCAGLinkColor(
 		[
-			'type'              => 'gridd-wcag-lc',
 			'settings'          => "gridd_grid_sidebar_{$id}_links_color",
 			'label'             => esc_html__( 'Links Color', 'gridd' ),
 			'section'           => "grid_part_details_sidebar_$id",

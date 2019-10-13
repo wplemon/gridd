@@ -1,4 +1,4 @@
-/* global griddComputeEm, wcagColors, griddCustomizerVars, Color */
+/* global griddComputeEm, griddCustomizerVars, Color */
 /* jshint -W098 */
 /**
  * File customizer.js.
