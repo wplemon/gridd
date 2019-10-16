@@ -78,6 +78,7 @@ new \WPLemon\Field\WCAGLinkColor(
 		'choices'           => [
 			'backgroundColor' => 'gridd_grid_content_background_color',
 			'textColor'       => 'gridd_text_color',
+			'linksUnderlined' => true,
 		],
 		'output'            => [
 			[
