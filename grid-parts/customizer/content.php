@@ -22,7 +22,7 @@ Customizer::add_section(
 
 new \Kirki\Field\ReactColor(
 	[
-		'settings'  => 'gridd_grid_content_background_color',
+		'settings'  => 'content_background_color',
 		'label'     => esc_html__( 'Background Color', 'gridd' ),
 		'section'   => 'grid_part_details_content',
 		'default'   => '#ffffff',
@@ -57,7 +57,7 @@ Customizer::add_field(
 		],
 		'transport'         => 'auto',
 		'choices'           => [
-			'setting' => 'gridd_grid_content_background_color',
+			'setting' => 'content_background_color',
 		],
 		'sanitize_callback' => [ $sanitization, 'color_hex' ],
 	]
@@ -76,7 +76,7 @@ new \WPLemon\Field\WCAGLinkColor(
 		],
 		'default'           => '#0f5e97',
 		'choices'           => [
-			'backgroundColor' => 'gridd_grid_content_background_color',
+			'backgroundColor' => 'content_background_color',
 			'textColor'       => 'gridd_text_color',
 			'linksUnderlined' => true,
 		],
@@ -108,7 +108,7 @@ new \WPLemon\Field\WCAGLinkColor(
 			],
 		],
 		'choices'           => [
-			'backgroundColor' => 'gridd_grid_content_background_color',
+			'backgroundColor' => 'content_background_color',
 			'textColor'       => 'gridd_text_color',
 		],
 		'sanitize_callback' => [ $sanitization, 'color_hex' ],

@@ -261,7 +261,7 @@ class Theme {
 		add_theme_support( 'wp-block-styles' );
 		if ( ! get_theme_mod( 'disable_editor_styles' ) ) {
 			add_theme_support( 'editor-styles' );
-			if ( 50 > \ariColor::newColor( get_theme_mod( 'gridd_grid_content_background_color', '#ffffff' ) )->lightness ) {
+			if ( 50 > \ariColor::newColor( get_theme_mod( 'content_background_color', '#ffffff' ) )->lightness ) {
 				add_theme_support( 'dark-editor-style' );
 			}
 		}

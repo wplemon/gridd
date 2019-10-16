@@ -34,7 +34,7 @@ class Customizer {
 	 * @var array
 	 */
 	public static $auto_text_color = [
-		'gridd_grid_content_background_color'           => 'gridd_text_color',
+		'content_background_color'                      => 'gridd_text_color',
 		'gridd_grid_breadcrumbs_background_color'       => 'gridd_grid_breadcrumbs_color',
 		'header_contact_info_background_color'          => 'header_contact_info_text_color',
 		'gridd_grid_footer_copyright_bg_color'          => 'gridd_grid_footer_copyright_color',
