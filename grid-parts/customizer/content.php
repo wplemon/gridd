@@ -90,31 +90,6 @@ new \WPLemon\Field\WCAGLinkColor(
 	]
 );
 
-new \WPLemon\Field\WCAGLinkColor(
-	[
-		'settings'          => 'gridd_links_hover_color',
-		'label'             => esc_html__( 'Links Hover Color', 'gridd' ),
-		'section'           => 'grid_part_details_content',
-		'transport'         => 'auto',
-		'priority'          => 40,
-		'choices'           => [
-			'alpha' => false,
-		],
-		'default'           => '#541cfc',
-		'output'            => [
-			[
-				'element'  => ':root',
-				'property' => '--lch',
-			],
-		],
-		'choices'           => [
-			'backgroundColor' => 'content_background_color',
-			'textColor'       => 'gridd_text_color',
-		],
-		'sanitize_callback' => [ $sanitization, 'color_hex' ],
-	]
-);
-
 Customizer::add_field(
 	[
 		'type'      => 'dimension',

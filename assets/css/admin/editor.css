@@ -8,7 +8,6 @@
   --gridd-content-max-width-calculated: var(--mw-c);
   --gridd-text-color: var(--cl);
   --gridd-links-color: var(--lc);
-  --lch: var(--lch);
   --gridd-content-bg: var(--bg);
   --gridd-content-padding-left: var(--pd-h);
   --gridd-content-padding-right: var(--pd-h);
@@ -94,7 +93,6 @@
 .edit-post-visual-editor.editor-styles-wrapper a:visited:active,
 .edit-post-visual-editor.editor-styles-wrapper a:visited:focus,
 .edit-post-visual-editor.editor-styles-wrapper a:visited:hover {
-  color: var(--lch, #541cfc);
   outline: thin dotted;
 }
 .block-editor .edit-post-visual-editor.editor-styles-wrapper a:focus,

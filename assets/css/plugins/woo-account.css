@@ -29,9 +29,5 @@
   color: var(--cl, #000);
   text-decoration: none;
 }
-.woocommerce-account .woocommerce-MyAccount-navigation a:hover, .woocommerce-account .woocommerce-MyAccount-navigation a:focus {
-  color: var(--lch, #541cfc);
-  border-bottom: 2px solid var(--lch, #541cfc);
-}
 
 /*# sourceMappingURL=woo-account.css.map */
