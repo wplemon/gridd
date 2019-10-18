@@ -27,39 +27,6 @@ class Customizer {
 	public static $grid_controls = [];
 
 	/**
-	 * An array of background to text color setting automations.
-	 *
-	 * @static
-	 * @since 1.0
-	 * @var array
-	 */
-	public static $auto_text_color = [
-		'content_background_color'                      => 'gridd_text_color',
-		'gridd_grid_breadcrumbs_background_color'       => 'gridd_grid_breadcrumbs_color',
-		'header_contact_info_background_color'          => 'header_contact_info_text_color',
-		'gridd_grid_footer_copyright_bg_color'          => 'gridd_grid_footer_copyright_color',
-		'gridd_grid_footer_sidebar_1_bg_color'          => 'gridd_grid_footer_sidebar_1_color',
-		'gridd_grid_footer_sidebar_2_bg_color'          => 'gridd_grid_footer_sidebar_2_color',
-		'gridd_grid_footer_sidebar_3_bg_color'          => 'gridd_grid_footer_sidebar_3_color',
-		'gridd_grid_footer_sidebar_4_bg_color'          => 'gridd_grid_footer_sidebar_4_color',
-		'gridd_grid_footer_sidebar_5_bg_color'          => 'gridd_grid_footer_sidebar_5_color',
-		'gridd_grid_footer_sidebar_6_bg_color'          => 'gridd_grid_footer_sidebar_6_color',
-		'gridd_grid_nav_1_bg_color'                     => 'gridd_grid_nav_1_items_color',
-		'gridd_grid_nav_2_bg_color'                     => 'gridd_grid_nav_2_items_color',
-		'gridd_grid_nav_3_bg_color'                     => 'gridd_grid_nav_3_items_color',
-		'gridd_grid_nav_4_bg_color'                     => 'gridd_grid_nav_4_items_color',
-		'gridd_grid_nav_5_bg_color'                     => 'gridd_grid_nav_5_items_color',
-		'gridd_grid_nav_6_bg_color'                     => 'gridd_grid_nav_6_items_color',
-		'gridd_grid_sidebar_1_background_color'         => 'gridd_grid_sidebar_1_color',
-		'gridd_grid_sidebar_2_background_color'         => 'gridd_grid_sidebar_2_color',
-		'gridd_grid_sidebar_3_background_color'         => 'gridd_grid_sidebar_3_color',
-		'gridd_grid_sidebar_4_background_color'         => 'gridd_grid_sidebar_4_color',
-		'gridd_grid_sidebar_5_background_color'         => 'gridd_grid_sidebar_5_color',
-		'gridd_grid_sidebar_6_background_color'         => 'gridd_grid_sidebar_6_color',
-		'gridd_featured_image_overlay_background_color' => 'gridd_featured_image_overlay_text_color',
-	];
-
-	/**
 	 * Constructor.
 	 *
 	 * @access public
@@ -172,13 +139,6 @@ class Customizer {
 	 */
 	public function preview_customizer_scripts() {
 		wp_enqueue_script( 'gridd-customizer-preview-script', get_theme_file_uri( '/assets/js/customizer-preview.js' ), [ 'jquery', 'customize-preview', 'jquery-color' ], time(), true );
-		wp_localize_script(
-			'gridd-customizer-preview-script',
-			'griddCustomizerVars',
-			array(
-				'autoText' => apply_filters( 'gridd_auto_text_color', self::$auto_text_color ),
-			)
-		);
 	}
 
 	/**
@@ -307,16 +267,6 @@ class Customizer {
 	 */
 	public static function add_field( $args ) {
 		$args = apply_filters( 'gridd_field_args', $args );
-
-		if ( 'gridd-wcag-tc' === $args['type'] ) {
-			// No need to init a colorpicker if the setting is automated.
-			$args['type']    = 'color';
-			$auto_text_color = apply_filters( 'gridd_auto_text_color', self::$auto_text_color );
-			if ( in_array( $args['settings'], array_values( $auto_text_color ), true ) ) {
-				$args['type']            = 'hidden';
-				$args['active_callback'] = '__return_false';
-			}
-		}
 
 		\Kirki::add_field( 'gridd', $args );
 		if ( 'gridd_grid' === $args['type'] ) {

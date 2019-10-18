@@ -39,14 +39,13 @@ new \Kirki\Field\ReactColor(
 	]
 );
 
-Customizer::add_field(
+new \WPLemon\Field\WCAGTextColor(
 	[
-		'type'              => 'gridd-wcag-tc',
 		'label'             => esc_html__( 'Text Color', 'gridd' ),
 		'settings'          => 'header_contact_info_text_color',
 		'section'           => 'grid_part_details_header_contact_info',
 		'choices'           => [
-			'setting' => 'header_contact_info_background_color',
+			'backgroundColor' => 'header_contact_info_background_color',
 		],
 		'default'           => '#000000',
 		'transport'         => 'auto',

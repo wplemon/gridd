@@ -41,9 +41,8 @@ new \Kirki\Field\ReactColor(
 	]
 );
 
-Customizer::add_field(
+new \WPLemon\Field\WCAGTextColor(
 	[
-		'type'              => 'gridd-wcag-tc',
 		'settings'          => 'gridd_text_color',
 		'label'             => esc_html__( 'Text Color', 'gridd' ),
 		'section'           => 'grid_part_details_content',
@@ -57,7 +56,7 @@ Customizer::add_field(
 		],
 		'transport'         => 'auto',
 		'choices'           => [
-			'setting' => 'content_background_color',
+			'backgroundColor' => 'content_background_color',
 		],
 		'sanitize_callback' => [ $sanitization, 'color_hex' ],
 	]

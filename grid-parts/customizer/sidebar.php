@@ -74,16 +74,15 @@ function gridd_sidebar_customizer_options( $id ) {
 		]
 	);
 
-	Customizer::add_field(
+	new \WPLemon\Field\WCAGTextColor(
 		[
-			'type'              => 'gridd-wcag-tc',
 			'settings'          => "gridd_grid_sidebar_{$id}_color",
 			'label'             => esc_html__( 'Text Color', 'gridd' ),
 			'section'           => "grid_part_details_sidebar_$id",
 			'default'           => '#000000',
 			'priority'          => 20,
 			'choices'           => [
-				'setting' => "gridd_grid_sidebar_{$id}_background_color",
+				'backgroundColor' => "gridd_grid_sidebar_{$id}_background_color",
 			],
 			'transport'         => 'auto',
 			'output'            => [

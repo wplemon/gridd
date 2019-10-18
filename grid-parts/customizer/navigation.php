@@ -143,14 +143,13 @@ function gridd_nav_customizer_options( $id ) {
 		]
 	);
 
-	Customizer::add_field(
+	new \WPLemon\Field\WCAGTextColor(
 		[
-			'type'              => 'gridd-wcag-tc',
 			'label'             => esc_html__( 'Items Color', 'gridd' ),
 			'settings'          => "gridd_grid_nav_{$id}_items_color",
 			'section'           => "grid_part_details_nav_$id",
 			'choices'           => [
-				'setting' => "gridd_grid_nav_{$id}_bg_color",
+				'backgroundColor' => "gridd_grid_nav_{$id}_bg_color",
 			],
 			'default'           => '#000000',
 			'transport'         => 'auto',

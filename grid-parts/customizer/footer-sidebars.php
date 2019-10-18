@@ -60,9 +60,8 @@ function gridd_add_footer_widget_area_options( $id ) {
 	);
 
 	// Text Color.
-	Customizer::add_field(
+	new \WPLemon\Field\WCAGTextColor(
 		[
-			'type'              => 'gridd-wcag-tc',
 			'settings'          => "gridd_grid_footer_sidebar_{$id}_color",
 			'label'             => esc_html__( 'Text Color', 'gridd' ),
 			'section'           => "grid_part_details_footer_sidebar_$id",
@@ -75,7 +74,7 @@ function gridd_add_footer_widget_area_options( $id ) {
 				],
 			],
 			'choices'           => [
-				'setting' => "gridd_grid_footer_sidebar_{$id}_bg_color",
+				'backgroundColor' => "gridd_grid_footer_sidebar_{$id}_bg_color",
 			],
 			'sanitize_callback' => [ $sanitization, 'color_hex' ],
 		]

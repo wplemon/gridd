@@ -109,13 +109,12 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 		]
 	);
 
-	Customizer::add_field(
+	new \WPLemon\Field\WCAGTextColor(
 		[
-			'type'              => 'gridd-wcag-tc',
 			'settings'          => "gridd_grid_reusable_block_{$id}_color",
 			'section'           => "grid_part_details_reusable_block_$id",
 			'choices'           => [
-				'setting' => "gridd_grid_reusable_block_{$id}_bg_color",
+				'backgroundColor' => "gridd_grid_reusable_block_{$id}_bg_color",
 			],
 			'label'             => esc_html__( 'Text Color', 'gridd' ),
 			'priority'          => 30,

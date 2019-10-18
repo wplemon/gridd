@@ -41,9 +41,8 @@ new \Kirki\Field\ReactColor(
 	]
 );
 
-Customizer::add_field(
+new \WPLemon\Field\WCAGTextColor(
 	[
-		'type'              => 'gridd-wcag-tc',
 		'settings'          => 'gridd_grid_footer_copyright_color',
 		'label'             => esc_html__( 'Copyright Text Color', 'gridd' ),
 		'section'           => 'grid_part_details_footer_copyright',
@@ -57,7 +56,7 @@ Customizer::add_field(
 		],
 		'priority'          => 20,
 		'choices'           => [
-			'setting' => 'gridd_grid_footer_copyright_bg_color',
+			'backgroundColor' => 'gridd_grid_footer_copyright_bg_color',
 		],
 		'sanitize_callback' => [ $sanitization, 'color_hex' ],
 	]

@@ -1,4 +1,4 @@
-/* global griddComputeEm, griddCustomizerVars, Color */
+/* global griddComputeEm */
 /* jshint -W098 */
 /**
  * File customizer.js.
@@ -84,22 +84,6 @@
 			if ( 'string' === typeof val ) {
 				val = JSON.parse( val );
 			}
-		});
-	});
-
-	/**
-	 * Automate text-color.
-	 *
-	 * We're using a proxy hidden control because the plus version
-	 * includes a premium control for colorpickers which allows WCAG-compliant colors to be selected by the user.
-	 * In the free version of the theme we're automatically picking either white or black
-	 * depending on their background-color selection.
-	 */
-	_.each( griddCustomizerVars.autoText, function( textColor, backgroundColor ) {
-		wp.customize( backgroundColor, function( value ) {
-			value.bind( function( to ) {
-				window.parent.window.wp.customize( textColor ).set( Color( to ).getMaxContrastColor().toCSS() );
-			});
 		});
 	});
 } () );

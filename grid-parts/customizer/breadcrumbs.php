@@ -85,9 +85,8 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \WPLemon\Field\WCAGTextColor(
 	[
-		'type'              => 'gridd-wcag-tc',
 		'settings'          => 'gridd_grid_breadcrumbs_color',
 		'label'             => esc_html__( 'Text Color', 'gridd' ),
 		'section'           => 'grid_part_details_breadcrumbs',
@@ -100,7 +99,7 @@ Customizer::add_field(
 			],
 		],
 		'choices'           => [
-			'setting' => 'gridd_grid_breadcrumbs_background_color',
+			'backgroundColor' => 'gridd_grid_breadcrumbs_background_color',
 		],
 		'sanitize_callback' => [ $sanitization, 'color_hex' ],
 	]

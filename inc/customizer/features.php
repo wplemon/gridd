@@ -312,9 +312,8 @@ new \Kirki\Field\ReactColor(
 	]
 );
 
-Customizer::add_field(
+new \WPLemon\Field\WCAGTextColor(
 	[
-		'type'              => 'gridd-wcag-tc',
 		'settings'          => 'gridd_featured_image_overlay_text_color',
 		'label'             => esc_html__( 'Feature Image Overlay Text Color', 'gridd' ),
 		'section'           => 'gridd_features_single_post',
@@ -323,7 +322,7 @@ Customizer::add_field(
 		'css_vars'          => '--im-htc',
 		'transport'         => 'postMessage',
 		'choices'           => [
-			'setting' => 'gridd_featured_image_overlay_background_color',
+			'backgroundColor' => 'gridd_featured_image_overlay_background_color',
 		],
 		'sanitize_callback' => [ $sanitization, 'color_hex' ],
 		'active_callback'   => function() {
