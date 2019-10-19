@@ -62,6 +62,7 @@ new \WPLemon\Field\WCAGTextColor(
 		'transport'         => 'auto',
 		'choices'           => [
 			'backgroundColor' => 'content_background_color',
+			'appearance'      => 'hidden',
 		],
 		'sanitize_callback' => [ $sanitization, 'color_hex' ],
 	]

@@ -98,6 +98,7 @@ new \WPLemon\Field\WCAGTextColor(
 		],
 		'choices'           => [
 			'backgroundColor' => 'gridd_grid_breadcrumbs_background_color',
+			'appearance'      => 'hidden',
 		],
 		'sanitize_callback' => [ $sanitization, 'color_hex' ],
 	]

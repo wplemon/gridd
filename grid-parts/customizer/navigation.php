@@ -137,7 +137,8 @@ function gridd_nav_customizer_options( $id ) {
 				],
 			],
 			'choices'   => [
-				'formComponent' => 'ChromePicker',
+				'formComponent' => 'TwitterPicker',
+				'colors'        => [ '#FFFFFF', '#fffcea', '#F9F9F9', '#f7f6e3', '#f7f7f7', '#f4f4e1', '#1A1A1A', '#000000' ],
 			],
 		]
 	);
@@ -149,6 +150,7 @@ function gridd_nav_customizer_options( $id ) {
 			'section'           => "grid_part_details_nav_$id",
 			'choices'           => [
 				'backgroundColor' => "gridd_grid_nav_{$id}_bg_color",
+				'appearance'      => 'hidden',
 			],
 			'default'           => '#000000',
 			'transport'         => 'auto',

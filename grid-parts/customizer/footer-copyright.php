@@ -57,6 +57,7 @@ new \WPLemon\Field\WCAGTextColor(
 		'priority'          => 20,
 		'choices'           => [
 			'backgroundColor' => 'gridd_grid_footer_copyright_bg_color',
+			'appearance'      => 'hidden',
 		],
 		'sanitize_callback' => [ $sanitization, 'color_hex' ],
 	]

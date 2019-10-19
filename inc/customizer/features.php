@@ -323,6 +323,7 @@ new \WPLemon\Field\WCAGTextColor(
 		'transport'         => 'postMessage',
 		'choices'           => [
 			'backgroundColor' => 'gridd_featured_image_overlay_background_color',
+			'appearance'      => 'hidden',
 		],
 		'sanitize_callback' => [ $sanitization, 'color_hex' ],
 		'active_callback'   => function() {

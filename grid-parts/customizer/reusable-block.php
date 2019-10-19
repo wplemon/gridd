@@ -114,6 +114,7 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 			'section'           => "grid_part_details_reusable_block_$id",
 			'choices'           => [
 				'backgroundColor' => "gridd_grid_reusable_block_{$id}_bg_color",
+				'appearance'      => 'hidden',
 			],
 			'label'             => esc_html__( 'Text Color', 'gridd' ),
 			'priority'          => 30,

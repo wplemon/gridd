@@ -82,6 +82,7 @@ function gridd_sidebar_customizer_options( $id ) {
 			'priority'          => 20,
 			'choices'           => [
 				'backgroundColor' => "gridd_grid_sidebar_{$id}_background_color",
+				'appearance'      => 'hidden',
 			],
 			'transport'         => 'auto',
 			'output'            => [

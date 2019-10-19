@@ -46,6 +46,7 @@ new \WPLemon\Field\WCAGTextColor(
 		'section'           => 'grid_part_details_header_contact_info',
 		'choices'           => [
 			'backgroundColor' => 'header_contact_info_background_color',
+			'appearance'      => 'hidden',
 		],
 		'default'           => '#000000',
 		'transport'         => 'auto',
