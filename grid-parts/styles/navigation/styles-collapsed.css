@@ -65,10 +65,6 @@
 .gridd-tp-nav_ID .gridd-toggle-navigation.toggled-on ~ nav {
   display: block;
 }
-.gridd-sticky .gridd-tp-nav_ID .gridd-toggle-navigation.toggled-on ~ nav {
-  max-height: 60vh;
-  overflow-y: auto;
-}
 .gridd-tp-nav_ID .gridd-toggle-navigation.toggled-on .icon svg {
   transform: rotate(360deg);
 }

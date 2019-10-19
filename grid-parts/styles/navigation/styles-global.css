@@ -38,7 +38,11 @@ nav {
 }
 .gridd-navigation li {
   display: flex;
+  flex-wrap: wrap;
   position: relative;
+}
+.gridd-navigation li li {
+  width: 100%;
 }
 .gridd-navigation li:hover .gridd-toggle,
 .gridd-navigation .gridd-toggle[aria-expanded=true] {
@@ -68,7 +72,7 @@ nav {
 }
 .gridd-navigation .menu-item-has-children > a,
 .gridd-navigation .page_item_has_children > a {
-  width: calc(100% - 2em);
+  width: calc(100% - 2em - .1px);
 }
 .gridd-navigation .gridd-toggle {
   display: flex;
@@ -134,7 +138,6 @@ nav {
 .gridd-nav-vertical .gridd-navigation li,
 .toggled-on + .gridd-nav-horizontal .gridd-navigation li {
   width: 100%;
-  display: flex;
 }
 
 /*# sourceMappingURL=styles-global.css.map */

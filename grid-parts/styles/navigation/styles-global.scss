@@ -48,8 +48,12 @@ nav {
 	// <li> items.
 	li {
 		display: flex;
-		// flex-wrap: wrap;
+		flex-wrap: wrap;
 		position: relative;
+
+		li {
+			width: 100%;
+		}
 	}
 
 	li:hover .gridd-toggle,
@@ -90,7 +94,7 @@ nav {
 	.menu-item-has-children,
 	.page_item_has_children {
 		>a {
-			width: calc(100% - 2em);
+			width: calc(100% - 2em - .1px); // The .1px here is to fix browser rendering issue.
 		}
 	}
 

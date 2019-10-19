@@ -33,7 +33,6 @@
 .gridd-nav-vertical .gridd-navigation li,
 .toggled-on + .gridd-nav-horizontal .gridd-navigation li {
   width: 100%;
-  display: flex;
 }
 
 /*# sourceMappingURL=styles-global-vertical.css.map */
