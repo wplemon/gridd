@@ -11,10 +11,10 @@
 
 		a,
 		a:visited {
-			color: var(--lc, #0f5e97);
+			color: var(--cl, #0f5e97);
 
 			&:hover {
-				color: var(--lc, #0f5e97);
+				color: var(--cl, #0f5e97);
 			}
 		}
 	}

@@ -63,30 +63,6 @@ new \WPLemon\Field\WCAGTextColor(
 	]
 );
 
-new \WPLemon\Field\WCAGLinkColor(
-	[
-		'settings'          => 'gridd_grid_footer_copyright_links_color',
-		'label'             => esc_html__( 'Copyright Links Color', 'gridd' ),
-		'section'           => 'grid_part_details_footer_copyright',
-		'default'           => '#0f5e97',
-		'transport'         => 'auto',
-		'output'            => [
-			[
-				'element'  => '.gridd-tp-footer_copyright',
-				'property' => '--lc',
-			],
-		],
-		'priority'          => 30,
-		'choices'           => [
-			'backgroundColor' => 'gridd_grid_footer_copyright_bg_color',
-			'textColor'       => 'gridd_grid_footer_copyright_color',
-			'linksUnderlined' => true,
-			'forceCompliance' => get_theme_mod( 'target_color_compliance', 'auto' ),
-		],
-		'sanitize_callback' => [ $sanitization, 'color_hex' ],
-	]
-);
-
 Customizer::add_field(
 	[
 		'type'        => 'slider',

@@ -11,11 +11,11 @@
 }
 .gridd-tp-footer_copyright .site-info a,
 .gridd-tp-footer_copyright .site-info a:visited {
-  color: var(--lc, #0f5e97);
+  color: var(--cl, #0f5e97);
 }
 .gridd-tp-footer_copyright .site-info a:hover,
 .gridd-tp-footer_copyright .site-info a:visited:hover {
-  color: var(--lc, #0f5e97);
+  color: var(--cl, #0f5e97);
 }
 
 /*# sourceMappingURL=styles-copyright.css.map */
