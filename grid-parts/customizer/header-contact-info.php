@@ -113,9 +113,8 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\RadioButtonset(
 	[
-		'type'              => 'radio-buttonset',
 		'settings'          => 'header_contact_text_align',
 		'label'             => esc_html__( 'Text Align', 'gridd' ),
 		'section'           => 'grid_part_details_header_contact_info',

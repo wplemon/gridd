@@ -31,6 +31,11 @@ new \Kirki\Field\ReactColor(
 				'element'  => '.gridd-tp-content',
 				'property' => '--bg',
 			],
+			[
+				'element'  => '.edit-post-visual-editor.editor-styles-wrapper',
+				'property' => '--bg',
+				'context'  => [ 'editor' ]
+			],
 		],
 		'transport' => 'auto',
 		'priority'  => 10,

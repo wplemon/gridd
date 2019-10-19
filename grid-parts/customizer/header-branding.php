@@ -297,9 +297,8 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\RadioButtonset(
 	[
-		'type'              => 'radio-buttonset',
 		'settings'          => 'gridd_grid_header_branding_horizontal_align',
 		'label'             => esc_html__( 'Horizontal Alignment', 'gridd' ),
 		'section'           => 'grid_part_details_header_branding',
@@ -324,9 +323,8 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\RadioButtonset(
 	[
-		'type'              => 'radio-buttonset',
 		'settings'          => 'gridd_grid_header_branding_vertical_align',
 		'label'             => esc_html__( 'Vertical Alignment', 'gridd' ),
 		'section'           => 'grid_part_details_header_branding',

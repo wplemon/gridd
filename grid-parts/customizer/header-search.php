@@ -16,9 +16,8 @@ Customizer::add_outer_section(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\RadioButtonset(
 	[
-		'type'      => 'radio-buttonset',
 		'settings'  => 'header_search_mode',
 		'label'     => esc_html__( 'Search Mode', 'gridd' ),
 		'section'   => 'grid_part_details_header_search',

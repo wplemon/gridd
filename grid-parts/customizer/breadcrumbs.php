@@ -39,9 +39,8 @@ new \Kirki\Field\ReactColor(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Dimension(
 	[
-		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_breadcrumbs_padding',
 		'label'       => esc_html__( 'Padding', 'gridd' ),
 		'description' => Customizer::get_control_description(
@@ -67,9 +66,8 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Dimension(
 	[
-		'type'      => 'dimension',
 		'settings'  => 'gridd_grid_breadcrumbs_max_width',
 		'label'     => esc_html__( 'Breadcrumbs Maximum Width', 'gridd' ),
 		'section'   => 'grid_part_details_breadcrumbs',
@@ -105,9 +103,8 @@ new \WPLemon\Field\WCAGTextColor(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\RadioButtonset(
 	[
-		'type'              => 'radio-buttonset',
 		'settings'          => 'gridd_grid_breadcrumbs_text_align',
 		'label'             => esc_html__( 'Alignment', 'gridd' ),
 		'section'           => 'grid_part_details_breadcrumbs',

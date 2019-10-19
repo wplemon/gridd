@@ -202,9 +202,8 @@ function gridd_nav_customizer_options( $id ) {
 		]
 	);
 
-	Customizer::add_field(
+	new \Kirki\Field\RadioButtonset(
 		[
-			'type'              => 'radio-buttonset',
 			'settings'          => "gridd_grid_nav_{$id}_justify_content",
 			'label'             => esc_html__( 'Justify Items', 'gridd' ),
 			'description'       => Customizer::get_control_description(
@@ -242,6 +241,7 @@ function gridd_nav_customizer_options( $id ) {
 				'space-around'  => '<span class="gridd-flexbox-svg-option" title="' . esc_attr__( 'Space Around', 'gridd' ) . '"><span class="screen-reader-text">' . esc_html__( 'Space Around', 'gridd' ) . '</span>' . Theme::get_fcontents( 'assets/images/flexbox/justify-content-space-around.svg' ) . '</span>',
 				'space-evenly'  => '<span class="gridd-flexbox-svg-option" title="' . esc_attr__( 'Space Evenly', 'gridd' ) . '"><span class="screen-reader-text">' . esc_html__( 'Space Evenly', 'gridd' ) . '</span>' . Theme::get_fcontents( 'assets/images/flexbox/justify-content-space-evenly.svg' ) . '</span>',
 			],
+			'hide_input'        => true,
 			'sanitize_callback' => function( $value ) {
 				if ( ! in_array( $value, [ 'flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'space-evenly' ], true ) ) {
 					return 'center';
@@ -275,15 +275,15 @@ function gridd_nav_customizer_options( $id ) {
 		]
 	);
 
-	Customizer::add_field(
+	new \Kirki\Field\RadioButtonset(
 		[
-			'type'              => 'radio-buttonset',
 			'settings'          => "gridd_grid_nav_{$id}_expand_icon",
 			'label'             => esc_html__( 'Expand Icon', 'gridd' ),
 			'section'           => "grid_part_details_nav_$id",
 			'default'           => 'menu-1',
 			'transport'         => 'refresh',
 			'choices'           => Navigation::get_expand_svgs(),
+			'hide_input'        => true,
 			'active_callback'   => [
 				[
 					'setting'  => "gridd_grid_nav_{$id}_responsive_behavior",
@@ -367,9 +367,8 @@ function gridd_nav_customizer_options( $id ) {
 
 	/**
 	 * WIP
-	Customizer::add_field(
+	new \Kirki\Field\RadioButtonset(
 		[
-			'type'              => 'radio-buttonset',
 			'settings'          => "gridd_grid_nav_{$id}_style",
 			'label'             => esc_html__( 'Hover/Focus Styles', 'gridd' ),
 			'section'           => "grid_part_details_nav_$id",
