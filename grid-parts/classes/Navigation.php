@@ -8,7 +8,6 @@
 namespace Gridd\Grid_Part;
 
 use Gridd\Grid_Part;
-use Gridd\AMP;
 use Gridd\Style;
 use Gridd\Theme;
 
@@ -194,7 +193,7 @@ class Navigation extends Grid_Part {
 	}
 
 	/**
-	 * Filter the HTML output of a nav menu item to add the AMP dropdown button to reveal the sub-menu.
+	 * Filter the HTML output of a nav menu item to add the dropdown button that reveal the sub-menu.
 	 *
 	 * @access public
 	 * @since 1.0

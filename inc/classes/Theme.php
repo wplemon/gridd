@@ -15,7 +15,6 @@ use Gridd\Blog;
 use Gridd\Scripts;
 use Gridd\Jetpack;
 use Gridd\WooCommerce;
-use Gridd\AMP;
 
 /**
  * The main theme class.
@@ -146,9 +145,6 @@ class Theme {
 			$classes[] = 'hfeed';
 		}
 		$classes[] = 'gridd-header-layout-' . get_theme_mod( 'gridd_header_layout', 'top' );
-		if ( ! AMP::is_active() ) {
-			$classes[] = 'gridd-amp';
-		}
 		if ( is_archive() || is_home() ) {
 			$classes[] = 'gridd-post-type-archive-' . get_post_type();
 		}
@@ -442,14 +438,6 @@ class Theme {
 
 		$html = '';
 
-		if ( AMP::is_active() ) {
-
-			// Create new state for managing storing the whether the sub-menu is expanded.
-			$html .= '<amp-state id="' . esc_attr( $args['expanded_state_id'] ) . '">';
-			$html .= '<script type="application/json">' . $args['expanded'] . '</script>';
-			$html .= '</amp-state>';
-		}
-
 		if ( ! isset( $args['classes'] ) ) {
 			$args['classes'] = [];
 		}
@@ -460,15 +448,9 @@ class Theme {
 			'aria-expanded' => 'false',
 		];
 
-		if ( AMP::is_active() ) {
-			$button_atts['[class]']         = '(' . $args['expanded_state_id'] . '?\'' . $classes . ' toggled-on\':\'' . $classes . '\')';
-			$button_atts['[aria-expanded]'] = "{$args['expanded_state_id']} ? 'true' : 'false'";
-			$button_atts['on']              = "tap:AMP.setState({ {$args['expanded_state_id']}: ! {$args['expanded_state_id']} })";
-		} else {
-			$uid                     = wp_rand( 0, 99 ) . substr( str_shuffle( md5( microtime() ) ), 0, 10 );
-			$button_atts['data-uid'] = $uid;
-			$button_atts['onclick']  = 'griddToggleButtonClick(\'' . $uid . '\')';
-		}
+		$uid                     = wp_rand( 0, 99 ) . substr( str_shuffle( md5( microtime() ) ), 0, 10 );
+		$button_atts['data-uid'] = $uid;
+		$button_atts['onclick']  = 'griddToggleButtonClick(\'' . $uid . '\')';
 
 		/*
 		* Create the toggle button which mutates the state and which has class and
@@ -482,20 +464,15 @@ class Theme {
 		}
 		$html .= '>';
 
-		if ( AMP::is_active() && isset( $args['screen_reader_label_collapse'] ) && isset( $args['screen_reader_label_expand'] ) ) {
-
-			// Let the screen reader text in the button also update based on the expanded state.
-			$html .= '<span class="screen-reader-text"';
-			$html .= ' [text]="' . $args['expanded_state_id'] . '?\'' . esc_attr( $args['screen_reader_label_collapse'] ) . '\':\'' . esc_attr( $args['screen_reader_label_expand'] ) . '\'">';
-			$html .= esc_html( $args['screen_reader_label_expand'] );
-		} elseif ( isset( $args['screen_reader_label_toggle'] ) ) {
+		if ( isset( $args['screen_reader_label_toggle'] ) ) {
 			$html .= '<span class="screen-reader-text">' . $args['screen_reader_label_toggle'] . '</span>';
 		}
+
 		$html .= '</span>';
 		$html .= $args['label'];
 		$html .= '</button>';
 
-		return apply_filters( 'gridd_get_toggle_button', $html );
+		return apply_filters( 'gridd_get_toggle_button', $html, $args );
 	}
 
 	/**

@@ -8,7 +8,6 @@
 
 use Gridd\Grid_Part\Navigation;
 use Gridd\Style;
-use Gridd\AMP;
 use Gridd\Theme;
 
 $style = Style::get_instance( "grid-part/navigation/$id" );
@@ -109,7 +108,7 @@ foreach ( $responsive_mode_parts as $responsive_mode_part ) {
 			echo Theme::get_toggle_button( // phpcs:ignore WordPress.Security.EscapeOutput
 				[
 					'context'                      => [ 'expand-navigation' ],
-					'expanded_state_id'            => 'navMenuExpanded' . absint( $id ),
+					'expanded_state_id'            => "navMenuExpanded{$id}",
 					'expanded'                     => 'false',
 					'screen_reader_label_collapse' => __( 'Collapse Navigation', 'gridd' ),
 					'screen_reader_label_expand'   => __( 'Expand Navigation', 'gridd' ),
@@ -120,24 +119,15 @@ foreach ( $responsive_mode_parts as $responsive_mode_part ) {
 			);
 			?>
 		<?php endif; ?>
-		<nav
-			id="navigation-<?php echo absint( $id ); ?>"
-			class="navigation gridd-nav-<?php echo ( get_theme_mod( "gridd_grid_nav_{$id}_vertical", false ) ) ? 'vertical' : 'horizontal'; ?>"
-			role="navigation"
-			aria-expanded="false"
-			<?php if ( AMP::is_active() ) : ?>
-				<?php
-				/**
-				 * We use AMP so we need to output AMP-specific markup.
-				 *
-				 * @link https://amp-wp.org/documentation/playbooks/toggling-hamburger-menus/
-				 */
-				?>
-				[class]="'navigation gridd-nav-<?php echo ( get_theme_mod( "gridd_grid_nav_{$id}_vertical", false ) ) ? 'vertical' : 'horizontal'; ?>' + ( navMenuExpanded<?php echo absint( $id ); ?> ? ' active' : '' )"
-				[aria-expanded]="navMenuExpanded<?php echo absint( $id ); ?> ? 'true' : 'false'"
-			<?php endif; ?>
-		>
-
+		<nav <?php Theme::print_attributes(
+			[
+				'id'            => "navigation-$id",
+				'class'         => 'navigation gridd-nav-' . ( get_theme_mod( "gridd_grid_nav_{$id}_vertical", false ) ) ? 'vertical' : 'horizontal',
+				'role'          => 'navigation',
+				'aria-expanded' => 'false',
+			],
+			"navigation-$id"
+		); ?>>
 			<?php if ( has_nav_menu( "menu-$id" ) ) : ?>
 				<?php
 

@@ -59,11 +59,6 @@ class WooCommerce {
 		// Remove Breadcrumbs.
 		add_action( 'init', [ $this, 'remove_breadcrumbs' ] );
 
-		if ( AMP::is_active() ) {
-			add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
-			add_action( 'wp_enqueue_scripts', [ $this, 'dequeue_cart_fragments' ], 11 );
-		}
-
 		// Hide shop page title if it's the frontpage and we don't want titles there.
 		add_action( 'woocommerce_page_title', [ $this, 'front_shop_page_title' ] );
 	}
@@ -108,10 +103,6 @@ class WooCommerce {
 			$style->add_file( get_theme_file_path( '/assets/css/plugins/woo-cart.min.css' ) );
 		}
 
-		// AMP.
-		if ( AMP::is_active() ) {
-			$style->add_file( get_theme_file_path( '/assets/css/plugins/amp-woo.min.css' ) );
-		}
 		$style->the_css( 'gridd-inline-css-wc' );
 	}
 
@@ -193,18 +184,6 @@ class WooCommerce {
 	public function wrapper_after() {
 		echo '</main>'; // Close #main.
 		echo '</div>'; // Close #primary.
-	}
-
-	/**
-	 * Dequeue cart fragments, therefore disabling AJAX calls from WooCommerce.
-	 * We're only doing this when AMP is enabled.
-	 *
-	 * @access public
-	 * @since 1.0
-	 * @return void
-	 */
-	public function dequeue_cart_fragments() {
-		wp_dequeue_script( 'wc-cart-fragments' );
 	}
 
 	/**

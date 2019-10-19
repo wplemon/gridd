@@ -10,7 +10,6 @@ use Gridd\Grid_Part\Reusable_Block;
 use Gridd\Style;
 use Gridd\Theme;
 use Gridd\Blog;
-use Gridd\AMP;
 
 $style = Style::get_instance( "grid-part/navigation/$gridd_reusable_block_id" );
 

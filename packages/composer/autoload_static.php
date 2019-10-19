@@ -10,6 +10,7 @@ class ComposerStaticInit732835aa44a0bf9e82f02a841da89611
         'W' => 
         array (
             'WPTRT\\Customize\\Control\\' => 24,
+            'WPTRT\\AdminNotices\\' => 19,
             'WPLemon\\Field\\' => 14,
             'WPLemon\\Control\\' => 16,
         ),
@@ -30,6 +31,10 @@ class ComposerStaticInit732835aa44a0bf9e82f02a841da89611
         'WPTRT\\Customize\\Control\\' => 
         array (
             0 => __DIR__ . '/..' . '/wptrt/control-color-alpha/src',
+        ),
+        'WPTRT\\AdminNotices\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/wptrt/admin-notices/src',
         ),
         'WPLemon\\Field\\' => 
         array (

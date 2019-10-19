@@ -8,7 +8,6 @@
 namespace Gridd;
 
 use Gridd\Theme;
-use Gridd\AMP;
 
 /**
  * Add some hooks for Easy Digital Downloads.
@@ -43,11 +42,6 @@ class EDD {
 		if ( $options['edd_after_download_content'] ) {
 			remove_filter( 'the_content', 'edd_after_download_content' );
 			$this->add_grid_part( 'edd_after_download_content' );
-		}
-
-		// If we're using AMP, remove EDD script.
-		if ( AMP::is_active() ) {
-			remove_action( 'wp_enqueue_scripts', 'edd_load_scripts' );
 		}
 	}
 

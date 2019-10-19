@@ -8,7 +8,7 @@
 namespace Gridd\Customizer;
 
 /**
- * Extra methods and actions for AMP.
+ * Extra methods and actions for sanitization.
  *
  * @since 1.0
  */

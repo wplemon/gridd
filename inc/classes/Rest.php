@@ -9,6 +9,7 @@
 namespace Gridd;
 
 use Gridd\Grid_Part\Sidebar;
+use Gridd\AMP;
 
 /**
  * Implements the custom REST Routes.
@@ -34,7 +35,7 @@ class Rest {
 	 * @access public
 	 */
 	public function __construct() {
-		if ( AMP::is_active() ) {
+		if ( apply_filters( 'gridd_disable_rest', false ) ) {
 			return;
 		}
 		add_action( 'wp_footer', [ $this, 'add_assets' ], PHP_INT_MAX );

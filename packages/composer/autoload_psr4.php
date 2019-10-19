@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'WPTRT\\Customize\\Control\\' => array($vendorDir . '/wptrt/control-color-alpha/src'),
+    'WPTRT\\AdminNotices\\' => array($vendorDir . '/wptrt/admin-notices/src'),
     'WPLemon\\Field\\' => array($vendorDir . '/wplemon/control-wcag-auto-linkcolor/src/Field', $vendorDir . '/wplemon/control-wcag-auto-textcolor/src/Field'),
     'WPLemon\\Control\\' => array($vendorDir . '/wplemon/control-wcag-auto-linkcolor/src/Control', $vendorDir . '/wplemon/control-wcag-auto-textcolor/src/Control'),
     'Kirki\\Util\\' => array($vendorDir . '/kirki-framework/util/src'),

@@ -8,7 +8,6 @@
 use Gridd\Grid_Part\Sidebar;
 use Gridd\Customizer;
 use Gridd\Customizer\Sanitize;
-use Gridd\AMP;
 
 $number = Sidebar::get_number_of_sidebars();
 for ( $i = 1; $i <= $number; $i++ ) {

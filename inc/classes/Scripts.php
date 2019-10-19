@@ -7,7 +7,6 @@
 
 namespace Gridd;
 
-use Gridd\AMP;
 use Gridd\Style;
 use Gridd\Grid_Part\Navigation;
 
@@ -105,11 +104,6 @@ class Scripts {
 	 */
 	public function inline_scripts() {
 
-		// Early exit if AMP is active.
-		if ( AMP::is_active() ) {
-			return;
-		}
-
 		// An array of scripts to print.
 		$scripts = [
 			get_theme_file_path( 'assets/js/passive-event-listeners-polyfill.min.js' ),
@@ -142,10 +136,6 @@ class Scripts {
 	 * @since 1.0
 	 */
 	public function scripts() {
-
-		if ( AMP::is_active() ) {
-			return;
-		}
 
 		// Dequeue wp-core blocks styles. These will be added inline.
 		wp_dequeue_style( 'wp-block-library' );
@@ -201,19 +191,6 @@ class Scripts {
 		// Adminbar.
 		if ( is_admin_bar_showing() ) {
 			$style->add_file( get_theme_file_path( 'assets/css/core/adminbar.min.css' ) );
-		}
-
-		// Add AMP styles.
-		if ( AMP::is_active() ) {
-			$style->add_file( get_theme_file_path( 'assets/plugins/css/amp.min.css' ) );
-		}
-
-		// EDD.
-		if ( class_exists( 'Easy_Digital_Downloads' ) ) {
-			$style->add_file( get_theme_file_path( 'assets/css/plugins/edd.min.css' ) );
-			if ( AMP::is_active() ) {
-				$style->add_file( get_theme_file_path( 'assets/css/plugins/amp-edd.min.css' ) );
-			}
 		}
 
 		// Comments.
@@ -324,9 +301,6 @@ class Scripts {
 	 * @return void
 	 */
 	public function add_user_agent_inline_script() {
-		if ( AMP::is_active() ) {
-			return;
-		}
 		echo 'if(window.navigator.userAgent.indexOf(\'Trident/\')>0){document.body.classList.add(\'ua-trident\');}';
 		echo 'if(window.navigator.userAgent.indexOf(\'MSIE \')>0){document.body.classList.add(\'ua-msie\');}';
 		echo 'if(window.navigator.userAgent.indexOf(\'Edge/\')>0){document.body.classList.add(\'ua-edge\');}';

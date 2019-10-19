@@ -11,7 +11,6 @@
 
 use Gridd\Grid;
 use Gridd\Grid_Parts;
-use Gridd\AMP;
 ?>
 
 		</main>

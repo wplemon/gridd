@@ -6,7 +6,6 @@
  */
 
 use Gridd\Grid_Part\Reusable_Block;
-use Gridd\AMP;
 use Gridd\Customizer;
 use Gridd\Customizer\Sanitize;
 

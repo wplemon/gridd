@@ -6,7 +6,6 @@
  */
 
 use Gridd\Grid_Part\Navigation;
-use Gridd\AMP;
 use Gridd\Customizer;
 use Gridd\Customizer\Sanitize;
 use Gridd\Theme;
