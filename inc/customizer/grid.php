@@ -115,16 +115,17 @@ Customizer::add_field(
 
 new \Kirki\Field\ReactColor(
 	[
-		'settings'  => 'background_color',
-		'label'     => esc_html__( 'Background Color', 'gridd' ),
-		'section'   => 'gridd_grid',
-		'default'   => '#ffffff',
-		'transport' => 'postMessage',
-		'priority'  => 90,
-		'choices'   => [
+		'settings'          => 'background_color',
+		'label'             => esc_html__( 'Background Color', 'gridd' ),
+		'section'           => 'gridd_grid',
+		'default'           => '#ffffff',
+		'transport'         => 'postMessage',
+		'priority'          => 90,
+		'choices'           => [
 			'formComponent' => 'TwitterPicker',
 			'colors'        => [ '#FFFFFF', '#fffcea', '#F9F9F9', '#f7f6e3', '#f7f7f7', '#f4f4e1', '#1A1A1A', '#000000' ],
 		],
+		'sanitize_callback' => 'sanitize_hex_color_no_hash',
 	]
 );
 
