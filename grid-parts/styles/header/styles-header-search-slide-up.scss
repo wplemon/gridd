@@ -7,6 +7,7 @@
 		height: 100%;
 		padding: 0 var(--pd, 1rem) 0 var(--pd, 1rem);
 		border-radius: 0;
+		background: var(--bg);
 
 		svg,
 		path {
@@ -20,6 +21,7 @@
 			}
 		}
 
+		&[aria-expanded=true],
 		&:hover,
 		&:focus,
 		&:active {
@@ -46,4 +48,12 @@
 	background-color: var(--bg, #ffffff);
 	padding: calc(1.5em + 54px) 1.5em; // The additional 54px vertically accomodate for the mobile nav.
 	z-index: 99999;
+
+	.search-submit.search-submit {
+		background: var(--bg);
+
+		svg {
+			fill: var(--cl);
+		}
+	}
 }
