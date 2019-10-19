@@ -100,6 +100,7 @@ function gridd_add_footer_widget_area_options( $id ) {
 				'backgroundColor' => "gridd_grid_footer_sidebar_{$id}_bg_color",
 				'textColor'       => "gridd_grid_footer_sidebar_{$id}_color",
 				'linksUnderlined' => true,
+				'forceCompliance' => get_theme_mod( 'target_color_compliance', 'auto' ),
 			],
 			'sanitize_callback' => [ $sanitization, 'color_hex' ],
 		]

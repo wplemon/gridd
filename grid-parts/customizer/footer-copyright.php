@@ -81,6 +81,7 @@ new \WPLemon\Field\WCAGLinkColor(
 			'backgroundColor' => 'gridd_grid_footer_copyright_bg_color',
 			'textColor'       => 'gridd_grid_footer_copyright_color',
 			'linksUnderlined' => true,
+			'forceCompliance' => get_theme_mod( 'target_color_compliance', 'auto' ),
 		],
 		'sanitize_callback' => [ $sanitization, 'color_hex' ],
 	]

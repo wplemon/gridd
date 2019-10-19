@@ -109,5 +109,23 @@
 		 * @since 1.1.12
 		 */
 		jQuery( '#customize-control-header_image .customize-control-description' ).html( griddTemplatePreviewScript.l10n.headerImageDescription );
+
+		/**
+		 * Handle switching target color-a11y mode.
+		 *
+		 * @since 1.2
+		 */
+		wp.customize( 'target_color_compliance', function( value ) {
+			value.bind( function( to ) {
+				wp.customize.control.each( function( control ) {
+					if ( 'kirki-wcag-link-color' === control.params.type ) {
+						control.params.choices.forceCompliance = to;
+						if ( 'function' === typeof control.getMode && ( 'auto' === control.getMode() || 'recommended' === control.getMode() ) ) {
+							control.setting.set( control.getAutoColor( control.setting.get(), true ) );
+						}
+					}
+				});
+			});
+		});
 	});
 }() );

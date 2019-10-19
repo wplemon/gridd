@@ -84,6 +84,7 @@ new \WPLemon\Field\WCAGLinkColor(
 			'backgroundColor' => 'content_background_color',
 			'textColor'       => 'gridd_text_color',
 			'linksUnderlined' => true,
+			'forceCompliance' => get_theme_mod( 'target_color_compliance', 'auto' ),
 		],
 		'output'            => [
 			[

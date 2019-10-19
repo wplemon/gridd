@@ -116,6 +116,7 @@ function gridd_sidebar_customizer_options( $id ) {
 				'backgroundColor' => "gridd_grid_sidebar_{$id}_background_color",
 				'textColor'       => "gridd_grid_sidebar_{$id}_color",
 				'linksUnderlined' => true,
+				'forceCompliance' => get_theme_mod( 'target_color_compliance', 'auto' ),
 			],
 			'sanitize_callback' => [ $sanitization, 'color_hex' ],
 		]

@@ -49,6 +49,26 @@ Customizer::add_section(
 	]
 );
 
+new \Kirki\Field\RadioButtonset(
+	[
+		'settings'    => 'target_color_compliance',
+		'label'       => esc_attr__( 'Color Accessibility Target Compliance', 'gridd' ),
+		'description' => esc_html__( 'Select how text and link colors will be calculated. Targeting for "AA" compliance will result in more vibrant colors, while targeting for "AAA" will result in less intense but easier to read colors. Set to "auto" if unsure.', 'gridd' ),
+		'section'     => 'gridd_features',
+		'default'     => 'auto',
+		'transport'   => 'postMessage',
+		'priority'    => 1,
+		'choices'     => [
+			'auto' => esc_html__( 'Auto', 'gridd' ),
+			'AAA'  => 'AAA',
+			'AA'   => 'AA',
+		],
+		'sanitize_callback' => function( $value ) {
+			return ( 'auto' === $value || 'AAA' === $value || 'AA' === $value ) ? $value : 'auto';
+		},
+	]
+);
+
 /**
  * Options for post-archives.
  */
