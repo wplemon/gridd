@@ -24,15 +24,6 @@ add_action(
 	'customize_register',
 	function( $wp_customize ) {
 
-		// Move the background-color control.
-		$wp_customize->get_control( 'background_color' )->section     = 'gridd_grid';
-		$wp_customize->get_control( 'background_color' )->priority    = 90;
-		$wp_customize->get_control( 'background_color' )->description = Customizer::get_control_description(
-			[
-				esc_html__( 'Background will only be seen when grid-parts have a transparent background color, or if the site grid is not set to 100% width.', 'gridd' ),
-			]
-		);
-
 		// Move the background-image control.
 		$wp_customize->get_control( 'background_image' )->section       = 'gridd_grid';
 		$wp_customize->get_control( 'background_image' )->priority      = 90;
@@ -119,6 +110,21 @@ Customizer::add_field(
 		'priority'    => 40,
 		'transport'   => 'postMessage',
 		'css_vars'    => '--mw',
+	]
+);
+
+new \Kirki\Field\ReactColor(
+	[
+		'settings'  => 'background_color',
+		'label'     => esc_html__( 'Background Color', 'gridd' ),
+		'section'   => 'gridd_grid',
+		'default'   => '#ffffff',
+		'transport' => 'postMessage',
+		'priority'  => 90,
+		'choices'   => [
+			'formComponent' => 'TwitterPicker',
+			'colors'        => [ '#FFFFFF', '#fffcea', '#F9F9F9', '#f7f6e3', '#f7f7f7', '#f4f4e1', '#1A1A1A', '#000000' ],
+		],
 	]
 );
 
