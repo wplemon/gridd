@@ -149,6 +149,7 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 			'choices'           => [
 				'backgroundColor' => "gridd_grid_reusable_block_{$id}_bg_color",
 				'textColor'       => "gridd_grid_reusable_block_{$id}_color",
+				'linksUnderlined' => true,
 			],
 			'sanitize_callback' => [ $sanitization, 'color_hex' ],
 		]

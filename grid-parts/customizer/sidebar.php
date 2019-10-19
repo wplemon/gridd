@@ -114,6 +114,7 @@ function gridd_sidebar_customizer_options( $id ) {
 			'choices'           => [
 				'backgroundColor' => "gridd_grid_sidebar_{$id}_background_color",
 				'textColor'       => "gridd_grid_sidebar_{$id}_color",
+				'linksUnderlined' => true,
 			],
 			'sanitize_callback' => [ $sanitization, 'color_hex' ],
 		]

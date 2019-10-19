@@ -179,6 +179,7 @@ function gridd_nav_customizer_options( $id ) {
 			'choices'           => [
 				'backgroundColor' => "gridd_grid_nav_{$id}_bg_color",
 				'textColor'       => "gridd_grid_nav_{$id}_items_color",
+				'linksUnderlined' => false,
 			],
 			'sanitize_callback' => [ $sanitization, 'color_hex' ],
 		]

@@ -79,6 +79,7 @@ new \WPLemon\Field\WCAGLinkColor(
 		'choices'           => [
 			'backgroundColor' => 'gridd_grid_footer_copyright_bg_color',
 			'textColor'       => 'gridd_grid_footer_copyright_color',
+			'linksUnderlined' => true,
 		],
 		'sanitize_callback' => [ $sanitization, 'color_hex' ],
 	]

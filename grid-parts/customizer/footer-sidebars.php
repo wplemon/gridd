@@ -98,6 +98,7 @@ function gridd_add_footer_widget_area_options( $id ) {
 			'choices'           => [
 				'backgroundColor' => "gridd_grid_footer_sidebar_{$id}_bg_color",
 				'textColor'       => "gridd_grid_footer_sidebar_{$id}_color",
+				'linksUnderlined' => true,
 			],
 			'sanitize_callback' => [ $sanitization, 'color_hex' ],
 		]
