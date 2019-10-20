@@ -92,6 +92,9 @@
 .gridd-tp-sidebar_ID .widget_nav_menu ul.menu {
   background-color: var(--bg, #fff);
 }
+.gridd-tp-sidebar_ID .widget_nav_menu ul.menu > li {
+  width: 100%;
+}
 .gridd-tp-sidebar_ID .widget_nav_menu ul.menu > li > ul {
   font-size: calc(1em / var(--ts));
 }
