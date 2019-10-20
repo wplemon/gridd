@@ -69,6 +69,21 @@ new \Kirki\Field\RadioButtonset(
 	]
 );
 
+new \Kirki\Field\Checkbox_Switch(
+	[
+		'settings'    => 'same_linkcolor_hues',
+		'label'       => esc_attr__( 'Link link-color hues', 'gridd' ),
+		'description' => esc_html__( 'By default all your grid-parts will use the same link-color hue that is set on the content area. Disable this option to access individual settings on some grid-parts.', 'gridd' ),
+		'section'     => 'gridd_features',
+		'default'     => true,
+		'transport'   => 'postMessage',
+		'priority'    => 1,
+		'sanitize_callback' => function( $value ) {
+			return (bool) $value;
+		},
+	]
+);
+
 /**
  * Options for post-archives.
  */

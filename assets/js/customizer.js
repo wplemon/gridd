@@ -118,11 +118,60 @@
 		wp.customize( 'target_color_compliance', function( value ) {
 			value.bind( function( to ) {
 				wp.customize.control.each( function( control ) {
-					if ( 'kirki-wcag-link-color' === control.params.type ) {
+					if ( 'kirki-wcag-link-color' === control.params.type || 'kirki-wcag-lc' === control.params.type ) {
 						control.params.choices.forceCompliance = to;
 						if ( 'function' === typeof control.getMode && ( 'auto' === control.getMode() || 'recommended' === control.getMode() ) ) {
 							control.setting.set( control.getAutoColor( control.setting.get(), true ) );
 						}
+					}
+				});
+			});
+		});
+
+		/**
+		 * Link link-color colorpickers hues.
+		 */
+		wp.customize( 'gridd_links_color', function( value ) {
+			value.bind( function( to ) {
+				var mainLinksHue;
+				if ( ! to ) {
+					return;
+				}
+
+				mainLinksHue = wp.customize.control( 'gridd_links_color' ).getHue();
+
+				wp.customize.control.each( function( control ) {
+					if (
+						( 'gridd_links_color' !== control.id ) &&
+						( 'kirki-wcag-link-color' === control.params.type || 'kirki-wcag-lc' === control.params.type )
+					) {
+						control.setHue( mainLinksHue );
+						control.setting.set( control.getAutoColor( 'hsl(' + mainLinksHue + ',50%,50%)', true ) );
+					}
+				});
+			});
+		});
+
+		/**
+		 * Change all linkcolor hues when the switch is turned on.
+		 */
+		wp.customize( 'same_linkcolor_hues', function( value ) {
+			value.bind( function( to ) {
+				var mainLinksHue;
+				if ( ! to ) {
+					return;
+				}
+
+				mainLinksHue = wp.customize.control( 'gridd_links_color' ).getHue();
+
+				wp.customize.control.each( function( control ) {
+					if (
+						( 'gridd_links_color' !== control.id ) &&
+						( 'kirki-wcag-link-color' === control.params.type || 'kirki-wcag-lc' === control.params.type )
+					) {
+						control.setHue( mainLinksHue );
+						control.setting.set( control.getAutoColor( 'hsl(' + mainLinksHue + ',50%,50%)', true ) );
+						control.deactivate();
 					}
 				});
 			});
