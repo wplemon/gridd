@@ -43,12 +43,8 @@ function gridd_nav_customizer_options( $id ) {
 	Customizer::add_outer_section(
 		"grid_part_details_nav_$id",
 		[
-			'title' => sprintf(
-				/* translators: The grid-part label. */
-				esc_html__( '%s Options', 'gridd' ),
-				/* translators: The navigation number. */
-				sprintf( esc_html__( 'Navigation %d', 'gridd' ), absint( $id ) )
-			),
+			/* translators: The navigation number. */
+			'title' => sprintf( esc_html__( 'Navigation %d', 'gridd' ), absint( $id ) ),
 		]
 	);
 

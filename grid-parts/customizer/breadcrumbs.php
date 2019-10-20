@@ -13,8 +13,7 @@ $sanitization = new Sanitize();
 Customizer::add_outer_section(
 	'grid_part_details_breadcrumbs',
 	[
-		/* translators: The grid-part label. */
-		'title' => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Breadcrumbs', 'gridd' ) ),
+		'title' => esc_html__( 'Breadcrumbs', 'gridd' ),
 	]
 );
 
@@ -33,7 +32,8 @@ new \Kirki\Field\ReactColor(
 			],
 		],
 		'choices'   => [
-			'formComponent' => 'ChromePicker',
+			'formComponent' => 'TwitterPicker',
+			'colors'        => [ '#FFFFFF', '#fffcea', '#F9F9F9', '#f7f6e3', '#f7f7f7', '#f4f4e1', '#1A1A1A', '#000000', '#FF6900', '#FCB900', '#7BDCB5', '#00D084', '#8ED1FC', '#0693E3', '#ABB8C3', '#EB144C', '#F78DA7', '#9900EF' ],
 		],
 		'priority'  => 10,
 	]

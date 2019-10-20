@@ -43,12 +43,8 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 	Customizer::add_outer_section(
 		"grid_part_details_reusable_block_$id",
 		[
-			'title' => sprintf(
-				/* translators: The grid-part label. */
-				esc_html__( '%s Options', 'gridd' ),
-				/* translators: The reusable block number. */
-				sprintf( esc_html__( 'Reusable Block %d', 'gridd' ), absint( $id ) )
-			),
+			/* translators: The reusable block name. */
+			'title' => sprintf( esc_html__( 'Block: %s', 'gridd' ), esc_html( get_the_title( $id ) ) ),
 		]
 	);
 

@@ -11,8 +11,7 @@ use Gridd\Customizer;
 Customizer::add_outer_section(
 	'grid_part_details_header_search',
 	[
-		/* translators: The grid-part label. */
-		'title' => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Header Search', 'gridd' ) ),
+		'title' => esc_html__( 'Header Search', 'gridd' ),
 	]
 );
 

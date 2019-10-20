@@ -15,8 +15,7 @@ require_once get_template_directory() . '/inc/social-icons.php';
 Customizer::add_outer_section(
 	'grid_part_details_footer_social_media',
 	[
-		/* translators: The grid-part label. */
-		'title' => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Footer Contact Info', 'gridd' ) ),
+		'title' => esc_html__( 'Footer Social Media', 'gridd' ),
 	]
 );
 

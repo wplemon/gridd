@@ -19,7 +19,7 @@ Customizer::add_outer_section(
 	'grid_part_details_social_media',
 	[
 		/* translators: The grid-part label. */
-		'title' => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Header Contact Info', 'gridd' ) ),
+		'title' => esc_html__( 'Header Contact Info', 'gridd' ),
 	]
 );
 

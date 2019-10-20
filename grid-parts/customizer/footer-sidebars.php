@@ -30,12 +30,8 @@ function gridd_add_footer_widget_area_options( $id ) {
 	Customizer::add_outer_section(
 		"grid_part_details_footer_sidebar_$id",
 		[
-			'title' => sprintf(
-				/* translators: The grid-part label. */
-				esc_html__( '%s Options', 'gridd' ),
-				/* translators: The number of the footer widget area. */
-				sprintf( esc_html__( 'Footer Sidebar %d', 'gridd' ), absint( $id ) )
-			),
+			/* translators: The number of the footer widget area. */
+			'title' => sprintf( esc_html__( 'Footer Sidebar %d', 'gridd' ), absint( $id ) )
 		]
 	);
 
