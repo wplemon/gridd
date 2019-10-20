@@ -152,6 +152,11 @@
 			});
 		});
 
+		// Move the main links-color control to the typography setting if needed.
+		if ( wp.customize.control( 'gridd_links_color' ).setting.get() ) {
+			wp.customize.control( 'gridd_links_color' ).section( 'gridd_typography' );
+		}
+
 		/**
 		 * Change all linkcolor hues when the switch is turned on.
 		 */
@@ -159,9 +164,11 @@
 			value.bind( function( to ) {
 				var mainLinksHue;
 				if ( ! to ) {
+					wp.customize.control( 'gridd_links_color' ).section( 'grid_part_details_content' )
 					return;
 				}
 
+				wp.customize.control( 'gridd_links_color' ).section( 'gridd_typography' );
 				mainLinksHue = wp.customize.control( 'gridd_links_color' ).getHue();
 
 				wp.customize.control.each( function( control ) {
