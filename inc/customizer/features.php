@@ -83,8 +83,8 @@ Customizer::add_field(
 		'transport'         => 'refresh',
 		'priority'          => 10,
 		'choices'           => [
-			'default' => get_template_directory_uri() . '/assets/images/archive-post-mode/default.png',
-			'card'    => get_template_directory_uri() . '/assets/images/archive-post-mode/card.png',
+			'default' => get_template_directory_uri() . '/assets/images/archive-post-mode/default.svg',
+			'card'    => get_template_directory_uri() . '/assets/images/archive-post-mode/card.svg',
 		],
 		'sanitize_callback' => function( $value ) {
 			return ( 'default' === $value || 'card' === $value ) ? $value : 'default';
