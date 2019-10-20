@@ -48,7 +48,7 @@ class Blog {
 	 */
 	public function excerpt_more() {
 		/* translators: %s: Name of current post. Only visible to screen readers */
-		$read_more = get_theme_mod( 'gridd_excerpt_more', __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'gridd' ) );
+		$read_more = get_theme_mod( 'excerpt_read_more', __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'gridd' ) );
 		if ( false !== strpos( $read_more, '%s' ) ) {
 			$read_more = sprintf(
 				$read_more,

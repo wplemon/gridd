@@ -206,8 +206,8 @@ foreach ( $post_types as $post_type_id => $post_type_obj ) {
 
 Customizer::add_field(
 	[
-		'type'        => 'textarea',
-		'settings'    => 'gridd_excerpt_more',
+		'type'        => 'code',
+		'settings'    => 'excerpt_read_more',
 		'label'       => esc_attr__( 'Read More link', 'gridd' ),
 		'description' => esc_html__( 'If you want to include the post title in your read-more link, you can use "%s" (without the quotes) and it will be replaced with the post\'s title.', 'gridd' ), // phpcs:ignore WordPress.WP.I18n.MissingTranslatorsComment
 		'section'     => 'gridd_features_archive',
@@ -215,6 +215,9 @@ Customizer::add_field(
 		/* translators: %s: Name of current post. Only visible to screen readers */
 		'default'     => __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'gridd' ),
 		'transport'   => 'refresh',
+		'choices'     => [
+			'language' => 'html',
+		],
 	]
 );
 
