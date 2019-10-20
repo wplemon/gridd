@@ -98,13 +98,33 @@ class Customizer {
 	 * @return void
 	 */
 	public function customize_controls_print_styles() {
-		echo '<style id="gridd-customizer-styles">';
-		include get_template_directory() . '/assets/css/customizer/customizer.css';
 		$grid_parts_sections = self::get_grid_parts_sections();
-		foreach ( self::get_grid_parts_sections() as $section ) {
-			echo '#accordion-section-' . esc_attr( $section ) . ' .accordion-section-title{background-color:#fcfcfc;color:#999;}';
+		?>
+		<style id="gridd-customizer-styles">
+			<?php include get_template_directory() . '/assets/css/customizer/customizer.css'; ?>
+			<?php foreach ( self::get_grid_parts_sections() as $section ) : ?>
+				#accordion-section-<?php echo esc_attr( $section ); ?> .accordion-section-title {
+					padding-top: 5px;
+					padding-bottom: 4px;
+					border-bottom-color: transparent;
+					/* border-bottom-color: #e3e8ee; */
+					background-color: #f5f7f9;
+					/* color: #999; */
+				}
+				#accordion-section-<?php echo esc_attr( $section ); ?> .accordion-section-title:after {
+					/* content: "\f540" */
+					content: "\f100"
+					/* content: "\f111" */
+					/* content: "\f139" */
+				}
+				#accordion-section-<?php echo esc_attr( $section ); ?> .accordion-section-title:hover {
+					background-color: #e3e8ee;
+					/* background-color: #f7f7f7; */
+				}
+			<?php endforeach; ?>
 		}
-		echo '</style>';
+		</style>
+		<?php
 	}
 
 	/**
