@@ -8,12 +8,26 @@ a:visited:hover,
 a:visited:active,
 a:visited:focus {
   text-decoration-thickness: 0.1em;
+  text-decoration-color: var(--cl);
 }
 a:focus, a:active,
 a:visited:focus,
 a:visited:active {
   outline: 2px solid;
   outline-offset: 2px;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a {
+  text-decoration: none;
+}
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=links.css.map */
