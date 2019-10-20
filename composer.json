@@ -54,8 +54,7 @@
     "kirki-framework/module-webfonts": "*",
     "wptrt/control-color-alpha": "dev-master",
     "wplemon/control-wcag-auto-textcolor": "*",
-    "wplemon/control-wcag-auto-linkcolor": "*",
-    "wptrt/admin-notices": "^1.0"
+    "wplemon/control-wcag-auto-linkcolor": "*"
   },
   "require-dev": {
     "composer/installers": "~1.0",
