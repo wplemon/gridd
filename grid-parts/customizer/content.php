@@ -28,7 +28,7 @@ new \Kirki\Field\ReactColor(
 		'default'   => '#ffffff',
 		'output'    => [
 			[
-				'element'  => '.gridd-tp-content',
+				'element'  => ':root',
 				'property' => '--bg',
 			],
 			[
