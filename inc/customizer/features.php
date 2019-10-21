@@ -338,7 +338,12 @@ new \Kirki\Field\ReactColor(
 		'label'           => esc_attr__( 'Overlay Color', 'gridd' ),
 		'section'         => 'gridd_features_single_post',
 		'default'         => 'rgba(42,84,126,0.8)',
-		'css_vars'        => '--im-hoc',
+		'output'          => [
+			[
+				'element'  => ':root',
+				'property' => '--im-hoc',
+			],
+		],
 		'transport'       => 'postMessage',
 		'priority'        => 40,
 		'choices'         => [
