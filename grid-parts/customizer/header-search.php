@@ -51,7 +51,7 @@ new \Kirki\Field\ReactColor(
 	]
 );
 
-new \Kirki\Field\ReactColor(
+new \WPLemon\Field\WCAGTextColor(
 	[
 		'settings'  => 'header_search_color',
 		'label'     => esc_html__( 'Text Color', 'gridd' ),
