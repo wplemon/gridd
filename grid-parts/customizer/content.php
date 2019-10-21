@@ -41,7 +41,7 @@ new \Kirki\Field\ReactColor(
 		'priority'  => 10,
 		'choices'   => [
 			'formComponent' => 'TwitterPicker',
-			'colors'        => [ '#FFFFFF', 'f5f7f9', '#F9F9F9', '#f7f7f7', '#fffcea', '#f7f6e3', '#f5efe0', '#f4f4e1', '#40464d', '#32373c', '#313131', '#23282d', '#191e23', '#000000' ],
+			'colors'        => \Gridd\Theme::get_colorpicker_palette( 'background' ),
 		],
 	]
 );

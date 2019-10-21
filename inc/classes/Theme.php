@@ -529,6 +529,30 @@ class Theme {
 	public function enqueue_block_editor_assets() {
 		wp_enqueue_script( 'gridd-block-editor-script', get_theme_file_uri( '/assets/js/editor-script-block.js' ), array( 'wp-blocks', 'wp-dom' ), GRIDD_VERSION, true );
 	}
+
+	/**
+	 * Get a palette of colors.
+	 *
+	 * @static
+	 * @access public
+	 * @since 1.2.0
+	 * @param string $context Can be one of background|accent|all.
+	 * @return array
+	 */
+	public static function get_colorpicker_palette( $context = 'all' ) {
+		$colors = [
+			'background' => [ '#FFFFFF', 'f5f7f9', '#f4f4e1', '#f0f3f6', '#323238', '#26262a', '#1a1a1d', '#000000' ],
+			'accent'     => [ '#FF6900', '#FCB900', '#7BDCB5', '#00D084', '#8ED1FC', '#0693E3', '#ABB8C3', '#EB144C', '#F78DA7', '#40234f' ],
+		];
+		switch ( $context ) {
+			case 'background':
+				return $colors['background'];
+			case 'accent':
+				return $colors['accent'];
+			default:
+				return array_merge( $colors['background'], $colors['accent'] );
+		}
+	}
 }
 
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */

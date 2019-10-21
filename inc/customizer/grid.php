@@ -128,7 +128,7 @@ new \Kirki\Field\ReactColor(
 		'priority'          => 90,
 		'choices'           => [
 			'formComponent' => 'TwitterPicker',
-			'colors'        => [ '#FFFFFF', '#fffcea', '#F9F9F9', '#f7f6e3', '#f7f7f7', '#f4f4e1', '#1A1A1A', '#000000' ],
+			'colors'        => \Gridd\Theme::get_colorpicker_palette( 'background' ),
 		],
 		'sanitize_callback' => 'sanitize_hex_color_no_hash',
 	]
