@@ -64,8 +64,8 @@ new \WPLemon\Field\WCAGTextColor(
 				'property' => '--cl',
 			],
 		],
-		'choices'   => [
-			'formComponent' => 'ChromePicker',
+		'choices' => [
+			'backgroundColor' => 'header_search_background_color',
 		],
 		'priority'  => 30,
 	]
