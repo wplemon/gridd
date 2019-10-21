@@ -109,7 +109,12 @@ Customizer::add_field(
 		'default'     => '100%',
 		'priority'    => 40,
 		'transport'   => 'postMessage',
-		'css_vars'    => '--mw',
+		'output'      => [
+			[
+				'element'  => ':root',
+				'property' => '--mw',
+			],
+		],
 	]
 );
 

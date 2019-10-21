@@ -156,7 +156,17 @@ Customizer::add_field(
 		'default'     => 18,
 		'priority'    => 60,
 		'transport'   => 'postMessage',
-		'css_vars'    => '--gridd-font-size',
+		'output'      => [
+			[
+				'element'  => ':root',
+				'property' => '--gridd-font-size',
+			],
+			get_theme_mod( 'disable_editor_styles' ) ? [] : [
+				'element'  => '.edit-post-visual-editor.editor-styles-wrapper',
+				'property' => '--gridd-font-size',
+				'context'  => [ 'editor' ],
+			],
+		],
 		'choices'     => [
 			'min'    => 13,
 			'max'    => 40,
@@ -185,7 +195,17 @@ Customizer::add_field(
 		'default'     => 0.25,
 		'priority'    => 70,
 		'transport'   => 'postMessage',
-		'css_vars'    => '--gridd-typo-ratio',
+		'output'      => [
+			[
+				'element'  => ':root',
+				'property' => '--gridd-typo-ratio',
+			],
+			get_theme_mod( 'disable_editor_styles' ) ? [] : [
+				'element'  => '.edit-post-visual-editor.editor-styles-wrapper',
+				'property' => '--gridd-typo-ratio',
+				'context'  => [ 'editor' ],
+			],
+		],
 		'choices'     => [
 			'min'  => 0,
 			'max'  => 1,
@@ -206,7 +226,17 @@ Customizer::add_field(
 		'section'           => 'gridd_typography',
 		'default'           => '1.26',
 		'transport'         => 'postMessage',
-		'css_vars'          => '--gridd-typo-scale',
+		'output'      => [
+			[
+				'element'  => ':root',
+				'property' => '--gridd-typo-scale',
+			],
+			get_theme_mod( 'disable_editor_styles' ) ? [] : [
+				'element'  => '.edit-post-visual-editor.editor-styles-wrapper',
+				'property' => '--gridd-typo-scale',
+				'context'  => [ 'editor' ],
+			],
+		],
 		'priority'          => 80,
 		'choices'           => [
 			/* Translators: Numeric representation of the scale. */

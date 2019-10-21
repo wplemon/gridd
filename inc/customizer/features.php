@@ -325,7 +325,12 @@ Customizer::add_field(
 		'transport'       => 'postMessage',
 		'priority'        => 30,
 		'default'         => '87vh',
-		'css_vars'        => '--im-hmh',
+		'output'          => [
+			[
+				'element'  => ':root',
+				'property' => '--im-hmh',
+			],
+		],
 		'active_callback' => function() {
 			return 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' );
 		},
@@ -362,7 +367,12 @@ new \WPLemon\Field\WCAGTextColor(
 		'section'           => 'gridd_features_single_post',
 		'priority'          => 50,
 		'default'           => '#fff',
-		'css_vars'          => '--im-htc',
+		'output'      => [
+			[
+				'element'  => ':root',
+				'property' => '--im-htc',
+			],
+		],
 		'transport'         => 'postMessage',
 		'choices'           => [
 			'backgroundColor' => 'gridd_featured_image_overlay_background_color',
