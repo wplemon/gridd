@@ -11,7 +11,7 @@
   outline: none;
   position: absolute;
   top: 50%;
-  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
   width: 1rem;
 }
 
@@ -31,45 +31,11 @@
 }
 
 .input-range__slider-container {
-  transition: left 0.3s ease-out;
-}
-
-.input-range__label {
-  color: #aaaaaa;
-  font-size: 10px;
-  transform: translateZ(0);
-  white-space: nowrap;
-}
-
-.input-range__label--min,
-.input-range__label--max {
-  bottom: -1.4rem;
-  position: absolute;
-}
-
-.input-range__label--min {
-  left: 1em;
-}
-
-.input-range__label--max {
-  right: 1em;
-}
-
-.input-range__label--value {
-  position: absolute;
-  top: -2.75em;
-  color: #23282d;
-  font-size: .9em;
-  font-weight: 700;
+  transition: left 0.1s ease-out;
 }
 
 .input-range__label-container {
-  left: -50%;
-  position: relative;
-}
-
-.input-range__label--max .input-range__label-container {
-  left: 50%;
+  display: none;
 }
 
 .input-range__track {
@@ -79,7 +45,7 @@
   display: block;
   height: 0.3rem;
   position: relative;
-  transition: left 0.3s ease-out, width 0.3s ease-out;
+  transition: left 0.1s ease-out, width 0.1s ease-out;
 }
 
 .input-range--disabled .input-range__track {
@@ -102,5 +68,20 @@
   height: 1rem;
   position: relative;
   width: 100%;
-  margin: 2em 0 1.5em;
+}
+
+.range-input-wrapper input[type=text] {
+  background: transparent;
+  border: none;
+  padding: 0;
+  text-align: center;
+  font-size: 13px;
+}
+
+.range-input-wrapper input[type=text]:hover,
+.range-input-wrapper input[type=text]:focus,
+.range-input-wrapper input[type=text]:active {
+  box-shadow: none;
+  border: none;
+  outline: none;
 }
