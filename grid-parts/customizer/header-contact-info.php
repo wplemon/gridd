@@ -32,7 +32,8 @@ new \Kirki\Field\ReactColor(
 			],
 		],
 		'choices'   => [
-			'formComponent' => 'ChromePicker',
+			'formComponent' => 'TwitterPicker',
+			'colors'        => \Gridd\Theme::get_colorpicker_palette( 'all' ),
 		],
 		'priority'  => 20,
 	]
