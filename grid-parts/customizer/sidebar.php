@@ -40,6 +40,9 @@ function gridd_sidebar_customizer_options( $id ) {
 	/**
 	 * Focus on widget-area.
 	 */
+	/*
+	 * WIP - Disabled the control because we're nw moving these to their respective widget-areas.
+	 *
 	Customizer::add_field(
 		[
 			'settings' => "gridd_sidebar_focus_on_sidebar_{$id}_section",
@@ -49,6 +52,7 @@ function gridd_sidebar_customizer_options( $id ) {
 			'default'  => '<div style="margin-bottom:1em;"><button class="button-gridd-focus global-focus button button button-large" data-context="section" data-focus="sidebar-widgets-' . "sidebar-{$id}" . '">' . esc_html__( 'Click here to edit your widgets', 'gridd' ) . '</button></div>',
 		]
 	);
+	*/
 
 	new \Kirki\Field\ReactColor(
 		[

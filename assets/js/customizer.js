@@ -113,7 +113,7 @@
 		/**
 		 * Handle switching target color-a11y mode.
 		 *
-		 * @since 1.2
+		 * @since 1.2.0
 		 */
 		wp.customize( 'target_color_compliance', function( value ) {
 			value.bind( function( to ) {
@@ -130,6 +130,8 @@
 
 		/**
 		 * Link link-color colorpickers hues.
+		 *
+		 * @since 1.2.0
 		 */
 		wp.customize( 'gridd_links_color', function( value ) {
 			value.bind( function( to ) {
@@ -152,13 +154,19 @@
 			});
 		});
 
-		// Move the main links-color control to the typography setting if needed.
+		/**
+		 * Move the main links-color control to the typography setting if needed.
+		 *
+		 * @since 1.2.0
+		 */
 		if ( wp.customize.control( 'gridd_links_color' ).setting.get() ) {
 			wp.customize.control( 'gridd_links_color' ).section( 'gridd_typography' );
 		}
 
 		/**
 		 * Change all linkcolor hues when the switch is turned on.
+		 *
+		 * @since 1.2.0
 		 */
 		wp.customize( 'same_linkcolor_hues', function( value ) {
 			value.bind( function( to ) {
@@ -183,5 +191,50 @@
 				});
 			});
 		});
+
+		// Move widget-area settings.
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-footer_sidebar_1', 'grid_part_details_footer_sidebar_1' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-footer_sidebar_2', 'grid_part_details_footer_sidebar_2' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-footer_sidebar_3', 'grid_part_details_footer_sidebar_3' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-footer_sidebar_4', 'grid_part_details_footer_sidebar_4' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-1', 'grid_part_details_sidebar_1' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-2', 'grid_part_details_sidebar_2' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-3', 'grid_part_details_sidebar_3' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-4', 'grid_part_details_sidebar_4' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-5', 'grid_part_details_sidebar_5' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-6', 'grid_part_details_sidebar_6' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-offcanvas-sidebar', 'gridd_plus_offcanvas_sidebar' );
 	});
+
+	/**
+	 * Move controls from a section to another.
+	 *
+	 * @since 1.2.0
+	 */
+	function griddMoveSectionControlsOnDemand( newSectionID, oldSectionID ) {
+		var newSection = wp.customize.section( newSectionID ),
+			oldSection = wp.customize.section( oldSectionID ),
+			moveSectionControls = function( newSection, oldSection ) {
+				oldSection.controls().forEach( function( control ) {
+					control.section( newSection.id );
+				});
+				setTimeout( function() {
+					oldSection.activate( true );
+					oldSection.expanded.bind( function() {
+						newSection.expand();
+					});
+				}, 1000 );
+			};
+
+		if ( ! newSection || ! oldSection ) {
+			return;
+		}
+
+		newSection.expanded.bind( function() {
+			moveSectionControls( newSection, oldSection );
+		});
+		oldSection.expanded.bind( function() {
+			newSection.expand();
+		});
+	}
 }() );
