@@ -294,3 +294,29 @@ h3.gridd-customizer-section-title {
 		padding: .5em;
 	}
 }
+
+.customize-control-kirki-react-radio-buttonset {
+	.radio-tooltip {
+		display: none;
+		position: absolute;
+		left: 0;
+		padding: 24px;
+		background: #fff;
+		width: calc(100% - 70px);
+		border: 1px solid #ccc;
+		margin-top: 12px;
+		margin-left: 10px;
+		border-radius: 3px;
+		overflow: hidden;
+		box-shadow: 0 0 3px;
+		z-index: 9999999;
+	}
+
+	label:hover,
+	label:focus,
+	input:focus + span {
+		.radio-tooltip {
+			display: block;
+		}
+	}
+}
