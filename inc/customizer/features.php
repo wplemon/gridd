@@ -422,6 +422,9 @@ add_action(
 	}
 );
 
+/**
+ * Disabled control.
+ *
 Customizer::add_field(
 	[
 		'type'        => 'checkbox',
@@ -434,5 +437,6 @@ Customizer::add_field(
 		'priority'    => 999,
 	]
 );
+*/
 
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */
