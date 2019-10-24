@@ -3,6 +3,8 @@
   position: absolute;
   right: 0;
   height: 3em;
+  color: var(--cl);
+  fill: var(--cl);
 }
 .gridd-nav-vertical .gridd-navigation .current-page-ancestor ul,
 .gridd-nav-vertical .gridd-navigation .current-menu-ancestor ul,

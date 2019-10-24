@@ -172,7 +172,7 @@
 			value.bind( function( to ) {
 				var mainLinksHue;
 				if ( ! to ) {
-					wp.customize.control( 'gridd_links_color' ).section( 'grid_part_details_content' )
+					wp.customize.control( 'gridd_links_color' ).section( 'grid_part_details_content' );
 					return;
 				}
 

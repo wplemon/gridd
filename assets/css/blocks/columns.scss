@@ -34,4 +34,12 @@
 	// &.has-3-columns {
 	// 	grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
 	// }
+
+	border-left: -1rem;
+	border-right: -1rem;
+
+	> .wp-block-column {
+		border-left: 1rem solid transparent;
+		border-right: 1rem solid transparent;
+	}
 }

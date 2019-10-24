@@ -8,6 +8,8 @@
 	--tr: var(--gridd-typo-ratio, 0.25);
 	--fs-tr: calc(var(--fs-px) + var(--tr) * 1vw);
 
+	font-size: var(--fs-tr);
+
 	// More vars for backwards-compatibility.
 	--gridd-content-max-width: var(--mw);
 	--gridd-content-max-width-calculated: var(--mw-c);
@@ -30,4 +32,8 @@
 	--fs-2d-ts-tr: calc(var(--fs-tr) / var(--ts) / var(--ts));
 	--fs-3d-ts-tr: calc(var(--fs-tr) / var(--ts) / var(--ts) / var(--ts));
 	--fs-4d-ts-tr: calc(var(--fs-tr) / var(--ts) / var(--ts) / var(--ts) / var(--ts));
+}
+
+html {
+	font-size: var(--fs-tr);
 }
