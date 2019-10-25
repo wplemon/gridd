@@ -6,18 +6,18 @@ button,
 input[type=button],
 input[type=reset],
 input[type=submit] {
-  color: var(--bg);
   text-decoration: none !important;
   border-radius: 4px;
   padding: 0.35em 1.25em;
-  border: 2px solid var(--cl);
-  background: var(--cl);
+  border: 2px solid;
   cursor: pointer;
-  position: relative;
   display: inline-block;
   margin: 0;
   text-align: center;
   overflow-wrap: break-word;
+  border-color: var(--cl);
+  background: var(--cl);
+  color: var(--bg);
 }
 .button:active, .button:hover, .button:focus,
 a.button:active,
@@ -41,9 +41,8 @@ input[type=reset]:focus,
 input[type=submit]:active,
 input[type=submit]:hover,
 input[type=submit]:focus {
-  color: var(--bg);
-  box-shadow: 0.1em 0.1em 0.05em var(--cl);
   outline: none !important;
+  box-shadow: 0 0 0 1px var(--bg), 0 0 0 3px var(--cl);
 }
 .button:focus, .button:active,
 a.button:focus,
@@ -60,7 +59,9 @@ input[type=reset]:focus,
 input[type=reset]:active,
 input[type=submit]:focus,
 input[type=submit]:active {
-  box-shadow: inset 0.05em 0.05em 0.2em 0.05em currentColor;
+  background: var(--bg);
+  color: var(--cl);
+  box-shadow: none;
 }
 
 /*# sourceMappingURL=buttons.css.map */

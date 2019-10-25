@@ -1,74 +1,3 @@
-/**
- * Colors
- */
-/**
- * Often re-used variables
- */
-/**
- * Breakpoints & Media Queries
- */
-/**
- * Breakpoint mixins
- */
-/**
- * Long content fade mixin
- *
- * Creates a fading overlay to signify that the content is longer
- * than the space allows.
- */
-/**
- * Button states and focus styles
- */
-/**
- * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
- */
-/**
- * Styles that are reused verbatim in a few places
- */
-/**
- * Allows users to opt-out of animations via OS-level preferences.
- */
-/**
- * Reset default styles for JavaScript UI based pages.
- * This is a WP-admin agnostic reset
- */
-/**
- * Reset the WP Admin page styles for Gutenberg-like pages.
- */
-/**
- * Breakpoint mixins
- */
-/**
- * Long content fade mixin
- *
- * Creates a fading overlay to signify that the content is longer
- * than the space allows.
- */
-/**
- * Button states and focus styles
- */
-/**
- * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
- */
-/**
- * Styles that are reused verbatim in a few places
- */
-/**
- * Allows users to opt-out of animations via OS-level preferences.
- */
-/**
- * Reset default styles for JavaScript UI based pages.
- * This is a WP-admin agnostic reset
- */
-/**
- * Reset the WP Admin page styles for Gutenberg-like pages.
- */
 .wp-block-button.aligncenter {
   text-align: center;
 }
@@ -76,24 +5,13 @@
   text-align: right;
 }
 
-.is-style-outline .wp-block-button__link {
-  background-color: transparent;
-  border-color: currentColor;
-}
-.is-style-outline .wp-block-button__link:not(.has-text-color) {
-  color: currentColor;
-}
-
 .wp-block-button__link,
 .wp-block-button__link:visited {
-  color: var(--bg);
   text-decoration: none !important;
   border-radius: 4px;
   padding: 0.35em 1.25em;
-  border: 2px solid var(--cl);
-  background: var(--cl);
+  border: 2px solid;
   cursor: pointer;
-  position: relative;
   display: inline-block;
   margin: 0;
   text-align: center;
@@ -103,31 +21,33 @@
 .wp-block-button__link:visited:active,
 .wp-block-button__link:visited:hover,
 .wp-block-button__link:visited:focus {
-  color: var(--bg);
-  box-shadow: 0.1em 0.1em 0.05em var(--cl);
   outline: none !important;
+  box-shadow: 0 0 0 1px var(--bg), 0 0 0 3px var(--cl);
 }
-.wp-block-button__link:focus, .wp-block-button__link:active,
-.wp-block-button__link:visited:focus,
-.wp-block-button__link:visited:active {
-  box-shadow: inset 0.05em 0.05em 0.2em 0.05em currentColor;
+.wp-block-button__link:not(.has-text-color),
+.wp-block-button__link:visited:not(.has-text-color) {
+  color: var(--bg);
 }
-.wp-block-button__link:not(.has-text-color).has-pale-pink-background-color, .wp-block-button__link:not(.has-text-color).has-light-green-cyan-background-color, .wp-block-button__link:not(.has-text-color).has-pale-cyan-blue-background-color, .wp-block-button__link:not(.has-text-color).has-very-light-gray-background-color, .wp-block-button__link:not(.has-text-color).has-theme-white-background-color,
-.wp-block-button__link:visited:not(.has-text-color).has-pale-pink-background-color,
-.wp-block-button__link:visited:not(.has-text-color).has-light-green-cyan-background-color,
-.wp-block-button__link:visited:not(.has-text-color).has-pale-cyan-blue-background-color,
-.wp-block-button__link:visited:not(.has-text-color).has-very-light-gray-background-color,
-.wp-block-button__link:visited:not(.has-text-color).has-theme-white-background-color {
-  color: #313131;
+
+.is-style-outline .wp-block-button__link,
+.is-style-outline .wp-block-button__link:visited {
+  background-color: transparent;
+  border-color: currentColor;
 }
-.wp-block-button__link.has-text-color:hover,
-.wp-block-button__link:visited.has-text-color:hover {
-  box-shadow: 0.1em 0.1em 0.05em var(--cl);
+.is-style-outline .wp-block-button__link:not(.has-text-color),
+.is-style-outline .wp-block-button__link:visited:not(.has-text-color) {
+  color: currentColor;
 }
-.wp-block-button__link.has-text-color:focus, .wp-block-button__link.has-text-color:active,
-.wp-block-button__link:visited.has-text-color:focus,
-.wp-block-button__link:visited.has-text-color:active {
-  box-shadow: inset 0 0 0.2em 0.05em currentColor;
+.is-style-outline .wp-block-button__link:focus, .is-style-outline .wp-block-button__link:active,
+.is-style-outline .wp-block-button__link:visited:focus,
+.is-style-outline .wp-block-button__link:visited:active {
+  box-shadow: 0 0 0 1px currentColor, 0 0 0 3px currentColor;
+}
+
+.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background),
+.wp-block-button:not(.is-style-outline) .wp-block-button__link:visited:not(.has-background) {
+  border-color: var(--cl);
+  background: var(--cl);
 }
 
 /*# sourceMappingURL=button.css.map */

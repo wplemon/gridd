@@ -9,4 +9,14 @@ input[type=button],
 input[type=reset],
 input[type=submit] {
 	@include button();
+	border-color: var(--cl);
+	background: var(--cl);
+	color: var(--bg);
+
+	&:focus,
+	&:active {
+		background: var(--bg);
+		color: var(--cl);
+		box-shadow: none;
+	}
 }

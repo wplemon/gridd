@@ -54,14 +54,11 @@
 
 // Buttons
 @mixin button() {
-	color: var(--bg);
 	text-decoration: none !important;
 	border-radius: 4px;
 	padding: .35em 1.25em;
-	border: 2px solid var(--cl);
-	background: var(--cl);
+	border: 2px solid;
 	cursor: pointer;
-	position: relative;
 	display: inline-block;
 	margin: 0;
 	text-align: center;
@@ -70,14 +67,8 @@
 	&:active,
 	&:hover,
 	&:focus {
-		color: var(--bg);
-		box-shadow: .1em .1em .05em var(--cl);
 		outline: none !important;
-	}
-
-	&:focus,
-	&:active {
-		box-shadow: inset .05em .05em .2em .05em currentColor;
+		box-shadow: 0 0 0 1px var(--bg),0 0 0 3px var(--cl);
 	}
 }
 

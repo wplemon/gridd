@@ -30,6 +30,16 @@ body #infinite-handle {
 
 		button {
 			@include button();
+			border-color: var(--cl);
+			background: var(--cl);
+			color: var(--bg);
+
+			&:focus,
+			&:active {
+				background: var(--bg);
+				color: var(--cl);
+				box-shadow: none;
+			}
 		}
 	}
 }

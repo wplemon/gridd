@@ -1,16 +1,17 @@
-@import "block-library/colors";
-@import "block-library/variables";
-@import "block-library/animations";
-@import "block-library/breakpoints";
-@import "block-library/mixins";
-@import "block-library/z-index";
-@import "block-library/mixins";
+// @import "block-library/colors";
+// @import "block-library/variables";
+// @import "block-library/animations";
+// @import "block-library/breakpoints";
+// @import "block-library/mixins";
+// @import "block-library/z-index";
+// @import "block-library/mixins";
 @import "../mixins";
 
 // @import "block-library/button/style.scss";
 
 @import "../variables";
 
+// Alignments.
 .wp-block-button {
 	&.aligncenter {
 		text-align: center;
@@ -21,46 +22,48 @@
 	}
 }
 
+// Generic styles.
+.wp-block-button__link,
+.wp-block-button__link:visited {
+	@include button();
+
+	&:not(.has-text-color) {
+		color: var(--bg);
+	}
+}
+
 .is-style-outline {
-	.wp-block-button__link {
+
+	.wp-block-button__link,
+	.wp-block-button__link:visited {
 		background-color: transparent;
 		border-color: currentColor;
 
 		&:not(.has-text-color) {
 			color: currentColor;
 		}
-	}
-}
-
-.wp-block-button__link,
-.wp-block-button__link:visited {
-	@include button();
-
-	// Make sure buttons text remains visible if user doesn't select a text color.
-	&:not(.has-text-color) {
-		&.has {
-
-			&-pale-pink,
-			&-light-green-cyan,
-			&-pale-cyan-blue,
-			&-very-light-gray,
-			&-theme-white {
-				&-background-color {
-					color: $very-dark-gray;
-				}
-			}
-		}
-	}
-
-	&.has-text-color {
-
-		&:hover {
-			box-shadow: .1em .1em .05em var(--cl);
-		}
 
 		&:focus,
 		&:active {
-			box-shadow: inset 0 0 .2em .05em currentColor;
+			box-shadow: 0 0 0 1px currentColor, 0 0 0 3px currentColor;
 		}
+	}
+}
+
+.wp-block-button:not(.is-style-outline) {
+
+	.wp-block-button__link,
+	.wp-block-button__link:visited {
+		&:not(.has-background) {
+			border-color: var(--cl);
+			background: var(--cl);
+		}
+
+		// &:focus,
+		// &:active {
+		// 	background: var(--bg);
+		// 	color: var(--cl);
+		// 	box-shadow: none;
+		// }
 	}
 }
