@@ -43,9 +43,13 @@
 			color: currentColor;
 		}
 
+		&:hover {
+			box-shadow: 0 0 0 1px var(--bg), 0 0 0 3px currentColor;
+		}
+
 		&:focus,
 		&:active {
-			box-shadow: 0 0 0 1px currentColor, 0 0 0 3px currentColor;
+			box-shadow: 0 0 0 1px var(--bg), 0 0 2px 3px currentColor;
 		}
 	}
 }

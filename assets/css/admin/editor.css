@@ -153,10 +153,14 @@ html {
 .is-style-outline .wp-block-button__link:visited:not(.has-text-color) {
   color: currentColor;
 }
+.is-style-outline .wp-block-button__link:hover,
+.is-style-outline .wp-block-button__link:visited:hover {
+  box-shadow: 0 0 0 1px var(--bg), 0 0 0 3px currentColor;
+}
 .is-style-outline .wp-block-button__link:focus, .is-style-outline .wp-block-button__link:active,
 .is-style-outline .wp-block-button__link:visited:focus,
 .is-style-outline .wp-block-button__link:visited:active {
-  box-shadow: 0 0 0 1px currentColor, 0 0 0 3px currentColor;
+  box-shadow: 0 0 0 1px var(--bg), 0 0 2px 3px currentColor;
 }
 
 .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background),
