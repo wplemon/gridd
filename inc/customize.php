@@ -12,26 +12,26 @@ namespace Gridd;
 /**
  * Add the "Theme Options" panel.
  *
- * @since 1.0
+ * @since 1.2.0
  */
 Customizer::add_panel(
-	'gridd_options',
+	'layout_blocks',
 	[
-		'title'    => esc_html__( 'Theme Options', 'gridd' ),
-		'priority' => 1,
+		'title'    => esc_html__( 'Layout Blocks', 'gridd' ),
+		'priority' => 5,
 	]
 );
 
 /**
- * Add a hidden panel used for outer sections.
+ * Add the "Theme Options" panel.
  *
- * @since 1.0.3
+ * @since 1.2.0
  */
 Customizer::add_panel(
-	'gridd_hidden_panel',
+	'theme_settings',
 	[
-		'title'    => '',
-		'priority' => 999,
+		'title'    => esc_html__( 'Theme Settings', 'gridd' ),
+		'priority' => 5,
 	]
 );
 

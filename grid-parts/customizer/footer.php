@@ -15,8 +15,7 @@ Customizer::add_section(
 	'grid_part_details_footer',
 	[
 		'title'    => esc_html__( 'Footer', 'gridd' ),
-		'priority' => 26,
-		'panel'    => 'gridd_options',
+		'priority' => -60,
 	]
 );
 

@@ -48,9 +48,9 @@ add_action(
 Customizer::add_section(
 	'gridd_grid',
 	[
-		'title'    => esc_html__( 'Site Grid', 'gridd' ),
-		'priority' => 22,
-		'panel'    => 'gridd_options',
+		'title'    => esc_html__( 'Main Grid Layout', 'gridd' ),
+		'priority' => -100,
+		// 'panel'    => 'gridd_options',
 	]
 );
 

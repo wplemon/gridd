@@ -64,9 +64,6 @@ class Grid_Parts {
 
 		// Set $this->parts.
 		$this->set_parts();
-
-		// Apply custom order to grid-parts.
-		add_filter( 'gridd_get_parts', [ $this, 'apply_custom_order' ] );
 	}
 
 	/**
@@ -131,6 +128,26 @@ class Grid_Parts {
 	 * @return array
 	 */
 	public function get_parts() {
+
+		$order     = $this->get_smart_order();
+		$unordered = [];
+		$ordered   = [];
+		// Add the ID as key. Makes next step easier/faster.
+		foreach ( $this->parts as $part ) {
+			$unordered[ $part['id'] ] = $part;
+		}
+		// Put the grid-parts in their right order.
+		foreach ( $order as $item ) {
+			if ( isset( $unordered[ $item ] ) ) {
+				$ordered[] = $unordered[ $item ];
+				unset( $unordered[ $item ] );
+			}
+		}
+		// Add the remaining items.
+		foreach ( $unordered as $item ) {
+			$ordered[] = $item;
+		}
+
 		return apply_filters( 'gridd_get_parts', $this->parts );
 	}
 
@@ -200,42 +217,6 @@ class Grid_Parts {
 			}
 		}
 		return false;
-	}
-
-	/**
-	 * Applies custom order to grid-parts.
-	 *
-	 * @access public
-	 * @since 1.0.3
-	 * @param array $parts The parts we're reordering.
-	 * @return array
-	 */
-	public function apply_custom_order( $parts ) {
-		$saved_order  = get_theme_mod( 'gridd_grid_load_order', array() );
-		$all_part_ids = [];
-
-		// Get an array of all part IDs.
-		foreach ( $parts as $part ) {
-			$all_part_ids[] = $part['id'];
-		}
-
-		// Add any missing part-IDs to the saved order.
-		// Necessary if there is no saved order, or if a new part-ID was added.
-		foreach ( $all_part_ids as $part_id ) {
-			if ( ! in_array( $part_id, $saved_order, true ) ) {
-				$saved_order[] = $part_id;
-			}
-		}
-
-		// Build the ordered array.
-		$ordered = [];
-		foreach ( $saved_order as $part_id ) {
-			$part = $this->get_part_definition( $part_id );
-			if ( $part ) {
-				$ordered[] = $part;
-			}
-		}
-		return $ordered;
 	}
 
 	/**
@@ -326,7 +307,7 @@ class Grid_Parts {
 
 		// Get all grid-parts.
 		if ( 'gridd_grid' === $theme_mod ) {
-			$all_parts = $this->get_parts();
+			$all_parts = $this->parts;
 
 			$subgrids = [];
 			foreach ( $all_parts as $part ) {
@@ -351,7 +332,7 @@ class Grid_Parts {
 		foreach ( $final as $k => $v ) {
 			$final_multiplied[ 10 * $k ] = $v;
 		}
-		return $final_multiplied;
+		return apply_filters( 'gridd_smart_grid_parts_order', $final_multiplied );
 	}
 
 	/**

@@ -15,8 +15,7 @@ Customizer::add_section(
 	[
 		/* translators: The grid-part label. */
 		'title'    => esc_html__( 'Content', 'gridd' ),
-		'priority' => 25,
-		'panel'    => 'gridd_options',
+		'priority' => -70,
 	]
 );
 

@@ -104,16 +104,16 @@ class Customizer {
 			<?php include get_template_directory() . '/assets/css/customizer/customizer.css'; ?>
 			<?php foreach ( self::get_grid_parts_sections() as $section ) : ?>
 				#accordion-section-<?php echo esc_attr( $section ); ?> .accordion-section-title {
-					padding-top: 5px;
-					padding-bottom: 4px;
-					border-bottom-color: transparent;
+					/* padding-top: 5px; */
+					/* padding-bottom: 4px; */
+					/* border-bottom-color: transparent; */
 					/* border-bottom-color: #e3e8ee; */
-					background-color: #f5f7f9;
+					/* background-color: #f7f9fb; */
 					/* color: #999; */
 				}
 				#accordion-section-<?php echo esc_attr( $section ); ?> .accordion-section-title:after {
 					/* content: "\f540" */
-					content: "\f100"
+					/* content: "\f100" */
 					/* content: "\f111" */
 					/* content: "\f139" */
 				}
@@ -255,7 +255,7 @@ class Customizer {
 	 * @return void
 	 */
 	public static function add_outer_section( $section_id, $args ) {
-		$args['panel'] = 'gridd_options';
+		$args['panel'] = 'layout_blocks';
 		unset( $args['section'] );
 		$args['active_callback'] = function() use ( $section_id ) {
 			$grid_parts_sections = self::get_grid_parts_sections();
@@ -320,7 +320,7 @@ class Customizer {
 			'breadcrumbs'         => 'grid_part_details_breadcrumbs',
 			'footer_copyright'    => 'grid_part_details_footer_copyright',
 			'footer_social_media' => 'grid_part_details_footer_social_media',
-			'header_branding'     => 'grid_part_details_header_branding',
+			'header_branding'     => 'title_tagline',
 			'header_search'       => 'grid_part_details_header_search',
 			'header_contact_info' => 'grid_part_details_header_contact_info',
 			'social_media'        => 'grid_part_details_social_media',

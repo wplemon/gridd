@@ -17,8 +17,7 @@ Customizer::add_section(
 	'gridd_typography',
 	[
 		'title'    => esc_html__( 'Typography', 'gridd' ),
-		'priority' => 20,
-		'panel'    => 'gridd_options',
+		'priority' => -90,
 	]
 );
 

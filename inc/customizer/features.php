@@ -14,20 +14,11 @@ use Gridd\Grid_Part\Sidebar;
 $sanitization = new Sanitize();
 
 Customizer::add_section(
-	'gridd_features',
-	[
-		'title'    => esc_attr__( 'Theme Features', 'gridd' ),
-		'priority' => 28,
-		'panel'    => 'gridd_options',
-	]
-);
-
-Customizer::add_section(
 	'gridd_features_global',
 	[
 		'title'    => esc_attr__( 'Global Settings', 'gridd' ),
 		'priority' => 1,
-		'section'  => 'gridd_features',
+		'panel'    => 'theme_settings',
 	]
 );
 
@@ -36,7 +27,7 @@ Customizer::add_section(
 	[
 		'title'    => esc_attr__( 'Post Archives Options', 'gridd' ),
 		'priority' => 1,
-		'section'  => 'gridd_features',
+		'panel'    => 'theme_settings',
 	]
 );
 
@@ -45,7 +36,7 @@ Customizer::add_section(
 	[
 		'title'    => esc_attr__( 'Single Posts Options', 'gridd' ),
 		'priority' => 1,
-		'section'  => 'gridd_features',
+		'panel'    => 'theme_settings',
 	]
 );
 
@@ -206,13 +197,6 @@ foreach ( $post_types as $post_type_id => $post_type_obj ) {
 					'property'      => 'grid-column-start',
 					'exclude'       => [ false, 0, 'false', '0' ],
 					'value_pattern' => '1',
-				],
-			],
-			'active_callback' => [
-				[
-					'setting'  => 'archive_post_mode',
-					'value'    => 'default',
-					'operator' => '===',
 				],
 			],
 		]
@@ -411,7 +395,7 @@ add_action(
 						'details' => esc_html__( 'Select the parts that should be loaded after the initial request. Non-essential parts can be added here. This can speed-up the initial page-load and users on slower connections can start consuming your content faster.', 'gridd' ),
 					]
 				),
-				'section'     => 'gridd_features',
+				'section'     => 'gridd_features_global',
 				'priority'    => 70,
 				'multiple'    => 999,
 				'choices'     => Rest::get_all_partials(),
@@ -431,7 +415,7 @@ Customizer::add_field(
 		'settings'    => 'disable_editor_styles',
 		'label'       => esc_html__( 'Disable Editor Styles', 'gridd' ),
 		'description' => esc_html__( 'Enable this option to prevent the theme from styling the posts editor to match your options, and instead uses the default WordPress styles for the editor.', 'gridd' ),
-		'section'     => 'gridd_features',
+		'section'     => 'gridd_features_global',
 		'default'     => false,
 		'transport'   => 'postMessage',
 		'priority'    => 999,

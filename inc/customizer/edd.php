@@ -16,7 +16,6 @@ Customizer::add_section(
 	'gridd_edd',
 	[
 		'title'       => esc_html__( 'EDD Grid', 'gridd' ),
-		'panel'       => 'gridd_options',
 		'description' => '<a href="https://wplemon.github.io/gridd/grid-parts/easy-digital-downloads.html" target="_blank" rel="noopener noreferrer nofollow">' . esc_html__( 'Learn more about these settings.', 'gridd' ),
 		'priority'    => 90,
 	]

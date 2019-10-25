@@ -31,8 +31,7 @@ Customizer::add_section(
 	'grid_part_details_header',
 	[
 		'title'    => esc_html__( 'Header', 'gridd' ),
-		'priority' => 24,
-		'panel'    => 'gridd_options',
+		'priority' => -80,
 	]
 );
 
@@ -169,9 +168,8 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Select(
 	[
-		'type'              => 'select',
 		'settings'          => 'gridd_grid_header_box_shadow',
 		'label'             => esc_html__( 'Drop Shadow Intensity', 'gridd' ),
 		'description'       => esc_html__( 'Set to "None" to disable the shadow, or increase the intensity for a more dramatic effect.', 'gridd' ),

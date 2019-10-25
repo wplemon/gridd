@@ -435,6 +435,13 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 		control.container.find( '.button-gridd-focus' ).on( 'click', function( e ) {
 			var part      = jQuery( this ).data( 'part' ),
 				sectionID = 'grid_part_details_' + part;
+			if ( wp.customize.section( part ) ) {
+				sectionID = wp.customize.section.part;
+			}
+
+			if ( 'header_branding' === part ) {
+				sectionID = 'title_tagline';
+			}
 
 			wp.customize.section( sectionID ).focus();
 			e.preventDefault();
