@@ -328,9 +328,8 @@ function gridd_nav_customizer_options( $id ) {
 		]
 	);
 
-	Customizer::add_field(
+	new \Kirki\Field\Select(
 		[
-			'type'              => 'select',
 			'settings'          => "gridd_grid_nav_{$id}_expand_icon_position",
 			'label'             => esc_html__( 'Expand Icon Position', 'gridd' ),
 			'section'           => "grid_part_details_nav_$id",

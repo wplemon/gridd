@@ -168,7 +168,7 @@ Customizer::add_field(
 	]
 );
 
-new \Kirki\Field\Select(
+new \Kirki\Field\RadioButtonset(
 	[
 		'settings'          => 'gridd_grid_header_box_shadow',
 		'label'             => esc_html__( 'Drop Shadow Intensity', 'gridd' ),

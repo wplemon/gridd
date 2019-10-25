@@ -98,9 +98,8 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Select(
 	[
-		'type'              => 'select',
 		'settings'          => 'gridd_featured_image_mode_archive',
 		'label'             => esc_attr__( 'Featured Images Mode in Archives', 'gridd' ),
 		'section'           => 'gridd_features_archive',
@@ -256,9 +255,8 @@ Customizer::add_field(
 /**
  * Options for single posts.
  */
-Customizer::add_field(
+new \Kirki\Field\Select(
 	[
-		'type'              => 'select',
 		'settings'          => 'gridd_featured_image_mode_singular',
 		'label'             => esc_attr__( 'Featured Images Mode in Single Posts', 'gridd' ),
 		'section'           => 'gridd_features_single_post',
