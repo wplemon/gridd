@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/* stylelint-disable at-rule-no-unknown */
 .main-nav-wrapper {
   position: relative;
   min-height: 2.75rem;
@@ -12,7 +13,7 @@
   font-size: 1em;
   padding: 1em 0;
 }
-.nav-links:before {
+.nav-links::before {
   content: "";
   opacity: 0.1;
   border-top: 1px solid currentColor;
@@ -24,11 +25,11 @@
 .nav-links a {
   text-decoration: none;
 }
-.nav-links .nav-previous a:before {
+.nav-links .nav-previous a::before {
   content: "‹";
   padding-right: 0.5em;
 }
-.nav-links .nav-next a:after {
+.nav-links .nav-next a::after {
   content: "›";
   padding-left: 0.5em;
 }

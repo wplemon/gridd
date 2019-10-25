@@ -1,4 +1,4 @@
-.gridd-nav-handheld-btn[aria-expanded="true"]+#gridd-handheld-menu-wrapper {
+.gridd-nav-handheld-btn[aria-expanded="true"] + #gridd-handheld-menu-wrapper {
 	display: flex;
 	align-content: flex-start;
 }

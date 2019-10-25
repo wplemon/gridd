@@ -4,8 +4,6 @@
 @import "block-library/breakpoints";
 @import "block-library/mixins";
 @import "block-library/z-index";
-@import "block-library/mixins";
-
 @import "block-library/columns/style.scss";
 
 .wp-block-columns {
@@ -23,6 +21,7 @@
 	// }
 
 	&:not(.alignfull):not(.alignwide):not(.alignleft):not(.alignright) {
+
 		.site-main .entry-content > & {
 			max-width: calc(var(--mw-c, 700px) + 2em);
 		}

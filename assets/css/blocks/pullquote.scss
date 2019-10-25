@@ -4,8 +4,6 @@
 @import "block-library/breakpoints";
 @import "block-library/mixins";
 @import "block-library/z-index";
-@import "block-library/mixins";
-
 @import "block-library/pullquote/style.scss";
 @import "block-library/pullquote/theme.scss";
 
@@ -14,7 +12,7 @@
 	border-bottom: 4px solid currentColor;
 	color: currentColor;
 
-    &.alignleft,
+	&.alignleft,
 	&.alignright {
 		max-width: calc(var(--mw-c, 700px) / 2);
 
@@ -33,12 +31,14 @@
 
 	cite {
 		// color: currentColor;
-		opacity: .8;
+		opacity: 0.8;
 	}
 }
 
 .wp-block-pullquote.is-style-solid-color {
+
 	blockquote {
+
 		p {
 			font-size: var(--fs-2x-ts-tr);
 		}

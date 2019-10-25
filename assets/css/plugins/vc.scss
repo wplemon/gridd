@@ -10,13 +10,13 @@
 		padding-right: 0;
 	}
 
-	&[data-vc-full-width-init=true],
-	&[data-vc-full-width=true] {
+	&[data-vc-full-width-init="true"],
+	&[data-vc-full-width="true"] {
 		max-width: 100% !important;
 		width: 100%;
 		display: flex;
 
-		>* {
+		> * {
 			max-width: var(--mw-c, 700px);
 			padding-left: 1em;
 			padding-right: 1em;
@@ -26,8 +26,9 @@
 			max-width: 100%;
 		}
 
-		&[data-vc-stretch-content=true] {
-			>* {
+		&[data-vc-stretch-content="true"] {
+
+			> * {
 				max-width: 100%;
 			}
 		}
@@ -37,7 +38,7 @@
 		padding-left: 0;
 		padding-right: 0;
 
-		>* {
+		> * {
 			padding-left: 0;
 			padding-right: 0;
 		}

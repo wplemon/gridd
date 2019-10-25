@@ -13,9 +13,9 @@
 	font-size: 1em;
 	padding: 1em 0;
 
-	&:before {
+	&::before {
 		content: "";
-		opacity: .1;
+		opacity: 0.1;
 		border-top: 1px solid currentColor;
 		position: absolute;
 		top: 0;
@@ -28,8 +28,10 @@
 	}
 
 	.nav-previous {
+
 		a {
-			&:before {
+
+			&::before {
 				content: "‹";
 				padding-right: 0.5em;
 			}
@@ -37,8 +39,10 @@
 	}
 
 	.nav-next {
+
 		a {
-			&:after {
+
+			&::after {
 				content: "›";
 				padding-left: 0.5em;
 			}

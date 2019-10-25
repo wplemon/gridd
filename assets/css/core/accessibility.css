@@ -1,3 +1,6 @@
+/* stylelint-disable at-rule-no-unknown */
+/* stylelint-disable at-rule-no-unknown */
+/* stylelint-disable at-rule-no-unknown */
 /* Text meant only for screen readers. */
 .screen-reader-text {
   border: 0;
@@ -20,7 +23,7 @@
   color: #21759b;
   display: block;
   font-size: 0.875em;
-  font-weight: bold;
+  font-weight: 700;
   height: auto;
   left: 5px;
   line-height: normal;

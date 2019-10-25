@@ -1,4 +1,5 @@
 .widget_rss {
+
 	> ul {
 		list-style: none;
 		list-style-type: none;
@@ -7,7 +8,7 @@
 
 		> li {
 			padding: 1em 0;
-			border-bottom: 1px solid rgba(0,0,0,.1);
+			border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
 			&:first-child {
 				padding-top: 0;

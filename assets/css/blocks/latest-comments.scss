@@ -4,8 +4,6 @@
 @import "block-library/breakpoints";
 @import "block-library/mixins";
 @import "block-library/z-index";
-@import "block-library/mixins";
-
 @import "block-library/latest-comments/style.scss";
 
 .wp-block-latest-comments__comment {
@@ -23,7 +21,7 @@
 
 .wp-block-latest-comments__comment-excerpt p {
 	font-size: var(--fs-1d-ts-tr);
-	margin: .25em 0 1em;
+	margin: 0.25em 0 1em;
 }
 
 .wp-block-latest-comments__comment-date {

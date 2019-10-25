@@ -1,3 +1,6 @@
+/* stylelint-disable selector-type-no-unknown */
+/* stylelint-disable at-rule-no-unknown */
+/* stylelint-disable at-rule-no-unknown */
 body,
 button,
 input,
@@ -9,7 +12,7 @@ textarea {
 }
 
 :root {
-  --system-fonts: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  --system-fonts: -apple-system, blinkmacsystemfont, "Segoe UI", roboto, oxygen-sans, ubuntu, cantarell, "Helvetica Neue", sans-serif;
   font-size: var(--fs-px);
 }
 

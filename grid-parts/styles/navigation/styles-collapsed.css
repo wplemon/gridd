@@ -32,6 +32,12 @@
 .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed svg {
   fill: var(--cl, #000);
 }
+.gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed:hover, .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed:focus, .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed.focus, .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed.toggled-on {
+  color: var(--acl, #0f5e97);
+}
+.gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed:hover svg, .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed:focus svg, .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed.focus svg, .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed.toggled-on svg {
+  fill: var(--acl, #0f5e97);
+}
 .gridd-tp-nav_ID .gridd-toggle-navigation .icon {
   line-height: 1;
 }
@@ -55,12 +61,6 @@
 }
 .gridd-tp-nav_ID .gridd-toggle-navigation:not(.gridd-nav-toggle-boxed):hover, .gridd-tp-nav_ID .gridd-toggle-navigation:not(.gridd-nav-toggle-boxed):focus, .gridd-tp-nav_ID .gridd-toggle-navigation:not(.gridd-nav-toggle-boxed).focus, .gridd-tp-nav_ID .gridd-toggle-navigation:not(.gridd-nav-toggle-boxed).toggled-on {
   border-bottom-color: transparent;
-}
-.gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed:hover, .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed:focus, .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed.focus, .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed.toggled-on {
-  color: var(--acl, #0f5e97);
-}
-.gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed:hover svg, .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed:focus svg, .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed.focus svg, .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed.toggled-on svg {
-  fill: var(--acl, #0f5e97);
 }
 .gridd-tp-nav_ID .gridd-toggle-navigation.toggled-on ~ nav {
   display: block;

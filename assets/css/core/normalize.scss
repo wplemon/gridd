@@ -60,7 +60,7 @@ abbr[title] {
 
 b,
 strong {
-	font-weight: bold;
+	font-weight: 700;
 }
 
 dfn {
@@ -122,9 +122,9 @@ code,
 kbd,
 pre,
 samp {
-	font-family: monospace, monospace;
+	font-family: monospace;
 	font-size: 1em;
-	background: rgba(0, 0, 0, .1);
+	background: rgba(0, 0, 0, 0.1);
 }
 
 button,
@@ -201,7 +201,7 @@ textarea {
 }
 
 optgroup {
-	font-weight: bold;
+	font-weight: 700;
 }
 
 table {

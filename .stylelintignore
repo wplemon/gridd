@@ -1,5 +1,5 @@
 /node-modules
 /packages
 *.*
-!*.css
-*.min.css
+!*.scss
+/assets/css/blocks/block-library/**/*.scss

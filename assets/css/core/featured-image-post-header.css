@@ -12,7 +12,7 @@
   justify-content: space-between;
   min-height: var(--im-hmh, 87vh);
 }
-.gridd-featured-image-post-header:after {
+.gridd-featured-image-post-header::after {
   position: absolute;
   background: var(--im-hoc, rgba(42, 84, 126, 0.8));
   content: " ";
@@ -24,7 +24,7 @@
   z-index: 1;
 }
 
-.gridd-featured-image-post-header-image-wrapper:after {
+.gridd-featured-image-post-header-image-wrapper::after {
   position: absolute;
   background: var(--im-hoc, rgba(42, 84, 126, 0.8));
   content: " ";

@@ -1,17 +1,17 @@
 .edit-link {
-	opacity: .6;
+	opacity: 0.6;
 	line-height: 1;
 	// transition: opacity 200ms;
 
 	a {
 		display: inline-block;
-		margin: 0 .5em;
+		margin: 0 0.5em;
 	}
 
 	svg {
 		fill: currentColor;
-		width: .6em;
-		height: .6em;
+		width: 0.6em;
+		height: 0.6em;
 	}
 
 	&:hover {
@@ -20,10 +20,11 @@
 }
 
 .gridd-tp-reusable-block {
+
 	.edit-link {
 		position: absolute;
-		top: .5em;
-		right: .5em;
+		top: 0.5em;
+		right: 0.5em;
 		z-index: 5;
 		display: none;
 
@@ -38,6 +39,7 @@
 	}
 
 	&:hover {
+
 		.edit-link {
 			display: block;
 		}

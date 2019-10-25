@@ -11,11 +11,11 @@ body {
 	justify-content: center;
 	z-index: 9999;
 	width: 100%;
-	box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2), 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12);
+	box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
 	font-size: 17px;
 	overflow: visible;
 
-	>* {
+	> * {
 		width: 100%;
 		max-width: 168px;
 	}
@@ -34,7 +34,7 @@ body {
 	border: none;
 	text-decoration: none;
 	height: 54px;
-	opacity: .55;
+	opacity: 0.55;
 
 	.label {
 		width: 100%;
@@ -50,7 +50,7 @@ body {
 	&:hover,
 	&:focus,
 	&:active,
-	&[aria-expanded=true] {
+	&[aria-expanded="true"] {
 		background: none;
 		color: #000;
 		box-shadow: none;
@@ -63,19 +63,19 @@ body {
 		height: 20px;
 	}
 
-	&[aria-expanded=true] {
+	&[aria-expanded="true"] {
 
-		+#gridd-handheld-search-wrapper,
-		+#gridd-handheld-menu-wrapper,
-		+#gridd-handheld-cart-wrapper {
+		+ #gridd-handheld-search-wrapper,
+		+ #gridd-handheld-menu-wrapper,
+		+ #gridd-handheld-cart-wrapper {
 			display: block;
-			box-shadow:0 0 2em 0;
+			box-shadow: 0 0 2em 0;
 			background: var(--bg);
 		}
 	}
 
-	&:before,
-	&:after {
+	&::before,
+	&::after {
 		display: none;
 	}
 }
@@ -94,7 +94,7 @@ body {
 	flex-wrap: wrap;
 	align-items: flex-end;
 	overflow-y: auto;
-	box-shadow: 0 -10px 15px 0 rgba(0,0,0,.12);
+	box-shadow: 0 -10px 15px 0 rgba(0, 0, 0, 0.12);
 	// padding: 12px 12px 0 12px;
 
 	&.expanded {
@@ -113,7 +113,7 @@ body {
 
 		input {
 			// border-bottom: none;
-			margin-left: 0
+			margin-left: 0;
 		}
 
 		label {

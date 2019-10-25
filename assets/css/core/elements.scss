@@ -3,8 +3,8 @@ html {
 }
 
 *,
-*:after,
-*:before {
+*::after,
+*::before {
 	box-sizing: inherit; // Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
 }
 
@@ -31,14 +31,14 @@ ol {
 	list-style: decimal;
 }
 
-li>ol,
-li>ul {
+li > ol,
+li > ul {
 	margin-bottom: 0;
 	// margin-left: 1.5em;
 }
 
 dt {
-	font-weight: bold;
+	font-weight: 700;
 }
 
 dd {
@@ -79,6 +79,7 @@ table {
 	}
 
 	thead {
+
 		th {
 			vertical-align: bottom;
 			border-bottom: 2px solid #dee2e6;
@@ -99,6 +100,7 @@ q {
 }
 
 .entry-comments-link {
+
 	.comments-link {
 		display: flex;
 	}
@@ -110,6 +112,6 @@ q {
 	}
 
 	.label {
-		padding: 0 .5em;
+		padding: 0 0.5em;
 	}
 }

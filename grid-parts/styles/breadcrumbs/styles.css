@@ -31,7 +31,7 @@ nav.breadcrumbs ul {
 nav.breadcrumbs li {
   display: inline-flex;
 }
-nav.breadcrumbs .breadcrumbs__crumb + .breadcrumbs__crumb:before {
+nav.breadcrumbs .breadcrumbs__crumb + .breadcrumbs__crumb::before {
   content: "›";
   opacity: 0.5;
   padding: 0 0.75em;

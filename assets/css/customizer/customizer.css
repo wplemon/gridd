@@ -1,3 +1,4 @@
+/* stylelint-disable at-rule-no-unknown */
 #customize-controls #sub-accordion-section-gridd_grid li.accordion-section .accordion-section-title,
 #customize-controls #sub-accordion-section-grid_part_details_header li.accordion-section .accordion-section-title,
 #customize-controls #sub-accordion-section-grid_part_details_footer li.accordion-section .accordion-section-title {
@@ -17,12 +18,15 @@
 #customize-controls .customize-section-description-container.section-meta .dashicons {
   display: none;
 }
+#customize-controls .control-section.open .control-section-kirki-nested .accordion-section-title {
+  background: #dedede !important;
+}
 
-.accordion-section-title.dashicons-before:before {
-  color: #82878C;
+.accordion-section-title.dashicons-before::before {
+  color: #82878c;
   padding-right: 7px;
 }
-.rtl .accordion-section-title.dashicons-before:before {
+.rtl .accordion-section-title.dashicons-before::before {
   padding-right: 0;
   padding-left: 7px;
 }
@@ -66,7 +70,7 @@
 }
 #input_gridd_grid_nav-primary_justify_content input:checked + label {
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.25);
-  border: 1px solid #3498DB;
+  border: 1px solid #3498db;
 }
 
 .customize-control-kirki-dimensions .wrapper .control {
@@ -107,7 +111,7 @@ h3.gridd-customizer-section-title {
   grid-template-columns: 1fr 1fr 1fr;
 }
 #input_gridd_grid_nav_1_expand_icon_position > label {
-  line-height: 2.5em;
+  line-height: 2.5;
 }
 
 #input_gridd_grid_nav_1_expand_icon > label svg {
@@ -127,7 +131,7 @@ h3.gridd-customizer-section-title {
   grid-template-columns: 1fr 1fr 1fr;
 }
 #input_gridd_grid_nav_2_expand_icon_position > label {
-  line-height: 2.5em;
+  line-height: 2.5;
 }
 
 #input_gridd_grid_nav_2_expand_icon > label svg {
@@ -147,7 +151,7 @@ h3.gridd-customizer-section-title {
   grid-template-columns: 1fr 1fr 1fr;
 }
 #input_gridd_grid_nav_3_expand_icon_position > label {
-  line-height: 2.5em;
+  line-height: 2.5;
 }
 
 #input_gridd_grid_nav_3_expand_icon > label svg {
@@ -167,7 +171,7 @@ h3.gridd-customizer-section-title {
   grid-template-columns: 1fr 1fr 1fr;
 }
 #input_gridd_grid_nav_4_expand_icon_position > label {
-  line-height: 2.5em;
+  line-height: 2.5;
 }
 
 #input_gridd_grid_nav_4_expand_icon > label svg {
@@ -187,7 +191,7 @@ h3.gridd-customizer-section-title {
   grid-template-columns: 1fr 1fr 1fr;
 }
 #input_gridd_grid_nav_5_expand_icon_position > label {
-  line-height: 2.5em;
+  line-height: 2.5;
 }
 
 #input_gridd_grid_nav_5_expand_icon > label svg {
@@ -207,7 +211,7 @@ h3.gridd-customizer-section-title {
   grid-template-columns: 1fr 1fr 1fr;
 }
 #input_gridd_grid_nav_6_expand_icon_position > label {
-  line-height: 2.5em;
+  line-height: 2.5;
 }
 
 #input_gridd_grid_nav_6_expand_icon > label svg {
@@ -227,7 +231,7 @@ h3.gridd-customizer-section-title {
   grid-template-columns: 1fr 1fr 1fr;
 }
 #input_gridd_grid_nav_7_expand_icon_position > label {
-  line-height: 2.5em;
+  line-height: 2.5;
 }
 
 #input_gridd_grid_nav_7_expand_icon > label svg {
@@ -247,7 +251,7 @@ h3.gridd-customizer-section-title {
   grid-template-columns: 1fr 1fr 1fr;
 }
 #input_gridd_grid_nav_8_expand_icon_position > label {
-  line-height: 2.5em;
+  line-height: 2.5;
 }
 
 #input_gridd_grid_nav_8_expand_icon > label svg {
@@ -267,7 +271,7 @@ h3.gridd-customizer-section-title {
   grid-template-columns: 1fr 1fr 1fr;
 }
 #input_gridd_grid_nav_9_expand_icon_position > label {
-  line-height: 2.5em;
+  line-height: 2.5;
 }
 
 #input_gridd_grid_nav_9_expand_icon > label svg {
@@ -287,7 +291,7 @@ h3.gridd-customizer-section-title {
   grid-template-columns: 1fr 1fr 1fr;
 }
 #input_gridd_grid_nav_10_expand_icon_position > label {
-  line-height: 2.5em;
+  line-height: 2.5;
 }
 
 #input_gridd_grid_nav_10_expand_icon > label svg {
@@ -329,7 +333,7 @@ h3.gridd-customizer-section-title {
   background: #826eb4;
 }
 .gridd-section-description-wrapper .gridd-section-description-trigger.gridd-docs {
-  background: #46B450;
+  background: #46b450;
 }
 .gridd-section-description-wrapper .gridd-section-description-trigger.gridd-tip {
   background: #00a0d2;
@@ -366,10 +370,6 @@ h3.gridd-customizer-section-title {
   margin-bottom: 1em;
   padding-bottom: 1em;
   border-bottom: 1px solid rgba(0, 0, 0, 0.07);
-}
-
-#customize-controls .control-section.open .control-section-kirki-nested .accordion-section-title {
-  background: #dedede !important;
 }
 
 #input_gridd_grid_nav_1_justify_content {

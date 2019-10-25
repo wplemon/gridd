@@ -85,7 +85,7 @@
   margin-top: -20px;
   padding: 5px 12px;
   background: #fff;
-  border-left: 5px solid #46B450;
+  border-left: 5px solid #46b450;
 }
 .customize-control-gridd_grid.fixed-position {
   position: fixed;
@@ -152,7 +152,7 @@
   z-index: 0;
 }
 .grid-selected-part .inner {
-  box-shadow: inset 0px 1px 10px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 10px 0 rgba(0, 0, 0, 0.2);
   color: #fff;
   justify-content: center;
   display: flex;
@@ -194,7 +194,7 @@
   color: #000;
 }
 .grid-selected-part .inner .actions .delete {
-  color: #DC3232;
+  color: #dc3232;
 }
 
 .gridd-grid-part-selector {
@@ -225,7 +225,7 @@
   width: 100%;
   font-size: 1.1em;
   text-align: center;
-  line-height: 2em;
+  line-height: 2;
   margin: 1em 0;
 }
 

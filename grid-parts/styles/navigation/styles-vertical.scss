@@ -7,13 +7,14 @@
 	}
 
 	ul {
+
 		&.menu {
 			background-color: $submenuBackground;
 
-			>li {
+			> li {
 				width: 100%;
 
-				>ul {
+				> ul {
 					font-size: calc(1em / var(--ts));
 
 					a {

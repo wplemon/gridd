@@ -6,7 +6,7 @@ $element: ".gridd-tp-sidebar_ID .widget_nav_menu";
 // Basic vars.
 $backgroundColor: var(--bg, #fff);
 $fontSize: 1em;
-$padding: .5rem;
+$padding: 0.5rem;
 $justify: flex-start;
 $itemsColor: var(--cl, #000);
 
@@ -21,7 +21,9 @@ $accentColor: var(--bg, #fff);
 @import "../../../grid-parts/styles/navigation/styles-vertical.scss";
 
 #{$element} {
+
 	.gridd-navigation {
+
 		li {
 
 			&.current-menu-ancestor,
@@ -33,17 +35,19 @@ $accentColor: var(--bg, #fff);
 			&.current_page_ancestor,
 			&.current_page_item,
 			&.current_page_parent {
+
 				.gridd-toggle {
 					display: none;
 				}
 
 				ul {
-					&:after {
+
+					&::after {
 						content: "";
 						width: 100%;
 						display: block;
 						border-bottom: 1px solid currentColor;
-						opacity: .2;
+						opacity: 0.2;
 					}
 				}
 			}

@@ -1,9 +1,9 @@
 .gridd-header-search {
-	background-color: var(--bg, #ffffff);
+	background-color: var(--bg, #fff);
 
 	form.search-form {
 		font-size: calc(var(--fs, 1) * 1em);
-		color: var(--cl, #000000);
+		color: var(--cl, #000);
 	}
 
 	.search-submit {

@@ -1,7 +1,8 @@
+/* stylelint-disable at-rule-no-unknown */
 $red: #dc3232;
 $orange: #f56e28;
 $yellow: #ffb900;
-$green: #46B450;
+$green: #46b450;
 $medium-blue: #00a0d2;
 $purple: #826eb4;
 
@@ -10,8 +11,11 @@ $purple: #826eb4;
 	#sub-accordion-section-gridd_grid,
 	#sub-accordion-section-grid_part_details_header,
 	#sub-accordion-section-grid_part_details_footer {
+
 		li {
+
 			&.accordion-section {
+
 				.accordion-section-title {
 					color: #333;
 					background: #fff !important;
@@ -22,6 +26,7 @@ $purple: #826eb4;
 				}
 
 				&.control-section-kirki-nested {
+
 					h3.accordion-section-title {
 						display: none;
 					}
@@ -31,14 +36,25 @@ $purple: #826eb4;
 	}
 
 	.customize-section-description-container.section-meta {
+
 		.dashicons {
 			display: none;
 		}
 	}
+
+	.control-section.open {
+
+		.control-section-kirki-nested {
+
+			.accordion-section-title {
+				background: #dedede !important;
+			}
+		}
+	}
 }
 
-.accordion-section-title.dashicons-before:before {
-	color: #82878C;
+.accordion-section-title.dashicons-before::before {
+	color: #82878c;
 	padding-right: 7px;
 
 	.rtl & {
@@ -67,13 +83,13 @@ $purple: #826eb4;
 	grid-gap: 1em;
 	grid-template-columns: 1fr 1fr;
 
-	>label {
+	> label {
 		display: block;
 		flex-wrap: wrap;
 		padding: 5px;
 		border: 1px solid #ccc;
 
-		>* {
+		> * {
 			width: 100%;
 			order: 2;
 		}
@@ -91,23 +107,27 @@ $purple: #826eb4;
 	}
 
 	input {
+
 		&:checked {
-			+label {
-				box-shadow: 0 0 5px 2px rgba(0, 0, 0, .25);
-				border: 1px solid #3498DB;
+
+			+ label {
+				box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.25);
+				border: 1px solid #3498db;
 			}
 		}
 	}
 }
 
 .customize-control-kirki-dimensions {
+
 	.wrapper {
+
 		.control {
 			display: grid;
 			grid-template-columns: 1fr 1fr 1fr 1fr;
 			grid-gap: 12px;
 
-			>div {
+			> div {
 				width: 100%;
 			}
 		}
@@ -115,14 +135,17 @@ $purple: #826eb4;
 }
 
 #input_gridd_grid_nav_1_expand_icon {
+
 	.switch-label {
+
 		svg {
 			width: 1em;
 			height: 1em;
 		}
 	}
 
-	.switch-input:checked+.switch-label {
+	.switch-input:checked + .switch-label {
+
 		svg {
 			fill: #fff;
 		}
@@ -138,7 +161,9 @@ h3.gridd-customizer-section-title {
 }
 
 .customize-control-kirki-radio-image {
+
 	.image {
+
 		label {
 			width: 50%;
 
@@ -151,24 +176,28 @@ h3.gridd-customizer-section-title {
 }
 
 @for $i from 1 through 10 {
+
 	#input_gridd_grid_nav_#{ $i }_expand_icon_position {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 
-		>label {
-			line-height: 2.5em;
+		> label {
+			line-height: 2.5;
 		}
 	}
 
 	#input_gridd_grid_nav_#{ $i }_expand_icon {
-		>label {
+
+		> label {
+
 			svg {
 				height: 20px;
 				width: 20px;
 			}
 		}
 
-		.switch-input:checked+label {
+		.switch-input:checked + label {
+
 			svg {
 				fill: #fff;
 			}
@@ -176,10 +205,15 @@ h3.gridd-customizer-section-title {
 	}
 
 	#customize-control-gridd_grid_nav_#{ $i } {
+
 		&_justify_content {
+
 			input {
+
 				&:checked {
-					+label {
+
+					+ label {
+
 						svg {
 							fill: #fff;
 						}
@@ -195,6 +229,7 @@ h3.gridd-customizer-section-title {
 }
 
 #input_gridd_global_grid_preset {
+
 	label {
 		width: 25%;
 	}
@@ -205,12 +240,12 @@ h3.gridd-customizer-section-title {
 
 	.gridd-section-description-trigger {
 		display: inline-block;
-		border: 1px solid rgba(0, 0, 0, .1);
+		border: 1px solid rgba(0, 0, 0, 0.1);
 		border-radius: 3px;
 		text-decoration: none;
 		color: #fff;
 		background: #000;
-		margin-right: .5em;
+		margin-right: 0.5em;
 		padding: 3px 6px;
 		font-size: 12px;
 		line-height: 1;
@@ -235,13 +270,14 @@ h3.gridd-customizer-section-title {
 		padding: 12px;
 		background: #fff;
 
-		&[aria-expanded=true] {
+		&[aria-expanded="true"] {
 			display: block;
 		}
 	}
 }
 
 .gridd-flexbox-svg-option {
+
 	svg {
 		max-width: 100%;
 		max-height: 35px;
@@ -253,12 +289,14 @@ h3.gridd-customizer-section-title {
 }
 
 #customize-control-gridd_grid_load_order {
+
 	.visibility {
 		display: none;
 	}
 }
 
 .outer-section-open {
+
 	#customize-preview {
 		width: calc(100% - 300px);
 		opacity: 1;
@@ -266,20 +304,11 @@ h3.gridd-customizer-section-title {
 }
 
 #sub-accordion-section-gridd_to_section {
+
 	.customize-control {
 		margin-bottom: 1em;
 		padding-bottom: 1em;
-		border-bottom: 1px solid rgba(0, 0, 0, .07);
-	}
-}
-
-#customize-controls {
-	.control-section.open {
-		.control-section-kirki-nested {
-			.accordion-section-title {
-				background: #dedede !important;
-			}
-		}
+		border-bottom: 1px solid rgba(0, 0, 0, 0.07);
 	}
 }
 
@@ -287,11 +316,12 @@ h3.gridd-customizer-section-title {
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 
 	.switch-label {
-		padding: .5em;
+		padding: 0.5em;
 	}
 }
 
 .customize-control-kirki-react-radio-buttonset {
+
 	.radio-tooltip {
 		display: none;
 		position: absolute;
@@ -311,6 +341,7 @@ h3.gridd-customizer-section-title {
 	label:hover,
 	label:focus,
 	input:focus + span {
+
 		.radio-tooltip {
 			display: block;
 		}

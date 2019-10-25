@@ -1,7 +1,9 @@
+/* stylelint-disable at-rule-no-unknown */
 @import "../mixins";
 
 /* Text meant only for screen readers. */
 .screen-reader-text {
+
 	@include screen-reader-text;
 }
 
@@ -12,7 +14,8 @@
 }
 
 @media print {
-	body>*:not(main) {
+
+	body > *:not(main) {
 		display: none;
 	}
 }

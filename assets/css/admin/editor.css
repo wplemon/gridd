@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/* stylelint-disable selector-type-no-unknown */
 :root {
   --fs: var(--gridd-font-size, 18);
   --fs-px: calc(var(--fs) * 1px);
@@ -71,37 +72,6 @@ html {
 /**
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
-/**
- * Breakpoint mixins
- */
-/**
- * Long content fade mixin
- *
- * Creates a fading overlay to signify that the content is longer
- * than the space allows.
- */
-/**
- * Button states and focus styles
- */
-/**
- * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
- */
-/**
- * Styles that are reused verbatim in a few places
- */
-/**
- * Allows users to opt-out of animations via OS-level preferences.
- */
-/**
- * Reset default styles for JavaScript UI based pages.
- * This is a WP-admin agnostic reset
- */
-/**
- * Reset the WP Admin page styles for Gutenberg-like pages.
- */
 .wp-block-audio audio {
   width: 100%;
   min-width: 300px;
@@ -113,6 +83,9 @@ html {
   text-align: center;
 }
 
+/* stylelint-disable at-rule-no-unknown */
+/* stylelint-disable at-rule-no-unknown */
+/* stylelint-disable at-rule-no-unknown */
 .wp-block-button.aligncenter {
   text-align: center;
 }
@@ -177,37 +150,6 @@ html {
  */
 /**
  * Breakpoints & Media Queries
- */
-/**
- * Breakpoint mixins
- */
-/**
- * Long content fade mixin
- *
- * Creates a fading overlay to signify that the content is longer
- * than the space allows.
- */
-/**
- * Button states and focus styles
- */
-/**
- * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
- */
-/**
- * Styles that are reused verbatim in a few places
- */
-/**
- * Allows users to opt-out of animations via OS-level preferences.
- */
-/**
- * Reset default styles for JavaScript UI based pages.
- * This is a WP-admin agnostic reset
- */
-/**
- * Reset the WP Admin page styles for Gutenberg-like pages.
  */
 /**
  * Breakpoint mixins
@@ -311,37 +253,6 @@ html {
 /**
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
-/**
- * Breakpoint mixins
- */
-/**
- * Long content fade mixin
- *
- * Creates a fading overlay to signify that the content is longer
- * than the space allows.
- */
-/**
- * Button states and focus styles
- */
-/**
- * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
- */
-/**
- * Styles that are reused verbatim in a few places
- */
-/**
- * Allows users to opt-out of animations via OS-level preferences.
- */
-/**
- * Reset default styles for JavaScript UI based pages.
- * This is a WP-admin agnostic reset
- */
-/**
- * Reset the WP Admin page styles for Gutenberg-like pages.
- */
 .wp-block-categories.alignleft {
   /*rtl:ignore*/
   margin-right: 2em;
@@ -391,37 +302,6 @@ html {
 /**
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
-/**
- * Breakpoint mixins
- */
-/**
- * Long content fade mixin
- *
- * Creates a fading overlay to signify that the content is longer
- * than the space allows.
- */
-/**
- * Button states and focus styles
- */
-/**
- * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
- */
-/**
- * Styles that are reused verbatim in a few places
- */
-/**
- * Allows users to opt-out of animations via OS-level preferences.
- */
-/**
- * Reset default styles for JavaScript UI based pages.
- * This is a WP-admin agnostic reset
- */
-/**
- * Reset the WP Admin page styles for Gutenberg-like pages.
- */
 .wp-block-code {
   font-family: Menlo, Consolas, monaco, monospace;
   font-size: 14px;
@@ -439,37 +319,6 @@ html {
  */
 /**
  * Breakpoints & Media Queries
- */
-/**
- * Breakpoint mixins
- */
-/**
- * Long content fade mixin
- *
- * Creates a fading overlay to signify that the content is longer
- * than the space allows.
- */
-/**
- * Button states and focus styles
- */
-/**
- * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
- */
-/**
- * Styles that are reused verbatim in a few places
- */
-/**
- * Allows users to opt-out of animations via OS-level preferences.
- */
-/**
- * Reset default styles for JavaScript UI based pages.
- * This is a WP-admin agnostic reset
- */
-/**
- * Reset the WP Admin page styles for Gutenberg-like pages.
  */
 /**
  * Breakpoint mixins
@@ -590,37 +439,6 @@ html {
  */
 /**
  * Breakpoints & Media Queries
- */
-/**
- * Breakpoint mixins
- */
-/**
- * Long content fade mixin
- *
- * Creates a fading overlay to signify that the content is longer
- * than the space allows.
- */
-/**
- * Button states and focus styles
- */
-/**
- * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
- */
-/**
- * Styles that are reused verbatim in a few places
- */
-/**
- * Allows users to opt-out of animations via OS-level preferences.
- */
-/**
- * Reset default styles for JavaScript UI based pages.
- * This is a WP-admin agnostic reset
- */
-/**
- * Reset the WP Admin page styles for Gutenberg-like pages.
  */
 /**
  * Breakpoint mixins
@@ -926,37 +744,6 @@ html {
 /**
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
-/**
- * Breakpoint mixins
- */
-/**
- * Long content fade mixin
- *
- * Creates a fading overlay to signify that the content is longer
- * than the space allows.
- */
-/**
- * Button states and focus styles
- */
-/**
- * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
- */
-/**
- * Styles that are reused verbatim in a few places
- */
-/**
- * Allows users to opt-out of animations via OS-level preferences.
- */
-/**
- * Reset default styles for JavaScript UI based pages.
- * This is a WP-admin agnostic reset
- */
-/**
- * Reset the WP Admin page styles for Gutenberg-like pages.
- */
 .block-editor-block-list__block[data-type="core/embed"][data-align=left] .block-editor-block-list__block-edit,
 .block-editor-block-list__block[data-type="core/embed"][data-align=right] .block-editor-block-list__block-edit,
 .wp-block-embed.alignleft,
@@ -1054,37 +841,6 @@ html {
 /**
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
-/**
- * Breakpoint mixins
- */
-/**
- * Long content fade mixin
- *
- * Creates a fading overlay to signify that the content is longer
- * than the space allows.
- */
-/**
- * Button states and focus styles
- */
-/**
- * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
- */
-/**
- * Styles that are reused verbatim in a few places
- */
-/**
- * Allows users to opt-out of animations via OS-level preferences.
- */
-/**
- * Reset default styles for JavaScript UI based pages.
- * This is a WP-admin agnostic reset
- */
-/**
- * Reset the WP Admin page styles for Gutenberg-like pages.
- */
 .wp-block-file {
   margin-bottom: 1.5em;
 }
@@ -1123,37 +879,6 @@ html {
  */
 /**
  * Breakpoints & Media Queries
- */
-/**
- * Breakpoint mixins
- */
-/**
- * Long content fade mixin
- *
- * Creates a fading overlay to signify that the content is longer
- * than the space allows.
- */
-/**
- * Button states and focus styles
- */
-/**
- * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
- */
-/**
- * Styles that are reused verbatim in a few places
- */
-/**
- * Allows users to opt-out of animations via OS-level preferences.
- */
-/**
- * Reset default styles for JavaScript UI based pages.
- * This is a WP-admin agnostic reset
- */
-/**
- * Reset the WP Admin page styles for Gutenberg-like pages.
  */
 /**
  * Breakpoint mixins
@@ -1487,37 +1212,6 @@ html {
 /**
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
-/**
- * Breakpoint mixins
- */
-/**
- * Long content fade mixin
- *
- * Creates a fading overlay to signify that the content is longer
- * than the space allows.
- */
-/**
- * Button states and focus styles
- */
-/**
- * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
- */
-/**
- * Styles that are reused verbatim in a few places
- */
-/**
- * Allows users to opt-out of animations via OS-level preferences.
- */
-/**
- * Reset default styles for JavaScript UI based pages.
- * This is a WP-admin agnostic reset
- */
-/**
- * Reset the WP Admin page styles for Gutenberg-like pages.
- */
 .wp-block-group.has-background {
   padding: 20px 30px;
   margin-top: 0;
@@ -1545,37 +1239,6 @@ html {
  */
 /**
  * Breakpoints & Media Queries
- */
-/**
- * Breakpoint mixins
- */
-/**
- * Long content fade mixin
- *
- * Creates a fading overlay to signify that the content is longer
- * than the space allows.
- */
-/**
- * Button states and focus styles
- */
-/**
- * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
- */
-/**
- * Styles that are reused verbatim in a few places
- */
-/**
- * Allows users to opt-out of animations via OS-level preferences.
- */
-/**
- * Reset default styles for JavaScript UI based pages.
- * This is a WP-admin agnostic reset
- */
-/**
- * Reset the WP Admin page styles for Gutenberg-like pages.
  */
 /**
  * Breakpoint mixins
@@ -1713,37 +1376,6 @@ html {
 /**
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
-/**
- * Breakpoint mixins
- */
-/**
- * Long content fade mixin
- *
- * Creates a fading overlay to signify that the content is longer
- * than the space allows.
- */
-/**
- * Button states and focus styles
- */
-/**
- * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
- */
-/**
- * Styles that are reused verbatim in a few places
- */
-/**
- * Allows users to opt-out of animations via OS-level preferences.
- */
-/**
- * Reset default styles for JavaScript UI based pages.
- * This is a WP-admin agnostic reset
- */
-/**
- * Reset the WP Admin page styles for Gutenberg-like pages.
- */
 .wp-block-latest-comments__comment {
   line-height: 1.1;
   list-style: none;
@@ -1799,6 +1431,7 @@ html {
   width: 2.5em;
 }
 
+/* stylelint-disable at-rule-no-unknown */
 /**
  * Colors
  */
@@ -1807,37 +1440,6 @@ html {
  */
 /**
  * Breakpoints & Media Queries
- */
-/**
- * Breakpoint mixins
- */
-/**
- * Long content fade mixin
- *
- * Creates a fading overlay to signify that the content is longer
- * than the space allows.
- */
-/**
- * Button states and focus styles
- */
-/**
- * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
- */
-/**
- * Styles that are reused verbatim in a few places
- */
-/**
- * Allows users to opt-out of animations via OS-level preferences.
- */
-/**
- * Reset default styles for JavaScript UI based pages.
- * This is a WP-admin agnostic reset
- */
-/**
- * Reset the WP Admin page styles for Gutenberg-like pages.
  */
 /**
  * Breakpoint mixins
@@ -1929,37 +1531,6 @@ html {
  */
 /**
  * Breakpoints & Media Queries
- */
-/**
- * Breakpoint mixins
- */
-/**
- * Long content fade mixin
- *
- * Creates a fading overlay to signify that the content is longer
- * than the space allows.
- */
-/**
- * Button states and focus styles
- */
-/**
- * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
- */
-/**
- * Styles that are reused verbatim in a few places
- */
-/**
- * Allows users to opt-out of animations via OS-level preferences.
- */
-/**
- * Reset default styles for JavaScript UI based pages.
- * This is a WP-admin agnostic reset
- */
-/**
- * Reset the WP Admin page styles for Gutenberg-like pages.
  */
 /**
  * Breakpoint mixins
@@ -2108,37 +1679,6 @@ html {
 /**
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
-/**
- * Breakpoint mixins
- */
-/**
- * Long content fade mixin
- *
- * Creates a fading overlay to signify that the content is longer
- * than the space allows.
- */
-/**
- * Button states and focus styles
- */
-/**
- * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
- */
-/**
- * Styles that are reused verbatim in a few places
- */
-/**
- * Allows users to opt-out of animations via OS-level preferences.
- */
-/**
- * Reset default styles for JavaScript UI based pages.
- * This is a WP-admin agnostic reset
- */
-/**
- * Reset the WP Admin page styles for Gutenberg-like pages.
- */
 .has-drop-cap:not(:focus)::first-letter {
   float: left;
   font-size: 8.4em;
@@ -2220,37 +1760,6 @@ p.has-background {
 /**
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
-/**
- * Breakpoint mixins
- */
-/**
- * Long content fade mixin
- *
- * Creates a fading overlay to signify that the content is longer
- * than the space allows.
- */
-/**
- * Button states and focus styles
- */
-/**
- * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
- */
-/**
- * Styles that are reused verbatim in a few places
- */
-/**
- * Allows users to opt-out of animations via OS-level preferences.
- */
-/**
- * Reset default styles for JavaScript UI based pages.
- * This is a WP-admin agnostic reset
- */
-/**
- * Reset the WP Admin page styles for Gutenberg-like pages.
- */
 .wp-block-preformatted pre {
   font-family: Menlo, Consolas, monaco, monospace;
   color: #23282d;
@@ -2271,37 +1780,6 @@ p.has-background {
  */
 /**
  * Breakpoints & Media Queries
- */
-/**
- * Breakpoint mixins
- */
-/**
- * Long content fade mixin
- *
- * Creates a fading overlay to signify that the content is longer
- * than the space allows.
- */
-/**
- * Button states and focus styles
- */
-/**
- * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
- */
-/**
- * Styles that are reused verbatim in a few places
- */
-/**
- * Allows users to opt-out of animations via OS-level preferences.
- */
-/**
- * Reset default styles for JavaScript UI based pages.
- * This is a WP-admin agnostic reset
- */
-/**
- * Reset the WP Admin page styles for Gutenberg-like pages.
  */
 /**
  * Breakpoint mixins
@@ -2453,37 +1931,6 @@ p.has-background {
 /**
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
-/**
- * Breakpoint mixins
- */
-/**
- * Long content fade mixin
- *
- * Creates a fading overlay to signify that the content is longer
- * than the space allows.
- */
-/**
- * Button states and focus styles
- */
-/**
- * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
- */
-/**
- * Styles that are reused verbatim in a few places
- */
-/**
- * Allows users to opt-out of animations via OS-level preferences.
- */
-/**
- * Reset default styles for JavaScript UI based pages.
- * This is a WP-admin agnostic reset
- */
-/**
- * Reset the WP Admin page styles for Gutenberg-like pages.
- */
 .wp-block-quote.is-style-large, .wp-block-quote.is-large {
   padding: 0 1em;
 }
@@ -2548,6 +1995,7 @@ p.has-background {
   padding-left: 1em;
 }
 
+/* stylelint-disable at-rule-no-unknown */
 /**
  * Colors
  */
@@ -2556,37 +2004,6 @@ p.has-background {
  */
 /**
  * Breakpoints & Media Queries
- */
-/**
- * Breakpoint mixins
- */
-/**
- * Long content fade mixin
- *
- * Creates a fading overlay to signify that the content is longer
- * than the space allows.
- */
-/**
- * Button states and focus styles
- */
-/**
- * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
- */
-/**
- * Styles that are reused verbatim in a few places
- */
-/**
- * Allows users to opt-out of animations via OS-level preferences.
- */
-/**
- * Reset default styles for JavaScript UI based pages.
- * This is a WP-admin agnostic reset
- */
-/**
- * Reset the WP Admin page styles for Gutenberg-like pages.
  */
 /**
  * Breakpoint mixins
@@ -2708,37 +2125,6 @@ p.has-background {
 /**
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
-/**
- * Breakpoint mixins
- */
-/**
- * Long content fade mixin
- *
- * Creates a fading overlay to signify that the content is longer
- * than the space allows.
- */
-/**
- * Button states and focus styles
- */
-/**
- * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
- */
-/**
- * Styles that are reused verbatim in a few places
- */
-/**
- * Allows users to opt-out of animations via OS-level preferences.
- */
-/**
- * Reset default styles for JavaScript UI based pages.
- * This is a WP-admin agnostic reset
- */
-/**
- * Reset the WP Admin page styles for Gutenberg-like pages.
- */
 .wp-block-search {
   display: flex;
   flex-wrap: wrap;
@@ -2765,37 +2151,6 @@ p.has-background {
  */
 /**
  * Breakpoints & Media Queries
- */
-/**
- * Breakpoint mixins
- */
-/**
- * Long content fade mixin
- *
- * Creates a fading overlay to signify that the content is longer
- * than the space allows.
- */
-/**
- * Button states and focus styles
- */
-/**
- * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
- */
-/**
- * Styles that are reused verbatim in a few places
- */
-/**
- * Allows users to opt-out of animations via OS-level preferences.
- */
-/**
- * Reset default styles for JavaScript UI based pages.
- * This is a WP-admin agnostic reset
- */
-/**
- * Reset the WP Admin page styles for Gutenberg-like pages.
  */
 /**
  * Breakpoint mixins
@@ -2915,37 +2270,6 @@ p.has-background {
 /**
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
-/**
- * Breakpoint mixins
- */
-/**
- * Long content fade mixin
- *
- * Creates a fading overlay to signify that the content is longer
- * than the space allows.
- */
-/**
- * Button states and focus styles
- */
-/**
- * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
- */
-/**
- * Styles that are reused verbatim in a few places
- */
-/**
- * Allows users to opt-out of animations via OS-level preferences.
- */
-/**
- * Reset default styles for JavaScript UI based pages.
- * This is a WP-admin agnostic reset
- */
-/**
- * Reset the WP Admin page styles for Gutenberg-like pages.
- */
 .wp-block-spacer {
   clear: both;
 }
@@ -2958,37 +2282,6 @@ p.has-background {
  */
 /**
  * Breakpoints & Media Queries
- */
-/**
- * Breakpoint mixins
- */
-/**
- * Long content fade mixin
- *
- * Creates a fading overlay to signify that the content is longer
- * than the space allows.
- */
-/**
- * Button states and focus styles
- */
-/**
- * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
- */
-/**
- * Styles that are reused verbatim in a few places
- */
-/**
- * Allows users to opt-out of animations via OS-level preferences.
- */
-/**
- * Reset default styles for JavaScript UI based pages.
- * This is a WP-admin agnostic reset
- */
-/**
- * Reset the WP Admin page styles for Gutenberg-like pages.
  */
 /**
  * Breakpoint mixins
@@ -3035,37 +2328,6 @@ p.wp-block-subhead {
  */
 /**
  * Breakpoints & Media Queries
- */
-/**
- * Breakpoint mixins
- */
-/**
- * Long content fade mixin
- *
- * Creates a fading overlay to signify that the content is longer
- * than the space allows.
- */
-/**
- * Button states and focus styles
- */
-/**
- * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
- */
-/**
- * Styles that are reused verbatim in a few places
- */
-/**
- * Allows users to opt-out of animations via OS-level preferences.
- */
-/**
- * Reset default styles for JavaScript UI based pages.
- * This is a WP-admin agnostic reset
- */
-/**
- * Reset the WP Admin page styles for Gutenberg-like pages.
  */
 /**
  * Breakpoint mixins
@@ -3217,37 +2479,6 @@ p.wp-block-subhead {
 /**
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
-/**
- * Breakpoint mixins
- */
-/**
- * Long content fade mixin
- *
- * Creates a fading overlay to signify that the content is longer
- * than the space allows.
- */
-/**
- * Button states and focus styles
- */
-/**
- * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
- */
-/**
- * Styles that are reused verbatim in a few places
- */
-/**
- * Allows users to opt-out of animations via OS-level preferences.
- */
-/**
- * Reset default styles for JavaScript UI based pages.
- * This is a WP-admin agnostic reset
- */
-/**
- * Reset the WP Admin page styles for Gutenberg-like pages.
- */
 .wp-block-text-columns {
   display: flex;
 }
@@ -3317,37 +2548,6 @@ p.wp-block-subhead {
 /**
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
-/**
- * Breakpoint mixins
- */
-/**
- * Long content fade mixin
- *
- * Creates a fading overlay to signify that the content is longer
- * than the space allows.
- */
-/**
- * Button states and focus styles
- */
-/**
- * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
- */
-/**
- * Styles that are reused verbatim in a few places
- */
-/**
- * Allows users to opt-out of animations via OS-level preferences.
- */
-/**
- * Reset default styles for JavaScript UI based pages.
- * This is a WP-admin agnostic reset
- */
-/**
- * Reset the WP Admin page styles for Gutenberg-like pages.
- */
 pre.wp-block-verse {
   white-space: nowrap;
   overflow: auto;
@@ -3361,37 +2561,6 @@ pre.wp-block-verse {
  */
 /**
  * Breakpoints & Media Queries
- */
-/**
- * Breakpoint mixins
- */
-/**
- * Long content fade mixin
- *
- * Creates a fading overlay to signify that the content is longer
- * than the space allows.
- */
-/**
- * Button states and focus styles
- */
-/**
- * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
- */
-/**
- * Styles that are reused verbatim in a few places
- */
-/**
- * Allows users to opt-out of animations via OS-level preferences.
- */
-/**
- * Reset default styles for JavaScript UI based pages.
- * This is a WP-admin agnostic reset
- */
-/**
- * Reset the WP Admin page styles for Gutenberg-like pages.
  */
 /**
  * Breakpoint mixins

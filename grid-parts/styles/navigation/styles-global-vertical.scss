@@ -1,5 +1,6 @@
 .gridd-nav-vertical,
-.toggled-on+.gridd-nav-horizontal {
+.toggled-on + .gridd-nav-horizontal {
+
 	.gridd-navigation {
 
 		.gridd-toggle {
@@ -12,14 +13,15 @@
 
 		.current-page-ancestor,
 		.current-menu-ancestor {
+
 			ul {
 				display: block;
-            }
+			}
 
-            > a {
-                opacity: .8;
-                width: 100%;
-            }
+			> a {
+				opacity: 0.8;
+				width: 100%;
+			}
 
 			> .gridd-toggle {
 				display: none;

@@ -8,7 +8,7 @@
 
 	.woocommerce-MyAccount-navigation {
 		font-size: var(--fs-1d-ts-tr);
-		border-bottom: 1px solid rgba(0, 0, 0, .2);
+		border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 		margin-bottom: 2em;
 
 		ul {
@@ -24,6 +24,7 @@
 			padding: 0;
 
 			&.is-active {
+
 				a {
 					color: var(--lc, #0f5e97);
 					border-bottom: 2px solid var(--lc, #0f5e97);
@@ -33,13 +34,9 @@
 
 		a {
 			display: block;
-			padding: .25em .7em;
+			padding: 0.25em 0.7em;
 			color: var(--cl, #000);
 			text-decoration: none;
-
-			&:hover,
-			&:focus {
-			}
 		}
 	}
 }

@@ -62,7 +62,7 @@ body {
   box-shadow: 0 0 2em 0;
   background: var(--bg);
 }
-.gridd-nav-handheld-btn:before, .gridd-nav-handheld-btn:after {
+.gridd-nav-handheld-btn::before, .gridd-nav-handheld-btn::after {
   display: none;
 }
 

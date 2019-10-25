@@ -1,7 +1,7 @@
 .gridd-rest-api-placeholder {
   display: block;
 }
-.gridd-rest-api-placeholder:before, .gridd-rest-api-placeholder:after {
+.gridd-rest-api-placeholder::before, .gridd-rest-api-placeholder::after {
   content: "";
   display: block;
   width: 100%;
@@ -10,7 +10,7 @@
   background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0) 100%);
   animation: rest-api-placeholder1 2.5s ease-in-out infinite;
 }
-.gridd-rest-api-placeholder:after {
+.gridd-rest-api-placeholder::after {
   width: 50%;
   animation: rest-api-placeholder2 2.5s ease-in-out infinite;
 }

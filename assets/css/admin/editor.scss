@@ -1,3 +1,4 @@
+/* stylelint-disable selector-type-no-unknown */
 @import "../core/base.scss";
 @import "../blocks/audio.scss";
 @import "../blocks/button.scss";
@@ -120,6 +121,7 @@
 	}
 
 	.wp-block-cover {
+
 		.wp-block-cover-text {
 			font-size: var(--fs-1x-ts-tr);
 		}
@@ -132,12 +134,14 @@
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce {
+
 	a {
 		color: var(--lc, #0f5e97);
 	}
 }
 
 .wp-block {
+
 	&:not([data-align="full"]) {
 		max-width: var(--mw-c, 700px);
 	}

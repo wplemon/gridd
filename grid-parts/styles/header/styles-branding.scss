@@ -14,6 +14,7 @@ a.custom-logo-link:active {
 	align-items: var(--va, center);
 
 	&.inline {
+
 		.site-title {
 			padding-left: calc(var(--epd, 0.5) * 1em);
 			padding-right: calc(var(--epd, 0.5) * 1em);
@@ -23,7 +24,7 @@ a.custom-logo-link:active {
 	&.vertical {
 		flex-wrap: wrap;
 
-		>* {
+		> * {
 			display: flex;
 			width: 100%;
 			justify-content: var(--ha, left);
@@ -65,6 +66,7 @@ a.custom-logo-link:active {
 
 	a {
 		border-bottom-width: 0;
+
 		&:hover {
 			outline: none;
 			border-bottom-width: 0;

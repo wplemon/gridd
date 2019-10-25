@@ -10,7 +10,7 @@
 		bottom: 0;
 		transform: translateY(100%);
 		background-color: var(--bg, #fff);
-		box-shadow: 0 0 5px 0 rgba(0, 0, 0, .16);
+		box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.16);
 		width: 15em;
 		max-width: 350px;
 		z-index: 9; // IE11
@@ -39,6 +39,17 @@
 
 			svg {
 				fill: var(--cl, #000);
+			}
+
+			&:hover,
+			&:focus,
+			&.focus,
+			&.toggled-on {
+				color: var(--acl, #0f5e97);
+
+				svg {
+					fill: var(--acl, #0f5e97);
+				}
 			}
 		}
 
@@ -84,42 +95,27 @@
 			}
 		}
 
-		&.gridd-nav-toggle-boxed {
-
-			&:hover,
-			&:focus,
-			&.focus,
-			&.toggled-on {
-				color: var(--acl, #0f5e97);
-
-				svg {
-					fill: var(--acl, #0f5e97);
-				}
-			}
-		}
-
 		&.toggled-on {
-			~nav {
-				display: block;
 
-				.gridd-sticky & {
-					// max-height: 60vh;
-					// overflow-y: auto;
-				}
+			~ nav {
+				display: block;
 			}
 
 			.icon {
+
 				svg {
 					transform: rotate(360deg);
 				}
 
 				&.open {
+
 					svg {
 						opacity: 0;
 					}
 				}
 
 				&.close {
+
 					svg {
 						opacity: 1;
 					}
@@ -133,6 +129,7 @@
 		&-top-left,
 		&-top-center,
 		&-top-right {
+
 			.inner {
 				align-items: flex-start;
 			}
@@ -141,6 +138,7 @@
 		&-center-left,
 		&-center-center,
 		&-center-right {
+
 			.inner {
 				align-items: center;
 			}
@@ -149,6 +147,7 @@
 		&-bottom-left,
 		&-bottom-center,
 		&-bottom-right {
+
 			.inner {
 				align-items: flex-end;
 			}
@@ -157,6 +156,7 @@
 		&-top-left,
 		&-center-left,
 		&-bottom-left {
+
 			.inner {
 				justify-content: flex-start;
 			}
@@ -165,6 +165,7 @@
 		&-top-center,
 		&-center-center,
 		&-bottom-center {
+
 			.inner {
 				justify-content: center;
 			}
@@ -173,6 +174,7 @@
 		&-top-right,
 		&-center-right,
 		&-bottom-right {
+
 			.inner {
 				justify-content: flex-end;
 			}

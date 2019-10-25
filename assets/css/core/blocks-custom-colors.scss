@@ -1,6 +1,7 @@
+/* stylelint-disable at-rule-no-unknown */
 @import "../variables";
 
-$colorNames: 'pale-pink' 'vivid-red' 'luminous-vivid-orange' 'luminous-vivid-amber' 'light-green-cyan' 'vivid-green-cyan' 'pale-cyan-blue' 'vivid-cyan-blue' 'very-light-gray' 'cyan-bluish-gray' 'very-dark-gray' 'theme-cyan' 'theme-white' 'blue-gray' 'theme-black';
+$colorNames: "pale-pink" "vivid-red" "luminous-vivid-orange" "luminous-vivid-amber" "light-green-cyan" "vivid-green-cyan" "pale-cyan-blue" "vivid-cyan-blue" "very-light-gray" "cyan-bluish-gray" "very-dark-gray" "theme-cyan" "theme-white" "blue-gray" "theme-black";
 
 $colors: (
 	pale-pink: #f78da7,
@@ -14,14 +15,14 @@ $colors: (
 	very-light-gray: #eee,
 	cyan-bluish-gray: #abb8c3,
 	very-dark-gray: #313131,
-	theme-cyan: #26C6DA,
+	theme-cyan: #26c6da,
 	theme-white: #fff,
-	blue-gray: #546E7A,
+	blue-gray: #546e7a,
 	theme-black: #000
 );
 
 @mixin griddColorSet( $colorName ) {
-	color: map-get( $colors, $colorName);
+	color: map-get($colors, $colorName);
 
 	&:hover,
 	&:focus,
@@ -30,23 +31,27 @@ $colors: (
 	&:focus:hover,
 	&:active:hover,
 	&:visited:hover {
-		color: map-get( $colors, $colorName);
+		color: map-get($colors, $colorName);
 	}
 }
 
 @mixin griddBackgroundColorSet( $colorName ) {
-	background-color: map-get( $colors, $colorName);
+	background-color: map-get($colors, $colorName);
 }
 
 @mixin griddBorderColorSet( $colorName ) {
-	border-color: map-get( $colors, $colorName);
+	border-color: map-get($colors, $colorName);
 }
 
 @each $colorName in $colorNames {
+
 	.has-#{$colorName}-color.has-#{$colorName}-color {
+
 		@include griddColorSet( $colorName );
 	}
+
 	.has-#{$colorName}-background-color.has-#{$colorName}-background-color {
+
 		@include griddBackgroundColorSet( $colorName );
 		@include griddBorderColorSet( $colorName );
 	}

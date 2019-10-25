@@ -54,7 +54,7 @@
   background-color: #0a2e52;
   border-color: #0a2e52;
 }
-.compose-mode .vc_control-btn-append:before {
+.compose-mode .vc_control-btn-append::before {
   border-bottom-color: #e65722;
 }
 

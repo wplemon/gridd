@@ -1,9 +1,12 @@
+/* stylelint-disable at-rule-no-unknown */
 @import "../mixins";
 
 .widget_product_categories {
+
 	@include widget-list;
 
 	.current-cat {
+
 		a {
 			border-color: currentColor;
 		}

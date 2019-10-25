@@ -1,3 +1,4 @@
+/* stylelint-disable at-rule-no-unknown */
 // @import "block-library/colors";
 // @import "block-library/variables";
 // @import "block-library/animations";
@@ -13,6 +14,7 @@
 
 // Alignments.
 .wp-block-button {
+
 	&.aligncenter {
 		text-align: center;
 	}
@@ -25,6 +27,7 @@
 // Generic styles.
 .wp-block-button__link,
 .wp-block-button__link:visited {
+
 	@include button();
 
 	&:not(.has-text-color) {
@@ -58,6 +61,7 @@
 
 	.wp-block-button__link,
 	.wp-block-button__link:visited {
+
 		&:not(.has-background) {
 			border-color: var(--cl);
 			background: var(--cl);

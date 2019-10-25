@@ -35,16 +35,18 @@ nav.breadcrumbs {
 	}
 
 	.breadcrumbs__crumb {
+
 		+ .breadcrumbs__crumb {
-			&:before {
-				content: '\203A';
+
+			&::before {
+				content: "\203A";
 				opacity: 0.5;
-				padding: 0 .75em;
+				padding: 0 0.75em;
 			}
 		}
 
 		&:last-child {
-			opacity: .7;
+			opacity: 0.7;
 		}
 	}
 }

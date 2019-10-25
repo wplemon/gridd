@@ -4,7 +4,7 @@
 .woocommerce .widget_price_filter .ui-slider .ui-slider-range,
 .woocommerce .widget_price_filter .ui-slider .ui-slider-handle {
   background-color: currentColor;
-  margin-top: calc(2px - .25em);
+  margin-top: calc(2px - 0.25em);
 }
 .woocommerce .widget_price_filter .ui-slider .ui-slider-range {
   height: 0.5em;

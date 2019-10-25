@@ -11,26 +11,26 @@ article.gridd-post-mode-card {
 		max-width: var(--mw-c, 700px);
 	}
 
-	>* {
+	> * {
 		grid-column-start: 2;
 		grid-column-end: 3;
 		width: 100%;
 	}
 
-	>.entry-header {
+	> .entry-header {
 		grid-column-start: 1;
 		grid-column-end: 3;
 	}
 
-	>.post-thumbnail {
+	> .post-thumbnail {
 		grid-column-start: 1;
 		grid-column-end: 2;
 		grid-row-start: 2;
 		grid-row-end: 8;
 	}
 
-	>.entry-category,
-	>.entry-tags {
+	> .entry-category,
+	> .entry-tags {
 		font-size: var(--fs-1d-ts-tr);
 	}
 }

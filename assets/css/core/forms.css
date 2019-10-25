@@ -1,3 +1,5 @@
+/* stylelint-disable at-rule-no-unknown */
+/* stylelint-disable at-rule-no-unknown */
 input[type=text],
 input[type=email],
 input[type=url],
@@ -56,7 +58,6 @@ textarea {
 }
 .search-form > label > input.search-field {
   display: inline-block;
-  width: calc(100% - 1em);
   background: none;
   border: none;
   border-bottom: 1px solid currentColor;

@@ -4,9 +4,9 @@
   grid-gap: 1em;
   grid-template-columns: repeat(auto-fit, minmax(var(--woo-cpmw, 250px), 1fr));
 }
-.woocommerce .products ul:before, .woocommerce .products ul:after,
-.woocommerce ul.products:before,
-.woocommerce ul.products:after {
+.woocommerce .products ul::before, .woocommerce .products ul::after,
+.woocommerce ul.products::before,
+.woocommerce ul.products::after {
   display: none;
 }
 .woocommerce .products ul li.product,
@@ -45,10 +45,10 @@
   outline: none;
   background-color: #333;
 }
-.woocommerce div.product div.images .woocommerce-product-gallery__trigger:hover:before, .woocommerce div.product div.images .woocommerce-product-gallery__trigger:hover:after {
+.woocommerce div.product div.images .woocommerce-product-gallery__trigger:hover::before, .woocommerce div.product div.images .woocommerce-product-gallery__trigger:hover::after {
   border-color: #fff;
 }
-.woocommerce div.product div.images .woocommerce-product-gallery__trigger:hover:after {
+.woocommerce div.product div.images .woocommerce-product-gallery__trigger:hover::after {
   background: #fff;
 }
 .woocommerce div.product div.images .flex-control-thumbs {

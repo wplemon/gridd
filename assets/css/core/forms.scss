@@ -41,12 +41,11 @@ textarea {
 	width: 100%;
 	display: flex;
 
-	>label {
+	> label {
 		width: 100%;
 
-		>input.search-field {
+		> input.search-field {
 			display: inline-block;
-			width: calc(100% - 1em);
 			background: none;
 			border: none;
 			border-bottom: 1px solid currentColor;
@@ -54,20 +53,15 @@ textarea {
 			// margin-left: -1em;
 			// padding-left: 1.5em;
 			// transition: all 200ms;
-			opacity: .7;
+			opacity: 0.7;
 			width: 100%;
-
-			.rtl & {
-				// padding-right: 1.5em;
-				// padding-left: .5em;
-			}
 
 			&:hover,
 			&:focus {
 				opacity: 1;
 
-				+.gridd-search-icon {
-					opacity: .7;
+				+ .gridd-search-icon {
+					opacity: 0.7;
 				}
 			}
 		}
@@ -78,7 +72,7 @@ textarea {
 		height: 100%;
 		display: inline-block;
 		float: left;
-		opacity: .5;
+		opacity: 0.5;
 		fill: currentColor;
 		// transition: all 400ms;
 
@@ -95,5 +89,5 @@ textarea {
 
 .search-submit.search-submit {
 	border: none;
-	padding: 0 .5em;
+	padding: 0 0.5em;
 }

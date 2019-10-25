@@ -3,8 +3,8 @@ html {
 }
 
 *,
-*:after,
-*:before {
+*::after,
+*::before {
   box-sizing: inherit;
 }
 
@@ -35,7 +35,7 @@ li > ul {
 }
 
 dt {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 dd {
