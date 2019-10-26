@@ -149,10 +149,10 @@ new \Kirki\Field\ReactColor(
 				'property' => '--bg',
 			],
 		],
-		'choices'     => [
-			'formComponent' => 'ChromePicker',
+		'choices'   => [
+			'formComponent' => 'TwitterPicker',
+			'colors'        => \Gridd\Theme::get_colorpicker_palette( 'background' ),
 		],
-		'priority'    => 70,
 	]
 );
 
