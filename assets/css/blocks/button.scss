@@ -30,8 +30,12 @@
 
 	@include button();
 
+	&:not(.has-background) {
+		--element-background-color: var(--cl);
+	}
+
 	&:not(.has-text-color) {
-		color: var(--bg);
+		--element-color: var(--bg);
 	}
 }
 
@@ -42,36 +46,20 @@
 		background-color: transparent;
 		border-color: currentColor;
 
-		&:not(.has-text-color) {
-			color: currentColor;
-		}
-
-		&:hover {
-			box-shadow: 0 0 0 1px var(--bg), 0 0 0 3px currentColor;
-		}
-
+		&:hover,
 		&:focus,
 		&:active {
-			box-shadow: 0 0 0 1px var(--bg), 0 0 2px 3px currentColor;
+			background: var(--element-color);
+			color: var(--element-background-color);
+			border-color: var(--element-color);
 		}
-	}
-}
-
-.wp-block-button:not(.is-style-outline) {
-
-	.wp-block-button__link,
-	.wp-block-button__link:visited {
 
 		&:not(.has-background) {
-			border-color: var(--cl);
-			background: var(--cl);
+			--element-background-color: var(--bg);
 		}
 
-		// &:focus,
-		// &:active {
-		// 	background: var(--bg);
-		// 	color: var(--cl);
-		// 	box-shadow: none;
-		// }
+		&:not(.has-text-color) {
+			--element-color: var(--cl);
+		}
 	}
 }
