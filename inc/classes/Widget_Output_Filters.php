@@ -103,6 +103,10 @@ class Widget_Output_Filters {
 			call_user_func_array( $original_callback, $original_callback_params );
 			$widget_output = ob_get_clean();
 
+			if ( false !== strpos( $widget_output, 'widget widget_nav_menu' ) ) {
+				$widget_output = str_replace( 'widget widget_nav_menu', 'widget widget_nav_menu gridd-nav-vertical', $widget_output );
+			}
+
 			/**
 			 * Filter the widget's output.
 			 *
