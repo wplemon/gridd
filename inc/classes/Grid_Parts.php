@@ -27,6 +27,19 @@ class Grid_Parts {
 	protected $parts;
 
 	/**
+	 * An array of our ordered parts.
+	 *
+	 * Prevents running the ordering query & loops multiple times
+	 * and improves performance.
+	 *
+	 * @static
+	 * @access protected
+	 * @since 1.2.0
+	 * @var array
+	 */
+	private static $ordered_parts;
+
+	/**
 	 * A single instance of this object.
 	 *
 	 * @static
@@ -129,13 +142,19 @@ class Grid_Parts {
 	 */
 	public function get_parts() {
 
+		if ( self::$ordered_parts ) {
+			return self::$ordered_parts;
+		}
+
 		$order     = $this->get_smart_order();
 		$unordered = [];
 		$ordered   = [];
+
 		// Add the ID as key. Makes next step easier/faster.
 		foreach ( $this->parts as $part ) {
 			$unordered[ $part['id'] ] = $part;
 		}
+
 		// Put the grid-parts in their right order.
 		foreach ( $order as $item ) {
 			if ( isset( $unordered[ $item ] ) ) {
@@ -143,12 +162,15 @@ class Grid_Parts {
 				unset( $unordered[ $item ] );
 			}
 		}
+
 		// Add the remaining items.
 		foreach ( $unordered as $item ) {
 			$ordered[] = $item;
 		}
 
-		return apply_filters( 'gridd_get_parts', $this->parts );
+		self::$ordered_parts = $ordered;
+
+		return apply_filters( 'gridd_get_parts', self::$ordered_parts );
 	}
 
 	/**
@@ -256,6 +278,11 @@ class Grid_Parts {
 				foreach ( $args['cells'] as $cell ) {
 					$score = 1000 * $cell[0];
 					$score += $rtl ? 100 - $cell[1] : $cell[1];
+
+					// Change score of footer so it gets moved to last position.
+					if ( 'footer' === $part ) {
+						$score *= 100;
+					}
 					$grid[] = [
 						'id'     => $part,
 						'score'  => $score,
@@ -266,7 +293,7 @@ class Grid_Parts {
 			}
 		}
 
-		if ( 'gridd_gridd' === $theme_mod ) {
+		if ( 'gridd_grid' === $theme_mod ) {
 
 			// Get the content columns.
 			$content_columns = [];
@@ -279,6 +306,11 @@ class Grid_Parts {
 			// Get items that live in the main columns as the main content area.
 			$main_area_items = [];
 			foreach ( $grid as $item ) {
+
+				// Exclude footer.
+				if ( 'footer' === $item['id'] ) {
+					continue;
+				}
 				if ( \in_array( $item['column'], $content_columns ) ) {
 					$main_area_items[] = $item;
 				}
