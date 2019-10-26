@@ -52,5 +52,15 @@ $accentColor: var(--bg, #fff);
 				}
 			}
 		}
+
+		a {
+
+			&:hover,
+			&:focus,
+			&:active {
+				color: var(--bg);
+				background: var(--cl);
+			}
+		}
 	}
 }

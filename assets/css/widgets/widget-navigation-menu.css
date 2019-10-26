@@ -108,5 +108,9 @@
   border-bottom: 1px solid currentColor;
   opacity: 0.2;
 }
+.gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a:hover, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a:focus, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a:active {
+  color: var(--bg);
+  background: var(--cl);
+}
 
 /*# sourceMappingURL=widget-navigation-menu.css.map */
