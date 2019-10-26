@@ -125,8 +125,13 @@ Customizer::add_field(
 		'label'             => esc_html__( 'Copyright Text', 'gridd' ),
 		'description'       => esc_html__( 'The text for your copyright area (accepts HTML).', 'gridd' ),
 		'section'           => 'grid_part_details_footer_copyright',
-		/* translators: 1: CMS name, i.e. WordPress. 2: Theme name, 3: Theme author. */
-		'default'           => sprintf( __( 'Proudly powered by %1$s | Theme: %2$s by %3$s.', 'gridd' ), '<a href="https://wordpress.org/">WordPress</a>', 'Gridd', '<a href="https://wplemon.com/" rel="nofollow">wplemon.com</a>' ),
+		'default'           => sprintf(
+			/* translators: 1: CMS name, i.e. WordPress. 2: Theme name, 3: Theme author. */
+			__( 'Proudly powered by %1$s | Theme: %2$s by %3$s.', 'gridd' ),
+			'<a href="https://wordpress.org/">WordPress</a>',
+			'<a href="https://wplemon.com/gridd">Gridd</a>',
+			'<a href="https://wplemon.com/" rel="nofollow">wplemon.com</a>'
+		),
 		'transport'         => 'postMessage',
 		'choices'           => [
 			'language' => 'html',
