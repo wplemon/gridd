@@ -325,6 +325,8 @@ class Grid_Parts {
 					$all_parts_ordered[] = $item['id'];
 				}
 			}
+
+			$all_parts_ordered = apply_filters( 'gridd_smart_grid_main_parts_order', $all_parts_ordered );
 		}
 
 		// Sort items in all our grid-parts.

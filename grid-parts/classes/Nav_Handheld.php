@@ -38,6 +38,7 @@ class Nav_Handheld extends Grid_Part {
 		add_action( 'widgets_init', [ $this, 'register_sidebar' ] );
 		add_action( 'gridd_the_grid_part', [ $this, 'render' ] );
 		add_action( 'gridd_the_partial', [ $this, 'the_partial' ] );
+		add_filter( 'gridd_smart_grid_main_parts_order', [ $this, 'grid_parts_order' ] );
 
 		// Add script.
 		add_filter( 'gridd_footer_inline_script_paths', [ $this, 'footer_inline_script_paths' ] );
@@ -125,6 +126,26 @@ class Nav_Handheld extends Grid_Part {
 	public function footer_inline_script_paths( $paths ) {
 		$paths[] = get_theme_file_path( 'grid-parts/scripts/nav-handheld.min.js' );
 		return $paths;
+	}
+
+	/**
+	 * Change the position of the grid-part and put it right after the header.
+	 *
+	 * @access public
+	 * @since 1.2.0
+	 * @param array $parts An array of our ordered grid-parts.
+	 * @return array
+	 */
+	public function grid_parts_order( $parts ) {
+		$final_parts = [];
+		foreach ( $parts as $part ) {
+			$final_parts[] = $part;
+			if ( 'header' === $part ) {
+				$final_parts[] = 'nav-handheld';
+			}
+		}
+
+		return $final_parts;
 	}
 }
 
