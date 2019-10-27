@@ -70,6 +70,7 @@ if ( ! Theme::is_plus_active() ) {
 
 // Add customizer sections & settings.
 require_once get_template_directory() . '/inc/customizer/grid.php';
+require_once get_template_directory() . '/inc/customizer/color-options.php';
 require_once get_template_directory() . '/inc/customizer/typography.php';
 require_once get_template_directory() . '/inc/customizer/mobile.php';
 require_once get_template_directory() . '/inc/customizer/edd.php';

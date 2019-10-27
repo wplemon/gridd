@@ -202,7 +202,7 @@
 					return;
 				}
 
-				wp.customize.control( 'gridd_links_color' ).section( 'gridd_typography' );
+				wp.customize.control( 'gridd_links_color' ).section( 'color_options' );
 				mainLinksHue = wp.customize.control( 'gridd_links_color' ).getHue();
 
 				wp.customize.control.each( function( control ) {
