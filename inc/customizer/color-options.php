@@ -20,6 +20,7 @@ new \WPLemon\Field\PaletteBuilder(
 	[
 		'settings'          => 'custom_color_palette',
 		'label'             => esc_attr__( 'Color Palette', 'gridd' ),
+		'description'       => esc_html__( 'Colors selected here will affect the palette available in all controls, as well as the palette in the WordPress editor.', 'gridd' ),
 		'section'           => 'color_options',
 		'default'           => \Gridd\Theme::get_color_palette( true ),
 		'priority'          => -40,

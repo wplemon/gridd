@@ -510,11 +510,11 @@ class Theme {
 				'slug'  => 'custom-color-2',
 				'color' => '#f5f7f9'
 			],
-			[
-				'name'  => '',
-				'slug'  => 'custom-color-3',
-				'color' => '#f4f4e1'
-			],
+			// [
+			// 	'name'  => '',
+			// 	'slug'  => 'custom-color-3',
+			// 	'color' => '#f4f4e1'
+			// ],
 			[
 				'name'  => '',
 				'slug'  => 'custom-color-4',
@@ -525,21 +525,21 @@ class Theme {
 				'slug'  => 'very-light-gray',
 				'color' => '#eeeeee',
 			],
-			[
-				'name'  => esc_html__( 'Cyan Bluish Gray', 'gridd' ),
-				'slug'  => 'cyan-bluish-gray',
-				'color' => '#abb8c3',
-			],
+			// [
+			// 	'name'  => esc_html__( 'Cyan Bluish Gray', 'gridd' ),
+			// 	'slug'  => 'cyan-bluish-gray',
+			// 	'color' => '#abb8c3',
+			// ],
 			[
 				'name'  => esc_html__( 'Very Dark Gray', 'gridd' ),
 				'slug'  => 'very-dark-gray',
 				'color' => '#313131',
 			],
-			[
-				'name'  => '',
-				'slug'  => 'custom-color-5',
-				'color' => '#1a1a1d'
-			],
+			// [
+			// 	'name'  => '',
+			// 	'slug'  => 'custom-color-5',
+			// 	'color' => '#1a1a1d'
+			// ],
 			[
 				'name'  => '',
 				'slug'  => 'custom-color-6',
