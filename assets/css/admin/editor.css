@@ -17,6 +17,7 @@
   --gridd-content-padding-top: var(--pd-t);
   --gridd-content-padding-bottom: var(--pd-b);
   --gridd-grid-max-width: var(--mw);
+  --acl: var(--lc);
   --fs-4x-ts-tr: calc(var(--ts) * var(--ts) * var(--ts) * var(--ts) * var(--fs-tr));
   --fs-3x-ts-tr: calc(var(--ts) * var(--ts) * var(--ts) * var(--fs-tr));
   --fs-2x-ts-tr: calc(var(--ts) * var(--ts) * var(--fs-tr));

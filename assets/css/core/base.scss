@@ -22,6 +22,9 @@
 	--gridd-content-padding-bottom: var(--pd-b);
 	--gridd-grid-max-width: var(--mw);
 
+	// fallback for menus.
+	--acl: var(--lc);
+
 	// Calculate font-sizes:
 	--fs-4x-ts-tr: calc(var(--ts) * var(--ts) * var(--ts) * var(--ts) * var(--fs-tr));
 	--fs-3x-ts-tr: calc(var(--ts) * var(--ts) * var(--ts) * var(--fs-tr));

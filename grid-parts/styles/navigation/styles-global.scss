@@ -58,11 +58,11 @@ nav {
 
 	li:hover .gridd-toggle,
 	.gridd-toggle[aria-expanded="true"] {
-		background: var(--cl);
+		color: var(--acl);
 
 		svg,
 		path {
-			fill: var(--bg);
+			fill: var(--acl);
 		}
 	}
 
