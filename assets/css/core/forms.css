@@ -90,6 +90,8 @@ textarea {
 .search-submit.search-submit {
   border: none;
   padding: 0 0.5em;
+  --element-color: var(--cl);
+  --element-background-color: var(--bg);
 }
 
 /*# sourceMappingURL=forms.css.map */
