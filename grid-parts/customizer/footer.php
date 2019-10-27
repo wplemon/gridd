@@ -16,6 +16,7 @@ Customizer::add_section(
 	[
 		'title'    => esc_html__( 'Footer', 'gridd' ),
 		'priority' => -60,
+		'panel'    => 'layout_blocks',
 	]
 );
 

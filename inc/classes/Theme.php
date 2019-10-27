@@ -129,6 +129,7 @@ class Theme {
 		add_action( 'after_setup_theme', [ $this, 'setup' ] );
 		add_action( 'after_setup_theme', [ $this, 'content_width' ], 0 );
 		add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_block_editor_assets' ], 1, 1 );
+		add_action( 'wp_head', [ $this, 'add_color_palette_styles' ] );
 	}
 
 	/**
@@ -501,22 +502,22 @@ class Theme {
 		$defaults = [
 			[
 				'name'  => '',
-				'slug'  => 'custom-color-ffffff',
+				'slug'  => 'custom-color-1',
 				'color' => '#ffffff'
 			],
 			[
 				'name'  => '',
-				'slug'  => 'custom-color-f5f7f9',
+				'slug'  => 'custom-color-2',
 				'color' => '#f5f7f9'
 			],
 			[
 				'name'  => '',
-				'slug'  => 'custom-color-f4f4e1',
+				'slug'  => 'custom-color-3',
 				'color' => '#f4f4e1'
 			],
 			[
 				'name'  => '',
-				'slug'  => 'custom-color-f0f3f6',
+				'slug'  => 'custom-color-4',
 				'color' => '#f0f3f6'
 			],
 			[
@@ -536,12 +537,12 @@ class Theme {
 			],
 			[
 				'name'  => '',
-				'slug'  => 'custom-color-1a1a1d',
+				'slug'  => 'custom-color-5',
 				'color' => '#1a1a1d'
 			],
 			[
 				'name'  => '',
-				'slug'  => 'custom-color-000000',
+				'slug'  => 'custom-color-6',
 				'color' => '#000000'
 			],
 			[
@@ -595,6 +596,36 @@ class Theme {
 			$palette = json_decode( $palette );
 		}
 		return $palette;
+	}
+
+	/**
+	 * Prints styles for our color-palettes.
+	 *
+	 * @access public
+	 * @since 1.2.0
+	 * @return void
+	 */
+	public function add_color_palette_styles() {
+		$palette = self::get_color_palette();
+
+		$style = Style::get_instance( 'blocks-styles' );
+
+		// Add the css-variables.
+		$style->add_string( ':root{' );
+		foreach ( $palette as $item ) {
+			$style->add_string( '--' . $item['slug'] . ':' . esc_html( $item['color'] ) . ';' );
+		}
+		$style->add_string( '}' );
+
+		// Add color & background-color styles.
+		foreach ( $palette as $item ) {
+			$style->add_string( '.has-' . $item['slug'] . '-color.has-' . $item['slug'] . '-color{--element-color:var(--' . $item['slug'] . ');}' );
+			$style->add_string( '.has-' . $item['slug'] . '-background-color.has-' . $item['slug'] . '-background-color{--element-background-color:var(--' . $item['slug'] . ');}' );
+		}
+
+		// Add globals.
+		$style->add_string( '.has-text-color{color:var(--element-color);}' );
+		$style->add_string( '.has-background{background-color:var(--element-background-color);border-color:var(--element-background-color);}' );
 	}
 }
 

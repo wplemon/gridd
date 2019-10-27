@@ -29,3 +29,14 @@ assets/css/blocks/block-library/**/*.snap
 assets/css/blocks/block-library/**/*.native.scss
 assets/css/blocks/block-library/style.scss
 assets/css/blocks/block-library/theme.scss
+packages/wplemon/control-palette-builder/src/PaletteBuilderForm.js
+packages/wplemon/control-palette-builder/src/PaletteBuilderControl.js
+packages/wplemon/control-palette-builder/src/index.js
+packages/wplemon/control-palette-builder/webpack.config.js
+packages/wplemon/control-palette-builder/package.json
+packages/wplemon/control-palette-builder/composer.json
+packages/wplemon/control-palette-builder/.gitignore
+packages/wplemon/control-palette-builder/.gitattributes
+packages/wplemon/control-palette-builder/.eslintrc
+packages/wplemon/control-palette-builder/.eslintignore
+packages/wplemon/control-palette-builder/.babelrc

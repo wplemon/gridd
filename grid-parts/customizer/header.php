@@ -32,6 +32,7 @@ Customizer::add_section(
 	[
 		'title'    => esc_html__( 'Header', 'gridd' ),
 		'priority' => -80,
+		'panel'    => 'layout_blocks',
 	]
 );
 

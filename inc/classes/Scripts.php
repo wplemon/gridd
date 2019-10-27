@@ -260,7 +260,6 @@ class Scripts {
 
 		// Add blocks styles.
 		$style = Style::get_instance( 'blocks-styles' );
-		$style->add_file( get_theme_file_path( 'assets/css/core/blocks-custom-colors.min.css' ) );
 		$blocks = $this->get_blocks();
 		foreach ( $blocks as $block ) {
 			$block = str_replace( 'core/', '', $block );
