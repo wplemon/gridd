@@ -40,6 +40,24 @@ Customizer::add_section(
 	]
 );
 
+new \WPLemon\Field\PaletteBuilder(
+	[
+		'settings'        => 'custom_color_palette',
+		'label'           => esc_attr__( 'Overlay Color', 'gridd' ),
+		'section'         => 'gridd_grid',
+		'default'         => \Gridd\Theme::get_color_palette( true ),
+		'output'          => [
+			[
+				'element'  => ':root',
+				'property' => '--im-hoc',
+			],
+		],
+		// 'transport'       => 'postMessage',
+		'priority'        => -40,
+		'sanitize_callback' => function( $val ) {return $val; },
+	]
+);
+
 new \Kirki\Field\RadioButtonset(
 	[
 		'settings'    => 'target_color_compliance',

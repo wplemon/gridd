@@ -100,7 +100,7 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 			],
 			'choices'   => [
 				'formComponent' => 'TwitterPicker',
-				'colors'        => \Gridd\Theme::get_colorpicker_palette( 'all' ),
+				'colors'        => \Gridd\Theme::get_colorpicker_palette(),
 			],
 		]
 	);

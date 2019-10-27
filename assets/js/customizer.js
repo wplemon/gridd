@@ -155,6 +155,32 @@
 		});
 
 		/**
+		 * Handle palette changes.
+		 *
+		 * @since 1.2.0
+		 */
+		wp.customize( 'custom_color_palette', function( value ) {
+			value.bind( function( to ) {
+				var colors = [];
+				if ( 'string' === typeof to ) {
+					to = JSON.parse( to.replace( /&#39/g, '"' ) );
+				}
+				to.forEach( function( item ) {
+					colors.push( item.color );
+				});
+
+				wp.customize.control.each( function( control ) {
+					if ( 'kirki-react-color' === control.params.type ) {
+						if ( 'TwitterPicker' === control.params.choices.formComponent ) {
+							control.params.choices.colors = colors;
+							control.renderContent();
+						}
+					}
+				});
+			});
+		});
+
+		/**
 		 * Move the main links-color control to the typography setting if needed.
 		 *
 		 * @since 1.2.0

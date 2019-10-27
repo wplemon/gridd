@@ -51,7 +51,7 @@ function gridd_add_footer_widget_area_options( $id ) {
 			],
 			'choices'   => [
 				'formComponent' => 'TwitterPicker',
-				'colors'        => \Gridd\Theme::get_colorpicker_palette( 'all' ),
+				'colors'        => \Gridd\Theme::get_colorpicker_palette(),
 			],
 		]
 	);

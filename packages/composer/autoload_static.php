@@ -33,13 +33,15 @@ class ComposerStaticInit732835aa44a0bf9e82f02a841da89611
         ),
         'WPLemon\\Field\\' => 
         array (
-            0 => __DIR__ . '/..' . '/wplemon/control-wcag-auto-linkcolor/src/Field',
-            1 => __DIR__ . '/..' . '/wplemon/control-wcag-auto-textcolor/src/Field',
+            0 => __DIR__ . '/..' . '/wplemon/control-palette-builder/src/Field',
+            1 => __DIR__ . '/..' . '/wplemon/control-wcag-auto-linkcolor/src/Field',
+            2 => __DIR__ . '/..' . '/wplemon/control-wcag-auto-textcolor/src/Field',
         ),
         'WPLemon\\Control\\' => 
         array (
-            0 => __DIR__ . '/..' . '/wplemon/control-wcag-auto-linkcolor/src/Control',
-            1 => __DIR__ . '/..' . '/wplemon/control-wcag-auto-textcolor/src/Control',
+            0 => __DIR__ . '/..' . '/wplemon/control-palette-builder/src/Control',
+            1 => __DIR__ . '/..' . '/wplemon/control-wcag-auto-linkcolor/src/Control',
+            2 => __DIR__ . '/..' . '/wplemon/control-wcag-auto-textcolor/src/Control',
         ),
         'Kirki\\Util\\' => 
         array (

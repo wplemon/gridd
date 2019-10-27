@@ -73,7 +73,7 @@ new \Kirki\Field\ReactColor(
 		],
 		'choices'   => [
 			'formComponent' => 'TwitterPicker',
-			'colors'        => \Gridd\Theme::get_colorpicker_palette( 'all' ),
+			'colors'        => \Gridd\Theme::get_colorpicker_palette(),
 		],
 	]
 );

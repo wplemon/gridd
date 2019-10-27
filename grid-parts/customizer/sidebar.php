@@ -73,7 +73,7 @@ function gridd_sidebar_customizer_options( $id ) {
 			],
 			'choices'   => [
 				'formComponent' => 'TwitterPicker',
-				'colors'        => \Gridd\Theme::get_colorpicker_palette( 'background' ),
+				'colors'        => \Gridd\Theme::get_colorpicker_palette(),
 			],
 		]
 	);

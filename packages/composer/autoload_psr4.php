@@ -7,8 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'WPTRT\\Customize\\Control\\' => array($vendorDir . '/wptrt/control-color-alpha/src'),
-    'WPLemon\\Field\\' => array($vendorDir . '/wplemon/control-wcag-auto-linkcolor/src/Field', $vendorDir . '/wplemon/control-wcag-auto-textcolor/src/Field'),
-    'WPLemon\\Control\\' => array($vendorDir . '/wplemon/control-wcag-auto-linkcolor/src/Control', $vendorDir . '/wplemon/control-wcag-auto-textcolor/src/Control'),
+    'WPLemon\\Field\\' => array($vendorDir . '/wplemon/control-palette-builder/src/Field', $vendorDir . '/wplemon/control-wcag-auto-linkcolor/src/Field', $vendorDir . '/wplemon/control-wcag-auto-textcolor/src/Field'),
+    'WPLemon\\Control\\' => array($vendorDir . '/wplemon/control-palette-builder/src/Control', $vendorDir . '/wplemon/control-wcag-auto-linkcolor/src/Control', $vendorDir . '/wplemon/control-wcag-auto-textcolor/src/Control'),
     'Kirki\\Util\\' => array($vendorDir . '/kirki-framework/util/src'),
     'Kirki\\Settings\\' => array($vendorDir . '/kirki-framework/control-repeater/src/Settings'),
     'Kirki\\Module\\' => array($vendorDir . '/kirki-framework/module-css/src', $vendorDir . '/kirki-framework/module-editor-styles/src', $vendorDir . '/kirki-framework/module-field-dependencies/src', $vendorDir . '/kirki-framework/module-postmessage/src', $vendorDir . '/kirki-framework/module-preset/src', $vendorDir . '/kirki-framework/module-selective-refresh/src', $vendorDir . '/kirki-framework/module-tooltips/src', $vendorDir . '/kirki-framework/module-webfonts/src'),

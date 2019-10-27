@@ -263,67 +263,7 @@ class Theme {
 		}
 		add_theme_support( 'responsive-embeds' );
 		add_editor_style( 'assets/css/admin/editor.min.css' );
-
-		add_theme_support(
-			'editor-color-palette',
-			[
-				[
-					'name'  => esc_html__( 'Pale Pink', 'gridd' ),
-					'slug'  => 'pale-pink',
-					'color' => '#f78da7',
-				],
-				[
-					'name'  => esc_html__( 'Vivid Red', 'gridd' ),
-					'slug'  => 'vivid-red',
-					'color' => '#cf2e2e',
-				],
-				[
-					'name'  => esc_html__( 'Luminous Vivid Orange', 'gridd' ),
-					'slug'  => 'luminous-vivid-orange',
-					'color' => '#ff6900',
-				],
-				[
-					'name'  => esc_html__( 'Luminous Vivid Amber', 'gridd' ),
-					'slug'  => 'luminous-vivid-amber',
-					'color' => '#fcb900',
-				],
-				[
-					'name'  => esc_html__( 'Light Green Cyan', 'gridd' ),
-					'slug'  => 'light-green-cyan',
-					'color' => '#7bdcb5',
-				],
-				[
-					'name'  => esc_html__( 'Vivid Green Cyan', 'gridd' ),
-					'slug'  => 'vivid-green-cyan',
-					'color' => '#00d084',
-				],
-				[
-					'name'  => esc_html__( 'Pale Cyan Blue', 'gridd' ),
-					'slug'  => 'pale-cyan-blue',
-					'color' => '#8ed1fc',
-				],
-				[
-					'name'  => esc_html__( 'Vivid Cyan Blue', 'gridd' ),
-					'slug'  => 'vivid-cyan-blue',
-					'color' => '#0693e3',
-				],
-				[
-					'name'  => esc_html__( 'Very Light Gray', 'gridd' ),
-					'slug'  => 'very-light-gray',
-					'color' => '#eeeeee',
-				],
-				[
-					'name'  => esc_html__( 'Cyan Bluish Gray', 'gridd' ),
-					'slug'  => 'cyan-bluish-gray',
-					'color' => '#abb8c3',
-				],
-				[
-					'name'  => esc_html__( 'Very Dark Gray', 'gridd' ),
-					'slug'  => 'very-dark-gray',
-					'color' => '#313131',
-				],
-			]
-		);
+		add_theme_support( 'editor-color-palette', self::get_color_palette() );
 
 		// Starter Content.
 		add_theme_support(
@@ -539,19 +479,122 @@ class Theme {
 	 * @param string $context Can be one of background|accent|all.
 	 * @return array
 	 */
-	public static function get_colorpicker_palette( $context = 'all' ) {
-		$colors = [
-			'background' => [ '#FFFFFF', 'f5f7f9', '#f4f4e1', '#f0f3f6', '#323238', '#26262a', '#1a1a1d', '#000000' ],
-			'accent'     => [ '#FF6900', '#FCB900', '#7BDCB5', '#00D084', '#8ED1FC', '#0693E3', '#ABB8C3', '#EB144C', '#F78DA7', '#40234f' ],
-		];
-		switch ( $context ) {
-			case 'background':
-				return $colors['background'];
-			case 'accent':
-				return $colors['accent'];
-			default:
-				return array_merge( $colors['background'], $colors['accent'] );
+	public static function get_colorpicker_palette() {
+		$palette = self::get_color_palette();
+		$colors  = [];
+		foreach ( $palette as $item ) {
+			$colors[] = $item['color'];
 		}
+		return $colors;
+	}
+
+	/**
+	 * Gets the color-palette.
+	 *
+	 * @static
+	 * @access public
+	 * @since 1.2.0
+	 * @param bool $return_defaults Whether we just want to get the defaults or not.
+	 * @return array
+	 */
+	public static function get_color_palette( $return_defaults = false ) {
+		$defaults = [
+			[
+				'name'  => '',
+				'slug'  => 'custom-color-ffffff',
+				'color' => '#ffffff'
+			],
+			[
+				'name'  => '',
+				'slug'  => 'custom-color-f5f7f9',
+				'color' => '#f5f7f9'
+			],
+			[
+				'name'  => '',
+				'slug'  => 'custom-color-f4f4e1',
+				'color' => '#f4f4e1'
+			],
+			[
+				'name'  => '',
+				'slug'  => 'custom-color-f0f3f6',
+				'color' => '#f0f3f6'
+			],
+			[
+				'name'  => esc_html__( 'Very Light Gray', 'gridd' ),
+				'slug'  => 'very-light-gray',
+				'color' => '#eeeeee',
+			],
+			[
+				'name'  => esc_html__( 'Cyan Bluish Gray', 'gridd' ),
+				'slug'  => 'cyan-bluish-gray',
+				'color' => '#abb8c3',
+			],
+			[
+				'name'  => esc_html__( 'Very Dark Gray', 'gridd' ),
+				'slug'  => 'very-dark-gray',
+				'color' => '#313131',
+			],
+			[
+				'name'  => '',
+				'slug'  => 'custom-color-1a1a1d',
+				'color' => '#1a1a1d'
+			],
+			[
+				'name'  => '',
+				'slug'  => 'custom-color-000000',
+				'color' => '#000000'
+			],
+			[
+				'name'  => esc_html__( 'Pale Pink', 'gridd' ),
+				'slug'  => 'pale-pink',
+				'color' => '#f78da7',
+			],
+			[
+				'name'  => esc_html__( 'Vivid Red', 'gridd' ),
+				'slug'  => 'vivid-red',
+				'color' => '#cf2e2e',
+			],
+			[
+				'name'  => esc_html__( 'Luminous Vivid Orange', 'gridd' ),
+				'slug'  => 'luminous-vivid-orange',
+				'color' => '#ff6900',
+			],
+			[
+				'name'  => esc_html__( 'Luminous Vivid Amber', 'gridd' ),
+				'slug'  => 'luminous-vivid-amber',
+				'color' => '#fcb900',
+			],
+			[
+				'name'  => esc_html__( 'Light Green Cyan', 'gridd' ),
+				'slug'  => 'light-green-cyan',
+				'color' => '#7bdcb5',
+			],
+			[
+				'name'  => esc_html__( 'Vivid Green Cyan', 'gridd' ),
+				'slug'  => 'vivid-green-cyan',
+				'color' => '#00d084',
+			],
+			[
+				'name'  => esc_html__( 'Pale Cyan Blue', 'gridd' ),
+				'slug'  => 'pale-cyan-blue',
+				'color' => '#8ed1fc',
+			],
+			[
+				'name'  => esc_html__( 'Vivid Cyan Blue', 'gridd' ),
+				'slug'  => 'vivid-cyan-blue',
+				'color' => '#0693e3',
+			],
+		];
+
+		if ( $return_defaults ) {
+			return $defaults;
+		}
+
+		$palette = get_theme_mod( 'custom_color_palette', $defaults );
+		if ( \is_string( $palette ) ) {
+			$palette = json_decode( $palette );
+		}
+		return $palette;
 	}
 }
 

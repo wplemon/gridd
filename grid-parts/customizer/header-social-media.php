@@ -80,7 +80,7 @@ new \Kirki\Field\ReactColor(
 		],
 		'choices'   => [
 			'formComponent' => 'TwitterPicker',
-			'colors'        => \Gridd\Theme::get_colorpicker_palette( 'all' ),
+			'colors'        => \Gridd\Theme::get_colorpicker_palette(),
 		],
 		'priority'  => 20,
 	]
@@ -101,7 +101,7 @@ new \Kirki\Field\ReactColor(
 		],
 		'choices'   => [
 			'formComponent' => 'TwitterPicker',
-			'colors'        => \Gridd\Theme::get_colorpicker_palette( 'background' ),
+			'colors'        => \Gridd\Theme::get_colorpicker_palette(),
 		],
 		'priority'  => 30,
 	]
