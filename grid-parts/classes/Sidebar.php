@@ -143,7 +143,7 @@ class Sidebar extends Grid_Part {
 	 * @since 1.0
 	 */
 	public static function get_number_of_sidebars() {
-		return apply_filters( 'gridd_get_number_of_nav_menus', 3 );
+		return apply_filters( 'gridd_get_number_of_widget_areas', 3 );
 	}
 
 	/**

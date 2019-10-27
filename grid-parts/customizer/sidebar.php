@@ -32,8 +32,7 @@ function gridd_sidebar_customizer_options( $id ) {
 	Customizer::add_outer_section(
 		"grid_part_details_sidebar_$id",
 		[
-			/* translators: The grid-part label. */
-			'title' => sprintf( esc_html__( '%s Advanced Options', 'gridd' ), $label ),
+			'title' => $label,
 		]
 	);
 
