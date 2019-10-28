@@ -1,105 +1,84 @@
 html {
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 *,
 *::after,
 *::before {
-  box-sizing: inherit;
-}
+  box-sizing: inherit; }
 
 body {
   background: #fff;
-  overflow-x: hidden;
-}
+  overflow-x: hidden; }
 
 hr {
   background-color: #ccc;
   border: 0;
   height: 1px;
-  margin-bottom: 1.5em;
-}
+  margin-bottom: 1.5em; }
 
 ol,
 ul {
-  margin-bottom: 1em;
-}
+  margin-bottom: 1em; }
 
 ol {
-  list-style: decimal;
-}
+  list-style: decimal; }
 
 li > ol,
 li > ul {
-  margin-bottom: 0;
-}
+  margin-bottom: 0; }
 
 dt {
-  font-weight: 700;
-}
+  font-weight: 700; }
 
 dd {
-  margin: 0 1.5em 1.5em;
-}
+  margin: 0 1.5em 1.5em; }
 
 img {
   height: auto;
-  max-width: 100%;
-}
+  max-width: 100%; }
 
 figure {
   margin: 1em 0;
-  max-width: 100%;
-}
+  max-width: 100%; }
 
 .post-thumbnail {
   display: block;
   text-align: center;
   line-height: 0;
-  margin-bottom: 1em;
-}
-.post-thumbnail.alignfull {
-  margin-left: calc(0px - var(--pd-h, 1rem));
-  margin-right: calc(0px - var(--pd-h, 1rem));
-  width: calc(100% + 2 * var(--pd-h, 1rem));
-}
+  margin-bottom: 1em; }
+  .post-thumbnail.alignfull {
+    margin-left: calc(0px - var(--pd-h, 1rem));
+    margin-right: calc(0px - var(--pd-h, 1rem));
+    width: calc(100% + 2 * var(--pd-h, 1rem)); }
 
 table {
   margin: 0 0 1.5em;
-  width: 100%;
-}
-table td,
-table th {
-  padding: 0.75rem;
-  border-top: 1px solid #dee2e6;
-}
-table thead th {
-  vertical-align: bottom;
-  border-bottom: 2px solid #dee2e6;
-}
+  width: 100%; }
+  table td,
+  table th {
+    padding: 0.75rem;
+    border-top: 1px solid #dee2e6; }
+  table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6; }
 
 q {
-  font-style: italic;
-}
+  font-style: italic; }
 
 .entry-tags,
 .entry-date-author,
 .entry-category,
 .entry-comments-link,
 .page-links {
-  font-size: var(--fs-1d-ts-tr);
-}
+  font-size: var(--fs-1d-ts-tr); }
 
 .entry-comments-link .comments-link {
-  display: flex;
-}
+  display: flex; }
 .entry-comments-link svg {
   fill: currentColor;
   width: 1em;
-  height: 1em;
-}
+  height: 1em; }
 .entry-comments-link .label {
-  padding: 0 0.5em;
-}
+  padding: 0 0.5em; }
 
 /*# sourceMappingURL=elements.css.map */

@@ -2,24 +2,19 @@
   list-style: none;
   list-style-type: none;
   padding: 0;
-  margin: 0;
-}
+  margin: 0; }
 .widget_archive li {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
-  align-items: center;
-}
-.widget_archive li a {
-  text-decoration: none;
-}
+  align-items: center; }
+  .widget_archive li a {
+    text-decoration: none; }
 .widget_archive a {
   display: block;
   width: 100%;
-  padding: 0.25em 0;
-}
+  padding: 0.25em 0; }
 .widget_archive > ul > li:last-child {
-  border-bottom: none;
-}
+  border-bottom: none; }
 
 /*# sourceMappingURL=widget-archives.css.map */
