@@ -1,8 +1,8 @@
 <?php // phpcs:ignore WordPress.Files.FileName
 /**
- * Run upgrades for version 1.2.0
+ * Run upgrades for version 2.0.0
  *
- * @since 1.2.0
+ * @since 2.0.0
  * @package gridd
  */
 
@@ -11,7 +11,7 @@ namespace Gridd\Upgrades;
 /**
  * The upgrade object.
  *
- * @since 1.2.0
+ * @since 2.0.0
  */
 class Version_1_2_0 {
 
@@ -19,7 +19,7 @@ class Version_1_2_0 {
 	 * Constructor.
 	 *
 	 * @access public
-	 * @since 1.2.0
+	 * @since 2.0.0
 	 */
 	public function __construct() {
 		$this->run_update();
@@ -29,7 +29,7 @@ class Version_1_2_0 {
 	 * Runs the update.
 	 *
 	 * @access private
-	 * @since 1.2.0
+	 * @since 2.0.0
 	 * @return void
 	 */
 	private function run_update() {
@@ -42,7 +42,7 @@ class Version_1_2_0 {
 	 * Handle modified defaults.
 	 *
 	 * @access private
-	 * @since 1.2.0
+	 * @since 2.0.0
 	 * @return void
 	 */
 	private function modified_defaults() {
@@ -63,7 +63,7 @@ class Version_1_2_0 {
 	 * Handle modified defaults.
 	 *
 	 * @access private
-	 * @since 1.2.0
+	 * @since 2.0.0
 	 * @return void
 	 */
 	private function content_padding() {
@@ -101,7 +101,7 @@ class Version_1_2_0 {
 	 * Handle renamed theme-mods.
 	 *
 	 * @access private
-	 * @since 1.2.0
+	 * @since 2.0.0
 	 * @return void
 	 */
 	private function rename_theme_mods() {

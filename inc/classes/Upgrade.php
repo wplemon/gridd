@@ -70,7 +70,7 @@ class Upgrade {
 	 */
 	private $versions_upgrades = [
 		'1.1.18',
-		'1.2.0',
+		'2.0.0',
 	];
 
 	/**

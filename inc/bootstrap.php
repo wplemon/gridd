@@ -129,7 +129,7 @@ new Upgrade();
 /**
  * Editor tweaks.
  *
- * @since 1.2.0
+ * @since 2.0.0
  */
 new Editor();
 

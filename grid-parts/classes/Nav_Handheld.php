@@ -132,7 +132,7 @@ class Nav_Handheld extends Grid_Part {
 	 * Change the position of the grid-part and put it right after the header.
 	 *
 	 * @access public
-	 * @since 1.2.0
+	 * @since 2.0.0
 	 * @param array $parts An array of our ordered grid-parts.
 	 * @return array
 	 */

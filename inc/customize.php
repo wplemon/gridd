@@ -12,7 +12,7 @@ namespace Gridd;
 /**
  * Add the "Theme Options" panel.
  *
- * @since 1.2.0
+ * @since 2.0.0
  */
 Customizer::add_panel(
 	'layout_blocks',
@@ -25,7 +25,7 @@ Customizer::add_panel(
 /**
  * Add the "Theme Options" panel.
  *
- * @since 1.2.0
+ * @since 2.0.0
  */
 Customizer::add_panel(
 	'theme_settings',

@@ -476,7 +476,7 @@ class Theme {
 	 *
 	 * @static
 	 * @access public
-	 * @since 1.2.0
+	 * @since 2.0.0
 	 * @param string $context Can be one of background|accent|all.
 	 * @return array
 	 */
@@ -494,7 +494,7 @@ class Theme {
 	 *
 	 * @static
 	 * @access public
-	 * @since 1.2.0
+	 * @since 2.0.0
 	 * @param bool $return_defaults Whether we just want to get the defaults or not.
 	 * @return array
 	 */
@@ -602,7 +602,7 @@ class Theme {
 	 * Prints styles for our color-palettes.
 	 *
 	 * @access public
-	 * @since 1.2.0
+	 * @since 2.0.0
 	 * @return void
 	 */
 	public function add_color_palette_styles() {

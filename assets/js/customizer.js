@@ -113,7 +113,7 @@
 		/**
 		 * Handle switching target color-a11y mode.
 		 *
-		 * @since 1.2.0
+		 * @since 2.0.0
 		 */
 		wp.customize( 'target_color_compliance', function( value ) {
 			value.bind( function( to ) {
@@ -131,7 +131,7 @@
 		/**
 		 * Link link-color colorpickers hues.
 		 *
-		 * @since 1.2.0
+		 * @since 2.0.0
 		 */
 		wp.customize( 'gridd_links_color', function( value ) {
 			value.bind( function( to ) {
@@ -157,7 +157,7 @@
 		/**
 		 * Handle palette changes.
 		 *
-		 * @since 1.2.0
+		 * @since 2.0.0
 		 */
 		wp.customize( 'custom_color_palette', function( value ) {
 			value.bind( function( to ) {
@@ -183,7 +183,7 @@
 		/**
 		 * Move the main links-color control to the typography setting if needed.
 		 *
-		 * @since 1.2.0
+		 * @since 2.0.0
 		 */
 		if ( wp.customize.control( 'gridd_links_color' ).setting.get() ) {
 			wp.customize.control( 'gridd_links_color' ).section( 'gridd_typography' );
@@ -192,7 +192,7 @@
 		/**
 		 * Change all linkcolor hues when the switch is turned on.
 		 *
-		 * @since 1.2.0
+		 * @since 2.0.0
 		 */
 		wp.customize( 'same_linkcolor_hues', function( value ) {
 			value.bind( function( to ) {
@@ -235,7 +235,7 @@
 	/**
 	 * Move controls from a section to another.
 	 *
-	 * @since 1.2.0
+	 * @since 2.0.0
 	 */
 	function griddMoveSectionControlsOnDemand( newSectionID, oldSectionID ) {
 		var newSection = wp.customize.section( newSectionID ),

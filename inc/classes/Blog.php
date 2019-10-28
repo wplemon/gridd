@@ -244,7 +244,7 @@ class Blog {
 	 * Adds extra classes on <article> tags using the "post_class" filter.
 	 *
 	 * @access public
-	 * @since 1.2.0
+	 * @since 2.0.0
 	 * @param array $classes The classes for this element.
 	 * @return array
 	 */

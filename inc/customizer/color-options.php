@@ -3,7 +3,7 @@
  * Color Options.
  *
  * @package Gridd
- * @since 1.2.0
+ * @since 2.0.0
  */
 
 use Gridd\Customizer;

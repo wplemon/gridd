@@ -312,7 +312,7 @@ class Customizer {
 	 *
 	 * @static
 	 * @access public
-	 * @since 1.2.0
+	 * @since 2.0.0
 	 * @return array
 	 */
 	public static function get_grid_parts_sections() {

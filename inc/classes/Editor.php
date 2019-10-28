@@ -3,7 +3,7 @@
  * Extra bits and pieces needed for the WordPress Editor.
  *
  * @package Gridd
- * @since 1.2.0
+ * @since 2.0.0
  */
 
 namespace Gridd;
@@ -11,7 +11,7 @@ namespace Gridd;
 /**
  * Extra methods and actions for the editor.
  *
- * @since 1.2.0
+ * @since 2.0.0
  */
 class Editor {
 
@@ -19,7 +19,7 @@ class Editor {
 	 * Constructor.
 	 *
 	 * @access public
-	 * @since 1.2.0
+	 * @since 2.0.0
 	 */
 	public function __construct() {
 		add_action( 'enqueue_block_editor_assets', [ $this, 'block_editor_styles' ], 1, 1 );
@@ -29,7 +29,7 @@ class Editor {
 	 * Add editor styles.
 	 *
 	 * @access public
-	 * @since 1.2.0
+	 * @since 2.0.0
 	 * @return void
 	 */
 	public function block_editor_styles() {

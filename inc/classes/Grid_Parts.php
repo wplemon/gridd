@@ -34,7 +34,7 @@ class Grid_Parts {
 	 *
 	 * @static
 	 * @access protected
-	 * @since 1.2.0
+	 * @since 2.0.0
 	 * @var array
 	 */
 	private static $ordered_parts;
@@ -263,7 +263,7 @@ class Grid_Parts {
 	 * This will be used to reorder things in HTML.
 	 *
 	 * @access public
-	 * @since 1.2.0
+	 * @since 2.0.0
 	 * @param string $theme_mod The grid we're referring to.
 	 * @return array
 	 */
@@ -373,7 +373,7 @@ class Grid_Parts {
 	 * Sort grid items by score.
 	 *
 	 * @access public
-	 * @since @1.2.0
+	 * @since @2.0.0
 	 * @param array $a 1st item to compare.
 	 * @param array $b 2nd item to compare.
 	 * @return int
