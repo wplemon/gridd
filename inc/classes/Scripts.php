@@ -184,6 +184,8 @@ class Scripts {
 		$style->add_file( get_theme_file_path( 'assets/css/core/layout.min.css' ) );
 		$style->add_file( get_theme_file_path( 'assets/css/core/links.min.css' ) );
 
+		$style>add_string( '@media screen and (max-width:800px){.wp-block-columns{display:flex !important;}}' );
+
 		// Styles specific to the customizer preview pane.
 		if ( is_customize_preview() ) {
 			$style->add_file( get_theme_file_path( 'assets/css/customizer/preview.min.css' ) );
