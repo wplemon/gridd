@@ -1,14 +1,8 @@
 # Exclude from release archives.
 
-/docs/                            export-ignore
-/assets/css/blocks/block-library/ export-ignore
-/node_modules/                    export-ignore
-/inc/kirki/controls/js/src/       export-ignore
-/inc/kirki/controls/scss/         export-ignore
-/inc/kirki/docs/                  export-ignore
-/inc/kirki/node_modules/          export-ignore
-/inc/kirki/tests/                 export-ignore
-/inc/kirki/example.php            export-ignore
+./docs                             export-ignore
+./assets/css/blocks/block-library/ export-ignore
+./node_modules                     export-ignore
 package.json                      export-ignore
 package-lock.json                 export-ignore
 composer.lock                     export-ignore
@@ -36,6 +30,9 @@ phpunit.*                         export-ignore
 *.yml                             export-ignore
 *.md                              export-ignore
 *.sh                              export-ignore
+.stylelintignore                  export-ignore
+.stylelintrc.json                 export-ignore
+phpcs.xml.dist                    export-ignore
 
 # Handle line endings.
 # See https://help.github.com/articles/dealing-with-line-endings/
