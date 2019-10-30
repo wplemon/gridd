@@ -90,6 +90,14 @@ nav {
 
 		> a {
 			width: calc(100% - 2em - 0.1px); // The .1px here is to fix browser rendering issue.
+
+			body:not(.rtl) & {
+				padding-right: 0.25em;
+			}
+
+			.rtl & {
+				padding-left: 0.25em;
+			}
 		}
 	}
 

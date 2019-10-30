@@ -58,9 +58,13 @@ nav {
   .gridd-navigation a:active,
   .gridd-navigation .gridd-toggle {
     outline: none; }
-  .gridd-navigation .menu-item-has-children > a,
-  .gridd-navigation .page_item_has_children > a {
+  .gridd-navigation .menu-item-has-children > a, .gridd-navigation .page_item_has_children > a {
     width: calc(100% - 2em - 0.1px); }
+    body:not(.rtl) .gridd-navigation .menu-item-has-children > a,
+    body:not(.rtl) .gridd-navigation .page_item_has_children > a {
+      padding-right: 0.25em; }
+    .rtl .gridd-navigation .menu-item-has-children > a, .rtl .gridd-navigation .page_item_has_children > a {
+      padding-left: 0.25em; }
   .gridd-navigation .gridd-toggle {
     display: flex;
     align-items: center;
