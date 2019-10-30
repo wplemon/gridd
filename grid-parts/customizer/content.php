@@ -112,7 +112,7 @@ Customizer::add_field(
 		'settings'  => 'content_max_width',
 		'label'     => esc_html__( 'Content Maximum Width', 'gridd' ),
 		'section'   => 'grid_part_details_content',
-		'default'   => '45rem',
+		'default'   => '45em',
 		'output'    => [
 			[
 				'element'  => ':root',
@@ -135,14 +135,14 @@ Customizer::add_field(
 			[
 				'element'       => '.gridd-tp-content',
 				'property'      => '--pd-h',
-				'value_pattern' => '$rem',
+				'value_pattern' => '$em',
 			],
 		],
 		'choices'   => [
 			'min'    => 0,
 			'max'    => 10,
 			'step'   => 0.01,
-			'suffix' => 'rem',
+			'suffix' => 'em',
 		],
 		'transport' => 'auto',
 		'priority'  => 60,
@@ -160,14 +160,14 @@ Customizer::add_field(
 			[
 				'element'       => '.gridd-tp-content',
 				'property'      => '--pd-t',
-				'value_pattern' => '$rem',
+				'value_pattern' => '$em',
 			],
 		],
 		'choices'   => [
 			'min'    => 0,
 			'max'    => 10,
 			'step'   => 0.01,
-			'suffix' => 'rem',
+			'suffix' => 'em',
 		],
 		'transport' => 'auto',
 		'priority'  => 70,
@@ -185,14 +185,14 @@ Customizer::add_field(
 			[
 				'element'       => '.gridd-tp-content',
 				'property'      => '--pd-b',
-				'value_pattern' => '$rem',
+				'value_pattern' => '$em',
 			],
 		],
 		'choices'   => [
 			'min'    => 0,
 			'max'    => 10,
 			'step'   => 0.01,
-			'suffix' => 'rem',
+			'suffix' => 'em',
 		],
 		'transport' => 'auto',
 		'priority'  => 80,

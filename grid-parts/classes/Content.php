@@ -118,7 +118,7 @@ class Content extends Grid_Part {
 			 * The same CSS is commented-out in the default.scss file for reference.
 			 * Once the bug in the minifier is fixed we can remove this.
 			 */
-			->add_string( '.site-main .entry-content .alignfull,.site-main .entry-footer .alignfull,.site-main .entry-header .alignfull,.site-main .gridd-contain .alignfull{transform:translateX(calc(0px - var(--pd-h, 1rem)));}' )
+			->add_string( '.site-main .entry-content .alignfull,.site-main .entry-footer .alignfull,.site-main .entry-header .alignfull,.site-main .gridd-contain .alignfull{transform:translateX(calc(0px - var(--pd-h, 1em)));}' )
 			->the_css( 'gridd-inline-css-content' );
 	}
 

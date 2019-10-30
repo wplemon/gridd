@@ -89,14 +89,14 @@ Customizer::add_field(
 			[
 				'element'       => '.gridd-tp-header_search',
 				'property'      => '--pd',
-				'value_pattern' => '$rem',
+				'value_pattern' => '$em',
 			],
 		],
 		'choices'     => [
 			'min'    => 0,
 			'max'    => 10,
 			'step'   => 0.01,
-			'suffix' => 'rem',
+			'suffix' => 'em',
 		],
 		'priority'    => 40,
 	]
@@ -114,14 +114,14 @@ Customizer::add_field(
 			[
 				'element'       => '.gridd-tp-header_search',
 				'property'      => '--fs',
-				'value_pattern' => '$rem',
+				'value_pattern' => '$em',
 			],
 		],
 		'choices'     => [
 			'min'    => .5,
 			'max'    => 4,
 			'step'   => .01,
-			'suffix' => 'rem',
+			'suffix' => 'em',
 		],
 		'transport'   => 'auto',
 		'priority'    => 50,

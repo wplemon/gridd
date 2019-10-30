@@ -62,9 +62,9 @@ figure {
 	margin-bottom: 1em;
 
 	&.alignfull {
-		margin-left: calc(0px - var(--pd-h, 1rem));
-		margin-right: calc(0px - var(--pd-h, 1rem));
-		width: calc(100% + 2 * var(--pd-h, 1rem));
+		margin-left: calc(0px - var(--pd-h, 1em));
+		margin-right: calc(0px - var(--pd-h, 1em));
+		width: calc(100% + 2 * var(--pd-h, 1em));
 	}
 }
 
@@ -74,7 +74,7 @@ table {
 
 	td,
 	th {
-		padding: 0.75rem;
+		padding: 0.75em;
 		border-top: 1px solid #dee2e6;
 	}
 

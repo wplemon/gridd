@@ -1,5 +1,5 @@
 .site-main {
-  padding: var(--pd-t, 0) var(--pd-h, 1rem) var(--pd-b, 0) var(--pd-h, 1rem); }
+  padding: var(--pd-t, 0) var(--pd-h, 1em) var(--pd-b, 0) var(--pd-h, 1em); }
   .site-main header,
   .site-main footer:not(.comment-meta),
   .site-main .gridd-contain {
@@ -48,7 +48,7 @@
   .site-main .gridd-contain .alignfull,
   .site-main .entry-content .alignwide,
   .site-main .entry-content .alignfull {
-    max-width: calc(100% + 2 * var(--pd-h, 1rem));
+    max-width: calc(100% + 2 * var(--pd-h, 1em));
     margin-left: auto;
     margin-right: auto; }
     .site-main .entry-header .alignwide img,
@@ -64,13 +64,13 @@
   .site-main .entry-footer .alignwide,
   .site-main .gridd-contain .alignwide,
   .site-main .entry-content .alignwide {
-    width: calc(var(--mw-c, 700px) + 25% + 2 * var(--pd-h, 1rem));
+    width: calc(var(--mw-c, 700px) + 25% + 2 * var(--pd-h, 1em));
     max-width: 100%; }
   .site-main .entry-header .alignfull,
   .site-main .entry-footer .alignfull,
   .site-main .gridd-contain .alignfull,
   .site-main .entry-content .alignfull {
-    width: calc(100% + 2 * var(--pd-h, 1rem)); }
+    width: calc(100% + 2 * var(--pd-h, 1em)); }
   .site-main .gridd-contain > * {
     max-width: 100% !important; }
 

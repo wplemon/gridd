@@ -102,7 +102,7 @@ Customizer::add_field(
 			]
 		),
 		'section'     => 'grid_part_details_header_contact_info',
-		'default'     => '1rem',
+		'default'     => '1em',
 		'transport'   => 'auto',
 		'output'      => [
 			[

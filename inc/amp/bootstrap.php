@@ -135,7 +135,7 @@ add_action( 'wp_enqueue_scripts', function() {
  * @return void
  */
 add_action( 'wp_head', function() {
-	$content_max_width                  = get_theme_mod( 'content_max_width', '45rem' );
+	$content_max_width                  = get_theme_mod( 'content_max_width', '45em' );
 	$main_font_size                     = get_theme_mod( 'gridd_body_font_size', 18 ) . 'px';
 	$fluid_typo_ratio                   = get_theme_mod( 'gridd_fluid_typography_ratio', 0.25 );
 	$gridd_content_max_width_calculated = $content_max_width;
