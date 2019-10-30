@@ -5,13 +5,11 @@
   overflow: visible;
   z-index: 1000;
   background-color: var(--bg, #fff);
-  box-shadow: var(--bs, var(--bs-default));
-}
-.gridd-tp-header > .inner {
-  width: 100%;
-  max-width: var(--mw, 47em);
-  grid-gap: var(--gg, 0);
-  padding: var(--pd, 0 1em);
-}
+  box-shadow: var(--bs, var(--bs-default)); }
+  .gridd-tp-header > .inner {
+    width: 100%;
+    max-width: var(--mw, 47em);
+    grid-gap: var(--gg, 0);
+    padding: var(--pd, 0 1em); }
 
 /*# sourceMappingURL=styles.css.map */
