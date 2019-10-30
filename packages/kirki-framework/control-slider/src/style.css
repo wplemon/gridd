@@ -5,14 +5,14 @@
   border-radius: 100%;
   cursor: pointer;
   display: block;
-  height: 1rem;
-  margin-left: -0.5rem;
-  margin-top: -0.65rem;
+  height: 14px;
+  margin-left: -7px;
+  margin-top: -10.5px;
   outline: none;
   position: absolute;
   top: 50%;
   transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
-  width: 1rem;
+  width: 14px;
 }
 
 .input-range__slider:active {
@@ -40,10 +40,10 @@
 
 .input-range__track {
   background: #b4b9be;
-  border-radius: 0.3rem;
+  border-radius: 5px;
   cursor: pointer;
   display: block;
-  height: 0.3rem;
+  height: 5px;
   position: relative;
   transition: left 0.1s ease-out, width 0.1s ease-out;
 }
@@ -54,7 +54,7 @@
 
 .input-range__track--background {
   left: 0;
-  margin-top: -0.15rem;
+  margin-top: -3px;
   position: absolute;
   right: 0;
   top: 50%;
@@ -65,12 +65,12 @@
 }
 
 .input-range {
-  height: 1rem;
+  height: 16px;
   position: relative;
   width: 100%;
 }
 
-.range-input-wrapper input[type=text] {
+.range-input-wrapper input[type="text"] {
   background: transparent;
   border: none;
   padding: 0;
@@ -78,9 +78,9 @@
   font-size: 13px;
 }
 
-.range-input-wrapper input[type=text]:hover,
-.range-input-wrapper input[type=text]:focus,
-.range-input-wrapper input[type=text]:active {
+.range-input-wrapper input[type="text"]:hover,
+.range-input-wrapper input[type="text"]:focus,
+.range-input-wrapper input[type="text"]:active {
   box-shadow: none;
   border: none;
   outline: none;
