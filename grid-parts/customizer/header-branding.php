@@ -206,7 +206,7 @@ Customizer::add_field(
 			],
 		],
 		'choices'         => [
-			'min'    => 1,
+			'min'    => 0.5,
 			'max'    => 5,
 			'step'   => .01,
 			'suffix' => 'em',
