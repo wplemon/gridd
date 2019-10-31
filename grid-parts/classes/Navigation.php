@@ -203,27 +203,19 @@ class Navigation extends Grid_Part {
 	 */
 	public function add_nav_sub_menu_buttons( $item_output, $item ) {
 
+		$html = '<span class="gridd-menu-item-wrapper">';
+
 		// Skip when the item has no sub-menu.
-		if ( ! in_array( 'menu-item-has-children', $item->classes, true ) ) {
-			return $item_output;
+		if ( in_array( 'menu-item-has-children', $item->classes, true ) ) {
+			$html = '<span class="gridd-menu-item-wrapper has-arrow">';
+			$item_output .= '<button onClick="griddMenuItemExpand(this)"><span class="screen-reader-text">' . esc_html__( 'Toggle Child Menu', 'gridd' ) . '</span><span class="symbol">⌵</span></button>';
 		}
 
-		// Generate a unique state ID.
-		static $nav_menu_item_number = 0;
-		$nav_menu_item_number++;
-		$expanded_state_id = 'navMenuItemExpanded' . $nav_menu_item_number;
+		$html .= $item_output;
 
-		return $item_output . Theme::get_toggle_button(
-			[
-				'context'                      => [ 'navigation', $item ],
-				'expanded_state_id'            => $expanded_state_id,
-				'expanded'                     => 'false',
-				'screen_reader_label_collapse' => __( 'Collapse Child Menu', 'gridd' ),
-				'screen_reader_label_expand'   => __( 'Expand Child Menu', 'gridd' ),
-				'screen_reader_label_toggle'   => __( 'Toggle Child Menu', 'gridd' ),
-				'label'                        => '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M23.245 4l-11.245 14.374-11.219-14.374-.781.619 12 15.381 12-15.391-.755-.609z"/></svg>',
-			]
-		);
+		$html .= '</span>';
+
+		return $html;
 	}
 
 	/**

@@ -1,6 +1,17 @@
-@import "variables";
+.gridd-tp-nav {
+	background: var(--bg);
+	overflow: visible;
+	position: relative;
+	color: var(--cl);
+}
 
-nav {
+.gridd-tp-nav .inner {
+	padding: var(--pd);
+	width: 100%;
+	display: flex;
+}
+
+.gridd-tp-nav nav {
 	width: 100%;
 }
 
@@ -11,136 +22,118 @@ nav {
 	z-index: 1;
 	display: flex;
 	flex-wrap: wrap;
-
-	// Submenu - level 1.
-	ul {
-		margin: 0;
-		padding: 0;
-		list-style-type: none;
-		flex-wrap: wrap;
-		position: absolute;
-		top: 100%;
-		right: 0;
-		min-width: 15em;
-		box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.16);
-		z-index: 5;
-		display: none;
-
-		// Submenu - Level 2 and above.
-		ul {
-			position: relative;
-			box-shadow: none;
-
-			&::before,
-			&::after {
-				content: "";
-				display: block;
-				border-bottom: 1px solid currentColor;
-				opacity: 0.075;
-			}
-
-			&::after {
-				opacity: 0.1;
-			}
-		}
-	}
-
-	// <li> items.
-	li {
-		display: flex;
-		flex-wrap: wrap;
-		position: relative;
-
-		li {
-			width: 100%;
-		}
-	}
-
-	li:hover .gridd-toggle,
-	.gridd-toggle[aria-expanded="true"] {
-		color: var(--acl);
-
-		svg,
-		path {
-			fill: var(--acl);
-		}
-	}
-
-	// Links.
-	a {
-		padding: 0.618em 1em;
-		display: flex;
-		align-items: center;
-		text-decoration: none;
-		width: 100%;
-		min-width: max-content;
-		min-height: 3em;
-	}
-
-	a,
-	a:hover,
-	a:focus,
-	a:active,
-	.gridd-toggle {
-		outline: none;
-	}
-
-	.menu-item-has-children,
-	.page_item_has_children {
-
-		> a {
-			width: calc(100% - 2em - 0.1px); // The .1px here is to fix browser rendering issue.
-
-			body:not(.rtl) & {
-				padding-right: 0.25em;
-			}
-
-			.rtl & {
-				padding-left: 0.25em;
-			}
-		}
-	}
-
-	// Button toggles.
-	.gridd-toggle {
-		display: flex;
-		align-items: center;
-		background: none;
-		opacity: 0.7;
-		border: none;
-		box-shadow: none;
-		border-radius: 0;
-		padding: 0 0.5em;
-		height: 3em;
-
-		svg {
-			width: 1em;
-			height: 1em;
-		}
-
-		&:hover,
-		&:focus,
-		&:active,
-		&.toggled-on {
-			opacity: 1;
-			// box-shadow: 0 1px;
-		}
-
-		&.toggled-on {
-			opacity: 1;
-
-
-			svg {
-				transform: rotate(180deg);
-			}
-
-			// Show submenus when toggled-on.
-			+ ul {
-				display: block;
-				width: 100%;
-			}
-		}
-	}
+	align-items: center;
+	justify-content: var(--j);
 }
 
-@import "styles-global-vertical";
+.gridd-navigation ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	flex-wrap: wrap;
+	position: absolute;
+	min-width: 15em;
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.16);
+	z-index: 5;
+	display: none;
+	background: var(--bg);
+}
+
+.gridd-menu-item-wrapper {
+	padding: 0 0.25em;
+	display: flex;
+	align-items: stretch;
+	width: 100%;
+	min-width: max-content;
+}
+
+.gridd-menu-item-wrapper > a {
+	color: var(--cl);
+	text-decoration: none;
+	padding: 0.618em 0.5em;
+	display: block;
+	width: 100%;
+	border-bottom: 0.1em solid transparent;
+}
+
+.gridd-menu-item-wrapper.has-arrow a {
+	padding-right: 0;
+}
+
+.rtl .gridd-menu-item-wrapper.has-arrow a {
+	padding-right: 0.5em;
+	padding-left: 0;
+}
+
+.gridd-menu-item-wrapper > button {
+	border: none;
+	box-shadow: none;
+	border-radius: 0;
+	padding: 0 0.5em;
+	color: var(--cl);
+	background: none;
+	position: relative;
+	overflow: hidden;
+	border-bottom: 0.1em solid transparent;
+}
+
+.gridd-menu-item-wrapper > button.active .symbol {
+	display: block;
+	transform: rotate(180deg);
+}
+
+.gridd-menu-item-wrapper > button:hover::before,
+.gridd-menu-item-wrapper > button:focus::before,
+.gridd-menu-item-wrapper > button:active::before,
+.gridd-menu-item-wrapper > button.active::before {
+	content: "";
+	background: var(--acl);
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0.1;
+}
+
+.gridd-menu-item-wrapper > a:hover,
+.gridd-menu-item-wrapper > a:focus,
+.gridd-menu-item-wrapper > a:active,
+.gridd-menu-item-wrapper > a:hover + button,
+.gridd-menu-item-wrapper > button:hover {
+	outline: none;
+	border-bottom-color: var(--acl);
+	color: var(--acl);
+}
+
+.current-menu-item > .gridd-menu-item-wrapper > a,
+.current-menu-item > .gridd-menu-item-wrapper > a + button,
+.current_page_item > .gridd-menu-item-wrapper > a,
+.current_page_item > .gridd-menu-item-wrapper > a + button {
+	color: var(--acl);
+	border-bottom-color: var(--acl);
+}
+
+.current-page-ancestor .gridd-menu-item-wrapper > a,
+.current-page-ancestor .gridd-menu-item-wrapper > a + button,
+.current-menu-ancestor .gridd-menu-item-wrapper > a,
+.current-menu-ancestor .gridd-menu-item-wrapper > a + button {
+	color: var(--acl);
+}
+
+.gridd-tp-nav .vertical .gridd-navigation {
+	display: block;
+}
+
+.gridd-tp-nav .vertical .gridd-navigation ul {
+	position: relative;
+	box-shadow: none;
+}
+
+.gridd-tp-nav .vertical .gridd-navigation .current-menu-item ul,
+.gridd-tp-nav .vertical .gridd-navigation .current_page_item ul,
+.gridd-tp-nav .vertical .gridd-navigation .current-page-ancestor ul,
+.gridd-tp-nav .vertical .gridd-navigation .current-menu-ancestor ul {
+	display: block;
+}

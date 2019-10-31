@@ -25,7 +25,7 @@
 		box-sizing: content-box;
 		border-radius: 0;
 		background-color: transparent;
-		// color: currentColor;
+		color: var(--cl);
 
 		svg {
 			width: 1em;
@@ -33,22 +33,22 @@
 		}
 
 		&.gridd-nav-toggle-boxed {
-			background-color: var(--bg, #fff);
-			color: var(--cl, #000);
+			background-color: var(--b);
+			color: var(--cl);
 			border-color: currentColor;
 
 			svg {
-				fill: var(--cl, #000);
+				fill: var(--cl);
 			}
 
 			&:hover,
 			&:focus,
 			&.focus,
 			&.toggled-on {
-				color: var(--acl, #0f5e97);
+				color: var(--acl);
 
 				svg {
-					fill: var(--acl, #0f5e97);
+					fill: var(--acl);
 				}
 			}
 		}

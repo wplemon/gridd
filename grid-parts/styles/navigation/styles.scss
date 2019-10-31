@@ -1,107 +1,139 @@
-@import "variables";
-
-#{$element} {
-	// Wrapper styles.
-	background-color: $backgroundColor;
+.gridd-tp-nav {
+	background: var(--bg);
 	overflow: visible;
-	font-size: $fontSize;
+	position: relative;
+	color: var(--cl);
+}
 
-	.inner {
-		padding: $padding;
-		width: 100%;
-		position: relative;
-		display: flex;
-	}
+.gridd-tp-nav .inner {
+	padding: var(--pd);
+	width: 100%;
+	display: flex;
+}
 
-	.gridd-navigation {
-		justify-content: $justify;
+.gridd-tp-nav nav {
+	width: 100%;
+}
 
-		ul {
-			background-color: $submenuBackground;
-		}
-	}
+.gridd-navigation {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	z-index: 1;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: var(--j);
+}
 
-	li {
+.gridd-navigation ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	flex-wrap: wrap;
+	position: absolute;
+	min-width: 15em;
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.16);
+	z-index: 5;
+	display: none;
+	background: var(--bg);
+}
 
-		&.current-menu-item,
-		&.current-page-item,
-		&.current_page_item,
-		&.current-page-ancestor,
-		&.current-menu-ancestor,
-		&.current-menu-parent,
-		&.current-page-parent,
-		&.current_page_parent,
-		&.current_page_ancestor {
+.gridd-menu-item-wrapper {
+	padding: 0 0.25em;
+	display: flex;
+	align-items: stretch;
+	width: 100%;
+	min-width: max-content;
+}
 
-			> a,
-			> a:visited {
-				color: $accentColor;
-				border-bottom: 2px solid;
-			}
+.gridd-menu-item-wrapper > a {
+	color: var(--cl);
+	text-decoration: none;
+	padding: 0.618em 0.5em;
+	display: block;
+	width: 100%;
+	border-bottom: 0.1em solid transparent;
+}
 
-			.gridd-toggle {
-				color: $accentColor;
+.gridd-menu-item-wrapper.has-arrow a {
+	padding-right: 0;
+}
 
-				svg {
-					fill: $accentColor;
-				}
-			}
-		}
-	}
+.rtl .gridd-menu-item-wrapper.has-arrow a {
+	padding-right: 0.5em;
+	padding-left: 0;
+}
 
-	a,
-	a:visited {
-		color: $itemsColor;
-		border-bottom: 2px solid transparent;
+.gridd-menu-item-wrapper > button {
+	border: none;
+	box-shadow: none;
+	border-radius: 0;
+	padding: 0 0.5em;
+	color: var(--cl);
+	background: none;
+	position: relative;
+	overflow: hidden;
+	border-bottom: 0.1em solid transparent;
+}
 
-		&:hover,
-		&:focus,
-		&.focus,
-		&.toggled-on {
-			color: $accentColor;
-			border-bottom-color: $accentColor;
+.gridd-menu-item-wrapper > button.active .symbol {
+	display: block;
+	transform: rotate(180deg);
+}
 
-			~ .gridd-toggle {
-				border-bottom-color: $accentColor;
-				color: $accentColor;
+.gridd-menu-item-wrapper > button:hover::before,
+.gridd-menu-item-wrapper > button:focus::before,
+.gridd-menu-item-wrapper > button:active::before,
+.gridd-menu-item-wrapper > button.active::before {
+	content: "";
+	background: var(--acl);
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0.1;
+}
 
-				svg {
-					fill: $accentColor;
-				}
-			}
-		}
-	}
+.gridd-menu-item-wrapper > a:hover,
+.gridd-menu-item-wrapper > a:focus,
+.gridd-menu-item-wrapper > a:active,
+.gridd-menu-item-wrapper > a:hover + button,
+.gridd-menu-item-wrapper > button:hover {
+	outline: none;
+	border-bottom-color: var(--acl);
+	color: var(--acl);
+}
 
-	.gridd-toggle {
-		color: $itemsColor;
-		border-bottom: 2px solid transparent;
+.current-menu-item > .gridd-menu-item-wrapper > a,
+.current-menu-item > .gridd-menu-item-wrapper > a + button,
+.current_page_item > .gridd-menu-item-wrapper > a,
+.current_page_item > .gridd-menu-item-wrapper > a + button {
+	color: var(--acl);
+	border-bottom-color: var(--acl);
+}
 
-		svg {
-			fill: $itemsColor;
-		}
+.current-page-ancestor .gridd-menu-item-wrapper > a,
+.current-page-ancestor .gridd-menu-item-wrapper > a + button,
+.current-menu-ancestor .gridd-menu-item-wrapper > a,
+.current-menu-ancestor .gridd-menu-item-wrapper > a + button {
+	color: var(--acl);
+}
 
-		&:hover,
-		&:focus,
-		&.focus,
-		&.toggled-on {
-			color: $accentColor;
-			border-bottom-color: $accentColor;
+.gridd-tp-nav .vertical .gridd-navigation {
+	display: block;
+}
 
-			svg {
-				fill: $accentColor;
-			}
-		}
+.gridd-tp-nav .vertical .gridd-navigation ul {
+	position: relative;
+	box-shadow: none;
+}
 
-		&.toggled-on {
-			border-bottom-color: $accentColor;
-
-			svg {
-				fill: $accentColor;
-			}
-		}
-	}
-
-	.gridd-toggle-navigation {
-		display: none;
-	}
+.gridd-tp-nav .vertical .gridd-navigation .current-menu-item ul,
+.gridd-tp-nav .vertical .gridd-navigation .current_page_item ul,
+.gridd-tp-nav .vertical .gridd-navigation .current-page-ancestor ul,
+.gridd-tp-nav .vertical .gridd-navigation .current-menu-ancestor ul {
+	display: block;
 }

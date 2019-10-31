@@ -1,1 +1,1 @@
-.gridd-tp-nav_ID .inner{align-items:flex-start}.gridd-tp-nav_ID ul.menu{background-color:var(--bg,#fff)}.gridd-tp-nav_ID ul.menu>li{width:100%}.gridd-tp-nav_ID ul.menu>li>ul{font-size:calc(1em / var(--ts))}
+.gridd-tp-nav_ID .gridd-navigation{display:block}.gridd-tp-nav_ID .gridd-navigation ul{position:relative;box-shadow:none}.gridd-tp-nav_ID .gridd-navigation .current-menu-ancestor ul,.gridd-tp-nav_ID .gridd-navigation .current-menu-item ul,.gridd-tp-nav_ID .gridd-navigation .current-page-ancestor ul,.gridd-tp-nav_ID .gridd-navigation .current_page_item ul{display:block}

@@ -18,15 +18,13 @@ $style->add_file( get_theme_file_path( 'grid-parts/styles/navigation/styles.min.
 
 $responsive_mode       = get_theme_mod( "gridd_grid_nav_{$id}_responsive_behavior", 'desktop-normal mobile-hidden' );
 $added_vertical_styles = false;
+$is_vertical_nav       = get_theme_mod( "gridd_grid_nav_{$id}_vertical", false );
 
 // Check if we need to add desktop styles.
 if ( false !== strpos( $responsive_mode, 'desktop-normal' ) ) {
-
-	// Check if we need to add the vertical styles.
-	if ( get_theme_mod( "gridd_grid_nav_{$id}_vertical", false ) ) {
-		$style->add_file( get_theme_file_path( 'grid-parts/styles/navigation/styles-vertical.min.css' ) );
-		$added_vertical_styles = true;
-	}
+	$style->add_string( '@media only screen and (min-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . '){' );
+	$style->add_string( ".gridd-tp-nav_{$id} .gridd-toggle-navigation{display:none;}" );
+	$style->add_string( '}' );
 }
 
 // Add collapsed styles if needed.
@@ -67,7 +65,7 @@ if ( class_exists( 'ariColor' ) ) {
 	}
 }
 
-$wrapper_class  = "gridd-tp gridd-tp-nav_$id";
+$wrapper_class  = "gridd-tp gridd-tp-nav gridd-tp-nav_$id";
 $wrapper_class .= ' gridd-menu-collapse-position-' . get_theme_mod( "gridd_grid_nav_{$id}_expand_icon_position", 'center-right' );
 
 $responsive_mode_parts = explode( ' ', $responsive_mode );
@@ -122,7 +120,7 @@ foreach ( $responsive_mode_parts as $responsive_mode_part ) {
 		<nav <?php Theme::print_attributes(
 			[
 				'id'            => "navigation-$id",
-				'class'         => 'navigation gridd-nav-' . ( get_theme_mod( "gridd_grid_nav_{$id}_vertical", false ) ) ? 'vertical' : 'horizontal',
+				'class'         => 'navigation gridd-nav-' . ( $is_vertical_nav ? 'vertical' : 'horizontal' ),
 				'role'          => 'navigation',
 				'aria-expanded' => 'false',
 			],

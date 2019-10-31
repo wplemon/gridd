@@ -17,20 +17,21 @@
   line-height: 1;
   box-sizing: content-box;
   border-radius: 0;
-  background-color: transparent; }
+  background-color: transparent;
+  color: var(--cl); }
   .gridd-tp-nav_ID .gridd-toggle-navigation svg {
     width: 1em;
     fill: currentColor; }
   .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed {
-    background-color: var(--bg, #fff);
-    color: var(--cl, #000);
+    background-color: var(--b);
+    color: var(--cl);
     border-color: currentColor; }
     .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed svg {
-      fill: var(--cl, #000); }
+      fill: var(--cl); }
     .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed:hover, .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed:focus, .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed.focus, .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed.toggled-on {
-      color: var(--acl, #0f5e97); }
+      color: var(--acl); }
       .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed:hover svg, .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed:focus svg, .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed.focus svg, .gridd-tp-nav_ID .gridd-toggle-navigation.gridd-nav-toggle-boxed.toggled-on svg {
-        fill: var(--acl, #0f5e97); }
+        fill: var(--acl); }
   .gridd-tp-nav_ID .gridd-toggle-navigation .icon {
     line-height: 1; }
     .gridd-tp-nav_ID .gridd-toggle-navigation .icon svg {

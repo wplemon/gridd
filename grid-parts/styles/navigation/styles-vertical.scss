@@ -1,28 +1,15 @@
-@import "variables";
+.gridd-tp-nav_ID .gridd-navigation {
+	display: block;
+}
 
-#{$element} {
+.gridd-tp-nav_ID .gridd-navigation ul {
+	position: relative;
+	box-shadow: none;
+}
 
-	.inner {
-		align-items: flex-start;
-	}
-
-	ul {
-
-		&.menu {
-			background-color: $submenuBackground;
-
-			> li {
-				width: 100%;
-
-				> ul {
-					font-size: calc(1em / var(--ts));
-
-					a {
-						// padding-left: calc(var(--ipd) * var(--ts));
-						// padding-right: calc(var(--ipd) * var(--ts));
-					}
-				}
-			}
-		}
-	}
+.gridd-tp-nav_ID .gridd-navigation .current-menu-item ul,
+.gridd-tp-nav_ID .gridd-navigation .current_page_item ul,
+.gridd-tp-nav_ID .gridd-navigation .current-page-ancestor ul,
+.gridd-tp-nav_ID .gridd-navigation .current-menu-ancestor ul {
+	display: block;
 }
