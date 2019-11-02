@@ -17,6 +17,8 @@ body {
   .gridd-tp-nav-handheld.gridd-tp > * {
     width: 100%;
     max-width: 168px; }
+  .gridd-tp-nav-handheld.gridd-tp #gridd-handheld-menu-wrapper .gridd-menu-item-wrapper {
+    padding: 0 1em; }
 
 .gridd-nav-handheld-btn {
   display: flex;

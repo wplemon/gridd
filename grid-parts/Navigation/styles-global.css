@@ -3,6 +3,7 @@
 	overflow: visible;
 	position: relative;
 	color: var(--cl);
+	font-size: var(--fs);
 }
 
 .gridd-tp-nav .inner {
@@ -44,7 +45,7 @@
 }
 
 .gridd-menu-item-wrapper {
-	padding: 0 0.25em;
+	padding: 0 calc(var(--ipd, 1em) * 0.25);
 	display: flex;
 	align-items: stretch;
 	width: 100%;
@@ -54,7 +55,7 @@
 .gridd-menu-item-wrapper > a {
 	color: var(--cl);
 	text-decoration: none;
-	padding: 0.618em 0.5em;
+	padding: calc(var(--ipd, 1em) * 0.618) calc(var(--ipd, 1em) * 0.5);
 	display: block;
 	width: 100%;
 	border-bottom: 0.1em solid transparent;
@@ -68,7 +69,7 @@
 	border: none;
 	box-shadow: none;
 	border-radius: 0;
-	padding: 0 0.5em;
+	padding: 0 calc(var(--ipd, 1em) * 0.5);
 	color: var(--cl);
 	background: none;
 	position: relative;
@@ -139,6 +140,6 @@
 }
 
 .rtl .gridd-menu-item-wrapper.has-arrow a {
-	padding-right: 0.5em;
+	padding-right: calr(var(--ipd, 1em) * 0.5);
 	padding-left: 0;
 }
