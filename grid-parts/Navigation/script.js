@@ -18,9 +18,14 @@ function griddMenuItemExpand( el ) { // eslint-disable-line no-unused-vars
 
 document.querySelectorAll( '.gridd-navigation ul.sub-menu' ).forEach( function( subMenu ) {
 	subMenu.addEventListener( 'blur', function( e ) {
-		if ( ! e.relatedTarget.closest( '.sub-menu' ) ) {
-			subMenu.style.display = 'none';
-			subMenu.parentNode.querySelector( '.gridd-menu-item-wrapper.has-arrow button' ).classList.remove( 'active' );
+		var prev = e.target,
+			next = e.relatedTarget,
+			prevUl = prev ? prev.closest( '.sub-menu' ) : null,
+			nextUl = next ? next.closest( '.sub-menu' ) : null;
+
+		if ( prevUl && prevUl !== nextUl && ( ! nextUl || ! prevUl.contains( nextUl ) ) ) {
+			prevUl.style.display = 'none';
+			prevUl.parentNode.querySelector( 'button' ).classList.remove( 'active' );
 		}
 	}, true );
 });
