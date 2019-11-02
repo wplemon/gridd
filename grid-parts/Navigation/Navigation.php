@@ -253,7 +253,7 @@ class Navigation extends Grid_Part {
 	 * @return array
 	 */
 	public function footer_inline_script_paths( $paths ) {
-		$paths[] = get_theme_file_path( 'grid-parts/scripts/navigation.min.js' );
+		$paths[] = __DIR__ . '/script.min.js';
 		return $paths;
 	}
 

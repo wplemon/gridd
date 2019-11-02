@@ -66,7 +66,7 @@ module.exports = function( grunt ) {
 						src: [
 							'assets/js/*.js',
 							'!assets/js/*.min.js',
-							'grid-parts/scripts/*.js',
+							'grid-parts/**/*.js',
 							'!grid-parts/**/*.min.js'
 						],
 						dest: '.',
