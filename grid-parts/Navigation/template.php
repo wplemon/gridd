@@ -27,9 +27,6 @@ foreach ( $responsive_mode_parts as $responsive_mode_part ) {
 		<?php if ( false !== strpos( $responsive_mode, 'icon' ) ) : ?>
 			<?php
 			$toggle_classes = [ 'gridd-toggle-navigation' ];
-			if ( get_theme_mod( "gridd_grid_nav_{$id}_expand_icon_boxed", false ) ) {
-				$toggle_classes[] = 'gridd-nav-toggle-boxed';
-			}
 			/**
 			 * Add the toggle button.
 			 */

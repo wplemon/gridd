@@ -305,29 +305,6 @@ function gridd_nav_customizer_options( $id ) {
 		]
 	);
 
-	Customizer::add_field(
-		[
-			'type'            => 'checkbox',
-			'settings'        => "gridd_grid_nav_{$id}_expand_icon_boxed",
-			'label'           => esc_html__( 'Boxed Expand Icon', 'gridd' ),
-			'section'         => "grid_part_details_nav_$id",
-			'default'         => false,
-			'transport'       => 'refresh',
-			'active_callback' => [
-				[
-					'setting'  => "gridd_grid_nav_{$id}_responsive_behavior",
-					'value'    => 'desktop-normal mobile-normal',
-					'operator' => '!==',
-				],
-				[
-					'setting'  => "gridd_grid_nav_{$id}_responsive_behavior",
-					'value'    => 'desktop-normal mobile-hidden',
-					'operator' => '!==',
-				],
-			],
-		]
-	);
-
 	new \Kirki\Field\Select(
 		[
 			'settings'          => "gridd_grid_nav_{$id}_expand_icon_position",
