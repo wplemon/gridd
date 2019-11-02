@@ -11,6 +11,13 @@
 		border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 		margin-bottom: 2em;
 
+		a {
+			display: block;
+			padding: 0.25em 0.7em;
+			color: var(--cl, #000);
+			text-decoration: none;
+		}
+
 		ul {
 			display: flex;
 			flex-wrap: wrap;
@@ -30,13 +37,6 @@
 					border-bottom: 2px solid var(--lc, #0f5e97);
 				}
 			}
-		}
-
-		a {
-			display: block;
-			padding: 0.25em 0.7em;
-			color: var(--cl, #000);
-			text-decoration: none;
 		}
 	}
 }

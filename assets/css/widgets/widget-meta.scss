@@ -1,5 +1,10 @@
 .widget_meta {
 
+	a {
+		display: block;
+		padding: 0.25em 0;
+	}
+
 	ul {
 		list-style: none;
 		list-style-type: none;
@@ -17,10 +22,5 @@
 		&:last-child {
 			border-bottom: none;
 		}
-	}
-
-	a {
-		display: block;
-		padding: 0.25em 0;
 	}
 }

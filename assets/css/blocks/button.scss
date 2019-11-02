@@ -1,4 +1,3 @@
-/* stylelint-disable at-rule-no-unknown */
 // @import "block-library/colors";
 // @import "block-library/variables";
 // @import "block-library/animations";
@@ -25,8 +24,7 @@
 }
 
 // Generic styles.
-.wp-block-button__link,
-.wp-block-button__link:visited {
+.wp-block-button__link {
 
 	@include button();
 
@@ -41,10 +39,17 @@
 
 .is-style-outline {
 
-	.wp-block-button__link,
-	.wp-block-button__link:visited {
+	.wp-block-button__link {
 		background-color: transparent;
 		border-color: currentColor;
+
+		&:not(.has-text-color) {
+			--element-color: var(--cl);
+		}
+
+		&:not(.has-background) {
+			--element-background-color: var(--bg);
+		}
 
 		&:hover,
 		&:focus,
@@ -52,14 +57,6 @@
 			background: var(--element-color);
 			color: var(--element-background-color);
 			border-color: var(--element-color);
-		}
-
-		&:not(.has-background) {
-			--element-background-color: var(--bg);
-		}
-
-		&:not(.has-text-color) {
-			--element-color: var(--cl);
 		}
 	}
 }

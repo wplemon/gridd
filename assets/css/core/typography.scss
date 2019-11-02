@@ -68,6 +68,14 @@ address {
 	margin: 0 0 1.5em;
 }
 
+code,
+kbd,
+tt,
+var {
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-size: 0.9375em;
+}
+
 pre {
 	color: #000;
 	background: #eee;
@@ -83,14 +91,6 @@ pre {
 	code {
 		background: none;
 	}
-}
-
-code,
-kbd,
-tt,
-var {
-	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-	font-size: 0.9375em;
 }
 
 abbr,

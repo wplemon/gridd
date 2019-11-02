@@ -10,6 +10,12 @@
 .wp-block-quote {
 	margin: var(--fs-1x-ts-tr) 0;
 
+	cite,
+	footer,
+	&__citation {
+		color: currentColor;
+	}
+
 	&.is-style-large,
 	&.is-large {
 		margin: 0 0 1em;
@@ -22,12 +28,6 @@
 		footer {
 			font-size: var(--fs-1x-ts-tr);
 		}
-	}
-
-	cite,
-	footer,
-	&__citation {
-		color: currentColor;
 	}
 }
 

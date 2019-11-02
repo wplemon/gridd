@@ -10,6 +10,16 @@
 		padding-right: 0;
 	}
 
+	&.vc_row-no-padding {
+		padding-left: 0;
+		padding-right: 0;
+
+		> * {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+
 	&[data-vc-full-width-init="true"],
 	&[data-vc-full-width="true"] {
 		max-width: 100% !important;
@@ -31,16 +41,6 @@
 			> * {
 				max-width: 100%;
 			}
-		}
-	}
-
-	&.vc_row-no-padding {
-		padding-left: 0;
-		padding-right: 0;
-
-		> * {
-			padding-left: 0;
-			padding-right: 0;
 		}
 	}
 

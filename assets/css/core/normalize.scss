@@ -49,11 +49,6 @@ a {
 	background-color: transparent;
 }
 
-a:active,
-a:hover {
-	// outline: 0;
-}
-
 abbr[title] {
 	border-bottom: 1px dotted;
 }
@@ -137,6 +132,10 @@ textarea {
 	margin: 0;
 }
 
+input {
+	line-height: normal;
+}
+
 button {
 	overflow: visible;
 }
@@ -163,10 +162,6 @@ button::-moz-focus-inner,
 input::-moz-focus-inner {
 	border: 0;
 	padding: 0;
-}
-
-input {
-	line-height: normal;
 }
 
 input[type="checkbox"],

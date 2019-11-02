@@ -1,3 +1,6 @@
+.widget_meta a {
+  display: block;
+  padding: 0.25em 0; }
 .widget_meta ul {
   list-style: none;
   list-style-type: none;
@@ -9,8 +12,5 @@
     text-decoration: none; }
   .widget_meta li:last-child {
     border-bottom: none; }
-.widget_meta a {
-  display: block;
-  padding: 0.25em 0; }
 
 /*# sourceMappingURL=widget-meta.css.map */

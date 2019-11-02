@@ -1,5 +1,6 @@
-/* stylelint-disable at-rule-no-unknown */
-/* stylelint-disable at-rule-no-unknown */
+textarea {
+  width: 100%; }
+
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -41,9 +42,6 @@ select {
   background: #fff;
   height: 2.5em;
   border-radius: 0; }
-
-textarea {
-  width: 100%; }
 
 .search-form {
   width: 100%;

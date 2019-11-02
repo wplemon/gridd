@@ -11,6 +11,10 @@
 		list-style-type: none;
 	}
 
+	.edit-link {
+		float: right;
+	}
+
 	.pingback {
 		font-size: 0.85em;
 		border-bottom: 1px solid #ededed;
@@ -18,10 +22,6 @@
 		.edit-link {
 			font-size: 0.75em;
 		}
-	}
-
-	.edit-link {
-		float: right;
 	}
 }
 

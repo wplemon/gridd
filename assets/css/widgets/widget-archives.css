@@ -1,3 +1,7 @@
+.widget_archive a {
+  display: block;
+  width: 100%;
+  padding: 0.25em 0; }
 .widget_archive ul {
   list-style: none;
   list-style-type: none;
@@ -10,10 +14,6 @@
   align-items: center; }
   .widget_archive li a {
     text-decoration: none; }
-.widget_archive a {
-  display: block;
-  width: 100%;
-  padding: 0.25em 0; }
 .widget_archive > ul > li:last-child {
   border-bottom: none; }
 

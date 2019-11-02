@@ -1,5 +1,32 @@
 @import "../mixins";
 
+.edd-add-to-cart {
+	text-align: center;
+}
+
+.edd_purchase_submit_wrapper {
+	// display: flex;
+
+	a,
+	.edd-add-to-cart {
+		// display: block;
+		// width: 100%;
+		text-align: center;
+	}
+}
+
+.edd_download_image {
+
+	a {
+
+		&:hover,
+		&:active,
+		&:focus {
+			filter: none;
+		}
+	}
+}
+
 .gridd-archive-downloads,
 .edd_downloads_list {
 	// display: -ms-grid;
@@ -65,9 +92,9 @@
 		width: 100%;
 
 		.edd_download_image {
-			margin-left: calc(0px - calc(var(--edd-gipd, 1.5) * em));
-			margin-right: calc(0px - calc(var(--edd-gipd, 1.5) * em));
-			margin-top: calc(0px - calc(var(--edd-gipd, 1.5) * em));
+			margin-left: calc(0 - calc(var(--edd-gipd, 1.5) * em));
+			margin-right: calc(0 - calc(var(--edd-gipd, 1.5) * em));
+			margin-top: calc(0 - calc(var(--edd-gipd, 1.5) * em));
 
 			> a {
 				display: block;
@@ -77,18 +104,6 @@
 					width: 100%;
 				}
 			}
-		}
-	}
-}
-
-.edd_download_image {
-
-	a {
-
-		&:hover,
-		&:active,
-		&:focus {
-			filter: none;
 		}
 	}
 }
@@ -132,17 +147,6 @@
 	}
 }
 
-.edd_purchase_submit_wrapper {
-	// display: flex;
-
-	a,
-	.edd-add-to-cart {
-		// display: block;
-		// width: 100%;
-		text-align: center;
-	}
-}
-
 #edd_download_pagination {
 
 	> * {
@@ -159,10 +163,6 @@
 			margin-right: 0;
 		}
 	}
-}
-
-.edd-add-to-cart {
-	text-align: center;
 }
 
 .edd-cart {

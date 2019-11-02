@@ -12,15 +12,6 @@
 	border-bottom: 4px solid currentColor;
 	color: currentColor;
 
-	&.alignleft,
-	&.alignright {
-		max-width: calc(var(--mw-c, 700px) / 2);
-
-		p {
-			font-size: var(--fs-1x-ts-tr);
-		}
-	}
-
 	p {
 		font-size: var(--fs-2x-ts-tr);
 	}
@@ -32,6 +23,15 @@
 	cite {
 		// color: currentColor;
 		opacity: 0.8;
+	}
+
+	&.alignleft,
+	&.alignright {
+		max-width: calc(var(--mw-c, 700px) / 2);
+
+		p {
+			font-size: var(--fs-1x-ts-tr);
+		}
 	}
 }
 

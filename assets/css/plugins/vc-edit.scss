@@ -1,3 +1,4 @@
+// stylelint-disable no-descending-specificity
 @import "vc-vars";
 
 .site-main .entry-content.vc-main-sortable-container {
@@ -52,8 +53,8 @@
 
 		> div {
 
-			.vc_control-btn .vc_btn-content,
-			.vc_btn-content {
+			.vc_btn-content,
+			.vc_control-btn .vc_btn-content {
 				background-color: $orange;
 				border-color: $orange;
 

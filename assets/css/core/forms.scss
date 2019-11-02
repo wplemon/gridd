@@ -1,4 +1,9 @@
+// stylelint-disable no-descending-specificity
 @import "../mixins";
+
+textarea {
+	width: 100%;
+}
 
 input[type="text"],
 input[type="email"],
@@ -31,10 +36,6 @@ select {
 	background: #fff;
 	height: 2.5em;
 	border-radius: 0;
-}
-
-textarea {
-	width: 100%;
 }
 
 .search-form {

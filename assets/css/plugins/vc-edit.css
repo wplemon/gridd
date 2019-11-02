@@ -19,20 +19,20 @@
 .compose-mode .vc_child-element-move .vc_btn-content:hover,
 .compose-mode .vc_element-move .vc_btn-content:hover {
   background-color: #00773c; }
-.compose-mode .vc_controls-column > div .vc_control-btn .vc_btn-content,
 .compose-mode .vc_controls-column > div .vc_btn-content,
-.compose-mode .vc_controls-container > div .vc_control-btn .vc_btn-content,
+.compose-mode .vc_controls-column > div .vc_control-btn .vc_btn-content,
 .compose-mode .vc_controls-container > div .vc_btn-content,
-.compose-mode .vc_controls-row > div .vc_control-btn .vc_btn-content,
-.compose-mode .vc_controls-row > div .vc_btn-content {
+.compose-mode .vc_controls-container > div .vc_control-btn .vc_btn-content,
+.compose-mode .vc_controls-row > div .vc_btn-content,
+.compose-mode .vc_controls-row > div .vc_control-btn .vc_btn-content {
   background-color: #e65722;
   border-color: #e65722; }
-  .compose-mode .vc_controls-column > div .vc_control-btn .vc_btn-content:hover,
   .compose-mode .vc_controls-column > div .vc_btn-content:hover,
-  .compose-mode .vc_controls-container > div .vc_control-btn .vc_btn-content:hover,
+  .compose-mode .vc_controls-column > div .vc_control-btn .vc_btn-content:hover,
   .compose-mode .vc_controls-container > div .vc_btn-content:hover,
-  .compose-mode .vc_controls-row > div .vc_control-btn .vc_btn-content:hover,
-  .compose-mode .vc_controls-row > div .vc_btn-content:hover {
+  .compose-mode .vc_controls-container > div .vc_control-btn .vc_btn-content:hover,
+  .compose-mode .vc_controls-row > div .vc_btn-content:hover,
+  .compose-mode .vc_controls-row > div .vc_control-btn .vc_btn-content:hover {
     background-color: #bf4416;
     border-color: #bf4416; }
 .compose-mode .vc_controls-column > div > .vc_parent .vc_control-btn .vc_btn-content,
