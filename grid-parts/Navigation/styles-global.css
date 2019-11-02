@@ -73,23 +73,29 @@
 	background: none;
 	position: relative;
 	overflow: hidden;
+	width: 1em;
+	box-sizing: content-box;
 	border-bottom: 0.1em solid transparent;
+}
+
+.gridd-menu-item-wrapper > a:focus {
+	border-bottom-color: var(--acl);
+}
+
+.gridd-menu-item-wrapper > button:hover {
+	border-color: transparent;
 }
 
 .gridd-menu-item-wrapper > a:hover,
 .gridd-menu-item-wrapper > a:focus,
-.gridd-menu-item-wrapper > a:active,
 .gridd-menu-item-wrapper > button:hover,
 .gridd-menu-item-wrapper > a:hover + button {
 	outline: none;
-	border-bottom-color: var(--acl);
 	color: var(--acl);
 }
 
 .gridd-menu-item-wrapper > button:hover::before,
-.gridd-menu-item-wrapper > button:focus::before,
-.gridd-menu-item-wrapper > button:active::before,
-.gridd-menu-item-wrapper > button.active::before {
+.gridd-menu-item-wrapper > button:focus::before {
 	content: "";
 	background: var(--acl);
 	display: block;
@@ -98,7 +104,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	opacity: 0.1;
+	opacity: 0.05;
 }
 
 .current-menu-item > .gridd-menu-item-wrapper > a,
