@@ -39,6 +39,10 @@
 	background: var(--bg);
 }
 
+.gridd-navigation ul ul {
+	position: relative;
+}
+
 .gridd-menu-item-wrapper {
 	padding: 0 0.25em;
 	display: flex;
