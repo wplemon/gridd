@@ -29,7 +29,7 @@ require_once get_theme_file_path( 'grid-parts/customizer/header-search.php' );
 require_once get_theme_file_path( 'grid-parts/customizer/header-social-media.php' );
 require_once get_theme_file_path( 'grid-parts/customizer/header.php' );
 require_once get_theme_file_path( 'grid-parts/customizer/nav-handheld.php' );
-require_once get_theme_file_path( 'grid-parts/customizer/navigation.php' );
+require_once get_theme_file_path( 'grid-parts/Navigation/customizer.php' );
 require_once get_theme_file_path( 'grid-parts/customizer/reusable-block.php' );
 require_once get_theme_file_path( 'grid-parts/customizer/sidebar.php' );
 
