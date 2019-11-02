@@ -77,11 +77,6 @@
 	border-bottom: 0.1em solid transparent;
 }
 
-.gridd-menu-item-wrapper > button.active .symbol {
-	display: block;
-	transform: rotate(180deg);
-}
-
 .gridd-menu-item-wrapper > button:hover::before,
 .gridd-menu-item-wrapper > button:focus::before,
 .gridd-menu-item-wrapper > button:active::before,

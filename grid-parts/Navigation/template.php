@@ -7,63 +7,11 @@
  */
 
 use Gridd\Grid_Part\Navigation;
-use Gridd\Style;
 use Gridd\Theme;
 
-$style = Style::get_instance( "grid-part/navigation/$id" );
 
-// Add main styles.
-$style->add_string( Navigation::get_global_styles() );
-$style->add_file( get_theme_file_path( 'grid-parts/styles/navigation/styles.min.css' ) );
-
-$responsive_mode       = get_theme_mod( "gridd_grid_nav_{$id}_responsive_behavior", 'desktop-normal mobile-hidden' );
-$added_vertical_styles = false;
-$is_vertical_nav       = get_theme_mod( "gridd_grid_nav_{$id}_vertical", false );
-
-// Check if we need to add desktop styles.
-if ( false !== strpos( $responsive_mode, 'desktop-normal' ) ) {
-	$style->add_string( '@media only screen and (min-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . '){' );
-	$style->add_string( ".gridd-tp-nav_{$id} .gridd-toggle-navigation{display:none;}" );
-	$style->add_string( '}' );
-}
-
-// Add collapsed styles if needed.
-if ( false !== strpos( $responsive_mode, 'icon' ) ) {
-
-	// Add the media-query.
-	if ( false !== strpos( $responsive_mode, 'desktop-normal' ) ) {
-		$style->add_string( '@media only screen and (max-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . '){' );
-	}
-
-	// Add styles.
-	$style->add_file( get_theme_file_path( 'grid-parts/styles/navigation/styles-collapsed.min.css' ) );
-	if ( ! $added_vertical_styles ) {
-		$style->add_file( get_theme_file_path( 'grid-parts/styles/navigation/styles-vertical.min.css' ) );
-	}
-
-	// Close the media-query.
-	if ( false !== strpos( $responsive_mode, 'desktop-normal' ) ) {
-		$style->add_string( '}' );
-	}
-}
-
-// Add alternative hover/focus styles.
-$style->add_file( get_theme_file_path( 'grid-parts/styles/navigation/styles-hover-alt.min.css' ) );
-
-// Hide on mobile.
-if ( false !== strpos( $responsive_mode, 'mobile-hidden' ) ) {
-	$style->add_string( '@media only screen and (max-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . '){.gridd-tp-nav_' . $id . '.gridd-mobile-hidden{display:none;}}' );
-}
-
-// Replace ID with $id.
-$style->replace( 'ID', $id );
-
-if ( class_exists( 'ariColor' ) ) {
-	$color = \ariColor::newColor( get_theme_mod( "gridd_grid_nav_{$id}_bg_color", '#ffffff' ) )->getNew( 'alpha', 1 )->toCSS( 'hex' );
-	if ( ! is_customize_preview() ) {
-		$style->add_string( ":root{--nv-$id-sbg:$color;}" );
-	}
-}
+$responsive_mode = get_theme_mod( "gridd_grid_nav_{$id}_responsive_behavior", 'desktop-normal mobile-hidden' );
+$is_vertical_nav = get_theme_mod( "gridd_grid_nav_{$id}_vertical", false );
 
 $wrapper_class  = "gridd-tp gridd-tp-nav gridd-tp-nav_$id";
 $wrapper_class .= ' gridd-menu-collapse-position-' . get_theme_mod( "gridd_grid_nav_{$id}_expand_icon_position", 'center-right' );
@@ -75,12 +23,6 @@ foreach ( $responsive_mode_parts as $responsive_mode_part ) {
 ?>
 
 <div <?php Theme::print_attributes( [ 'class' => $wrapper_class ], "wrapper-nav_$id" ); ?>>
-	<?php
-	/**
-	 * Print styles.
-	 */
-	$style->the_css( 'gridd-inline-css-navigation-' . $id );
-	?>
 	<div class="inner">
 		<?php if ( false !== strpos( $responsive_mode, 'icon' ) ) : ?>
 			<?php

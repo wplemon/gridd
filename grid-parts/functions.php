@@ -12,7 +12,7 @@ require_once get_theme_file_path( 'grid-parts/classes/Content.php' );
 require_once get_theme_file_path( 'grid-parts/classes/Footer.php' );
 require_once get_theme_file_path( 'grid-parts/classes/Header.php' );
 require_once get_theme_file_path( 'grid-parts/classes/Nav_Handheld.php' );
-require_once get_theme_file_path( 'grid-parts/classes/Navigation.php' );
+require_once get_theme_file_path( 'grid-parts/Navigation/Navigation.php' );
 require_once get_theme_file_path( 'grid-parts/classes/Reusable_Block.php' );
 require_once get_theme_file_path( 'grid-parts/classes/Sidebar.php' );
 

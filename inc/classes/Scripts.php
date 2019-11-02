@@ -328,11 +328,15 @@ class Scripts {
 
 		switch ( $widget_id_base ) {
 			case 'nav_menu':
-				$widget_output = str_replace( 'widget_nav_menu', 'widget_nav_menu gridd-nav-vertical', $widget_output );
-				$id            = (int) str_replace( 'sidebar-', '', $sidebar_id );
-				$style->add_string( Navigation::get_global_styles() );
-				$style->add_file( get_theme_file_path( 'assets/css/widgets/widget-navigation-menu.min.css' ) );
-				$style->replace( 'ID', $id );
+				ob_start();
+				Navigation::print_styles(
+					"#{$widget_id}",
+					[
+						'vertical' => true,
+					]
+				);
+				$styles = ob_get_clean();
+				$style->add_string( $styles );
 				break;
 
 			default:

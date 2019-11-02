@@ -38,6 +38,7 @@ class Navigation extends Grid_Part {
 		parent::__construct();
 		add_filter( 'walker_nav_menu_start_el', [ $this, 'add_nav_sub_menu_buttons' ], 10, 2 );
 		add_filter( 'wp_nav_menu_args', [ $this, 'nav_menu_args' ] );
+		add_filter( 'wp_nav_menu', [ $this, 'wp_nav_menu' ] );
 	}
 
 	/**
@@ -50,6 +51,9 @@ class Navigation extends Grid_Part {
 	public function init() {
 		add_action( 'after_setup_theme', [ $this, 'register_navigation_menus' ] );
 		add_action( 'gridd_the_grid_part', [ $this, 'render' ] );
+
+		// Add script.
+		add_filter( 'gridd_footer_inline_script_paths', [ $this, 'footer_inline_script_paths' ] );
 	}
 
 	/**
@@ -74,10 +78,20 @@ class Navigation extends Grid_Part {
 			$id = (int) str_replace( 'nav_', '', $part );
 			if ( apply_filters( 'gridd_render_grid_part', true, 'nav_' . $id ) ) {
 				/**
-				 * We use include( get_theme_file_path() ) here
-				 * because we need to pass the $sidebar_id var to the template.
+				 * We use include() here because we need to pass the $id var to the template.
 				 */
-				include get_theme_file_path( 'grid-parts/templates/navigation.php' );
+				include 'template.php';
+
+				/**
+				 * Print styles.
+				 */
+				self::print_styles(
+					".gridd-tp-nav_{$id}",
+					[
+						'responsive_mode' => get_theme_mod( "gridd_grid_nav_{$id}_responsive_behavior", 'desktop-normal mobile-hidden' ),
+						'vertical'        => get_theme_mod( "gridd_grid_nav_{$id}_vertical", false ),
+					]
+				);
 			}
 		}
 	}
@@ -138,9 +152,8 @@ class Navigation extends Grid_Part {
 			return '';
 		}
 		self::$global_styles_already_included = true;
-		return Theme::get_fcontents( 'grid-parts/styles/navigation/styles-global.min.css' );
+		return Theme::get_fcontents( __DIR__ . '/styles-global.min.css', true );
 	}
-
 
 	/**
 	 * Gets the number of navigation menus.
@@ -208,7 +221,7 @@ class Navigation extends Grid_Part {
 		// Skip when the item has no sub-menu.
 		if ( in_array( 'menu-item-has-children', $item->classes, true ) ) {
 			$html = '<span class="gridd-menu-item-wrapper has-arrow">';
-			$item_output .= '<button onClick="griddMenuItemExpand(this)"><span class="screen-reader-text">' . esc_html__( 'Toggle Child Menu', 'gridd' ) . '</span><span class="symbol">⌵</span></button>';
+			$item_output .= '<button onClick="griddMenuItemExpand(this)"><span class="screen-reader-text">' . esc_html__( 'Toggle Child Menu', 'gridd' ) . '</span>⌵</button>';
 		}
 
 		$html .= $item_output;
@@ -229,6 +242,100 @@ class Navigation extends Grid_Part {
 	public function nav_menu_args( $args ) {
 		$args['menu_class'] .= ' gridd-navigation';
 		return $args;
+	}
+
+	/**
+	 * Adds the script to the footer.
+	 *
+	 * @access public
+	 * @since 1.0
+	 * @param array $paths Paths to scripts we want to load.
+	 * @return array
+	 */
+	public function footer_inline_script_paths( $paths ) {
+		$paths[] = get_theme_file_path( 'grid-parts/scripts/navigation.min.js' );
+		return $paths;
+	}
+
+	/**
+	 * Adds tabindex to elements to make them focusable.
+	 *
+	 * @access public
+	 * @since 2.0.0
+	 * @param string $nav_menu HTML for the menu.
+	 * @return string
+	 */
+	public function wp_nav_menu( $nav_menu ) {
+		return str_replace( '<ul', '<ul tabindex="-1"', $nav_menu );
+	}
+
+	/**
+	 * Print styles for a menu.
+	 *
+	 * @access public
+	 * @since 2.0.0
+	 * @param string $container The navigation's container.
+	 * @return void
+	 */
+	public static function print_styles( $container, $args = [] ) {
+
+		$style = Style::get_instance( 'grid-part/navigation/' . sanitize_key( $container ) );
+
+		$args = wp_parse_args(
+			$args,
+			[
+				'vertical'        => false,
+				'responsive_mode' => 'desktop-normal mobile-normal'
+			]
+		);
+
+		// Add global styles if they have not already been included.
+		if ( ! self::$global_styles_already_included ) {
+			$style->add_file( __DIR__ . '/styles-global.min.css' );
+			self::$global_styles_already_included = true;
+		}
+
+		$breakpoint = get_theme_mod( 'gridd_mobile_breakpoint', '992px' );
+
+		if ( $args['vertical'] ) {
+			$style->add_file( __DIR__ . '/styles-vertical.min.css' );
+		}
+
+		// Check if we need to add desktop styles.
+		if ( false !== strpos( $args['responsive_mode'], 'desktop-normal' ) ) {
+			$style->add_string( "@media only screen and (min-width:{$breakpoint}){{$container} .gridd-toggle-navigation{display:none;}}" );
+		}
+
+		// Add collapsed styles if needed.
+		if ( false !== strpos( $args['responsive_mode'], 'icon' ) ) {
+
+			// Add the media-query.
+			if ( false !== strpos( $args['responsive_mode'], 'desktop-normal' ) ) {
+				$style->add_string( "@media only screen and (max-width:{$breakpoint}){" );
+			}
+
+			// Add styles.
+			$style->add_file( __DIR__ . '/styles-collapsed.min.css' );
+			if ( ! $args['vertical'] ) {
+				$style->add_file( __DIR__ . '/styles-vertical.min.css' );
+			}
+
+			// Close the media-query.
+			if ( false !== strpos( $args['responsive_mode'], 'desktop-normal' ) ) {
+				$style->add_string( '}' );
+			}
+		}
+
+		// Hide on mobile.
+		if ( false !== strpos( $args['responsive_mode'], 'mobile-hidden' ) ) {
+			$style->add_string( "@media only screen and (max-width:{$breakpoint}){{$container}.gridd-mobile-hidden{display:none;}}" );
+		}
+
+		// Replace ID with $id.
+		$style->replace( '.containerID', $container );
+
+		// Print styles.
+		$style->the_css( 'gridd-inline-css-navigation-' . sanitize_key( $container ) );
 	}
 }
 
