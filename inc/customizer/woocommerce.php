@@ -21,7 +21,12 @@ Customizer::add_field(
 		'section'     => 'woocommerce_product_catalog',
 		'transport'   => 'postMessage',
 		'default'     => '250px',
-		'css_vars'    => '--woo-cpmw',
+		'output'      => [
+			[
+				'element'  => ':root',
+				'property' => '--woo-cpmw',
+			],
+		],
 	]
 );
 

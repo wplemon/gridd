@@ -4,13 +4,17 @@
 @import "block-library/breakpoints";
 @import "block-library/mixins";
 @import "block-library/z-index";
-@import "block-library/mixins";
-
 @import "block-library/quote/style.scss";
 @import "block-library/quote/theme.scss";
 
 .wp-block-quote {
 	margin: var(--fs-1x-ts-tr) 0;
+
+	cite,
+	footer,
+	&__citation {
+		color: currentColor;
+	}
 
 	&.is-style-large,
 	&.is-large {
@@ -24,12 +28,6 @@
 		footer {
 			font-size: var(--fs-1x-ts-tr);
 		}
-	}
-
-	cite,
-	footer,
-	&__citation {
-		color: currentColor;
 	}
 }
 

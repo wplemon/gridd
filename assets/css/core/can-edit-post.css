@@ -1,37 +1,28 @@
 .edit-link {
   opacity: 0.6;
-  line-height: 1;
-  transition: opacity 200ms;
-}
-.edit-link a {
-  display: inline-block;
-  margin: 0 0.5em;
-}
-.edit-link svg {
-  fill: currentColor;
-  width: 0.6em;
-  height: 0.6em;
-}
-.edit-link:hover {
-  opacity: 1;
-}
+  line-height: 1; }
+  .edit-link a {
+    display: inline-block;
+    margin: 0 0.5em; }
+  .edit-link svg {
+    fill: currentColor;
+    width: 0.6em;
+    height: 0.6em; }
+  .edit-link:hover {
+    opacity: 1; }
 
 .gridd-tp-reusable-block .edit-link {
   position: absolute;
   top: 0.5em;
   right: 0.5em;
   z-index: 5;
-  display: none;
-}
-.gridd-tp-reusable-block .edit-link .post-edit-link {
-  color: #fff;
-}
-.gridd-tp-reusable-block .edit-link .post-edit-link svg {
-  width: 1em;
-  height: 1em;
-}
+  display: none; }
+  .gridd-tp-reusable-block .edit-link .post-edit-link {
+    color: #fff; }
+    .gridd-tp-reusable-block .edit-link .post-edit-link svg {
+      width: 1em;
+      height: 1em; }
 .gridd-tp-reusable-block:hover .edit-link {
-  display: block;
-}
+  display: block; }
 
 /*# sourceMappingURL=can-edit-post.css.map */

@@ -1,4 +1,5 @@
 .widget_recent_comments {
+
 	ul {
 		list-style: none;
 		list-style-type: none;
@@ -7,8 +8,8 @@
 	}
 
 	li {
-		border-bottom: 1px solid rgba(0,0,0,.1);
-		padding: .25em 0;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+		padding: 0.25em 0;
 
 		&:last-child {
 			border-bottom: none;

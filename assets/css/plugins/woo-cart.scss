@@ -1,9 +1,13 @@
+// stylelint-disable no-descending-specificity
 .woocommerce #content,
 .woocommerce,
 .woocommerce-page #content,
 .woocommerce-page {
+
 	table.cart {
+
 		td.actions {
+
 			.coupon {
 				display: flex;
 
@@ -11,7 +15,8 @@
 					width: auto;
 
 					&.input-text {
-						+.button {
+
+						+ .button {
 							width: 100%;
 						}
 					}

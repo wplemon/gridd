@@ -6,8 +6,6 @@
  * @since 1.0
  */
 
-use Gridd\AMP;
-
 ?>
 <div id="gridd-handheld-home">
 	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="gridd-nav-handheld-btn home" title="<?php esc_attr_e( 'Home', 'gridd' ); ?>">

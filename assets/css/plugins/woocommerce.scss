@@ -1,3 +1,10 @@
+.related.products {
+
+	li.product {
+		max-width: 400px;
+	}
+}
+
 .woocommerce {
 
 	.products ul,
@@ -8,8 +15,8 @@
 		// -ms-grid-columns: repeat(auto-fit, minmax(var(--woo-cpmw, 250px), 1fr));
 		grid-template-columns: repeat(auto-fit, minmax(var(--woo-cpmw, 250px), 1fr));
 
-		&:before,
-		&:after {
+		&::before,
+		&::after {
 			display: none;
 		}
 
@@ -19,11 +26,12 @@
 			display: flex;
 			flex-wrap: wrap;
 
-			>* {
+			> * {
 				width: 100%;
 			}
 
 			a {
+
 				&:hover {
 					outline: none;
 				}
@@ -45,22 +53,44 @@
 		align-self: flex-end;
 		text-align: center;
 		font-weight: 400;
-		font-size: 1rem;
+		font-size: 1em;
+	}
+
+	.woocommerce-tabs {
+
+		ul.tabs {
+			display: flex;
+			font-size: var(--fs-1d-ts-tr);
+
+			li {
+
+				a { // stylelint-disable
+
+					&:focus,
+					&:active {
+						background: none;
+					}
+				}
+			}
+		}
 	}
 
 	div.product {
+
 		div.images {
+
 			.woocommerce-product-gallery__trigger {
+
 				&:hover {
 					outline: none;
 					background-color: #333;
 
-					&:before,
-					&:after {
+					&::before,
+					&::after {
 						border-color: #fff;
 					}
 
-					&:after {
+					&::after {
 						background: #fff;
 					}
 				}
@@ -77,12 +107,14 @@
 		}
 
 		.woocommerce-tabs {
+
 			ul.tabs {
+
 				li {
 
 					&.active,
 					&:not(.active) {
-						background: var(--c-bg);
+						background: var(--bg);
 
 						a {
 							color: currentColor;
@@ -90,8 +122,9 @@
 					}
 
 					&:not(.active) {
+
 						a {
-							opacity: .5;
+							opacity: 0.5;
 						}
 					}
 				}
@@ -100,27 +133,9 @@
 	}
 
 	&.single-product {
+
 		.gridd-tp-content {
 			overflow: visible;
-		}
-	}
-
-	.woocommerce-tabs {
-		ul.tabs {
-			display: flex;
-			font-size: var(--fs-1d-ts-tr);
-
-			li {
-
-				a,
-				a:visited {
-
-					&:active,
-					&:focus {
-						background: none;
-					}
-				}
-			}
 		}
 	}
 
@@ -131,10 +146,10 @@
 		top: 0;
 		left: 0;
 		border-radius: 0;
-		padding: .5em 1em;
+		padding: 0.5em 1em;
 		line-height: 1.5;
 		background-color: var(--lc, #0f5e97);
-		color: var(--c-bg, #fff);
+		color: var(--bg, #fff);
 	}
 }
 
@@ -142,7 +157,7 @@
 	display: flex;
 	flex-wrap: wrap;
 
-	>* {
+	> * {
 		height: 100%;
 		line-height: 1.5;
 	}
@@ -155,12 +170,6 @@
 
 	.button {
 		border: 1px solid;
-	}
-}
-
-.related.products {
-	li.product {
-		max-width: 400px;
 	}
 }
 

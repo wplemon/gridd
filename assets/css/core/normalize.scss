@@ -49,18 +49,13 @@ a {
 	background-color: transparent;
 }
 
-a:active,
-a:hover {
-	outline: 0;
-}
-
 abbr[title] {
 	border-bottom: 1px dotted;
 }
 
 b,
 strong {
-	font-weight: bold;
+	font-weight: 700;
 }
 
 dfn {
@@ -122,9 +117,9 @@ code,
 kbd,
 pre,
 samp {
-	font-family: monospace, monospace;
+	font-family: monospace;
 	font-size: 1em;
-	background: rgba(0, 0, 0, .1);
+	background: rgba(0, 0, 0, 0.1);
 }
 
 button,
@@ -135,6 +130,10 @@ textarea {
 	color: inherit;
 	font: inherit;
 	margin: 0;
+}
+
+input {
+	line-height: normal;
 }
 
 button {
@@ -163,10 +162,6 @@ button::-moz-focus-inner,
 input::-moz-focus-inner {
 	border: 0;
 	padding: 0;
-}
-
-input {
-	line-height: normal;
 }
 
 input[type="checkbox"],
@@ -201,7 +196,7 @@ textarea {
 }
 
 optgroup {
-	font-weight: bold;
+	font-weight: 700;
 }
 
 table {

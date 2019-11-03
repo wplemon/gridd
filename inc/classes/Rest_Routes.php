@@ -1,11 +1,9 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName
 /**
  * Register REST API Routes.
  *
  * @package Gridd
  * @since 1.1
- *
- * phpcs:ignoreFile WordPress.Files.FileName.InvalidClassFileName
  */
 
 namespace Gridd;
@@ -79,7 +77,7 @@ class Rest_Routes extends \WP_REST_Controller {
 			if ( $partial ) {
 				ob_start();
 				do_action( 'gridd_the_partial', $partial );
-				return ob_get_clean();		
+				return ob_get_clean();
 			}
 		}
 	}

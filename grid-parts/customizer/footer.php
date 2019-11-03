@@ -12,18 +12,18 @@ use Gridd\Grid_Part\Footer;
 $sanitization = new Sanitize();
 
 Customizer::add_section(
-	'gridd_grid_part_details_footer',
+	'grid_part_details_footer',
 	[
 		'title'    => esc_html__( 'Footer', 'gridd' ),
-		'priority' => 26,
-		'panel'    => 'gridd_options',
+		'priority' => -60,
+		'panel'    => 'layout_blocks',
 	]
 );
 
 Customizer::add_field(
 	[
 		'settings'          => 'gridd_footer_grid',
-		'section'           => 'gridd_grid_part_details_footer',
+		'section'           => 'grid_part_details_footer',
 		'type'              => 'gridd_grid',
 		'grid-part'         => 'footer',
 		'label'             => esc_html__( 'Footer Grid', 'gridd' ),
@@ -38,6 +38,7 @@ Customizer::add_field(
 			'parts' => Footer::get_footer_grid_parts(),
 		],
 		'sanitize_callback' => [ $sanitization, 'grid' ],
+		'priority'          => 10,
 	]
 );
 
@@ -46,10 +47,16 @@ Customizer::add_field(
 		'type'      => 'dimension',
 		'settings'  => 'gridd_grid_footer_max_width',
 		'label'     => esc_html__( 'Footer Maximum Width', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_footer',
-		'default'   => '',
-		'transport' => 'postMessage',
-		'css_vars'  => '--ft-mw',
+		'section'   => 'grid_part_details_footer',
+		'default'   => '100%',
+		'transport' => 'auto',
+		'output'    => [
+			[
+				'element'  => '.gridd-tp-footer',
+				'property' => '--mw',
+			],
+		],
+		'priority'  => 20,
 	]
 );
 
@@ -63,10 +70,16 @@ Customizer::add_field(
 				'details' => __( 'Adds a gap between your grid-parts, both horizontally and vertically. For more information please read <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
 			]
 		),
-		'section'     => 'gridd_grid_part_details_footer',
+		'section'     => 'grid_part_details_footer',
 		'default'     => '0',
-		'css_vars'    => '--ft-gg',
-		'transport'   => 'postMessage',
+		'transport'   => 'auto',
+		'output'      => [
+			[
+				'element'  => '.gridd-tp-footer',
+				'property' => '--gg',
+			],
+		],
+		'priority'    => 30,
 	]
 );
 
@@ -80,16 +93,21 @@ Customizer::add_field(
 				'details' => esc_html__( 'Inner padding for all parts in the footer.', 'gridd' ) . ' ' . __( 'For details on how padding works, please refer to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
 			]
 		),
-		'section'     => 'gridd_grid_part_details_footer',
+		'section'     => 'grid_part_details_footer',
 		'default'     => '1em',
-		'transport'   => 'postMessage',
-		'css_vars'    => '--ft-pd',
+		'transport'   => 'auto',
+		'output'      => [
+			[
+				'element'  => '.gridd-tp-footer',
+				'property' => '--pd',
+			],
+		],
+		'priority'    => 40,
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\ReactColor(
 	[
-		'type'        => 'color',
 		'settings'    => 'gridd_grid_footer_background_color',
 		'label'       => esc_html__( 'Background Color', 'gridd' ),
 		'description' => Customizer::get_control_description(
@@ -97,24 +115,32 @@ Customizer::add_field(
 				'details' => esc_html__( 'Individual grid-parts can override this by setting their own background color for their area. If you are using a grid-gap the color defined here will be visible between grid-parts. If the color you have selected here is not visible, individual grid-parts may be using a solid background color.', 'gridd' ),
 			]
 		),
-		'section'     => 'gridd_grid_part_details_footer',
+		'section'     => 'grid_part_details_footer',
 		'default'     => '#ffffff',
-		'transport'   => 'postMessage',
-		'css_vars'    => '--ft-bg',
-		'choices'     => [
-			'alpha' => true,
+		'transport'   => 'auto',
+		'output'      => [
+			[
+				'element'  => '.gridd-tp-footer',
+				'property' => '--bg',
+			],
 		],
+		'choices'     => [
+			'formComponent' => 'TwitterPicker',
+			'colors'        => \Gridd\Theme::get_colorpicker_palette(),
+		],
+		'priority'    => 50,
 	]
 );
 
 Customizer::add_field(
 	[
 		'type'        => 'checkbox',
-		'settings'    => 'gridd_grid_part_details_footer_parts_background_override',
+		'settings'    => 'footer_parts_background_override',
 		'label'       => esc_html__( 'Override Footer Parts Background', 'gridd' ),
 		'description' => esc_html__( 'Enable this option to force-override the background color of all grid-parts in your footer.', 'gridd' ),
-		'section'     => 'gridd_grid_part_details_footer',
+		'section'     => 'grid_part_details_footer',
 		'default'     => false,
+		'priority'    => 60,
 	]
 );
 
@@ -123,10 +149,15 @@ Customizer::add_field(
 		'type'      => 'slider',
 		'settings'  => 'gridd_grid_footer_border_top_width',
 		'label'     => esc_html__( 'Border-Top Width', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_footer',
-		'default'   => 1,
-		'transport' => 'postMessage',
-		'css_vars'  => '--ft-bt-w',
+		'section'   => 'grid_part_details_footer',
+		'default'   => 0,
+		'transport' => 'auto',
+		'output'    => [
+			[
+				'element'  => '.gridd-tp-footer',
+				'property' => '--bt-w',
+			],
+		],
 		'priority'  => 50,
 		'choices'   => [
 			'min'    => 0,
@@ -134,21 +165,27 @@ Customizer::add_field(
 			'step'   => 1,
 			'suffix' => 'px',
 		],
+		'priority'  => 70,
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\ReactColor(
 	[
-		'type'            => 'color',
 		'settings'        => 'gridd_grid_footer_border_top_color',
 		'label'           => esc_html__( 'Top Border Color', 'gridd' ),
-		'section'         => 'gridd_grid_part_details_footer',
-		'default'         => 'rgba(0,0,0,.1)',
+		'section'         => 'grid_part_details_footer',
+		'default'         => '',
 		'priority'        => 60,
-		'transport'       => 'postMessage',
-		'css_vars'        => '--ft-bt-cl',
+		'transport'       => 'auto',
+		'output'          => [
+			[
+				'element'  => '.gridd-tp-footer',
+				'property' => '--bt-cl',
+			],
+		],
 		'choices'         => [
-			'alpha' => true,
+			'formComponent' => 'TwitterPicker',
+			'colors'        => \Gridd\Theme::get_colorpicker_palette(),
 		],
 		'active_callback' => [
 			[
@@ -157,6 +194,7 @@ Customizer::add_field(
 				'value'    => 0,
 			],
 		],
+		'priority'        => 80,
 	]
 );
 

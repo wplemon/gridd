@@ -23,7 +23,7 @@ Customizer::add_field(
 		'default'         => true,
 		'transport'       => 'postMessage',
 		'partial_refresh' => [
-			'gridd_grid_nav-handheld_enable_template' => [
+			'gridd_grid_nav_handheld_enable_template_enable' => [
 				'selector'            => '.gridd-tp-nav-handheld',
 				'container_inclusive' => true,
 				'render_callback'     => function() {
@@ -69,7 +69,7 @@ Customizer::add_field(
 		'label'           => esc_attr__( 'Hide Labels', 'gridd' ),
 		'description'     => Customizer::get_control_description(
 			[
-				'details' => esc_html__( 'Enable this option if you want to hide the button labels. If labels are hidden, they only become available to screen-readers.', 'gridd' ),
+				'details' => __( 'Enable this option if you want to hide the button labels. If labels are hidden, they only become available to screen-readers.', 'gridd' ),
 			]
 		),
 		'section'         => 'gridd_mobile',

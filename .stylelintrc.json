@@ -1,0 +1,6 @@
+{
+  "extends": "stylelint-config-wordpress",
+  "rules": {
+    "at-rule-no-unknown": null
+  }
+}

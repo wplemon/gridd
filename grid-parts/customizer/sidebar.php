@@ -8,7 +8,6 @@
 use Gridd\Grid_Part\Sidebar;
 use Gridd\Customizer;
 use Gridd\Customizer\Sanitize;
-use Gridd\AMP;
 
 $number = Sidebar::get_number_of_sidebars();
 for ( $i = 1; $i <= $number; $i++ ) {
@@ -31,80 +30,102 @@ function gridd_sidebar_customizer_options( $id ) {
 	$label = get_theme_mod( "gridd_grid_widget_area_{$id}_name", sprintf( esc_html__( 'Widget Area %d', 'gridd' ), intval( $id ) ) );
 
 	Customizer::add_outer_section(
-		"gridd_grid_part_details_sidebar_$id",
+		"grid_part_details_sidebar_$id",
 		[
-			/* translators: The grid-part label. */
-			'title' => sprintf( esc_html__( '%s Advanced Options', 'gridd' ), $label ),
+			'title' => $label,
 		]
 	);
 
 	/**
 	 * Focus on widget-area.
 	 */
+
+	/*
+	 * WIP - Disabled the control because we're nw moving these to their respective widget-areas.
 	Customizer::add_field(
 		[
 			'settings' => "gridd_sidebar_focus_on_sidebar_{$id}_section",
 			'type'     => 'custom',
 			'label'    => '',
-			'section'  => "gridd_grid_part_details_sidebar_$id",
+			'section'  => "grid_part_details_sidebar_$id",
 			'default'  => '<div style="margin-bottom:1em;"><button class="button-gridd-focus global-focus button button button-large" data-context="section" data-focus="sidebar-widgets-' . "sidebar-{$id}" . '">' . esc_html__( 'Click here to edit your widgets', 'gridd' ) . '</button></div>',
 		]
 	);
+	*/
 
-	Customizer::add_field(
+	new \Kirki\Field\ReactColor(
 		[
-			'type'      => 'color',
 			'settings'  => "gridd_grid_sidebar_{$id}_background_color",
 			'label'     => esc_html__( 'Background Color', 'gridd' ),
-			'section'   => "gridd_grid_part_details_sidebar_$id",
+			'section'   => "grid_part_details_sidebar_$id",
 			'default'   => '#ffffff',
 			'priority'  => 10,
-			'transport' => 'postMessage',
 			'choices'   => [
 				'alpha' => true,
 			],
-			'css_vars'  => "--wa-{$id}-bg",
+			'transport' => 'auto',
+			'output'    => [
+				[
+					'element'  => ".gridd-tp-sidebar_$id",
+					'property' => '--bg',
+				],
+			],
 			'choices'   => [
-				'alpha' => true,
+				'formComponent' => 'TwitterPicker',
+				'colors'        => \Gridd\Theme::get_colorpicker_palette(),
 			],
 		]
 	);
 
-	Customizer::add_field(
+	new \WPLemon\Field\WCAGTextColor(
 		[
-			'type'              => 'gridd-wcag-tc',
 			'settings'          => "gridd_grid_sidebar_{$id}_color",
 			'label'             => esc_html__( 'Text Color', 'gridd' ),
-			'section'           => "gridd_grid_part_details_sidebar_$id",
+			'section'           => "grid_part_details_sidebar_$id",
 			'default'           => '#000000',
 			'priority'          => 20,
-			'transport'         => 'postMessage',
 			'choices'           => [
-				'setting' => "gridd_grid_sidebar_{$id}_background_color",
+				'backgroundColor' => "gridd_grid_sidebar_{$id}_background_color",
+				'appearance'      => 'hidden',
 			],
-			'css_vars'          => "--wa-{$id}-cl",
+			'transport'         => 'auto',
+			'output'            => [
+				[
+					'element'  => ".gridd-tp-sidebar_$id",
+					'property' => '--cl',
+				],
+			],
 			'sanitize_callback' => [ $sanitization, 'color_hex' ],
 		]
 	);
 
-	Customizer::add_field(
+	new \WPLemon\Field\WCAGLinkColor(
 		[
-			'type'              => 'gridd-wcag-lc',
 			'settings'          => "gridd_grid_sidebar_{$id}_links_color",
 			'label'             => esc_html__( 'Links Color', 'gridd' ),
-			'section'           => "gridd_grid_part_details_sidebar_$id",
+			'section'           => "grid_part_details_sidebar_$id",
 			'default'           => '#0f5e97',
 			'priority'          => 30,
-			'transport'         => 'postMessage',
 			'choices'           => [
 				'alpha' => true,
 			],
-			'css_vars'          => "--wa-{$id}-lc",
+			'transport'         => 'auto',
+			'output'            => [
+				[
+					'element'  => ".gridd-tp-sidebar_$id",
+					'property' => '--lc',
+				],
+			],
 			'choices'           => [
 				'backgroundColor' => "gridd_grid_sidebar_{$id}_background_color",
 				'textColor'       => "gridd_grid_sidebar_{$id}_color",
+				'linksUnderlined' => true,
+				'forceCompliance' => get_theme_mod( 'target_color_compliance', 'auto' ),
 			],
 			'sanitize_callback' => [ $sanitization, 'color_hex' ],
+			'active_callback'   => function() {
+				return ! get_theme_mod( 'same_linkcolor_hues', true );
+			},
 		]
 	);
 
@@ -123,11 +144,16 @@ function gridd_sidebar_customizer_options( $id ) {
 					),
 				]
 			),
-			'section'     => "gridd_grid_part_details_sidebar_$id",
+			'section'     => "grid_part_details_sidebar_$id",
 			'priority'    => 40,
 			'default'     => '1em',
-			'transport'   => 'postMessage',
-			'css_vars'    => "--wa-{$id}-pd",
+			'transport'   => 'auto',
+			'output'      => [
+				[
+					'element'  => ".gridd-tp-sidebar_$id",
+					'property' => '--pd',
+				],
+			],
 		]
 	);
 
@@ -136,11 +162,16 @@ function gridd_sidebar_customizer_options( $id ) {
 			'type'      => 'dimension',
 			'settings'  => "gridd_grid_sidebar_{$id}_widgets_margin",
 			'label'     => esc_html__( 'Margin between widgets', 'gridd' ),
-			'section'   => "gridd_grid_part_details_sidebar_$id",
+			'section'   => "grid_part_details_sidebar_$id",
 			'priority'  => 43,
 			'default'   => '1em',
-			'transport' => 'postMessage',
-			'css_vars'  => "--wa-{$id}-mr",
+			'transport' => 'auto',
+			'output'    => [
+				[
+					'element'  => ".gridd-tp-sidebar_$id",
+					'property' => '--mr',
+				],
+			],
 		]
 	);
 }

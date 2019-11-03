@@ -5,8 +5,11 @@ a.button,
 a.button:visited,
 a.comment-reply-link,
 button,
-input[type=button],
-input[type=reset],
-input[type=submit] {
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	--element-color: var(--bg);
+	--element-background-color: var(--cl);
+
 	@include button();
 }

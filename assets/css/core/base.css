@@ -4,17 +4,18 @@
   --ts: var(--gridd-typo-scale, 1.26);
   --tr: var(--gridd-typo-ratio, 0.25);
   --fs-tr: calc(var(--fs-px) + var(--tr) * 1vw);
-  --gridd-content-max-width: var(--c-mw);
-  --gridd-content-max-width-calculated: var(--c-mw-c);
-  --gridd-text-color: var(--tc);
+  font-size: var(--fs-tr);
+  --gridd-content-max-width: var(--mw);
+  --gridd-content-max-width-calculated: var(--mw-c);
+  --gridd-text-color: var(--cl);
   --gridd-links-color: var(--lc);
-  --lch: var(--lch);
-  --gridd-content-bg: var(--c-bg);
-  --gridd-content-padding-left: var(--c-pd-l);
-  --gridd-content-padding-right: var(--c-pd-r);
-  --gridd-content-padding-top: var(--c-pd-t);
-  --gridd-content-padding-bottom: var(--c-pd-b);
+  --gridd-content-bg: var(--bg);
+  --gridd-content-padding-left: var(--pd-h);
+  --gridd-content-padding-right: var(--pd-h);
+  --gridd-content-padding-top: var(--pd-t);
+  --gridd-content-padding-bottom: var(--pd-b);
   --gridd-grid-max-width: var(--mw);
+  --acl: var(--lc);
   --fs-4x-ts-tr: calc(var(--ts) * var(--ts) * var(--ts) * var(--ts) * var(--fs-tr));
   --fs-3x-ts-tr: calc(var(--ts) * var(--ts) * var(--ts) * var(--fs-tr));
   --fs-2x-ts-tr: calc(var(--ts) * var(--ts) * var(--fs-tr));
@@ -23,7 +24,9 @@
   --fs-1d-ts-tr: calc(var(--fs-tr) / var(--ts));
   --fs-2d-ts-tr: calc(var(--fs-tr) / var(--ts) / var(--ts));
   --fs-3d-ts-tr: calc(var(--fs-tr) / var(--ts) / var(--ts) / var(--ts));
-  --fs-4d-ts-tr: calc(var(--fs-tr) / var(--ts) / var(--ts) / var(--ts) / var(--ts));
-}
+  --fs-4d-ts-tr: calc(var(--fs-tr) / var(--ts) / var(--ts) / var(--ts) / var(--ts)); }
+
+html {
+  font-size: var(--fs-tr); }
 
 /*# sourceMappingURL=base.css.map */

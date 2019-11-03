@@ -45,6 +45,11 @@ module.exports = function( grunt ) {
 						src: [ '**/*.css', '!**/*.min.css' ],
 						dest: 'grid-parts',
 						ext: '.min.css'
+					},
+					{
+						expand: true,
+						src: [ 'grid-parts/**/*.css', '!grid-parts/**/*.min.css' ],
+						ext: '.min.css'
 					}
 				]
 			}
@@ -61,7 +66,7 @@ module.exports = function( grunt ) {
 						src: [
 							'assets/js/*.js',
 							'!assets/js/*.min.js',
-							'grid-parts/scripts/*.js',
+							'grid-parts/**/*.js',
 							'!grid-parts/**/*.min.js'
 						],
 						dest: '.',
@@ -85,7 +90,8 @@ module.exports = function( grunt ) {
 			},
             cssGridParts: {
                 files: [
-					'grid-parts/**/**.scss'
+					'grid-parts/**/**.scss',
+					'grid-parts/**/**.css'
                 ],
                 tasks: [ 'sass:gridParts', 'cssmin' ]
 			},

@@ -16,12 +16,10 @@ use Gridd\Widget_Output_Filters;
 use Gridd\Rest;
 use Gridd\Rest_Routes;
 use Gridd\Upgrade;
-/**
- * If Kirki isn't loaded as a plugin, load the included version.
- */
-if ( ! class_exists( 'Kirki' ) ) {
-	require_once __DIR__ . '/kirki/kirki.php';
-}
+use Gridd\Editor;
+
+require_once dirname( __DIR__ ) . '/packages/autoload.php';
+require_once __DIR__ . '/kirki.php';
 
 /**
  * The Gridd Autoloader.
@@ -127,6 +125,13 @@ new Rest_Routes();
  * @since 1.1.18
  */
 new Upgrade();
+
+/**
+ * Editor tweaks.
+ *
+ * @since 2.0.0
+ */
+new Editor();
 
 /**
  * Integrates WPBakery Builder in the theme.

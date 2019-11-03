@@ -1,11 +1,9 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName
 /**
  * The Grid_Part class.
  * Individual grid-parts can extend this object to inherit its properties & methods.
  *
  * @package Gridd
- *
- * phpcs:ignoreFile WordPress.Files.FileName
  */
 
 namespace Gridd;

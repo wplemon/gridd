@@ -4,19 +4,21 @@
 @import "block-library/breakpoints";
 @import "block-library/mixins";
 @import "block-library/z-index";
-@import "block-library/mixins";
-
 @import "block-library/latest-posts/style.scss";
 
 .wp-block-latest-posts {
+
 	&.is-grid {
+
 		li {
 			margin: 0 1em 1em 0;
 		}
 	}
 
 	@include break-small {
+
 		@for $i from 2 through 6 {
+
 			&.columns-#{ $i } li {
 				width: calc((100% / #{ $i }) - 1em);
 			}

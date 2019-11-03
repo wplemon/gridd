@@ -3,8 +3,8 @@ html {
 }
 
 *,
-*:after,
-*:before {
+*::after,
+*::before {
 	box-sizing: inherit; // Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
 }
 
@@ -31,14 +31,14 @@ ol {
 	list-style: decimal;
 }
 
-li>ol,
-li>ul {
+li > ol,
+li > ul {
 	margin-bottom: 0;
 	// margin-left: 1.5em;
 }
 
 dt {
-	font-weight: bold;
+	font-weight: 700;
 }
 
 dd {
@@ -62,9 +62,9 @@ figure {
 	margin-bottom: 1em;
 
 	&.alignfull {
-		margin-left: calc(0px - var(--c-pd-l, 20px));
-		margin-right: calc(0px - var(--c-pd-r, 20px));
-		width: calc(100% + var(--c-pd-l, 20px) + var(--c-pd-r, 20px));
+		margin-left: calc(0px - var(--pd-h, 1em));
+		margin-right: calc(0px - var(--pd-h, 1em));
+		width: calc(100% + 2 * var(--pd-h, 1em));
 	}
 }
 
@@ -74,11 +74,12 @@ table {
 
 	td,
 	th {
-		padding: 0.75rem;
+		padding: 0.75em;
 		border-top: 1px solid #dee2e6;
 	}
 
 	thead {
+
 		th {
 			vertical-align: bottom;
 			border-bottom: 2px solid #dee2e6;
@@ -88,4 +89,29 @@ table {
 
 q {
 	font-style: italic;
+}
+
+.entry-tags,
+.entry-date-author,
+.entry-category,
+.entry-comments-link,
+.page-links {
+	font-size: var(--fs-1d-ts-tr);
+}
+
+.entry-comments-link {
+
+	.comments-link {
+		display: flex;
+	}
+
+	svg {
+		fill: currentColor;
+		width: 1em;
+		height: 1em;
+	}
+
+	.label {
+		padding: 0 0.5em;
+	}
 }

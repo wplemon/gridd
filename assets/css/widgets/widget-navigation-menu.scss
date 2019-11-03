@@ -4,24 +4,26 @@
 $element: ".gridd-tp-sidebar_ID .widget_nav_menu";
 
 // Basic vars.
-$backgroundColor: var(--wa-ID-bg, #fff);
+$backgroundColor: var(--bg, #fff);
 $fontSize: 1em;
-$padding: .5rem;
+$padding: 0.5em;
 $justify: flex-start;
-$itemsColor: var(--wa-ID-cl, #000);
+$itemsColor: var(--cl, #000);
 
 // Submenu
-$submenuBackground: var(--wa-ID-bg, #fff);
+$submenuBackground: var(--bg, #fff);
 
 // Accent
-$accentColor: var(--wa-ID-bg, #fff);
+$accentColor: var(--bg, #fff);
 
 // @import "../../../grid-parts/styles/navigation/styles-global.scss";
-@import "../../../grid-parts/styles/navigation/styles.scss";
-@import "../../../grid-parts/styles/navigation/styles-vertical.scss";
+// @import "../../../grid-parts/styles/navigation/styles.scss";
+// @import "../../../grid-parts/styles/navigation/styles-vertical.scss";
 
 #{$element} {
+
 	.gridd-navigation {
+
 		li {
 
 			&.current-menu-ancestor,
@@ -33,19 +35,31 @@ $accentColor: var(--wa-ID-bg, #fff);
 			&.current_page_ancestor,
 			&.current_page_item,
 			&.current_page_parent {
+
 				.gridd-toggle {
 					display: none;
 				}
 
 				ul {
-					&:after {
+
+					&::after {
 						content: "";
 						width: 100%;
 						display: block;
 						border-bottom: 1px solid currentColor;
-						opacity: .2;
+						opacity: 0.2;
 					}
 				}
+			}
+		}
+
+		a {
+
+			&:hover,
+			&:focus,
+			&:active {
+				color: var(--bg);
+				background: var(--cl);
 			}
 		}
 	}

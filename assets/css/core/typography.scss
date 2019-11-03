@@ -1,3 +1,4 @@
+/* stylelint-disable selector-type-no-unknown */
 @import "../mixins";
 
 body,
@@ -11,13 +12,13 @@ textarea {
 }
 
 :root {
-	--system-fonts: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+	--system-fonts: -apple-system, blinkmacsystemfont, "Segoe UI", roboto, oxygen-sans, ubuntu, cantarell, "Helvetica Neue", sans-serif;
 	font-size: var(--fs-px);
 }
 
 body {
 	font-size: var(--fs-tr);
-	color: var(--tc, #000);
+	color: var(--cl, #000);
 	font-family: var(--system-fonts);
 	font-weight: 400;
 }
@@ -56,6 +57,7 @@ blockquote {
 }
 
 .rtl {
+
 	blockquote {
 		border-left: none;
 		border-right: 5px solid currentColor;
@@ -64,6 +66,14 @@ blockquote {
 
 address {
 	margin: 0 0 1.5em;
+}
+
+code,
+kbd,
+tt,
+var {
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-size: 0.9375em;
 }
 
 pre {
@@ -83,14 +93,6 @@ pre {
 	}
 }
 
-code,
-kbd,
-tt,
-var {
-	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-	font-size: 0.9375em;
-}
-
 abbr,
 acronym {
 	border-bottom: 1px dotted #666;
@@ -99,7 +101,7 @@ acronym {
 
 ins,
 mark {
-	background: rgba(255, 255, 0, .07);
+	background: rgba(255, 255, 0, 0.07);
 	text-decoration: none;
 }
 

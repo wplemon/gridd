@@ -7,7 +7,6 @@
  */
 
 use Gridd\Theme;
-use Gridd\AMP;
 use Gridd\Style;
 
 // Add styles.

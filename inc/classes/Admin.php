@@ -1,10 +1,8 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName
 /**
  * Admin pages etc.
  *
  * @package Gridd
- *
- * phpcs:ignoreFile WordPress.Files.FileName
  */
 
 namespace Gridd;

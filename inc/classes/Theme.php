@@ -1,10 +1,8 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName
 /**
  * The main theme class.
  *
  * @package Gridd
- *
- * phpcs:ignoreFile WordPress.Files.FileName
  */
 
 namespace Gridd;
@@ -17,7 +15,6 @@ use Gridd\Blog;
 use Gridd\Scripts;
 use Gridd\Jetpack;
 use Gridd\WooCommerce;
-use Gridd\AMP;
 
 /**
  * The main theme class.
@@ -131,6 +128,8 @@ class Theme {
 		add_filter( 'body_class', [ $this, 'body_class' ] );
 		add_action( 'after_setup_theme', [ $this, 'setup' ] );
 		add_action( 'after_setup_theme', [ $this, 'content_width' ], 0 );
+		add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_block_editor_assets' ], 1, 1 );
+		add_action( 'wp_head', [ $this, 'add_color_palette_styles' ] );
 	}
 
 	/**
@@ -147,9 +146,6 @@ class Theme {
 			$classes[] = 'hfeed';
 		}
 		$classes[] = 'gridd-header-layout-' . get_theme_mod( 'gridd_header_layout', 'top' );
-		if ( ! AMP::is_active() ) {
-			$classes[] = 'gridd-amp';
-		}
 		if ( is_archive() || is_home() ) {
 			$classes[] = 'gridd-post-type-archive-' . get_post_type();
 		}
@@ -262,73 +258,13 @@ class Theme {
 		add_theme_support( 'wp-block-styles' );
 		if ( ! get_theme_mod( 'disable_editor_styles' ) ) {
 			add_theme_support( 'editor-styles' );
-			if ( 50 > \ariColor::newColor( get_theme_mod( 'gridd_grid_content_background_color', '#ffffff' ) )->lightness ) {
+			if ( 50 > \ariColor::newColor( get_theme_mod( 'content_background_color', '#ffffff' ) )->lightness ) {
 				add_theme_support( 'dark-editor-style' );
 			}
 		}
 		add_theme_support( 'responsive-embeds' );
 		add_editor_style( 'assets/css/admin/editor.min.css' );
-
-		add_theme_support(
-			'editor-color-palette',
-			[
-				[
-					'name'  => esc_html__( 'Pale Pink', 'gridd' ),
-					'slug'  => 'pale-pink',
-					'color' => '#f78da7',
-				],
-				[
-					'name'  => esc_html__( 'Vivid Red', 'gridd' ),
-					'slug'  => 'vivid-red',
-					'color' => '#cf2e2e',
-				],
-				[
-					'name'  => esc_html__( 'Luminous Vivid Orange', 'gridd' ),
-					'slug'  => 'luminous-vivid-orange',
-					'color' => '#ff6900',
-				],
-				[
-					'name'  => esc_html__( 'Luminous Vivid Amber', 'gridd' ),
-					'slug'  => 'luminous-vivid-amber',
-					'color' => '#fcb900',
-				],
-				[
-					'name'  => esc_html__( 'Light Green Cyan', 'gridd' ),
-					'slug'  => 'light-green-cyan',
-					'color' => '#7bdcb5',
-				],
-				[
-					'name'  => esc_html__( 'Vivid Green Cyan', 'gridd' ),
-					'slug'  => 'vivid-green-cyan',
-					'color' => '#00d084',
-				],
-				[
-					'name'  => esc_html__( 'Pale Cyan Blue', 'gridd' ),
-					'slug'  => 'pale-cyan-blue',
-					'color' => '#8ed1fc',
-				],
-				[
-					'name'  => esc_html__( 'Vivid Cyan Blue', 'gridd' ),
-					'slug'  => 'vivid-cyan-blue',
-					'color' => '#0693e3',
-				],
-				[
-					'name'  => esc_html__( 'Very Light Gray', 'gridd' ),
-					'slug'  => 'very-light-gray',
-					'color' => '#eeeeee',
-				],
-				[
-					'name'  => esc_html__( 'Cyan Bluish Gray', 'gridd' ),
-					'slug'  => 'cyan-bluish-gray',
-					'color' => '#abb8c3',
-				],
-				[
-					'name'  => esc_html__( 'Very Dark Gray', 'gridd' ),
-					'slug'  => 'very-dark-gray',
-					'color' => '#313131',
-				],
-			]
-		);
+		add_theme_support( 'editor-color-palette', self::get_color_palette() );
 
 		// Starter Content.
 		add_theme_support(
@@ -358,7 +294,7 @@ class Theme {
 		$gridd_content_width = 960;
 
 		// Get the width from theme_mod.
-		$max_width = get_theme_mod( 'gridd_grid_content_max_width', '45em' );
+		$max_width = get_theme_mod( 'content_max_width', '45em' );
 
 		if ( false === strpos( $max_width, 'calc' ) ) {
 
@@ -443,14 +379,6 @@ class Theme {
 
 		$html = '';
 
-		if ( AMP::is_active() ) {
-
-			// Create new state for managing storing the whether the sub-menu is expanded.
-			$html .= '<amp-state id="' . esc_attr( $args['expanded_state_id'] ) . '">';
-			$html .= '<script type="application/json">' . $args['expanded'] . '</script>';
-			$html .= '</amp-state>';
-		}
-
 		if ( ! isset( $args['classes'] ) ) {
 			$args['classes'] = [];
 		}
@@ -461,15 +389,9 @@ class Theme {
 			'aria-expanded' => 'false',
 		];
 
-		if ( AMP::is_active() ) {
-			$button_atts['[class]']         = '(' . $args['expanded_state_id'] . '?\'' . $classes . ' toggled-on\':\'' . $classes . '\')';
-			$button_atts['[aria-expanded]'] = "{$args['expanded_state_id']} ? 'true' : 'false'";
-			$button_atts['on']              = "tap:AMP.setState({ {$args['expanded_state_id']}: ! {$args['expanded_state_id']} })";
-		} else {
-			$uid = rand( 0, 99 ) . substr( str_shuffle( md5( microtime() ) ), 0, 10 );
-			$button_atts['data-uid'] = $uid;
-			$button_atts['onclick']  = 'griddToggleButtonClick(\'' . $uid . '\')';
-		}
+		$uid                     = wp_rand( 0, 99 ) . substr( str_shuffle( md5( microtime() ) ), 0, 10 );
+		$button_atts['data-uid'] = $uid;
+		$button_atts['onclick']  = 'griddToggleButtonClick(\'' . $uid . '\')';
 
 		/*
 		* Create the toggle button which mutates the state and which has class and
@@ -483,20 +405,15 @@ class Theme {
 		}
 		$html .= '>';
 
-		if ( AMP::is_active() && isset( $args['screen_reader_label_collapse'] ) && isset( $args['screen_reader_label_expand'] ) ) {
-
-			// Let the screen reader text in the button also update based on the expanded state.
-			$html .= '<span class="screen-reader-text"';
-			$html .= ' [text]="' . $args['expanded_state_id'] . '?\'' . esc_attr( $args['screen_reader_label_collapse'] ) . '\':\'' . esc_attr( $args['screen_reader_label_expand'] ) . '\'">';
-			$html .= esc_html( $args['screen_reader_label_expand'] );
-		} elseif ( isset( $args['screen_reader_label_toggle'] ) ) {
+		if ( isset( $args['screen_reader_label_toggle'] ) ) {
 			$html .= '<span class="screen-reader-text">' . $args['screen_reader_label_toggle'] . '</span>';
 		}
+
 		$html .= '</span>';
 		$html .= $args['label'];
 		$html .= '</button>';
 
-		return apply_filters( 'gridd_get_toggle_button', $html );
+		return apply_filters( 'gridd_get_toggle_button', $html, $args );
 	}
 
 	/**
@@ -541,6 +458,176 @@ class Theme {
 			echo ( $i ) ? ' ' : '';
 			echo esc_html( $key ) . '="' . esc_attr( $value ) . '"';
 		}
+	}
+
+	/**
+	 * Enqueue extra assets for the editor.
+	 *
+	 * @access public
+	 * @since 1.0.19
+	 * @return void
+	 */
+	public function enqueue_block_editor_assets() {
+		wp_enqueue_script( 'gridd-block-editor-script', get_theme_file_uri( '/assets/js/editor-script-block.js' ), array( 'wp-blocks', 'wp-dom' ), GRIDD_VERSION, true );
+	}
+
+	/**
+	 * Get a palette of colors.
+	 *
+	 * @static
+	 * @access public
+	 * @since 2.0.0
+	 * @return array
+	 */
+	public static function get_colorpicker_palette() {
+		$palette = self::get_color_palette();
+		$colors  = [];
+		foreach ( $palette as $item ) {
+			$colors[] = $item['color'];
+		}
+		return $colors;
+	}
+
+	/**
+	 * Gets the color-palette.
+	 *
+	 * @static
+	 * @access public
+	 * @since 2.0.0
+	 * @param bool $return_defaults Whether we just want to get the defaults or not.
+	 * @return array
+	 */
+	public static function get_color_palette( $return_defaults = false ) {
+		// phpcs:disable Squiz.PHP.CommentedOutCode
+		$defaults = [
+			[
+				'name'  => '',
+				'slug'  => 'custom-color-1',
+				'color' => '#ffffff',
+			],
+			[
+				'name'  => '',
+				'slug'  => 'custom-color-2',
+				'color' => '#f5f7f9',
+			],
+			// [
+			// 'name'  => '',
+			// 'slug'  => 'custom-color-3',
+			// 'color' => '#f4f4e1'
+			// ],
+			[
+				'name'  => '',
+				'slug'  => 'custom-color-4',
+				'color' => '#f0f3f6',
+			],
+			[
+				'name'  => esc_html__( 'Very Light Gray', 'gridd' ),
+				'slug'  => 'very-light-gray',
+				'color' => '#eeeeee',
+			],
+			// [
+			// 'name'  => esc_html__( 'Cyan Bluish Gray', 'gridd' ),
+			// 'slug'  => 'cyan-bluish-gray',
+			// 'color' => '#abb8c3',
+			// ],
+			[
+				'name'  => esc_html__( 'Very Dark Gray', 'gridd' ),
+				'slug'  => 'very-dark-gray',
+				'color' => '#313131',
+			],
+			// [
+			// 'name'  => '',
+			// 'slug'  => 'custom-color-5',
+			// 'color' => '#1a1a1d'
+			// ],
+			[
+				'name'  => '',
+				'slug'  => 'custom-color-6',
+				'color' => '#000000',
+			],
+			[
+				'name'  => esc_html__( 'Pale Pink', 'gridd' ),
+				'slug'  => 'pale-pink',
+				'color' => '#f78da7',
+			],
+			[
+				'name'  => esc_html__( 'Vivid Red', 'gridd' ),
+				'slug'  => 'vivid-red',
+				'color' => '#cf2e2e',
+			],
+			[
+				'name'  => esc_html__( 'Luminous Vivid Orange', 'gridd' ),
+				'slug'  => 'luminous-vivid-orange',
+				'color' => '#ff6900',
+			],
+			[
+				'name'  => esc_html__( 'Luminous Vivid Amber', 'gridd' ),
+				'slug'  => 'luminous-vivid-amber',
+				'color' => '#fcb900',
+			],
+			[
+				'name'  => esc_html__( 'Light Green Cyan', 'gridd' ),
+				'slug'  => 'light-green-cyan',
+				'color' => '#7bdcb5',
+			],
+			[
+				'name'  => esc_html__( 'Vivid Green Cyan', 'gridd' ),
+				'slug'  => 'vivid-green-cyan',
+				'color' => '#00d084',
+			],
+			[
+				'name'  => esc_html__( 'Pale Cyan Blue', 'gridd' ),
+				'slug'  => 'pale-cyan-blue',
+				'color' => '#8ed1fc',
+			],
+			[
+				'name'  => esc_html__( 'Vivid Cyan Blue', 'gridd' ),
+				'slug'  => 'vivid-cyan-blue',
+				'color' => '#0693e3',
+			],
+		];
+
+		// phpcs:enable Squiz.PHP.CommentedOutCode
+
+		if ( $return_defaults ) {
+			return $defaults;
+		}
+
+		$palette = get_theme_mod( 'custom_color_palette', $defaults );
+		if ( \is_string( $palette ) ) {
+			$palette = json_decode( $palette );
+		}
+		return $palette;
+	}
+
+	/**
+	 * Prints styles for our color-palettes.
+	 *
+	 * @access public
+	 * @since 2.0.0
+	 * @return void
+	 */
+	public function add_color_palette_styles() {
+		$palette = self::get_color_palette();
+
+		$style = Style::get_instance( 'blocks-styles' );
+
+		// Add the css-variables.
+		$style->add_string( ':root{' );
+		foreach ( $palette as $item ) {
+			$style->add_string( '--' . $item['slug'] . ':' . esc_html( $item['color'] ) . ';' );
+		}
+		$style->add_string( '}' );
+
+		// Add color & background-color styles.
+		foreach ( $palette as $item ) {
+			$style->add_string( '.has-' . $item['slug'] . '-color.has-' . $item['slug'] . '-color{--element-color:var(--' . $item['slug'] . ');}' );
+			$style->add_string( '.has-' . $item['slug'] . '-background-color.has-' . $item['slug'] . '-background-color{--element-background-color:var(--' . $item['slug'] . ');}' );
+		}
+
+		// Add globals.
+		$style->add_string( '.has-text-color{color:var(--element-color);}' );
+		$style->add_string( '.has-background{background-color:var(--element-background-color);border-color:var(--element-background-color);}' );
 	}
 }
 

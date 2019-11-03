@@ -1,20 +1,21 @@
 .gridd-tp-footer_copyright {
 	width: 100%;
+	align-items: center;
 
 	.site-info {
-		padding: var(--ft-pd, 1em);
-		background-color: var(--ft-cp-bg, #fff);
-		color: var(--ft-cp-cl, #000);
-		font-size: calc(var(--ft-cp-fs) * 1em);
+		padding: var(--pd, 1em);
+		background-color: var(--bg, #fff);
+		color: var(--cl, #000);
+		font-size: calc(var(--fs) * 1em);
 		width: 100%;
-		text-align: var(--ft-cp-ta, center);
+		text-align: var(--ta, center);
 
 		a,
 		a:visited {
-			color: var(--ft-cp-lc, #0f5e97);
+			color: var(--cl, #0f5e97);
 
 			&:hover {
-				color: var(--ft-cp-lc, #0f5e97);
+				color: var(--cl, #0f5e97);
 			}
 		}
 	}

@@ -1,15 +1,12 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName
 /**
  * Enqueue scripts & styles.
  *
  * @package Gridd
- *
- * phpcs:ignoreFile WordPress.Files.FileName
  */
 
 namespace Gridd;
 
-use Gridd\AMP;
 use Gridd\Style;
 use Gridd\Grid_Part\Navigation;
 
@@ -67,8 +64,8 @@ class Scripts {
 	 * @access public
 	 */
 	public function __construct() {
-		$this->script_debug   = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG );
-		$this->async_scripts  = apply_filters( 'gridd_async_scripts', $this->async_scripts );
+		$this->script_debug  = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG );
+		$this->async_scripts = apply_filters( 'gridd_async_scripts', $this->async_scripts );
 
 		add_filter( 'script_loader_tag', [ $this, 'add_async_attribute' ], 10, 2 );
 
@@ -107,11 +104,6 @@ class Scripts {
 	 */
 	public function inline_scripts() {
 
-		// Early exit if AMP is active.
-		if ( AMP::is_active() ) {
-			return;
-		}
-
 		// An array of scripts to print.
 		$scripts = [
 			get_theme_file_path( 'assets/js/passive-event-listeners-polyfill.min.js' ),
@@ -144,10 +136,6 @@ class Scripts {
 	 * @since 1.0
 	 */
 	public function scripts() {
-
-		if ( AMP::is_active() ) {
-			return;
-		}
 
 		// Dequeue wp-core blocks styles. These will be added inline.
 		wp_dequeue_style( 'wp-block-library' );
@@ -205,19 +193,6 @@ class Scripts {
 			$style->add_file( get_theme_file_path( 'assets/css/core/adminbar.min.css' ) );
 		}
 
-		// Add AMP styles.
-		if ( AMP::is_active() ) {
-			$style->add_file( get_theme_file_path( 'assets/plugins/css/amp.min.css' ) );
-		}
-
-		// EDD.
-		if ( class_exists( 'Easy_Digital_Downloads' ) ) {
-			$style->add_file( get_theme_file_path( 'assets/css/plugins/edd.min.css' ) );
-			if ( AMP::is_active() ) {
-				$style->add_file( get_theme_file_path( 'assets/css/plugins/amp-edd.min.css' ) );
-			}
-		}
-
 		// Comments.
 		if ( is_singular() && comments_open() ) {
 			$style->add_file( get_theme_file_path( 'assets/css/core/comments.min.css' ) );
@@ -263,21 +238,6 @@ class Scripts {
 			$style->add_file( get_theme_file_path( 'assets/css/core/can-edit-post.min.css' ) );
 		}
 
-		$style->add_vars(
-			[
-				'--ts'     => get_theme_mod( 'gridd_type_scale', 1.26 ),
-				'--tc'     => get_theme_mod( 'gridd_text_color', '#000000' ),
-				'--lc'     => get_theme_mod( 'gridd_links_color', '#0f5e97' ),
-				'--fs'     => get_theme_mod( 'gridd_body_font_size', 18 ),
-				'--tr'     => get_theme_mod( 'gridd_fluid_typography_ratio', .25 ),
-				'--lch'    => get_theme_mod( 'gridd_links_hover_color', '#541cfc' ),
-				'--mw'     => get_theme_mod( 'gridd_grid_max_width', '' ),
-				'--c-mw'   => get_theme_mod( 'gridd_grid_content_max_width', '45em' ),
-				'--edd-gg' => get_theme_mod( 'gridd_edd_archive_grid_gap', 1.5 ),
-				'--lc'     => get_theme_mod( 'gridd_links_color', '#0f5e97' ),
-			]
-		);
-
 		$style->the_css( 'gridd-inline-css-main-styles' );
 	}
 
@@ -299,8 +259,7 @@ class Scripts {
 		$style->the_css( 'gridd-inline-css-late-styles' );
 
 		// Add blocks styles.
-		$style = Style::get_instance( 'blocks-styles' );
-		$style->add_file( get_theme_file_path( 'assets/css/core/blocks-custom-colors.min.css' ) );
+		$style  = Style::get_instance( 'blocks-styles' );
 		$blocks = $this->get_blocks();
 		foreach ( $blocks as $block ) {
 			$block = str_replace( 'core/', '', $block );
@@ -330,7 +289,7 @@ class Scripts {
 	 */
 	public function admin_footer_editor_styles() {
 		global $content_width;
-		echo '<style>:root{--c-mw-c:' . absint( $content_width ) . 'px;}</style>';
+		echo '<style>:root{--mw-c:' . absint( $content_width ) . 'px;}</style>';
 	}
 
 	/**
@@ -341,9 +300,6 @@ class Scripts {
 	 * @return void
 	 */
 	public function add_user_agent_inline_script() {
-		if ( AMP::is_active() ) {
-			return;
-		}
 		echo 'if(window.navigator.userAgent.indexOf(\'Trident/\')>0){document.body.classList.add(\'ua-trident\');}';
 		echo 'if(window.navigator.userAgent.indexOf(\'MSIE \')>0){document.body.classList.add(\'ua-msie\');}';
 		echo 'if(window.navigator.userAgent.indexOf(\'Edge/\')>0){document.body.classList.add(\'ua-edge\');}';
@@ -372,11 +328,15 @@ class Scripts {
 
 		switch ( $widget_id_base ) {
 			case 'nav_menu':
-				$widget_output = str_replace( 'widget_nav_menu', 'widget_nav_menu gridd-nav-vertical', $widget_output );
-				$id            = (int) str_replace( 'sidebar-', '', $sidebar_id );
-				$style->add_string( Navigation::get_global_styles() );
-				$style->add_file( get_theme_file_path( 'assets/css/widgets/widget-navigation-menu.min.css' ) );
-				$style->replace( 'ID', $id );
+				ob_start();
+				Navigation::print_styles(
+					"#{$widget_id}",
+					[
+						'vertical' => true,
+					]
+				);
+				$styles = ob_get_clean();
+				$style->add_string( $styles );
 				break;
 
 			default:

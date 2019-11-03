@@ -1,4 +1,4 @@
-.site-main .entry-content>.elementor {
+.site-main .entry-content > .elementor {
 	padding-left: 0;
 	padding-right: 0;
 	margin-left: 0;
@@ -8,6 +8,6 @@
 }
 
 .elementor-section-full_width {
-	margin-left: calc(0px - var(--c-pd-l, 20px));
-	margin-right: calc(0px - var(--c-pd-r, 20px));
+	margin-left: calc(0px - var(--pd-h, 1em));
+	margin-right: calc(0px - var(--pd-h, 1em));
 }

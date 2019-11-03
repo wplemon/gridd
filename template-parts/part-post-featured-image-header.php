@@ -29,13 +29,6 @@ use Gridd\Style;
 			'right'  => '20px',
 		]
 	);
-	$style->add_vars(
-		[
-			'--c-pd-l' => $padding['left'],
-			'--c-pd-r' => $padding['right'],
-			'--c-mw'   => get_theme_mod( 'gridd_grid_content_max_width', '45em' ),
-		]
-	);
 	$style->the_css( 'post-featured-image-header' );
 	?>
 

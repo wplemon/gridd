@@ -1,6 +1,8 @@
 .archive,
 .blog {
+
 	.post {
+
 		&.format {
 
 			&-aside,
@@ -10,34 +12,37 @@
 			}
 
 			&-image {
+
 				figure {
 					max-width: 100% !important;
 				}
 			}
 
 			&-aside {
-				box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2);
+				box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 			}
 
 			&-status {
-				border: 1px solid rgba(0, 0, 0, .1);
+				border: 1px solid rgba(0, 0, 0, 0.1);
 			}
 
 			&-link {
-				border: 1px solid rgba(0, 0, 0, .1);
+				border: 1px solid rgba(0, 0, 0, 0.1);
 				text-align: center;
 			}
 
 			&-chat {
+
 				.entry-content {
+
 					p {
 						margin: 0;
-						border-bottom: 1px dashed rgba(0, 0, 0, .2);
+						border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
 						padding: 0.5em 1em;
-						background: rgba(0, 0, 0, .025);
+						background: rgba(0, 0, 0, 0.025);
 
 						&:nth-child(odd) {
-							background: rgba(0, 0, 0, .1);
+							background: rgba(0, 0, 0, 0.1);
 						}
 					}
 				}

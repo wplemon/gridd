@@ -1,15 +1,14 @@
 @import "../mixins";
 
 // Globally hidden elements when Infinite Scroll is supported and in use.
-.infinite-scroll .posts-navigation,
-// Older / Newer Posts Navigation (always hidden)
-
+.infinite-scroll .posts-navigation, // Older / Newer Posts Navigation (always hidden).
 .infinite-scroll.neverending .site-footer {
 	// Theme Footer (when set to scrolling)
 	display: none;
 }
 
-// When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before.
+// When Infinite Scroll has reached its end we need to re-display
+// elements that were hidden (via .neverending) before.
 
 .infinity-end.neverending .site-footer {
 	display: block;
@@ -29,7 +28,18 @@ body #infinite-handle {
 		padding: 0;
 
 		button {
+
 			@include button();
+			border-color: var(--cl);
+			background: var(--cl);
+			color: var(--bg);
+
+			&:focus,
+			&:active {
+				background: var(--bg);
+				color: var(--cl);
+				box-shadow: none;
+			}
 		}
 	}
 }

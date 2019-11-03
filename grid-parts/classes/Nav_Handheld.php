@@ -1,10 +1,8 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName
 /**
  * Gridd Nav_Handheld grid-part
  *
  * @package Gridd
- *
- * phpcs:ignoreFile WordPress.Files.FileName
  */
 
 namespace Gridd\Grid_Part;
@@ -40,6 +38,7 @@ class Nav_Handheld extends Grid_Part {
 		add_action( 'widgets_init', [ $this, 'register_sidebar' ] );
 		add_action( 'gridd_the_grid_part', [ $this, 'render' ] );
 		add_action( 'gridd_the_partial', [ $this, 'the_partial' ] );
+		add_filter( 'gridd_smart_grid_main_parts_order', [ $this, 'grid_parts_order' ] );
 
 		// Add script.
 		add_filter( 'gridd_footer_inline_script_paths', [ $this, 'footer_inline_script_paths' ] );
@@ -129,6 +128,28 @@ class Nav_Handheld extends Grid_Part {
 		return $paths;
 	}
 
+	/**
+	 * Change the position of the grid-part and put it right after the header.
+	 *
+	 * @access public
+	 * @since 2.0.0
+	 * @param array $parts An array of our ordered grid-parts.
+	 * @return array
+	 */
+	public function grid_parts_order( $parts ) {
+		if ( ! get_theme_mod( 'gridd_grid_nav-handheld_enable', true ) ) {
+			return $parts;
+		}
+		$final_parts = [];
+		foreach ( $parts as $part ) {
+			$final_parts[] = $part;
+			if ( 'header' === $part ) {
+				$final_parts[] = 'nav-handheld';
+			}
+		}
+
+		return $final_parts;
+	}
 }
 
 new Nav_Handheld();

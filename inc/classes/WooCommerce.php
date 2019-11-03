@@ -1,12 +1,10 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName
 /**
  * WooCommerce Compatibility File
  *
  * @link https://woocommerce.com/
  *
  * @package Gridd
- *
- * phpcs:ignoreFile WordPress.Files.FileName
  */
 
 namespace Gridd;
@@ -61,11 +59,6 @@ class WooCommerce {
 		// Remove Breadcrumbs.
 		add_action( 'init', [ $this, 'remove_breadcrumbs' ] );
 
-		if ( AMP::is_active() ) {
-			add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
-			add_action( 'wp_enqueue_scripts', [ $this, 'dequeue_cart_fragments' ], 11 );
-		}
-
 		// Hide shop page title if it's the frontpage and we don't want titles there.
 		add_action( 'woocommerce_page_title', [ $this, 'front_shop_page_title' ] );
 	}
@@ -109,21 +102,6 @@ class WooCommerce {
 		if ( ! function_exists( 'is_cart' ) || is_cart() ) {
 			$style->add_file( get_theme_file_path( '/assets/css/plugins/woo-cart.min.css' ) );
 		}
-
-		// AMP.
-		if ( AMP::is_active() ) {
-			$style->add_file( get_theme_file_path( '/assets/css/plugins/amp-woo.min.css' ) );
-		}
-
-		$style->add_vars(
-			[
-				'--woo-cpmw' => get_theme_mod( 'gridd_woocommerce_product_catalog_min_width', '250px' ),
-				'--ts'       => get_theme_mod( 'gridd_type_scale', 1.26 ),
-				'--tc'       => get_theme_mod( 'gridd_text_color', '#000000' ),
-				'--lc'       => get_theme_mod( 'gridd_links_color', '#005ea5' ),
-				'--lch'      => get_theme_mod( 'gridd_links_hover_color', '#2900a3' ),
-			]
-		);
 
 		$style->the_css( 'gridd-inline-css-wc' );
 	}
@@ -206,18 +184,6 @@ class WooCommerce {
 	public function wrapper_after() {
 		echo '</main>'; // Close #main.
 		echo '</div>'; // Close #primary.
-	}
-
-	/**
-	 * Dequeue cart fragments, therefore disabling AJAX calls from WooCommerce.
-	 * We're only doing this when AMP is enabled.
-	 *
-	 * @access public
-	 * @since 1.0
-	 * @return void
-	 */
-	public function dequeue_cart_fragments() {
-		wp_dequeue_script( 'wc-cart-fragments' );
 	}
 
 	/**

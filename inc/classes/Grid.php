@@ -1,10 +1,8 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName
 /**
  * Extra bits and pieces needed for the grid
  *
  * @package Gridd
- *
- * phpcs:ignoreFile WordPress.Files.FileName
  */
 
 namespace Gridd;
@@ -38,7 +36,7 @@ class Grid {
 			$defaults = [];
 			switch ( $theme_mod ) {
 				case 'gridd_grid':
-					$defaults = Grid::get_grid_default_value();
+					$defaults = self::get_grid_default_value();
 					break;
 
 				case 'gridd_header_grid':

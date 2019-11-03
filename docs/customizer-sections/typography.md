@@ -34,11 +34,11 @@ Colors are calculated based on the background color selected in the â€œContentâ€
 <img src="https://wplemon.github.io/gridd/uploads/typo3.png" alt="Recommended mode for text colors." style="max-width:300px">
 <img src="https://wplemon.github.io/gridd/uploads/typo4.png" alt="Custom mode for text colors." style="max-width:300px">
 
-## Links Color & Links Hover Color
+## Links Color
 
 <img src="https://wplemon.github.io/gridd/uploads/typo5.png" alt="Hue selection for links colors." style="max-width:300px">
 
-These 2 controls allow you to select a hue for your links. The Gridd theme will then go through all available colors for that hue and automatically apply one that guarantees maximum readability and compliance with WCAG regulations.
+This control allows you to select a hue for your links. The Gridd theme will then go through all available colors for that hue and automatically apply one that guarantees maximum readability and compliance with WCAG regulations.
 
 ## Gridd Plus Links Colors
 

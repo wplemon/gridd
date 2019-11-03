@@ -4,11 +4,10 @@
 @import "block-library/breakpoints";
 @import "block-library/mixins";
 @import "block-library/z-index";
-@import "block-library/mixins";
-
 @import "block-library/text-columns/style.scss";
 
 .wp-block-text-columns {
+
 	.wp-block-column {
 		margin: 0 1em;
 	}

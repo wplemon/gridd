@@ -11,16 +11,36 @@ use Gridd\Customizer\Sanitize;
 $sanitization = new Sanitize();
 
 Customizer::add_outer_section(
-	'gridd_grid_part_details_breadcrumbs',
+	'grid_part_details_breadcrumbs',
 	[
-		/* translators: The grid-part label. */
-		'title' => sprintf( esc_html__( '%s Options', 'gridd' ), esc_html__( 'Breadcrumbs', 'gridd' ) ),
+		'title' => esc_html__( 'Breadcrumbs', 'gridd' ),
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\ReactColor(
 	[
-		'type'        => 'dimension',
+		'settings'  => 'gridd_grid_breadcrumbs_background_color',
+		'label'     => esc_html__( 'Background Color', 'gridd' ),
+		'section'   => 'grid_part_details_breadcrumbs',
+		'default'   => '#ffffff',
+		'transport' => 'postMessage',
+		'transport' => 'auto',
+		'output'    => [
+			[
+				'element'  => '.gridd-tp-breadcrumbs',
+				'property' => '--bg',
+			],
+		],
+		'choices'   => [
+			'formComponent' => 'TwitterPicker',
+			'colors'        => \Gridd\Theme::get_colorpicker_palette(),
+		],
+		'priority'  => 10,
+	]
+);
+
+new \Kirki\Field\Dimension(
+	[
 		'settings'    => 'gridd_grid_breadcrumbs_padding',
 		'label'       => esc_html__( 'Padding', 'gridd' ),
 		'description' => Customizer::get_control_description(
@@ -33,65 +53,70 @@ Customizer::add_field(
 				),
 			]
 		),
-		'section'     => 'gridd_grid_part_details_breadcrumbs',
+		'section'     => 'grid_part_details_breadcrumbs',
 		'default'     => '1em',
-		'transport'   => 'postMessage',
-		'css_vars'    => '--brd-pd',
+		'transport'   => 'auto',
+		'output'      => [
+			[
+				'element'  => '.gridd-tp-breadcrumbs',
+				'property' => '--pd',
+			],
+		],
+		'priority'    => 20,
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Dimension(
 	[
-		'type'      => 'dimension',
 		'settings'  => 'gridd_grid_breadcrumbs_max_width',
 		'label'     => esc_html__( 'Breadcrumbs Maximum Width', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_breadcrumbs',
-		'default'   => '',
-		'css_vars'  => '--brd-mw',
-		'transport' => 'postMessage',
-	]
-);
-
-Customizer::add_field(
-	[
-		'type'      => 'color',
-		'settings'  => 'gridd_grid_breadcrumbs_background_color',
-		'label'     => esc_html__( 'Background Color', 'gridd' ),
-		'section'   => 'gridd_grid_part_details_breadcrumbs',
-		'default'   => '#ffffff',
-		'transport' => 'postMessage',
-		'css_vars'  => '--brd-bg',
-		'choices'   => [
-			'alpha' => true,
+		'section'   => 'grid_part_details_breadcrumbs',
+		'default'   => '100%',
+		'transport' => 'auto',
+		'output'    => [
+			[
+				'element'  => '.gridd-tp-breadcrumbs',
+				'property' => '--mw',
+			],
 		],
+		'priority'  => 30,
 	]
 );
 
-Customizer::add_field(
+new \WPLemon\Field\WCAGTextColor(
 	[
-		'type'              => 'gridd-wcag-tc',
 		'settings'          => 'gridd_grid_breadcrumbs_color',
 		'label'             => esc_html__( 'Text Color', 'gridd' ),
-		'section'           => 'gridd_grid_part_details_breadcrumbs',
-		'css_vars'          => '--brd-cl',
+		'section'           => 'grid_part_details_breadcrumbs',
 		'default'           => '#000000',
-		'transport'         => 'postMessage',
+		'transport'         => 'auto',
+		'output'            => [
+			[
+				'element'  => '.gridd-tp-breadcrumbs',
+				'property' => '--cl',
+			],
+		],
 		'choices'           => [
-			'setting' => 'gridd_grid_breadcrumbs_background_color',
+			'backgroundColor' => 'gridd_grid_breadcrumbs_background_color',
+			'appearance'      => 'hidden',
 		],
 		'sanitize_callback' => [ $sanitization, 'color_hex' ],
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\RadioButtonset(
 	[
-		'type'              => 'radio-buttonset',
 		'settings'          => 'gridd_grid_breadcrumbs_text_align',
 		'label'             => esc_html__( 'Alignment', 'gridd' ),
-		'section'           => 'gridd_grid_part_details_breadcrumbs',
+		'section'           => 'grid_part_details_breadcrumbs',
 		'default'           => 'center',
-		'transport'         => 'postMessage',
-		'css_vars'          => '--brd-ta',
+		'transport'         => 'auto',
+		'output'            => [
+			[
+				'element'  => '.gridd-tp-breadcrumbs',
+				'property' => '--ta',
+			],
+		],
 		'choices'           => [
 			'left'   => esc_html__( 'Left', 'gridd' ),
 			'center' => esc_html__( 'Center', 'gridd' ),
@@ -100,6 +125,7 @@ Customizer::add_field(
 		'sanitize_callback' => function( $value ) {
 			return ( 'left' !== $value && 'right' !== $value && 'center' !== $value ) ? 'center' : $value;
 		},
+		'priority'          => 40,
 	]
 );
 

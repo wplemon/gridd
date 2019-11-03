@@ -1,10 +1,8 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName
 /**
  * The Grid_Parts class.
  *
  * @package Gridd
- *
- * phpcs:ignoreFile WordPress.Files.FileName
  */
 
 namespace Gridd;
@@ -27,6 +25,19 @@ class Grid_Parts {
 	 * @var array
 	 */
 	protected $parts;
+
+	/**
+	 * An array of our ordered parts.
+	 *
+	 * Prevents running the ordering query & loops multiple times
+	 * and improves performance.
+	 *
+	 * @static
+	 * @access protected
+	 * @since 2.0.0
+	 * @var array
+	 */
+	private static $ordered_parts;
 
 	/**
 	 * A single instance of this object.
@@ -66,9 +77,6 @@ class Grid_Parts {
 
 		// Set $this->parts.
 		$this->set_parts();
-
-		// Apply custom order to grid-parts.
-		add_filter( 'gridd_get_parts', [ $this, 'apply_custom_order' ] );
 	}
 
 	/**
@@ -133,7 +141,36 @@ class Grid_Parts {
 	 * @return array
 	 */
 	public function get_parts() {
-		return apply_filters( 'gridd_get_parts', $this->parts );
+
+		if ( self::$ordered_parts ) {
+			return self::$ordered_parts;
+		}
+
+		$order     = $this->get_smart_order();
+		$unordered = [];
+		$ordered   = [];
+
+		// Add the ID as key. Makes next step easier/faster.
+		foreach ( $this->parts as $part ) {
+			$unordered[ $part['id'] ] = $part;
+		}
+
+		// Put the grid-parts in their right order.
+		foreach ( $order as $item ) {
+			if ( isset( $unordered[ $item ] ) ) {
+				$ordered[] = $unordered[ $item ];
+				unset( $unordered[ $item ] );
+			}
+		}
+
+		// Add the remaining items.
+		foreach ( $unordered as $item ) {
+			$ordered[] = $item;
+		}
+
+		self::$ordered_parts = $ordered;
+
+		return apply_filters( 'gridd_get_parts', self::$ordered_parts );
 	}
 
 	/**
@@ -205,42 +242,6 @@ class Grid_Parts {
 	}
 
 	/**
-	 * Applies custom order to grid-parts.
-	 *
-	 * @access public
-	 * @since 1.0.3
-	 * @param array $parts The parts we're reordering.
-	 * @return array
-	 */
-	public function apply_custom_order( $parts ) {
-		$saved_order  = get_theme_mod( 'gridd_grid_load_order', array() );
-		$all_part_ids = [];
-
-		// Get an array of all part IDs.
-		foreach ( $parts as $part ) {
-			$all_part_ids[] = $part['id'];
-		}
-
-		// Add any missing part-IDs to the saved order.
-		// Necessary if there is no saved order, or if a new part-ID was added.
-		foreach ( $all_part_ids as $part_id ) {
-			if ( ! in_array( $part_id, $saved_order ) ) {
-				$saved_order[] = $part_id;
-			}
-		}
-
-		// Build the ordered array.
-		$ordered = [];
-		foreach ( $saved_order as $part_id ) {
-			$part = $this->get_part_definition( $part_id );
-			if ( $part ) {
-				$ordered[] = $part;
-			}
-		}
-		return $ordered;
-	}
-
-	/**
 	 * Get the definition of a grid-part.
 	 *
 	 * @access protected
@@ -255,6 +256,133 @@ class Grid_Parts {
 			}
 		}
 		return false;
+	}
+
+	/**
+	 * Get the visual order of things.
+	 * This will be used to reorder things in HTML.
+	 *
+	 * @access public
+	 * @since 2.0.0
+	 * @param string $theme_mod The grid we're referring to.
+	 * @return array
+	 */
+	public function get_smart_order( $theme_mod = 'gridd_grid' ) {
+		$value             = Grid::get_options( $theme_mod );
+		$rtl               = is_rtl();
+		$all_parts_ordered = 'gridd_grid' === $theme_mod ? [ 'header' ] : [];
+		$grid              = [];
+
+		if ( isset( $value['areas'] ) ) {
+			foreach ( $value['areas'] as $part => $args ) {
+				foreach ( $args['cells'] as $cell ) {
+					$score  = 1000 * $cell[0];
+					$score += $rtl ? 100 - $cell[1] : $cell[1];
+
+					// Change score of footer so it gets moved to last position.
+					if ( 'footer' === $part ) {
+						$score *= 100;
+					}
+					$grid[] = [
+						'id'     => $part,
+						'score'  => $score,
+						'row'    => $cell[0],
+						'column' => $cell[1],
+					];
+				}
+			}
+		}
+
+		if ( 'gridd_grid' === $theme_mod ) {
+
+			// Get the content columns.
+			$content_columns = [];
+			foreach ( $grid as $item ) {
+				if ( 'content' === $item['id'] ) {
+					$content_columns[] = $item['column'];
+				}
+			}
+
+			// Get items that live in the main columns as the main content area.
+			$main_area_items = [];
+			foreach ( $grid as $item ) {
+
+				// Exclude footer.
+				if ( 'footer' === $item['id'] ) {
+					continue;
+				}
+				if ( \in_array( $item['column'], $content_columns, true ) ) {
+					$main_area_items[] = $item;
+				}
+			}
+
+			// Sort items in the content-area columns.
+			usort( $main_area_items, [ $this, 'compare_grid_cell_scores' ] );
+
+			// Add items in the final array.
+			foreach ( $main_area_items as $item ) {
+				if ( ! \in_array( $item['id'], $all_parts_ordered, true ) ) {
+					$all_parts_ordered[] = $item['id'];
+				}
+			}
+
+			$all_parts_ordered = apply_filters( 'gridd_smart_grid_main_parts_order', $all_parts_ordered );
+		}
+
+		// Sort items in all our grid-parts.
+		usort( $grid, [ $this, 'compare_grid_cell_scores' ] );
+
+		// Add items in the final array.
+		foreach ( $grid as $item ) {
+			if ( ! \in_array( $item['id'], $all_parts_ordered, true ) ) {
+				$all_parts_ordered[] = $item['id'];
+			}
+		}
+
+		// Get all grid-parts.
+		if ( 'gridd_grid' === $theme_mod ) {
+			$all_parts = $this->parts;
+
+			$subgrids = [];
+			foreach ( $all_parts as $part ) {
+				if ( isset( $part['grid'] ) && \in_array( $part['id'], $all_parts_ordered, true ) ) {
+					$subgrids[ $part['id'] ] = $this->get_smart_order( $part['grid'] );
+				}
+			}
+		}
+
+		$final = [];
+		foreach ( $all_parts_ordered as $part ) {
+			$final[] = $part;
+			if ( isset( $subgrids[ $part ] ) ) {
+				foreach ( $subgrids[ $part ] as $sub_part ) {
+					$final[] = $sub_part;
+				}
+			}
+		}
+
+		// Multiply keys by 10 so we can inject other items when we need to.
+		$final_multiplied = [];
+		foreach ( $final as $k => $v ) {
+			$final_multiplied[ 10 * $k ] = $v;
+		}
+		return apply_filters( 'gridd_smart_grid_parts_order', $final_multiplied );
+	}
+
+	/**
+	 * Sort grid items by score.
+	 *
+	 * @access public
+	 * @since @2.0.0
+	 * @param array $a 1st item to compare.
+	 * @param array $b 2nd item to compare.
+	 * @return int
+	 */
+	public function compare_grid_cell_scores( $a, $b ) {
+		if ( $a['score'] === $b['score'] ) {
+			return 0;
+		}
+		return ( $a['score'] < $b['score'] ) ? -1 : 1;
 	}
 }
 

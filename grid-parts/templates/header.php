@@ -30,10 +30,16 @@ $style->add_string(
 );
 $style->add_file( get_theme_file_path( 'grid-parts/styles/header/styles.min.css' ) );
 $style->add_string( '@media only screen and (min-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . '){' );
-$style->add_file( get_theme_file_path( 'grid-parts/styles/header-large.min.css' ) );
+$style->add_file( get_theme_file_path( 'grid-parts/styles/header/styles-large.min.css' ) );
+
+// If we're on an archive and we want to use cards, add extra styles.
+if ( ( is_archive() || is_home() ) && 'card' === get_theme_mod( 'archive_post_mode', 'default' ) ) {
+	$style->add_file( get_theme_file_path( 'assets/css/core/archive-cards.min.css' ) );
+}
+
 $style->add_string( '}' );
 if ( true === get_theme_mod( 'gridd_header_sticky', false ) && false === get_theme_mod( 'gridd_header_sticky_mobile', false ) ) {
-	$style->add_string( '@media only screen and (max-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . '){.gridd-tp.gridd-tp-header.gridd-sticky{position:relative;}}' );
+	$style->add_string( '@media only screen and (max-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . '){.gridd-tp.gridd-tp-header.gridd-sticky{position:relative;}.admin-bar .gridd-tp.gridd-sticky{--adminbar-height:0;}}' );
 }
 
 // Get the header image.
@@ -45,19 +51,9 @@ if ( $header_bg_img ) {
 }
 
 // Force-override parts background images.
-if ( get_theme_mod( 'gridd_grid_part_details_header_parts_background_override', false ) ) {
-	$style->add_string( '.gridd-tp.gridd-tp-header .gridd-tp,.gridd-tp.gridd-tp-header .gridd-tp inner{background:none !important;}' );
+if ( get_theme_mod( 'header_parts_background_override', false ) ) {
+	$style->add_string( '.gridd-tp.gridd-tp-header .gridd-tp,.gridd-tp.gridd-tp-header .gridd-tp .inner{background:transparent !important;background-color:none !important;}' );
 }
-
-// Add css-vars to be replaced.
-$style->add_vars(
-	[
-		'--h-bg' => get_theme_mod( 'gridd_grid_part_details_header_background_color', '#ffffff' ),
-		'--h-bs' => get_theme_mod( 'gridd_grid_header_box_shadow', '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)' ),
-		'--h-mw' => get_theme_mod( 'gridd_grid_header_max_width', '45em' ),
-		'--h-gg' => get_theme_mod( 'gridd_grid_header_grid_gap', '0' ),
-	]
-);
 
 $wrapper_class  = 'gridd-tp gridd-tp-header';
 $wrapper_class .= get_theme_mod( 'gridd_header_sticky', false ) ? ' gridd-sticky' : '';

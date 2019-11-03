@@ -24,15 +24,6 @@ add_action(
 	'customize_register',
 	function( $wp_customize ) {
 
-		// Move the background-color control.
-		$wp_customize->get_control( 'background_color' )->section     = 'gridd_grid';
-		$wp_customize->get_control( 'background_color' )->priority    = 90;
-		$wp_customize->get_control( 'background_color' )->description = Customizer::get_control_description(
-			[
-				esc_html__( 'Background will only be seen when grid-parts have a transparent background color, or if the site grid is not set to 100% width.', 'gridd' ),
-			]
-		);
-
 		// Move the background-image control.
 		$wp_customize->get_control( 'background_image' )->section       = 'gridd_grid';
 		$wp_customize->get_control( 'background_image' )->priority      = 90;
@@ -57,9 +48,8 @@ add_action(
 Customizer::add_section(
 	'gridd_grid',
 	[
-		'title'    => esc_html__( 'Site Grid', 'gridd' ),
-		'priority' => 22,
-		'panel'    => 'gridd_options',
+		'title'    => esc_html__( 'Main Grid Layout', 'gridd' ),
+		'priority' => -100,
 	]
 );
 
@@ -115,10 +105,31 @@ Customizer::add_field(
 		'label'       => esc_html__( 'Site Maximum Width', 'gridd' ),
 		'description' => esc_html__( 'Set the value to something other than 100% to use a boxed layout.', 'gridd' ),
 		'section'     => 'gridd_grid',
-		'default'     => '',
+		'default'     => '100%',
 		'priority'    => 40,
 		'transport'   => 'postMessage',
-		'css_vars'    => '--mw',
+		'output'      => [
+			[
+				'element'  => ':root',
+				'property' => '--mw',
+			],
+		],
+	]
+);
+
+new \Kirki\Field\ReactColor(
+	[
+		'settings'          => 'background_color',
+		'label'             => esc_html__( 'Background Color', 'gridd' ),
+		'section'           => 'gridd_grid',
+		'default'           => '#ffffff',
+		'transport'         => 'postMessage',
+		'priority'          => 90,
+		'choices'           => [
+			'formComponent' => 'TwitterPicker',
+			'colors'        => \Gridd\Theme::get_colorpicker_palette(),
+		],
+		'sanitize_callback' => 'sanitize_hex_color_no_hash',
 	]
 );
 

@@ -1,0 +1,64 @@
+/* React Tabs */
+.react-tabs {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.react-tabs__tab-list {
+  border-bottom: 1px solid #aaa;
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+.react-tabs__tab {
+  display: inline-block;
+  border: 1px solid transparent;
+  border-bottom: none;
+  bottom: -1px;
+  position: relative;
+  list-style: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.react-tabs__tab--selected {
+  border-color: #aaa;
+  color: black;
+  border-radius: 3px 3px 0 0;
+}
+
+.react-tabs__tab--disabled {
+  color: GrayText;
+  cursor: default;
+}
+
+.react-tabs__tab:focus {
+  box-shadow: 0 0 5px hsl(208, 99%, 50%);
+  border-color: hsl(208, 99%, 50%);
+  outline: none;
+}
+
+.react-tabs__tab-panel {
+  display: none;
+}
+
+.react-tabs__tab-panel--selected {
+  display: block;
+}
+/* End React Tabs */
+
+.customize-control-kirki-react-color .alpha-picker,
+.customize-control-kirki-react-color .block-picker,
+.customize-control-kirki-react-color .chrome-picker,
+.customize-control-kirki-react-color .circle-picker,
+.customize-control-kirki-react-color .compact-picker,
+.customize-control-kirki-react-color .github-picker,
+.customize-control-kirki-react-color .hue-picker,
+.customize-control-kirki-react-color .material-picker,
+.customize-control-kirki-react-color .photoshop-picker,
+.customize-control-kirki-react-color .sketch-picker,
+.customize-control-kirki-react-color .slider-picker,
+.customize-control-kirki-react-color .swatches-picker,
+.customize-control-kirki-react-color .twitter-picker {
+    margin-top: 12px;
+}

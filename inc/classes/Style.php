@@ -1,10 +1,8 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName
 /**
  * Stylesheets generator.
  *
  * @package Gridd
- *
- * phpcs:ignoreFile WordPress.Files.FileName
  */
 
 namespace Gridd;
@@ -90,7 +88,7 @@ class Style {
 	 * @access public
 	 * @since 1.0
 	 * @param array $vars An array of css-vars to replace.
-	 * @return void
+	 * @return Style
 	 */
 	public function add_vars( $vars ) {
 		$this->vars = apply_filters( 'gridd_style_vars', array_merge( $this->vars, $vars ), $this->context );
@@ -159,14 +157,14 @@ class Style {
 		// Check if we have var(--foo,fallback) and replace matches.
 		$match_counter = preg_match_all( "/var\($var_name.*\)/U", $this->css, $matches );
 		if ( $match_counter ) {
-			
+
 			// Make sure to only go through different fallback values.
 			$matches = array_unique( $matches[0] );
 
 			// Loop through all different fallback value instances.
 			foreach ( $matches as $match ) {
 				$match_replace = $value;
-				
+
 				// When fallbacks are vars themselves we need to add a closing ) because of the regex.
 				$match .= ( 1 < substr_count( $match, 'var(' ) ) ? ')' : '';
 
@@ -191,12 +189,7 @@ class Style {
 	 */
 	public function get_css() {
 
-		// Don't replace css-vars if we're on the customizer.
-		if ( is_customize_preview() ) {
-			return $this->css;
-		}
-
-		if ( apply_filters( 'gridd_replace_css_vars', false ) ) {
+		if ( ! is_customize_preview() && apply_filters( 'gridd_replace_css_vars', false ) ) {
 			foreach ( $this->vars as $name => $value ) {
 				$this->replace_css_var( $name, $value );
 			}

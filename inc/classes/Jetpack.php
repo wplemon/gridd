@@ -1,11 +1,9 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName
 /**
  * Jetpack Compatibility File
  *
  * @package Gridd
  * @link https://jetpack.com/
- *
- * phpcs:ignoreFile WordPress.Files.FileName.InvalidClassFileName
  */
 
 namespace Gridd;
@@ -30,7 +28,7 @@ class Jetpack {
 	public function __construct() {
 		add_action( 'after_setup_theme', [ $this, 'setup' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
-		add_action( 'wp_footer', [ $this,'css_vars' ] );
+		add_action( 'wp_footer', [ $this, 'css_vars' ] );
 	}
 
 	/**

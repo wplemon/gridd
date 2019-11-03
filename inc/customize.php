@@ -4,7 +4,7 @@
  *
  * @package Gridd
  *
- * phpcs:ignoreFile WordPress.Files.FileName
+ * phpcs:ignore WordPress.Files.FileName
  */
 
 namespace Gridd;
@@ -12,26 +12,26 @@ namespace Gridd;
 /**
  * Add the "Theme Options" panel.
  *
- * @since 1.0
+ * @since 2.0.0
  */
 Customizer::add_panel(
-	'gridd_options',
+	'layout_blocks',
 	[
-		'title'    => esc_html__( 'Theme Options', 'gridd' ),
-		'priority' => 1,
+		'title'    => esc_html__( 'Layout Blocks', 'gridd' ),
+		'priority' => 5,
 	]
 );
 
 /**
- * Add a hidden panel used for outer sections.
+ * Add the "Theme Options" panel.
  *
- * @since 1.0.3
+ * @since 2.0.0
  */
 Customizer::add_panel(
-	'gridd_hidden_panel',
+	'theme_settings',
 	[
-		'title'    => '',
-		'priority' => 999,
+		'title'    => esc_html__( 'Theme Settings', 'gridd' ),
+		'priority' => 5,
 	]
 );
 
@@ -40,6 +40,8 @@ Customizer::add_panel(
  *
  * @since 1.0
  */
+/**
+ * WIP: Disable upsell.
 if ( ! Theme::is_plus_active() ) {
 	Customizer::add_section(
 		'gridd_get_plus',
@@ -52,6 +54,7 @@ if ( ! Theme::is_plus_active() ) {
 		]
 	);
 }
+*/
 
 /**
  * Add the config.
@@ -66,6 +69,7 @@ if ( ! Theme::is_plus_active() ) {
 
 // Add customizer sections & settings.
 require_once get_template_directory() . '/inc/customizer/grid.php';
+require_once get_template_directory() . '/inc/customizer/color-options.php';
 require_once get_template_directory() . '/inc/customizer/typography.php';
 require_once get_template_directory() . '/inc/customizer/mobile.php';
 require_once get_template_directory() . '/inc/customizer/edd.php';

@@ -1,14 +1,45 @@
-@import "../core/base";
+// stylelint-disable no-descending-specificity
+// stylelint-disable selector-type-no-unknown
+@import "../core/base.scss";
+@import "../blocks/audio.scss";
+@import "../blocks/button.scss";
+@import "../blocks/calendar.scss";
+@import "../blocks/categories.scss";
+@import "../blocks/code.scss";
+@import "../blocks/columns.scss";
+@import "../blocks/cover.scss";
+@import "../blocks/embed.scss";
+@import "../blocks/file.scss";
+@import "../blocks/gallery.scss";
+@import "../blocks/group.scss";
+@import "../blocks/image.scss";
+@import "../blocks/latest-comments.scss";
+@import "../blocks/latest-posts.scss";
+@import "../blocks/media-text.scss";
+@import "../blocks/paragraph.scss";
+@import "../blocks/preformatted.scss";
+@import "../blocks/pullquote.scss";
+@import "../blocks/quote.scss";
+@import "../blocks/rss.scss";
+@import "../blocks/search.scss";
+@import "../blocks/separator.scss";
+@import "../blocks/spacer.scss";
+@import "../blocks/subhead.scss";
+@import "../blocks/table.scss";
+@import "../blocks/text-columns.scss";
+@import "../blocks/verse.scss";
+@import "../blocks/video.scss";
+
 .editor-post-title__block .editor-post-title__input {
 	font-size: var(--fs-4x-ts-tr);
-	color: var(--tc, #000);
+	color: var(--cl, #000);
 }
 
 .block-editor .edit-post-visual-editor.editor-styles-wrapper,
 .edit-post-visual-editor.editor-styles-wrapper {
 	font-size: var(--fs-tr);
-	color: var(--tc, #000);
-	background-color: var(--c-bg, #fff);
+	color: var(--cl, #000);
+	background-color: var(--bg, #fff);
 
 	p {
 		font-size: var(--fs-tr);
@@ -52,12 +83,10 @@
 	a:visited {
 		color: var(--lc, #0f5e97);
 		-webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
-		transition: all 100ms ease-in-out;
 
 		&:active,
 		&:focus,
 		&:hover {
-			color: var(--lch, #541cfc);
 			outline: thin dotted;
 		}
 
@@ -70,12 +99,12 @@
 	.wp-block-image figcaption {
 		max-width: 100%;
 		width: 100%;
-		color: var(--tc, #000);
+		color: var(--cl, #000);
 		font-size: var(--fs-1d-ts-tr);
 	}
 
 	.wp-block-quote__citation {
-		color: var(--tc, #000);
+		color: var(--cl, #000);
 		font-size: var(--fs-1d-ts-tr);
 	}
 
@@ -85,7 +114,7 @@
 
 	.wp-block-quote,
 	.wp-block-pullquote {
-		color: var(--tc, #000);
+		color: var(--cl, #000);
 		border-top-color: currentColor;
 		border-bottom-color: currentColor;
 		border-left-color: currentColor;
@@ -93,6 +122,7 @@
 	}
 
 	.wp-block-cover {
+
 		.wp-block-cover-text {
 			font-size: var(--fs-1x-ts-tr);
 		}
@@ -105,17 +135,19 @@
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce {
+
 	a {
 		color: var(--lc, #0f5e97);
 	}
 }
 
 .wp-block {
+
 	&:not([data-align="full"]) {
-		max-width: var(--c-mw-c, 700px);
+		max-width: var(--mw-c, 700px);
 	}
 
 	&[data-align="wide"] {
-		max-width: calc(var(--c-mw-c, 700px) + 25%);
+		max-width: calc(var(--mw-c, 700px) + 25%);
 	}
 }

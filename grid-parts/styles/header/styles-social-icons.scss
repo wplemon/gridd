@@ -1,20 +1,28 @@
-.gridd-tp-social_media.gridd-tp {
-	background-color: var(--h-si-bg, #fff);
+.gridd-tp-social_media {
+	background-color: var(--bg, #fff);
 	align-items: center;
-	justify-content: var(--h-si-ta, flex-end);
+	justify-content: var(--ta, flex-end);
 
 	a {
 		display: block;
-		max-width: calc(var(--h-si-sz, 1) * 1em);
-		padding: calc(var(--h-si-pd, 0.5) * 1em);
+		max-width: calc(var(--sz, 1) * 1em);
+		padding: calc(var(--pd, 0.5) * 1em);
 		box-sizing: content-box;
 		line-height: 1;
-		color: var(--h-si-cl, #000);
+		color: var(--cl, #000);
+		text-decoration: none;
+		border: none;
+
+		&:hover {
+			text-decoration: none;
+			border: none;
+			box-shadow: none;
+		}
 	}
 
 	svg {
-		fill: var(--h-si-cl, #000);
-		max-width: calc(var(--h-si-sz, 1) * 1em);
+		fill: var(--cl, #000);
+		max-width: calc(var(--sz, 1) * 1em);
 		width: 100%;
 	}
 }

@@ -1,18 +1,18 @@
 .gridd-tp-breadcrumbs {
-	background-color: var(--brd-bg, #fff);
+	background-color: var(--bg, #fff);
 
 	li,
 	li a,
 	li a:visited,
 	li a:hover,
 	li a:focus {
-		color: var(--brd-cl, #000);
+		color: var(--cl, #000);
 	}
 
 	.inner {
-		padding: var(--brd-pd, 1em);
+		padding: var(--pd, 1em);
 		width: 100%;
-		max-width: var(--brd-mw, 100%);
+		max-width: var(--mw, 100%);
 		display: flex;
 		align-items: center;
 	}
@@ -27,7 +27,7 @@ nav.breadcrumbs {
 		padding: 0;
 		list-style: none;
 		list-style-type: none;
-		text-align: var(--brd-ta, center);
+		text-align: var(--ta, center);
 	}
 
 	li {
@@ -35,16 +35,18 @@ nav.breadcrumbs {
 	}
 
 	.breadcrumbs__crumb {
+
 		+ .breadcrumbs__crumb {
-			&:before {
-				content: '\203A';
+
+			&::before {
+				content: "\203A";
 				opacity: 0.5;
-				padding: 0 .75em;
+				padding: 0 0.75em;
 			}
 		}
 
 		&:last-child {
-			opacity: .7;
+			opacity: 0.7;
 		}
 	}
 }

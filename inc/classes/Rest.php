@@ -1,16 +1,15 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName
 /**
  * REST API Implementation.
  *
  * @package Gridd
  * @since 1.1
- *
- * phpcs:ignoreFile WordPress.Files.FileName.InvalidClassFileName
  */
 
 namespace Gridd;
 
 use Gridd\Grid_Part\Sidebar;
+use Gridd\AMP;
 
 /**
  * Implements the custom REST Routes.
@@ -36,7 +35,7 @@ class Rest {
 	 * @access public
 	 */
 	public function __construct() {
-		if ( AMP::is_active() ) {
+		if ( apply_filters( 'gridd_disable_rest', false ) ) {
 			return;
 		}
 		add_action( 'wp_footer', [ $this, 'add_assets' ], PHP_INT_MAX );
@@ -61,7 +60,7 @@ class Rest {
 	 *
 	 * @access public
 	 * @since 1.1
-	 * @param array $choices Existing choices
+	 * @param array $choices Existing choices.
 	 * @return array
 	 */
 	public function partials_choices( $choices ) {
@@ -120,9 +119,10 @@ class Rest {
 		if ( ! empty( $partials ) ) {
 
 			// Add script.
-			$route    = esc_url_raw( site_url( '?rest_route=/gridd/v1/partials/' ) );
+			$route = esc_url_raw( site_url( '?rest_route=/gridd/v1/partials/' ) );
 			echo '<script>';
-			echo 'var griddRestParts=' . $partials . ',griddRestRoute="' . $route . '";';
+			// No need to escape this, it's a JSON-encoded array of hardcoded values.
+			echo 'var griddRestParts=' . $partials . ',griddRestRoute="' . $route . '";'; // phpcs:ignore WordPress.Security.EscapeOutput
 			include get_theme_file_path( 'assets/js/rest-partials.min.js' );
 			echo '</script>';
 

@@ -10,10 +10,10 @@ use Gridd\Grid_Part\Header;
 use Gridd\Style;
 use Gridd\Theme;
 
-$header_search_mode  = get_theme_mod( 'gridd_grid_part_details_header_search_mode', 'form' );
+$header_search_mode  = get_theme_mod( 'header_search_mode', 'form' );
 $header_search_class = 'gridd-tp gridd-tp-header_search ' . $header_search_mode;
 $padding             = get_theme_mod(
-	'gridd_grid_part_details_header_search_padding',
+	'header_search_padding',
 	[
 		'left'  => '1em',
 		'right' => '1em',
@@ -29,15 +29,6 @@ $padding             = get_theme_mod(
 	Style::get_instance( 'grid-part/header/search' )
 		->add_file( get_theme_file_path( 'grid-parts/styles/header/styles-header-search.min.css' ) )
 		->add_file( get_theme_file_path( "grid-parts/styles/header/styles-header-search-$header_search_mode.min.css" ) )
-		->add_vars(
-			[
-				'--h-s-bg'   => get_theme_mod( 'gridd_grid_part_details_header_bg_color', '#ffffff' ),
-				'--h-s-pd-l' => $padding['left'],
-				'--h-s-pd-r' => $padding['right'],
-				'--h-s-fs'   => get_theme_mod( 'gridd_grid_part_details_header_search_font_size', 1 ),
-				'--h-s-cl'   => get_theme_mod( 'gridd_grid_part_details_header_search_color', '#000000' ),
-			]
-		)
 		->the_css( 'gridd-inline-css-header-search' );
 	?>
 

@@ -1,11 +1,9 @@
 article.post.format-video iframe {
   width: 100%;
-  max-width: 100%;
-}
+  max-width: 100%; }
 article.post.format-image figure,
 article.post.format-image img {
   width: 100%;
-  max-width: 100%;
-}
+  max-width: 100%; }
 
 /*# sourceMappingURL=singular-post-formats.css.map */

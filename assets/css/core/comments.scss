@@ -11,21 +11,22 @@
 		list-style-type: none;
 	}
 
+	.edit-link {
+		float: right;
+	}
+
 	.pingback {
-		font-size: 0.85rem;
+		font-size: 0.85em;
 		border-bottom: 1px solid #ededed;
 
 		.edit-link {
-			font-size: 0.75rem;
+			font-size: 0.75em;
 		}
-	}
-
-	.edit-link {
-		float: right;
 	}
 }
 
 .comment-meta {
+
 	.comment-metadata {
 		font-size: var(--fs-1d-ts-tr);
 	}
@@ -34,7 +35,7 @@
 .comment-body {
 	padding: 1em 0;
 	margin-bottom: 1em;
-	border-bottom: 1px solid rgba(0, 0, 0, .1);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .comment-content {
@@ -54,7 +55,7 @@ a.comment-reply-link {
 }
 
 #comment {
-	background: var(--c-bg);
+	background: var(--bg);
 	color: currentColor;
 	border-color: currentColor;
 }

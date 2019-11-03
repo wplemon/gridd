@@ -4,10 +4,13 @@
  * Author:       Ari Stathopoulos
  * Author URI:   https://wplemon.com/
  * Description:  Built with Accessibility, performance and SEO in mind, the Gridd theme features a unique layout builder allowing you to create any kind of layout with ease.
- * Version:      1.1.18
+ * Version:      2.0.0
  * License:      GNU General Public License v2.0 or later
  * License URI:  https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:  gridd
  * Requires PHP: 5.6
  * Tags:         accessibility-ready, block-styles, wide-blocks, translation-ready, custom-background, custom-logo, custom-menu, featured-images, threaded-comments
  */
+
+/* Required by theme-check */
+.sticky {}

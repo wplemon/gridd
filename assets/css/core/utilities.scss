@@ -4,7 +4,7 @@
 	// display: inline;
 	float: left;
 	margin-right: 1.5em !important;
-	// margin-left: calc(50% - var(--c-mw-c, 700px) / 2) !important;
+	// margin-left: calc(50% - var(--mw-c, 700px) / 2) !important;
 
 	img {
 		float: left;
@@ -15,7 +15,7 @@
 	// display: inline;
 	float: right;
 	margin-left: 1.5em !important;
-	// margin-right: calc(50% - var(--c-mw-c, 700px) / 2) !important;
+	// margin-right: calc(50% - var(--mw-c, 700px) / 2) !important;
 
 	img {
 		float: right;
@@ -24,6 +24,7 @@
 
 .aligncenter {
 	clear: both;
+
 	@include center-block;
 }
 
@@ -39,14 +40,14 @@
 }
 
 .alignwide {
-	width: calc(var(--c-mw-c, 700px) + 25%);
+	width: calc(var(--mw-c, 700px) + 25%);
 	max-width: 100%;
 }
 
 .alignfull {
 	width: 100%;
 
-	>* {
+	> * {
 		width: 100%;
 	}
 }
@@ -55,27 +56,29 @@
 	display: none !important;
 }
 
-.clear:after,
-.clear:before,
-.comment-content:after,
-.comment-content:before,
-.entry-content:after,
-.entry-content:before,
-.site-content:after,
-.site-content:before,
-.site-footer:after,
-.site-footer:before,
-.site-header:after,
-.site-header:before {
+.clear::after,
+.clear::before,
+.comment-content::after,
+.comment-content::before,
+.entry-content::after,
+.entry-content::before,
+.site-content::after,
+.site-content::before,
+.site-footer::after,
+.site-footer::before,
+.site-header::after,
+.site-header::before {
+
 	@include clearfix;
 }
 
-.clear:after,
-.comment-content:after,
-.entry-content:after,
-.site-content:after,
-.site-footer:after,
-.site-header:after {
+.clear::after,
+.comment-content::after,
+.entry-content::after,
+.site-content::after,
+.site-footer::after,
+.site-header::after {
+
 	@include clearfix-after;
 }
 

@@ -1,88 +1,62 @@
-@import "block-library/colors";
-@import "block-library/variables";
-@import "block-library/animations";
-@import "block-library/breakpoints";
-@import "block-library/mixins";
-@import "block-library/z-index";
-@import "block-library/mixins";
+// @import "block-library/colors";
+// @import "block-library/variables";
+// @import "block-library/animations";
+// @import "block-library/breakpoints";
+// @import "block-library/mixins";
+// @import "block-library/z-index";
+// @import "block-library/mixins";
 @import "../mixins";
 
-@import "block-library/button/style.scss";
+// @import "block-library/button/style.scss";
 
 @import "../variables";
 
+// Alignments.
+.wp-block-button {
+
+	&.aligncenter {
+		text-align: center;
+	}
+
+	&.alignright {
+		text-align: right;
+	}
+}
+
+// Generic styles.
 .wp-block-button__link {
+
 	@include button();
-	// background-color: var(--tc);
-	// border-radius: 3em;
-	// font-size: 1em;
-	// padding: .5em 1em;
-	// position: relative;
-	// background: none;
 
-	// Make sure buttons text remains visible if user doesn't select a text color.
+	&:not(.has-background) {
+		--element-background-color: var(--cl);
+	}
+
 	&:not(.has-text-color) {
-		color: currentColor;
-
-		&.has {
-
-			&-pale-pink,
-			&-light-green-cyan,
-			&-pale-cyan-blue,
-			&-very-light-gray,
-			&-theme-white {
-				&-background-color {
-					color: $very-dark-gray;
-				}
-			}
-		}
-
-		&:visited,
-		&:focus,
-		&:hover,
-		&:visited:focus,
-		&:visited:hover {
-			color: currentColor;
-		}
-	}
-
-	&:focus,
-	&:hover,
-	&:active {
-		border-bottom-color: currentColor;
-
-		&:before,
-		&:after {
-			content: '';
-			position: absolute;
-			width: 1.5em;
-			height: calc(100% - .5em);
-			border-radius: 50%;
-			top: .25em;
-			opacity: .3;
-		}
-
-		&:before {
-			left: .5em;
-			box-shadow: -4px 0 currentColor;
-		}
-
-		&:after {
-			right: .5em;
-			box-shadow: 4px 0 currentColor;
-		}
-	}
-
-	&:focus,
-	&:active {
-
-		&:before,
-		&:after {
-			opacity: 1;
-		}
+		--element-color: var(--bg);
 	}
 }
 
 .is-style-outline {
-	color: currentColor;
+
+	.wp-block-button__link {
+		background-color: transparent;
+		border-color: currentColor;
+
+		&:not(.has-text-color) {
+			--element-color: var(--cl);
+		}
+
+		&:not(.has-background) {
+			--element-background-color: var(--bg);
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			background: var(--element-color);
+			color: var(--element-background-color);
+			border-color: var(--element-color);
+		}
+	}
 }

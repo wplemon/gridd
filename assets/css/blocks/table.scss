@@ -4,8 +4,6 @@
 @import "block-library/breakpoints";
 @import "block-library/mixins";
 @import "block-library/z-index";
-@import "block-library/mixins";
-
 @import "block-library/table/style.scss";
 @import "block-library/table/theme.scss";
 
@@ -13,8 +11,9 @@
 	min-width: 30em;
 
 	&.is-style-stripes {
+
 		tbody tr:nth-child(odd) {
-			background-color: rgba(0, 0, 0, .1);
+			background-color: rgba(0, 0, 0, 0.1);
 		}
 	}
 }

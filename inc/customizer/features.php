@@ -14,34 +14,75 @@ use Gridd\Grid_Part\Sidebar;
 $sanitization = new Sanitize();
 
 Customizer::add_section(
-	'gridd_features',
+	'gridd_features_global',
 	[
-		'title'    => esc_attr__( 'Theme Features', 'gridd' ),
-		'priority' => 28,
-		'panel'    => 'gridd_options',
+		'title'    => esc_attr__( 'Global Settings', 'gridd' ),
+		'priority' => 1,
+		'panel'    => 'theme_settings',
 	]
 );
 
+Customizer::add_section(
+	'gridd_features_archive',
+	[
+		'title'    => esc_attr__( 'Post Archives Options', 'gridd' ),
+		'priority' => 1,
+		'panel'    => 'theme_settings',
+	]
+);
+
+Customizer::add_section(
+	'gridd_features_single_post',
+	[
+		'title'    => esc_attr__( 'Single Posts Options', 'gridd' ),
+		'priority' => 1,
+		'panel'    => 'theme_settings',
+	]
+);
+
+/**
+ * Options for post-archives.
+ */
 Customizer::add_field(
 	[
-		'type'              => 'select',
-		'settings'          => 'gridd_featured_image_mode_archive',
-		'label'             => esc_attr__( 'Featured Images Mode in Archives', 'gridd' ),
-		'section'           => 'gridd_features',
-		'default'           => 'alignwide',
+		'type'              => 'radio-image',
+		'settings'          => 'archive_post_mode',
+		'label'             => esc_attr__( 'Posts Mode', 'gridd' ),
+		'description'       => esc_html__( 'Please note that changes may not be visible if your posts don\'t have a featured image, and on mobiles they will fall-back to the default mode.', 'gridd' ),
+		'section'           => 'gridd_features_archive',
+		'default'           => 'default',
 		'transport'         => 'refresh',
 		'priority'          => 10,
+		'choices'           => [
+			'default' => get_template_directory_uri() . '/assets/images/archive-post-mode/default.svg',
+			'card'    => get_template_directory_uri() . '/assets/images/archive-post-mode/card.svg',
+		],
+		'sanitize_callback' => function( $value ) {
+			return ( 'default' === $value || 'card' === $value ) ? $value : 'default';
+		},
+	]
+);
+
+new \Kirki\Field\Select(
+	[
+		'settings'          => 'gridd_featured_image_mode_archive',
+		'label'             => esc_attr__( 'Featured Images Mode in Archives', 'gridd' ),
+		'section'           => 'gridd_features_archive',
+		'default'           => 'alignwide',
+		'transport'         => 'refresh',
+		'priority'          => 20,
 		'choices'           => [
 			'hidden'        => esc_attr__( 'Hidden', 'gridd' ),
 			'gridd-contain' => esc_attr__( 'Normal', 'gridd' ),
 			'alignwide'     => esc_attr__( 'Wide', 'gridd' ),
 		],
-		/**
-		 * WIP
-		'active_callback'   => function() {
-			return ( is_archive() || is_home() );
-		},
-		*/
+		'active_callback'   => [
+			[
+				'setting'  => 'archive_post_mode',
+				'value'    => 'default',
+				'operator' => '===',
+			],
+		],
 		'sanitize_callback' => function( $value ) {
 			return ( 'hidden' === $value || 'gridd-contain' === $value || 'alignwide' === $value ) ? $value : 'alignwide';
 		},
@@ -50,129 +91,21 @@ Customizer::add_field(
 
 Customizer::add_field(
 	[
-		'type'              => 'select',
-		'settings'          => 'gridd_featured_image_mode_singular',
-		'label'             => esc_attr__( 'Featured Images Mode in Single Posts', 'gridd' ),
-		'section'           => 'gridd_features',
-		'default'           => 'overlay',
-		'transport'         => 'refresh',
-		'priority'          => 20,
-		'choices'           => [
-			'hidden'        => esc_attr__( 'Hidden', 'gridd' ),
-			'gridd-contain' => esc_attr__( 'Normal', 'gridd' ),
-			'alignwide'     => esc_attr__( 'Wide', 'gridd' ),
-			'alignfull'     => esc_attr__( 'Full Width', 'gridd' ),
-			'overlay'       => esc_attr__( 'Overlay', 'gridd' ),
-		],
-		/**
-		 * WIP
-		'active_callback'   => function() {
-			return is_singular();
-		},
-		*/
-		'sanitize_callback' => function( $value ) {
-			return ( 'hidden' === $value || 'gridd-contain' === $value || 'alignwide' === $value || 'alignfull' === $value || 'overlay' === $value ) ? $value : 'overlay';
-		},
-	]
-);
-
-Customizer::add_field(
-	[
 		'type'            => 'checkbox',
-		'settings'        => 'gridd_featured_image_overlay_color_from_image',
-		'label'           => esc_html__( 'Use Image Colors', 'gridd' ),
-		'description'     => esc_html__( 'Applies to single posts', 'gridd' ),
-		'section'         => 'gridd_features',
-		'default'         => true,
+		'settings'        => 'gridd_archives_display_full_post',
+		'label'           => esc_attr__( 'Show full post in archives', 'gridd' ),
+		'description'     => '',
+		'section'         => 'gridd_features_archive',
+		'default'         => false,
+		'priority'        => 30,
 		'transport'       => 'refresh',
-		'priority'        => 20,
-		'active_callback' => function() {
-			return 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' ) && function_exists( 'jetpack_require_lib' );
-		},
-	]
-);
-
-Customizer::add_field(
-	[
-		'type'            => 'dimension',
-		'settings'        => 'gridd_featured_image_overlay_min_height',
-		'label'           => esc_attr__( 'Featured image minimum height', 'gridd' ),
-		'description'     => esc_html__( 'Applies to single posts', 'gridd' ),
-		'section'         => 'gridd_features',
-		'default'         => 'overlay',
-		'transport'       => 'postMessage',
-		'priority'        => 20,
-		'default'         => '87vh',
-		'css_vars'        => '--im-hmh',
-		'active_callback' => function() {
-			return 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' );
-		},
-	]
-);
-
-Customizer::add_field(
-	[
-		'type'            => 'color',
-		'settings'        => 'gridd_featured_image_overlay_background_color',
-		'label'           => esc_attr__( 'Overlay Color', 'gridd' ),
-		'description'     => esc_html__( 'Applies to single posts', 'gridd' ),
-		'section'         => 'gridd_features',
-		'default'         => 'rgba(42,84,126,0.8)',
-		'css_vars'        => '--im-hoc',
-		'transport'       => 'postMessage',
-		'priority'        => 20,
-		'choices'         => [
-			'alpha' => true,
+		'active_callback' => [
+			[
+				'setting'  => 'archive_post_mode',
+				'value'    => 'default',
+				'operator' => '===',
+			],
 		],
-		'active_callback' => function() {
-			return 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' ) && ( ! get_theme_mod( 'gridd_featured_image_overlay_color_from_image', true ) || ! function_exists( 'jetpack_require_lib' ) );
-		},
-	]
-);
-
-Customizer::add_field(
-	[
-		'type'              => 'gridd-wcag-tc',
-		'settings'          => 'gridd_featured_image_overlay_text_color',
-		'label'             => esc_html__( 'Feature Image Overlay Text Color', 'gridd' ),
-		'description'       => esc_html__( 'Applies to single posts', 'gridd' ),
-		'section'           => 'gridd_features',
-		'priority'          => 20,
-		'default'           => '#fff',
-		'css_vars'          => '--im-htc',
-		'transport'         => 'postMessage',
-		'choices'           => [
-			'setting' => 'gridd_featured_image_overlay_background_color',
-		],
-		'sanitize_callback' => [ $sanitization, 'color_hex' ],
-		'active_callback'   => function() {
-			return 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' ) && ( ! get_theme_mod( 'gridd_featured_image_overlay_color_from_image', true ) || ! function_exists( 'jetpack_require_lib' ) );
-		},
-	]
-);
-
-Customizer::add_field(
-	[
-		'type'      => 'checkbox',
-		'settings'  => 'gridd_show_next_prev',
-		'label'     => esc_attr__( 'Show Next/Previous Post in single posts', 'gridd' ),
-		'section'   => 'gridd_features',
-		'default'   => true,
-		'priority'  => 30,
-		'transport' => 'refresh',
-	]
-);
-
-Customizer::add_field(
-	[
-		'type'        => 'checkbox',
-		'settings'    => 'gridd_archives_display_full_post',
-		'label'       => esc_attr__( 'Show full post in archives', 'gridd' ),
-		'description' => '',
-		'section'     => 'gridd_features',
-		'default'     => false,
-		'priority'    => 40,
-		'transport'   => 'refresh',
 	]
 );
 
@@ -187,18 +120,18 @@ $post_types = get_post_types(
 foreach ( $post_types as $post_type_id => $post_type_obj ) {
 	Customizer::add_field(
 		[
-			'type'            => 'checkbox',
-			'settings'        => "gridd_archive_display_grid_$post_type_id",
-			'label'           => sprintf(
+			'type'      => 'checkbox',
+			'settings'  => "gridd_archive_display_grid_$post_type_id",
+			'label'     => sprintf(
 				/* translators: The post-type name. */
 				esc_html__( 'Display "%s" archives as a grid', 'gridd' ),
 				$post_type_obj->labels->name
 			),
-			'section'         => 'gridd_features',
-			'default'         => false,
-			'transport'       => 'refresh',
-			'priority'        => 50,
-			'output'          => [
+			'section'   => 'gridd_features_archive',
+			'default'   => false,
+			'transport' => 'refresh',
+			'priority'  => 40,
+			'output'    => [
 				[
 					'element'       => ".gridd-post-type-archive-$post_type_id #main",
 					'property'      => 'display',
@@ -230,32 +163,184 @@ foreach ( $post_types as $post_type_id => $post_type_obj ) {
 					'value_pattern' => '1',
 				],
 			],
-			'active_callback' => function() use ( $post_type_id ) {
-				if ( is_post_type_archive( $post_type_id ) ) {
-					return true;
-				}
-				if ( 'post' === $post_type_id ) {
-					if ( is_home() || is_category() || is_tag() ) {
-						return true;
-					}
-				}
-				return false;
-			},
 		]
 	);
 }
 
 Customizer::add_field(
 	[
-		'type'        => 'textarea',
-		'settings'    => 'gridd_excerpt_more',
+		'type'        => 'code',
+		'settings'    => 'excerpt_read_more',
 		'label'       => esc_attr__( 'Read More link', 'gridd' ),
 		'description' => esc_html__( 'If you want to include the post title in your read-more link, you can use "%s" (without the quotes) and it will be replaced with the post\'s title.', 'gridd' ), // phpcs:ignore WordPress.WP.I18n.MissingTranslatorsComment
-		'section'     => 'gridd_features',
-		'priority'    => 60,
+		'section'     => 'gridd_features_archive',
+		'priority'    => 50,
 		/* translators: %s: Name of current post. Only visible to screen readers */
 		'default'     => __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'gridd' ),
 		'transport'   => 'refresh',
+		'choices'     => [
+			'language' => 'html',
+		],
+	]
+);
+
+Customizer::add_field(
+	[
+		'type'            => 'slider',
+		'settings'        => 'archive_card_image_width',
+		'label'           => esc_attr__( 'Image Width', 'gridd' ),
+		'description'     => esc_html__( 'Width of the featured image in relation to the global width (percentage).', 'gridd' ),
+		'section'         => 'gridd_features_archive',
+		'default'         => 50,
+		'transport'       => 'auto',
+		'priority'        => 30,
+		'choices'         => [
+			'min'    => 20,
+			'max'    => 80,
+			'step'   => 1,
+			'suffix' => '%',
+		],
+		'output'          => [
+			[
+				'element'       => '.gridd-post-mode-card',
+				'property'      => '--a-crd-img-w',
+				'value_pattern' => '$%',
+			],
+		],
+		'active_callback' => [
+			[
+				'setting'  => 'archive_post_mode',
+				'value'    => 'card',
+				'operator' => '===',
+			],
+		],
+	]
+);
+
+/**
+ * Options for single posts.
+ */
+new \Kirki\Field\Select(
+	[
+		'settings'          => 'gridd_featured_image_mode_singular',
+		'label'             => esc_attr__( 'Featured Images Mode in Single Posts', 'gridd' ),
+		'section'           => 'gridd_features_single_post',
+		'default'           => 'overlay',
+		'transport'         => 'refresh',
+		'priority'          => 10,
+		'choices'           => [
+			'hidden'        => esc_attr__( 'Hidden', 'gridd' ),
+			'gridd-contain' => esc_attr__( 'Normal', 'gridd' ),
+			'alignwide'     => esc_attr__( 'Wide', 'gridd' ),
+			'alignfull'     => esc_attr__( 'Full Width', 'gridd' ),
+			'overlay'       => esc_attr__( 'Overlay', 'gridd' ),
+		],
+		/**
+		 * WIP
+		'active_callback'   => function() {
+			return is_singular();
+		},
+		*/
+		'sanitize_callback' => function( $value ) {
+			return ( 'hidden' === $value || 'gridd-contain' === $value || 'alignwide' === $value || 'alignfull' === $value || 'overlay' === $value ) ? $value : 'overlay';
+		},
+	]
+);
+
+Customizer::add_field(
+	[
+		'type'            => 'checkbox',
+		'settings'        => 'gridd_featured_image_overlay_color_from_image',
+		'label'           => esc_html__( 'Use Image Colors', 'gridd' ),
+		'section'         => 'gridd_features_single_post',
+		'default'         => true,
+		'transport'       => 'refresh',
+		'priority'        => 20,
+		'active_callback' => function() {
+			return 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' ) && function_exists( 'jetpack_require_lib' );
+		},
+	]
+);
+
+Customizer::add_field(
+	[
+		'type'            => 'dimension',
+		'settings'        => 'gridd_featured_image_overlay_min_height',
+		'label'           => esc_attr__( 'Featured image minimum height', 'gridd' ),
+		'section'         => 'gridd_features_single_post',
+		'default'         => 'overlay',
+		'transport'       => 'postMessage',
+		'priority'        => 30,
+		'default'         => '87vh',
+		'output'          => [
+			[
+				'element'  => ':root',
+				'property' => '--im-hmh',
+			],
+		],
+		'active_callback' => function() {
+			return 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' );
+		},
+	]
+);
+
+new \Kirki\Field\ReactColor(
+	[
+		'settings'        => 'gridd_featured_image_overlay_background_color',
+		'label'           => esc_attr__( 'Overlay Color', 'gridd' ),
+		'section'         => 'gridd_features_single_post',
+		'default'         => 'rgba(42,84,126,0.8)',
+		'output'          => [
+			[
+				'element'  => ':root',
+				'property' => '--im-hoc',
+			],
+		],
+		'transport'       => 'postMessage',
+		'priority'        => 40,
+		'choices'         => [
+			'formComponent' => 'ChromePicker',
+		],
+		'active_callback' => function() {
+			return 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' ) && ( ! get_theme_mod( 'gridd_featured_image_overlay_color_from_image', true ) || ! function_exists( 'jetpack_require_lib' ) );
+		},
+	]
+);
+
+new \WPLemon\Field\WCAGTextColor(
+	[
+		'settings'          => 'gridd_featured_image_overlay_text_color',
+		'label'             => esc_html__( 'Feature Image Overlay Text Color', 'gridd' ),
+		'section'           => 'gridd_features_single_post',
+		'priority'          => 50,
+		'default'           => '#fff',
+		'output'            => [
+			[
+				'element'  => ':root',
+				'property' => '--im-htc',
+			],
+		],
+		'transport'         => 'postMessage',
+		'choices'           => [
+			'backgroundColor' => 'gridd_featured_image_overlay_background_color',
+			'appearance'      => 'hidden',
+		],
+		'sanitize_callback' => [ $sanitization, 'color_hex' ],
+		'active_callback'   => function() {
+			return 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' ) && ( ! get_theme_mod( 'gridd_featured_image_overlay_color_from_image', true ) || ! function_exists( 'jetpack_require_lib' ) );
+		},
+	]
+);
+
+Customizer::add_field(
+	[
+		'type'      => 'checkbox',
+		'settings'  => 'gridd_show_next_prev',
+		'label'     => esc_attr__( 'Show Next/Previous Post in single posts', 'gridd' ),
+		'section'   => 'gridd_features_single_post',
+		'default'   => true,
+		'priority'  => 60,
+		'transport' => 'refresh',
 	]
 );
 
@@ -273,7 +358,7 @@ add_action(
 						'details' => esc_html__( 'Select the parts that should be loaded after the initial request. Non-essential parts can be added here. This can speed-up the initial page-load and users on slower connections can start consuming your content faster.', 'gridd' ),
 					]
 				),
-				'section'     => 'gridd_features',
+				'section'     => 'gridd_features_global',
 				'priority'    => 70,
 				'multiple'    => 999,
 				'choices'     => Rest::get_all_partials(),
@@ -284,17 +369,21 @@ add_action(
 	}
 );
 
+/**
+ * Disabled control.
+ *
 Customizer::add_field(
 	[
-		'type'            => 'checkbox',
-		'settings'        => 'disable_editor_styles',
-		'label'           => esc_html__( 'Disable Editor Styles', 'gridd' ),
-		'description'     => esc_html__( 'Enable this option to prevent the theme from styling the posts editor to match your options, and instead uses the default WordPress styles for the editor.', 'gridd' ),
-		'section'         => 'gridd_features',
-		'default'         => false,
-		'transport'       => 'postMessage',
-		'priority'        => 999,
+		'type'        => 'checkbox',
+		'settings'    => 'disable_editor_styles',
+		'label'       => esc_html__( 'Disable Editor Styles', 'gridd' ),
+		'description' => esc_html__( 'Enable this option to prevent the theme from styling the posts editor to match your options, and instead uses the default WordPress styles for the editor.', 'gridd' ),
+		'section'     => 'gridd_features_global',
+		'default'     => false,
+		'transport'   => 'postMessage',
+		'priority'    => 999,
 	]
 );
+*/
 
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */

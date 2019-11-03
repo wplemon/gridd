@@ -66,22 +66,22 @@
 
 				// Loop parts in the sub-grid.
 				_.each( parts, function( part ) {
-					var section = jQuery( '#sub-accordion-section-gridd_grid_part_details_' + part ),
+					var section = jQuery( '#sub-accordion-section-grid_part_details_' + part ),
 						backBtn = section.find( '.customize-section-back' );
 
 					// Change the behavior of the back button.
 					jQuery( backBtn ).click( function( e ) {
 						if ( 'gridd_header_grid' === grid ) {
-							wp.customize.section( 'gridd_grid_part_details_header' ).focus();
+							wp.customize.section( 'grid_part_details_header' ).focus();
 							e.preventDefault();
 						} else if ( 'gridd_footer_grid' === grid ) {
-							wp.customize.section( 'gridd_grid_part_details_footer' ).focus();
+							wp.customize.section( 'grid_part_details_footer' ).focus();
 							e.preventDefault();
-						} else if ( nestedParts[ grid ] && wp.customize.section( 'gridd_grid_part_details_' + nestedParts[ grid ] ) ) {
-							wp.customize.section( 'gridd_grid_part_details_' + nestedParts[ grid ] ).focus();
+						} else if ( nestedParts[ grid ] && wp.customize.section( 'grid_part_details_' + nestedParts[ grid ] ) ) {
+							wp.customize.section( 'grid_part_details_' + nestedParts[ grid ] ).focus();
 							e.preventDefault();
-						} else if ( griddTemplatePreviewScript.nestedGrids[ grid ] && wp.customize.section( 'gridd_grid_part_details_' + griddTemplatePreviewScript.nestedGrids[ grid ] ) ) {
-							wp.customize.section( 'gridd_grid_part_details_' + griddTemplatePreviewScript.nestedGrids[ grid ] ).focus();
+						} else if ( griddTemplatePreviewScript.nestedGrids[ grid ] && wp.customize.section( 'grid_part_details_' + griddTemplatePreviewScript.nestedGrids[ grid ] ) ) {
+							wp.customize.section( 'grid_part_details_' + griddTemplatePreviewScript.nestedGrids[ grid ] ).focus();
 							e.preventDefault();
 						}
 					});
@@ -109,5 +109,165 @@
 		 * @since 1.1.12
 		 */
 		jQuery( '#customize-control-header_image .customize-control-description' ).html( griddTemplatePreviewScript.l10n.headerImageDescription );
+
+		/**
+		 * Handle switching target color-a11y mode.
+		 *
+		 * @since 2.0.0
+		 */
+		wp.customize( 'target_color_compliance', function( value ) {
+			value.bind( function( to ) {
+				wp.customize.control.each( function( control ) {
+					if ( 'kirki-wcag-link-color' === control.params.type || 'kirki-wcag-lc' === control.params.type ) {
+						control.params.choices.forceCompliance = to;
+						if ( 'function' === typeof control.getMode && ( 'auto' === control.getMode() || 'recommended' === control.getMode() ) ) {
+							control.setting.set( control.getAutoColor( control.setting.get(), true ) );
+						}
+					}
+				});
+			});
+		});
+
+		/**
+		 * Link link-color colorpickers hues.
+		 *
+		 * @since 2.0.0
+		 */
+		wp.customize( 'gridd_links_color', function( value ) {
+			value.bind( function( to ) { // eslint-disable-line no-unused-vars
+				var mainLinksHue;
+				if ( ! wp.customize.control( 'same_linkcolor_hues' ).setting.get() ) {
+					return;
+				}
+
+				mainLinksHue = wp.customize.control( 'gridd_links_color' ).getHue();
+
+				wp.customize.control.each( function( control ) {
+					if (
+						( 'gridd_links_color' !== control.id ) &&
+						( 'kirki-wcag-link-color' === control.params.type || 'kirki-wcag-lc' === control.params.type )
+					) {
+						control.setHue( mainLinksHue );
+						control.setting.set( control.getAutoColor( 'hsl(' + mainLinksHue + ',50%,50%)', true ) );
+					}
+				});
+			});
+		});
+
+		/**
+		 * Handle palette changes.
+		 *
+		 * @since 2.0.0
+		 */
+		wp.customize( 'custom_color_palette', function( value ) {
+			value.bind( function( to ) {
+				var colors = [];
+				if ( 'string' === typeof to ) {
+					to = JSON.parse( to.replace( /&#39/g, '"' ) );
+				}
+				to.forEach( function( item ) {
+					colors.push( item.color );
+				});
+
+				wp.customize.control.each( function( control ) {
+					if ( 'kirki-react-color' === control.params.type ) {
+						if ( 'TwitterPicker' === control.params.choices.formComponent ) {
+							control.params.choices.colors = colors;
+							control.renderContent();
+						}
+					}
+				});
+			});
+		});
+
+		/**
+		 * Move the main links-color control to the typography setting if needed.
+		 *
+		 * @since 2.0.0
+		 */
+		if ( wp.customize.control( 'same_linkcolor_hues' ).setting.get() ) {
+			wp.customize.control( 'gridd_links_color' ).section( 'color_options' );
+		}
+
+		/**
+		 * Change all linkcolor hues when the switch is turned on.
+		 *
+		 * @since 2.0.0
+		 */
+		wp.customize( 'same_linkcolor_hues', function( value ) {
+			value.bind( function( to ) {
+				var mainLinksHue;
+				if ( ! to ) {
+					wp.customize.control( 'gridd_links_color' ).section( 'grid_part_details_content' );
+					wp.customize.control.each( function( control ) {
+						if (
+							( 'gridd_links_color' !== control.id ) &&
+							( 'kirki-wcag-link-color' === control.params.type || 'kirki-wcag-lc' === control.params.type )
+						) {
+							control.activate();
+						}
+					});
+				} else {
+					wp.customize.control( 'gridd_links_color' ).section( 'color_options' );
+					mainLinksHue = wp.customize.control( 'gridd_links_color' ).getHue();
+
+					wp.customize.control.each( function( control ) {
+						if (
+							( 'gridd_links_color' !== control.id ) &&
+							( 'kirki-wcag-link-color' === control.params.type || 'kirki-wcag-lc' === control.params.type )
+						) {
+							control.setHue( mainLinksHue );
+							control.setting.set( control.getAutoColor( 'hsl(' + mainLinksHue + ',50%,50%)', true ) );
+							control.deactivate();
+						}
+					});
+				}
+			});
+		});
+
+		// Move widget-area settings.
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-footer_sidebar_1', 'grid_part_details_footer_sidebar_1' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-footer_sidebar_2', 'grid_part_details_footer_sidebar_2' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-footer_sidebar_3', 'grid_part_details_footer_sidebar_3' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-footer_sidebar_4', 'grid_part_details_footer_sidebar_4' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-1', 'grid_part_details_sidebar_1' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-2', 'grid_part_details_sidebar_2' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-3', 'grid_part_details_sidebar_3' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-4', 'grid_part_details_sidebar_4' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-5', 'grid_part_details_sidebar_5' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-6', 'grid_part_details_sidebar_6' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-offcanvas-sidebar', 'gridd_plus_offcanvas_sidebar' );
 	});
+
+	/**
+	 * Move controls from a section to another.
+	 *
+	 * @since 2.0.0
+	 */
+	function griddMoveSectionControlsOnDemand( newSectionID, oldSectionID ) {
+		var newSection = wp.customize.section( newSectionID ),
+			oldSection = wp.customize.section( oldSectionID ),
+			moveSectionControls = function( newSection, oldSection ) {
+				oldSection.controls().forEach( function( control ) {
+					control.section( newSection.id );
+				});
+				setTimeout( function() {
+					oldSection.activate( true );
+					oldSection.expanded.bind( function() {
+						newSection.expand();
+					});
+				}, 1000 );
+			};
+
+		if ( ! newSection || ! oldSection ) {
+			return;
+		}
+
+		newSection.expanded.bind( function() {
+			moveSectionControls( newSection, oldSection );
+		});
+		oldSection.expanded.bind( function() {
+			newSection.expand();
+		});
+	}
 }() );

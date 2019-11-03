@@ -22,11 +22,14 @@
     "node": ">= 0.10.0"
   },
   "devDependencies": {
+    "@wordpress/eslint-plugin": "^3.1.0",
     "grunt": "*",
     "grunt-contrib-clean": "*",
     "grunt-contrib-cssmin": "*",
     "grunt-contrib-sass": "*",
     "grunt-contrib-uglify": "*",
-    "grunt-contrib-watch": "*"
+    "grunt-contrib-watch": "*",
+    "stylelint": "^11.1.1",
+    "stylelint-config-wordpress": "^15.0.0"
   }
 }

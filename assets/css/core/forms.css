@@ -1,96 +1,82 @@
-input[type=text],
-input[type=email],
-input[type=url],
-input[type=password],
-input[type=number],
-input[type=tel],
-input[type=range],
-input[type=date],
-input[type=month],
-input[type=week],
-input[type=time],
-input[type=datetime],
-input[type=datetime-local],
-input[type=color],
+textarea {
+  width: 100%; }
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
 textarea {
   color: #666;
   border: 1px solid #dedede;
   border-radius: 0;
-  padding: 0.5em;
-}
-input[type=text]:focus,
-input[type=email]:focus,
-input[type=url]:focus,
-input[type=password]:focus,
-input[type=number]:focus,
-input[type=tel]:focus,
-input[type=range]:focus,
-input[type=date]:focus,
-input[type=month]:focus,
-input[type=week]:focus,
-input[type=time]:focus,
-input[type=datetime]:focus,
-input[type=datetime-local]:focus,
-input[type=color]:focus,
-textarea:focus {
-  color: #111;
-}
+  padding: 0.5em; }
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="url"]:focus,
+  input[type="password"]:focus,
+  input[type="number"]:focus,
+  input[type="tel"]:focus,
+  input[type="range"]:focus,
+  input[type="date"]:focus,
+  input[type="month"]:focus,
+  input[type="week"]:focus,
+  input[type="time"]:focus,
+  input[type="datetime"]:focus,
+  input[type="datetime-local"]:focus,
+  input[type="color"]:focus,
+  textarea:focus {
+    color: #111; }
 
 select {
   border: 1px solid #dedede;
   background: #fff;
   height: 2.5em;
-  border-radius: 0;
-}
-
-textarea {
-  width: 100%;
-}
+  border-radius: 0; }
 
 .search-form {
   width: 100%;
-  display: flex;
-}
-.search-form > label {
-  width: 100%;
-}
-.search-form > label > input.search-field {
-  display: inline-block;
-  width: calc(100% - 1em);
-  background: none;
-  border: none;
-  border-bottom: 1px solid currentColor;
-  border-radius: 0;
-  transition: all 200ms;
-  opacity: 0.7;
-  width: 100%;
-}
-.search-form > label > input.search-field:hover, .search-form > label > input.search-field:focus {
-  opacity: 1;
-}
-.search-form > label > input.search-field:hover + .gridd-search-icon, .search-form > label > input.search-field:focus + .gridd-search-icon {
-  opacity: 0.7;
-}
-.search-form .gridd-search-icon {
-  width: 1em;
-  height: 100%;
-  display: inline-block;
-  float: left;
-  opacity: 0.5;
-  fill: currentColor;
-  transition: all 400ms;
-}
-.rtl .search-form .gridd-search-icon {
-  float: right;
-}
-.search-form .search-field {
-  height: 100%;
-  border-radius: 0;
-}
+  display: flex; }
+  .search-form > label {
+    width: 100%; }
+    .search-form > label > input.search-field {
+      display: inline-block;
+      background: none;
+      border: none;
+      border-bottom: 1px solid currentColor;
+      border-radius: 0;
+      opacity: 0.7;
+      width: 100%; }
+      .search-form > label > input.search-field:hover, .search-form > label > input.search-field:focus {
+        opacity: 1; }
+        .search-form > label > input.search-field:hover + .gridd-search-icon, .search-form > label > input.search-field:focus + .gridd-search-icon {
+          opacity: 0.7; }
+  .search-form .gridd-search-icon {
+    width: 1em;
+    height: 100%;
+    display: inline-block;
+    float: left;
+    opacity: 0.5;
+    fill: currentColor; }
+    .rtl .search-form .gridd-search-icon {
+      float: right; }
+  .search-form .search-field {
+    height: 100%;
+    border-radius: 0; }
 
 .search-submit.search-submit {
   border: none;
   padding: 0 0.5em;
-}
+  --element-color: var(--cl);
+  --element-background-color: var(--bg); }
 
 /*# sourceMappingURL=forms.css.map */

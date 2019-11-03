@@ -1,11 +1,9 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName
 /**
  * Gridd - the grid control.
  *
  * @package Gridd
  * @since 1.0
- *
- * phpcs:ignoreFile WordPress.Files.FileName
  */
 
 namespace Gridd\Customizer\Control;
@@ -34,11 +32,8 @@ class Grid extends \Kirki_Control_Base {
 	 */
 	public function enqueue() {
 
-		// Enqueue ColorPicker.
-		wp_enqueue_script( 'wp-color-picker-alpha', get_template_directory_uri() . '/inc/kirki/assets/vendor/wp-color-picker-alpha/wp-color-picker-alpha.js', [ 'wp-color-picker' ], '2.0', true );
-
 		// Enqueue the script and style.
-		wp_enqueue_script( 'gridd-grid-control', get_template_directory_uri() . '/assets/js/customizer-gridd-grid-control.min.js', [ 'jquery', 'customize-base', 'wp-color-picker-alpha' ], GRIDD_VERSION, false );
+		wp_enqueue_script( 'gridd-grid-control', get_template_directory_uri() . '/assets/js/customizer-gridd-grid-control.min.js', [ 'jquery', 'customize-base' ], GRIDD_VERSION, false );
 
 		wp_localize_script(
 			'gridd-grid-control',
@@ -67,9 +62,12 @@ class Grid extends \Kirki_Control_Base {
 		$grid_parts = $this->choices['parts'];
 		$value      = $this->value();
 		// Sort parts alphabetically.
-		usort( $grid_parts, function ($a, $b ) {
-			return strcmp( $a['label'], $b['label'] );
-		} );
+		usort(
+			$grid_parts,
+			function ( $a, $b ) {
+				return strcmp( $a['label'], $b['label'] );
+			}
+		);
 		?>
 		<!-- Label. -->
 		<span class="customize-control-title">

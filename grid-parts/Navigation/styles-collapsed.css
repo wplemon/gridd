@@ -1,0 +1,126 @@
+.containerID nav,
+.containerID .gridd-nav-horizontal {
+	display: none;
+	position: absolute;
+	bottom: 0;
+	transform: translateY(100%);
+	background-color: var(--bg, #fff);
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.16);
+	width: 15em;
+	max-width: 350px;
+	z-index: 9;
+}
+
+.containerID .gridd-toggle-navigation {
+	display: flex;
+	padding: 1em;
+	border: 2px solid transparent;
+	height: 1em;
+	line-height: 1;
+	box-sizing: content-box;
+	border-radius: 0;
+	background-color: transparent;
+	color: var(--cl);
+}
+
+.containerID .gridd-toggle-navigation svg {
+	width: 1em;
+	height: 1em;
+	fill: currentColor;
+}
+
+.containerID .gridd-toggle-navigation .icon svg {
+	transition: all 200ms;
+	transform-origin: center center;
+}
+
+.containerID .gridd-toggle-navigation:hover svg,
+.containerID .gridd-toggle-navigation:focus svg,
+.containerID .gridd-toggle-navigation.focus svg,
+.containerID .gridd-toggle-navigation.toggled-on svg {
+	fill: currentColor;
+}
+
+.containerID .gridd-toggle-navigation .icon {
+	line-height: 1;
+}
+
+.containerID .gridd-toggle-navigation .icon.close {
+	position: absolute;
+	transform: translateX(-1em);
+}
+
+.containerID .gridd-toggle-navigation .icon.close svg {
+	opacity: 0;
+}
+
+.containerID .gridd-toggle-navigation:hover,
+.containerID .gridd-toggle-navigation:focus,
+.containerID .gridd-toggle-navigation.focus,
+.containerID .gridd-toggle-navigation.toggled-on {
+	background: none;
+	box-shadow: none;
+}
+
+.containerID.gridd-menu-collapse-position-top-right nav,
+.containerID.gridd-menu-collapse-position-center-right nav,
+.containerID.gridd-menu-collapse-position-bottom-right nav {
+	right: 0;
+}
+
+.containerID .gridd-toggle-navigation.toggled-on ~ nav {
+	display: block;
+}
+
+.containerID .gridd-toggle-navigation.toggled-on .icon svg {
+	transform: rotate(360deg);
+}
+
+.containerID .gridd-toggle-navigation.toggled-on .icon.open svg {
+	opacity: 0;
+}
+
+.containerID .gridd-toggle-navigation.toggled-on .icon.close svg {
+	opacity: 1;
+}
+
+.containerID.gridd-menu-collapse-position-top-left .inner,
+.containerID.gridd-menu-collapse-position-top-center .inner,
+.containerID.gridd-menu-collapse-position-top-right .inner {
+	align-items: flex-start;
+}
+
+.containerID.gridd-menu-collapse-position-center-left .inner,
+.containerID.gridd-menu-collapse-position-center-center .inner,
+.containerID.gridd-menu-collapse-position-center-right .inner {
+	align-items: center;
+}
+
+.containerID.gridd-menu-collapse-position-bottom-left .inner,
+.containerID.gridd-menu-collapse-position-bottom-center .inner,
+.containerID.gridd-menu-collapse-position-bottom-right .inner {
+	align-items: flex-end;
+}
+
+.containerID.gridd-menu-collapse-position-top-left .inner,
+.containerID.gridd-menu-collapse-position-center-left .inner,
+.containerID.gridd-menu-collapse-position-bottom-left .inner {
+	justify-content: flex-start;
+}
+
+.containerID.gridd-menu-collapse-position-top-center .inner,
+.containerID.gridd-menu-collapse-position-center-center .inner,
+.containerID.gridd-menu-collapse-position-bottom-center .inner {
+	justify-content: center;
+}
+
+.containerID.gridd-menu-collapse-position-top-right .inner,
+.containerID.gridd-menu-collapse-position-center-right .inner,
+.containerID.gridd-menu-collapse-position-bottom-right .inner {
+	justify-content: flex-end;
+}
+
+.containerID li .gridd-menu-item-wrapper a {
+	padding-left: calc(var(--ipd, 1em) * 0.5);
+	padding-right: calc(var(--ipd, 1em) * 0.5);
+}

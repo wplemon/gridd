@@ -1,7 +1,5 @@
 @import "../mixins";
 
-.widget_product_search {}
-
 .woocommerce-product-search {
 	display: flex;
 
@@ -10,6 +8,7 @@
 	}
 
 	button {
-    @include screen-reader-text;
+
+		@include screen-reader-text;
 	}
 }

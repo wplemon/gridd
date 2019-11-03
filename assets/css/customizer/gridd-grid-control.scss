@@ -1,5 +1,5 @@
 // Control CSS.
-
+// stylelint-disable no-descending-specificity
 .gridd-grid-builder {
 	position: relative;
 }
@@ -15,7 +15,8 @@
 		grid-gap: 7px;
 
 		&.editing-parts {
-			+.gridd-grid-part-move-helper {
+
+			+ .gridd-grid-part-move-helper {
 				display: block;
 			}
 		}
@@ -45,6 +46,7 @@
 
 	.gridd-grid-builder-columns,
 	.gridd-grid-builder-rows {
+
 		input {
 			background: none;
 			box-shadow: none;
@@ -109,7 +111,7 @@
 		margin-top: -20px;
 		padding: 5px 12px;
 		background: #fff;
-		border-left: 5px solid #46B450;
+		border-left: 5px solid #46b450;
 	}
 
 	&.fixed-position {
@@ -151,10 +153,11 @@
 }
 
 .gridd-grid-selectable {
+
 	button {
 		display: block;
 		height: 65px;
-		border: 1px dotted rgba(0, 0, 0, .25);
+		border: 1px dotted rgba(0, 0, 0, 0.25);
 		background-color: #f2f2f2;
 		border-radius: 0;
 		box-shadow: none;
@@ -164,8 +167,8 @@
 		}
 
 		&.ds-selected {
-			background-color: rgba(0, 0, 0, .25);
-			background-image: linear-gradient(135deg, rgba(0, 0, 0, .5) 10%, transparent 10%, transparent 50%, rgba(0, 0, 0, .5) 50%, rgba(0, 0, 0, .5) 60%, transparent 60%, transparent 100%);
+			background-color: rgba(0, 0, 0, 0.25);
+			background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 10%, transparent 10%, transparent 50%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 60%, transparent 60%, transparent 100%);
 			background-size: 5px 5px;
 		}
 	}
@@ -174,7 +177,7 @@
 .grid-selected-part {
 	display: flex;
 	z-index: 1;
-	opacity: .83;
+	opacity: 0.83;
 
 	.part-label-wrapper {
 		padding: 4px;
@@ -188,7 +191,7 @@
 	}
 
 	.inner {
-		box-shadow: inset 0px 1px 10px 0px rgba(0, 0, 0, 0.2);
+		box-shadow: inset 0 1px 10px 0 rgba(0, 0, 0, 0.2);
 		color: #fff;
 		justify-content: center;
 		display: flex;
@@ -203,6 +206,7 @@
 		// WIP
 		// background-color: #666 !important;
 		&:hover {
+
 			.actions {
 				display: flex;
 			}
@@ -223,7 +227,7 @@
 			.resize {
 				background: #fff;
 				padding: 4px;
-				border: 1px solid rgba(0, 0, 0, .3);
+				border: 1px solid rgba(0, 0, 0, 0.3);
 
 				.dashicons {
 					font-size: 15px;
@@ -237,7 +241,7 @@
 			}
 
 			.delete {
-				color: #DC3232;
+				color: #dc3232;
 			}
 		}
 	}
@@ -245,8 +249,6 @@
 
 .gridd-grid-part-selector {
 	z-index: 10;
-	// background-image: linear-gradient(135deg, #fff 10%, rgba(255,255,255,.7) 10%, rgba(255,255,255,.7) 50%, #fff 50%, #fff 60%, rgba(255,255,255,.7) 60%, rgba(255,255,255,.7) 100%);
-	// background-size: 3px 3px;
 	background: rgb(238, 238, 238);
 	border: 1px solid #ccc;
 	padding: 12px;
@@ -267,7 +269,9 @@
 }
 
 .gridd-grid-selected {
+
 	&.editing {
+
 		.grid-selected-part {
 			z-index: 0;
 		}
@@ -275,12 +279,13 @@
 }
 
 .template-part-advanced-options {
+
 	button.edit-part-options-done {
 		display: block;
 		width: 100%;
 		font-size: 1.1em;
 		text-align: center;
-		line-height: 2em;
+		line-height: 2;
 		margin: 1em 0;
 	}
 }

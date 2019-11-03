@@ -1,10 +1,8 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName
 /**
  * Gridd Sidebar grid-part
  *
  * @package Gridd
- * 
- * phpcs:ignoreFile WordPress.Files.FileName
  */
 
 namespace Gridd\Grid_Part;
@@ -145,7 +143,7 @@ class Sidebar extends Grid_Part {
 	 * @since 1.0
 	 */
 	public static function get_number_of_sidebars() {
-		return apply_filters( 'gridd_get_number_of_nav_menus', 3 );
+		return apply_filters( 'gridd_get_number_of_widget_areas', 3 );
 	}
 
 	/**

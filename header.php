@@ -51,6 +51,7 @@ $style->add_string(
 	)
 );
 ?>
+<div id="content-width-calc-helper"></div>
 <div id="page" class="site gridd-site-wrapper">
 	<?php
 	/**
@@ -82,4 +83,3 @@ $style->add_string(
 		Content::print_styles();
 		?>
 		<main id="main" class="site-main inner" role="main">
-			<div id="content-width-calc-helper"></div>

@@ -1,3 +1,4 @@
+// stylelint-disable no-descending-specificity
 @import "functions";
 
 // Center block
@@ -40,7 +41,7 @@
 		color: #21759b;
 		display: block;
 		font-size: 0.875em;
-		font-weight: bold;
+		font-weight: 700;
 		height: auto;
 		left: 5px;
 		line-height: normal;
@@ -54,31 +55,30 @@
 
 // Buttons
 @mixin button() {
-	// color: currentColor;
 	text-decoration: none !important;
-	border-radius: 2.5em;
-	padding: .35em 1.25em;
-	transition: all 150ms ease-in-out;
-	position: relative;
-	border: 2px solid; //currentColor;
-	background: none;
+	border-radius: 4px;
+	padding: 0.35em 1.25em;
+	border: 2px solid var(--element-background-color);
 	cursor: pointer;
-	position: relative;
+	display: inline-block;
+	margin: 0;
+	text-align: center;
+	overflow-wrap: break-word;
+	color: var(--element-color);
+	background-color: var(--element-background-color);
 
 	&:active,
 	&:hover,
 	&:focus {
-		outline: none;
-		text-decoration: none !important;
-	}
-
-	&:focus,
-	&:active {
-		box-shadow: inset 0px 1px 1px 0px;
+		outline: none !important;
+		background: var(--element-color);
+		color: var(--element-background-color);
+		border-color: var(--element-background-color);
 	}
 }
 
 @mixin widget-list {
+
 	ul {
 		list-style: none;
 		list-style-type: none;
@@ -88,7 +88,7 @@
 
 		a {
 			display: block;
-			padding: .25em 0;
+			padding: 0.25em 0;
 			text-decoration: none;
 			border-bottom: 2px solid transparent;
 
@@ -108,19 +108,23 @@
 			list-style-type: none;
 
 			a {
-				&:before {
+
+				&::before {
 					content: "\02C6";
 					display: inline-block;
 					transform: rotate(90deg);
-					margin-right: .5em;
+					margin-right: 0.5em;
 				}
 			}
 		}
 
 		&.menu {
-			>li {
+
+			> li {
+
 				&:last-child {
-					>a {
+
+					> a {
 						border-bottom: none;
 					}
 				}

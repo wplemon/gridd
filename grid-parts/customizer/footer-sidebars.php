@@ -28,66 +28,81 @@ function gridd_add_footer_widget_area_options( $id ) {
 
 	// Add section.
 	Customizer::add_outer_section(
-		"gridd_grid_part_details_footer_sidebar_$id",
+		"grid_part_details_footer_sidebar_$id",
 		[
-			'title' => sprintf(
-				/* translators: The grid-part label. */
-				esc_html__( '%s Options', 'gridd' ),
-				/* translators: The number of the footer widget area. */
-				sprintf( esc_html__( 'Footer Sidebar %d', 'gridd' ), absint( $id ) )
-			),
+			/* translators: The number of the footer widget area. */
+			'title' => sprintf( esc_html__( 'Footer Sidebar %d', 'gridd' ), absint( $id ) ),
 		]
 	);
 
 	// Background Color.
-	Customizer::add_field(
+	new \Kirki\Field\ReactColor(
 		[
-			'type'      => 'color',
 			'settings'  => "gridd_grid_footer_sidebar_{$id}_bg_color",
 			'label'     => esc_html__( 'Background Color', 'gridd' ),
-			'section'   => "gridd_grid_part_details_footer_sidebar_$id",
+			'section'   => "grid_part_details_footer_sidebar_$id",
 			'default'   => '#ffffff',
-			'transport' => 'postMessage',
-			'css_vars'  => "--ft-wa-$id-bg",
+			'transport' => 'auto',
+			'output'    => [
+				[
+					'element'  => ".gridd-tp-footer_sidebar_$id",
+					'property' => '--bg',
+				],
+			],
 			'choices'   => [
-				'alpha' => true,
+				'formComponent' => 'TwitterPicker',
+				'colors'        => \Gridd\Theme::get_colorpicker_palette(),
 			],
 		]
 	);
 
 	// Text Color.
-	Customizer::add_field(
+	new \WPLemon\Field\WCAGTextColor(
 		[
-			'type'              => 'gridd-wcag-tc',
 			'settings'          => "gridd_grid_footer_sidebar_{$id}_color",
 			'label'             => esc_html__( 'Text Color', 'gridd' ),
-			'section'           => "gridd_grid_part_details_footer_sidebar_$id",
+			'section'           => "grid_part_details_footer_sidebar_$id",
 			'default'           => '#000000',
-			'transport'         => 'postMessage',
-			'css_vars'          => "--ft-wa-$id-cl",
+			'transport'         => 'auto',
+			'output'            => [
+				[
+					'element'  => ".gridd-tp-footer_sidebar_$id",
+					'property' => '--cl',
+				],
+			],
 			'choices'           => [
-				'setting' => "gridd_grid_footer_sidebar_{$id}_bg_color",
+				'backgroundColor' => "gridd_grid_footer_sidebar_{$id}_bg_color",
+				'appearance'      => 'hidden',
 			],
 			'sanitize_callback' => [ $sanitization, 'color_hex' ],
 		]
 	);
 
 	// Links Color.
-	Customizer::add_field(
+	new \WPLemon\Field\WCAGLinkColor(
 		[
-			'type'              => 'gridd-wcag-lc',
 			'settings'          => "gridd_grid_footer_sidebar_{$id}_links_color",
 			'label'             => esc_html__( 'Links Color', 'gridd' ),
-			'section'           => "gridd_grid_part_details_footer_sidebar_$id",
+			'section'           => "grid_part_details_footer_sidebar_$id",
 			'default'           => '#0f5e97',
-			'transport'         => 'postMessage',
-			'css_vars'          => "--ft-wa-$id-lc",
+			'transport'         => 'auto',
+			'output'            => [
+				[
+					'element'  => ".gridd-tp-footer_sidebar_$id",
+					'property' => '--lc',
+				],
+			],
 			'priority'          => 20,
 			'choices'           => [
 				'backgroundColor' => "gridd_grid_footer_sidebar_{$id}_bg_color",
 				'textColor'       => "gridd_grid_footer_sidebar_{$id}_color",
+				'linksUnderlined' => true,
+				'forceCompliance' => get_theme_mod( 'target_color_compliance', 'auto' ),
 			],
 			'sanitize_callback' => [ $sanitization, 'color_hex' ],
+			'active_callback'   => function() {
+				return ! get_theme_mod( 'same_linkcolor_hues', true );
+			},
 		]
 	);
 }

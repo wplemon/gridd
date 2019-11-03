@@ -1,10 +1,8 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName
 /**
  * Gridd Reusable-Block grid-part
  *
  * @package Gridd
- *
- * phpcs:ignoreFile WordPress.Files.FileName
  */
 
 namespace Gridd\Grid_Part;
@@ -47,7 +45,6 @@ class Reusable_Block extends Grid_Part {
 		);
 		$this->register_rest_api_partials();
 		add_action( 'gridd_the_grid_part', [ $this, 'render' ] );
-		add_action( 'gridd_auto_text_color', [ $this, 'auto_text_color_settings' ] );
 		add_filter( 'safe_style_css', [ $this, 'safe_style_css' ] );
 		add_action( 'gridd_the_partial', [ $this, 'the_partial' ] );
 	}
@@ -97,23 +94,6 @@ class Reusable_Block extends Grid_Part {
 			 */
 			include get_theme_file_path( 'grid-parts/templates/reusable-block.php' );
 		}
-	}
-
-	/**
-	 * Adds the color settings to the array of auto-calculated settings for text-color.
-	 *
-	 * @access public
-	 * @since 1.0.3
-	 * @param array $settings The array of settings.
-	 * @return array
-	 */
-	public function auto_text_color_settings( $settings ) {
-		if ( self::$reusable_blocks ) {
-			foreach ( self::$reusable_blocks as $block ) {
-				$settings[ "gridd_grid_reusable_block_{$block->ID}_bg_color" ] = "gridd_grid_reusable_block_{$block->ID}_color";
-			}
-		}
-		return $settings;
 	}
 
 	/**
@@ -185,6 +165,7 @@ class Reusable_Block extends Grid_Part {
 				Rest::register_partial(
 					[
 						'id'    => "reusable_block_{$block->ID}",
+						/* translators: The reusable-block name. */
 						'label' => sprintf( esc_html__( 'Block: %s', 'gridd' ), esc_html( $block->post_title ) ),
 					]
 				);
