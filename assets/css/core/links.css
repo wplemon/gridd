@@ -1,16 +1,10 @@
-a,
-a:visited {
+a {
   color: var(--lc, #0f5e97);
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
-  a:focus, a:active,
-  a:visited:focus,
-  a:visited:active {
+  a:focus, a:active {
     outline: 2px solid;
     outline-offset: 2px; }
-  a:hover, a:active, a:focus,
-  a:visited:hover,
-  a:visited:active,
-  a:visited:focus {
+  a:hover, a:active, a:focus {
     text-decoration-thickness: 0.1em;
     text-decoration-color: var(--cl); }
 

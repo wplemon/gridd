@@ -1,6 +1,5 @@
 // stylelint-disable no-descending-specificity
-a,
-a:visited {
+a {
 	color: var(--lc, #0f5e97);
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
 	// text-decoration-thickness: 2px;
