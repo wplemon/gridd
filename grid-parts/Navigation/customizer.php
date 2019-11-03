@@ -61,9 +61,8 @@ function gridd_nav_customizer_options( $id ) {
 		]
 	);
 
-	Customizer::add_field(
+	new \Kirki\Field\Select(
 		[
-			'type'              => 'radio',
 			'settings'          => "gridd_grid_nav_{$id}_responsive_behavior",
 			'label'             => esc_html__( 'Responsive Behavior', 'gridd' ),
 			'description'       => Customizer::get_control_description(
