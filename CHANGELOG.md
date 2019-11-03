@@ -1,16 +1,42 @@
-## 1.2.0
+## 2.0.0
 
 ### Fixed
 * Removed underline for featured-image links.
-* Color for widget-nav-menu toggles.
-* "Leave a Comment" link not visible in post-archives.
+* Fixed Color for widget-nav-menu toggles.
+* Fixed "Leave a Comment" link not visible in post-archives.
+* Vertically center copyright text in the footer.
+* Fixed content-width when using `em` units.
+* Coding Standards fixes
 
 ### Changed
-* Reorganized customizer settings in the "Theme Features" section.
-* Improved button styles.
+* Updated Kirki to v4.0 packages.
+* Reorganized customizer settings.
+* Refactored button styles.
+* Refactored navigation styles.
+* Refactored link-color controls.
+* Updated block styles.
+* New colorpickers.
+* Refactored customizer select controls.
+* Refactored customizer radio-buttonset controls.
+* Refactored styles for the header-search slide-up mode.
 
 ### Added
-* Card mode for post-archives.
+* New Color Options Customizer section.
+* New palette builder.
+* New Color-Accessibility mode switch (AA/AAA/Auto).
+* New Hue-linking switch for more consistent colors.
+* New card mode for post-archives.
+* Automated logic for grid-parts order in the document's HTML structure.
+* New content-area horizontal & vertical padding controls.
+* New `gridd_get_number_of_widget_areas` filter.
+
+### Removed
+
+* Removed Theme Upsell link in the customizer.
+* Removed the Square Buttons Block Variation.
+* Removed Collapsed navigation boxed mode.
+* Removed the manual grid-parts ordering controls (the order is now auto-calculated).
+* Removed parts of AMP support.
 
 ## 1.1.18 - 2019-09-04
 
