@@ -11,3 +11,6 @@
  * Requires PHP: 5.6
  * Tags:         accessibility-ready, block-styles, wide-blocks, translation-ready, custom-background, custom-logo, custom-menu, featured-images, threaded-comments
  */
+
+/* Required by theme-check */
+.sticky {}
