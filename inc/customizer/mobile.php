@@ -36,23 +36,4 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
-	[
-		'type'            => 'sortable',
-		'settings'        => 'gridd_grid_load_order',
-		'label'           => esc_html__( 'Grid Parts Load Order', 'gridd' ),
-		'description'     => Customizer::get_control_description(
-			[
-				'short'   => '',
-				'details' => esc_html__( 'Changes the order in which parts get loaded. This only affects the mobile views and SEO. Important: Your content should always be near the top. You can place secondary items lower in the load order', 'gridd' ),
-			]
-		),
-		'section'         => 'gridd_mobile',
-		'default'         => array_values( Grid_Parts::get_instance()->get_smart_order() ),
-		'priority'        => 900,
-		'choices'         => $sortable_parts,
-		'active_callback' => '__return_false',
-	]
-);
-
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */
