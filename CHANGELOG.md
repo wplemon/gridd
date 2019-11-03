@@ -1,4 +1,9 @@
-## 2.0.0
+## 2.0.1 - 2019-11-03
+
+### Fixed
+* Button text color.
+
+## 2.0.0 - 2019-11-03
 
 ### Fixed
 * Removed underline for featured-image links.
