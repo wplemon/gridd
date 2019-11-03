@@ -22,6 +22,7 @@
     "node": ">= 0.10.0"
   },
   "devDependencies": {
+    "@wordpress/eslint-plugin": "^3.1.0",
     "grunt": "*",
     "grunt-contrib-clean": "*",
     "grunt-contrib-cssmin": "*",
