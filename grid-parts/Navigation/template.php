@@ -56,7 +56,9 @@ foreach ( $responsive_mode_parts as $responsive_mode_part ) {
 			);
 			?>
 		<?php endif; ?>
-		<nav <?php Theme::print_attributes(
+		<nav 
+		<?php
+		Theme::print_attributes(
 			[
 				'id'            => "navigation-$id",
 				'class'         => 'navigation gridd-nav-' . ( $is_vertical_nav ? 'vertical' : 'horizontal' ),
@@ -64,7 +66,9 @@ foreach ( $responsive_mode_parts as $responsive_mode_part ) {
 				'aria-expanded' => 'false',
 			],
 			"navigation-$id"
-		); ?>>
+		);
+		?>
+		>
 			<?php if ( has_nav_menu( "menu-$id" ) ) : ?>
 				<?php
 

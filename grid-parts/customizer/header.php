@@ -150,7 +150,7 @@ new \Kirki\Field\ReactColor(
 				'property' => '--bg',
 			],
 		],
-		'choices'   => [
+		'choices'     => [
 			'formComponent' => 'TwitterPicker',
 			'colors'        => \Gridd\Theme::get_colorpicker_palette(),
 		],

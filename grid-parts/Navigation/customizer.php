@@ -182,7 +182,7 @@ function gridd_nav_customizer_options( $id ) {
 			'sanitize_callback' => [ $sanitization, 'color_hex' ],
 			'active_callback'   => function() {
 				return ! get_theme_mod( 'same_linkcolor_hues', true );
-			}
+			},
 		]
 	);
 

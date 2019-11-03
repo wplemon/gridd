@@ -276,7 +276,7 @@ class Grid_Parts {
 		if ( isset( $value['areas'] ) ) {
 			foreach ( $value['areas'] as $part => $args ) {
 				foreach ( $args['cells'] as $cell ) {
-					$score = 1000 * $cell[0];
+					$score  = 1000 * $cell[0];
 					$score += $rtl ? 100 - $cell[1] : $cell[1];
 
 					// Change score of footer so it gets moved to last position.
@@ -311,7 +311,7 @@ class Grid_Parts {
 				if ( 'footer' === $item['id'] ) {
 					continue;
 				}
-				if ( \in_array( $item['column'], $content_columns ) ) {
+				if ( \in_array( $item['column'], $content_columns, true ) ) {
 					$main_area_items[] = $item;
 				}
 			}
@@ -321,7 +321,7 @@ class Grid_Parts {
 
 			// Add items in the final array.
 			foreach ( $main_area_items as $item ) {
-				if ( ! \in_array( $item['id'], $all_parts_ordered ) ) {
+				if ( ! \in_array( $item['id'], $all_parts_ordered, true ) ) {
 					$all_parts_ordered[] = $item['id'];
 				}
 			}
@@ -334,7 +334,7 @@ class Grid_Parts {
 
 		// Add items in the final array.
 		foreach ( $grid as $item ) {
-			if ( ! \in_array( $item['id'], $all_parts_ordered ) ) {
+			if ( ! \in_array( $item['id'], $all_parts_ordered, true ) ) {
 				$all_parts_ordered[] = $item['id'];
 			}
 		}
@@ -345,7 +345,7 @@ class Grid_Parts {
 
 			$subgrids = [];
 			foreach ( $all_parts as $part ) {
-				if ( isset( $part['grid'] ) && \in_array( $part['id'], $all_parts_ordered ) ) {
+				if ( isset( $part['grid'] ) && \in_array( $part['id'], $all_parts_ordered, true ) ) {
 					$subgrids[ $part['id'] ] = $this->get_smart_order( $part['grid'] );
 				}
 			}

@@ -33,7 +33,10 @@ class Editor {
 	 * @return void
 	 */
 	public function block_editor_styles() {
-		// wp_enqueue_style( 'gridd-block-editor-styles', get_theme_file_uri( '/assets/css/editor-style-block.css' ), $css_dependencies, wp_get_theme()->get( 'Version' ), 'all' );
+		/**
+		 * WIP
+		wp_enqueue_style( 'gridd-block-editor-styles', get_theme_file_uri( '/assets/css/editor-style-block.css' ), $css_dependencies, wp_get_theme()->get( 'Version' ), 'all' );
+		*/
 	}
 }
 

@@ -39,9 +39,9 @@ function gridd_sidebar_customizer_options( $id ) {
 	/**
 	 * Focus on widget-area.
 	 */
+
 	/*
 	 * WIP - Disabled the control because we're nw moving these to their respective widget-areas.
-	 *
 	Customizer::add_field(
 		[
 			'settings' => "gridd_sidebar_focus_on_sidebar_{$id}_section",
@@ -125,7 +125,7 @@ function gridd_sidebar_customizer_options( $id ) {
 			'sanitize_callback' => [ $sanitization, 'color_hex' ],
 			'active_callback'   => function() {
 				return ! get_theme_mod( 'same_linkcolor_hues', true );
-			}
+			},
 		]
 	);
 

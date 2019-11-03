@@ -42,7 +42,6 @@ Customizer::add_panel(
  */
 /**
  * WIP: Disable upsell.
- *
 if ( ! Theme::is_plus_active() ) {
 	Customizer::add_section(
 		'gridd_get_plus',

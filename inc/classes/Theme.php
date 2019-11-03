@@ -477,7 +477,6 @@ class Theme {
 	 * @static
 	 * @access public
 	 * @since 2.0.0
-	 * @param string $context Can be one of background|accent|all.
 	 * @return array
 	 */
 	public static function get_colorpicker_palette() {
@@ -499,26 +498,27 @@ class Theme {
 	 * @return array
 	 */
 	public static function get_color_palette( $return_defaults = false ) {
+		// phpcs:disable Squiz.PHP.CommentedOutCode
 		$defaults = [
 			[
 				'name'  => '',
 				'slug'  => 'custom-color-1',
-				'color' => '#ffffff'
+				'color' => '#ffffff',
 			],
 			[
 				'name'  => '',
 				'slug'  => 'custom-color-2',
-				'color' => '#f5f7f9'
+				'color' => '#f5f7f9',
 			],
 			// [
-			// 	'name'  => '',
-			// 	'slug'  => 'custom-color-3',
-			// 	'color' => '#f4f4e1'
+			// 'name'  => '',
+			// 'slug'  => 'custom-color-3',
+			// 'color' => '#f4f4e1'
 			// ],
 			[
 				'name'  => '',
 				'slug'  => 'custom-color-4',
-				'color' => '#f0f3f6'
+				'color' => '#f0f3f6',
 			],
 			[
 				'name'  => esc_html__( 'Very Light Gray', 'gridd' ),
@@ -526,9 +526,9 @@ class Theme {
 				'color' => '#eeeeee',
 			],
 			// [
-			// 	'name'  => esc_html__( 'Cyan Bluish Gray', 'gridd' ),
-			// 	'slug'  => 'cyan-bluish-gray',
-			// 	'color' => '#abb8c3',
+			// 'name'  => esc_html__( 'Cyan Bluish Gray', 'gridd' ),
+			// 'slug'  => 'cyan-bluish-gray',
+			// 'color' => '#abb8c3',
 			// ],
 			[
 				'name'  => esc_html__( 'Very Dark Gray', 'gridd' ),
@@ -536,14 +536,14 @@ class Theme {
 				'color' => '#313131',
 			],
 			// [
-			// 	'name'  => '',
-			// 	'slug'  => 'custom-color-5',
-			// 	'color' => '#1a1a1d'
+			// 'name'  => '',
+			// 'slug'  => 'custom-color-5',
+			// 'color' => '#1a1a1d'
 			// ],
 			[
 				'name'  => '',
 				'slug'  => 'custom-color-6',
-				'color' => '#000000'
+				'color' => '#000000',
 			],
 			[
 				'name'  => esc_html__( 'Pale Pink', 'gridd' ),
@@ -586,6 +586,8 @@ class Theme {
 				'color' => '#0693e3',
 			],
 		];
+
+		// phpcs:enable Squiz.PHP.CommentedOutCode
 
 		if ( $return_defaults ) {
 			return $defaults;

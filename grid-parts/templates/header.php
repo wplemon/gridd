@@ -30,7 +30,7 @@ $style->add_string(
 );
 $style->add_file( get_theme_file_path( 'grid-parts/styles/header/styles.min.css' ) );
 $style->add_string( '@media only screen and (min-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . '){' );
-// $style->add_file( get_theme_file_path( 'grid-parts/styles/header-large.min.css' ) );
+$style->add_file( get_theme_file_path( 'grid-parts/styles/header/styles-large.min.css' ) );
 
 // If we're on an archive and we want to use cards, add extra styles.
 if ( ( is_archive() || is_home() ) && 'card' === get_theme_mod( 'archive_post_mode', 'default' ) ) {

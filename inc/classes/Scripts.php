@@ -259,7 +259,7 @@ class Scripts {
 		$style->the_css( 'gridd-inline-css-late-styles' );
 
 		// Add blocks styles.
-		$style = Style::get_instance( 'blocks-styles' );
+		$style  = Style::get_instance( 'blocks-styles' );
 		$blocks = $this->get_blocks();
 		foreach ( $blocks as $block ) {
 			$block = str_replace( 'core/', '', $block );

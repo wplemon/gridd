@@ -120,18 +120,18 @@ $post_types = get_post_types(
 foreach ( $post_types as $post_type_id => $post_type_obj ) {
 	Customizer::add_field(
 		[
-			'type'            => 'checkbox',
-			'settings'        => "gridd_archive_display_grid_$post_type_id",
-			'label'           => sprintf(
+			'type'      => 'checkbox',
+			'settings'  => "gridd_archive_display_grid_$post_type_id",
+			'label'     => sprintf(
 				/* translators: The post-type name. */
 				esc_html__( 'Display "%s" archives as a grid', 'gridd' ),
 				$post_type_obj->labels->name
 			),
-			'section'         => 'gridd_features_archive',
-			'default'         => false,
-			'transport'       => 'refresh',
-			'priority'        => 40,
-			'output'          => [
+			'section'   => 'gridd_features_archive',
+			'default'   => false,
+			'transport' => 'refresh',
+			'priority'  => 40,
+			'output'    => [
 				[
 					'element'       => ".gridd-post-type-archive-$post_type_id #main",
 					'property'      => 'display',
@@ -314,7 +314,7 @@ new \WPLemon\Field\WCAGTextColor(
 		'section'           => 'gridd_features_single_post',
 		'priority'          => 50,
 		'default'           => '#fff',
-		'output'      => [
+		'output'            => [
 			[
 				'element'  => ':root',
 				'property' => '--im-htc',

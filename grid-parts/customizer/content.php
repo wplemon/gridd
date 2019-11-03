@@ -34,7 +34,7 @@ new \Kirki\Field\ReactColor(
 			[
 				'element'  => '.block-editor .edit-post-visual-editor.editor-styles-wrapper,.edit-post-visual-editor.editor-styles-wrapper',
 				'property' => '--bg',
-				'context'  => [ 'editor' ]
+				'context'  => [ 'editor' ],
 			],
 		],
 		'transport' => 'auto',
@@ -61,7 +61,7 @@ new \WPLemon\Field\WCAGTextColor(
 			[
 				'element'  => '.block-editor .edit-post-visual-editor.editor-styles-wrapper,.edit-post-visual-editor.editor-styles-wrapper',
 				'property' => '--cl',
-				'context'  => [ 'editor' ]
+				'context'  => [ 'editor' ],
 			],
 		],
 		'transport'         => 'auto',
@@ -99,7 +99,7 @@ new \WPLemon\Field\WCAGLinkColor(
 			[
 				'element'  => '.block-editor .edit-post-visual-editor.editor-styles-wrapper,.edit-post-visual-editor.editor-styles-wrapper',
 				'property' => '--lc',
-				'context'  => [ 'editor' ]
+				'context'  => [ 'editor' ],
 			],
 		],
 		'sanitize_callback' => [ $sanitization, 'color_hex' ],

@@ -225,7 +225,7 @@ Customizer::add_field(
 		'section'           => 'gridd_typography',
 		'default'           => '1.26',
 		'transport'         => 'postMessage',
-		'output'      => [
+		'output'            => [
 			[
 				'element'  => ':root',
 				'property' => '--gridd-typo-scale',

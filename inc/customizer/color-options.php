@@ -43,13 +43,13 @@ new \WPLemon\Field\PaletteBuilder(
 
 new \Kirki\Field\Checkbox_Switch(
 	[
-		'settings'    => 'same_linkcolor_hues',
-		'label'       => esc_attr__( 'Consistent Hue', 'gridd' ),
-		'description' => esc_html__( 'By default all your grid-parts will use the same link-color hue. Disable this option to access individual settings on some grid-parts.', 'gridd' ),
-		'section'     => 'color_options',
-		'default'     => true,
-		'transport'   => 'postMessage',
-		'priority'    => 1,
+		'settings'          => 'same_linkcolor_hues',
+		'label'             => esc_attr__( 'Consistent Hue', 'gridd' ),
+		'description'       => esc_html__( 'By default all your grid-parts will use the same link-color hue. Disable this option to access individual settings on some grid-parts.', 'gridd' ),
+		'section'           => 'color_options',
+		'default'           => true,
+		'transport'         => 'postMessage',
+		'priority'          => 1,
 		'sanitize_callback' => function( $value ) {
 			return (bool) $value;
 		},
@@ -58,17 +58,17 @@ new \Kirki\Field\Checkbox_Switch(
 
 new \Kirki\Field\RadioButtonset(
 	[
-		'settings'    => 'target_color_compliance',
-		'label'       => esc_attr__( 'Color Accessibility Target Compliance', 'gridd' ),
-		'description' => esc_html__( 'Select how text and link colors will be calculated.', 'gridd' ),
-		'section'     => 'color_options',
-		'default'     => 'auto',
-		'transport'   => 'postMessage',
-		'priority'    => 100,
-		'choices'     => [
+		'settings'          => 'target_color_compliance',
+		'label'             => esc_attr__( 'Color Accessibility Target Compliance', 'gridd' ),
+		'description'       => esc_html__( 'Select how text and link colors will be calculated.', 'gridd' ),
+		'section'           => 'color_options',
+		'default'           => 'auto',
+		'transport'         => 'postMessage',
+		'priority'          => 100,
+		'choices'           => [
 			'auto' => esc_html__( 'Auto', 'gridd' ) . '<div class="radio-tooltip">' . esc_html__( 'Select "Auto" mode to automatically get colors with maximum contrast to get as close to a higher accessibility standard as possible. It is similar to AAA compliance, with a fallback to above-AA colors is AAA is not achievable.', 'gridd' ) . '</div>',
-			'AAA'  => 'AAA' . '<div class="radio-tooltip">' . esc_html__( 'Targeting for "AAA" compliance results in less intense but easier to read colors.', 'gridd' ) . '</div>',
-			'AA'   => 'AA' . '<div class="radio-tooltip">' . esc_html__( 'Targeting for "AA" compliance will result in more vibrant colors while still maintaining a readable color contrast.', 'gridd' ) . '</div>',
+			'AAA'  => 'AAA<div class="radio-tooltip">' . esc_html__( 'Targeting for "AAA" compliance results in less intense but easier to read colors.', 'gridd' ) . '</div>',
+			'AA'   => 'AA<div class="radio-tooltip">' . esc_html__( 'Targeting for "AA" compliance will result in more vibrant colors while still maintaining a readable color contrast.', 'gridd' ) . '</div>',
 		],
 		'sanitize_callback' => function( $value ) {
 			return ( 'auto' === $value || 'AAA' === $value || 'AA' === $value ) ? $value : 'auto';

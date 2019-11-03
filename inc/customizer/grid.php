@@ -50,7 +50,6 @@ Customizer::add_section(
 	[
 		'title'    => esc_html__( 'Main Grid Layout', 'gridd' ),
 		'priority' => -100,
-		// 'panel'    => 'gridd_options',
 	]
 );
 

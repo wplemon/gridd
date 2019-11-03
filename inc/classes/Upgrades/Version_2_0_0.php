@@ -134,8 +134,8 @@ class Version_2_0_0 {
 			'gridd_grid_part_details_header_background_color' => 'header_background_color',
 			'gridd_grid_part_details_header_parts_background_override' => 'header_parts_background_override',
 			'gridd_grid_part_details_footer_parts_background_override' => 'footer_parts_background_override',
-			'gridd_grid_content_background_color' => 'content_background_color',
-			'gridd_excerpt_more' => 'excerpt_read_more',
+			'gridd_grid_content_background_color'          => 'content_background_color',
+			'gridd_excerpt_more'                           => 'excerpt_read_more',
 		];
 
 		foreach ( $theme_mods as $old => $new ) {

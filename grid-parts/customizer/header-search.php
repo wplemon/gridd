@@ -64,7 +64,7 @@ new \WPLemon\Field\WCAGTextColor(
 				'property' => '--cl',
 			],
 		],
-		'choices' => [
+		'choices'   => [
 			'backgroundColor' => 'header_search_background_color',
 		],
 		'priority'  => 30,

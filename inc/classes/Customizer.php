@@ -303,7 +303,7 @@ class Customizer {
 	 * @return array
 	 */
 	public function kirki_control_types( $controls ) {
-		$controls['gridd_grid']    = '\Gridd\Customizer\Control\Grid';
+		$controls['gridd_grid'] = '\Gridd\Customizer\Control\Grid';
 		return $controls;
 	}
 

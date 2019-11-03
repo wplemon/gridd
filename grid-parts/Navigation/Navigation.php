@@ -220,7 +220,7 @@ class Navigation extends Grid_Part {
 
 		// Skip when the item has no sub-menu.
 		if ( in_array( 'menu-item-has-children', $item->classes, true ) ) {
-			$html = '<span class="gridd-menu-item-wrapper has-arrow">';
+			$html         = '<span class="gridd-menu-item-wrapper has-arrow">';
 			$item_output .= '<button onClick="griddMenuItemExpand(this)"><span class="screen-reader-text">' . esc_html__( 'Toggle Child Menu', 'gridd' ) . '</span>⌵</button>';
 		}
 
@@ -275,6 +275,7 @@ class Navigation extends Grid_Part {
 	 * @access public
 	 * @since 2.0.0
 	 * @param string $container The navigation's container.
+	 * @param array  $args      An array of arguments.
 	 * @return void
 	 */
 	public static function print_styles( $container, $args = [] ) {
@@ -285,7 +286,7 @@ class Navigation extends Grid_Part {
 			$args,
 			[
 				'vertical'        => false,
-				'responsive_mode' => 'desktop-normal mobile-normal'
+				'responsive_mode' => 'desktop-normal mobile-normal',
 			]
 		);
 

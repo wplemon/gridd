@@ -17,7 +17,6 @@ Navigation::print_styles(
 	]
 );
 $style = Style::get_instance( 'grid-part/nav-handheld/menu' );
-// $style->add_file( get_theme_file_path( 'grid-parts/styles/nav-handheld/styles-navigation.min.css' ) );
 $style->the_css( 'gridd-inline-css-nav-handheld-menu' );
 $label_class = get_theme_mod( 'gridd_grid_nav-handheld_hide_labels', false ) ? 'screen-reader-text' : 'label';
 ?>

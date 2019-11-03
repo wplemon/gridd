@@ -31,7 +31,7 @@ function gridd_add_footer_widget_area_options( $id ) {
 		"grid_part_details_footer_sidebar_$id",
 		[
 			/* translators: The number of the footer widget area. */
-			'title' => sprintf( esc_html__( 'Footer Sidebar %d', 'gridd' ), absint( $id ) )
+			'title' => sprintf( esc_html__( 'Footer Sidebar %d', 'gridd' ), absint( $id ) ),
 		]
 	);
 
@@ -102,7 +102,7 @@ function gridd_add_footer_widget_area_options( $id ) {
 			'sanitize_callback' => [ $sanitization, 'color_hex' ],
 			'active_callback'   => function() {
 				return ! get_theme_mod( 'same_linkcolor_hues', true );
-			}
+			},
 		]
 	);
 }
