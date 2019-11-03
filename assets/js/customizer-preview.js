@@ -57,15 +57,15 @@
 			if ( 'blank' === to ) {
 				jQuery( '.site-title, .site-description' ).css({
 					'clip': 'rect(1px, 1px, 1px, 1px)',
-					'position': 'absolute',
+					'position': 'absolute'
 				});
 			} else {
 				jQuery( '.site-title, .site-description' ).css({
 					'clip': 'auto',
-					'position': 'relative',
+					'position': 'relative'
 				});
 				jQuery( '.site-title, .site-title a, .site-description' ).css({
-					'color': to,
+					'color': to
 				});
 			}
 		});

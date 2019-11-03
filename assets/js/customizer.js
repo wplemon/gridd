@@ -134,7 +134,7 @@
 		 * @since 2.0.0
 		 */
 		wp.customize( 'gridd_links_color', function( value ) {
-			value.bind( function( to ) {
+			value.bind( function( to ) { // eslint-disable-line no-unused-vars
 				var mainLinksHue;
 				if ( ! wp.customize.control( 'same_linkcolor_hues' ).setting.get() ) {
 					return;

@@ -1,8 +1,7 @@
-**/*.min.js
-**/**/*.min.js
-**/**/**/*.min.js
+*.min.js
 assets/js/vendor
 vendor/
+packages/
 node_modules/
 inc/kirki/
 assets/js/css-vars-polyfill.js
