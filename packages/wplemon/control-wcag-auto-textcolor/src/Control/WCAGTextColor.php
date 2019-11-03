@@ -159,12 +159,12 @@ class WCAGTextColor extends \WP_Customize_Control {
 		$strings = ( isset( $this->choices['18n'] ) ) ? $this->choices['18n'] : [];
 
 		$this->json['i18n'] = wp_parse_args( $strings,[
-			'auto'        => esc_html__( 'Auto', 'kirki-pro' ),
-			'recommended' => esc_html__( 'Recommended', 'kirki-pro' ),
-			'custom'      => esc_html__( 'Custom', 'kirki-pro' ),
-			'a11yRating'  => esc_html__( 'WCAG Rating', 'kirki-pro' ),
-			'contrastBg'  => esc_html__( 'Contrast with background', 'kirki-pro' ),
-			'contrastSt'  => esc_html__( 'Contrast with surrounding text', 'kirki-pro' ),
+			'auto'        => esc_html__( 'Auto', 'gridd' ),
+			'recommended' => esc_html__( 'Recommended', 'gridd' ),
+			'custom'      => esc_html__( 'Custom', 'gridd' ),
+			'a11yRating'  => esc_html__( 'WCAG Rating', 'gridd' ),
+			'contrastBg'  => esc_html__( 'Contrast with background', 'gridd' ),
+			'contrastSt'  => esc_html__( 'Contrast with surrounding text', 'gridd' ),
 		] );
 
 		// Start compatibility with Kirki v3.0 API.

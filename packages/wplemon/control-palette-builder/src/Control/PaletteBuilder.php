@@ -159,9 +159,9 @@ class PaletteBuilder extends \WP_Customize_Control {
 		$strings = ( isset( $this->choices['18n'] ) ) ? $this->choices['18n'] : [];
 
 		$this->json['i18n'] = wp_parse_args( $strings,[
-			'close'    => esc_html__( 'Close', 'kirki-pro' ),
-			'remove'   => esc_html__( 'Remove', 'kirki-pro' ),
-			'addColor' => esc_html__( 'Add Color', 'kirki-pro' ),
+			'close'    => esc_html__( 'Close', 'gridd' ),
+			'remove'   => esc_html__( 'Remove', 'gridd' ),
+			'addColor' => esc_html__( 'Add Color', 'gridd' ),
 		] );
 
 		$this->json['default'] = ( isset( $this->default ) ) ? $this->default : $this->setting->default;
