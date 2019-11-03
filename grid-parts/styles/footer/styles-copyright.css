@@ -1,5 +1,6 @@
 .gridd-tp-footer_copyright {
-  width: 100%; }
+  width: 100%;
+  align-items: center; }
   .gridd-tp-footer_copyright .site-info {
     padding: var(--pd, 1em);
     background-color: var(--bg, #fff);
