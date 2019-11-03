@@ -39,22 +39,6 @@ function griddToggleButtonClick( id ) { // eslint-disable-line no-unused-vars
 	}
 }
 
-/**
- * Handle clicks on the main menu parts.
- *
- * @param {Element} el
- */
-function griddMenuItemExpand( el ) {
-	var ul = el.parentNode.parentNode.querySelector( 'ul' ),
-		expand = ( 'none' === window.getComputedStyle( ul ).display );
-	ul.style.display = expand ? 'block' : 'none';
-	if ( expand ) {
-		el.classList.add( 'active' );
-	} else {
-		el.classList.remove( 'active' );
-	}
-}
-
 window.onload = function() {
 	var griddNavLinks = document.querySelectorAll( '.menu-item a' ),
 		i;
