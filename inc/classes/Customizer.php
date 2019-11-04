@@ -339,7 +339,7 @@ class Customizer {
 			$sections[ "nav_$i" ] = "grid_part_details_nav_$i";
 		}
 
-		$reusable_blocks = \Gridd\Grid_Part\Reusable_Block::get_reusable_blocks();
+		$reusable_blocks = \Gridd\Grid_Part\ReusableBlock::get_reusable_blocks();
 		foreach ( $reusable_blocks as $block ) {
 			$sections[ "reusable_block_{$block->ID}" ] = "grid_part_details_reusable_block_{$block->ID}";
 		}

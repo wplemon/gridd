@@ -13,11 +13,11 @@ use Gridd\Rest;
 use Gridd\Scripts;
 
 /**
- * The Gridd\Grid_Part\Reusable_Block object.
+ * The Gridd\Grid_Part\ReusableBlock object.
  *
  * @since 1.0
  */
-class Reusable_Block extends Grid_Part {
+class ReusableBlock extends Grid_Part {
 
 	/**
 	 * An array of reusable blocks.
@@ -28,6 +28,16 @@ class Reusable_Block extends Grid_Part {
 	 * @var array
 	 */
 	private static $reusable_blocks;
+
+	/**
+	 * Whether we've already added styles or not.
+	 *
+	 * @static
+	 * @access private
+	 * @since 2.0.2
+	 * @var bool
+	 */
+	private static $styles_added = false;
 
 	/**
 	 * Hooks & extra operations.
@@ -92,7 +102,15 @@ class Reusable_Block extends Grid_Part {
 			 * We use include( get_theme_file_path() ) here
 			 * because we need to pass the $gridd_reusable_block_id var to the template.
 			 */
-			include get_theme_file_path( 'grid-parts/templates/reusable-block.php' );
+			include get_theme_file_path( 'grid-parts/ReusableBlock/template.php' );
+
+			if ( ! self::$styles_added ) {
+				Style::get_instance( 'grid-part/reusable_block' )
+					->add_file( __DIR__ . '/styles.min.css' )
+					->the_css( 'gridd-inline-css-reusable-block' );
+
+				self::$styles_added = true;
+			}
 		}
 	}
 
@@ -174,6 +192,6 @@ class Reusable_Block extends Grid_Part {
 	}
 }
 
-new Reusable_Block();
+new ReusableBlock();
 
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */

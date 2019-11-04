@@ -5,7 +5,7 @@
  * @package Gridd
  */
 
-use Gridd\Grid_Part\Reusable_Block;
+use Gridd\Grid_Part\ReusableBlock;
 use Gridd\Customizer;
 use Gridd\Customizer\Sanitize;
 
@@ -16,7 +16,7 @@ use Gridd\Customizer\Sanitize;
  * @return void
  */
 function gridd_add_reusable_blocks_parts() {
-	$reusable_blocks = Reusable_Block::get_reusable_blocks();
+	$reusable_blocks = ReusableBlock::get_reusable_blocks();
 	if ( $reusable_blocks ) {
 		foreach ( $reusable_blocks as $block ) {
 			gridd_reusable_blocks_customizer_options( $block->ID );
