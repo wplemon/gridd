@@ -35,7 +35,6 @@ class Breadcrumbs extends Grid_Part {
 	 * @return void
 	 */
 	public function init() {
-		spl_autoload_register( [ $this, 'autoloader' ] );
 		add_action( 'after_setup_theme', [ $this, 'load_breadcrumbs_textdomain' ] );
 		add_filter( 'override_load_textdomain', [ $this, 'override_load_textdomain' ], 10, 2 );
 		add_action( 'woocommerce_before_main_content', [ $this, 'remove_woocommerce_breadcrumbs' ], 1 );
@@ -69,35 +68,7 @@ class Breadcrumbs extends Grid_Part {
 	 */
 	public function render( $part ) {
 		if ( $this->id === $part && apply_filters( 'gridd_render_grid_part', true, 'breadcrumbs' ) ) {
-			Theme::get_template_part( 'grid-parts/templates/breadcrumbs' );
-		}
-	}
-
-	/**
-	 * Autoloader for hybrid-breadcrumbs.
-	 *
-	 * @param string $class The fully-qualified class name.
-	 * @return void
-	 */
-	private function autoloader( $class ) {
-
-		// Does the class use the namespace prefix?
-		if ( 0 !== strncmp( 'Hybrid\\Breadcrumbs\\', $class, 19 ) ) {
-			// No, move to the next registered autoloader.
-			return;
-		}
-
-		// Get the relative class name.
-		$relative_class = substr( $class, 19 );
-
-		// Replace the namespace prefix with the base directory, replace namespace
-		// separators with directory separators in the relative class name, append
-		// with .php.
-		$file = \get_template_directory() . '/inc/hybrid-breadcrumbs/src/' . str_replace( '\\', '/', $relative_class ) . '.php';
-
-		// if the file exists, require it.
-		if ( file_exists( $file ) ) {
-			require $file;
+			Theme::get_template_part( 'grid-parts/Breadcrumbs/template' );
 		}
 	}
 

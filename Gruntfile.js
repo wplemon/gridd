@@ -79,6 +79,28 @@ module.exports = function( grunt ) {
 			}
 		},
 
+		// Replace textdomains.
+		addtextdomain: {
+			options: {
+				textdomain: 'gridd',
+				updateDomains: [
+					'hybrid-core'
+				]
+			},
+			target: {
+				files: {
+					src: [
+						'packages/justintadlock/*.php',
+						'packages/justintadlock/**/*.php',
+						'packages/justintadlock/**/**/*.php',
+						'packages/justintadlock/**/**/**/*.php',
+						'packages/justintadlock/**/**/**/**/**/*.php',
+						'packages/justintadlock/**/**/**/**/**/**/*.php'
+					]
+				}
+			}
+		},
+
 		// Watch task (run with "grunt watch")
         watch: {
             cssMain: {
@@ -104,15 +126,16 @@ module.exports = function( grunt ) {
                 ],
                 tasks: [ 'uglify' ]
 			}
-        }
+		}
     });
 
     grunt.loadNpmTasks( 'grunt-contrib-sass' );
     grunt.loadNpmTasks( 'grunt-contrib-uglify' );
     grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
 	grunt.loadNpmTasks( 'grunt-contrib-watch' );
+	grunt.loadNpmTasks( 'grunt-wp-i18n' );
 
-	grunt.registerTask( 'default', [ 'sass:main', 'sass:gridParts', 'cssmin', 'uglify' ] );
+	grunt.registerTask( 'default', [ 'sass:main', 'sass:gridParts', 'cssmin', 'uglify', 'addtextdomain' ] );
 	grunt.registerTask( 'css', [ 'sass:main', 'sass:gridParts', 'cssmin' ] );
 	grunt.registerTask( 'js', [ 'uglify' ] );
 };

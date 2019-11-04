@@ -75,25 +75,19 @@ class PostAncestors extends Base {
 		// Display terms for specific post type taxonomy if requested.
 		if ( $this->breadcrumbs->postTaxonomy( $post->post_type ) ) {
 
-			$this->breadcrumbs->build(
-				'PostTerms',
-				[
-					'post'     => $post,
-					'taxonomy' => $this->breadcrumbs->postTaxonomy( $post->post_type ),
-				]
-			);
+			$this->breadcrumbs->build( 'PostTerms', [
+				'post'     => $post,
+				'taxonomy' => $this->breadcrumbs->postTaxonomy( $post->post_type )
+			] );
 		}
 
 		if ( $parents ) {
 
-			array_map(
-				function( $parent ) {
+			array_map( function( $parent ) {
 
-						$this->breadcrumbs->crumb( 'Post', [ 'post' => $parent ] );
+				$this->breadcrumbs->crumb( 'Post', [ 'post' => $parent ] );
 
-				},
-				array_reverse( $parents )
-			);
+			}, array_reverse( $parents ) );
 		}
 	}
 }

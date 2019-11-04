@@ -79,12 +79,9 @@ class Term extends Base {
 
 					if ( $types ) {
 
-						$this->breadcrumbs->build(
-							'PostType',
-							[
-								'post_type' => $types[0],
-							]
-						);
+						$this->breadcrumbs->build( 'PostType', [
+							'post_type' => $types[0]
+						] );
 
 						$done_post_type = true;
 						break;
@@ -96,12 +93,9 @@ class Term extends Base {
 		// If there's a single post type for the taxonomy, use it.
 		if ( ! $done_post_type && 1 === count( $taxonomy->object_type ) ) {
 
-			$this->breadcrumbs->build(
-				'PostType',
-				[
-					'post_type' => $taxonomy->object_type[0],
-				]
-			);
+			$this->breadcrumbs->build( 'PostType', [
+				'post_type' => $taxonomy->object_type[0]
+			] );
 		}
 
 		// If the taxonomy is hierarchical, list the parent terms.

@@ -65,12 +65,9 @@ class PostTerms extends Base {
 			// If the category has a parent, add the hierarchy to the trail.
 			if ( 0 < $term->parent ) {
 
-				$this->breadcrumbs->build(
-					'TermAncestors',
-					[
-						'term' => $term,
-					]
-				);
+				$this->breadcrumbs->build( 'TermAncestors', [
+					'term' => $term
+				] );
 			}
 
 			// Add term crumb.

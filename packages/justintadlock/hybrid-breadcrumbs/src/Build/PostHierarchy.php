@@ -51,13 +51,10 @@ class PostHierarchy extends Base {
 			$this->breadcrumbs->build( 'RewriteFront' );
 
 			// Map the rewrite tags.
-			$this->breadcrumbs->build(
-				'MapRewriteTags',
-				[
-					'post' => $this->post,
-					'path' => get_option( 'permalink_structure' ),
-				]
-			);
+			$this->breadcrumbs->build( 'MapRewriteTags', [
+				'post' => $this->post,
+				'path' => get_option( 'permalink_structure' )
+			] );
 
 			return;
 		}
@@ -90,13 +87,10 @@ class PostHierarchy extends Base {
 		// Map the rewrite tags if there's a `%` in the slug.
 		if ( $rewrite && false !== strpos( $rewrite['slug'], '%' ) ) {
 
-			$this->breadcrumbs->build(
-				'MapRewriteTags',
-				[
-					'post' => $this->post,
-					'path' => $rewrite['slug'],
-				]
-			);
+			$this->breadcrumbs->build( 'MapRewriteTags', [
+				'post' => $this->post,
+				'path' => $rewrite['slug']
+			] );
 		}
 	}
 }

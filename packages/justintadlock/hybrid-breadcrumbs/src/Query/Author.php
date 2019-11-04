@@ -45,20 +45,14 @@ class Author extends Base {
 		// If $author_base exists, check for parent pages.
 		if ( ! empty( $wp_rewrite->author_base ) ) {
 
-			$this->breadcrumbs->build(
-				'Path',
-				[
-					'page' => $wp_rewrite->author_base,
-				]
-			);
+			$this->breadcrumbs->build( 'Path', [
+				'page' => $wp_rewrite->author_base
+			] );
 		}
 
 		// Add author crumb.
-		$this->breadcrumbs->crumb(
-			'Author',
-			[
-				'user' => new WP_User( get_query_var( 'author' ) ),
-			]
-		);
+		$this->breadcrumbs->crumb( 'Author', [
+			'user' => new WP_User( get_query_var( 'author' ) )
+		] );
 	}
 }

@@ -47,12 +47,9 @@ class Week extends Base {
 	 */
 	public function url() {
 
-		return add_query_arg(
-			[
-				'm' => get_the_time( 'Y' ),
-				'w' => get_the_time( 'W' ),
-			],
-			user_trailingslashit( home_url() )
-		);
+		return add_query_arg( [
+			'm' => get_the_time( 'Y' ),
+			'w' => get_the_time( 'W' )
+		], user_trailingslashit( home_url() ) );
 	}
 }

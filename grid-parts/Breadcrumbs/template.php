@@ -20,7 +20,7 @@ if ( is_front_page() || is_home() ) {
 	 * Print styles.
 	 */
 	Style::get_instance( 'grid-part/breadcrumbs' )
-		->add_file( get_theme_file_path( 'grid-parts/styles/breadcrumbs/styles.min.css' ) )
+		->add_file( __DIR__ . '/styles.min.css' )
 		->the_css( 'gridd-inline-css-breadcrumbs' );
 	?>
 	<div class="inner">

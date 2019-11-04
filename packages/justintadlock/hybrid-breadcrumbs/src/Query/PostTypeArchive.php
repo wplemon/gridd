@@ -50,12 +50,9 @@ class PostTypeArchive extends Base {
 			// If there's a rewrite slug, check for parents.
 			if ( ! empty( $type->rewrite['slug'] ) ) {
 
-				$this->breadcrumbs->build(
-					'Path',
-					[
-						'path' => $type->rewrite['slug'],
-					]
-				);
+				$this->breadcrumbs->build( 'Path', [
+					'path' => $type->rewrite['slug']
+				] );
 			}
 		}
 
@@ -73,12 +70,9 @@ class PostTypeArchive extends Base {
 		if ( is_author() ) {
 
 			// Add author crumb.
-			$this->breadcrumbs->crumb(
-				'Author',
-				[
-					'user' => new WP_User( get_query_var( 'author' ) ),
-				]
-			);
+			$this->breadcrumbs->crumb( 'Author', [
+				'user' => new WP_User( get_query_var( 'author' ) )
+			] );
 		}
 
 		// Build paged crumbs.

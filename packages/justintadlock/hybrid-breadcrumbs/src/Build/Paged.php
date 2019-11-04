@@ -46,12 +46,12 @@ class Paged extends Base {
 
 			$this->breadcrumbs->crumb( 'Paged' );
 
-			// If viewing a paged singular post.
+		// If viewing a paged singular post.
 		} elseif ( is_singular() && 1 < get_query_var( 'page' ) ) {
 
 			$this->breadcrumbs->crumb( 'PagedSingular' );
 
-			// If viewing a singular post with paged comments.
+		// If viewing a singular post with paged comments.
 		} elseif ( is_singular() && get_option( 'page_comments' ) && 1 < get_query_var( 'cpage' ) ) {
 
 			$this->breadcrumbs->crumb( 'PagedComments' );

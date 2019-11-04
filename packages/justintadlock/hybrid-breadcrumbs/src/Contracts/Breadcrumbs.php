@@ -63,8 +63,8 @@ interface Breadcrumbs {
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  string $type
-	 * @param  array  $data
+	 * @param  string  $type
+	 * @param  array   $data
 	 * @return void
 	 */
 	public function query( $type, array $data = [] );
@@ -75,8 +75,8 @@ interface Breadcrumbs {
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  string $type
-	 * @param  array  $data
+	 * @param  string  $type
+	 * @param  array   $data
 	 * @return void
 	 */
 	public function build( $type, array $data = [] );
@@ -87,8 +87,8 @@ interface Breadcrumbs {
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  string $type
-	 * @param  array  $data
+	 * @param  string  $type
+	 * @param  array   $data
 	 * @return void
 	 */
 	public function crumb( $type, array $data = [] );
@@ -98,7 +98,7 @@ interface Breadcrumbs {
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  string $name
+	 * @param  string  $name
 	 * @return mixed
 	 */
 	public function option( $name );
@@ -108,7 +108,7 @@ interface Breadcrumbs {
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  string $name
+	 * @param  string  $name
 	 * @return string
 	 */
 	public function label( $name );
@@ -118,7 +118,7 @@ interface Breadcrumbs {
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  string $post_type
+	 * @param  string  $post_type
 	 * @return string
 	 */
 	public function postTaxonomy( $post_type );

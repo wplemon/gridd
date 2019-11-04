@@ -41,10 +41,10 @@ class Helpers {
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  string $slug
+	 * @param  string  $slug
 	 * @return array
 	 */
-	public static function getPostTypesBySlug( $slug ) {
+	 public static function getPostTypesBySlug( $slug ) {
 
 		$return = [];
 

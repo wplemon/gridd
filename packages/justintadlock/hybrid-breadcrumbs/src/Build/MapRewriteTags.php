@@ -72,38 +72,32 @@ class MapRewriteTags extends Base {
 
 				$this->breadcrumbs->crumb( 'Year', [ 'post' => $this->post ] );
 
-				// If using the %monthnum% tag, add a link to the monthly archive.
+			// If using the %monthnum% tag, add a link to the monthly archive.
 			} elseif ( '%monthnum%' == $tag ) {
 
 				$this->breadcrumbs->crumb( 'Month', [ 'post' => $this->post ] );
 
-				// If using the %day% tag, add a link to the daily archive.
+			// If using the %day% tag, add a link to the daily archive.
 			} elseif ( '%day%' == $tag ) {
 
 				$this->breadcrumbs->crumb( 'Day', [ 'post' => $this->post ] );
 
-				// If using the %author% tag, add a link to the post author archive.
+			// If using the %author% tag, add a link to the post author archive.
 			} elseif ( '%author%' == $tag ) {
 
-				$this->breadcrumbs->crumb(
-					'Author',
-					[
-						'user' => new WP_User( $this->post->post_author ),
-					]
-				);
+				$this->breadcrumbs->crumb( 'Author', [
+					'user' => new WP_User( $this->post->post_author )
+				] );
 
-				// If using the %category% tag, add a link to the first
-				// category archive to match permalinks.
+			// If using the %category% tag, add a link to the first
+			// category archive to match permalinks.
 			} elseif ( taxonomy_exists( trim( $tag, '%' ) ) && $tag !== $this->breadcrumbs->postTaxonomy( $this->post->post_type ) ) {
 
 				// Build post terms crumbs.
-				$this->breadcrumbs->build(
-					'PostTerms',
-					[
-						'post'     => $this->post,
-						'taxonomy' => trim( $tag, '%' ),
-					]
-				);
+				$this->breadcrumbs->build( 'PostTerms', [
+					'post'     => $this->post,
+					'taxonomy' => trim( $tag, '%' )
+				] );
 			}
 		}
 	}

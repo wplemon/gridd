@@ -47,7 +47,7 @@ class PostType extends Base {
 		// If this the post type is `post`, add the posts page and bail.
 		if ( 'post' === $this->post_type ) {
 
-			$show_on_front = get_option( 'show_on_front' );
+			$show_on_front = get_option( 'show_on_front'  );
 			$post_id       = get_option( 'page_for_posts' );
 
 			// Add post crumb if we have a posts page.
@@ -60,12 +60,9 @@ class PostType extends Base {
 				// scenario at this point.
 				if ( trim( $wp_rewrite->front, '/' ) !== $post->post_name ) {
 
-					$this->breadcrumbs->crumb(
-						'Post',
-						[
-							'post' => $post,
-						]
-					);
+					$this->breadcrumbs->crumb( 'Post', [
+						'post' => $post
+					] );
 				}
 			}
 
@@ -73,11 +70,8 @@ class PostType extends Base {
 		}
 
 		// Add post type crumb.
-		$this->breadcrumbs->crumb(
-			'PostType',
-			[
-				'post_type' => get_post_type_object( $this->post_type ),
-			]
-		);
+		$this->breadcrumbs->crumb( 'PostType', [
+			'post_type' => get_post_type_object( $this->post_type )
+		] );
 	}
 }

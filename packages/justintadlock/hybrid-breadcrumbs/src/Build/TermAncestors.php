@@ -60,14 +60,11 @@ class TermAncestors extends Base {
 		// proper order for the trail.
 		if ( $parents ) {
 
-			array_map(
-				function( $parent ) {
+			array_map( function( $parent ) {
 
-						$this->breadcrumbs->crumb( 'Term', [ 'term' => $parent ] );
+				$this->breadcrumbs->crumb( 'Term', [ 'term' => $parent ] );
 
-				},
-				array_reverse( $parents )
-			);
+			}, array_reverse( $parents ) );
 		}
 	}
 }

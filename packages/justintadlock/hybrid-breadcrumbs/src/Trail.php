@@ -27,7 +27,7 @@ class Trail {
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  array $args
+	 * @param  array  $args
 	 * @return Breadcrumbs
 	 */
 	public static function breadcrumbs( array $args = [] ) {
@@ -40,7 +40,7 @@ class Trail {
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  array $args
+	 * @param  array  $args
 	 * @return Breadcrumbs
 	 */
 	public static function make( array $args = [] ) {
@@ -53,7 +53,7 @@ class Trail {
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  array $args
+	 * @param  array  $args
 	 * @return array
 	 */
 	public static function all( array $args = [] ) {
@@ -66,7 +66,7 @@ class Trail {
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  array $args
+	 * @param  array  $args
 	 * @return void
 	 */
 	public static function display( array $args = [] ) {
@@ -79,7 +79,7 @@ class Trail {
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  array $args
+	 * @param  array  $args
 	 * @return string
 	 */
 	public static function render( array $args = [] ) {

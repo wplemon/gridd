@@ -46,7 +46,7 @@ class Breadcrumbs implements BreadcrumbsContract {
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  array $args
+	 * @param  array  $args
 	 * @return void
 	 */
 	public function __construct( array $args = [] ) {
@@ -66,7 +66,7 @@ class Breadcrumbs implements BreadcrumbsContract {
 			'container_class' => 'breadcrumbs',
 			'title_class'     => 'breadcrumbs__title',
 			'list_class'      => 'breadcrumbs__trail',
-			'item_class'      => 'breadcrumbs__crumb',
+			'item_class'      => 'breadcrumbs__crumb'
 		];
 
 		$this->args = wp_parse_args( $args, $defaults );
@@ -92,21 +92,21 @@ class Breadcrumbs implements BreadcrumbsContract {
 	protected function defaultLabels() {
 
 		return [
-			'title'               => __( 'Browse:', 'gridd' ),
+			'title'               => __( 'Browse:',                               'gridd' ),
 			'aria_label'          => _x( 'Breadcrumbs', 'breadcrumbs aria label', 'gridd' ),
-			'home'                => __( 'Home', 'gridd' ),
-			'error_404'           => __( '404 Not Found', 'gridd' ),
-			'archives'            => __( 'Archives', 'gridd' ),
+			'home'                => __( 'Home',                                  'gridd' ),
+			'error_404'           => __( '404 Not Found',                         'gridd' ),
+			'archives'            => __( 'Archives',                              'gridd' ),
 			// Translators: %s is the search query.
-			'search'              => __( 'Search results for: %s', 'gridd' ),
+			'search'              => __( 'Search results for: %s',                'gridd' ),
 			// Translators: %s is the page number.
-			'paged'               => __( 'Page %s', 'gridd' ),
+			'paged'               => __( 'Page %s',                               'gridd' ),
 			// Translators: %s is the page number.
-			'paged_comments'      => __( 'Comment Page %s', 'gridd' ),
+			'paged_comments'      => __( 'Comment Page %s',                       'gridd' ),
 			// Translators: Minute archive title. %s is the minute time format.
-			'archive_minute'      => __( 'Minute %s', 'gridd' ),
+			'archive_minute'      => __( 'Minute %s',                             'gridd' ),
 			// Translators: Weekly archive title. %s is the week date format.
-			'archive_week'        => __( 'Week %s', 'gridd' ),
+			'archive_week'        => __( 'Week %s',                               'gridd' ),
 
 			// "%s" is replaced with the translated date/time format.
 			'archive_minute_hour' => '%s',
@@ -184,7 +184,7 @@ class Breadcrumbs implements BreadcrumbsContract {
 				'em'      => true,
 				'strong'  => true,
 				'i'       => true,
-				'b'       => true,
+				'b'       => true
 			];
 
 			$count     = count( $crumbs );
@@ -211,7 +211,7 @@ class Breadcrumbs implements BreadcrumbsContract {
 
 				// Wrap the label with a link if the crumb has
 				// one and this isn't the last item.
-				if ( $url && $i !== $count ) {
+				if ( $url && $i !== $count  ) {
 
 					$item = sprintf(
 						'<a href="%s" itemprop="item">%s</a>',
@@ -233,7 +233,7 @@ class Breadcrumbs implements BreadcrumbsContract {
 
 				$classes = [
 					$this->option( 'item_class' ),
-					sprintf( "{$base_class}--%s", $crumb->type() ),
+					sprintf( "{$base_class}--%s", $crumb->type() )
 				];
 
 				// Build the list item.
@@ -279,7 +279,7 @@ class Breadcrumbs implements BreadcrumbsContract {
 			$html = $this->option( 'before' ) . $html . $this->option( 'after' );
 		}
 
-		return apply_filters( 'hybrid/breadcrumbs/trail', $html, $crumbs, $this );
+		return apply_filters( "hybrid/breadcrumbs/trail", $html, $crumbs, $this );
 	}
 
 	/**
@@ -295,17 +295,16 @@ class Breadcrumbs implements BreadcrumbsContract {
 
 		// This may not follow any sort of standards-based code
 		// formatting rules, but you can damn well read it better!
-		if ( is_front_page() ) {
-			$this->query( 'FrontPage' ); } elseif ( is_home() ) {
-			$this->query( 'Home' ); } elseif ( is_singular() ) {
-				$this->query( 'Singular' ); } elseif ( is_archive() ) {
-				$this->query( 'Archive' ); } elseif ( is_search() ) {
-					$this->query( 'Search' ); } elseif ( is_404() ) {
-					$this->query( 'Error' ); } elseif ( is_paged() ) {
-						$this->query( 'Paged' ); }
+		    if ( is_front_page() ) { $this->query( 'FrontPage' ); }
+		elseif ( is_home()       ) { $this->query( 'Home'      ); }
+		elseif ( is_singular()   ) { $this->query( 'Singular'  ); }
+		elseif ( is_archive()    ) { $this->query( 'Archive'   ); }
+		elseif ( is_search()     ) { $this->query( 'Search'    ); }
+		elseif ( is_404()        ) { $this->query( 'Error'     ); }
+		elseif ( is_paged()      ) { $this->query( 'Paged'     ); }
 
-					// Return the object for chaining methods.
-					return $this;
+		// Return the object for chaining methods.
+		return $this;
 	}
 
 	/**
@@ -313,8 +312,8 @@ class Breadcrumbs implements BreadcrumbsContract {
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  string $type
-	 * @param  array  $data
+	 * @param  string  $type
+	 * @param  array   $data
 	 * @return void
 	 */
 	public function query( $type, array $data = [] ) {
@@ -334,8 +333,8 @@ class Breadcrumbs implements BreadcrumbsContract {
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  string $type
-	 * @param  array  $data
+	 * @param  string  $type
+	 * @param  array   $data
 	 * @return void
 	 */
 	public function build( $type, array $data = [] ) {
@@ -355,8 +354,8 @@ class Breadcrumbs implements BreadcrumbsContract {
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  string $type
-	 * @param  array  $data
+	 * @param  string  $type
+	 * @param  array   $data
 	 * @return void
 	 */
 	public function crumb( $type, array $data = [] ) {
@@ -374,7 +373,7 @@ class Breadcrumbs implements BreadcrumbsContract {
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  string $name
+	 * @param  string  $name
 	 * @return mixed
 	 */
 	public function option( $name ) {
@@ -387,7 +386,7 @@ class Breadcrumbs implements BreadcrumbsContract {
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  string $name
+	 * @param  string  $name
 	 * @return string
 	 */
 	public function label( $name ) {
@@ -402,7 +401,7 @@ class Breadcrumbs implements BreadcrumbsContract {
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  string $post_type
+	 * @param  string  $post_type
 	 * @return string
 	 */
 	public function postTaxonomy( $post_type ) {

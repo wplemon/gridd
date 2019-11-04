@@ -81,32 +81,23 @@ class Path extends Base {
 				// and break out of the loop.
 				if ( ! empty( $post ) && 0 < $post->ID ) {
 
-					$this->breadcrumbs->build(
-						'PostAncestors',
-						[
-							'post' => $post,
-						]
-					);
+					$this->breadcrumbs->build( 'PostAncestors', [
+						'post' => $post
+					] );
 
-					$this->breadcrumbs->crumb(
-						'Post',
-						[
-							'post' => $post,
-						]
-					);
+					$this->breadcrumbs->crumb( 'Post', [
+						'post' => $post
+					] );
 
 					break;
 
-					// If the slug matches a post type, let's build
-					// that and break out of the loop.
+				// If the slug matches a post type, let's build
+				// that and break out of the loop.
 				} elseif ( $types = Helpers::getPostTypesBySlug( $slug ) ) {
 
-					$this->breadcrumbs->build(
-						'PostType',
-						[
-							'post_type' => $types[0],
-						]
-					);
+					$this->breadcrumbs->build( 'PostType', [
+						'post_type' => $types[0]
+					] );
 
 					break;
 				}
