@@ -78,25 +78,25 @@ $attrs          = [
 					/**
 					 * Branding.
 					 */
-					Theme::get_template_part( 'grid-parts/templates/header-branding' );
+					Theme::get_template_part( 'grid-parts/Header/template-branding' );
 
 				} elseif ( 'header_search' === $part && apply_filters( 'gridd_render_grid_part', true, 'header_search' ) ) {
 					/**
 					 * Search.
 					 */
-					Theme::get_template_part( 'grid-parts/templates/header-search' );
+					Theme::get_template_part( 'grid-parts/Header/template-search' );
 
 				} elseif ( 'header_contact_info' === $part && apply_filters( 'gridd_render_grid_part', true, 'header_contact_info' ) ) {
 					/**
 					 * Contact Info.
 					 */
-					Theme::get_template_part( 'grid-parts/templates/header-contact-info' );
+					Theme::get_template_part( 'grid-parts/Header/template-contact-info' );
 
 				} elseif ( 'social_media' === $part && apply_filters( 'gridd_render_grid_part', true, 'social_media' ) ) {
 					/**
 					 * Social Media.
 					 */
-					Theme::get_template_part( 'grid-parts/templates/header-social-media' );
+					Theme::get_template_part( 'grid-parts/Header/template-social-media' );
 
 				} else {
 					/**

@@ -72,7 +72,7 @@ class Header extends Grid_Part {
 	 */
 	public function render( $part ) {
 		if ( $this->id === $part && apply_filters( 'gridd_render_grid_part', true, $this->id ) ) {
-			Theme::get_template_part( 'grid-parts/templates/header' );
+			Theme::get_template_part( 'grid-parts/Header/template' );
 		}
 	}
 

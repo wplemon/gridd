@@ -58,7 +58,7 @@ Customizer::add_field(
 				'selector'            => '.gridd-tp-social_media',
 				'container_inclusive' => false,
 				'render_callback'     => function() {
-					Theme::get_template_part( 'grid-parts/templates/header-social-media' );
+					Theme::get_template_part( 'grid-parts/Header/template-social-media' );
 				},
 			],
 		],
