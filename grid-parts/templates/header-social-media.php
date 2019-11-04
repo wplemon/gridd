@@ -22,7 +22,7 @@ $icons = gridd_social_icons_svg();
 $style = Style::get_instance( 'grid-part/header/social-media' );
 
 // Add stylesheet.
-$style->add_file( get_theme_file_path( 'grid-parts/styles/header/styles-social-icons.min.css' ) );
+$style->add_file( get_theme_file_path( 'grid-parts/Header/styles-social-icons.min.css' ) );
 ?>
 
 <div <?php Theme::print_attributes( [ 'class' => 'gridd-tp gridd-tp-social_media' ], 'wrapper-social_media' ); ?>>

@@ -7,8 +7,8 @@
 	align-items: center;
 	padding: var(--pd, 10px);
 	color: var(--cl, #000);
+}
 
-	a {
-		color: var(--cl, #000);
-	}
+.gridd-tp-header_contact_info.gridd-tp a {
+	color: var(--cl, #000);
 }

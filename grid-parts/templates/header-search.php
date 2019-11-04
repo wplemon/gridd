@@ -27,8 +27,8 @@ $padding             = get_theme_mod(
 	 * Print styles.
 	 */
 	Style::get_instance( 'grid-part/header/search' )
-		->add_file( get_theme_file_path( 'grid-parts/styles/header/styles-header-search.min.css' ) )
-		->add_file( get_theme_file_path( "grid-parts/styles/header/styles-header-search-$header_search_mode.min.css" ) )
+		->add_file( get_theme_file_path( 'grid-parts/Header/styles-header-search.min.css' ) )
+		->add_file( get_theme_file_path( "grid-parts/Header/styles-header-search-$header_search_mode.min.css" ) )
 		->the_css( 'gridd-inline-css-header-search' );
 	?>
 

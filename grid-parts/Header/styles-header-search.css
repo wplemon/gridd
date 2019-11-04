@@ -1,0 +1,14 @@
+.gridd-header-search {
+	background-color: var(--bg, #fff);
+}
+
+.gridd-header-search form.search-form {
+	font-size: calc(var(--fs, 1) * 1em);
+	color: var(--cl, #000);
+}
+
+.gridd-header-search .search-submit:focus,
+.gridd-header-search .search-submit:hover,
+.gridd-header-search .search-submit:active {
+	box-shadow: none;
+}

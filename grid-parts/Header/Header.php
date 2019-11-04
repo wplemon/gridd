@@ -210,7 +210,7 @@ class Header extends Grid_Part {
 		if ( isset( $settings['areas'] ) && isset( $settings['areas']['header_search'] ) && apply_filters( 'gridd_render_grid_part', true, 'header_search' ) ) {
 			$header_search_mode = get_theme_mod( 'header_search_mode', 'form' );
 			if ( 'slide-up' === $header_search_mode ) {
-				$paths[] = get_theme_file_path( 'grid-parts/scripts/header-search.min.js' );
+				$paths[] = __DIR__ . '/header-search.min.js';
 			}
 		}
 		return $paths;

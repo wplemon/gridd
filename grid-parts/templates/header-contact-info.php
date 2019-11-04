@@ -10,7 +10,7 @@ use Gridd\Style;
 use Gridd\Theme;
 
 $style = Style::get_instance( 'grid-part/header/contact-info' );
-$style->add_file( get_theme_file_path( 'grid-parts/styles/header/styles-contact-info.min.css' ) );
+$style->add_file( get_theme_file_path( 'grid-parts/Header/styles-contact-info.min.css' ) );
 
 // Print styles.
 $style->the_css( 'gridd-inline-css-header-contact-info' );

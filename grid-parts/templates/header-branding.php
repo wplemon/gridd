@@ -11,7 +11,7 @@ use Gridd\Theme;
 
 $style = Style::get_instance( 'grid-part/header/branding' );
 $style->add_string( ':root{--header-textcolor:#' . esc_attr( trim( get_header_textcolor(), '#' ) ) . ';}' );
-$style->add_file( get_theme_file_path( 'grid-parts/styles/header/styles-branding.min.css' ) );
+$style->add_file( get_theme_file_path( 'grid-parts/Header/styles-branding.min.css' ) );
 $style->the_css( 'gridd-inline-css-header-branding' );
 
 $wrapper_class  = 'gridd-tp gridd-tp-header_branding';
