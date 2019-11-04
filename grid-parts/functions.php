@@ -14,7 +14,7 @@ require_once get_theme_file_path( 'grid-parts/Header/Header.php' );
 require_once get_theme_file_path( 'grid-parts/classes/Nav_Handheld.php' );
 require_once get_theme_file_path( 'grid-parts/Navigation/Navigation.php' );
 require_once get_theme_file_path( 'grid-parts/ReusableBlock/ReusableBlock.php' );
-require_once get_theme_file_path( 'grid-parts/classes/Sidebar.php' );
+require_once get_theme_file_path( 'grid-parts/Sidebar/Sidebar.php' );
 
 // Require customizer files.
 require_once get_theme_file_path( 'grid-parts/Breadcrumbs/customizer.php' );
@@ -31,6 +31,6 @@ require_once get_theme_file_path( 'grid-parts/Header/customizer.php' );
 require_once get_theme_file_path( 'grid-parts/customizer/nav-handheld.php' );
 require_once get_theme_file_path( 'grid-parts/Navigation/customizer.php' );
 require_once get_theme_file_path( 'grid-parts/ReusableBlock/customizer.php' );
-require_once get_theme_file_path( 'grid-parts/customizer/sidebar.php' );
+require_once get_theme_file_path( 'grid-parts/Sidebar/customizer.php' );
 
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */

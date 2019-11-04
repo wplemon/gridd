@@ -9,6 +9,7 @@ namespace Gridd\Grid_Part;
 
 use Gridd\Grid_Part;
 use Gridd\Rest;
+use Gridd\Style;
 
 /**
  * The Gridd\Grid_Part\Sidebar object.
@@ -25,7 +26,7 @@ class Sidebar extends Grid_Part {
 	 * @since 1.0.8
 	 * @var bool
 	 */
-	public static $global_styles_added = false;
+	public static $styles_added = false;
 
 	/**
 	 * Hooks & extra operations.
@@ -78,6 +79,14 @@ class Sidebar extends Grid_Part {
 				return;
 			}
 			$this->the_partial( $part );
+
+			if ( ! self::$styles_added ) {
+				Style::get_instance( 'grid-part/sidebar' )
+					->add_file( __DIR__ . '/styles.min.css' )
+					->the_css( 'gridd-inline-css-sidebar' );
+
+				self::$styles_added = true;
+			}
 		}
 	}
 
@@ -92,11 +101,9 @@ class Sidebar extends Grid_Part {
 	public function the_partial( $part ) {
 		if ( 0 === strpos( $part, 'sidebar_' ) && is_numeric( str_replace( 'sidebar_', '', $part ) ) ) {
 			$sidebar_id = (int) str_replace( 'sidebar_', '', $part );
-			/**
-			 * We use include( get_theme_file_path() ) here
-			 * because we need to pass the $sidebar_id var to the template.
-			 */
-			include get_theme_file_path( 'grid-parts/templates/sidebar.php' );
+
+			// We use include here because we need to pass the $sidebar_id var to the template.
+			include __DIR__ . '/template.php';
 		}
 	}
 
