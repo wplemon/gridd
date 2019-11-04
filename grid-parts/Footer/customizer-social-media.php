@@ -53,7 +53,7 @@ Customizer::add_field(
 				'selector'            => '.gridd-tp-footer_social_media',
 				'container_inclusive' => false,
 				'render_callback'     => function() {
-					Theme::get_template_part( 'grid-parts/templates/footer-social-media' );
+					Theme::get_template_part( 'grid-parts/Footer/template-social-media' );
 				},
 			],
 		],

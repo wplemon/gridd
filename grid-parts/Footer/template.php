@@ -63,19 +63,19 @@ $attrs = [
 						 * We use include( get_theme_file_path() ) here
 						 * because we need to pass the $sidebar_id var to the template.
 						 */
-						include get_theme_file_path( 'grid-parts/templates/footer-sidebar.php' );
+						include get_theme_file_path( 'grid-parts/Footer/template-sidebar.php' );
 					}
 				} elseif ( 'footer_social_media' === $part && apply_filters( 'gridd_render_grid_part', true, 'footer_social_media' ) ) {
 					/**
 					 * Social Media.
 					 */
-					Theme::get_template_part( 'grid-parts/templates/footer-social-media' );
+					Theme::get_template_part( 'grid-parts/Footer/template-social-media' );
 
 				} elseif ( 'footer_copyright' === $part && apply_filters( 'gridd_render_grid_part', true, 'footer_copyright' ) ) {
 					/**
 					 * Copyright.
 					 */
-					Theme::get_template_part( 'grid-parts/templates/footer-copyright' );
+					Theme::get_template_part( 'grid-parts/Footer/template-copyright' );
 
 				} else {
 					do_action( 'gridd_the_grid_part', $part );

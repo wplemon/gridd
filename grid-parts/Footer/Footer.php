@@ -90,7 +90,7 @@ class Footer extends Grid_Part {
 	 */
 	public function the_partial( $part ) {
 		if ( $this->id === $part ) {
-			Theme::get_template_part( 'grid-parts/templates/' . $this->id );
+			Theme::get_template_part( 'grid-parts/Footer/' . str_replace( 'footer', 'template', $this->id ) );
 		}
 	}
 

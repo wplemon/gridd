@@ -143,7 +143,7 @@ Customizer::add_field(
 				'selector'            => '.gridd-tp-footer_copyright',
 				'container_inclusive' => false,
 				'render_callback'     => function() {
-					Theme::get_template_part( 'grid-parts/templates/footer-copyright' );
+					Theme::get_template_part( 'grid-parts/Footer/template-copyright' );
 				},
 			],
 		],
