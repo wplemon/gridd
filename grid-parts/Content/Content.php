@@ -111,7 +111,7 @@ class Content extends Grid_Part {
 		);
 		Style::get_instance( 'grid-part/content' )
 			->add_string( ':root{--mw-c:var(--mw, 45em);}' )
-			->add_file( get_theme_file_path( 'grid-parts/styles/content/styles.min.css' ) )
+			->add_file( get_theme_file_path( 'grid-parts/Content/styles.min.css' ) )
 			/**
 			 * This CSS is just a hack to overcome a bug in the CSS minifier
 			 * that strips units from zero valus, making the calc() function invalid.
@@ -131,7 +131,7 @@ class Content extends Grid_Part {
 	 * @return array
 	 */
 	public function footer_inline_script_paths( $paths ) {
-		$paths[] = get_theme_file_path( 'grid-parts/scripts/content.min.js' );
+		$paths[] = get_theme_file_path( 'grid-parts/Content/script.min.js' );
 		return $paths;
 	}
 }
