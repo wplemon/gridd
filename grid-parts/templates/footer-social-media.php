@@ -22,7 +22,7 @@ $icons = gridd_social_icons_svg();
 $style = Style::get_instance( 'grid-part/footer/social-media' );
 
 // Add stylesheet.
-$style->add_file( get_theme_file_path( 'grid-parts/styles/footer/styles-social-icons.min.css' ) );
+$style->add_file( get_theme_file_path( 'grid-parts/Footer/styles-social-icons.min.css' ) );
 ?>
 
 <div <?php Theme::print_attributes( [ 'class' => 'gridd-tp gridd-tp-footer_social_media' ], 'wrapper-footer_social_media' ); ?>>

@@ -12,7 +12,7 @@ use Gridd\Theme;
 $style = Style::get_instance( "grid-part/footer/sidebar/$sidebar_id" );
 
 // Add stylesheet.
-$style->add_file( get_theme_file_path( 'grid-parts/styles/footer/styles-sidebar.min.css' ) );
+$style->add_file( get_theme_file_path( 'grid-parts/Footer/styles-sidebar.min.css' ) );
 
 // Replace "ID" in the stylesheet.
 $style->replace( 'ID', $sidebar_id );

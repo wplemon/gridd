@@ -11,7 +11,7 @@ use Gridd\Theme;
 
 // Add styles.
 Style::get_instance( 'grid-part/footer/copyright' )
-	->add_file( get_theme_file_path( 'grid-parts/styles/footer/styles-copyright.min.css' ) )
+	->add_file( get_theme_file_path( 'grid-parts/Footer/styles-copyright.min.css' ) )
 	->the_css( 'gridd-inline-css-footer-copyright' );
 ?>
 

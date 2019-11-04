@@ -30,7 +30,7 @@ $style->add_string(
 );
 
 // Add the stylesheet.
-$style->add_file( get_theme_file_path( 'grid-parts/styles/footer/styles.min.css' ) );
+$style->add_file( get_theme_file_path( 'grid-parts/Footer/styles.min.css' ) );
 
 // Force-override parts background images.
 if ( get_theme_mod( 'footer_parts_background_override', false ) ) {
