@@ -11,7 +11,7 @@ use Gridd\Style;
 
 // Add styles.
 $style = Style::get_instance( 'grid-part/nav-handheld' );
-$style->add_file( get_theme_file_path( 'grid-parts/styles/nav-handheld/styles.min.css' ) );
+$style->add_file( get_theme_file_path( 'grid-parts/NavHandheld/styles.min.css' ) );
 $style->add_string( '@media only screen and (min-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . '){.gridd-tp.gridd-tp-nav-handheld{display: none;}body{padding-bottom:0;}}' );
 ?>
 
@@ -31,7 +31,7 @@ $style->add_string( '@media only screen and (min-width:' . get_theme_mod( 'gridd
 
 			// Print the parts.
 			foreach ( $parts as $part ) {
-				Theme::get_template_part( "grid-parts/templates/nav-handheld-part-$part" );
+				Theme::get_template_part( "grid-parts/NavHandheld/template-$part" );
 				do_action( 'gridd_nav_handheld_part_template', $part );
 			}
 		}

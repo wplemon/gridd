@@ -1,6 +1,6 @@
 <?php // phpcs:ignore WordPress.Files.FileName
 /**
- * Gridd Nav_Handheld grid-part
+ * Gridd NavHandheld grid-part
  *
  * @package Gridd
  */
@@ -12,11 +12,11 @@ use Gridd\Grid_Part;
 use Gridd\Rest;
 
 /**
- * The Gridd\Grid_Part\Nav_Handheld object.
+ * The Gridd\Grid_Part\NavHandheld object.
  *
  * @since 1.0
  */
-class Nav_Handheld extends Grid_Part {
+class NavHandheld extends Grid_Part {
 
 	/**
 	 * The grid-part ID.
@@ -90,7 +90,7 @@ class Nav_Handheld extends Grid_Part {
 	 */
 	public function the_partial( $part ) {
 		if ( $this->id === $part ) {
-			Theme::get_template_part( 'grid-parts/templates/' . $this->id );
+			Theme::get_template_part( 'grid-parts/NavHandheld/template' );
 		}
 	}
 
@@ -124,7 +124,7 @@ class Nav_Handheld extends Grid_Part {
 	 * @return array
 	 */
 	public function footer_inline_script_paths( $paths ) {
-		$paths[] = get_theme_file_path( 'grid-parts/scripts/nav-handheld.min.js' );
+		$paths[] = get_theme_file_path( 'grid-parts/NavHandheld/script.min.js' );
 		return $paths;
 	}
 
@@ -152,6 +152,6 @@ class Nav_Handheld extends Grid_Part {
 	}
 }
 
-new Nav_Handheld();
+new NavHandheld();
 
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */
