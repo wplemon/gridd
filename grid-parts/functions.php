@@ -7,30 +7,30 @@
  */
 
 // Require classes.
-require_once get_theme_file_path( 'grid-parts/Breadcrumbs/Breadcrumbs.php' );
-require_once get_theme_file_path( 'grid-parts/Content/Content.php' );
-require_once get_theme_file_path( 'grid-parts/Footer/Footer.php' );
-require_once get_theme_file_path( 'grid-parts/Header/Header.php' );
-require_once get_theme_file_path( 'grid-parts/NavHandheld/NavHandheld.php' );
-require_once get_theme_file_path( 'grid-parts/Navigation/Navigation.php' );
-require_once get_theme_file_path( 'grid-parts/ReusableBlock/ReusableBlock.php' );
-require_once get_theme_file_path( 'grid-parts/Sidebar/Sidebar.php' );
+require_once __DIR__ . '/Breadcrumbs/Breadcrumbs.php';
+require_once __DIR__ . '/Content/Content.php';
+require_once __DIR__ . '/Footer/Footer.php';
+require_once __DIR__ . '/Header/Header.php';
+require_once __DIR__ . '/NavHandheld/NavHandheld.php';
+require_once __DIR__ . '/Navigation/Navigation.php';
+require_once __DIR__ . '/ReusableBlock/ReusableBlock.php';
+require_once __DIR__ . '/Sidebar/Sidebar.php';
 
 // Require customizer files.
-require_once get_theme_file_path( 'grid-parts/Breadcrumbs/customizer.php' );
-require_once get_theme_file_path( 'grid-parts/Content/customizer.php' );
-require_once get_theme_file_path( 'grid-parts/Footer/customizer-copyright.php' );
-require_once get_theme_file_path( 'grid-parts/Footer/customizer-sidebars.php' );
-require_once get_theme_file_path( 'grid-parts/Footer/customizer-social-media.php' );
-require_once get_theme_file_path( 'grid-parts/Footer/customizer.php' );
-require_once get_theme_file_path( 'grid-parts/Header/customizer-branding.php' );
-require_once get_theme_file_path( 'grid-parts/Header/customizer-contact-info.php' );
-require_once get_theme_file_path( 'grid-parts/Header/customizer-search.php' );
-require_once get_theme_file_path( 'grid-parts/Header/customizer-social-media.php' );
-require_once get_theme_file_path( 'grid-parts/Header/customizer.php' );
-require_once get_theme_file_path( 'grid-parts/NavHandheld/customizer.php' );
-require_once get_theme_file_path( 'grid-parts/Navigation/customizer.php' );
-require_once get_theme_file_path( 'grid-parts/ReusableBlock/customizer.php' );
-require_once get_theme_file_path( 'grid-parts/Sidebar/customizer.php' );
+require_once __DIR__ . '/Breadcrumbs/customizer.php';
+require_once __DIR__ . '/Content/customizer.php';
+require_once __DIR__ . '/Footer/customizer-copyright.php';
+require_once __DIR__ . '/Footer/customizer-sidebars.php';
+require_once __DIR__ . '/Footer/customizer-social-media.php';
+require_once __DIR__ . '/Footer/customizer.php';
+require_once __DIR__ . '/Header/customizer-branding.php';
+require_once __DIR__ . '/Header/customizer-contact-info.php';
+require_once __DIR__ . '/Header/customizer-search.php';
+require_once __DIR__ . '/Header/customizer-social-media.php';
+require_once __DIR__ . '/Header/customizer.php';
+require_once __DIR__ . '/NavHandheld/customizer.php';
+require_once __DIR__ . '/Navigation/customizer.php';
+require_once __DIR__ . '/ReusableBlock/customizer.php';
+require_once __DIR__ . '/Sidebar/customizer.php';
 
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */
