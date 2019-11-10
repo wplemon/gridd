@@ -27,7 +27,6 @@
 	--fs-4d-ts-tr: calc(var(--fs-tr) / var(--ts) / var(--ts) / var(--ts) / var(--ts));
 
 	--system-fonts: -apple-system, blinkmacsystemfont, "Segoe UI", roboto, oxygen-sans, ubuntu, cantarell, "Helvetica Neue", sans-serif;
-	font-size: var(--fs-px);
 }
 
 html {

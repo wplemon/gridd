@@ -77,7 +77,6 @@ class Scripts {
 
 		// Admin styles for the aditor.
 		if ( ! get_theme_mod( 'disable_editor_styles' ) ) {
-			add_action( 'admin_enqueue_scripts', [ $this, 'editor_styles' ] );
 			add_action( 'admin_footer', [ $this, 'admin_footer_editor_styles' ] );
 		}
 
@@ -260,17 +259,6 @@ class Scripts {
 			$style->add_file( get_theme_file_path( "assets/css/blocks/$block.min.css" ) );
 		}
 		$style->the_css( 'blocks-styles' );
-	}
-
-	/**
-	 * Add editor styles.
-	 *
-	 * @access public
-	 * @since 1.0
-	 * @return void
-	 */
-	public function editor_styles() {
-		wp_enqueue_style( 'gridd-editor', get_template_directory_uri() . '/assets/css/admin/editor.min.css', [], GRIDD_VERSION );
 	}
 
 	/**
