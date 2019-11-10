@@ -1,0 +1,28 @@
+.admin-bar {
+	--adminbar-height: 32px;
+}
+
+@media screen and (max-width: 782px) {
+
+	.admin-bar {
+		--adminbar-height: 46px;
+	}
+}
+
+.admin-bar .gridd-tp.gridd-sticky {
+	top: var(--adminbar-height);
+}
+
+@media screen and (max-width: 600px) {
+
+	.admin-bar .gridd-tp.gridd-sticky {
+		top: 0;
+	}
+}
+
+.admin-bar #gridd-handheld-search-wrapper,
+.admin-bar #gridd-handheld-widget-area-wrapper,
+.admin-bar #gridd-handheld-menu-wrapper,
+.admin-bar #gridd-handheld-cart-wrapper {
+	max-height: calc(100vh - 86px);
+}

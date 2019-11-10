@@ -1,6 +1,7 @@
 // stylelint-disable no-descending-specificity
 // stylelint-disable selector-type-no-unknown
-@import "../core/base.scss";
+@import "../styles.css";
+@import "../styles-rtl.css";
 @import "../blocks/audio.scss";
 @import "../blocks/button.scss";
 @import "../blocks/calendar.scss";

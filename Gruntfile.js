@@ -32,14 +32,21 @@ module.exports = function( grunt ) {
 						sourceMap: false
 					},
 					files: [
-					{
-						expand: true,
-						cwd: 'assets/css',
-						src: [ '**/*.css', '!**/*.min.css' ],
-						dest: 'assets/css',
-						ext: '.min.css'
-					},
-					{
+						{
+							expand: true,
+							cwd: 'assets/css',
+							src: [ '**/*.css', '!**/*.min.css' ],
+							dest: 'assets/css',
+							ext: '.min.css'
+						},
+						{
+							expand: true,
+							cwd: 'assets/css',
+							src: [ '*.css', '!**/*.min.css' ],
+							dest: 'assets/css',
+							ext: '.min.css'
+						},
+						{
 						expand: true,
 						cwd: 'grid-parts',
 						src: [ '**/*.css', '!**/*.min.css' ],

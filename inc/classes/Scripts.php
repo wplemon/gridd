@@ -171,17 +171,11 @@ class Scripts {
 
 		$style = Style::get_instance( 'main-styles' );
 
-		$style->add_file( get_theme_file_path( 'assets/css/core/base.min.css' ) );
-		$style->add_file( get_theme_file_path( 'assets/css/core/normalize.min.css' ) );
-		$style->add_file( get_theme_file_path( 'assets/css/core/elements.min.css' ) );
-		$style->add_file( get_theme_file_path( 'assets/css/core/forms.min.css' ) );
-		$style->add_file( get_theme_file_path( 'assets/css/core/accessibility.min.css' ) );
-		$style->add_file( get_theme_file_path( 'assets/css/core/posts-and-pages.min.css' ) );
-		$style->add_file( get_theme_file_path( 'assets/css/core/typography.min.css' ) );
-		$style->add_file( get_theme_file_path( 'assets/css/core/utilities.min.css' ) );
-		$style->add_file( get_theme_file_path( 'assets/css/core/grid.min.css' ) );
-		$style->add_file( get_theme_file_path( 'assets/css/core/layout.min.css' ) );
-		$style->add_file( get_theme_file_path( 'assets/css/core/links.min.css' ) );
+		$style->add_file( get_theme_file_path( 'assets/css/styles.min.css' ) );
+
+		if ( is_rtl() ) {
+			$style->add_file( get_theme_file_path( 'assets/css/styles-rtl.min.css' ) );
+		}
 
 		// Styles specific to the customizer preview pane.
 		if ( is_customize_preview() ) {
@@ -190,7 +184,7 @@ class Scripts {
 
 		// Adminbar.
 		if ( is_admin_bar_showing() ) {
-			$style->add_file( get_theme_file_path( 'assets/css/core/adminbar.min.css' ) );
+			$style->add_file( get_theme_file_path( 'assets/css/adminbar.min.css' ) );
 		}
 
 		// Comments.
@@ -251,7 +245,7 @@ class Scripts {
 		$style = Style::get_instance( 'footer-late-styles' );
 
 		$style->add_file( get_theme_file_path( 'assets/css/core/inline-icons.min.css' ) );
-		$style->add_file( get_theme_file_path( 'assets/css/core/buttons.min.css' ) );
+		$style->add_file( get_theme_file_path( 'assets/css/buttons.min.css' ) );
 		$style->add_file( get_theme_file_path( 'assets/css/core/media.min.css' ) );
 		$style->add_file( get_theme_file_path( 'assets/css/core/nav-links.min.css' ) );
 		$style->add_file( get_theme_file_path( 'assets/css/core/post-sticky.min.css' ) );
