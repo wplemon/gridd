@@ -4,17 +4,7 @@
 	--ts: var(--gridd-typo-scale, 1.26);
 	--tr: var(--gridd-typo-ratio, 0.25);
 	--fs-tr: calc(var(--fs-px) + var(--tr) * 1vw);
-	font-size: var(--fs-tr);
-	--gridd-content-max-width: var(--mw);
-	--gridd-content-max-width-calculated: var(--mw-c);
-	--gridd-text-color: var(--cl);
-	--gridd-links-color: var(--lc);
-	--gridd-content-bg: var(--bg);
-	--gridd-content-padding-left: var(--pd-h);
-	--gridd-content-padding-right: var(--pd-h);
-	--gridd-content-padding-top: var(--pd-t);
-	--gridd-content-padding-bottom: var(--pd-b);
-	--gridd-grid-max-width: var(--mw);
+
 	--acl: var(--lc);
 	--fs-4x-ts-tr: calc(var(--ts) * var(--ts) * var(--ts) * var(--ts) * var(--fs-tr));
 	--fs-3x-ts-tr: calc(var(--ts) * var(--ts) * var(--ts) * var(--fs-tr));
@@ -27,10 +17,13 @@
 	--fs-4d-ts-tr: calc(var(--fs-tr) / var(--ts) / var(--ts) / var(--ts) / var(--ts));
 
 	--system-fonts: -apple-system, blinkmacsystemfont, "Segoe UI", roboto, oxygen-sans, ubuntu, cantarell, "Helvetica Neue", sans-serif;
+	--monospace-fonts: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+
+	font-size: var(--fs-tr);
 }
 
 html {
-	font-family: sans-serif;
+	font-family: var(--system-fonts);
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
 	font-size: var(--fs-tr);
@@ -39,21 +32,12 @@ html {
 
 body {
 	margin: 0;
-	background: #fff;
 	overflow-x: hidden;
-	font-size: var(--fs-tr);
 	color: var(--cl, #000);
-	font-family: var(--system-fonts);
 	font-weight: 400;
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
-}
-
-@media screen and (min-width: 600px) {
-
-	body {
-		position: relative;
-	}
+	line-height: 1.5;
 }
 
 a {
@@ -135,11 +119,6 @@ dfn {
 	font-style: italic;
 }
 
-h1 {
-	font-size: 2em;
-	margin: 0.67em 0;
-}
-
 mark {
 	background: #ff0;
 	color: #222;
@@ -193,7 +172,7 @@ pre {
 	overflow: auto;
 	color: #000;
 	background: #eee;
-	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-family: var(--monospace-fonts);
 	font-size: 0.9375em;
 	line-height: 1.6;
 	margin-bottom: 1.6em;
@@ -211,43 +190,29 @@ samp {
 	background: rgba(0, 0, 0, 0.1);
 }
 
-button,
 input,
 optgroup,
-select,
 textarea {
 	color: inherit;
 	font: inherit;
 	margin: 0;
+	font-size: 1em;
+	line-height: 1.5;
 }
 
 input {
 	line-height: normal;
 }
 
-button {
-	overflow: visible;
-}
-
-button,
-select {
-	text-transform: none;
-}
-
-body,
-button,
-input,
-optgroup,
-select,
-textarea {
-	font-size: 1em;
-	line-height: 1.5;
-}
-
 button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
+	overflow: visible;
+	text-transform: none;
+	font-size: 1em;
+	line-height: 1.5;
+	margin: 0;
 	-webkit-appearance: button;
 	cursor: pointer;
 }
@@ -270,7 +235,7 @@ input[type="radio"] {
 }
 
 fieldset {
-	border: 1px solid #c0c0c0;
+	border: 1px solid rgba(0, 0, 0, 0.05);
 	margin: 0 2px;
 	padding: 0.35em 0.625em 0.75em;
 }
@@ -394,8 +359,9 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: #666;
-	border: 1px solid #dedede;
+	color: var(--cl);
+	background: var(--bg);
+	border: 1px solid rgba(0, 0, 0, 0.05));
 	border-radius: 0;
 	padding: 0.5em;
 }
@@ -410,26 +376,14 @@ input[type="search"]::-webkit-search-decoration {
 	-webkit-appearance: none;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-input[type="number"]:focus,
-input[type="tel"]:focus,
-input[type="range"]:focus,
-input[type="date"]:focus,
-input[type="month"]:focus,
-input[type="week"]:focus,
-input[type="time"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="color"]:focus,
-textarea:focus {
-	color: #111;
-}
-
 select {
-	border: 1px solid #dedede;
+	color: inherit;
+	font: inherit;
+	margin: 0;
+	text-transform: none;
+	font-size: 1em;
+	line-height: 1.5;
+	border: 1px solid rgba(0, 0, 0, 0.05);
 	background: #fff;
 	height: 2.5em;
 	border-radius: 0;
@@ -444,7 +398,7 @@ select {
 	width: 100%;
 }
 
-.search-form > label > input.search-field {
+input.search-field {
 	display: inline-block;
 	background: none;
 	border: none;
@@ -454,8 +408,8 @@ select {
 	width: 100%;
 }
 
-.search-form > label > input.search-field:hover,
-.search-form > label > input.search-field:focus {
+input.search-field:hover,
+input.search-field:focus {
 	opacity: 1;
 }
 
@@ -468,8 +422,8 @@ select {
 	fill: currentColor;
 }
 
-.search-form > label > input.search-field:hover + .gridd-search-icon,
-.search-form > label > input.search-field:focus + .gridd-search-icon {
+input.search-field:hover + .gridd-search-icon,
+input.search-field:focus + .gridd-search-icon {
 	opacity: 0.7;
 }
 
@@ -500,12 +454,12 @@ select {
 }
 
 .screen-reader-text:focus {
-	background-color: #f1f1f1;
+	background-color: var(--cl);
 	border-radius: 0;
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	clip: auto !important;
 	clip-path: none;
-	color: #21759b;
+	color: var(--bg);
 	display: block;
 	font-size: 0.875em;
 	font-weight: 700;
@@ -617,7 +571,7 @@ code,
 kbd,
 tt,
 var {
-	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-family: var(--monospace-fonts);
 	font-size: 0.9375em;
 }
 
@@ -734,10 +688,7 @@ smallest { /* stylelint-disable-line */
 	max-width: 100%;
 }
 
-.alignfull {
-	width: 100%;
-}
-
+.alignfull,
 .alignfull > * {
 	width: 100%;
 }
@@ -788,7 +739,7 @@ smallest { /* stylelint-disable-line */
 	overflow: hidden;
 }
 
-.gridd-tp.gridd-sticky {
+.gridd-sticky {
 	position: sticky;
 	top: 0;
 	z-index: 999;
