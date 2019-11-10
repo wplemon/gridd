@@ -44,5 +44,10 @@ class Version_2_0_2 {
 	 */
 	private function content_padding() {
 		set_theme_mod( 'breadcrumbs_custom_options', true );
+
+		$number = Navigation::get_number_of_nav_menus();
+		for ( $i = 1; $i <= $number; $i++ ) {
+			set_theme_mod( "nav_{$i}_custom_options", true );
+		}
 	}
 }

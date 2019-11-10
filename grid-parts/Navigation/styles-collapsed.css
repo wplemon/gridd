@@ -4,7 +4,7 @@
 	position: absolute;
 	bottom: 0;
 	transform: translateY(100%);
-	background-color: var(--bg, #fff);
+	background-color: var(--bg);
 	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.16);
 	width: 15em;
 	max-width: 350px;

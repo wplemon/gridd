@@ -52,7 +52,7 @@ if ( $header_bg_img ) {
 
 // Force-override parts background images.
 if ( get_theme_mod( 'header_parts_background_override', false ) ) {
-	$style->add_string( '.gridd-tp.gridd-tp-header .gridd-tp,.gridd-tp.gridd-tp-header .gridd-tp .inner{background:transparent !important;background-color:none !important;}' );
+	$style->add_string( '.gridd-tp.gridd-tp-header .gridd-tp:not(.custom-options),.gridd-tp.gridd-tp-header .gridd-tp:not(.custom-options) .inner{background:transparent !important;background-color:none !important;}' );
 }
 
 $wrapper_class  = 'gridd-tp gridd-tp-header';

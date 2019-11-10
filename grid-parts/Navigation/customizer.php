@@ -61,6 +61,16 @@ function gridd_nav_customizer_options( $id ) {
 		]
 	);
 
+	new \Kirki\Field\Checkbox(
+		[
+			'settings'  => "nav_{$id}_custom_options",
+			'label'     => esc_html__( 'Edit Advanced Options', 'gridd' ),
+			'section'   => "grid_part_details_nav_$id",
+			'default'   => false,
+			'transport' => 'refresh',
+		]
+	);
+
 	new \Kirki\Field\Select(
 		[
 			'settings'          => "gridd_grid_nav_{$id}_responsive_behavior",
@@ -111,10 +121,13 @@ function gridd_nav_customizer_options( $id ) {
 			'transport'   => 'auto',
 			'output'      => [
 				[
-					'element'  => ".gridd-tp-nav_$id",
+					'element'  => ".gridd-tp-nav_{$id}.custom-options",
 					'property' => '--pd',
 				],
 			],
+			'active_callback'   => function() use ( $id ) {
+				return get_theme_mod( "nav_{$id}_custom_options", false );
+			}
 		]
 	);
 
@@ -127,7 +140,7 @@ function gridd_nav_customizer_options( $id ) {
 			'transport' => 'auto',
 			'output'    => [
 				[
-					'element'  => ".gridd-tp-nav_$id",
+					'element'  => ".gridd-tp-nav_{$id}.custom-options",
 					'property' => '--bg',
 				],
 			],
@@ -135,6 +148,9 @@ function gridd_nav_customizer_options( $id ) {
 				'formComponent' => 'TwitterPicker',
 				'colors'        => \Gridd\Theme::get_colorpicker_palette(),
 			],
+			'active_callback'   => function() use ( $id ) {
+				return get_theme_mod( "nav_{$id}_custom_options", false );
+			}
 		]
 	);
 
@@ -151,11 +167,14 @@ function gridd_nav_customizer_options( $id ) {
 			'transport'         => 'auto',
 			'output'            => [
 				[
-					'element'  => ".gridd-tp-nav_$id",
+					'element'  => ".gridd-tp-nav_{$id}.custom-options",
 					'property' => '--cl',
 				],
 			],
 			'sanitize_callback' => [ $sanitization, 'color_hex' ],
+			'active_callback'   => function() use ( $id ) {
+				return get_theme_mod( "nav_{$id}_custom_options", false );
+			}
 		]
 	);
 
@@ -169,7 +188,7 @@ function gridd_nav_customizer_options( $id ) {
 			'transport'         => 'auto',
 			'output'            => [
 				[
-					'element'  => ".gridd-tp-nav_$id",
+					'element'  => ".gridd-tp-nav_{$id}.custom-options",
 					'property' => '--acl',
 				],
 			],
@@ -180,9 +199,9 @@ function gridd_nav_customizer_options( $id ) {
 				'forceCompliance' => get_theme_mod( 'target_color_compliance', 'auto' ),
 			],
 			'sanitize_callback' => [ $sanitization, 'color_hex' ],
-			'active_callback'   => function() {
-				return ! get_theme_mod( 'same_linkcolor_hues', true );
-			},
+			'active_callback'   => function() use ( $id ) {
+				return get_theme_mod( "nav_{$id}_custom_options", false ) && ! get_theme_mod( 'same_linkcolor_hues', true );
+			}
 		]
 	);
 
@@ -274,6 +293,9 @@ function gridd_nav_customizer_options( $id ) {
 				],
 			],
 			'sanitize_callback' => 'esc_html',
+			'active_callback'   => function() use ( $id ) {
+				return get_theme_mod( "nav_{$id}_custom_options", false );
+			}
 		]
 	);
 
@@ -301,6 +323,9 @@ function gridd_nav_customizer_options( $id ) {
 			'sanitize_callback' => function( $value ) {
 				return in_array( $value, array_keys( Navigation::get_expand_svgs() ), true ) ? $value : 'menu-1';
 			},
+			'active_callback'   => function() use ( $id ) {
+				return get_theme_mod( "nav_{$id}_custom_options", false );
+			}
 		]
 	);
 
@@ -340,6 +365,9 @@ function gridd_nav_customizer_options( $id ) {
 				}
 				return $value;
 			},
+			'active_callback'   => function() use ( $id ) {
+				return get_theme_mod( "nav_{$id}_custom_options", false );
+			}
 		]
 	);
 

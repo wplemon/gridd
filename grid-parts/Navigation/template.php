@@ -15,6 +15,9 @@ $is_vertical_nav = get_theme_mod( "gridd_grid_nav_{$id}_vertical", false );
 
 $wrapper_class  = "gridd-tp gridd-tp-nav gridd-tp-nav_$id";
 $wrapper_class .= ' gridd-menu-collapse-position-' . get_theme_mod( "gridd_grid_nav_{$id}_expand_icon_position", 'center-right' );
+if ( get_theme_mod( "nav_{$id}_custom_options", false ) ) {
+	$wrapper_class .= ' custom-options';
+}
 
 $responsive_mode_parts = explode( ' ', $responsive_mode );
 foreach ( $responsive_mode_parts as $responsive_mode_part ) {
@@ -56,7 +59,7 @@ foreach ( $responsive_mode_parts as $responsive_mode_part ) {
 			);
 			?>
 		<?php endif; ?>
-		<nav 
+		<nav
 		<?php
 		Theme::print_attributes(
 			[
