@@ -13,8 +13,13 @@ use Gridd\Theme;
 if ( is_front_page() || is_home() ) {
 	return;
 }
+
+$grid_part_class = 'gridd-tp gridd-tp-breadcrumbs';
+if ( get_theme_mod( 'breadcrumbs_custom_options', false ) ) {
+	$grid_part_class .= ' custom-options';
+}
 ?>
-<div <?php Theme::print_attributes( [ 'class' => 'gridd-tp gridd-tp-breadcrumbs' ], 'wrapper-breadcrumbs' ); ?>>
+<div <?php Theme::print_attributes( [ 'class' => $grid_part_class ], 'wrapper-breadcrumbs' ); ?>>
 	<?php
 	/**
 	 * Print styles.

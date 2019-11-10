@@ -17,33 +17,46 @@ Customizer::add_outer_section(
 	]
 );
 
+new \Kirki\Field\Checkbox(
+	[
+		'settings'  => 'breadcrumbs_custom_options',
+		'label'     => esc_html__( 'Edit Advanced Options', 'gridd' ),
+		'section'   => 'grid_part_details_breadcrumbs',
+		'default'   => false,
+		'transport' => 'refresh',
+	]
+);
+
 new \Kirki\Field\ReactColor(
 	[
-		'settings'  => 'gridd_grid_breadcrumbs_background_color',
-		'label'     => esc_html__( 'Background Color', 'gridd' ),
-		'section'   => 'grid_part_details_breadcrumbs',
-		'default'   => '#ffffff',
-		'transport' => 'postMessage',
-		'transport' => 'auto',
-		'output'    => [
+		'settings'        => 'gridd_grid_breadcrumbs_background_color',
+		'label'           => esc_html__( 'Background Color', 'gridd' ),
+		'section'         => 'grid_part_details_breadcrumbs',
+		'default'         => '#ffffff',
+		'transport'       => 'postMessage',
+		'transport'       => 'auto',
+		'output'          => [
 			[
-				'element'  => '.gridd-tp-breadcrumbs',
+				'element'  => '.gridd-tp-breadcrumbs.custom-options',
 				'property' => '--bg',
 			],
 		],
-		'choices'   => [
+		'choices'         => [
 			'formComponent' => 'TwitterPicker',
 			'colors'        => \Gridd\Theme::get_colorpicker_palette(),
 		],
+		'active_callback' => function() {
+			return get_theme_mod( 'breadcrumbs_custom_options', false );
+		},
 		'priority'  => 10,
 	]
 );
 
 new \Kirki\Field\Dimension(
 	[
-		'settings'    => 'gridd_grid_breadcrumbs_padding',
-		'label'       => esc_html__( 'Padding', 'gridd' ),
-		'description' => Customizer::get_control_description(
+		'settings'        => 'gridd_grid_breadcrumbs_padding',
+		'label'           => esc_html__( 'Padding', 'gridd' ),
+		'description'     => Customizer::get_control_description(
 			[
 				'short'   => '',
 				'details' => sprintf(
@@ -53,33 +66,39 @@ new \Kirki\Field\Dimension(
 				),
 			]
 		),
-		'section'     => 'grid_part_details_breadcrumbs',
-		'default'     => '1em',
-		'transport'   => 'auto',
-		'output'      => [
+		'section'         => 'grid_part_details_breadcrumbs',
+		'default'         => '1em',
+		'transport'       => 'auto',
+		'output'          => [
 			[
-				'element'  => '.gridd-tp-breadcrumbs',
+				'element'  => '.gridd-tp-breadcrumbs.custom-options',
 				'property' => '--pd',
 			],
 		],
+		'active_callback' => function() {
+			return get_theme_mod( 'breadcrumbs_custom_options', false );
+		},
 		'priority'    => 20,
 	]
 );
 
 new \Kirki\Field\Dimension(
 	[
-		'settings'  => 'gridd_grid_breadcrumbs_max_width',
-		'label'     => esc_html__( 'Breadcrumbs Maximum Width', 'gridd' ),
-		'section'   => 'grid_part_details_breadcrumbs',
-		'default'   => '100%',
-		'transport' => 'auto',
-		'output'    => [
+		'settings'        => 'gridd_grid_breadcrumbs_max_width',
+		'label'           => esc_html__( 'Breadcrumbs Maximum Width', 'gridd' ),
+		'section'         => 'grid_part_details_breadcrumbs',
+		'default'         => '100%',
+		'transport'       => 'auto',
+		'output'          => [
 			[
-				'element'  => '.gridd-tp-breadcrumbs',
+				'element'  => '.gridd-tp-breadcrumbs.custom-options',
 				'property' => '--mw',
 			],
 		],
-		'priority'  => 30,
+		'priority'        => 30,
+		'active_callback' => function() {
+			return get_theme_mod( 'breadcrumbs_custom_options', false );
+		},
 	]
 );
 
@@ -92,7 +111,7 @@ new \WPLemon\Field\WCAGTextColor(
 		'transport'         => 'auto',
 		'output'            => [
 			[
-				'element'  => '.gridd-tp-breadcrumbs',
+				'element'  => '.gridd-tp-breadcrumbs.custom-options',
 				'property' => '--cl',
 			],
 		],
@@ -100,6 +119,9 @@ new \WPLemon\Field\WCAGTextColor(
 			'backgroundColor' => 'gridd_grid_breadcrumbs_background_color',
 			'appearance'      => 'hidden',
 		],
+		'active_callback'   => function() {
+			return get_theme_mod( 'breadcrumbs_custom_options', false );
+		},
 		'sanitize_callback' => [ $sanitization, 'color_hex' ],
 	]
 );
