@@ -361,7 +361,7 @@ input[type="color"],
 textarea {
 	color: var(--cl);
 	background: var(--bg);
-	border: 1px solid rgba(0, 0, 0, 0.05));
+	border: 1px solid rgba(0, 0, 0, 0.05);
 	border-radius: 0;
 	padding: 0.5em;
 }
