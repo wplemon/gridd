@@ -47,7 +47,6 @@
       flex-wrap: nowrap; } }
 
 .wp-block-column {
-  margin-bottom: 1em;
   flex-grow: 1;
   min-width: 0;
   word-break: break-word;

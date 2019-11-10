@@ -71,6 +71,9 @@
   .wp-block-image .aligncenter {
     margin-left: auto;
     margin-right: auto; }
+  .wp-block-image figcaption {
+    margin-top: 0.5em;
+    margin-bottom: 1em; }
 
 .is-style-circle-mask img {
   border-radius: 9999px; }

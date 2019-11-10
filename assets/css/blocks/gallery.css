@@ -237,7 +237,7 @@
   .wp-block-gallery.alignleft, .wp-block-gallery.alignright,
   .blocks-gallery-grid.alignleft,
   .blocks-gallery-grid.alignright {
-    max-width: 305px;
+    max-width: 290px;
     width: 100%; }
   .wp-block-gallery.aligncenter .blocks-gallery-item figure,
   .blocks-gallery-grid.aligncenter .blocks-gallery-item figure {
