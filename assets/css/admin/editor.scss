@@ -1,13 +1,13 @@
 // stylelint-disable no-descending-specificity
 // stylelint-disable selector-type-no-unknown
 
-:root {
+.editor-styles-wrapper {
 	--fs: var(--gridd-font-size, 18);
 	--fs-px: calc(var(--fs) * 1px);
 	--ts: var(--gridd-typo-scale, 1.26);
 	--tr: var(--gridd-typo-ratio, 0.25);
 	--fs-tr: calc(var(--fs-px) + var(--tr) * 1vw);
-	font-size: var(--fs-tr);
+
 	--gridd-content-max-width: var(--mw);
 	--gridd-content-max-width-calculated: var(--mw-c);
 	--gridd-text-color: var(--cl);
@@ -30,9 +30,7 @@
 	--fs-4d-ts-tr: calc(var(--fs-tr) / var(--ts) / var(--ts) / var(--ts) / var(--ts));
 
 	--system-fonts: -apple-system, blinkmacsystemfont, "Segoe UI", roboto, oxygen-sans, ubuntu, cantarell, "Helvetica Neue", sans-serif;
-}
 
-body {
 	margin: 0;
 	background: #fff;
 	overflow-x: hidden;
