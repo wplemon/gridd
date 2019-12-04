@@ -91,7 +91,8 @@ module.exports = function( grunt ) {
 			options: {
 				textdomain: 'gridd',
 				updateDomains: [
-					'hybrid-core'
+					'hybrid-core',
+					'kirki-pro'
 				]
 			},
 			target: {
@@ -102,7 +103,11 @@ module.exports = function( grunt ) {
 						'packages/justintadlock/**/**/*.php',
 						'packages/justintadlock/**/**/**/*.php',
 						'packages/justintadlock/**/**/**/**/**/*.php',
-						'packages/justintadlock/**/**/**/**/**/**/*.php'
+						'packages/justintadlock/**/**/**/**/**/**/*.php',
+						'packages/wplemon/**/*.php',
+						'packages/wplemon/**/**/*.php',
+						'packages/wplemon/**/**/**/*.php',
+						'packages/wplemon/**/**/**/**/*.php'
 					]
 				}
 			}

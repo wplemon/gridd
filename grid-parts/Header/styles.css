@@ -1,16 +1,15 @@
 .gridd-tp-header {
-	--bs-default: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 	display: flex;
 	justify-content: center;
 	overflow: visible;
 	z-index: 1000;
 	background-color: var(--bg, #fff);
-	box-shadow: var(--bs, var(--bs-default));
+	box-shadow: var(--bs, none);
 }
 
 .gridd-tp-header > .inner {
 	width: 100%;
-	max-width: var(--mw, 47em);
+	max-width: var(--mw, 100%);
 	grid-gap: var(--gg, 0);
 	padding: var(--pd, 0 1em);
 }

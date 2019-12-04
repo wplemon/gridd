@@ -8,33 +8,6 @@ $purple: #826eb4;
 
 #customize-controls {
 
-	#sub-accordion-section-gridd_grid,
-	#sub-accordion-section-grid_part_details_header,
-	#sub-accordion-section-grid_part_details_footer {
-
-		li {
-
-			&.accordion-section {
-
-				.accordion-section-title {
-					color: #333;
-					background: #fff !important;
-
-					&:hover {
-						background: #dedede !important;
-					}
-				}
-
-				&.control-section-kirki-nested {
-
-					h3.accordion-section-title {
-						display: none;
-					}
-				}
-			}
-		}
-	}
-
 	.customize-section-description-container.section-meta {
 
 		.dashicons {
@@ -288,6 +261,18 @@ h3.gridd-customizer-section-title {
 	}
 }
 
+#accordion-section-grid_part_details_content {
+	border-top: none !important;
+}
+
+#sub-accordion-panel-theme_options {
+
+	> .customize-info {
+		border-bottom: none;
+		margin-bottom: 0;
+	}
+}
+
 #customize-control-gridd_grid_load_order {
 
 	.visibility {
@@ -320,30 +305,66 @@ h3.gridd-customizer-section-title {
 	}
 }
 
-.customize-control-kirki-react-radio-buttonset {
+#sub-accordion-section-gridd_grid,
+#sub-accordion-section-grid_part_details_content,
+#sub-accordion-section-grid_part_details_header,
+#sub-accordion-section-header_social,
+#sub-accordion-section-grid_part_details_footer,
+#sub-accordion-section-grid_part_details_footer_copyright,
+#sub-accordion-section-breadcrumbs,
+#sub-accordion-section-grid_part_details_footer_social_media,
+#sub-accordion-section-grid_part_details_header_contact_info,
+#sub-accordion-section-grid_part_details_header_search {
 
-	.radio-tooltip {
-		display: none;
-		position: absolute;
-		left: 0;
-		padding: 24px;
-		background: #fff;
-		width: calc(100% - 70px);
-		border: 1px solid #ccc;
-		margin-top: 12px;
-		margin-left: 10px;
-		border-radius: 3px;
-		overflow: hidden;
-		box-shadow: 0 0 3px;
-		z-index: 9999999;
+	.customize-section-title {
+		padding-bottom: 30px;
+	}
+}
+
+#customize-control-main_grid_advanced,
+#customize-control-content_custom_options,
+#customize-control-header_custom_options,
+#customize-control-header_social_advanced,
+#customize-control-footer_advanced,
+#customize-control-footer_copyright_advanced,
+#customize-control-footer_social_media_advanced,
+#customize-control-breadcrumbs_custom_options,
+#customize-control-header_contact_info_advanced,
+#customize-control-header_search_advanced {
+	position: absolute;
+	top: 30px;
+}
+
+.control-section-kirki-expanded {
+	padding-bottom: 0 !important;
+
+	.customize-section-description-container {
+		margin-bottom: 0;
 	}
 
-	label:hover,
-	label:focus,
-	input:focus + span {
+	.customize-section-title h3 {
+		font-size: 18px;
+	}
+}
 
-		.radio-tooltip {
-			display: block;
-		}
+#sub-accordion-section-gridd_grid,
+#sub-accordion-section-gridd_typography,
+#sub-accordion-section-grid_part_details_content,
+#sub-accordion-section-grid_part_details_header,
+#sub-accordion-section-grid_part_details_footer,
+#accordion-section-breadcrumbs,
+#accordion-section-grid_part_details_footer_social_media {
+
+	.customize-section-title {
+		margin-bottom: 12px;
+	}
+}
+
+#sub-accordion-section-theme_options {
+	padding-top: 12px !important;
+	padding-bottom: 12px !important;
+
+	.customize-section-title {
+		display: none;
 	}
 }

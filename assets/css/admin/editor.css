@@ -1,5 +1,5 @@
 .editor-styles-wrapper {
-  --fs: var(--gridd-font-size, 18);
+  --fs: var(--fs, 18);
   --fs-px: calc(var(--fs) * 1px);
   --ts: var(--gridd-typo-scale, 1.26);
   --tr: var(--gridd-typo-ratio, 0.25);

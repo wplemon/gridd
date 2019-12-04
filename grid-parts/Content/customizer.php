@@ -10,13 +10,28 @@ use Gridd\Customizer\Sanitize;
 
 $sanitization = new Sanitize();
 
-Customizer::add_section(
+new \Kirki\Section(
 	'grid_part_details_content',
 	[
 		/* translators: The grid-part label. */
 		'title'    => esc_html__( 'Content', 'gridd' ),
-		'priority' => -70,
-		'panel'    => 'layout_blocks',
+		'priority' => 20,
+		'type'     => 'kirki-expanded',
+		'panel'    => 'theme_options',
+	]
+);
+
+new \Kirki\Field\Checkbox_Switch(
+	[
+		'settings'  => 'content_custom_options',
+		'section'   => 'grid_part_details_content',
+		'default'   => false,
+		'transport' => 'refresh',
+		'priority'  => -999,
+		'choices'   => [
+			'off' => esc_html__( 'Inherit Options', 'gridd' ),
+			'on'  => esc_html__( 'Override Options', 'gridd' ),
+		],
 	]
 );
 
@@ -25,10 +40,10 @@ new \Kirki\Field\ReactColor(
 		'settings'  => 'content_background_color',
 		'label'     => esc_html__( 'Background Color', 'gridd' ),
 		'section'   => 'grid_part_details_content',
-		'default'   => '#ffffff',
+		'default'   => '#F5F7F9',
 		'output'    => [
 			[
-				'element'  => ':root',
+				'element'  => '.gridd-tp-content.custom-options',
 				'property' => '--bg',
 			],
 			[
@@ -43,6 +58,9 @@ new \Kirki\Field\ReactColor(
 			'formComponent' => 'TwitterPicker',
 			'colors'        => \Gridd\Theme::get_colorpicker_palette(),
 		],
+		'active_callback' => function() {
+			return get_theme_mod( 'content_custom_options', false );
+		},
 	]
 );
 
@@ -55,7 +73,7 @@ new \WPLemon\Field\WCAGTextColor(
 		'default'           => '#000000',
 		'output'            => [
 			[
-				'element'  => ':root',
+				'element'  => '.gridd-tp-content.custom-options',
 				'property' => '--cl',
 			],
 			[
@@ -93,7 +111,7 @@ new \WPLemon\Field\WCAGLinkColor(
 		],
 		'output'            => [
 			[
-				'element'  => ':root',
+				'element'  => '.gridd-tp-content.custom-options',
 				'property' => '--lc',
 			],
 			[
@@ -103,6 +121,9 @@ new \WPLemon\Field\WCAGLinkColor(
 			],
 		],
 		'sanitize_callback' => [ $sanitization, 'color_hex' ],
+		'active_callback'   => function() {
+			return get_theme_mod( 'content_custom_options', false );
+		},
 	]
 );
 
@@ -126,76 +147,85 @@ Customizer::add_field(
 
 Customizer::add_field(
 	[
-		'type'      => 'slider',
-		'settings'  => 'content_padding_horizontal',
-		'label'     => esc_html__( 'Horizontal Content Padding', 'gridd' ),
-		'section'   => 'grid_part_details_content',
-		'default'   => 1,
-		'output'    => [
+		'type'            => 'slider',
+		'settings'        => 'content_padding_horizontal',
+		'label'           => esc_html__( 'Horizontal Content Padding', 'gridd' ),
+		'section'         => 'grid_part_details_content',
+		'default'         => 1,
+		'output'          => [
 			[
-				'element'       => '.gridd-tp-content',
+				'element'       => '.gridd-tp-content.custom-options',
 				'property'      => '--pd-h',
 				'value_pattern' => '$em',
 			],
 		],
-		'choices'   => [
+		'choices'         => [
 			'min'    => 0,
 			'max'    => 10,
 			'step'   => 0.01,
 			'suffix' => 'em',
 		],
-		'transport' => 'auto',
-		'priority'  => 60,
+		'transport'       => 'auto',
+		'priority'        => 60,
+		'active_callback' => function() {
+			return get_theme_mod( 'content_custom_options', false );
+		},
 	]
 );
 
 Customizer::add_field(
 	[
-		'type'      => 'slider',
-		'settings'  => 'content_padding_top',
-		'label'     => esc_html__( 'Top Content Padding', 'gridd' ),
-		'section'   => 'grid_part_details_content',
-		'default'   => 1,
-		'output'    => [
+		'type'            => 'slider',
+		'settings'        => 'content_padding_top',
+		'label'           => esc_html__( 'Top Content Padding', 'gridd' ),
+		'section'         => 'grid_part_details_content',
+		'default'         => 1,
+		'output'          => [
 			[
-				'element'       => '.gridd-tp-content',
+				'element'       => '.gridd-tp-content.custom-options',
 				'property'      => '--pd-t',
 				'value_pattern' => '$em',
 			],
 		],
-		'choices'   => [
+		'choices'         => [
 			'min'    => 0,
 			'max'    => 10,
 			'step'   => 0.01,
 			'suffix' => 'em',
 		],
-		'transport' => 'auto',
-		'priority'  => 70,
+		'transport'       => 'auto',
+		'priority'        => 70,
+		'active_callback' => function() {
+			return get_theme_mod( 'content_custom_options', false );
+		},
 	]
 );
 
 Customizer::add_field(
 	[
-		'type'      => 'slider',
-		'settings'  => 'content_padding_bottom',
-		'label'     => esc_html__( 'Bottom Content Padding', 'gridd' ),
-		'section'   => 'grid_part_details_content',
-		'default'   => 1,
-		'output'    => [
+		'type'            => 'slider',
+		'settings'        => 'content_padding_bottom',
+		'label'           => esc_html__( 'Bottom Content Padding', 'gridd' ),
+		'section'         => 'grid_part_details_content',
+		'default'         => 1,
+		'output'          => [
 			[
-				'element'       => '.gridd-tp-content',
+				'element'       => '.gridd-tp-content.custom-options',
 				'property'      => '--pd-b',
 				'value_pattern' => '$em',
 			],
 		],
-		'choices'   => [
+		'choices'         => [
 			'min'    => 0,
 			'max'    => 10,
 			'step'   => 0.01,
 			'suffix' => 'em',
 		],
-		'transport' => 'auto',
-		'priority'  => 80,
+		'transport'       => 'auto',
+		'priority'        => 80,
+		'active_callback' => function() {
+			return get_theme_mod( 'content_custom_options', false );
+		},
 	]
 );
 

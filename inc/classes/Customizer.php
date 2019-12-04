@@ -255,7 +255,7 @@ class Customizer {
 	 * @return void
 	 */
 	public static function add_outer_section( $section_id, $args ) {
-		$args['panel'] = 'layout_blocks';
+		$args['panel'] = 'theme_options';
 		unset( $args['section'] );
 		$args['active_callback'] = function() use ( $section_id ) {
 			$grid_parts_sections = self::get_grid_parts_sections();
@@ -317,13 +317,13 @@ class Customizer {
 	 */
 	public static function get_grid_parts_sections() {
 		$sections = [
-			'breadcrumbs'         => 'grid_part_details_breadcrumbs',
+			'breadcrumbs'         => 'breadcrumbs',
 			'footer_copyright'    => 'grid_part_details_footer_copyright',
 			'footer_social_media' => 'grid_part_details_footer_social_media',
 			'header_branding'     => 'title_tagline',
 			'header_search'       => 'grid_part_details_header_search',
 			'header_contact_info' => 'grid_part_details_header_contact_info',
-			'social_media'        => 'grid_part_details_social_media',
+			'social_media'        => 'header_social',
 		];
 		/**
 		 * These are core but we don't want them in this array.
@@ -355,6 +355,33 @@ class Customizer {
 		}
 
 		return apply_filters( 'gridd_get_grid_parts_sections', $sections );
+	}
+
+	/**
+	 * Check if a grid-part is active.
+	 *
+	 * Used as an active_callback for sections & controls.
+	 *
+	 * @static
+	 * @access public
+	 * @since 2.0.2
+	 * @param string $id The grid-part ID.
+	 * @return bool
+	 */
+	public static function is_section_active_part( $id ) {
+		// Check the main grid.
+		if ( \Gridd\Grid_Parts::is_grid_part_active( $id, 'gridd_grid' ) ) {
+			return true;
+		}
+
+		// Check sub-grids.
+		$grids = \Gridd\Grid_Parts::get_instance()->get_grids();
+		foreach ( $grids as $grid ) {
+			if ( \Gridd\Grid_Parts::is_grid_part_active( $id, $grid ) ) {
+				return true;
+			}
+		}
+		return false;
 	}
 }
 

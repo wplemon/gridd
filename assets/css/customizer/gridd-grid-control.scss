@@ -2,10 +2,13 @@
 // stylelint-disable no-descending-specificity
 .gridd-grid-builder {
 	position: relative;
+
+	summary.button {
+		margin-bottom: 12px;
+	}
 }
 
 .customize-control-gridd_grid {
-	margin: 2em 0;
 
 	// The grid wrapper for everything.
 	.gridd-grid-builder-grids-wrapper {

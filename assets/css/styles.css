@@ -1,5 +1,6 @@
 :root {
-	--fs: var(--gridd-font-size, 18);
+	--fs: var(--fs, 18);
+	--fsr: 1;
 	--fs-px: calc(var(--fs) * 1px);
 	--ts: var(--gridd-typo-scale, 1.26);
 	--tr: var(--gridd-typo-ratio, 0.25);
@@ -38,6 +39,11 @@ body {
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
 	line-height: 1.5;
+	background-color: var(--bg);
+}
+
+body.custom-background {
+	background-color: var(--bg);
 }
 
 a {
@@ -737,6 +743,7 @@ smallest { /* stylelint-disable-line */
 	justify-content: center;
 	flex-wrap: nowrap;
 	overflow: hidden;
+	color: var(--cl);
 }
 
 .gridd-sticky {

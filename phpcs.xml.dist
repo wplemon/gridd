@@ -11,6 +11,8 @@
 	<exclude-pattern>tests/</exclude-pattern>
 	<exclude-pattern>packages/</exclude-pattern>
 	<exclude-pattern>inc/hybrid-breadcrumbs</exclude-pattern>
+	<exclude-pattern>assets/css</exclude-pattern>
+	<exclude-pattern>inc/bootstrap-compatibility.php</exclude-pattern>
 
 	<!-- Set a description for this ruleset. -->
 	<description>A custom set of code standard rules to check for WordPress themes.</description>
@@ -30,7 +32,10 @@
 	<file>.</file>
 
 	<!-- Include the WordPress ruleset. -->
-	<rule ref="WordPress" />
+	<rule ref="WordPress">
+		<exclude name="Generic.Arrays.DisallowShortArraySyntax.Found" />
+	</rule>
+	<rule ref="Generic.Arrays.DisallowLongArraySyntax.Found" />
 
 	<!-- Verify that the text_domain is set to the desired text-domain.
 		 Multiple valid text domains can be provided as a comma-delimited list. -->
