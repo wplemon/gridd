@@ -48,6 +48,9 @@ function gridd_nav_customizer_options( $id ) {
 			'priority' => 30,
 			'type'     => 'kirki-expanded',
 			'panel'    => 'theme_options',
+			'active_callback' => function() use ( $id ) {
+				return \Gridd\Customizer::is_section_active_part( "nav_$id" );
+			},
 		]
 	);
 
