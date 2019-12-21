@@ -6,7 +6,7 @@
 
 .gridd-tp-footer_social_media.gridd-tp a {
 	display: block;
-	width: calc(var(--sz) * 1em);
+	width: calc(var(--sz, 1) * 1em);
 	padding: calc(var(--pd, 0.5) * 1em);
 	box-sizing: content-box;
 	line-height: 1;

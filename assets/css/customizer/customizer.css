@@ -374,7 +374,6 @@ h3.gridd-customizer-section-title {
 #sub-accordion-section-grid_part_details_content .customize-section-title,
 #sub-accordion-section-grid_part_details_header .customize-section-title,
 #sub-accordion-section-header_social .customize-section-title,
-#sub-accordion-section-grid_part_details_footer .customize-section-title,
 #sub-accordion-section-grid_part_details_footer_copyright .customize-section-title,
 #sub-accordion-section-breadcrumbs .customize-section-title,
 #sub-accordion-section-grid_part_details_footer_social_media .customize-section-title,
@@ -414,7 +413,8 @@ h3.gridd-customizer-section-title {
 #customize-control-nav_8_custom_options,
 #customize-control-nav_9_custom_options,
 #customize-control-nav_10_custom_options,
-#customize-control-footer_copyright_custom_options {
+#customize-control-footer_copyright_custom_options,
+#customize-control-footer_social_media_custom_options {
   position: absolute;
   top: 30px;
 }

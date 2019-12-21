@@ -48,7 +48,7 @@ new \Kirki\Field\ReactColor(
 		'transport'       => 'auto',
 		'output'          => [
 			[
-				'element'  => '.gridd-tp-footer_copyright',
+				'element'  => '.gridd-tp-footer_copyright.custom-options',
 				'property' => '--bg',
 			],
 		],
@@ -72,7 +72,7 @@ new \WPLemon\Field\WCAGTextColor(
 		'transport'         => 'auto',
 		'output'            => [
 			[
-				'element'  => '.gridd-tp-footer_copyright',
+				'element'  => '.gridd-tp-footer_copyright.custom-options',
 				'property' => '--cl',
 			],
 		],
@@ -104,7 +104,7 @@ Customizer::add_field(
 		'transport'       => 'auto',
 		'output'          => [
 			[
-				'element'  => '.gridd-tp-footer_copyright',
+				'element'  => '.gridd-tp-footer_copyright.custom-options',
 				'property' => '--fs',
 			],
 		],

@@ -11,12 +11,11 @@ use Gridd\Grid_Part\Footer;
 
 $sanitization = new Sanitize();
 
-Customizer::add_section(
+new \Kirki\Section(
 	'grid_part_details_footer',
 	[
 		'title'    => esc_html__( 'Footer', 'gridd' ),
-		'priority' => -60,
-		'panel'    => 'layout_blocks',
+		'priority' => 30,
 	]
 );
 

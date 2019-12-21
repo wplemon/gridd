@@ -1,9 +1,9 @@
 .gridd-tp-footer_copyright {
 	width: 100%;
 	align-items: center;
-}
-
-.gridd-tp-footer_copyright.custom-options {
+  padding: var(--pd, 1em);
+	color: var(--cl, #000);
+	font-size: calc(var(--fs) * 1em);
   background-color: var(--bg, #fff);
 }
 
@@ -12,13 +12,7 @@
 	text-align: var(--ta, center);
 }
 
-.gridd-tp-footer_copyright.custom-options {
-  padding: var(--pd, 1em);
-	color: var(--cl, #000);
-	font-size: calc(var(--fs) * 1em);
-}
-
-.gridd-tp-footer_copyright.custom-options .site-info a,
-.gridd-tp-footer_copyright.custom-options .site-info a:hover {
+.gridd-tp-footer_copyright .site-info a,
+.gridd-tp-footer_copyright .site-info a:hover {
 	color: var(--cl, #0f5e97);
 }
