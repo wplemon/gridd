@@ -86,7 +86,7 @@ new \Kirki\Field\ReactColor(
 			'formComponent' => 'TwitterPicker',
 			'colors'        => \Gridd\Theme::get_colorpicker_palette(),
 		],
-		'output'    => [
+		'output'            => [
 			[
 				'element'  => ':root',
 				'property' => '--bg',
@@ -125,7 +125,6 @@ new \WPLemon\Field\WCAGTextColor(
 			'appearance'      => 'hidden',
 		],
 		'sanitize_callback' => [ $sanitization, 'color_hex' ],
-		// 'active_callback'   => '__return_false',
 	]
 );
 

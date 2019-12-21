@@ -37,11 +37,11 @@ new \Kirki\Field\Checkbox_Switch(
 
 new \Kirki\Field\ReactColor(
 	[
-		'settings'  => 'content_background_color',
-		'label'     => esc_html__( 'Background Color', 'gridd' ),
-		'section'   => 'grid_part_details_content',
-		'default'   => '#F5F7F9',
-		'output'    => [
+		'settings'        => 'content_background_color',
+		'label'           => esc_html__( 'Background Color', 'gridd' ),
+		'section'         => 'grid_part_details_content',
+		'default'         => '#F5F7F9',
+		'output'          => [
 			[
 				'element'  => '.gridd-tp-content.custom-options',
 				'property' => '--bg',
@@ -52,9 +52,9 @@ new \Kirki\Field\ReactColor(
 				'context'  => [ 'editor' ],
 			],
 		],
-		'transport' => 'auto',
-		'priority'  => 10,
-		'choices'   => [
+		'transport'       => 'auto',
+		'priority'        => 10,
+		'choices'         => [
 			'formComponent' => 'TwitterPicker',
 			'colors'        => \Gridd\Theme::get_colorpicker_palette(),
 		],
