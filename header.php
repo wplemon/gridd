@@ -73,7 +73,7 @@ $style->add_string(
 		}
 	}
 	?>
-	<div id="content" class="site-content gridd-tp gridd-tp-content">
+	<div id="content" class="site-content gridd-tp gridd-tp-content<?php echo get_theme_mod( 'content_custom_options' ) ? ' custom-options' : ''; ?>">
 		<?php
 		/**
 		 * Add styles for the content.

@@ -10,14 +10,13 @@ use Gridd\Customizer\Sanitize;
 
 $sanitization = new Sanitize();
 
-/**
- * Add the Theme-Options panel.
- */
-Customizer::add_section(
+new \Kirki\Section(
 	'gridd_typography',
 	[
 		'title'    => esc_html__( 'Typography', 'gridd' ),
-		'priority' => -90,
+		'priority' => 10,
+		'panel'    => 'theme_options',
+		'type'     => 'kirki-expanded',
 	]
 );
 
@@ -158,11 +157,11 @@ Customizer::add_field(
 		'output'      => [
 			[
 				'element'  => ':root',
-				'property' => '--gridd-font-size',
+				'property' => '--fs',
 			],
 			get_theme_mod( 'disable_editor_styles' ) ? [] : [
 				'element'  => '.edit-post-visual-editor.editor-styles-wrapper',
-				'property' => '--gridd-font-size',
+				'property' => '--fs',
 				'context'  => [ 'editor' ],
 			],
 		],
@@ -239,11 +238,11 @@ Customizer::add_field(
 		'priority'          => 80,
 		'choices'           => [
 			/* Translators: Numeric representation of the scale. */
-			'1.149' => sprintf( esc_attr__( '%s - Musical Pentatonic (classic)', 'gridd' ), '1.149' ),
+			'1.149' => sprintf( esc_attr__( '%s - Subtle', 'gridd' ), '1.149' ),
 			/* Translators: Numeric representation of the scale. */
-			'1.26'  => sprintf( esc_attr__( '%s - Musical Tritonic', 'gridd' ), '1.26' ),
+			'1.26'  => sprintf( esc_attr__( '%s - Normal', 'gridd' ), '1.26' ),
 			/* Translators: Numeric representation of the scale. */
-			'1.333' => sprintf( esc_attr__( '%s - Perfect Fourth', 'gridd' ), '1.333' ),
+			'1.333' => sprintf( esc_attr__( '%s - Big', 'gridd' ), '1.333' ),
 		],
 		'priority'          => 80,
 		'sanitize_callback' => function( $value ) {

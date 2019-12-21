@@ -40,3 +40,5 @@ packages/wplemon/control-palette-builder/.gitattributes
 packages/wplemon/control-palette-builder/.eslintrc
 packages/wplemon/control-palette-builder/.eslintignore
 packages/wplemon/control-palette-builder/.babelrc
+
+FUNDING.yml

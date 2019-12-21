@@ -9,7 +9,6 @@ class ComposerStaticInit732835aa44a0bf9e82f02a841da89611
     public static $prefixLengthsPsr4 = array (
         'W' => 
         array (
-            'WPTRT\\Customize\\Control\\' => 24,
             'WPLemon\\Field\\' => 14,
             'WPLemon\\Control\\' => 16,
         ),
@@ -31,10 +30,6 @@ class ComposerStaticInit732835aa44a0bf9e82f02a841da89611
     );
 
     public static $prefixDirsPsr4 = array (
-        'WPTRT\\Customize\\Control\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/wptrt/control-color-alpha/src',
-        ),
         'WPLemon\\Field\\' => 
         array (
             0 => __DIR__ . '/..' . '/wplemon/control-palette-builder/src/Field',

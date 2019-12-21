@@ -18,19 +18,21 @@ if ( ! function_exists( 'gridd_social_icons_svg' ) ) {
 }
 $icons = gridd_social_icons_svg();
 
-// Init Style class.
-$style = Style::get_instance( 'grid-part/footer/social-media' );
+// Add styles.
+Style::get_instance( 'grid-part/footer/social-media' )
+	->add_file( get_theme_file_path( 'grid-parts/Footer/styles-social-icons.min.css' ) )
+	->the_css( 'gridd-inline-css-footer-social-icons' );
 
-// Add stylesheet.
-$style->add_file( get_theme_file_path( 'grid-parts/Footer/styles-social-icons.min.css' ) );
+$attributes = [
+	'class' => 'gridd-tp gridd-tp-footer_social_media',
+];
+if ( get_theme_mod( 'footer_social_media_custom_options', false ) ) {
+	$attributes['class'] .= ' custom-options';
+}
 ?>
 
-<div <?php Theme::print_attributes( [ 'class' => 'gridd-tp gridd-tp-footer_social_media' ], 'wrapper-footer_social_media' ); ?>>
+<div <?php Theme::print_attributes( $attributes, 'wrapper-footer_social_media' ); ?>>
 	<?php
-	/**
-	 * Print styles.
-	 */
-	$style->the_css( 'gridd-inline-css-footer-social-icons' );
 
 	foreach ( $setting as $icon ) {
 		if ( ! empty( $icon['url'] ) && ! empty( $icon['icon'] ) && isset( $icons[ $icon['icon'] ] ) ) {

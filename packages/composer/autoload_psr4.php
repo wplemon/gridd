@@ -6,7 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'WPTRT\\Customize\\Control\\' => array($vendorDir . '/wptrt/control-color-alpha/src'),
     'WPLemon\\Field\\' => array($vendorDir . '/wplemon/control-palette-builder/src/Field', $vendorDir . '/wplemon/control-wcag-auto-linkcolor/src/Field', $vendorDir . '/wplemon/control-wcag-auto-textcolor/src/Field'),
     'WPLemon\\Control\\' => array($vendorDir . '/wplemon/control-palette-builder/src/Control', $vendorDir . '/wplemon/control-wcag-auto-linkcolor/src/Control', $vendorDir . '/wplemon/control-wcag-auto-textcolor/src/Control'),
     'Kirki\\Util\\' => array($vendorDir . '/kirki-framework/util/src'),

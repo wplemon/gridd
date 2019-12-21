@@ -103,7 +103,7 @@ class Sanitize {
 			$color = substr( $color, 0, 1 ) . substr( $color, 0, 1 ) . substr( $color, 1, 1 ) . substr( $color, 1, 1 ) . substr( $color, 2, 1 ) . substr( $color, 2, 1 );
 		}
 
-		$substr = array();
+		$substr = [];
 		for ( $i = 0; $i <= 5; $i++ ) {
 			$default      = ( 0 === $i ) ? 'F' : ( $substr[ $i - 1 ] );
 			$substr[ $i ] = substr( $color, $i, 1 );

@@ -10,20 +10,30 @@ use Gridd\Customizer\Sanitize;
 
 $sanitization = new Sanitize();
 
-Customizer::add_outer_section(
-	'grid_part_details_breadcrumbs',
+new \Kirki\Section(
+	'breadcrumbs',
 	[
-		'title' => esc_html__( 'Breadcrumbs', 'gridd' ),
+		'panel'           => 'theme_options',
+		'title'           => esc_html__( 'Breadcrumbs', 'gridd' ),
+		'type'            => 'kirki-expanded',
+		'priority'        => 50,
+		'active_callback' => function() {
+			return \Gridd\Customizer::is_section_active_part( 'breadcrumbs' );
+		},
 	]
 );
 
-new \Kirki\Field\Checkbox(
+new \Kirki\Field\Checkbox_Switch(
 	[
 		'settings'  => 'breadcrumbs_custom_options',
-		'label'     => esc_html__( 'Edit Advanced Options', 'gridd' ),
-		'section'   => 'grid_part_details_breadcrumbs',
+		'section'   => 'breadcrumbs',
 		'default'   => false,
 		'transport' => 'refresh',
+		'priority'  => -999,
+		'choices'   => [
+			'off' => esc_html__( 'Inherit Options', 'gridd' ),
+			'on'  => esc_html__( 'Override Options', 'gridd' ),
+		],
 	]
 );
 
@@ -31,7 +41,7 @@ new \Kirki\Field\ReactColor(
 	[
 		'settings'        => 'gridd_grid_breadcrumbs_background_color',
 		'label'           => esc_html__( 'Background Color', 'gridd' ),
-		'section'         => 'grid_part_details_breadcrumbs',
+		'section'         => 'breadcrumbs',
 		'default'         => '#ffffff',
 		'transport'       => 'postMessage',
 		'transport'       => 'auto',
@@ -48,7 +58,7 @@ new \Kirki\Field\ReactColor(
 		'active_callback' => function() {
 			return get_theme_mod( 'breadcrumbs_custom_options', false );
 		},
-		'priority'  => 10,
+		'priority'        => 10,
 	]
 );
 
@@ -66,7 +76,7 @@ new \Kirki\Field\Dimension(
 				),
 			]
 		),
-		'section'         => 'grid_part_details_breadcrumbs',
+		'section'         => 'breadcrumbs',
 		'default'         => '1em',
 		'transport'       => 'auto',
 		'output'          => [
@@ -78,7 +88,7 @@ new \Kirki\Field\Dimension(
 		'active_callback' => function() {
 			return get_theme_mod( 'breadcrumbs_custom_options', false );
 		},
-		'priority'    => 20,
+		'priority'        => 20,
 	]
 );
 
@@ -86,7 +96,7 @@ new \Kirki\Field\Dimension(
 	[
 		'settings'        => 'gridd_grid_breadcrumbs_max_width',
 		'label'           => esc_html__( 'Breadcrumbs Maximum Width', 'gridd' ),
-		'section'         => 'grid_part_details_breadcrumbs',
+		'section'         => 'breadcrumbs',
 		'default'         => '100%',
 		'transport'       => 'auto',
 		'output'          => [
@@ -106,7 +116,7 @@ new \WPLemon\Field\WCAGTextColor(
 	[
 		'settings'          => 'gridd_grid_breadcrumbs_color',
 		'label'             => esc_html__( 'Text Color', 'gridd' ),
-		'section'           => 'grid_part_details_breadcrumbs',
+		'section'           => 'breadcrumbs',
 		'default'           => '#000000',
 		'transport'         => 'auto',
 		'output'            => [
@@ -130,7 +140,7 @@ new \Kirki\Field\RadioButtonset(
 	[
 		'settings'          => 'gridd_grid_breadcrumbs_text_align',
 		'label'             => esc_html__( 'Alignment', 'gridd' ),
-		'section'           => 'grid_part_details_breadcrumbs',
+		'section'           => 'breadcrumbs',
 		'default'           => 'center',
 		'transport'         => 'auto',
 		'output'            => [

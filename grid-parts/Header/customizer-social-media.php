@@ -15,11 +15,29 @@ if ( ! function_exists( 'gridd_social_icons_svg' ) ) {
 	require_once get_template_directory() . '/inc/social-icons.php';
 }
 
-Customizer::add_outer_section(
-	'grid_part_details_social_media',
+new \Kirki\Section(
+	'header_social',
 	[
-		/* translators: The grid-part label. */
-		'title' => esc_html__( 'Header Contact Info', 'gridd' ),
+		'panel'           => 'theme_options',
+		'title'           => esc_html__( 'Header Social Media', 'gridd' ),
+		'type'            => 'kirki-expanded',
+		'active_callback' => function() {
+			return \Gridd\Customizer::is_section_active_part( 'social_media' );
+		},
+	]
+);
+
+new \Kirki\Field\Checkbox_Switch(
+	[
+		'settings'  => 'header_social_advanced',
+		'section'   => 'header_social',
+		'default'   => false,
+		'transport' => 'refresh',
+		'priority'  => -999,
+		'choices'   => [
+			'off' => esc_html__( 'Inherit Options', 'gridd' ),
+			'on'  => esc_html__( 'Override Options', 'gridd' ),
+		],
 	]
 );
 
@@ -29,7 +47,7 @@ Customizer::add_field(
 		'settings'        => 'header_social_icons',
 		'label'           => esc_html__( 'Social Media Links', 'gridd' ),
 		'description'     => esc_html__( 'Add, remove and reorder your social links.', 'gridd' ),
-		'section'         => 'grid_part_details_social_media',
+		'section'         => 'header_social',
 		'default'         => [],
 		'row_label'       => [
 			'type'  => 'field',
@@ -67,92 +85,104 @@ Customizer::add_field(
 
 new \Kirki\Field\ReactColor(
 	[
-		'settings'  => 'header_social_icons_background_color',
-		'label'     => esc_html__( 'Background Color', 'gridd' ),
-		'section'   => 'grid_part_details_social_media',
-		'default'   => '#ffffff',
-		'transport' => 'auto',
-		'output'    => [
+		'settings'        => 'header_social_icons_background_color',
+		'label'           => esc_html__( 'Background Color', 'gridd' ),
+		'section'         => 'header_social',
+		'default'         => '#ffffff',
+		'transport'       => 'auto',
+		'output'          => [
 			[
-				'element'  => '.gridd-tp-social_media',
+				'element'  => '.gridd-tp-social_media.custom-options',
 				'property' => '--bg',
 			],
 		],
-		'choices'   => [
+		'choices'         => [
 			'formComponent' => 'TwitterPicker',
 			'colors'        => \Gridd\Theme::get_colorpicker_palette(),
 		],
-		'priority'  => 20,
+		'priority'        => 20,
+		'active_callback' => function() {
+			return get_theme_mod( 'header_social_advanced' );
+		},
 	]
 );
 
 new \Kirki\Field\ReactColor(
 	[
-		'settings'  => 'header_social_icons_icons_color',
-		'label'     => esc_html__( 'Icons Color', 'gridd' ),
-		'section'   => 'grid_part_details_social_media',
-		'default'   => '#000000',
-		'transport' => 'auto',
-		'output'    => [
+		'settings'        => 'header_social_icons_icons_color',
+		'label'           => esc_html__( 'Icons Color', 'gridd' ),
+		'section'         => 'header_social',
+		'default'         => '#000000',
+		'transport'       => 'auto',
+		'output'          => [
 			[
-				'element'  => '.gridd-tp-social_media',
+				'element'  => '.gridd-tp-social_media.custom-options',
 				'property' => '--cl',
 			],
 		],
-		'choices'   => [
+		'choices'         => [
 			'formComponent' => 'TwitterPicker',
 			'colors'        => \Gridd\Theme::get_colorpicker_palette(),
 		],
-		'priority'  => 30,
+		'priority'        => 30,
+		'active_callback' => function() {
+			return get_theme_mod( 'header_social_advanced' );
+		},
 	]
 );
 
 Customizer::add_field(
 	[
-		'type'      => 'slider',
-		'settings'  => 'header_social_icons_size',
-		'label'     => esc_html__( 'Size', 'gridd' ),
-		'section'   => 'grid_part_details_social_media',
-		'default'   => 1,
-		'transport' => 'auto',
-		'output'    => [
+		'type'            => 'slider',
+		'settings'        => 'header_social_icons_size',
+		'label'           => esc_html__( 'Size', 'gridd' ),
+		'section'         => 'header_social',
+		'default'         => 1,
+		'transport'       => 'auto',
+		'output'          => [
 			[
-				'element'  => '.gridd-tp-social_media',
-				'property' => '--sz',
+				'element'  => '.gridd-tp-social_media.custom-options',
+				'property' => '--fsr',
 			],
 		],
-		'priority'  => 40,
-		'choices'   => [
+		'priority'        => 40,
+		'choices'         => [
 			'min'    => .3,
 			'max'    => 3,
 			'step'   => .01,
 			'suffix' => 'em',
 		],
+		'active_callback' => function() {
+			return get_theme_mod( 'header_social_advanced' );
+		},
 	]
 );
 
 Customizer::add_field(
 	[
-		'type'        => 'slider',
-		'settings'    => 'header_social_icons_padding',
-		'label'       => esc_html__( 'Padding', 'gridd' ),
-		'description' => esc_html__( ' Controls how large the clickable area will be and the spacing between icons.', 'gridd' ),
-		'section'     => 'grid_part_details_social_media',
-		'default'     => .5,
-		'transport'   => 'auto',
-		'output'      => [
+		'type'            => 'slider',
+		'settings'        => 'header_social_icons_padding',
+		'label'           => esc_html__( 'Padding', 'gridd' ),
+		'description'     => esc_html__( ' Controls how large the clickable area will be and the spacing between icons.', 'gridd' ),
+		'section'         => 'header_social',
+		'default'         => .5,
+		'transport'       => 'auto',
+		'output'          => [
 			[
-				'element'  => '.gridd-tp-social_media',
+				'element'  => '.gridd-tp-social_media.custom-options',
 				'property' => '--pd',
 			],
 		],
-		'priority'    => 50,
-		'choices'     => [
+		'priority'        => 50,
+		'choices'         => [
 			'min'    => 0,
 			'max'    => 2,
 			'step'   => .01,
 			'suffix' => 'em',
 		],
+		'active_callback' => function() {
+			return get_theme_mod( 'header_social_advanced' );
+		},
 	]
 );
 
@@ -160,13 +190,13 @@ new \Kirki\Field\RadioButtonset(
 	[
 		'settings'          => 'header_social_icons_icons_text_align',
 		'label'             => esc_html__( 'Icons Alignment', 'gridd' ),
-		'section'           => 'grid_part_details_social_media',
+		'section'           => 'header_social',
 		'default'           => 'flex-end',
 		'priority'          => 60,
 		'transport'         => 'auto',
 		'output'            => [
 			[
-				'element'  => '.gridd-tp-social_media',
+				'element'  => '.gridd-tp-social_media.custom-options',
 				'property' => '--ta',
 			],
 		],
@@ -177,6 +207,9 @@ new \Kirki\Field\RadioButtonset(
 		],
 		'sanitize_callback' => function( $value ) {
 			return ( 'flex-start' !== $value && 'flex-end' !== $value && 'center' !== $value ) ? 'flex-end' : $value;
+		},
+		'active_callback'   => function() {
+			return get_theme_mod( 'header_social_advanced' );
 		},
 	]
 );

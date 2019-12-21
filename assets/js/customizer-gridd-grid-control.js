@@ -471,7 +471,7 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 		html  = '<div class="actions">';
 
 		if ( ! control.params.choices.disablePartButtons || -1 === control.params.choices.disablePartButtons.indexOf( 'edit' ) ) {
-			html += editButton;
+			// html += editButton;
 		}
 		if ( ! control.params.choices.disablePartButtons || -1 === control.params.choices.disablePartButtons.indexOf( 'resize' ) ) {
 			html += resizeButton;

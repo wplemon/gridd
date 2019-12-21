@@ -80,7 +80,8 @@ class Grid extends \Kirki_Control_Base {
 		</span>
 
 		<!-- Grid Builder. -->
-		<div class="gridd-grid-builder">
+		<details class="gridd-grid-builder">
+			<summary class="button button-primary"><?php esc_html_e( 'Edit Grid', 'gridd' ); ?></summary>
 
 			<!-- Exit edit mode button. -->
 			<?php foreach ( $grid_parts as $part ) : ?>
@@ -112,8 +113,8 @@ class Grid extends \Kirki_Control_Base {
 							<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"><path d="M16.34 18.514v2.973H8.66v-2.973z"/><path d="M24.226 10.154v.774h-2.204V9.38h1.43v-.774H25v1.548zm-.774-3.095V3.963H25v3.096zm0-4.644v-.867h-.68V0H25v2.415zm-5.324-.867V0h3.096v1.548zm-.75 9.38V9.38h3.096v1.548zm-3.893-9.38V0h3.096v1.548zm-.75 9.38V9.38h3.096v1.548zm-3.893-9.38V0h3.095v1.548zm-.752 9.38V9.38h3.096v1.548zm-3.892-9.38V0h3.096v1.548zm-.751 9.38V9.38h3.096v1.548zm-1.9-9.38v.445H0V0h2.649v1.548zm-.773 9.38H0V8.184h1.548V9.38h.351v1.548zM0 6.636V3.541h1.548v3.095z" color="#000" font-family="sans-serif" font-weight="400" overflow="visible" style="line-height:normal;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;text-orientation:mixed;shape-padding:0;isolation:auto;mix-blend-mode:normal" white-space="normal"/></svg>
 							<span class="screen-reader-text"><?php esc_html_e( 'Remove last row', 'gridd' ); ?></span>
 						</button>
-						<button class="button gridd-grid-zoom-in" title="<?php esc_attr( 'Zoom In', 'gridd' ); ?>">
-							<span class="screen-reader-text"><?php esc_html( 'Zoom In', 'gridd' ); ?></span>
+						<button class="button gridd-grid-zoom-in" title="<?php esc_attr__( 'Zoom In', 'gridd' ); ?>">
+							<span class="screen-reader-text"><?php esc_html__( 'Zoom In', 'gridd' ); ?></span>
 							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M6.426 10.668l-3.547-3.547-2.879 2.879v-10h10l-2.879 2.879 3.547 3.547-4.242 4.242zm11.148 2.664l3.547 3.547 2.879-2.879v10h-10l2.879-2.879-3.547-3.547 4.242-4.242zm-6.906 4.242l-3.547 3.547 2.879 2.879h-10v-10l2.879 2.879 3.547-3.547 4.242 4.242zm2.664-11.148l3.547-3.547-2.879-2.879h10v10l-2.879-2.879-3.547 3.547-4.242-4.242z"/></svg>
 						</button>
 					</div>
@@ -141,7 +142,7 @@ class Grid extends \Kirki_Control_Base {
 				</div>
 				<div class="gridd-grid-part-move-helper"><?php esc_html_e( 'Click on an empty area to move the grid-part, or click-and-drag across multiple empty areas to resize it.', 'gridd' ); ?></div>
 			</div>
-		</div>
+		</details>
 
 		<input class="gridd-grid-hidden-value" type="hidden" value="<?php echo esc_attr( wp_json_encode( $value ) ); ?>" <?php $this->link(); ?>>
 		<?php

@@ -468,7 +468,7 @@ class Theme {
 	 * @return void
 	 */
 	public function enqueue_block_editor_assets() {
-		wp_enqueue_script( 'gridd-block-editor-script', get_theme_file_uri( '/assets/js/editor-script-block.js' ), array( 'wp-blocks', 'wp-dom' ), GRIDD_VERSION, true );
+		wp_enqueue_script( 'gridd-block-editor-script', get_theme_file_uri( '/assets/js/editor-script-block.js' ), [ 'wp-blocks', 'wp-dom' ], GRIDD_VERSION, true );
 	}
 
 	/**

@@ -12,10 +12,30 @@ use Gridd\Customizer;
 // Include Social Icons Definitions.
 require_once get_template_directory() . '/inc/social-icons.php';
 
-Customizer::add_outer_section(
+new \Kirki\Section(
 	'grid_part_details_footer_social_media',
 	[
-		'title' => esc_html__( 'Footer Social Media', 'gridd' ),
+		'title'           => esc_html__( 'Footer Social Media', 'gridd' ),
+		'priority'        => 30,
+		'type'            => 'kirki-expanded',
+		'panel'           => 'theme_options',
+		'active_callback' => function() {
+			return \Gridd\Customizer::is_section_active_part( 'footer_social_media' );
+		},
+	]
+);
+
+new \Kirki\Field\Checkbox_Switch(
+	[
+		'settings'  => 'footer_social_media_custom_options',
+		'section'   => 'grid_part_details_footer_social_media',
+		'default'   => false,
+		'transport' => 'refresh',
+		'priority'  => -999,
+		'choices'   => [
+			'off' => esc_html__( 'Inherit Options', 'gridd' ),
+			'on'  => esc_html__( 'Override Options', 'gridd' ),
+		],
 	]
 );
 
@@ -63,93 +83,105 @@ Customizer::add_field(
 
 new \Kirki\Field\ReactColor(
 	[
-		'settings'  => 'footer_social_icons_background_color',
-		'label'     => esc_html__( 'Background Color', 'gridd' ),
-		'section'   => 'grid_part_details_footer_social_media',
-		'default'   => '#ffffff',
-		'transport' => 'auto',
-		'output'    => [
+		'settings'        => 'footer_social_icons_background_color',
+		'label'           => esc_html__( 'Background Color', 'gridd' ),
+		'section'         => 'grid_part_details_footer_social_media',
+		'default'         => '#ffffff',
+		'transport'       => 'auto',
+		'output'          => [
 			[
-				'element'  => '.gridd-tp-footer_social_media',
+				'element'  => '.gridd-tp-footer_social_media.custom-options',
 				'property' => '--bg',
 			],
 		],
-		'choices'   => [
+		'choices'         => [
 			'formComponent' => 'TwitterPicker',
 			'colors'        => \Gridd\Theme::get_colorpicker_palette(),
 		],
-		'priority'  => 20,
+		'priority'        => 20,
+		'active_callback' => function() {
+			return get_theme_mod( 'footer_social_media_custom_options', false );
+		},
 	]
 );
 
 new \Kirki\Field\ReactColor(
 	[
-		'settings'  => 'footer_social_icons_icons_color',
-		'label'     => esc_html__( 'Icons Color', 'gridd' ),
-		'section'   => 'grid_part_details_footer_social_media',
-		'default'   => '#000000',
-		'transport' => 'auto',
-		'output'    => [
+		'settings'        => 'footer_social_icons_icons_color',
+		'label'           => esc_html__( 'Icons Color', 'gridd' ),
+		'section'         => 'grid_part_details_footer_social_media',
+		'default'         => '#000000',
+		'transport'       => 'auto',
+		'output'          => [
 			[
-				'element'  => '.gridd-tp-footer_social_media',
+				'element'  => '.gridd-tp-footer_social_media.custom-options',
 				'property' => '--cl',
 			],
 		],
-		'choices'   => [
+		'choices'         => [
 			'formComponent' => 'TwitterPicker',
 			'colors'        => \Gridd\Theme::get_colorpicker_palette(),
 		],
-		'priority'  => 30,
+		'priority'        => 30,
+		'active_callback' => function() {
+			return get_theme_mod( 'footer_social_media_custom_options', false );
+		},
 	]
 );
 
 Customizer::add_field(
 	[
-		'type'      => 'slider',
-		'settings'  => 'footer_social_icons_size',
-		'label'     => esc_html__( 'Size', 'gridd' ),
-		'section'   => 'grid_part_details_footer_social_media',
-		'default'   => 1,
-		'transport' => 'postMessage',
-		'transport' => 'auto',
-		'output'    => [
+		'type'            => 'slider',
+		'settings'        => 'footer_social_icons_size',
+		'label'           => esc_html__( 'Size', 'gridd' ),
+		'section'         => 'grid_part_details_footer_social_media',
+		'default'         => 1,
+		'transport'       => 'postMessage',
+		'transport'       => 'auto',
+		'output'          => [
 			[
-				'element'  => '.gridd-tp-footer_social_media',
+				'element'  => '.gridd-tp-footer_social_media.custom-options',
 				'property' => '--sz',
 			],
 		],
-		'choices'   => [
+		'choices'         => [
 			'min'    => .3,
 			'max'    => 3,
 			'step'   => .01,
 			'suffix' => 'em',
 		],
-		'priority'  => 40,
+		'priority'        => 40,
+		'active_callback' => function() {
+			return get_theme_mod( 'footer_social_media_custom_options', false );
+		},
 	]
 );
 
 Customizer::add_field(
 	[
-		'type'        => 'slider',
-		'settings'    => 'footer_social_icons_padding',
-		'label'       => esc_html__( 'Padding', 'gridd' ),
-		'description' => esc_html__( 'Controls how large the clickable area will be, and also the spacing between icons.', 'gridd' ),
-		'section'     => 'grid_part_details_footer_social_media',
-		'default'     => .5,
-		'transport'   => 'auto',
-		'output'      => [
+		'type'            => 'slider',
+		'settings'        => 'footer_social_icons_padding',
+		'label'           => esc_html__( 'Padding', 'gridd' ),
+		'description'     => esc_html__( 'Controls how large the clickable area will be, and also the spacing between icons.', 'gridd' ),
+		'section'         => 'grid_part_details_footer_social_media',
+		'default'         => .5,
+		'transport'       => 'auto',
+		'output'          => [
 			[
-				'element'  => '.gridd-tp-footer_social_media',
+				'element'  => '.gridd-tp-footer_social_media.custom-options',
 				'property' => '--pd',
 			],
 		],
-		'choices'     => [
+		'choices'         => [
 			'min'    => 0,
 			'max'    => 2,
 			'step'   => .01,
 			'suffix' => 'em',
 		],
-		'priority'    => 50,
+		'priority'        => 50,
+		'active_callback' => function() {
+			return get_theme_mod( 'footer_social_media_custom_options', false );
+		},
 	]
 );
 

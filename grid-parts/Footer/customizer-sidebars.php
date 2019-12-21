@@ -27,11 +27,12 @@ function gridd_add_footer_widget_area_options( $id ) {
 	$sanitization = new Sanitize();
 
 	// Add section.
-	Customizer::add_outer_section(
+	new \Kirki\Section(
 		"grid_part_details_footer_sidebar_$id",
 		[
 			/* translators: The number of the footer widget area. */
-			'title' => sprintf( esc_html__( 'Footer Sidebar %d', 'gridd' ), absint( $id ) ),
+			'title'           => sprintf( esc_html__( 'Footer Sidebar %d', 'gridd' ), absint( $id ) ),
+			'active_callback' => '__return_false',
 		]
 	);
 

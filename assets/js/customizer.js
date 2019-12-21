@@ -129,32 +129,6 @@
 		});
 
 		/**
-		 * Link link-color colorpickers hues.
-		 *
-		 * @since 2.0.0
-		 */
-		wp.customize( 'gridd_links_color', function( value ) {
-			value.bind( function( to ) { // eslint-disable-line no-unused-vars
-				var mainLinksHue;
-				if ( ! wp.customize.control( 'same_linkcolor_hues' ).setting.get() ) {
-					return;
-				}
-
-				mainLinksHue = wp.customize.control( 'gridd_links_color' ).getHue();
-
-				wp.customize.control.each( function( control ) {
-					if (
-						( 'gridd_links_color' !== control.id ) &&
-						( 'kirki-wcag-link-color' === control.params.type || 'kirki-wcag-lc' === control.params.type )
-					) {
-						control.setHue( mainLinksHue );
-						control.setting.set( control.getAutoColor( 'hsl(' + mainLinksHue + ',50%,50%)', true ) );
-					}
-				});
-			});
-		});
-
-		/**
 		 * Handle palette changes.
 		 *
 		 * @since 2.0.0
@@ -177,51 +151,6 @@
 						}
 					}
 				});
-			});
-		});
-
-		/**
-		 * Move the main links-color control to the typography setting if needed.
-		 *
-		 * @since 2.0.0
-		 */
-		if ( wp.customize.control( 'same_linkcolor_hues' ).setting.get() ) {
-			wp.customize.control( 'gridd_links_color' ).section( 'color_options' );
-		}
-
-		/**
-		 * Change all linkcolor hues when the switch is turned on.
-		 *
-		 * @since 2.0.0
-		 */
-		wp.customize( 'same_linkcolor_hues', function( value ) {
-			value.bind( function( to ) {
-				var mainLinksHue;
-				if ( ! to ) {
-					wp.customize.control( 'gridd_links_color' ).section( 'grid_part_details_content' );
-					wp.customize.control.each( function( control ) {
-						if (
-							( 'gridd_links_color' !== control.id ) &&
-							( 'kirki-wcag-link-color' === control.params.type || 'kirki-wcag-lc' === control.params.type )
-						) {
-							control.activate();
-						}
-					});
-				} else {
-					wp.customize.control( 'gridd_links_color' ).section( 'color_options' );
-					mainLinksHue = wp.customize.control( 'gridd_links_color' ).getHue();
-
-					wp.customize.control.each( function( control ) {
-						if (
-							( 'gridd_links_color' !== control.id ) &&
-							( 'kirki-wcag-link-color' === control.params.type || 'kirki-wcag-lc' === control.params.type )
-						) {
-							control.setHue( mainLinksHue );
-							control.setting.set( control.getAutoColor( 'hsl(' + mainLinksHue + ',50%,50%)', true ) );
-							control.deactivate();
-						}
-					});
-				}
 			});
 		});
 

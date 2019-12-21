@@ -2,11 +2,12 @@
 	background-color: var(--bg, #fff);
 	align-items: center;
 	justify-content: var(--ta, flex-end);
+	flex-wrap: wrap;
 }
 
 .gridd-tp-social_media a {
 	display: block;
-	max-width: calc(var(--sz, 1) * 1em);
+	max-width: calc(var(--fsr, 1) * 1em);
 	padding: calc(var(--pd, 0.5) * 1em);
 	box-sizing: content-box;
 	line-height: 1;
@@ -23,6 +24,6 @@
 
 .gridd-tp-social_media svg {
 	fill: var(--cl, #000);
-	max-width: calc(var(--sz, 1) * 1em);
+	max-width: calc(var(--fsr, 1) * 1em);
 	width: 100%;
 }

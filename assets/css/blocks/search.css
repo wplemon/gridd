@@ -40,19 +40,25 @@
  */
 .wp-block-search {
   display: flex;
-  flex-wrap: wrap; }
-  .wp-block-search .wp-block-search__label {
-    width: 100%; }
-  .wp-block-search .wp-block-search__input {
-    flex-grow: 1;
-    max-width: 360px; }
-  .wp-block-search .wp-block-search__button {
-    margin-left: 10px; }
+  flex-wrap: wrap;
+}
+.wp-block-search .wp-block-search__label {
+  width: 100%;
+}
+.wp-block-search .wp-block-search__input {
+  flex-grow: 1;
+  max-width: 360px;
+}
+.wp-block-search .wp-block-search__button {
+  margin-left: 10px;
+}
 
 .wp-block-search .wp-block-search__label {
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 .wp-block-search .wp-block-search__button {
-  margin-left: 0.5em; }
+  margin-left: 0.5em;
+}
 
 /*# sourceMappingURL=search.css.map */

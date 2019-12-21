@@ -23,9 +23,12 @@ $style = Style::get_instance( 'grid-part/header/social-media' );
 
 // Add stylesheet.
 $style->add_file( get_theme_file_path( 'grid-parts/Header/styles-social-icons.min.css' ) );
+
+$grid_part_classes  = 'gridd-tp gridd-tp-social_media';
+$grid_part_classes .= ( get_theme_mod( 'header_social_advanced' ) ) ? ' custom-options' : '';
 ?>
 
-<div <?php Theme::print_attributes( [ 'class' => 'gridd-tp gridd-tp-social_media' ], 'wrapper-social_media' ); ?>>
+<div <?php Theme::print_attributes( [ 'class' => $grid_part_classes ], 'wrapper-social_media' ); ?>>
 	<?php
 	/**
 	 * Print styles.

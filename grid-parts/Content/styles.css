@@ -100,11 +100,11 @@
 }
 
 .gridd-tp-content {
-	background-color: var(--bg, #fff);
+	background-color: var(--bg);
 }
 
 .gridd-tp-content select {
-	background-color: var(--bg, #fff);
+	background-color: var(--bg);
 }
 
 #content-width-calc-helper {
