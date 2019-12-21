@@ -40,17 +40,20 @@ function gridd_nav_customizer_options( $id ) {
 	/**
 	 * Add Customizer Sections.
 	 */
-	Customizer::add_outer_section(
+	new \Kirki\Section(
 		"grid_part_details_nav_$id",
 		[
 			/* translators: The navigation number. */
 			'title' => sprintf( esc_html__( 'Navigation %d', 'gridd' ), absint( $id ) ),
+			'priority' => 30,
+			'type'     => 'kirki-expanded',
+			'panel'    => 'theme_options',
 		]
 	);
 
 	/**
 	 * Focus on menu_locations section.
-	 */
+	 *
 	Customizer::add_field(
 		[
 			'settings' => "gridd_logo_focus_on_menu_locations_$id",
@@ -60,14 +63,19 @@ function gridd_nav_customizer_options( $id ) {
 			'default'  => '<div style="margin-bottom:1em;"><button class="button-gridd-focus global-focus button button button-large" data-context="section" data-focus="menu_locations">' . esc_html__( 'Click here to edit your menus', 'gridd' ) . '</button></div>',
 		]
 	);
+	*/
 
-	new \Kirki\Field\Checkbox(
+	new \Kirki\Field\Checkbox_Switch(
 		[
 			'settings'  => "nav_{$id}_custom_options",
-			'label'     => esc_html__( 'Edit Advanced Options', 'gridd' ),
 			'section'   => "grid_part_details_nav_$id",
 			'default'   => false,
 			'transport' => 'refresh',
+			'priority'  => -999,
+			'choices'   => [
+				'off' => esc_html__( 'Inherit Options', 'gridd' ),
+				'on'  => esc_html__( 'Override Options', 'gridd' ),
+			],
 		]
 	);
 
