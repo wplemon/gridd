@@ -12,32 +12,54 @@ use Gridd\Customizer\Sanitize;
 $sanitization = new Sanitize();
 
 // Add section.
-Customizer::add_outer_section(
+new \Kirki\Section(
 	'grid_part_details_footer_copyright',
 	[
-		/* translators: The grid-part label. */
-		'title' => esc_html__( 'Copyright Area', 'gridd' ),
+		'title'           => esc_html__( 'Copyright Area', 'gridd' ),
+		'priority'        => 30,
+		'type'            => 'kirki-expanded',
+		'panel'           => 'theme_options',
+		'active_callback' => function() {
+			return \Gridd\Customizer::is_section_active_part( 'footer_copyright' );
+		},
+	]
+);
+
+new \Kirki\Field\Checkbox_Switch(
+	[
+		'settings'  => 'footer_copyright_custom_options',
+		'section'   => 'grid_part_details_footer_copyright',
+		'default'   => false,
+		'transport' => 'refresh',
+		'priority'  => -999,
+		'choices'   => [
+			'off' => esc_html__( 'Inherit Options', 'gridd' ),
+			'on'  => esc_html__( 'Override Options', 'gridd' ),
+		],
 	]
 );
 
 new \Kirki\Field\ReactColor(
 	[
-		'settings'  => 'gridd_grid_footer_copyright_bg_color',
-		'label'     => esc_html__( 'Copyright area background-color', 'gridd' ),
-		'section'   => 'grid_part_details_footer_copyright',
-		'default'   => '#ffffff',
-		'transport' => 'auto',
-		'output'    => [
+		'settings'        => 'gridd_grid_footer_copyright_bg_color',
+		'label'           => esc_html__( 'Copyright area background-color', 'gridd' ),
+		'section'         => 'grid_part_details_footer_copyright',
+		'default'         => '#ffffff',
+		'transport'       => 'auto',
+		'output'          => [
 			[
 				'element'  => '.gridd-tp-footer_copyright',
 				'property' => '--bg',
 			],
 		],
-		'priority'  => 10,
-		'choices'   => [
+		'priority'        => 10,
+		'choices'         => [
 			'formComponent' => 'TwitterPicker',
 			'colors'        => \Gridd\Theme::get_colorpicker_palette(),
 		],
+		'active_callback' => function() {
+			return get_theme_mod( 'footer_copyright_custom_options', false );
+		},
 	]
 );
 
@@ -60,36 +82,42 @@ new \WPLemon\Field\WCAGTextColor(
 			'appearance'      => 'hidden',
 		],
 		'sanitize_callback' => [ $sanitization, 'color_hex' ],
+		'active_callback'   => function() {
+			return get_theme_mod( 'footer_copyright_custom_options', false );
+		},
 	]
 );
 
 Customizer::add_field(
 	[
-		'type'        => 'slider',
-		'settings'    => 'gridd_grid_footer_copyright_text_font_size',
-		'label'       => esc_html__( 'Font Size', 'gridd' ),
-		'description' => Customizer::get_control_description(
+		'type'            => 'slider',
+		'settings'        => 'gridd_grid_footer_copyright_text_font_size',
+		'label'           => esc_html__( 'Font Size', 'gridd' ),
+		'description'     => Customizer::get_control_description(
 			[
 				'short'   => '',
 				'details' => esc_html__( 'The font-size defined here is relative to the body font-size so a size of 1em will be the same ssize as your content.', 'gridd' ),
 			]
 		),
-		'section'     => 'grid_part_details_footer_copyright',
-		'default'     => 1,
-		'transport'   => 'auto',
-		'output'      => [
+		'section'         => 'grid_part_details_footer_copyright',
+		'default'         => 1,
+		'transport'       => 'auto',
+		'output'          => [
 			[
 				'element'  => '.gridd-tp-footer_copyright',
 				'property' => '--fs',
 			],
 		],
-		'priority'    => 40,
-		'choices'     => [
+		'priority'        => 40,
+		'choices'         => [
 			'min'    => .5,
 			'max'    => 2,
 			'step'   => .01,
 			'suffix' => 'em',
 		],
+		'active_callback' => function() {
+			return get_theme_mod( 'footer_copyright_custom_options', false );
+		},
 	]
 );
 
@@ -120,7 +148,7 @@ new \Kirki\Field\RadioButtonset(
 
 Customizer::add_field(
 	[
-		'type'              => 'code',
+		'type'              => 'textarea',
 		'settings'          => 'gridd_copyright_text',
 		'label'             => esc_html__( 'Copyright Text', 'gridd' ),
 		'description'       => esc_html__( 'The text for your copyright area (accepts HTML).', 'gridd' ),

@@ -44,10 +44,10 @@ function gridd_nav_customizer_options( $id ) {
 		"grid_part_details_nav_$id",
 		[
 			/* translators: The navigation number. */
-			'title' => sprintf( esc_html__( 'Navigation %d', 'gridd' ), absint( $id ) ),
-			'priority' => 30,
-			'type'     => 'kirki-expanded',
-			'panel'    => 'theme_options',
+			'title'           => sprintf( esc_html__( 'Navigation %d', 'gridd' ), absint( $id ) ),
+			'priority'        => 30,
+			'type'            => 'kirki-expanded',
+			'panel'           => 'theme_options',
 			'active_callback' => function() use ( $id ) {
 				return \Gridd\Customizer::is_section_active_part( "nav_$id" );
 			},
