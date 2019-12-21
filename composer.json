@@ -52,7 +52,6 @@
     "kirki-framework/module-selective-refresh": "*",
     "kirki-framework/module-tooltips": "*",
     "kirki-framework/module-webfonts": "*",
-    "wptrt/control-color-alpha": "dev-master",
     "wplemon/control-wcag-auto-textcolor": "*",
     "wplemon/control-wcag-auto-linkcolor": "*",
     "wplemon/control-palette-builder": "dev-master",
