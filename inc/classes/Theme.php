@@ -422,16 +422,13 @@ class Theme {
 	 * @static
 	 * @access public
 	 * @since 1.0
-	 * @param string $path     The file path.
-	 * @param bool   $absolute Set to true if we have an absolute path instead of relative to the theme root.
-	 * @return string          The file contents or empty string if no file was found.
+	 * @param string $path The file path.
+	 * @return string      The file contents or empty string if no file was found.
 	 */
-	public static function get_fcontents( $path, $absolute = false ) {
+	public static function get_fcontents( $path ) {
 		ob_start();
-		if ( $absolute && file_exists( $path ) ) {
-			include $path;
-		} else {
-			include locate_template( $path, false, false );
+		if ( ! include $path ) {
+			include get_theme_file_path( $path );
 		}
 		return ob_get_clean();
 	}
