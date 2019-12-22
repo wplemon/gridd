@@ -175,17 +175,7 @@
 	 */
 	function griddMoveSectionControlsOnDemand( newSectionID, oldSectionID ) {
 		var newSection = wp.customize.section( newSectionID ),
-			oldSection = wp.customize.section( oldSectionID ),
-			moveSectionControls = function( newSection, oldSection ) {
-				oldSection.controls().forEach( function( control ) {
-					control.section( newSection.id );
-				});
-				setTimeout( function() {
-					oldSection.expanded.bind( function() {
-						newSection.expand();
-					});
-				}, 1000 );
-			};
+			oldSection = wp.customize.section( oldSectionID );
 
 		if ( ! newSection || ! oldSection ) {
 			return;
@@ -196,7 +186,9 @@
 			if ( ! window.alreadyProcessedSectionMoves[ oldSection.id ] ) {
 				oldSection.activate( true );
 				oldSection.expand();
-				moveSectionControls( newSection, oldSection );
+				oldSection.controls().forEach( function( control ) {
+					control.section( newSection.id );
+				});
 				oldSection.activate( false );
 				newSection.expand();
 			}
