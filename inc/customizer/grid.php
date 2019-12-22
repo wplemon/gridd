@@ -18,7 +18,6 @@ new \Kirki\Section(
 	[
 		'title'    => esc_html__( 'Main Grid Layout', 'gridd' ),
 		'priority' => -100,
-		'type'     => 'kirki-expanded',
 		'panel'    => 'theme_options',
 	]
 );
@@ -84,22 +83,6 @@ Customizer::add_field(
 				'property' => '--mw',
 			],
 		],
-	]
-);
-
-new \Kirki\Field\ReactColor(
-	[
-		'settings'          => 'background_color',
-		'label'             => esc_html__( 'Background Color', 'gridd' ),
-		'section'           => 'gridd_grid',
-		'default'           => '#ffffff',
-		'transport'         => 'postMessage',
-		'priority'          => 90,
-		'choices'           => [
-			'formComponent' => 'TwitterPicker',
-			'colors'        => \Gridd\Theme::get_colorpicker_palette(),
-		],
-		'sanitize_callback' => 'sanitize_hex_color_no_hash',
 	]
 );
 

@@ -181,6 +181,23 @@ new \Kirki\Field\Radio(
 	]
 );
 
+new \Kirki\Field\ReactColor(
+	[
+		'settings'          => 'background_color',
+		'label'             => esc_html__( 'Background Color', 'gridd' ),
+		'section'           => 'theme_options',
+		'default'           => '#ffffff',
+		'transport'         => 'postMessage',
+		'priority'          => 60,
+		'choices'           => [
+			'formComponent' => 'TwitterPicker',
+			'colors'        => \Gridd\Theme::get_colorpicker_palette(),
+		],
+		'sanitize_callback' => 'sanitize_hex_color_no_hash',
+	]
+);
+
+
 /**
  * Add the config.
  */

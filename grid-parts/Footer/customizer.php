@@ -14,8 +14,9 @@ $sanitization = new Sanitize();
 new \Kirki\Section(
 	'grid_part_details_footer',
 	[
-		'title'    => esc_html__( 'Footer', 'gridd' ),
-		'priority' => 30,
+		'title'    => esc_html__( 'Footer Grid', 'gridd' ),
+		'priority' => -70,
+		'panel'    => 'theme_options',
 	]
 );
 

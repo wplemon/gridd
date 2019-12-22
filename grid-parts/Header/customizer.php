@@ -27,12 +27,12 @@ add_action(
 	}
 );
 
-Customizer::add_section(
+new \Kirki\Section(
 	'grid_part_details_header',
 	[
-		'title'    => esc_html__( 'Header', 'gridd' ),
+		'title'    => esc_html__( 'Header Grid', 'gridd' ),
 		'priority' => -80,
-		'panel'    => 'layout_blocks',
+		'panel'    => 'theme_options',
 	]
 );
 
