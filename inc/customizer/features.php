@@ -172,7 +172,7 @@ Customizer::add_field(
 		'type'        => 'code',
 		'settings'    => 'excerpt_read_more',
 		'label'       => esc_attr__( 'Read More link', 'gridd' ),
-		'description' => esc_html__( 'If you want to include the post title in your read-more link, you can use "%s" (without the quotes) and it will be replaced with the post\'s title.', 'gridd' ), // phpcs:ignore WordPress.WP.I18n.MissingTranslatorsComment
+		'description' => esc_html__( 'If you want to include the post title in your read-more link, you can use "%s" and it will be replaced with the post\'s title.', 'gridd' ), // phpcs:ignore WordPress.WP.I18n.MissingTranslatorsComment
 		'section'     => 'gridd_features_archive',
 		'priority'    => 50,
 		/* translators: %s: Name of current post. Only visible to screen readers */

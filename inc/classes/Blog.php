@@ -52,11 +52,7 @@ class Blog {
 		if ( false !== strpos( $read_more, '%s' ) ) {
 			$read_more = sprintf(
 				$read_more,
-				get_the_title(
-					[
-						'echo' => false,
-					]
-				)
+				get_the_title( get_the_ID() )
 			);
 		}
 		return ' <a href="' . esc_url_raw( get_the_permalink() ) . '">' . wp_kses_post( $read_more ) . '</a> ';
