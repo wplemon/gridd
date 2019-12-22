@@ -97,7 +97,6 @@ new \Kirki\Field\ReactColor(
 				'context'  => [ 'editor' ],
 			],
 		],
-		'sanitize_callback' => 'sanitize_hex_color_no_hash',
 	]
 );
 
