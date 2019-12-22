@@ -105,11 +105,9 @@ class Scripts {
 
 		// An array of scripts to print.
 		$scripts = [
-			get_theme_file_path( 'assets/js/passive-event-listeners-polyfill.min.js' ),
 			get_theme_file_path( 'assets/js/skip-link.min.js' ),
 			get_theme_file_path( 'assets/js/nav.min.js' ),
 			get_theme_file_path( 'assets/js/responsive-videos.min.js' ),
-			get_theme_file_path( 'assets/js/css-vars-polyfill.min.js' ),
 		];
 
 		// Comments.
