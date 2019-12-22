@@ -323,7 +323,17 @@ h3.gridd-customizer-section-title {
 #sub-accordion-section-grid_part_details_nav_8,
 #sub-accordion-section-grid_part_details_nav_9,
 #sub-accordion-section-grid_part_details_nav_10,
-#sub-accordion-section-title_tagline {
+#sub-accordion-section-title_tagline,
+#sub-accordion-section-sidebar-widgets-sidebar-1,
+#sub-accordion-section-sidebar-widgets-sidebar-2,
+#sub-accordion-section-sidebar-widgets-sidebar-3,
+#sub-accordion-section-sidebar-widgets-sidebar-4,
+#sub-accordion-section-sidebar-widgets-sidebar-5,
+#sub-accordion-section-sidebar-widgets-sidebar-6,
+#sub-accordion-section-sidebar-widgets-sidebar-7,
+#sub-accordion-section-sidebar-widgets-sidebar-8,
+#sub-accordion-section-sidebar-widgets-sidebar-9,
+#sub-accordion-section-sidebar-widgets-sidebar-10 {
 
 	.customize-section-title {
 		padding-bottom: 30px;
@@ -354,13 +364,33 @@ h3.gridd-customizer-section-title {
 #customize-control-footer_social_media_custom_options,
 #customize-control-branding_custom_options,
 #customize-control-header_contact_info_custom_options,
-#customize-control-header_search_custom_options {
+#customize-control-header_search_custom_options,
+#customize-control-gridd_grid_sidebar_1_custom_options,
+#customize-control-gridd_grid_sidebar_2_custom_options,
+#customize-control-gridd_grid_sidebar_3_custom_options,
+#customize-control-gridd_grid_sidebar_4_custom_options,
+#customize-control-gridd_grid_sidebar_5_custom_options,
+#customize-control-gridd_grid_sidebar_6_custom_options,
+#customize-control-gridd_grid_sidebar_7_custom_options,
+#customize-control-gridd_grid_sidebar_8_custom_options,
+#customize-control-gridd_grid_sidebar_9_custom_options,
+#customize-control-gridd_grid_sidebar_10_custom_options {
 	position: absolute;
 	top: 30px;
 }
 
 #customize-control-header_custom_options,
-#customize-control-branding_custom_options {
+#customize-control-branding_custom_options,
+#customize-control-gridd_grid_sidebar_1_custom_options,
+#customize-control-gridd_grid_sidebar_2_custom_options,
+#customize-control-gridd_grid_sidebar_3_custom_options,
+#customize-control-gridd_grid_sidebar_4_custom_options,
+#customize-control-gridd_grid_sidebar_5_custom_options,
+#customize-control-gridd_grid_sidebar_6_custom_options,
+#customize-control-gridd_grid_sidebar_7_custom_options,
+#customize-control-gridd_grid_sidebar_8_custom_options,
+#customize-control-gridd_grid_sidebar_9_custom_options,
+#customize-control-gridd_grid_sidebar_10_custom_options {
 	top: 60px;
 }
 

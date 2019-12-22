@@ -34,51 +34,48 @@ function gridd_sidebar_customizer_options( $id ) {
 		[
 			'panel'           => 'theme_options',
 			'title'           => $label,
-			'type'            => 'kirki-expanded',
-			'active_callback' => function() use ( $id ) {
-				return \Gridd\Customizer::is_section_active_part( "sidebar_$id" );
-			},
+			'active_callback' => '__return_false',
 		]
 	);
 
-	/**
-	 * Focus on widget-area.
-	 */
-
-	/*
-	 * WIP - Disabled the control because we're nw moving these to their respective widget-areas.
-	Customizer::add_field(
+	new \Kirki\Field\Checkbox_Switch(
 		[
-			'settings' => "gridd_sidebar_focus_on_sidebar_{$id}_section",
-			'type'     => 'custom',
-			'label'    => '',
-			'section'  => "grid_part_details_sidebar_$id",
-			'default'  => '<div style="margin-bottom:1em;"><button class="button-gridd-focus global-focus button button button-large" data-context="section" data-focus="sidebar-widgets-' . "sidebar-{$id}" . '">' . esc_html__( 'Click here to edit your widgets', 'gridd' ) . '</button></div>',
+			'settings'  => "gridd_grid_sidebar_{$id}_custom_options",
+			'section'   => "grid_part_details_sidebar_$id",
+			'default'   => false,
+			'transport' => 'refresh',
+			'priority'  => -999,
+			'choices'   => [
+				'off' => esc_html__( 'Inherit Options', 'gridd' ),
+				'on'  => esc_html__( 'Override Options', 'gridd' ),
+			],
 		]
 	);
-	*/
 
 	new \Kirki\Field\ReactColor(
 		[
-			'settings'  => "gridd_grid_sidebar_{$id}_background_color",
-			'label'     => esc_html__( 'Background Color', 'gridd' ),
-			'section'   => "grid_part_details_sidebar_$id",
-			'default'   => '#ffffff',
-			'priority'  => 10,
-			'choices'   => [
+			'settings'        => "gridd_grid_sidebar_{$id}_background_color",
+			'label'           => esc_html__( 'Background Color', 'gridd' ),
+			'section'         => "grid_part_details_sidebar_$id",
+			'default'         => '#ffffff',
+			'priority'        => 10,
+			'choices'         => [
 				'alpha' => true,
 			],
-			'transport' => 'auto',
-			'output'    => [
+			'transport'       => 'auto',
+			'output'          => [
 				[
-					'element'  => ".gridd-tp-sidebar_$id",
+					'element'  => ".gridd-tp-sidebar_$id.custom-options",
 					'property' => '--bg',
 				],
 			],
-			'choices'   => [
+			'choices'         => [
 				'formComponent' => 'TwitterPicker',
 				'colors'        => \Gridd\Theme::get_colorpicker_palette(),
 			],
+			'active_callback' => function() use ( $id ) {
+				return get_theme_mod( "gridd_grid_sidebar_{$id}_custom_options", false );
+			},
 		]
 	);
 
@@ -96,11 +93,14 @@ function gridd_sidebar_customizer_options( $id ) {
 			'transport'         => 'auto',
 			'output'            => [
 				[
-					'element'  => ".gridd-tp-sidebar_$id",
+					'element'  => ".gridd-tp-sidebar_$id.custom-options",
 					'property' => '--cl',
 				],
 			],
 			'sanitize_callback' => [ $sanitization, 'color_hex' ],
+			'active_callback'   => function() use ( $id ) {
+				return get_theme_mod( "gridd_grid_sidebar_{$id}_custom_options", false );
+			},
 		]
 	);
 
@@ -117,7 +117,7 @@ function gridd_sidebar_customizer_options( $id ) {
 			'transport'         => 'auto',
 			'output'            => [
 				[
-					'element'  => ".gridd-tp-sidebar_$id",
+					'element'  => ".gridd-tp-sidebar_$id.custom-options",
 					'property' => '--lc',
 				],
 			],
@@ -128,18 +128,18 @@ function gridd_sidebar_customizer_options( $id ) {
 				'forceCompliance' => get_theme_mod( 'target_color_compliance', 'auto' ),
 			],
 			'sanitize_callback' => [ $sanitization, 'color_hex' ],
-			'active_callback'   => function() {
-				return ! get_theme_mod( 'same_linkcolor_hues', true );
+			'active_callback'   => function() use ( $id ) {
+				return get_theme_mod( "gridd_grid_sidebar_{$id}_custom_options", false );
 			},
 		]
 	);
 
 	Customizer::add_field(
 		[
-			'type'        => 'dimension',
-			'settings'    => "gridd_grid_sidebar_{$id}_padding",
-			'label'       => esc_html__( 'Padding', 'gridd' ),
-			'description' => Customizer::get_control_description(
+			'type'            => 'dimension',
+			'settings'        => "gridd_grid_sidebar_{$id}_padding",
+			'label'           => esc_html__( 'Padding', 'gridd' ),
+			'description'     => Customizer::get_control_description(
 				[
 					'short'   => '',
 					'details' => sprintf(
@@ -149,34 +149,40 @@ function gridd_sidebar_customizer_options( $id ) {
 					),
 				]
 			),
-			'section'     => "grid_part_details_sidebar_$id",
-			'priority'    => 40,
-			'default'     => '1em',
-			'transport'   => 'auto',
-			'output'      => [
+			'section'         => "grid_part_details_sidebar_$id.custom-options",
+			'priority'        => 40,
+			'default'         => '1em',
+			'transport'       => 'auto',
+			'output'          => [
 				[
 					'element'  => ".gridd-tp-sidebar_$id",
 					'property' => '--pd',
 				],
 			],
+			'active_callback' => function() use ( $id ) {
+				return get_theme_mod( "gridd_grid_sidebar_{$id}_custom_options", false );
+			},
 		]
 	);
 
 	Customizer::add_field(
 		[
-			'type'      => 'dimension',
-			'settings'  => "gridd_grid_sidebar_{$id}_widgets_margin",
-			'label'     => esc_html__( 'Margin between widgets', 'gridd' ),
-			'section'   => "grid_part_details_sidebar_$id",
-			'priority'  => 43,
-			'default'   => '1em',
-			'transport' => 'auto',
-			'output'    => [
+			'type'            => 'dimension',
+			'settings'        => "gridd_grid_sidebar_{$id}_widgets_margin",
+			'label'           => esc_html__( 'Margin between widgets', 'gridd' ),
+			'section'         => "grid_part_details_sidebar_$id",
+			'priority'        => 43,
+			'default'         => '1em',
+			'transport'       => 'auto',
+			'output'          => [
 				[
-					'element'  => ".gridd-tp-sidebar_$id",
+					'element'  => ".gridd-tp-sidebar_$id.custom-options",
 					'property' => '--mr',
 				],
 			],
+			'active_callback' => function() use ( $id ) {
+				return get_theme_mod( "gridd_grid_sidebar_{$id}_custom_options", false );
+			},
 		]
 	);
 }
