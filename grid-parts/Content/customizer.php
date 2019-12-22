@@ -127,9 +127,8 @@ new \WPLemon\Field\WCAGLinkColor(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Dimension(
 	[
-		'type'      => 'dimension',
 		'settings'  => 'content_max_width',
 		'label'     => esc_html__( 'Content Maximum Width', 'gridd' ),
 		'section'   => 'grid_part_details_content',
@@ -145,9 +144,8 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
-		'type'            => 'slider',
 		'settings'        => 'content_padding_horizontal',
 		'label'           => esc_html__( 'Horizontal Content Padding', 'gridd' ),
 		'section'         => 'grid_part_details_content',
@@ -173,9 +171,8 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
-		'type'            => 'slider',
 		'settings'        => 'content_padding_top',
 		'label'           => esc_html__( 'Top Content Padding', 'gridd' ),
 		'section'         => 'grid_part_details_content',
@@ -201,9 +198,8 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
-		'type'            => 'slider',
 		'settings'        => 'content_padding_bottom',
 		'label'           => esc_html__( 'Bottom Content Padding', 'gridd' ),
 		'section'         => 'grid_part_details_content',
