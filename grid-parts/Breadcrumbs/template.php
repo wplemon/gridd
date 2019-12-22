@@ -6,7 +6,6 @@
  * @since 1.0
  */
 
-use Gridd\Style;
 use Gridd\Theme;
 
 // Early exit if we're on the frontpage.
@@ -20,14 +19,6 @@ if ( get_theme_mod( 'breadcrumbs_custom_options', false ) ) {
 }
 ?>
 <div <?php Theme::print_attributes( [ 'class' => $grid_part_class ], 'wrapper-breadcrumbs' ); ?>>
-	<?php
-	/**
-	 * Print styles.
-	 */
-	Style::get_instance( 'grid-part/breadcrumbs' )
-		->add_file( __DIR__ . '/styles.min.css' )
-		->the_css( 'gridd-inline-css-breadcrumbs' );
-	?>
 	<div class="inner">
 		<?php
 		// The breadcrumbs.

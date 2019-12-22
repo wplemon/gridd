@@ -138,24 +138,6 @@ class Navigation extends Grid_Part {
 	}
 
 	/**
-	 * Gets the global styles.
-	 * We're checking if these have already been added
-	 * and if they have, we return an empty string.
-	 *
-	 * @static
-	 * @access public
-	 * @since 1.0
-	 * @return string
-	 */
-	public static function get_global_styles() {
-		if ( self::$global_styles_already_included ) {
-			return '';
-		}
-		self::$global_styles_already_included = true;
-		return Theme::get_fcontents( __DIR__ . '/styles-global.min.css', true );
-	}
-
-	/**
 	 * Gets the number of navigation menus.
 	 * Returns the object's $number property.
 	 *
