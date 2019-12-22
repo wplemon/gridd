@@ -418,6 +418,10 @@ h3.gridd-customizer-section-title {
   top: 30px;
 }
 
+#customize-control-header_custom_options {
+  top: 60px;
+}
+
 .control-section-kirki-expanded {
   padding-bottom: 0 !important;
 }

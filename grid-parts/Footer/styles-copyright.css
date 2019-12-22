@@ -2,7 +2,7 @@
 	width: 100%;
 	align-items: center;
 	padding: var(--pd, 1em);
-  color: var(--cl, #000);
+	color: var(--cl, #000);
 }
 
 .gridd-tp-footer_copyright.custom-option {

@@ -36,6 +36,20 @@ new \Kirki\Section(
 	]
 );
 
+new \Kirki\Field\Checkbox_Switch(
+	[
+		'settings'  => 'header_custom_options',
+		'section'   => 'grid_part_details_header',
+		'default'   => false,
+		'transport' => 'refresh',
+		'priority'  => -999,
+		'choices'   => [
+			'off' => esc_html__( 'Inherit Options', 'gridd' ),
+			'on'  => esc_html__( 'Override Options', 'gridd' ),
+		],
+	]
+);
+
 Customizer::add_field(
 	[
 		'settings'          => 'gridd_header_grid',
@@ -74,98 +88,155 @@ Customizer::add_field(
 
 Customizer::add_field(
 	[
-		'type'      => 'dimension',
-		'settings'  => 'header_max_width',
-		'label'     => esc_html__( 'Header Maximum Width', 'gridd' ),
-		'section'   => 'grid_part_details_header',
-		'default'   => '100%',
-		'priority'  => 20,
-		'transport' => 'auto',
-		'output'    => [
+		'type'            => 'dimension',
+		'settings'        => 'header_max_width',
+		'label'           => esc_html__( 'Header Maximum Width', 'gridd' ),
+		'section'         => 'grid_part_details_header',
+		'default'         => '100%',
+		'priority'        => 20,
+		'transport'       => 'auto',
+		'output'          => [
 			[
-				'element'  => '.gridd-tp-header',
+				'element'  => '.gridd-tp-header.custom-options',
 				'property' => '--mw',
 			],
 		],
+		'active_callback' => function() {
+			return get_theme_mod( 'header_custom_options', false );
+		},
 	]
 );
 
 Customizer::add_field(
 	[
-		'type'      => 'dimension',
-		'settings'  => 'gridd_grid_header_padding',
-		'label'     => esc_html__( 'Header Padding', 'gridd' ),
-		'section'   => 'grid_part_details_header',
-		'default'   => '0',
-		'priority'  => 30,
-		'transport' => 'auto',
-		'output'    => [
+		'type'            => 'dimension',
+		'settings'        => 'gridd_grid_header_padding',
+		'label'           => esc_html__( 'Header Padding', 'gridd' ),
+		'section'         => 'grid_part_details_header',
+		'default'         => '0',
+		'priority'        => 30,
+		'transport'       => 'auto',
+		'output'          => [
 			[
-				'element'  => '.gridd-tp-header',
+				'element'  => '.gridd-tp-header.custom-options',
 				'property' => '--pd',
 			],
 		],
+		'active_callback' => function() {
+			return get_theme_mod( 'header_custom_options', false );
+		},
 	]
 );
 
 Customizer::add_field(
 	[
-		'type'        => 'dimension',
-		'settings'    => 'gridd_grid_header_grid_gap',
-		'label'       => esc_html__( 'Grid Gap', 'gridd' ),
-		'description' => Customizer::get_control_description(
+		'type'            => 'dimension',
+		'settings'        => 'gridd_grid_header_grid_gap',
+		'label'           => esc_html__( 'Grid Gap', 'gridd' ),
+		'description'     => Customizer::get_control_description(
 			[
 				'details' => __( 'Adds a gap between your grid-parts, both horizontally and vertically. If you have a background-color or background-image defined for your header, then these will be visible through these gaps which creates a unique appearance since each grid-part looks separate. For more information please read <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
 			]
 		),
-		'section'     => 'grid_part_details_header',
-		'default'     => '0',
-		'priority'    => 40,
-		'transport'   => 'auto',
-		'output'      => [
+		'section'         => 'grid_part_details_header',
+		'default'         => '0',
+		'priority'        => 40,
+		'transport'       => 'auto',
+		'output'          => [
 			[
-				'element'  => '.gridd-tp-header',
+				'element'  => '.gridd-tp-header.custom-options',
 				'property' => '--gg',
 			],
 		],
+		'active_callback' => function() {
+			return get_theme_mod( 'header_custom_options', false );
+		},
 	]
 );
 
 new \Kirki\Field\ReactColor(
 	[
-		'settings'    => 'header_background_color',
-		'label'       => esc_html__( 'Background Color', 'gridd' ),
-		'description' => Customizer::get_control_description(
+		'settings'        => 'header_background_color',
+		'label'           => esc_html__( 'Background Color', 'gridd' ),
+		'description'     => Customizer::get_control_description(
 			[
 				'details' => esc_html__( 'Choose a background color for the header. Individual grid-parts can override this by setting their own background color for their area. If you are using a grid-gap the color defined here will be visible between grid-parts.', 'gridd' ),
 			]
 		),
-		'section'     => 'grid_part_details_header',
-		'default'     => '#ffffff',
-		'priority'    => 50,
-		'transport'   => 'auto',
-		'output'      => [
+		'section'         => 'grid_part_details_header',
+		'default'         => '#ffffff',
+		'priority'        => 50,
+		'transport'       => 'auto',
+		'output'          => [
 			[
-				'element'  => '.gridd-tp-header',
+				'element'  => '.gridd-tp-header.custom-options',
 				'property' => '--bg',
 			],
 		],
-		'choices'     => [
+		'choices'         => [
 			'formComponent' => 'TwitterPicker',
 			'colors'        => \Gridd\Theme::get_colorpicker_palette(),
 		],
+		'active_callback' => function() {
+			return get_theme_mod( 'header_custom_options', false );
+		},
 	]
 );
 
-Customizer::add_field(
+new \WPLemon\Field\WCAGTextColor(
 	[
-		'type'        => 'checkbox',
-		'settings'    => 'header_parts_background_override',
-		'label'       => esc_html__( 'Override Header Parts Background', 'gridd' ),
-		'description' => esc_html__( 'Enable this option to force-override the background color of all grid-parts in your header.', 'gridd' ),
-		'section'     => 'grid_part_details_header',
-		'default'     => false,
-		'priority'    => 60,
+		'settings'          => 'header_text_color',
+		'label'             => esc_html__( 'Text Color', 'gridd' ),
+		'section'           => 'grid_part_details_header',
+		'priority'          => 51,
+		'default'           => '#000000',
+		'output'            => [
+			[
+				'element'  => '.gridd-tp-header.custom-options',
+				'property' => '--cl',
+			],
+		],
+		'transport'         => 'auto',
+		'choices'           => [
+			'backgroundColor' => 'header_background_color',
+			'appearance'      => 'hidden',
+		],
+		'sanitize_callback' => [ $sanitization, 'color_hex' ],
+	]
+);
+
+new \WPLemon\Field\WCAGLinkColor(
+	[
+		'settings'          => 'header_links_color',
+		'label'             => esc_html__( 'Links Color', 'gridd' ),
+		'description'       => esc_html__( 'Select the hue for you links. The color will be auto-calculated to ensure maximum readability according to WCAG.', 'gridd' ),
+		'section'           => 'grid_part_details_header',
+		'transport'         => 'auto',
+		'priority'          => 52,
+		'choices'           => [
+			'alpha' => false,
+		],
+		'default'           => '#0f5e97',
+		'choices'           => [
+			'backgroundColor' => 'header_background_color',
+			'textColor'       => 'header_text_color',
+			'linksUnderlined' => true,
+			'forceCompliance' => get_theme_mod( 'target_color_compliance', 'auto' ),
+		],
+		'output'            => [
+			[
+				'element'  => '.gridd-tp-header.custom-options',
+				'property' => '--lc',
+			],
+			[
+				'element'  => '.gridd-tp-header.custom-options',
+				'property' => '--acl',
+			],
+		],
+		'sanitize_callback' => [ $sanitization, 'color_hex' ],
+		'active_callback'   => function() {
+			return get_theme_mod( 'header_custom_options', false );
+		},
 	]
 );
 
@@ -175,7 +246,7 @@ new \Kirki\Field\RadioButtonset(
 		'label'             => esc_html__( 'Drop Shadow Intensity', 'gridd' ),
 		'description'       => esc_html__( 'Set to "None" to disable the shadow, or increase the intensity for a more dramatic effect.', 'gridd' ),
 		'section'           => 'grid_part_details_header',
-		'default'           => '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
+		'default'           => 'none',
 		'transport'         => 'postMessage',
 		'transport'         => 'auto',
 		'output'            => [

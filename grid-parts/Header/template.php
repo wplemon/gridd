@@ -57,6 +57,7 @@ if ( get_theme_mod( 'header_parts_background_override', false ) ) {
 
 $wrapper_class  = 'gridd-tp gridd-tp-header';
 $wrapper_class .= get_theme_mod( 'gridd_header_sticky', false ) ? ' gridd-sticky' : '';
+$wrapper_class .= get_theme_mod( 'header_custom_options', false ) ? ' custom-options' : '';
 $attrs          = [
 	'class' => $wrapper_class,
 	'role'  => 'banner',
