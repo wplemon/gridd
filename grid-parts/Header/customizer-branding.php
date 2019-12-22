@@ -57,24 +57,41 @@ add_action(
 	}
 );
 
+new \Kirki\Field\Checkbox_Switch(
+	[
+		'settings'  => 'branding_custom_options',
+		'section'   => 'title_tagline',
+		'default'   => false,
+		'transport' => 'refresh',
+		'priority'  => -999,
+		'choices'   => [
+			'off' => esc_html__( 'Inherit Options', 'gridd' ),
+			'on'  => esc_html__( 'Override Options', 'gridd' ),
+		],
+	]
+);
+
 new \Kirki\Field\ReactColor(
 	[
-		'settings'  => 'gridd_grid_header_branding_background_color',
-		'label'     => esc_html__( 'Background Color', 'gridd' ),
-		'section'   => 'title_tagline',
-		'priority'  => 10,
-		'default'   => '#ffffff',
-		'transport' => 'auto',
-		'output'    => [
+		'settings'        => 'gridd_grid_header_branding_background_color',
+		'label'           => esc_html__( 'Background Color', 'gridd' ),
+		'section'         => 'title_tagline',
+		'priority'        => 200,
+		'default'         => '#ffffff',
+		'transport'       => 'auto',
+		'output'          => [
 			[
-				'element'  => '.gridd-tp-header_branding',
+				'element'  => '.gridd-tp-header_branding.custom-options',
 				'property' => '--bg',
 			],
 		],
-		'choices'   => [
+		'choices'         => [
 			'formComponent' => 'TwitterPicker',
 			'colors'        => \Gridd\Theme::get_colorpicker_palette(),
 		],
+		'active_callback' => function() {
+			return get_theme_mod( 'branding_custom_options', false );
+		},
 	]
 );
 
@@ -94,16 +111,19 @@ Customizer::add_field(
 			]
 		),
 		'section'           => 'title_tagline',
-		'priority'          => 30,
+		'priority'          => 210,
 		'default'           => '0',
 		'transport'         => 'auto',
 		'output'            => [
 			[
-				'element'  => '.gridd-tp-header_branding',
+				'element'  => '.gridd-tp-header_branding.custom-options',
 				'property' => '--pd',
 			],
 		],
 		'sanitize_callback' => 'esc_attr', // Though not exactly accurate, in this case it sanitizes the CSS value properly.
+		'active_callback'   => function() {
+			return get_theme_mod( 'branding_custom_options', false );
+		},
 	]
 );
 
@@ -113,7 +133,7 @@ Customizer::add_field(
 		'type'            => 'slider',
 		'label'           => esc_html__( 'Logo Maximum Width', 'gridd' ),
 		'section'         => 'title_tagline',
-		'priority'        => 40,
+		'priority'        => 220,
 		'default'         => 100,
 		'choices'         => [
 			'min'    => 10,
@@ -140,27 +160,34 @@ Customizer::add_field(
 
 Customizer::add_field(
 	[
-		'settings'  => 'gridd_branding_typography',
-		'type'      => 'typography',
-		'label'     => esc_html__( 'Site Title & Tagline Typography', 'gridd' ),
-		'section'   => 'title_tagline',
-		'priority'  => 50,
-		'default'   => [
+		'settings'        => 'gridd_branding_typography',
+		'type'            => 'typography',
+		'label'           => esc_html__( 'Site Title & Tagline Typography', 'gridd' ),
+		'section'         => 'title_tagline',
+		'priority'        => 230,
+		'default'         => [
 			'font-family' => '',
 			'font-weight' => 700,
 		],
-		'transport' => 'auto',
-		'output'    => [
+		'transport'       => 'auto',
+		'output'          => [
 			[
-				'element' => [ '.site-title', '.site-title a', '.site-description' ],
+				'element' => [
+					'.gridd-tp-header_branding.custom-options .site-title',
+					'.gridd-tp-header_branding.custom-options .site-title a',
+					'.gridd-tp-header_branding.custom-options .site-description',
+				],
 			],
 		],
-		'choices'   => [
+		'choices'         => [
 			'fonts' => [
 				'google'   => [ 'popularity' ],
 				'standard' => [],
 			],
 		],
+		'active_callback' => function() {
+			return get_theme_mod( 'branding_custom_options', false );
+		},
 	]
 );
 
@@ -170,7 +197,7 @@ Customizer::add_field(
 		'type'            => 'slider',
 		'label'           => esc_html__( 'Site Title Font-Size', 'gridd' ),
 		'section'         => 'title_tagline',
-		'priority'        => 60,
+		'priority'        => 240,
 		'default'         => 2,
 		'active_callback' => 'display_header_text',
 		'transport'       => 'auto',
@@ -195,7 +222,7 @@ Customizer::add_field(
 		'type'            => 'slider',
 		'label'           => esc_html__( 'Site Tagline Font-Size', 'gridd' ),
 		'section'         => 'title_tagline',
-		'priority'        => 70,
+		'priority'        => 250,
 		'default'         => 1,
 		'active_callback' => 'display_header_text',
 		'transport'       => 'auto',
@@ -221,7 +248,7 @@ Customizer::add_field(
 		'label'           => esc_html__( 'Inline Elements', 'gridd' ),
 		'description'     => esc_html__( 'Enable this option to show the branding elements inline instead of one below the other.', 'gridd' ),
 		'section'         => 'title_tagline',
-		'priority'        => 80,
+		'priority'        => 260,
 		'default'         => false,
 		'transport'       => 'postMessage',
 		'active_callback' => 'display_header_text',
@@ -244,7 +271,7 @@ Customizer::add_field(
 		'label'           => esc_html__( 'Spacing between elements', 'gridd' ),
 		'description'     => esc_html__( 'This value is relative to the site-title font-size.', 'gridd' ),
 		'section'         => 'title_tagline',
-		'priority'        => 90,
+		'priority'        => 270,
 		'default'         => .5,
 		'transport'       => 'auto',
 		'output'          => [
@@ -268,7 +295,7 @@ new \Kirki\Field\RadioButtonset(
 		'settings'          => 'gridd_grid_header_branding_horizontal_align',
 		'label'             => esc_html__( 'Horizontal Alignment', 'gridd' ),
 		'section'           => 'title_tagline',
-		'priority'          => 100,
+		'priority'          => 280,
 		'default'           => 'left',
 		'transport'         => 'auto',
 		'output'            => [
@@ -294,7 +321,7 @@ new \Kirki\Field\RadioButtonset(
 		'settings'          => 'gridd_grid_header_branding_vertical_align',
 		'label'             => esc_html__( 'Vertical Alignment', 'gridd' ),
 		'section'           => 'title_tagline',
-		'priority'          => 110,
+		'priority'          => 290,
 		'default'           => 'center',
 		'transport'         => 'auto',
 		'output'            => [

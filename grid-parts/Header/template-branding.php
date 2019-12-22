@@ -16,6 +16,7 @@ $style->the_css( 'gridd-inline-css-header-branding' );
 
 $wrapper_class  = 'gridd-tp gridd-tp-header_branding';
 $wrapper_class .= get_theme_mod( 'gridd_branding_inline', false ) ? ' inline' : ' vertical';
+$wrapper_class .= get_theme_mod( 'branding_custom_options', false ) ? ' custom-options' : '';
 $wrapper_class .= ( has_custom_logo() ) ? ' has-logo' : '';
 ?>
 

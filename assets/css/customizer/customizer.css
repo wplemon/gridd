@@ -388,7 +388,8 @@ h3.gridd-customizer-section-title {
 #sub-accordion-section-grid_part_details_nav_7 .customize-section-title,
 #sub-accordion-section-grid_part_details_nav_8 .customize-section-title,
 #sub-accordion-section-grid_part_details_nav_9 .customize-section-title,
-#sub-accordion-section-grid_part_details_nav_10 .customize-section-title {
+#sub-accordion-section-grid_part_details_nav_10 .customize-section-title,
+#sub-accordion-section-title_tagline .customize-section-title {
   padding-bottom: 30px;
 }
 
@@ -413,12 +414,14 @@ h3.gridd-customizer-section-title {
 #customize-control-nav_9_custom_options,
 #customize-control-nav_10_custom_options,
 #customize-control-footer_copyright_custom_options,
-#customize-control-footer_social_media_custom_options {
+#customize-control-footer_social_media_custom_options,
+#customize-control-branding_custom_options {
   position: absolute;
   top: 30px;
 }
 
-#customize-control-header_custom_options {
+#customize-control-header_custom_options,
+#customize-control-branding_custom_options {
   top: 60px;
 }
 
