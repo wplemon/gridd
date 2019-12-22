@@ -38,7 +38,9 @@ if ( ( is_archive() || is_home() ) && 'card' === get_theme_mod( 'archive_post_mo
 }
 
 $style->add_string( '}' );
-$style->add_string( '@media only screen and (max-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . '){.gridd-tp.gridd-tp-header.gridd-sticky{position:relative;}.admin-bar .gridd-tp.gridd-sticky{--adminbar-height:0;}}' );
+if ( true === get_theme_mod( 'gridd_header_sticky', false ) ) {
+	$style->add_string( '@media only screen and (max-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . '){.gridd-tp.gridd-tp-header.gridd-sticky{position:relative;}.admin-bar .gridd-tp.gridd-sticky{--adminbar-height:0;}}' );
+}
 
 // Get the header image.
 $styles        = '';
