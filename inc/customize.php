@@ -88,15 +88,28 @@ new \Kirki\Field\ReactColor(
 		],
 		'output'            => [
 			[
-				'element'  => ':root',
-				'property' => '--bg',
+				'element'           => ':root',
+				'property'          => '--bg',
+				'sanitize_callback' => function( $value ) {
+					if ( false === strpos( $value, 'rgba' ) && false === strpos( '#', $value ) ) {
+						return '#' . $value;
+					}
+					return $value;
+				},
 			],
 			[
-				'element'  => '.block-editor .edit-post-visual-editor.editor-styles-wrapper,.edit-post-visual-editor.editor-styles-wrapper',
-				'property' => '--bg',
-				'context'  => [ 'editor' ],
+				'element'           => '.block-editor .edit-post-visual-editor.editor-styles-wrapper,.edit-post-visual-editor.editor-styles-wrapper',
+				'property'          => '--bg',
+				'context'           => [ 'editor' ],
+				'sanitize_callback' => function( $value ) {
+					if ( false === strpos( $value, 'rgba' ) && false === strpos( '#', $value ) ) {
+						return '#' . $value;
+					}
+					return $value;
+				},
 			],
 		],
+		'sanitize_callback' => 'sanitize_hex_color_no_hash',
 	]
 );
 
