@@ -8,10 +8,29 @@
 use Gridd\Grid_Part\Header;
 use Gridd\Customizer;
 
-Customizer::add_outer_section(
+new \Kirki\Section(
 	'grid_part_details_header_search',
 	[
-		'title' => esc_html__( 'Header Search', 'gridd' ),
+		'title'           => esc_html__( 'Header Search', 'gridd' ),
+		'panel'           => 'theme_options',
+		'type'            => 'kirki-expanded',
+		'active_callback' => function() {
+			return \Gridd\Customizer::is_section_active_part( 'header_search' );
+		},
+	]
+);
+
+new \Kirki\Field\Checkbox_Switch(
+	[
+		'settings'  => 'header_search_custom_options',
+		'section'   => 'grid_part_details_header_search',
+		'default'   => false,
+		'transport' => 'refresh',
+		'priority'  => -999,
+		'choices'   => [
+			'off' => esc_html__( 'Inherit Options', 'gridd' ),
+			'on'  => esc_html__( 'Override Options', 'gridd' ),
+		],
 	]
 );
 
@@ -32,99 +51,110 @@ new \Kirki\Field\RadioButtonset(
 
 new \Kirki\Field\ReactColor(
 	[
-		'settings'  => 'header_search_background_color',
-		'label'     => esc_html__( 'Background Color', 'gridd' ),
-		'section'   => 'grid_part_details_header_search',
-		'default'   => '#ffffff',
-		'transport' => 'auto',
-		'output'    => [
+		'settings'        => 'header_search_background_color',
+		'label'           => esc_html__( 'Background Color', 'gridd' ),
+		'section'         => 'grid_part_details_header_search',
+		'default'         => '#ffffff',
+		'transport'       => 'auto',
+		'output'          => [
 			[
-				'element'  => '.gridd-tp-header_search',
+				'element'  => '.gridd-tp-header_search.custom-options',
 				'property' => '--bg',
 			],
 		],
-		'choices'   => [
+		'choices'         => [
 			'formComponent' => 'TwitterPicker',
 			'colors'        => \Gridd\Theme::get_colorpicker_palette(),
 		],
-		'priority'  => 20,
+		'priority'        => 20,
+		'active_callback' => function() {
+			return get_theme_mod( 'header_search_custom_options', false );
+		},
 	]
 );
 
 new \WPLemon\Field\WCAGTextColor(
 	[
-		'settings'  => 'header_search_color',
-		'label'     => esc_html__( 'Text Color', 'gridd' ),
-		'section'   => 'grid_part_details_header_search',
-		'default'   => '#000000',
-		'transport' => 'auto',
-		'output'    => [
+		'settings'        => 'header_search_color',
+		'label'           => esc_html__( 'Text Color', 'gridd' ),
+		'section'         => 'grid_part_details_header_search',
+		'default'         => '#000000',
+		'transport'       => 'auto',
+		'output'          => [
 			[
-				'element'  => '.gridd-tp-header_search',
+				'element'  => '.gridd-tp-header_search.custom-options',
 				'property' => '--cl',
 			],
 		],
-		'choices'   => [
+		'choices'         => [
 			'backgroundColor' => 'header_search_background_color',
 		],
-		'priority'  => 30,
+		'priority'        => 30,
+		'active_callback' => function() {
+			return get_theme_mod( 'header_search_custom_options', false );
+		},
 	]
 );
 
 Customizer::add_field(
 	[
-		'type'        => 'slider',
-		'settings'    => 'header_search_padding',
-		'label'       => esc_html__( 'Padding', 'gridd' ),
-		'description' => Customizer::get_control_description(
+		'type'            => 'slider',
+		'settings'        => 'header_search_padding',
+		'label'           => esc_html__( 'Padding', 'gridd' ),
+		'description'     => Customizer::get_control_description(
 			[
 				'short'   => '',
 				'details' => esc_html__( 'Select the horizontal padding for this grid-part. Vertically there is no padding because the searchform occupies the whole height of this area.', 'gridd' ),
 			]
 		),
-		'section'     => 'grid_part_details_header_search',
-		'default'     => 1,
-		'transport'   => 'auto',
-		'output'      => [
+		'section'         => 'grid_part_details_header_search',
+		'default'         => 1,
+		'transport'       => 'auto',
+		'output'          => [
 			[
-				'element'       => '.gridd-tp-header_search',
+				'element'       => '.gridd-tp-header_search.custom-options',
 				'property'      => '--pd',
 				'value_pattern' => '$em',
 			],
 		],
-		'choices'     => [
+		'choices'         => [
 			'min'    => 0,
 			'max'    => 10,
 			'step'   => 0.01,
 			'suffix' => 'em',
 		],
-		'priority'    => 40,
+		'priority'        => 40,
+		'active_callback' => function() {
+			return get_theme_mod( 'header_search_custom_options', false );
+		},
 	]
 );
 
 Customizer::add_field(
 	[
-		'type'        => 'slider',
-		'settings'    => 'header_search_font_size',
-		'label'       => esc_html__( 'Font Size', 'gridd' ),
-		'description' => esc_html__( 'The value selected here is relative to your body font-size, so a value of 1em will be the same size as your content.', 'gridd' ),
-		'section'     => 'grid_part_details_header_search',
-		'default'     => 1,
-		'output'      => [
+		'type'            => 'slider',
+		'settings'        => 'header_search_font_size',
+		'label'           => esc_html__( 'Font Size', 'gridd' ),
+		'description'     => esc_html__( 'The value selected here is relative to your body font-size, so a value of 1em will be the same size as your content.', 'gridd' ),
+		'section'         => 'grid_part_details_header_search',
+		'default'         => 1,
+		'output'          => [
 			[
-				'element'       => '.gridd-tp-header_search',
-				'property'      => '--fs',
-				'value_pattern' => '$em',
+				'element'  => '.gridd-tp-header_search.custom-options',
+				'property' => '--fsr',
 			],
 		],
-		'choices'     => [
+		'choices'         => [
 			'min'    => .5,
 			'max'    => 4,
 			'step'   => .01,
 			'suffix' => 'em',
 		],
-		'transport'   => 'auto',
-		'priority'    => 50,
+		'transport'       => 'auto',
+		'priority'        => 50,
+		'active_callback' => function() {
+			return get_theme_mod( 'header_search_custom_options', false );
+		},
 	]
 );
 

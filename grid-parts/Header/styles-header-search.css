@@ -3,7 +3,7 @@
 }
 
 .gridd-header-search form.search-form {
-	font-size: calc(var(--fs, 1) * 1em);
+	font-size: calc(var(--fsr, 1) * 1em);
 	color: var(--cl, #000);
 }
 

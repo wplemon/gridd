@@ -12,7 +12,11 @@ use Gridd\Theme;
 
 $header_search_mode  = get_theme_mod( 'header_search_mode', 'form' );
 $header_search_class = 'gridd-tp gridd-tp-header_search ' . $header_search_mode;
-$padding             = get_theme_mod(
+if ( get_theme_mod( 'header_search_custom_options', false ) ) {
+	$header_search_class .= ' custom-options';
+}
+
+$padding = get_theme_mod(
 	'header_search_padding',
 	[
 		'left'  => '1em',
