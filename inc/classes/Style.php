@@ -118,7 +118,7 @@ class Style {
 	 */
 	public function add_file( $path ) {
 		if ( file_exists( $path ) ) {
-			$this->css .= Theme::get_fcontents( $path );
+			$this->css .= Theme::get_fcontents( $path, true );
 		}
 		return $this;
 	}
