@@ -281,24 +281,4 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
-	[
-		'type'            => 'toggle',
-		'settings'        => 'gridd_header_sticky_mobile',
-		'label'           => esc_html__( 'Sticky on Small Devices', 'gridd' ),
-		'description'     => esc_html__( 'Enable to stick this area to the top of the page when users scroll-down on devices smaller than the breakpoint you defined in your main grid.', 'gridd' ),
-		'section'         => 'grid_part_details_header',
-		'default'         => false,
-		'transport'       => 'refresh',
-		'priority'        => 90,
-		'active_callback' => [
-			[
-				'setting'  => 'gridd_header_sticky',
-				'operator' => '===',
-				'value'    => true,
-			],
-		],
-	]
-);
-
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */
