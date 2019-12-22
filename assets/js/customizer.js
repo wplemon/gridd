@@ -181,7 +181,7 @@
 					control.section( newSection.id );
 				});
 				setTimeout( function() {
-					oldSection.activate( true );
+					// oldSection.activate( true );
 					oldSection.expanded.bind( function() {
 						newSection.expand();
 					});

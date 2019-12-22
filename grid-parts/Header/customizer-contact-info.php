@@ -14,9 +14,12 @@ $sanitization = new Sanitize();
 new \Kirki\Section(
 	'grid_part_details_header_contact_info',
 	[
-		'title' => esc_html__( 'Header Contact Info', 'gridd' ),
-		'panel' => 'theme_options',
-		'type'  => 'kirki-expanded',
+		'title'           => esc_html__( 'Header Contact Info', 'gridd' ),
+		'panel'           => 'theme_options',
+		'type'            => 'kirki-expanded',
+		'active_callback' => function() {
+			return \Gridd\Customizer::is_section_active_part( 'header_contact_info' );
+		},
 	]
 );
 
