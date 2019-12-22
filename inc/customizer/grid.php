@@ -13,43 +13,13 @@ use Gridd\Customizer\Sanitize;
 $sanitization = new Sanitize();
 $grid_parts   = Grid_Parts::get_instance()->get_parts();
 
-/**
- * Move the background controls to the grid section.
- *
- * @since 1.0
- * @param WP_Customize The WordPress Customizer main object.
- * @return void
- */
-add_action(
-	'customize_register',
-	function( $wp_customize ) {
-
-		// Move the background-image control.
-		$wp_customize->get_control( 'background_image' )->section       = 'gridd_grid';
-		$wp_customize->get_control( 'background_image' )->priority      = 90;
-		$wp_customize->get_control( 'background_image' )->description   = Customizer::get_control_description(
-			[
-				esc_html__( 'Background will only be seen when grid-parts have a transparent background color, or if the site grid is not set to 100% width.', 'gridd' ),
-			]
-		);
-		$wp_customize->get_control( 'background_preset' )->section      = 'gridd_grid';
-		$wp_customize->get_control( 'background_preset' )->priority     = 90;
-		$wp_customize->get_control( 'background_position' )->section    = 'gridd_grid';
-		$wp_customize->get_control( 'background_position' )->priority   = 90;
-		$wp_customize->get_control( 'background_size' )->section        = 'gridd_grid';
-		$wp_customize->get_control( 'background_size' )->priority       = 90;
-		$wp_customize->get_control( 'background_repeat' )->section      = 'gridd_grid';
-		$wp_customize->get_control( 'background_repeat' )->priority     = 90;
-		$wp_customize->get_control( 'background_attachment' )->section  = 'gridd_grid';
-		$wp_customize->get_control( 'background_attachment' )->priority = 90;
-	}
-);
-
-Customizer::add_section(
+new \Kirki\Section(
 	'gridd_grid',
 	[
 		'title'    => esc_html__( 'Main Grid Layout', 'gridd' ),
 		'priority' => -100,
+		'type'     => 'kirki-expanded',
+		'panel'    => 'theme_options',
 	]
 );
 
