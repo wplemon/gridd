@@ -181,7 +181,6 @@
 					control.section( newSection.id );
 				});
 				setTimeout( function() {
-					// oldSection.activate( true );
 					oldSection.expanded.bind( function() {
 						newSection.expand();
 					});
@@ -192,8 +191,16 @@
 			return;
 		}
 
+		window.alreadyProcessedSectionMoves = window.alreadyProcessedSectionMoves || {};
 		newSection.expanded.bind( function() {
-			moveSectionControls( newSection, oldSection );
+			if ( ! window.alreadyProcessedSectionMoves[ oldSection.id ] ) {
+				oldSection.activate( true );
+				oldSection.expand();
+				moveSectionControls( newSection, oldSection );
+				oldSection.activate( false );
+				newSection.expand();
+			}
+			window.alreadyProcessedSectionMoves[ oldSection.id ] = true;
 		});
 		oldSection.expanded.bind( function() {
 			newSection.expand();
