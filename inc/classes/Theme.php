@@ -130,6 +130,7 @@ class Theme {
 		add_action( 'after_setup_theme', [ $this, 'content_width' ], 0 );
 		add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_block_editor_assets' ], 1, 1 );
 		add_action( 'wp_head', [ $this, 'add_color_palette_styles' ] );
+		add_filter( 'kirki_path_url', [ $this, 'filter_kirki_url_path' ], 1, 2 );
 	}
 
 	/**
@@ -628,6 +629,23 @@ class Theme {
 		// Add globals.
 		$style->add_string( '.has-text-color{color:var(--element-color);}' );
 		$style->add_string( '.has-background{background-color:var(--element-background-color);border-color:var(--element-background-color);}' );
+	}
+
+	/**
+	 * Filters Kirki framework to load correctly the assets URL
+	 * depending the themes directory path.
+	 *
+	 * @access public
+	 *
+	 * @param string $url Kirki framework assets URL.
+	 * @param string $path Kirki framework asset path.
+	 *
+	 * @return string Url for kirki framework assets.
+	 */
+	public function filter_kirki_url_path( $url, $path ) {
+		$url = preg_replace( '/.+?(?=packages)/', get_template_directory_uri() . '/', $url );
+
+		return( $url );
 	}
 }
 
