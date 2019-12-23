@@ -7,8 +7,14 @@
   background: var(--lc, --cl);
   color: var(--bg);
   border-radius: 2px;
-  padding: 0 .2em;
+  padding: 0 0.2em;
   display: inline;
+  margin: 0 0.2em;
+  opacity: .35;
+}
+
+.site-main a[target="_blank"]:hover:after {
+  opacity: 1;
 }
 
 .site-main header,
