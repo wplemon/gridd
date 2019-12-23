@@ -12,6 +12,25 @@ namespace Gridd;
 use Gridd\Customizer\Sanitize;
 $sanitization = new Sanitize();
 
+/**
+ * Move the background controls to the grid section.
+ *
+ * @since 1.0
+ * @param WP_Customize The WordPress Customizer main object.
+ * @return void
+ */
+add_action(
+	'customize_register',
+	function( $wp_customize ) {
+		// Move the background-image control.
+		$wp_customize->get_control( 'background_image' )->active_callback      = '__return_false';
+		$wp_customize->get_control( 'background_preset' )->active_callback     = '__return_false';
+		$wp_customize->get_control( 'background_position' )->active_callback   = '__return_false';
+		$wp_customize->get_control( 'background_size' )->active_callback       = '__return_false';
+		$wp_customize->get_control( 'background_repeat' )->active_callback     = '__return_false';
+		$wp_customize->get_control( 'background_attachment' )->active_callback = '__return_false';
+	}
+);
 
 /**
  * Add the "Theme Options" panel.

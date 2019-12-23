@@ -22,8 +22,7 @@ $sanitization = new Sanitize();
 add_action(
 	'customize_register',
 	function( $wp_customize ) {
-		$wp_customize->get_control( 'header_image' )->section  = 'grid_part_details_header';
-		$wp_customize->get_control( 'header_image' )->priority = 80;
+		$wp_customize->get_control( 'header_image' )->active_callback = '__return_false';
 	}
 );
 
