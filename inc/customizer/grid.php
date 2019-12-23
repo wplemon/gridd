@@ -44,9 +44,8 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Dimension(
 	[
-		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_gap',
 		'label'       => esc_html__( 'Grid Container Gap', 'gridd' ),
 		'description' => Customizer::get_control_description(
@@ -67,9 +66,8 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Dimension(
 	[
-		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_max_width',
 		'label'       => esc_html__( 'Site Maximum Width', 'gridd' ),
 		'description' => esc_html__( 'Set the value to something other than 100% to use a boxed layout.', 'gridd' ),

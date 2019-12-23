@@ -23,7 +23,7 @@ new \Kirki\Section(
 /**
  * Body typography switch.
  */
-Customizer::add_field(
+new \Kirki\Field\Checkbox(
 	[
 		'type'     => 'checkbox',
 		'settings' => 'custom_body_typography',
@@ -37,9 +37,8 @@ Customizer::add_field(
 /**
  * Body typography.
  */
-Customizer::add_field(
+new \Kirki\Field\Typography(
 	[
-		'type'            => 'typography',
 		'settings'        => 'gridd_body_typography',
 		'label'           => esc_html__( 'Body Typography', 'gridd' ),
 		'section'         => 'gridd_typography',
@@ -73,9 +72,8 @@ Customizer::add_field(
 /**
  * Body typography switch.
  */
-Customizer::add_field(
+new \Kirki\Field\Checkbox(
 	[
-		'type'     => 'checkbox',
 		'settings' => 'custom_headers_typography',
 		'label'    => esc_html__( 'Custom Headers Typography', 'gridd' ),
 		'section'  => 'gridd_typography',
@@ -87,9 +85,8 @@ Customizer::add_field(
 /**
  * Headers typography.
  */
-Customizer::add_field(
+new \Kirki\Field\Typography(
 	[
-		'type'            => 'typography',
 		'settings'        => 'gridd_headers_typography',
 		'label'           => esc_html__( 'Headers Typography', 'gridd' ),
 		'section'         => 'gridd_typography',
@@ -144,9 +141,8 @@ Customizer::add_field(
 /**
  * Body typography.
  */
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
-		'type'        => 'slider',
 		'settings'    => 'gridd_body_font_size',
 		'label'       => esc_html__( 'Body Font-Size', 'gridd' ),
 		'description' => esc_html__( 'We recommend you a font-size greater than 18px to ensure greater readability.', 'gridd' ),
@@ -174,9 +170,8 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
-		'type'        => 'slider',
 		'settings'    => 'gridd_fluid_typography_ratio',
 		'label'       => esc_html__( 'Fluid Typography Ratio', 'gridd' ),
 		'description' => Customizer::get_control_description(
@@ -215,10 +210,9 @@ Customizer::add_field(
 /**
  * Type Scale
  */
-Customizer::add_field(
+new \Kirki\Field\Radio(
 	[
 		'settings'          => 'gridd_type_scale',
-		'type'              => 'radio',
 		'label'             => esc_attr__( 'Typography Scale', 'gridd' ),
 		'description'       => esc_attr__( 'Controls the size relations between your headers and your main typography font-size.', 'gridd' ),
 		'section'           => 'gridd_typography',

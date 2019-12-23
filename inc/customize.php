@@ -36,19 +36,6 @@ new \Kirki\Section(
 	]
 );
 
-/**
- * Add the "Theme Options" panel.
- *
- * @since 2.0.0
- */
-new \Kirki\Panel(
-	'theme_settings',
-	[
-		'title'    => esc_html__( 'Theme Settings', 'gridd' ),
-		'priority' => 5,
-	]
-);
-
 new \WPLemon\Field\PaletteBuilder(
 	[
 		'settings'          => 'custom_color_palette',
