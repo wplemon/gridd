@@ -67,7 +67,6 @@ foreach ( $responsive_mode_parts as $responsive_mode_part ) {
 			[
 				'id'            => "navigation-$id",
 				'class'         => $classes,
-				'role'          => 'navigation',
 				'aria-expanded' => 'false',
 			],
 			"navigation-$id"
