@@ -313,27 +313,10 @@ h3.gridd-customizer-section-title {
 #sub-accordion-section-grid_part_details_footer_social_media,
 #sub-accordion-section-grid_part_details_header_contact_info,
 #sub-accordion-section-grid_part_details_header_search,
-#sub-accordion-section-grid_part_details_nav_1,
-#sub-accordion-section-grid_part_details_nav_2,
-#sub-accordion-section-grid_part_details_nav_3,
-#sub-accordion-section-grid_part_details_nav_4,
-#sub-accordion-section-grid_part_details_nav_5,
-#sub-accordion-section-grid_part_details_nav_6,
-#sub-accordion-section-grid_part_details_nav_7,
-#sub-accordion-section-grid_part_details_nav_8,
-#sub-accordion-section-grid_part_details_nav_9,
-#sub-accordion-section-grid_part_details_nav_10,
 #sub-accordion-section-title_tagline,
-#sub-accordion-section-sidebar-widgets-sidebar-1,
-#sub-accordion-section-sidebar-widgets-sidebar-2,
-#sub-accordion-section-sidebar-widgets-sidebar-3,
-#sub-accordion-section-sidebar-widgets-sidebar-4,
-#sub-accordion-section-sidebar-widgets-sidebar-5,
-#sub-accordion-section-sidebar-widgets-sidebar-6,
-#sub-accordion-section-sidebar-widgets-sidebar-7,
-#sub-accordion-section-sidebar-widgets-sidebar-8,
-#sub-accordion-section-sidebar-widgets-sidebar-9,
-#sub-accordion-section-sidebar-widgets-sidebar-10 {
+ul[id^='sub-accordion-section-grid_part_details_nav_'],
+ul[id^='sub-accordion-section-sidebar-widgets-sidebar-'],
+ul[id^='sub-accordion-section-grid_part_details_reusable_block_'] {
 
 	.customize-section-title {
 		padding-bottom: 30px;
@@ -350,47 +333,21 @@ h3.gridd-customizer-section-title {
 #customize-control-breadcrumbs_custom_options,
 #customize-control-header_contact_info_advanced,
 #customize-control-header_search_advanced,
-#customize-control-nav_1_custom_options,
-#customize-control-nav_2_custom_options,
-#customize-control-nav_3_custom_options,
-#customize-control-nav_4_custom_options,
-#customize-control-nav_5_custom_options,
-#customize-control-nav_6_custom_options,
-#customize-control-nav_7_custom_options,
-#customize-control-nav_8_custom_options,
-#customize-control-nav_9_custom_options,
-#customize-control-nav_10_custom_options,
 #customize-control-footer_copyright_custom_options,
 #customize-control-footer_social_media_custom_options,
 #customize-control-branding_custom_options,
 #customize-control-header_contact_info_custom_options,
 #customize-control-header_search_custom_options,
-#customize-control-gridd_grid_sidebar_1_custom_options,
-#customize-control-gridd_grid_sidebar_2_custom_options,
-#customize-control-gridd_grid_sidebar_3_custom_options,
-#customize-control-gridd_grid_sidebar_4_custom_options,
-#customize-control-gridd_grid_sidebar_5_custom_options,
-#customize-control-gridd_grid_sidebar_6_custom_options,
-#customize-control-gridd_grid_sidebar_7_custom_options,
-#customize-control-gridd_grid_sidebar_8_custom_options,
-#customize-control-gridd_grid_sidebar_9_custom_options,
-#customize-control-gridd_grid_sidebar_10_custom_options {
+li[id^='customize-control-nav_'][id$='_custom_options'],
+li[id^='customize-control-gridd_grid_sidebar_'][id$='_custom_options'],
+li[id^='customize-control-reusable_block_'][id$='_custom_options'] {
 	position: absolute;
 	top: 30px;
 }
 
 #customize-control-header_custom_options,
 #customize-control-branding_custom_options,
-#customize-control-gridd_grid_sidebar_1_custom_options,
-#customize-control-gridd_grid_sidebar_2_custom_options,
-#customize-control-gridd_grid_sidebar_3_custom_options,
-#customize-control-gridd_grid_sidebar_4_custom_options,
-#customize-control-gridd_grid_sidebar_5_custom_options,
-#customize-control-gridd_grid_sidebar_6_custom_options,
-#customize-control-gridd_grid_sidebar_7_custom_options,
-#customize-control-gridd_grid_sidebar_8_custom_options,
-#customize-control-gridd_grid_sidebar_9_custom_options,
-#customize-control-gridd_grid_sidebar_10_custom_options {
+li[id^='customize-control-gridd_grid_sidebar_'][id$='_custom_options'] {
 	top: 60px;
 }
 

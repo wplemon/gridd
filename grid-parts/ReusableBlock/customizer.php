@@ -40,17 +40,36 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 	/**
 	 * Add Customizer Sections.
 	 */
-	Customizer::add_outer_section(
+	new \Kirki\Section(
 		"grid_part_details_reusable_block_$id",
 		[
-			/* translators: The reusable block name. */
-			'title' => sprintf( esc_html__( 'Block: %s', 'gridd' ), esc_html( get_the_title( $id ) ) ),
+			/* translators: The navigation number. */
+			'title'           => sprintf( esc_html__( 'Block: %s', 'gridd' ), esc_html( get_the_title( $id ) ) ),
+			'priority'        => 30,
+			'type'            => 'kirki-expanded',
+			'panel'           => 'theme_options',
+			'active_callback' => function() use ( $id ) {
+				return \Gridd\Customizer::is_section_active_part( "reusable_block_$id" );
+			},
 		]
 	);
 
-	Customizer::add_field(
+	new \Kirki\Field\Checkbox_Switch(
 		[
-			'type'        => 'custom',
+			'settings'  => "reusable_block_{$id}_custom_options",
+			'section'   => "grid_part_details_reusable_block_$id",
+			'default'   => false,
+			'transport' => 'refresh',
+			'priority'  => -999,
+			'choices'   => [
+				'off' => esc_html__( 'Inherit Options', 'gridd' ),
+				'on'  => esc_html__( 'Override Options', 'gridd' ),
+			],
+		]
+	);
+
+	new \Kirki\Field\Custom(
+		[
 			'settings'    => "gridd_grid_reusable_block_{$id}_help",
 			'description' => '<a href="' . esc_url( admin_url( 'edit.php?post_type=wp_block' ) ) . '" target="_blank">' . esc_html__( ' Manage reusable blocks', 'gridd' ) . '</a>',
 			'section'     => "grid_part_details_reusable_block_$id",
@@ -58,50 +77,46 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 		]
 	);
 
-	Customizer::add_field(
+	new \Kirki\Field\Dimension(
 		[
-			'type'        => 'dimension',
-			'settings'    => "gridd_grid_reusable_block_{$id}_padding",
-			'label'       => esc_html__( 'Padding', 'gridd' ),
-			'description' => Customizer::get_control_description(
+			'settings'        => "gridd_grid_reusable_block_{$id}_padding",
+			'label'           => esc_html__( 'Padding', 'gridd' ),
+			'description'     => esc_html__( 'Use any valid CSS value.', 'gridd' ),
+			'section'         => "grid_part_details_reusable_block_$id",
+			'default'         => '1em',
+			'transport'       => 'auto',
+			'output'          => [
 				[
-					'short'   => '',
-					'details' => sprintf(
-						/* translators: Link properties. */
-						__( 'Use any valid CSS value. For details on how padding works, please refer to <a %s>this article</a>.', 'gridd' ),
-						'href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow"'
-					),
-				]
-			),
-			'section'     => "grid_part_details_reusable_block_$id",
-			'default'     => '1em',
-			'transport'   => 'auto',
-			'output'      => [
-				[
-					'element'  => ".gridd-tp-reusable_block_$id",
+					'element'  => ".gridd-tp-reusable_block_$id.custom-options",
 					'property' => '--pd',
 				],
 			],
+			'active_callback' => function() use ( $id ) {
+				return get_theme_mod( "reusable_block_{$id}_custom_options", false );
+			},
 		]
 	);
 
 	new \Kirki\Field\ReactColor(
 		[
-			'label'     => esc_html__( 'Background Color', 'gridd' ),
-			'settings'  => "gridd_grid_reusable_block_{$id}_bg_color",
-			'section'   => "grid_part_details_reusable_block_$id",
-			'default'   => '#ffffff',
-			'transport' => 'auto',
-			'output'    => [
+			'label'           => esc_html__( 'Background Color', 'gridd' ),
+			'settings'        => "gridd_grid_reusable_block_{$id}_bg_color",
+			'section'         => "grid_part_details_reusable_block_$id",
+			'default'         => '#ffffff',
+			'transport'       => 'auto',
+			'output'          => [
 				[
-					'element'  => ".gridd-tp-reusable_block_$id",
+					'element'  => ".gridd-tp-reusable_block_$id.custom-options",
 					'property' => '--bg',
 				],
 			],
-			'choices'   => [
+			'choices'         => [
 				'formComponent' => 'TwitterPicker',
 				'colors'        => \Gridd\Theme::get_colorpicker_palette(),
 			],
+			'active_callback' => function() use ( $id ) {
+				return get_theme_mod( "reusable_block_{$id}_custom_options", false );
+			},
 		]
 	);
 
@@ -119,7 +134,7 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 			'transport'         => 'auto',
 			'output'            => [
 				[
-					'element'  => ".gridd-tp-reusable_block_$id",
+					'element'  => ".gridd-tp-reusable_block_$id.custom-options",
 					'property' => '--cl',
 				],
 			],
@@ -140,7 +155,7 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 			'transport'         => 'auto',
 			'output'            => [
 				[
-					'element'  => ".gridd-tp-reusable_block_$id",
+					'element'  => ".gridd-tp-reusable_block_$id.custom-options",
 					'property' => '--lc',
 				],
 			],
