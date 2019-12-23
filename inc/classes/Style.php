@@ -80,6 +80,8 @@ class Style {
 	private function __construct( $context = '' ) {
 		$this->context = $context;
 		do_action( 'gridd_style', $this );
+
+		add_action( 'wp_footer', [ $this, 'child_theme_styles' ], 999 );
 	}
 
 	/**
@@ -213,6 +215,20 @@ class Style {
 		 */
 		echo $this->get_css(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		echo ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? "\r\n</style>\r\n" : '</style>';
+	}
+
+	/**
+	 * Add child-theme styles.
+	 *
+	 * @access public
+	 * @since 3.0.0
+	 * @return void
+	 */
+	public function child_theme_styles() {
+		if ( is_child_theme() && apply_filters( 'gridd_load_child_theme_styles', true ) ) {
+			// Note to code reviewers: wp_strip_all_tags here is sufficient escape to ensure everything is interpreted as CSS.
+			echo '<style>' . wp_strip_all_tags( Theme::get_fcontents( get_stylesheet_directory() . '/style.css' ), true ) . '</style>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		}
 	}
 }
 
