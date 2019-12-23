@@ -169,7 +169,7 @@ class WooCommerce {
 	 * @return void
 	 */
 	public function wrapper_before() {
-		echo '<div id="primary" class="content-area"><main id="main" class="site-main" role="main">';
+		echo '<div id="primary" class="content-area"><main id="main" class="site-main">';
 	}
 
 	/**
