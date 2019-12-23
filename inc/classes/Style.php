@@ -227,7 +227,7 @@ class Style {
 	public function child_theme_styles() {
 		if ( is_child_theme() && apply_filters( 'gridd_load_child_theme_styles', true ) ) {
 			// Note to code reviewers: wp_strip_all_tags here is sufficient escape to ensure everything is interpreted as CSS.
-			echo '<style>' . wp_strip_all_tags( Theme::get_fcontents( get_stylesheet_directory() . '/style.css' ), true ) . '</style>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo '<style>' . wp_strip_all_tags( Theme::get_fcontents( get_stylesheet_directory() . '/style.css', true ), true ) . '</style>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 	}
 }
