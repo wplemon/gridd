@@ -61,10 +61,12 @@ foreach ( $responsive_mode_parts as $responsive_mode_part ) {
 		<?php endif; ?>
 		<nav
 		<?php
+		$classes  = 'navigation gridd-nav-' . ( $is_vertical_nav ? 'vertical' : 'horizontal' );
+		$classes .= ( ! has_nav_menu( "menu-$id" ) ) ? ' no-menu' : '';
 		Theme::print_attributes(
 			[
 				'id'            => "navigation-$id",
-				'class'         => 'navigation gridd-nav-' . ( $is_vertical_nav ? 'vertical' : 'horizontal' ),
+				'class'         => $classes,
 				'role'          => 'navigation',
 				'aria-expanded' => 'false',
 			],
@@ -72,26 +74,17 @@ foreach ( $responsive_mode_parts as $responsive_mode_part ) {
 		);
 		?>
 		>
-			<?php if ( has_nav_menu( "menu-$id" ) ) : ?>
-				<?php
+			<?php
 
-				// Print the menu.
-				wp_nav_menu(
-					[
-						'theme_location' => "menu-$id",
-						'menu_id'        => "nav-$id",
-						'item_spacing'   => 'discard',
-					]
-				);
-				?>
-			<?php elseif ( current_user_can( 'edit_theme_options' ) ) : ?>
-				<div style="background:#E8F5F9;border-left: 4px solid $41A0CD;color:#000;font-size:14px;padding:12px;">
-					<?php
-					/* translators: The navigation number. */
-					printf( esc_html__( 'Please assign a menu to the "Navigation %d" menu.', 'gridd' ), absint( $id ) );
-					?>
-				</div>
-			<?php endif; ?>
+			// Print the menu.
+			wp_nav_menu(
+				[
+					'theme_location' => "menu-$id",
+					'menu_id'        => "nav-$id",
+					'item_spacing'   => 'discard',
+				]
+			);
+			?>
 		</nav>
 	</div>
 </div>
