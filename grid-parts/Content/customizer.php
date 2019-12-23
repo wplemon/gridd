@@ -88,6 +88,9 @@ new \WPLemon\Field\WCAGTextColor(
 			'appearance'      => 'hidden',
 		],
 		'sanitize_callback' => [ $sanitization, 'color_hex' ],
+		'active_callback'   => function() {
+			return get_theme_mod( 'content_custom_options', false );
+		},
 	]
 );
 
