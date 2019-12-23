@@ -34,7 +34,7 @@ class ReusableBlock extends Grid_Part {
 	 *
 	 * @static
 	 * @access private
-	 * @since 2.0.2
+	 * @since 3.0.0
 	 * @var bool
 	 */
 	private static $styles_added = false;

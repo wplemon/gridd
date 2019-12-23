@@ -364,7 +364,7 @@ class Customizer {
 	 *
 	 * @static
 	 * @access public
-	 * @since 2.0.2
+	 * @since 3.0.0
 	 * @param string $id The grid-part ID.
 	 * @return bool
 	 */
