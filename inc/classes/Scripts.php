@@ -245,7 +245,6 @@ class Scripts {
 		$style->add_file( get_theme_file_path( 'assets/css/buttons.min.css' ) );
 		$style->add_file( get_theme_file_path( 'assets/css/core/media.min.css' ) );
 		$style->add_file( get_theme_file_path( 'assets/css/core/nav-links.min.css' ) );
-		$style->add_file( get_theme_file_path( 'assets/css/core/post-sticky.min.css' ) );
 
 		$style->the_css( 'gridd-inline-css-late-styles' );
 

@@ -18,7 +18,8 @@ LICENSE
 /assets/css/plugins/*.css
 /assets/css/widgets/*.css
 /assets/css/blocks/*.css
-/assets/css/core/*.css
+/assets/css/core/*.min.css
 /assets/css/admin/*.css
 /assets/css/customizer/*.css
 /assets/css/blocks/block-library/**/*.scss
+assets/css/**/*.js

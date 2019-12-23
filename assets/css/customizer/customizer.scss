@@ -314,9 +314,9 @@ h3.gridd-customizer-section-title {
 #sub-accordion-section-grid_part_details_header_contact_info,
 #sub-accordion-section-grid_part_details_header_search,
 #sub-accordion-section-title_tagline,
-ul[id^='sub-accordion-section-grid_part_details_nav_'],
-ul[id^='sub-accordion-section-sidebar-widgets-sidebar-'],
-ul[id^='sub-accordion-section-grid_part_details_reusable_block_'] {
+ul[id^="sub-accordion-section-grid_part_details_nav_"],
+ul[id^="sub-accordion-section-sidebar-widgets-sidebar-"],
+ul[id^="sub-accordion-section-grid_part_details_reusable_block_"] {
 
 	.customize-section-title {
 		padding-bottom: 30px;
@@ -338,16 +338,16 @@ ul[id^='sub-accordion-section-grid_part_details_reusable_block_'] {
 #customize-control-branding_custom_options,
 #customize-control-header_contact_info_custom_options,
 #customize-control-header_search_custom_options,
-li[id^='customize-control-nav_'][id$='_custom_options'],
-li[id^='customize-control-gridd_grid_sidebar_'][id$='_custom_options'],
-li[id^='customize-control-reusable_block_'][id$='_custom_options'] {
+li[id^="customize-control-nav_"][id$="_custom_options"],
+li[id^="customize-control-gridd_grid_sidebar_"][id$="_custom_options"],
+li[id^="customize-control-reusable_block_"][id$="_custom_options"] {
 	position: absolute;
 	top: 30px;
 }
 
 #customize-control-header_custom_options,
 #customize-control-branding_custom_options,
-li[id^='customize-control-gridd_grid_sidebar_'][id$='_custom_options'] {
+li[id^="customize-control-gridd_grid_sidebar_"][id$="_custom_options"] {
 	top: 60px;
 }
 

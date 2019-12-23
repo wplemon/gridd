@@ -40,15 +40,15 @@
 	background: var(--bg);
 }
 
-.no-menu .gridd-navigation > ul {
-  display: flex;
-  position: relative;
-  box-shadow: none;
-  flex-wrap: nowrap;
-}
-
 .gridd-navigation ul ul {
 	position: relative;
+}
+
+.no-menu .gridd-navigation > ul {
+	display: flex;
+	position: relative;
+	box-shadow: none;
+	flex-wrap: nowrap;
 }
 
 .gridd-menu-item-wrapper,
@@ -70,10 +70,6 @@
 	border-bottom: 0.1em solid transparent;
 }
 
-.gridd-menu-item-wrapper.has-arrow a {
-	padding-right: 0;
-}
-
 .gridd-menu-item-wrapper > button {
 	border: none;
 	box-shadow: none;
@@ -86,6 +82,15 @@
 	width: 1em;
 	box-sizing: content-box;
 	border-bottom: 0.1em solid transparent;
+}
+
+.current_page_item > a {
+	color: var(--acl, var(--lc));
+	border-bottom-color: var(--acl, var(--lc));
+}
+
+.gridd-menu-item-wrapper.has-arrow a {
+	padding-right: 0;
 }
 
 .gridd-menu-item-wrapper > a:focus {
@@ -104,6 +109,12 @@
 	color: var(--acl, var(--lc));
 }
 
+.current-menu-item > .gridd-menu-item-wrapper > a,
+.current-menu-item > .gridd-menu-item-wrapper > a + button {
+	color: var(--acl, var(--lc));
+	border-bottom-color: var(--acl, var(--lc));
+}
+
 .gridd-menu-item-wrapper > button:hover::before,
 .gridd-menu-item-wrapper > button:focus::before {
 	content: "";
@@ -115,13 +126,6 @@
 	top: 0;
 	left: 0;
 	opacity: 0.05;
-}
-
-.current-menu-item > .gridd-menu-item-wrapper > a,
-.current_page_item > a,
-.current-menu-item > .gridd-menu-item-wrapper > a + button {
-	color: var(--acl, var(--lc));
-	border-bottom-color: var(--acl, var(--lc));
 }
 
 .current-menu-ancestor .gridd-menu-item-wrapper > a,
