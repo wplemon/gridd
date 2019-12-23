@@ -13,15 +13,6 @@ use Gridd\Rest;
 $sanitization = new Sanitize();
 
 Customizer::add_section(
-	'gridd_features_global',
-	[
-		'title'    => esc_attr__( 'Global Settings', 'gridd' ),
-		'priority' => 1,
-		'panel'    => 'theme_settings',
-	]
-);
-
-Customizer::add_section(
 	'gridd_features_archive',
 	[
 		'title'    => esc_attr__( 'Post Archives Options', 'gridd' ),
@@ -343,6 +334,19 @@ Customizer::add_field(
 	]
 );
 
+/**
+ * Disable Global Settings section & options.
+ *
+ * WIP
+Customizer::add_section(
+	'gridd_features_global',
+	[
+		'title'    => esc_attr__( 'Global Settings', 'gridd' ),
+		'priority' => 1,
+		'panel'    => 'theme_settings',
+	]
+);
+
 add_action(
 	'init',
 	function() {
@@ -368,9 +372,6 @@ add_action(
 	}
 );
 
-/**
- * Disabled control.
- *
 Customizer::add_field(
 	[
 		'type'        => 'checkbox',

@@ -88,7 +88,11 @@ class Rest {
 	 * @return array
 	 */
 	public static function get_partials() {
+		return [];
+		/**
+		 * Disable deferred parts.
 		return get_theme_mod( 'gridd_rest_api_partials', [] );
+		*/
 	}
 
 	/**
