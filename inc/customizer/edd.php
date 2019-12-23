@@ -12,7 +12,7 @@ if ( ! class_exists( 'Easy_Digital_Downloads' ) ) {
 	return;
 }
 
-Customizer::add_section(
+new \Kirki\Section(
 	'gridd_edd',
 	[
 		'title'       => esc_html__( 'EDD Grid', 'gridd' ),
@@ -21,9 +21,8 @@ Customizer::add_section(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
-		'type'        => 'slider',
 		'settings'    => 'gridd_edd_grid_min_col_width',
 		'label'       => esc_html__( 'Minimum Column Width', 'gridd' ),
 		'description' => esc_html__( 'Define the minimum width that each item in a grid can have. The columns and rows will be auto-calculated using this value.', 'gridd' ),
@@ -45,9 +44,8 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
-		'type'        => 'slider',
 		'settings'    => 'gridd_edd_archive_grid_gap',
 		'label'       => esc_html__( 'Gap', 'gridd' ),
 		'description' => esc_html__( 'The gap between grid items.', 'gridd' ),
@@ -69,9 +67,8 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
-		'type'      => 'slider',
 		'settings'  => 'gridd_edd_product_grid_inner_padding',
 		'label'     => esc_html__( 'Grid Items Inner Padding', 'gridd' ),
 		'section'   => 'gridd_edd',
@@ -93,9 +90,8 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Radio(
 	[
-		'type'      => 'radio',
 		'settings'  => 'gridd_edd_product_grid_image_ratio',
 		'label'     => esc_html__( 'Grid Items Image Ratio', 'gridd' ),
 		'section'   => 'gridd_edd',

@@ -9,7 +9,6 @@
 use Gridd\Customizer;
 use Gridd\Customizer\Sanitize;
 use Gridd\Rest;
-use Gridd\Grid_Part\Sidebar;
 
 $sanitization = new Sanitize();
 

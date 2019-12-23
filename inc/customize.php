@@ -41,7 +41,7 @@ new \Kirki\Section(
  *
  * @since 2.0.0
  */
-Customizer::add_panel(
+new \Kirki\Panel(
 	'theme_settings',
 	[
 		'title'    => esc_html__( 'Theme Settings', 'gridd' ),

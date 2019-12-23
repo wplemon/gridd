@@ -134,21 +134,11 @@ function gridd_sidebar_customizer_options( $id ) {
 		]
 	);
 
-	Customizer::add_field(
+	new \Kirki\Field\Dimension(
 		[
-			'type'            => 'dimension',
 			'settings'        => "gridd_grid_sidebar_{$id}_padding",
 			'label'           => esc_html__( 'Padding', 'gridd' ),
-			'description'     => Customizer::get_control_description(
-				[
-					'short'   => '',
-					'details' => sprintf(
-						/* translators: Link properties. */
-						__( 'Use any valid CSS value. For details on how padding works, please refer to <a %s>this article</a>.', 'gridd' ),
-						'href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow"'
-					),
-				]
-			),
+			'description'     => esc_html__( 'Use any valid CSS value.', 'gridd' ),
 			'section'         => "grid_part_details_sidebar_$id.custom-options",
 			'priority'        => 40,
 			'default'         => '1em',
@@ -165,9 +155,8 @@ function gridd_sidebar_customizer_options( $id ) {
 		]
 	);
 
-	Customizer::add_field(
+	new \Kirki\Field\Dimension(
 		[
-			'type'            => 'dimension',
 			'settings'        => "gridd_grid_sidebar_{$id}_widgets_margin",
 			'label'           => esc_html__( 'Margin between widgets', 'gridd' ),
 			'section'         => "grid_part_details_sidebar_$id",
