@@ -33,6 +33,7 @@ class Version_2_0_2 {
 	 * @return void
 	 */
 	private function run_update() {
+		$this->custom_options();
 	}
 
 	/**
@@ -42,7 +43,7 @@ class Version_2_0_2 {
 	 * @since 2.0.2
 	 * @return void
 	 */
-	private function content_padding() {
+	private function custom_options() {
 		set_theme_mod( 'breadcrumbs_custom_options', true );
 
 		$number = Navigation::get_number_of_nav_menus();
