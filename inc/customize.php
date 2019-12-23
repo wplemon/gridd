@@ -78,8 +78,8 @@ new \Kirki\Field\ReactColor(
 				'element'           => ':root',
 				'property'          => '--bg',
 				'sanitize_callback' => function( $value ) {
-					if ( false === strpos( $value, 'rgba' ) && false === strpos( '#', $value ) ) {
-						return '#' . $value;
+					if ( false === strpos( $value, '(' ) ) {
+						return '#' . str_replace( '#', '', $value );
 					}
 					return $value;
 				},
@@ -89,8 +89,8 @@ new \Kirki\Field\ReactColor(
 				'property'          => '--bg',
 				'context'           => [ 'editor' ],
 				'sanitize_callback' => function( $value ) {
-					if ( false === strpos( $value, 'rgba' ) && false === strpos( '#', $value ) ) {
-						return '#' . $value;
+					if ( false === strpos( $value, '(' ) ) {
+						return '#' . str_replace( '#', '', $value );
 					}
 					return $value;
 				},
