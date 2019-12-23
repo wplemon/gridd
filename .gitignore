@@ -42,3 +42,9 @@ packages/wplemon/control-palette-builder/.eslintignore
 packages/wplemon/control-palette-builder/.babelrc
 
 FUNDING.yml
+
+assets/css/blocks/block-library/.npmrc
+
+assets/css/blocks/block-library/CHANGELOG.md
+
+assets/css/blocks/block-library/README.md

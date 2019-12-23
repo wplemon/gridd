@@ -2,6 +2,9 @@
  * Colors
  */
 /**
+ * Colors
+ */
+/**
  * Often re-used variables
  */
 /**
@@ -23,9 +26,6 @@
  * Applies editor left position to the selector passed as argument
  */
 /**
- * Applies editor right position to the selector passed as argument
- */
-/**
  * Styles that are reused verbatim in a few places
  */
 /**
@@ -39,7 +39,6 @@
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
 .wp-block-image {
-  max-width: 100%;
   margin-bottom: 1em;
 }
 .wp-block-image img {
@@ -85,6 +84,10 @@
   margin-bottom: 1em;
 }
 
+.is-style-rounded img {
+  border-radius: 9999px;
+}
+
 .is-style-circle-mask img {
   border-radius: 9999px;
 }
@@ -97,7 +100,7 @@
     mask-repeat: no-repeat;
     mask-size: contain;
     mask-position: center;
-    border-radius: none;
+    border-radius: 0;
   }
 }
 
