@@ -39,9 +39,8 @@ new \Kirki\Field\Checkbox_Switch(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Repeater(
 	[
-		'type'            => 'repeater',
 		'settings'        => 'footer_social_icons',
 		'label'           => esc_html__( 'Social Media Links', 'gridd' ),
 		'description'     => esc_html__( 'Add, remove and reorder your social links.', 'gridd' ),
@@ -129,9 +128,8 @@ new \Kirki\Field\ReactColor(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
-		'type'            => 'slider',
 		'settings'        => 'footer_social_icons_size',
 		'label'           => esc_html__( 'Size', 'gridd' ),
 		'section'         => 'grid_part_details_footer_social_media',
@@ -157,9 +155,8 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
-		'type'            => 'slider',
 		'settings'        => 'footer_social_icons_padding',
 		'label'           => esc_html__( 'Padding', 'gridd' ),
 		'description'     => esc_html__( 'Controls how large the clickable area will be, and also the spacing between icons.', 'gridd' ),

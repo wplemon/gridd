@@ -37,16 +37,11 @@ new \Kirki\Field\Checkbox_Switch(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Textarea(
 	[
-		'type'              => 'textarea',
 		'settings'          => 'grid_part_details_header_contact_info',
 		'label'             => esc_html__( 'Content', 'gridd' ),
-		'description'       => Customizer::get_control_description(
-			[
-				'details' => esc_html__( 'Enter any text you want - usually your contact info or important announcements that you want your visitors to see.', 'gridd' ),
-			]
-		),
+		'description'       => esc_html__( 'Enter any text you want - usually your contact info or important announcements that you want your visitors to see.', 'gridd' ),
 		'section'           => 'grid_part_details_header_contact_info',
 		'default'           => __( 'Email: <a href="mailto:contact@example.com">contact@example.com</a>. Phone: +1-541-754-3010', 'gridd' ),
 		'transport'         => 'postMessage',
@@ -113,9 +108,8 @@ new \WPLemon\Field\WCAGTextColor(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
-		'type'            => 'slider',
 		'settings'        => 'header_contact_info_font_size',
 		'label'           => esc_html__( 'Font Size', 'gridd' ),
 		'description'     => esc_html__( 'The value selected here is relative to your body font-size, so a value of 1em will be the same size as your content.', 'gridd' ),
@@ -141,9 +135,8 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Dimension(
 	[
-		'type'            => 'dimension',
 		'settings'        => 'header_contact_info_padding',
 		'label'           => esc_html__( 'Padding', 'gridd' ),
 		'description'     => Customizer::get_control_description(

@@ -32,11 +32,6 @@ $style->add_string(
 // Add the stylesheet.
 $style->add_file( get_theme_file_path( 'grid-parts/Footer/styles.min.css' ) );
 
-// Force-override parts background images.
-if ( get_theme_mod( 'footer_parts_background_override', false ) ) {
-	$style->add_string( '.gridd-tp.gridd-tp-footer .gridd-tp,.gridd-tp.gridd-tp-footer .gridd-tp inner,.site-info{background:none !important;}' );
-}
-
 $attrs = [
 	'class' => 'gridd-tp gridd-tp-footer',
 	'role'  => 'contentinfo',

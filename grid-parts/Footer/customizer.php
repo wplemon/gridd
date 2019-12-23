@@ -27,12 +27,7 @@ Customizer::add_field(
 		'type'              => 'gridd_grid',
 		'grid-part'         => 'footer',
 		'label'             => esc_html__( 'Footer Grid', 'gridd' ),
-		'description'       => Customizer::get_control_description(
-			[
-				'short'   => '',
-				'details' => __( 'You can add columns and rows, define their sizes, and also add or remove grid-parts on your site. For more information and documentation on how the grid works, please read <a href="https://wplemon.github.io/gridd/the-grid-control.html" target="_blank">this article</a>.', 'gridd' ),
-			]
-		),
+		'description'       => __( 'You can add columns and rows, define their sizes, and also add or remove grid-parts on your site. For more information and documentation on how the grid works, please read <a href="https://wplemon.github.io/gridd/the-grid-control.html" target="_blank">this article</a>.', 'gridd' ),
 		'default'           => Footer::get_grid_defaults(),
 		'choices'           => [
 			'parts' => Footer::get_footer_grid_parts(),
@@ -42,9 +37,8 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Dimension(
 	[
-		'type'      => 'dimension',
 		'settings'  => 'gridd_grid_footer_max_width',
 		'label'     => esc_html__( 'Footer Maximum Width', 'gridd' ),
 		'section'   => 'grid_part_details_footer',
@@ -60,16 +54,11 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Dimension(
 	[
-		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_footer_grid_gap',
 		'label'       => esc_html__( 'Grid Gap', 'gridd' ),
-		'description' => Customizer::get_control_description(
-			[
-				'details' => __( 'Adds a gap between your grid-parts, both horizontally and vertically. For more information please read <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
-			]
-		),
+		'description' => __( 'Adds a gap between your grid-parts, both horizontally and vertically. For more information please read <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
 		'section'     => 'grid_part_details_footer',
 		'default'     => '0',
 		'transport'   => 'auto',
@@ -83,16 +72,11 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Dimension(
 	[
-		'type'        => 'dimension',
 		'settings'    => 'gridd_grid_footer_padding',
 		'label'       => esc_html__( 'Padding', 'gridd' ),
-		'description' => Customizer::get_control_description(
-			[
-				'details' => esc_html__( 'Inner padding for all parts in the footer.', 'gridd' ) . ' ' . __( 'For details on how padding works, please refer to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
-			]
-		),
+		'description' => esc_html__( 'Inner padding for all parts in the footer.', 'gridd' ),
 		'section'     => 'grid_part_details_footer',
 		'default'     => '1em',
 		'transport'   => 'auto',
@@ -108,45 +92,27 @@ Customizer::add_field(
 
 new \Kirki\Field\ReactColor(
 	[
-		'settings'    => 'gridd_grid_footer_background_color',
-		'label'       => esc_html__( 'Background Color', 'gridd' ),
-		'description' => Customizer::get_control_description(
-			[
-				'details' => esc_html__( 'Individual grid-parts can override this by setting their own background color for their area. If you are using a grid-gap the color defined here will be visible between grid-parts. If the color you have selected here is not visible, individual grid-parts may be using a solid background color.', 'gridd' ),
-			]
-		),
-		'section'     => 'grid_part_details_footer',
-		'default'     => '#ffffff',
-		'transport'   => 'auto',
-		'output'      => [
+		'settings'  => 'gridd_grid_footer_background_color',
+		'label'     => esc_html__( 'Background Color', 'gridd' ),
+		'section'   => 'grid_part_details_footer',
+		'default'   => '#ffffff',
+		'transport' => 'auto',
+		'output'    => [
 			[
 				'element'  => '.gridd-tp-footer',
 				'property' => '--bg',
 			],
 		],
-		'choices'     => [
+		'choices'   => [
 			'formComponent' => 'TwitterPicker',
 			'colors'        => \Gridd\Theme::get_colorpicker_palette(),
 		],
-		'priority'    => 50,
+		'priority'  => 50,
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
-		'type'        => 'checkbox',
-		'settings'    => 'footer_parts_background_override',
-		'label'       => esc_html__( 'Override Footer Parts Background', 'gridd' ),
-		'description' => esc_html__( 'Enable this option to force-override the background color of all grid-parts in your footer.', 'gridd' ),
-		'section'     => 'grid_part_details_footer',
-		'default'     => false,
-		'priority'    => 60,
-	]
-);
-
-Customizer::add_field(
-	[
-		'type'      => 'slider',
 		'settings'  => 'gridd_grid_footer_border_top_width',
 		'label'     => esc_html__( 'Border-Top Width', 'gridd' ),
 		'section'   => 'grid_part_details_footer',

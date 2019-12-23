@@ -96,17 +96,10 @@ new \WPLemon\Field\WCAGTextColor(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
-		'type'            => 'slider',
 		'settings'        => 'header_search_padding',
-		'label'           => esc_html__( 'Padding', 'gridd' ),
-		'description'     => Customizer::get_control_description(
-			[
-				'short'   => '',
-				'details' => esc_html__( 'Select the horizontal padding for this grid-part. Vertically there is no padding because the searchform occupies the whole height of this area.', 'gridd' ),
-			]
-		),
+		'label'           => esc_html__( 'Horizontal Padding', 'gridd' ),
 		'section'         => 'grid_part_details_header_search',
 		'default'         => 1,
 		'transport'       => 'auto',
@@ -130,9 +123,8 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
-		'type'            => 'slider',
 		'settings'        => 'header_search_font_size',
 		'label'           => esc_html__( 'Font Size', 'gridd' ),
 		'description'     => esc_html__( 'The value selected here is relative to your body font-size, so a value of 1em will be the same size as your content.', 'gridd' ),

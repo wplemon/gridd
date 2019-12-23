@@ -14,9 +14,8 @@ $parts = [
 	'search' => esc_html__( 'Search', 'gridd' ),
 ];
 
-Customizer::add_field(
+new \Kirki\Field\Checkbox(
 	[
-		'type'            => 'checkbox',
 		'settings'        => 'gridd_grid_nav-handheld_enable',
 		'label'           => esc_html__( 'Enable Mobile Navigation', 'gridd' ),
 		'section'         => 'gridd_mobile',
@@ -34,9 +33,8 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Sortable(
 	[
-		'type'            => 'sortable',
 		'settings'        => 'gridd_grid_nav-handheld_parts',
 		'label'           => esc_html__( 'Mobile Navigation active parts & order', 'gridd' ),
 		'section'         => 'gridd_mobile',
@@ -62,16 +60,11 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Checkbox(
 	[
-		'type'            => 'checkbox',
 		'settings'        => 'gridd_grid_nav-handheld_hide_labels',
 		'label'           => esc_attr__( 'Hide Labels', 'gridd' ),
-		'description'     => Customizer::get_control_description(
-			[
-				'details' => __( 'Enable this option if you want to hide the button labels. If labels are hidden, they only become available to screen-readers.', 'gridd' ),
-			]
-		),
+		'description'     => __( 'Enable this option if you want to hide the button labels. Hidden labels only become available to screen-readers.', 'gridd' ),
 		'section'         => 'gridd_mobile',
 		'default'         => false,
 		'transport'       => 'postMessage',

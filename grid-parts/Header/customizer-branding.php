@@ -95,9 +95,8 @@ new \Kirki\Field\ReactColor(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Dimension(
 	[
-		'type'              => 'dimension',
 		'settings'          => 'gridd_grid_header_branding_padding',
 		'label'             => esc_html__( 'Padding', 'gridd' ),
 		'description'       => Customizer::get_control_description(
@@ -127,10 +126,9 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
 		'settings'        => 'gridd_logo_max_width',
-		'type'            => 'slider',
 		'label'           => esc_html__( 'Logo Maximum Width', 'gridd' ),
 		'section'         => 'title_tagline',
 		'priority'        => 220,
@@ -158,10 +156,9 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Typography(
 	[
 		'settings'        => 'gridd_branding_typography',
-		'type'            => 'typography',
 		'label'           => esc_html__( 'Site Title & Tagline Typography', 'gridd' ),
 		'section'         => 'title_tagline',
 		'priority'        => 230,
@@ -191,10 +188,9 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
 		'settings'        => 'gridd_branding_sitetitle_size',
-		'type'            => 'slider',
 		'label'           => esc_html__( 'Site Title Font-Size', 'gridd' ),
 		'section'         => 'title_tagline',
 		'priority'        => 240,
@@ -216,10 +212,9 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
 		'settings'        => 'gridd_branding_tagline_size',
-		'type'            => 'slider',
 		'label'           => esc_html__( 'Site Tagline Font-Size', 'gridd' ),
 		'section'         => 'title_tagline',
 		'priority'        => 250,
@@ -241,10 +236,9 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Checkbox(
 	[
 		'settings'        => 'gridd_branding_inline',
-		'type'            => 'checkbox',
 		'label'           => esc_html__( 'Inline Elements', 'gridd' ),
 		'description'     => esc_html__( 'Enable this option to show the branding elements inline instead of one below the other.', 'gridd' ),
 		'section'         => 'title_tagline',
@@ -264,10 +258,9 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
 		'settings'        => 'gridd_branding_inline_spacing',
-		'type'            => 'slider',
 		'label'           => esc_html__( 'Spacing between elements', 'gridd' ),
 		'description'     => esc_html__( 'This value is relative to the site-title font-size.', 'gridd' ),
 		'section'         => 'title_tagline',

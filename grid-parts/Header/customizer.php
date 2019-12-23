@@ -57,12 +57,7 @@ Customizer::add_field(
 		'type'              => 'gridd_grid',
 		'grid-part'         => 'header',
 		'label'             => esc_html__( 'Header Grid', 'gridd' ),
-		'description'       => Customizer::get_control_description(
-			[
-				'short'   => '',
-				'details' => __( 'You can add columns and rows, define their sizes, and also add or remove grid-parts on your site. For more information and documentation on how the grid works, please read <a href="https://wplemon.github.io/gridd/the-grid-control.html" target="_blank">this article</a>.', 'gridd' ),
-			]
-		),
+		'description'       => __( 'You can add columns and rows, define their sizes, and also add or remove grid-parts on your site. For more information and documentation on how the grid works, please read <a href="https://wplemon.github.io/gridd/the-grid-control.html" target="_blank">this article</a>.', 'gridd' ),
 		'default'           => Header::get_grid_defaults(),
 		'choices'           => [
 			'parts' => Header::get_header_grid_parts(),
@@ -86,9 +81,8 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Dimension(
 	[
-		'type'            => 'dimension',
 		'settings'        => 'header_max_width',
 		'label'           => esc_html__( 'Header Maximum Width', 'gridd' ),
 		'section'         => 'grid_part_details_header',
@@ -107,9 +101,8 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Dimension(
 	[
-		'type'            => 'dimension',
 		'settings'        => 'gridd_grid_header_padding',
 		'label'           => esc_html__( 'Header Padding', 'gridd' ),
 		'section'         => 'grid_part_details_header',
@@ -128,16 +121,11 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Dimension(
 	[
-		'type'            => 'dimension',
 		'settings'        => 'gridd_grid_header_grid_gap',
 		'label'           => esc_html__( 'Grid Gap', 'gridd' ),
-		'description'     => Customizer::get_control_description(
-			[
-				'details' => __( 'Adds a gap between your grid-parts, both horizontally and vertically. If you have a background-color or background-image defined for your header, then these will be visible through these gaps which creates a unique appearance since each grid-part looks separate. For more information please read <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
-			]
-		),
+		'description'     => __( 'Adds a gap between your grid-parts, both horizontally and vertically. For more information please read <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
 		'section'         => 'grid_part_details_header',
 		'default'         => '0',
 		'priority'        => 40,
@@ -158,11 +146,6 @@ new \Kirki\Field\ReactColor(
 	[
 		'settings'        => 'header_background_color',
 		'label'           => esc_html__( 'Background Color', 'gridd' ),
-		'description'     => Customizer::get_control_description(
-			[
-				'details' => esc_html__( 'Choose a background color for the header. Individual grid-parts can override this by setting their own background color for their area. If you are using a grid-gap the color defined here will be visible between grid-parts.', 'gridd' ),
-			]
-		),
 		'section'         => 'grid_part_details_header',
 		'default'         => '#ffffff',
 		'priority'        => 50,
@@ -268,9 +251,8 @@ new \Kirki\Field\RadioButtonset(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Checkbox_Toggle(
 	[
-		'type'        => 'toggle',
 		'settings'    => 'gridd_header_sticky',
 		'label'       => esc_html__( 'Sticky on Large Devices', 'gridd' ),
 		'description' => esc_html__( 'Enable to stick this area to the top of the page when users scroll-down on devices larger than the breakpoint you defined in your main grid.', 'gridd' ),

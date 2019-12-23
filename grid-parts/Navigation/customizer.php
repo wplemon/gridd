@@ -54,20 +54,6 @@ function gridd_nav_customizer_options( $id ) {
 		]
 	);
 
-	/**
-	 * Focus on menu_locations section.
-	 *
-	Customizer::add_field(
-		[
-			'settings' => "gridd_logo_focus_on_menu_locations_$id",
-			'type'     => 'custom',
-			'label'    => esc_html__( 'Looking for your menu items?', 'gridd' ),
-			'section'  => "grid_part_details_nav_$id",
-			'default'  => '<div style="margin-bottom:1em;"><button class="button-gridd-focus global-focus button button button-large" data-context="section" data-focus="menu_locations">' . esc_html__( 'Click here to edit your menus', 'gridd' ) . '</button></div>',
-		]
-	);
-	*/
-
 	new \Kirki\Field\Checkbox_Switch(
 		[
 			'settings'  => "nav_{$id}_custom_options",
@@ -86,15 +72,7 @@ function gridd_nav_customizer_options( $id ) {
 		[
 			'settings'          => "gridd_grid_nav_{$id}_responsive_behavior",
 			'label'             => esc_html__( 'Responsive Behavior', 'gridd' ),
-			'description'       => Customizer::get_control_description(
-				[
-					'details' => sprintf(
-						/* translators: The link properies. */
-						__( 'Select how this navigation should behave in smaller screens. We recommend you hide navigations on mobile and instead use the <a %s>separate mobile-navigation menu</a>.', 'gridd' ),
-						'href="#" class="button-gridd-focus global-focus" data-context="section" data-focus="gridd_mobile"'
-					),
-				]
-			),
+			'description'       => __( 'Select how this navigation should behave in smaller screens.', 'gridd' ),
 			'section'           => "grid_part_details_nav_$id",
 			'default'           => 'desktop-normal mobile-hidden',
 			'choices'           => [
@@ -112,21 +90,11 @@ function gridd_nav_customizer_options( $id ) {
 		]
 	);
 
-	Customizer::add_field(
+	new \Kirki\Field\Dimension(
 		[
-			'type'            => 'dimension',
 			'settings'        => "gridd_grid_nav_{$id}_padding",
 			'label'           => esc_html__( 'Padding', 'gridd' ),
-			'description'     => Customizer::get_control_description(
-				[
-					'short'   => '',
-					'details' => sprintf(
-						/* translators: Link properties. */
-						__( 'Use any valid CSS value. For details on how padding works, please refer to <a %s>this article</a>.', 'gridd' ),
-						'href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow"'
-					),
-				]
-			),
+			'description'     => esc_html__( 'Use any valid CSS value.', 'gridd' ),
 			'section'         => "grid_part_details_nav_$id",
 			'default'         => '1em',
 			'transport'       => 'auto',
@@ -216,9 +184,8 @@ function gridd_nav_customizer_options( $id ) {
 		]
 	);
 
-	Customizer::add_field(
+	new \Kirki\Field\Checkbox(
 		[
-			'type'            => 'checkbox',
 			'settings'        => "gridd_grid_nav_{$id}_vertical",
 			'label'           => esc_html__( 'Enable Vertical Menu Mode', 'gridd' ),
 			'description'     => esc_html__( 'If your layout is column-based and you want a vertical side-navigation enable this option.', 'gridd' ),
@@ -238,12 +205,7 @@ function gridd_nav_customizer_options( $id ) {
 		[
 			'settings'          => "gridd_grid_nav_{$id}_justify_content",
 			'label'             => esc_html__( 'Justify Items', 'gridd' ),
-			'description'       => Customizer::get_control_description(
-				[
-					'short'   => '',
-					'details' => esc_html__( 'Choose how menu items will be spread horizontally inside the menu container. This helps distribute extra free space left over when all the items on a line have reached their maximum size. It also exerts some control over the alignment of items when they overflow the line.', 'gridd' ),
-				]
-			),
+			'description'       => esc_html__( 'Choose how menu items will be spread horizontally inside the menu container.', 'gridd' ),
 			'section'           => "grid_part_details_nav_$id",
 			'default'           => 'center',
 			'transport'         => 'auto',
@@ -283,9 +245,8 @@ function gridd_nav_customizer_options( $id ) {
 		]
 	);
 
-	Customizer::add_field(
+	new \Kirki\Field\Text(
 		[
-			'type'              => 'text',
 			'settings'          => "gridd_grid_nav_{$id}_expand_label",
 			'label'             => esc_html__( 'Expand Label', 'gridd' ),
 			'section'           => "grid_part_details_nav_$id",
