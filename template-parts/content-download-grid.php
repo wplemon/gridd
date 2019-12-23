@@ -9,7 +9,7 @@
 use Gridd\Theme;
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> aria-label="<?php echo get_the_title(); ?>">
 	<header class="entry-header">
 		<?php Theme::get_template_part( 'template-parts/thumbnail-download' ); ?>
 		<?php the_title( '<h2 class="entry-title h4"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
