@@ -2,6 +2,9 @@
  * Colors
  */
 /**
+ * Colors
+ */
+/**
  * Often re-used variables
  */
 /**
@@ -21,9 +24,6 @@
  */
 /**
  * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
  */
 /**
  * Styles that are reused verbatim in a few places
@@ -94,13 +94,13 @@
   vertical-align: middle;
 }
 
-.wp-block-media-text.is-image-fill figure {
+.wp-block-media-text.is-image-fill figure.wp-block-media-text__media {
   height: 100%;
   min-height: 250px;
   background-size: cover;
 }
 
-.wp-block-media-text.is-image-fill figure > img {
+.wp-block-media-text.is-image-fill figure.wp-block-media-text__media > img {
   position: absolute;
   width: 1px;
   height: 1px;

@@ -31,6 +31,9 @@
  * Colors
  */
 /**
+ * Colors
+ */
+/**
  * Often re-used variables
  */
 /**
@@ -50,9 +53,6 @@
  */
 /**
  * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
  */
 /**
  * Styles that are reused verbatim in a few places
@@ -135,6 +135,9 @@
  * Colors
  */
 /**
+ * Colors
+ */
+/**
  * Often re-used variables
  */
 /**
@@ -154,9 +157,6 @@
  */
 /**
  * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
  */
 /**
  * Styles that are reused verbatim in a few places
@@ -206,6 +206,9 @@
  * Colors
  */
 /**
+ * Colors
+ */
+/**
  * Often re-used variables
  */
 /**
@@ -225,9 +228,6 @@
  */
 /**
  * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
  */
 /**
  * Styles that are reused verbatim in a few places
@@ -255,6 +255,9 @@
  * Colors
  */
 /**
+ * Colors
+ */
+/**
  * Often re-used variables
  */
 /**
@@ -274,9 +277,6 @@
  */
 /**
  * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
  */
 /**
  * Styles that are reused verbatim in a few places
@@ -304,6 +304,9 @@
  * Colors
  */
 /**
+ * Colors
+ */
+/**
  * Often re-used variables
  */
 /**
@@ -323,9 +326,6 @@
  */
 /**
  * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
  */
 /**
  * Styles that are reused verbatim in a few places
@@ -424,6 +424,9 @@
  * Colors
  */
 /**
+ * Colors
+ */
+/**
  * Often re-used variables
  */
 /**
@@ -443,9 +446,6 @@
  */
 /**
  * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
  */
 /**
  * Styles that are reused verbatim in a few places
@@ -727,6 +727,9 @@ section.wp-block-cover-image > h2,
  * Colors
  */
 /**
+ * Colors
+ */
+/**
  * Often re-used variables
  */
 /**
@@ -746,9 +749,6 @@ section.wp-block-cover-image > h2,
  */
 /**
  * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
  */
 /**
  * Styles that are reused verbatim in a few places
@@ -828,6 +828,9 @@ section.wp-block-cover-image > h2,
  * Colors
  */
 /**
+ * Colors
+ */
+/**
  * Often re-used variables
  */
 /**
@@ -847,9 +850,6 @@ section.wp-block-cover-image > h2,
  */
 /**
  * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
  */
 /**
  * Styles that are reused verbatim in a few places
@@ -898,6 +898,9 @@ section.wp-block-cover-image > h2,
  * Colors
  */
 /**
+ * Colors
+ */
+/**
  * Often re-used variables
  */
 /**
@@ -917,9 +920,6 @@ section.wp-block-cover-image > h2,
  */
 /**
  * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
  */
 /**
  * Styles that are reused verbatim in a few places
@@ -1199,6 +1199,9 @@ section.wp-block-cover-image > h2,
  * Colors
  */
 /**
+ * Colors
+ */
+/**
  * Often re-used variables
  */
 /**
@@ -1218,9 +1221,6 @@ section.wp-block-cover-image > h2,
  */
 /**
  * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
  */
 /**
  * Styles that are reused verbatim in a few places
@@ -1258,6 +1258,9 @@ section.wp-block-cover-image > h2,
  * Colors
  */
 /**
+ * Colors
+ */
+/**
  * Often re-used variables
  */
 /**
@@ -1279,9 +1282,6 @@ section.wp-block-cover-image > h2,
  * Applies editor left position to the selector passed as argument
  */
 /**
- * Applies editor right position to the selector passed as argument
- */
-/**
  * Styles that are reused verbatim in a few places
  */
 /**
@@ -1295,7 +1295,6 @@ section.wp-block-cover-image > h2,
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
 .wp-block-image {
-  max-width: 100%;
   margin-bottom: 1em;
 }
 .wp-block-image img {
@@ -1341,6 +1340,10 @@ section.wp-block-cover-image > h2,
   margin-bottom: 1em;
 }
 
+.is-style-rounded img {
+  border-radius: 9999px;
+}
+
 .is-style-circle-mask img {
   border-radius: 9999px;
 }
@@ -1353,7 +1356,7 @@ section.wp-block-cover-image > h2,
     mask-repeat: no-repeat;
     mask-size: contain;
     mask-position: center;
-    border-radius: none;
+    border-radius: 0;
   }
 }
 
@@ -1363,6 +1366,9 @@ section.wp-block-cover-image > h2,
   text-align: center;
 }
 
+/**
+ * Colors
+ */
 /**
  * Colors
  */
@@ -1386,9 +1392,6 @@ section.wp-block-cover-image > h2,
  */
 /**
  * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
  */
 /**
  * Styles that are reused verbatim in a few places
@@ -1462,6 +1465,9 @@ section.wp-block-cover-image > h2,
  * Colors
  */
 /**
+ * Colors
+ */
+/**
  * Often re-used variables
  */
 /**
@@ -1481,9 +1487,6 @@ section.wp-block-cover-image > h2,
  */
 /**
  * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
  */
 /**
  * Styles that are reused verbatim in a few places
@@ -1553,6 +1556,9 @@ section.wp-block-cover-image > h2,
  * Colors
  */
 /**
+ * Colors
+ */
+/**
  * Often re-used variables
  */
 /**
@@ -1572,9 +1578,6 @@ section.wp-block-cover-image > h2,
  */
 /**
  * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
  */
 /**
  * Styles that are reused verbatim in a few places
@@ -1645,13 +1648,13 @@ section.wp-block-cover-image > h2,
   vertical-align: middle;
 }
 
-.wp-block-media-text.is-image-fill figure {
+.wp-block-media-text.is-image-fill figure.wp-block-media-text__media {
   height: 100%;
   min-height: 250px;
   background-size: cover;
 }
 
-.wp-block-media-text.is-image-fill figure > img {
+.wp-block-media-text.is-image-fill figure.wp-block-media-text__media > img {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -1695,6 +1698,9 @@ section.wp-block-cover-image > h2,
  * Colors
  */
 /**
+ * Colors
+ */
+/**
  * Often re-used variables
  */
 /**
@@ -1714,9 +1720,6 @@ section.wp-block-cover-image > h2,
  */
 /**
  * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
  */
 /**
  * Styles that are reused verbatim in a few places
@@ -1741,11 +1744,8 @@ section.wp-block-cover-image > h2,
   font-style: normal;
 }
 
-.has-drop-cap:not(:focus)::after {
-  content: "";
-  display: table;
-  clear: both;
-  padding-top: 14px;
+p.has-background {
+  padding: 20px 30px;
 }
 
 p.has-text-color a {
@@ -1776,6 +1776,9 @@ p.has-background {
  * Colors
  */
 /**
+ * Colors
+ */
+/**
  * Often re-used variables
  */
 /**
@@ -1795,9 +1798,6 @@ p.has-background {
  */
 /**
  * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
  */
 /**
  * Styles that are reused verbatim in a few places
@@ -1828,6 +1828,9 @@ p.has-background {
  * Colors
  */
 /**
+ * Colors
+ */
+/**
  * Often re-used variables
  */
 /**
@@ -1847,9 +1850,6 @@ p.has-background {
  */
 /**
  * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
  */
 /**
  * Styles that are reused verbatim in a few places
@@ -1947,6 +1947,9 @@ p.has-background {
  * Colors
  */
 /**
+ * Colors
+ */
+/**
  * Often re-used variables
  */
 /**
@@ -1966,9 +1969,6 @@ p.has-background {
  */
 /**
  * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
  */
 /**
  * Styles that are reused verbatim in a few places
@@ -2051,6 +2051,9 @@ p.has-background {
  * Colors
  */
 /**
+ * Colors
+ */
+/**
  * Often re-used variables
  */
 /**
@@ -2070,9 +2073,6 @@ p.has-background {
  */
 /**
  * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
  */
 /**
  * Styles that are reused verbatim in a few places
@@ -2140,6 +2140,9 @@ p.has-background {
  * Colors
  */
 /**
+ * Colors
+ */
+/**
  * Often re-used variables
  */
 /**
@@ -2159,9 +2162,6 @@ p.has-background {
  */
 /**
  * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
  */
 /**
  * Styles that are reused verbatim in a few places
@@ -2203,6 +2203,9 @@ p.has-background {
  * Colors
  */
 /**
+ * Colors
+ */
+/**
  * Often re-used variables
  */
 /**
@@ -2222,9 +2225,6 @@ p.has-background {
  */
 /**
  * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
  */
 /**
  * Styles that are reused verbatim in a few places
@@ -2290,47 +2290,6 @@ p.has-background {
  * Colors
  */
 /**
- * Often re-used variables
- */
-/**
- * Breakpoints & Media Queries
- */
-/**
- * Breakpoint mixins
- */
-/**
- * Long content fade mixin
- *
- * Creates a fading overlay to signify that the content is longer
- * than the space allows.
- */
-/**
- * Button states and focus styles
- */
-/**
- * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
- */
-/**
- * Styles that are reused verbatim in a few places
- */
-/**
- * Allows users to opt-out of animations via OS-level preferences.
- */
-/**
- * Reset default styles for JavaScript UI based pages.
- * This is a WP-admin agnostic reset
- */
-/**
- * Reset the WP Admin page styles for Gutenberg-like pages.
- */
-.wp-block-spacer {
-  clear: both;
-}
-
-/**
  * Colors
  */
 /**
@@ -2355,7 +2314,48 @@ p.has-background {
  * Applies editor left position to the selector passed as argument
  */
 /**
- * Applies editor right position to the selector passed as argument
+ * Styles that are reused verbatim in a few places
+ */
+/**
+ * Allows users to opt-out of animations via OS-level preferences.
+ */
+/**
+ * Reset default styles for JavaScript UI based pages.
+ * This is a WP-admin agnostic reset
+ */
+/**
+ * Reset the WP Admin page styles for Gutenberg-like pages.
+ */
+.wp-block-spacer {
+  clear: both;
+}
+
+/**
+ * Colors
+ */
+/**
+ * Colors
+ */
+/**
+ * Often re-used variables
+ */
+/**
+ * Breakpoints & Media Queries
+ */
+/**
+ * Breakpoint mixins
+ */
+/**
+ * Long content fade mixin
+ *
+ * Creates a fading overlay to signify that the content is longer
+ * than the space allows.
+ */
+/**
+ * Button states and focus styles
+ */
+/**
+ * Applies editor left position to the selector passed as argument
  */
 /**
  * Styles that are reused verbatim in a few places
@@ -2380,6 +2380,9 @@ p.wp-block-subhead {
  * Colors
  */
 /**
+ * Colors
+ */
+/**
  * Often re-used variables
  */
 /**
@@ -2399,9 +2402,6 @@ p.wp-block-subhead {
  */
 /**
  * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
  */
 /**
  * Styles that are reused verbatim in a few places
@@ -2487,6 +2487,11 @@ p.wp-block-subhead {
   border: 1px solid;
   word-break: normal;
 }
+.wp-block-table figcaption {
+  color: #555d66;
+  font-size: var(--fs-tr);
+  text-align: center;
+}
 
 .wp-block-table {
   min-width: 30em;
@@ -2495,6 +2500,9 @@ p.wp-block-subhead {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+/**
+ * Colors
+ */
 /**
  * Colors
  */
@@ -2518,9 +2526,6 @@ p.wp-block-subhead {
  */
 /**
  * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
  */
 /**
  * Styles that are reused verbatim in a few places
@@ -2568,48 +2573,6 @@ p.wp-block-subhead {
  * Colors
  */
 /**
- * Often re-used variables
- */
-/**
- * Breakpoints & Media Queries
- */
-/**
- * Breakpoint mixins
- */
-/**
- * Long content fade mixin
- *
- * Creates a fading overlay to signify that the content is longer
- * than the space allows.
- */
-/**
- * Button states and focus styles
- */
-/**
- * Applies editor left position to the selector passed as argument
- */
-/**
- * Applies editor right position to the selector passed as argument
- */
-/**
- * Styles that are reused verbatim in a few places
- */
-/**
- * Allows users to opt-out of animations via OS-level preferences.
- */
-/**
- * Reset default styles for JavaScript UI based pages.
- * This is a WP-admin agnostic reset
- */
-/**
- * Reset the WP Admin page styles for Gutenberg-like pages.
- */
-pre.wp-block-verse {
-  white-space: nowrap;
-  overflow: auto;
-}
-
-/**
  * Colors
  */
 /**
@@ -2634,7 +2597,49 @@ pre.wp-block-verse {
  * Applies editor left position to the selector passed as argument
  */
 /**
- * Applies editor right position to the selector passed as argument
+ * Styles that are reused verbatim in a few places
+ */
+/**
+ * Allows users to opt-out of animations via OS-level preferences.
+ */
+/**
+ * Reset default styles for JavaScript UI based pages.
+ * This is a WP-admin agnostic reset
+ */
+/**
+ * Reset the WP Admin page styles for Gutenberg-like pages.
+ */
+pre.wp-block-verse {
+  white-space: nowrap;
+  overflow: auto;
+}
+
+/**
+ * Colors
+ */
+/**
+ * Colors
+ */
+/**
+ * Often re-used variables
+ */
+/**
+ * Breakpoints & Media Queries
+ */
+/**
+ * Breakpoint mixins
+ */
+/**
+ * Long content fade mixin
+ *
+ * Creates a fading overlay to signify that the content is longer
+ * than the space allows.
+ */
+/**
+ * Button states and focus styles
+ */
+/**
+ * Applies editor left position to the selector passed as argument
  */
 /**
  * Styles that are reused verbatim in a few places

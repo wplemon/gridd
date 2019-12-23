@@ -70,14 +70,13 @@ class Breadcrumbs extends Grid_Part {
 	public function render( $part ) {
 		if ( $this->id === $part && apply_filters( 'gridd_render_grid_part', true, 'breadcrumbs' ) ) {
 			Theme::get_template_part( 'grid-parts/Breadcrumbs/template' );
+			/**
+			 * Print styles.
+			 */
+			Style::get_instance( 'grid-part/breadcrumbs' )
+				->add_file( __DIR__ . '/styles.min.css' )
+				->the_css( 'gridd-inline-css-breadcrumbs' );
 		}
-
-		/**
-		 * Print styles.
-		 */
-		Style::get_instance( 'grid-part/breadcrumbs' )
-			->add_file( __DIR__ . '/styles.min.css' )
-			->the_css( 'gridd-inline-css-breadcrumbs' );
 	}
 
 	/**

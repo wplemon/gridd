@@ -209,12 +209,12 @@ class Style {
 	 * @return void
 	 */
 	public function the_css( $id ) {
-		echo ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? "\r\n<style id=\"" . esc_attr( $id ) . "\">\r\n" : '<style id="' . esc_attr( $id ) . '">';
+		echo '<style id="' . esc_attr( $id ) . '">';
 		/**
 		 * This is CSS, do not escape. Nothing here is unescaped user input, everything has already been sanitized properly.
 		 */
 		echo $this->get_css(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		echo ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? "\r\n</style>\r\n" : '</style>';
+		echo '</style>';
 	}
 
 	/**
@@ -225,9 +225,9 @@ class Style {
 	 * @return void
 	 */
 	public function child_theme_styles() {
-		if ( is_child_theme() && apply_filters( 'gridd_load_child_theme_styles', true ) ) {
+		if ( is_child_theme() && apply_filters( 'gridd_load_child_theme_styles', true ) && 'grid-part/content' === $this->context ) {
 			// Note to code reviewers: wp_strip_all_tags here is sufficient escape to ensure everything is interpreted as CSS.
-			echo '<style>' . wp_strip_all_tags( Theme::get_fcontents( get_stylesheet_directory() . '/style.css' ), true ) . '</style>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo '<style>' . wp_strip_all_tags( Theme::get_fcontents( get_stylesheet_directory() . '/style.css', true ), true ) . '</style>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 	}
 }
