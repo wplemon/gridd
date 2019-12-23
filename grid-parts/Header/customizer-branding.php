@@ -289,7 +289,7 @@ new \Kirki\Field\RadioButtonset(
 		'label'             => esc_html__( 'Horizontal Alignment', 'gridd' ),
 		'section'           => 'title_tagline',
 		'priority'          => 280,
-		'default'           => 'left',
+		'default'           => 'center',
 		'transport'         => 'auto',
 		'output'            => [
 			[

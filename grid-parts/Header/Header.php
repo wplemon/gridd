@@ -86,19 +86,19 @@ class Header extends Grid_Part {
 	 */
 	public static function get_grid_defaults() {
 		return [
-			'rows'         => 1,
-			'columns'      => 2,
+			'rows'         => 2,
+			'columns'      => 1,
 			'areas'        => [
 				'header_branding' => [
 					'cells' => [ [ 1, 1 ] ],
 				],
 				'nav_1'           => [
-					'cells' => [ [ 1, 2 ] ],
+					'cells' => [ [ 2, 1 ] ],
 				],
 			],
 			'gridTemplate' => [
-				'rows'    => [ 'auto' ],
-				'columns' => [ 'auto', 'auto' ],
+				'rows'    => [ 'auto', 'auto' ],
+				'columns' => [ 'auto' ],
 			],
 		];
 	}
