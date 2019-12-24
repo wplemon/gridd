@@ -18,7 +18,8 @@ new \Kirki\Section(
 	[
 		'title'    => esc_html__( 'Main Grid Layout', 'gridd' ),
 		'priority' => -100,
-		'panel'    => 'theme_options',
+		'panel'    => 'layout_options',
+		'type'     => 'expanded',
 	]
 );
 

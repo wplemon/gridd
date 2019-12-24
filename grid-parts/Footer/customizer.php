@@ -15,8 +15,9 @@ new \Kirki\Section(
 	'grid_part_details_footer',
 	[
 		'title'    => esc_html__( 'Footer Grid', 'gridd' ),
-		'priority' => -70,
-		'panel'    => 'theme_options',
+		'priority' => 20,
+		'panel'    => 'layout_options',
+		'type'     => 'expanded',
 	]
 );
 
