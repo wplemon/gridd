@@ -36,24 +36,41 @@ function gridd_add_footer_widget_area_options( $id ) {
 		]
 	);
 
+	new \Kirki\Field\Checkbox_Switch(
+		[
+			'settings'  => "footer_sidebar_{$id}_custom_options",
+			'section'   => "grid_part_details_footer_sidebar_$id",
+			'default'   => false,
+			'transport' => 'refresh',
+			'priority'  => -999,
+			'choices'   => [
+				'off' => esc_html__( 'Inherit Options', 'gridd' ),
+				'on'  => esc_html__( 'Override Options', 'gridd' ),
+			],
+		]
+	);
+
 	// Background Color.
 	new \Kirki\Field\ReactColor(
 		[
-			'settings'  => "gridd_grid_footer_sidebar_{$id}_bg_color",
-			'label'     => esc_html__( 'Background Color', 'gridd' ),
-			'section'   => "grid_part_details_footer_sidebar_$id",
-			'default'   => '#ffffff',
-			'transport' => 'auto',
-			'output'    => [
+			'settings'        => "gridd_grid_footer_sidebar_{$id}_bg_color",
+			'label'           => esc_html__( 'Background Color', 'gridd' ),
+			'section'         => "grid_part_details_footer_sidebar_$id",
+			'default'         => '#ffffff',
+			'transport'       => 'auto',
+			'output'          => [
 				[
-					'element'  => ".gridd-tp-footer_sidebar_$id",
+					'element'  => ".gridd-tp-footer_sidebar_$id.custom-options",
 					'property' => '--bg',
 				],
 			],
-			'choices'   => [
+			'choices'         => [
 				'formComponent' => 'TwitterPicker',
 				'colors'        => \Gridd\Theme::get_colorpicker_palette(),
 			],
+			'active_callback' => function() use ( $id ) {
+				return get_theme_mod( "footer_sidebar_{$id}_custom_options", false );
+			},
 		]
 	);
 
@@ -67,7 +84,7 @@ function gridd_add_footer_widget_area_options( $id ) {
 			'transport'         => 'auto',
 			'output'            => [
 				[
-					'element'  => ".gridd-tp-footer_sidebar_$id",
+					'element'  => ".gridd-tp-footer_sidebar_$id.custom-options",
 					'property' => '--cl',
 				],
 			],
@@ -76,6 +93,9 @@ function gridd_add_footer_widget_area_options( $id ) {
 				'appearance'      => 'hidden',
 			],
 			'sanitize_callback' => [ $sanitization, 'color_hex' ],
+			'active_callback'   => function() use ( $id ) {
+				return get_theme_mod( "footer_sidebar_{$id}_custom_options", false );
+			},
 		]
 	);
 
@@ -89,7 +109,7 @@ function gridd_add_footer_widget_area_options( $id ) {
 			'transport'         => 'auto',
 			'output'            => [
 				[
-					'element'  => ".gridd-tp-footer_sidebar_$id",
+					'element'  => ".gridd-tp-footer_sidebar_$id.custom-options",
 					'property' => '--lc',
 				],
 			],
@@ -101,8 +121,8 @@ function gridd_add_footer_widget_area_options( $id ) {
 				'forceCompliance' => get_theme_mod( 'target_color_compliance', 'auto' ),
 			],
 			'sanitize_callback' => [ $sanitization, 'color_hex' ],
-			'active_callback'   => function() {
-				return ! get_theme_mod( 'same_linkcolor_hues', true );
+			'active_callback'   => function() use ( $id ) {
+				return get_theme_mod( "footer_sidebar_{$id}_custom_options", false );
 			},
 		]
 	);

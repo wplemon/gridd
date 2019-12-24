@@ -382,7 +382,8 @@ h3.gridd-customizer-section-title {
 #sub-accordion-section-title_tagline .customize-section-title,
 ul[id^=sub-accordion-section-grid_part_details_nav_] .customize-section-title,
 ul[id^=sub-accordion-section-sidebar-widgets-sidebar-] .customize-section-title,
-ul[id^=sub-accordion-section-grid_part_details_reusable_block_] .customize-section-title {
+ul[id^=sub-accordion-section-grid_part_details_reusable_block_] .customize-section-title,
+ul[id^=sub-accordion-section-sidebar-widgets-footer_sidebar_] .customize-section-title {
   padding-bottom: 30px;
 }
 
@@ -403,13 +404,15 @@ ul[id^=sub-accordion-section-grid_part_details_reusable_block_] .customize-secti
 #customize-control-header_search_custom_options,
 li[id^=customize-control-nav_][id$=_custom_options],
 li[id^=customize-control-gridd_grid_sidebar_][id$=_custom_options],
-li[id^=customize-control-reusable_block_][id$=_custom_options] {
+li[id^=customize-control-reusable_block_][id$=_custom_options],
+li[id^=customize-control-footer_sidebar_][id$=_custom_options] {
   position: absolute;
   top: 30px;
 }
 
 #customize-control-branding_custom_options,
-li[id^=customize-control-gridd_grid_sidebar_][id$=_custom_options] {
+li[id^=customize-control-gridd_grid_sidebar_][id$=_custom_options],
+li[id^=customize-control-footer_sidebar_][id$=_custom_options] {
   top: 60px;
 }
 
