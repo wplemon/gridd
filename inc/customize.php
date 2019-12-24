@@ -192,19 +192,25 @@ new \WPLemon\Field\WCAGLinkColor(
 	]
 );
 
-new \Kirki\Field\Radio(
+new \Kirki\Field\RadioButtonset(
 	[
 		'settings'          => 'target_color_compliance',
 		'label'             => esc_attr__( 'Color Accessibility Target Compliance', 'gridd' ),
-		'description'       => esc_html__( 'Select how link colors will be calculated.', 'gridd' ),
+		'description'       => sprintf(
+			'<details>%1$s<ul><li>%2$s</li><li>%3$s</li><li>%4$s</li></ul></details>',
+			esc_html__( 'Select how link colors will be calculated.', 'gridd' ),
+			__( '<strong>Auto</strong>: Automatically get colors with maximum contrast to get as close to a higher accessibility standard as possible. Similar to AAA compliance, with a fallback to above-AA colors if AAA is not achievable.', 'gridd' ),
+			__( '<strong>AAA</strong>: Targeting for "AAA" compliance results in less intense but easier to read colors.', 'gridd' ),
+			__( '<strong>AA</strong>: Targeting for "AA" compliance will result in more vibrant colors while still maintaining a readable color contrast.', 'gridd' )
+		),
 		'section'           => 'theme_options',
 		'default'           => 'auto',
 		'transport'         => 'postMessage',
 		'priority'          => 50,
 		'choices'           => [
-			'auto' => [ esc_html__( 'Auto', 'gridd' ), esc_html__( 'Automatically get colors with maximum contrast to get as close to a higher accessibility standard as possible. Similar to AAA compliance, with a fallback to above-AA colors if AAA is not achievable.', 'gridd' ) ],
-			'AAA'  => [ 'AAA', esc_html__( 'Targeting for "AAA" compliance results in less intense but easier to read colors.', 'gridd' ) ],
-			'AA'   => [ 'AA', esc_html__( 'Targeting for "AA" compliance will result in more vibrant colors while still maintaining a readable color contrast.', 'gridd' ) ],
+			'auto' => esc_html__( 'Auto', 'gridd' ),
+			'AAA'  => 'AAA',
+			'AA'   => 'AA',
 		],
 		'sanitize_callback' => function( $value ) {
 			return ( 'auto' === $value || 'AAA' === $value || 'AA' === $value ) ? $value : 'auto';
