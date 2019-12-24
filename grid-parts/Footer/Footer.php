@@ -30,6 +30,16 @@ class Footer extends Grid_Part {
 	protected $id = 'footer';
 
 	/**
+	 * Have we already printed the footer-sidebar styles?
+	 *
+	 * @static
+	 * @access public
+	 * @since 3.0.0
+	 * @var bool
+	 */
+	public static $footer_sidebar_styles_printed = false;
+
+	/**
 	 * Returns the grid-part definition.
 	 *
 	 * @access protected
