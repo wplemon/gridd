@@ -71,7 +71,7 @@ new \Kirki\Field\Dimension(
 		'transport'       => 'auto',
 		'output'          => [
 			[
-				'element'  => '.gridd-tp-footer',
+				'element'  => '.gridd-tp-footer.custom-options',
 				'property' => '--mw',
 			],
 		],
@@ -92,7 +92,7 @@ new \Kirki\Field\Dimension(
 		'transport'       => 'auto',
 		'output'          => [
 			[
-				'element'  => '.gridd-tp-footer',
+				'element'  => '.gridd-tp-footer.custom-options',
 				'property' => '--gg',
 			],
 		],
@@ -113,7 +113,7 @@ new \Kirki\Field\Dimension(
 		'transport'       => 'auto',
 		'output'          => [
 			[
-				'element'  => '.gridd-tp-footer',
+				'element'  => '.gridd-tp-footer.custom-options',
 				'property' => '--pd',
 			],
 		],
@@ -133,7 +133,7 @@ new \Kirki\Field\ReactColor(
 		'transport'       => 'auto',
 		'output'          => [
 			[
-				'element'  => '.gridd-tp-footer',
+				'element'  => '.gridd-tp-footer.custom-options',
 				'property' => '--bg',
 			],
 		],
