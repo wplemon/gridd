@@ -388,3 +388,15 @@ li[id^="customize-control-footer_sidebar_"][id$="_custom_options"] {
 		display: none;
 	}
 }
+
+#customize-controls {
+	.customize-info.is-in-view,
+	.customize-section-title.is-in-view {
+		top: 0 !important;
+	}
+
+	.customize-info.is-sticky,
+	.customize-section-title.is-sticky {
+		position: absolute !important;
+	}
+}
