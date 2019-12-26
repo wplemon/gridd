@@ -446,15 +446,4 @@ li[id^=customize-control-footer_sidebar_][id$=_custom_options] {
   display: none;
 }
 
-/* Disable sticky headers. */
-#customize-controls .customize-info.is-sticky,
-#customize-controls .customize-section-title.is-sticky {
-  position: relative !important;
-  top: 0 !important;
-}
-
-.customize-pane-child.current-panel {
-  padding-top: 0 !important;
-}
-
 /*# sourceMappingURL=customizer.css.map */
