@@ -4,6 +4,14 @@
 #customize-controls .control-section.open .control-section-kirki-nested .accordion-section-title {
   background: #dedede !important;
 }
+#customize-controls .customize-info.is-in-view,
+#customize-controls .customize-section-title.is-in-view {
+  top: 0 !important;
+}
+#customize-controls .customize-info.is-sticky,
+#customize-controls .customize-section-title.is-sticky {
+  position: absolute !important;
+}
 
 .accordion-section-title.dashicons-before::before {
   color: #82878c;

@@ -2,8 +2,8 @@
 	padding: var(--pd, 1em);
 	background-color: var(--bg, #fff);
 	color: var(--cl, #000);
-  position: relative;
-  overflow: visible; /* tweak for the nav block dropdowns. */
+	position: relative;
+	overflow: visible; /* tweak for the nav block dropdowns. */
 }
 
 .gridd-tp-reusable-block .inner {
