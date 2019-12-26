@@ -373,6 +373,7 @@ h3.gridd-customizer-section-title {
 
 #sub-accordion-section-grid_part_details_content .customize-section-title,
 #sub-accordion-section-grid_part_details_header .customize-section-title,
+#sub-accordion-section-footer .customize-section-title,
 #sub-accordion-section-header_social .customize-section-title,
 #sub-accordion-section-grid_part_details_footer_copyright .customize-section-title,
 #sub-accordion-section-breadcrumbs .customize-section-title,
@@ -402,6 +403,7 @@ ul[id^=sub-accordion-section-sidebar-widgets-footer_sidebar_] .customize-section
 #customize-control-branding_custom_options,
 #customize-control-header_contact_info_custom_options,
 #customize-control-header_search_custom_options,
+#customize-control-footer_custom_options,
 li[id^=customize-control-nav_][id$=_custom_options],
 li[id^=customize-control-gridd_grid_sidebar_][id$=_custom_options],
 li[id^=customize-control-reusable_block_][id$=_custom_options],
