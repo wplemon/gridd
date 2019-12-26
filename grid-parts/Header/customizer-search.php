@@ -14,6 +14,7 @@ new \Kirki\Section(
 		'title'           => esc_html__( 'Header Search', 'gridd' ),
 		'panel'           => 'theme_options',
 		'type'            => 'kirki-expanded',
+		'priority'        => 40,
 		'active_callback' => function() {
 			return \Gridd\Customizer::is_section_active_part( 'header_search' );
 		},

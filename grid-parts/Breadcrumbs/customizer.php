@@ -16,7 +16,7 @@ new \Kirki\Section(
 		'panel'           => 'theme_options',
 		'title'           => esc_html__( 'Breadcrumbs', 'gridd' ),
 		'type'            => 'kirki-expanded',
-		'priority'        => 50,
+		'priority'        => 30,
 		'active_callback' => function() {
 			return \Gridd\Customizer::is_section_active_part( 'breadcrumbs' );
 		},

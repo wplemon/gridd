@@ -16,7 +16,7 @@ new \Kirki\Section(
 	'grid_part_details_footer_social_media',
 	[
 		'title'           => esc_html__( 'Footer Social Media', 'gridd' ),
-		'priority'        => 30,
+		'priority'        => 100,
 		'type'            => 'kirki-expanded',
 		'panel'           => 'theme_options',
 		'active_callback' => function() {

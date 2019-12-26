@@ -45,7 +45,7 @@ function gridd_nav_customizer_options( $id ) {
 		[
 			/* translators: The navigation number. */
 			'title'           => sprintf( esc_html__( 'Navigation %d', 'gridd' ), absint( $id ) ),
-			'priority'        => 30,
+			'priority'        => 70,
 			'type'            => 'kirki-expanded',
 			'panel'           => 'theme_options',
 			'active_callback' => function() use ( $id ) {

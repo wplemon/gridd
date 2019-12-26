@@ -16,7 +16,7 @@ new \Kirki\Section(
 	'grid_part_details_footer_copyright',
 	[
 		'title'           => esc_html__( 'Copyright Area', 'gridd' ),
-		'priority'        => 30,
+		'priority'        => 90,
 		'type'            => 'kirki-expanded',
 		'panel'           => 'theme_options',
 		'active_callback' => function() {
