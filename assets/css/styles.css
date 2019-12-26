@@ -20,7 +20,8 @@
 	--system-fonts: -apple-system, blinkmacsystemfont, "Segoe UI", roboto, oxygen-sans, ubuntu, cantarell, "Helvetica Neue", sans-serif;
 	--monospace-fonts: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 
-	--pd: 1em;
+  --pd: 1em;
+  --pdr: 1;
 	--gg: 0;
 	--bg: #f5f7f9;
 	--cl: #000;
