@@ -168,7 +168,7 @@ new \Kirki\Field\Slider(
 		'output'          => [
 			[
 				'element'  => '.gridd-tp-social_media.custom-options',
-				'property' => '--pd',
+				'property' => '--pdr',
 			],
 		],
 		'priority'        => 50,
