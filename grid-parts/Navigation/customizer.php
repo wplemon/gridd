@@ -301,7 +301,7 @@ function gridd_nav_customizer_options( $id ) {
 		]
 	);
 
-	new \Kirki\Field\Select(
+	new \Kirki\Field\RadioButtonset(
 		[
 			'settings'          => "gridd_grid_nav_{$id}_expand_icon_position",
 			'label'             => esc_html__( 'Expand Icon Position', 'gridd' ),
