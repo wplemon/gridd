@@ -36,6 +36,10 @@ $attrs = [
 	'class' => 'gridd-tp gridd-tp-footer',
 	'role'  => 'contentinfo',
 ];
+
+if ( get_theme_mod( 'footer_custom_options', false ) ) {
+	$attrs['class'] .= ' custom-options';
+}
 ?>
 
 <div <?php Theme::print_attributes( $attrs, 'wrapper-footer' ); ?>>
