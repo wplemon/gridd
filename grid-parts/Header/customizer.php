@@ -29,6 +29,16 @@ add_action(
 new \Kirki\Section(
 	'grid_part_details_header',
 	[
+		'title'    => esc_html__( 'Header', 'gridd' ),
+		'priority' => 21,
+		'panel'    => 'theme_options',
+		'type'     => 'expanded',
+	]
+);
+
+new \Kirki\Section(
+	'grid_part_details_header_grid',
+	[
 		'title'    => esc_html__( 'Header Grid', 'gridd' ),
 		'priority' => 10,
 		'panel'    => 'layout_options',
@@ -53,7 +63,7 @@ new \Kirki\Field\Checkbox_Switch(
 Customizer::add_field(
 	[
 		'settings'          => 'gridd_header_grid',
-		'section'           => 'grid_part_details_header',
+		'section'           => 'grid_part_details_header_grid',
 		'type'              => 'gridd_grid',
 		'grid-part'         => 'header',
 		'label'             => esc_html__( 'Header Grid', 'gridd' ),
