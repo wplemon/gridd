@@ -30,11 +30,7 @@ Customizer::add_field(
 		'type'              => 'gridd_grid',
 		'grid-part'         => false,
 		'label'             => esc_html__( 'Global Site Grid', 'gridd' ),
-		'description'       => Customizer::get_control_description(
-			[
-				'details' => __( 'The settings in this control apply to all your pages. You can add columns and rows, define their sizes, and also add or remove grid-parts on your site. For more information and documentation on how the grid works, please read <a href="https://wplemon.github.io/gridd/the-grid-control.html" target="_blank">this article</a>.', 'gridd' ),
-			]
-		),
+		'description'       => __( 'For more information and documentation on how the grid works, please read <a href="https://wplemon.github.io/gridd/the-grid-control.html" target="_blank">this article</a>.', 'gridd' ),
 		'default'           => Grid::get_grid_default_value(),
 		'priority'          => 10,
 		'sanitize_callback' => [ $sanitization, 'grid' ],
@@ -49,11 +45,7 @@ new \Kirki\Field\Dimension(
 	[
 		'settings'    => 'gridd_grid_gap',
 		'label'       => esc_html__( 'Grid Container Gap', 'gridd' ),
-		'description' => Customizer::get_control_description(
-			[
-				'details' => __( 'Adds a gap between your grid-parts, both horizontally and vertically. For more information please read <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
-			]
-		),
+		'description' => __( 'Adds a gap between your grid-parts, both horizontally and vertically. For more information please read <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
 		'section'     => 'gridd_grid',
 		'default'     => '0',
 		'transport'   => 'auto',

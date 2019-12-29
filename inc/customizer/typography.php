@@ -174,16 +174,7 @@ new \Kirki\Field\Slider(
 	[
 		'settings'    => 'gridd_fluid_typography_ratio',
 		'label'       => esc_html__( 'Fluid Typography Ratio', 'gridd' ),
-		'description' => Customizer::get_control_description(
-			[
-				'short'   => '',
-				'details' => sprintf(
-					/* Translators: link attributes. */
-					__( 'Defines by how much your font-size will change depending on the screen-size. Larger values will increase the font-size more on bigger screens. Set to 0 if you do not want the font-size to change depending on the screen-size. Need more Information? <a %s>Read this article</a>', 'gridd' ),
-					'href="https://wplemon.github.io/gridd/fluid-typography.html" target="_blank"'
-				),
-			]
-		),
+		'description' => esc_html__( 'Controls how your site\'s font-size changes depending on screen-size.', 'gridd' ),
 		'section'     => 'gridd_typography',
 		'default'     => 0.25,
 		'priority'    => 70,

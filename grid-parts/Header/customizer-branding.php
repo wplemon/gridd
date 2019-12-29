@@ -99,16 +99,7 @@ new \Kirki\Field\Dimension(
 	[
 		'settings'          => 'gridd_grid_header_branding_padding',
 		'label'             => esc_html__( 'Padding', 'gridd' ),
-		'description'       => Customizer::get_control_description(
-			[
-				'short'   => '',
-				'details' => sprintf(
-					/* translators: Link properties. */
-					__( 'Use any valid CSS value. For details on how padding works, please refer to <a %s>this article</a>.', 'gridd' ),
-					'href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank" rel="nofollow"'
-				),
-			]
-		),
+		'description'       => esc_html__( 'Use any valid CSS value.', 'gridd' ),
 		'section'           => 'title_tagline',
 		'priority'          => 210,
 		'default'           => '0',
