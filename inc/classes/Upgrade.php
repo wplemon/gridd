@@ -42,26 +42,6 @@ class Upgrade {
 	const OPTION_NAME_VER = 'gridd_version';
 
 	/**
-	 * Determine if this is a theme-update or not.
-	 * If not, then it's a fresh installation.
-	 *
-	 * @access private
-	 * @since 1.1.18
-	 * @var bool
-	 */
-	private $is_upgrade = false;
-
-	/**
-	 * The previous theme version.
-	 *
-	 * @access private
-	 * @since 1.1.18
-	 * @var string
-	 */
-	private $old_version;
-
-
-	/**
 	 * An array of versions that contain upgrades.
 	 *
 	 * @access private
@@ -196,7 +176,7 @@ class Upgrade {
 		$update_from  = get_option( self::OPTION_NAME_UPGRADE_FROM );
 		$last_version = get_option( self::OPTION_NAME_VER );
 
-		if ( ! $update_from && $last_version && version_compare( GRIDD_VERSION, $last_version ) > 0 ) {
+		if ( $update_from && $last_version && version_compare( GRIDD_VERSION, $last_version ) > 0 ) {
 			update_option( self::OPTION_NAME_UPGRADE_FROM, $last_version );
 			$update_from = $last_version;
 		}

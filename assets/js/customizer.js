@@ -71,10 +71,10 @@
 
 					// Change the behavior of the back button.
 					jQuery( backBtn ).click( function( e ) {
-						if ( 'gridd_header_grid' === grid ) {
+						if ( 'header_grid' === grid ) {
 							wp.customize.section( 'header' ).focus();
 							e.preventDefault();
-						} else if ( 'gridd_footer_grid' === grid ) {
+						} else if ( 'footer_grid' === grid ) {
 							wp.customize.section( 'footer' ).focus();
 							e.preventDefault();
 						} else if ( nestedParts[ grid ] && wp.customize.section( nestedParts[ grid ] ) ) {

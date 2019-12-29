@@ -6,7 +6,6 @@
  */
 
 use Gridd\Grid_Part\Header;
-use Gridd\Grid_Parts;
 use Gridd\Customizer;
 use Gridd\Customizer\Sanitize;
 
@@ -62,7 +61,7 @@ new \Kirki\Field\Checkbox_Switch(
 
 Customizer::add_field(
 	[
-		'settings'          => 'gridd_header_grid',
+		'settings'          => 'header_grid',
 		'section'           => 'header_grid',
 		'type'              => 'gridd_grid',
 		'grid-part'         => 'header',
@@ -79,7 +78,7 @@ Customizer::add_field(
 		 *
 		'transport'         => 'postMessage',
 		'partial_refresh'   => [
-			'gridd_header_grid_part_renderer' => [
+			'header_grid_part_renderer' => [
 				'selector'            => '.gridd-tp.gridd-tp-header',
 				'container_inclusive' => true,
 				'render_callback'     => function() {

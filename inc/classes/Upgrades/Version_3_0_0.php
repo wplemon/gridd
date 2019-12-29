@@ -35,6 +35,7 @@ class Version_3_0_0 {
 	private function run_update() {
 		$this->cleanup_theme_mods_names();
 		$this->custom_options();
+		$this->rename_mods();
 	}
 
 	/**
@@ -102,6 +103,27 @@ class Version_3_0_0 {
 		if ( $reusable_blocks ) {
 			foreach ( $reusable_blocks as $block ) {
 				set_theme_mod( "reusable_block_{$block->ID}_custom_options", true );
+			}
+		}
+	}
+
+	/**
+	 * Rename specific theme-mods.
+	 *
+	 * @access private
+	 * @since 3.0.0
+	 * @return void
+	 */
+	private function rename_mods() {
+		$mods = [
+			'gridd_header_grid' => 'header_grid',
+			'gridd_footer_grid' => 'footer_grid',
+		];
+
+		foreach ( $mods as $old => $new ) {
+			$old_val = get_theme_mod( $old, '__UNSET' );
+			if ( '__UNSET' !== $old_val ) {
+				set_theme_mod( $new, $old_val );
 			}
 		}
 	}

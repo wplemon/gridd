@@ -12,7 +12,7 @@ use Gridd\Grid_Part\Footer;
 use Gridd\Style;
 
 // Get the grid settings.
-$settings = Grid::get_options( 'gridd_footer_grid', Footer::get_grid_defaults() );
+$settings = Grid::get_options( 'footer_grid', Footer::get_grid_defaults() );
 
 $style = Style::get_instance( 'grid-part/footer' );
 
@@ -21,7 +21,7 @@ $style->add_string(
 	Grid::get_styles_responsive(
 		[
 			'context'    => 'footer',
-			'large'      => Grid::get_options( 'gridd_footer_grid' ),
+			'large'      => Grid::get_options( 'footer_grid' ),
 			'breakpoint' => get_theme_mod( 'gridd_mobile_breakpoint', '992px' ),
 			'selector'   => '.gridd-tp-footer > .inner',
 			'prefix'     => true,

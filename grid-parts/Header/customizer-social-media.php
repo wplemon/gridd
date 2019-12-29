@@ -6,8 +6,6 @@
  */
 
 use Gridd\Theme;
-use Gridd\Grid_Part\Header;
-use Gridd\Customizer;
 
 if ( ! function_exists( 'gridd_social_icons_svg' ) ) {
 

@@ -47,7 +47,7 @@ new \Kirki\Field\Checkbox_Switch(
 
 Customizer::add_field(
 	[
-		'settings'          => 'gridd_footer_grid',
+		'settings'          => 'footer_grid',
 		'section'           => 'footer_grid',
 		'type'              => 'gridd_grid',
 		'grid-part'         => 'footer',
@@ -137,7 +137,7 @@ new \Kirki\Field\ReactColor(
 				'property' => '--bg',
 			],
 		],
-		'choices'   => [
+		'choices'         => [
 			'formComponent' => 'TwitterPicker',
 			'colors'        => \Gridd\Theme::get_colorpicker_palette(),
 		],

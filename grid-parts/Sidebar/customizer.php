@@ -6,7 +6,6 @@
  */
 
 use Gridd\Grid_Part\Sidebar;
-use Gridd\Customizer;
 use Gridd\Customizer\Sanitize;
 
 $number = Sidebar::get_number_of_sidebars();
@@ -178,7 +177,7 @@ function gridd_sidebar_customizer_options( $id ) {
 	new \Kirki\Field\RadioButtonset(
 		[
 			'settings'        => "sidebar_{$id}_flex_direction",
-			'label'           => esc_html__( 'Widgets Direction' , 'gridd' ),
+			'label'           => esc_html__( 'Widgets Direction', 'gridd' ),
 			'section'         => "sidebar_$id",
 			'priority'        => 50,
 			'default'         => 'column',

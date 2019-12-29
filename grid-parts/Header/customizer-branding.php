@@ -5,8 +5,6 @@
  * @package Gridd
  */
 
-use Gridd\Customizer;
-
 add_action(
 	'customize_register',
 	/**

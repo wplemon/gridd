@@ -5,8 +5,6 @@
  * @package Gridd
  */
 
-use Gridd\Customizer;
-
 // The parts available for handheld-nav.
 $parts = [
 	'menu'   => esc_html__( 'Menu', 'gridd' ),

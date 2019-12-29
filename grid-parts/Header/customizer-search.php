@@ -5,9 +5,6 @@
  * @package Gridd
  */
 
-use Gridd\Grid_Part\Header;
-use Gridd\Customizer;
-
 new \Kirki\Section(
 	'header_search',
 	[

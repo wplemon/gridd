@@ -340,12 +340,7 @@ add_action(
 			[
 				'settings'    => 'gridd_rest_api_partials',
 				'label'       => esc_attr__( 'Deferred Parts', 'gridd' ),
-				'description' => Customizer::get_control_description(
-					[
-						'short'   => '',
-						'details' => esc_html__( 'Select the parts that should be loaded after the initial request. Non-essential parts can be added here. This can speed-up the initial page-load and users on slower connections can start consuming your content faster.', 'gridd' ),
-					]
-				),
+				'description' => esc_html__( 'Select the parts that should be loaded after the initial request. Non-essential parts can be added here. This can speed-up the initial page-load and users on slower connections can start consuming your content faster.', 'gridd' ),
 				'section'     => 'gridd_features_global',
 				'priority'    => 70,
 				'multiple'    => 999,

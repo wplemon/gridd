@@ -52,7 +52,7 @@ class Footer extends Grid_Part {
 			'color'    => [ '#1565C0', '#fff' ],
 			'priority' => 1000,
 			'id'       => 'footer',
-			'grid'     => 'gridd_footer_grid',
+			'grid'     => 'footer_grid',
 		];
 	}
 
@@ -172,7 +172,7 @@ class Footer extends Grid_Part {
 	 * @return array
 	 */
 	public function get_grid_part_specs_footer_social_media() {
-		$grid = Grid::get_options( 'gridd_footer_grid' );
+		$grid = Grid::get_options( 'footer_grid' );
 		return self::format_specs_from_grid_value( 'footer_social_media', $grid );
 	}
 

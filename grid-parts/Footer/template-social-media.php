@@ -6,7 +6,6 @@
  * @since 1.0
  */
 
-use Gridd\Grid_Part\Footer;
 use Gridd\Style;
 use Gridd\Theme;
 

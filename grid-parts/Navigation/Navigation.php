@@ -9,7 +9,6 @@ namespace Gridd\Grid_Part;
 
 use Gridd\Grid_Part;
 use Gridd\Style;
-use Gridd\Theme;
 
 /**
  * The Gridd\Grid_Part\Navigation object.

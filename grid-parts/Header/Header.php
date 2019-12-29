@@ -41,7 +41,7 @@ class Header extends Grid_Part {
 			'color'    => [ '#AD1457', '#fff' ],
 			'priority' => 0,
 			'id'       => $this->id,
-			'grid'     => 'gridd_header_grid',
+			'grid'     => 'header_grid',
 		];
 	}
 
@@ -112,7 +112,7 @@ class Header extends Grid_Part {
 	 * @return array
 	 */
 	public function get_grid_part_specs_header_contact_info() {
-		$grid = Grid::get_options( 'gridd_header_grid' );
+		$grid = Grid::get_options( 'header_grid' );
 		return self::format_specs_from_grid_value( 'header_contact_info', $grid );
 	}
 
@@ -125,7 +125,7 @@ class Header extends Grid_Part {
 	 * @return array
 	 */
 	public function get_grid_part_specs_social_media() {
-		$grid = Grid::get_options( 'gridd_header_grid' );
+		$grid = Grid::get_options( 'header_grid' );
 		return self::format_specs_from_grid_value( 'social_media', $grid );
 	}
 
@@ -206,7 +206,7 @@ class Header extends Grid_Part {
 	 * @return array
 	 */
 	public function footer_inline_script_paths( $paths ) {
-		$settings = Grid::get_options( 'gridd_header_grid', self::get_grid_defaults() );
+		$settings = Grid::get_options( 'header_grid', self::get_grid_defaults() );
 		if ( isset( $settings['areas'] ) && isset( $settings['areas']['header_search'] ) && apply_filters( 'gridd_render_grid_part', true, 'header_search' ) ) {
 			$header_search_mode = get_theme_mod( 'header_search_mode', 'form' );
 			if ( 'slide-up' === $header_search_mode ) {

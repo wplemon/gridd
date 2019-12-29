@@ -6,8 +6,6 @@
  * @since 1.0
  */
 
-use Gridd\Grid_Part\ReusableBlock;
-use Gridd\Style;
 use Gridd\Theme;
 use Gridd\Blog;
 

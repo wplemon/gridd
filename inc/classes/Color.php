@@ -8,8 +8,6 @@
 
 namespace Gridd;
 
-use \ariColor;
-
 /**
  * A collection of a11y utilities.
  *

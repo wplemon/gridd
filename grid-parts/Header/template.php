@@ -12,7 +12,7 @@ use Gridd\Grid_Part\Header;
 use Gridd\Style;
 
 // Get the grid settings.
-$settings = Grid::get_options( 'gridd_header_grid', Header::get_grid_defaults() );
+$settings = Grid::get_options( 'header_grid', Header::get_grid_defaults() );
 
 // Add styles.
 $style = Style::get_instance( 'grid-part/header' );
@@ -20,8 +20,8 @@ $style->add_string(
 	Grid::get_styles_responsive(
 		[
 			'context'    => 'header',
-			'small'      => Grid::get_options( 'gridd_header_grid' ),
-			'large'      => Grid::get_options( 'gridd_header_grid' ),
+			'small'      => Grid::get_options( 'header_grid' ),
+			'large'      => Grid::get_options( 'header_grid' ),
 			'breakpoint' => get_theme_mod( 'gridd_mobile_breakpoint', '992px' ),
 			'selector'   => '.gridd-tp-header > .inner',
 			'prefix'     => true,

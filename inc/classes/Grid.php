@@ -39,11 +39,11 @@ class Grid {
 					$defaults = self::get_grid_default_value();
 					break;
 
-				case 'gridd_header_grid':
+				case 'header_grid':
 					$defaults = Header::get_grid_defaults();
 					break;
 
-				case 'gridd_footer_grid':
+				case 'footer_grid':
 					$defaults = Footer::get_grid_defaults();
 					break;
 			}

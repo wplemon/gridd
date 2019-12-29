@@ -5,8 +5,6 @@
  * @package Gridd
  */
 
-use Gridd\Grid_Part\Header;
-use Gridd\Customizer;
 use Gridd\Customizer\Sanitize;
 
 $sanitization = new Sanitize();
