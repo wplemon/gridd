@@ -174,6 +174,30 @@ function gridd_sidebar_customizer_options( $id ) {
 			},
 		]
 	);
+
+	new \Kirki\Field\RadioButtonset(
+		[
+			'settings'        => "sidebar_{$id}_flex_direction",
+			'label'           => esc_html__( 'Widgets Direction' , 'gridd' ),
+			'section'         => "sidebar_$id",
+			'priority'        => 50,
+			'default'         => 'column',
+			'transport'       => 'auto',
+			'output'          => [
+				[
+					'element'  => ".gridd-tp-sidebar_$id.custom-options",
+					'property' => '--fd',
+				],
+			],
+			'choices'         => [
+				'column' => esc_html__( 'Vertical', 'gridd' ),
+				'row'    => esc_html__( 'Horizontal', 'gridd' ),
+			],
+			'active_callback' => function() use ( $id ) {
+				return get_theme_mod( "sidebar_{$id}_custom_options", false );
+			},
+		]
+	);
 }
 
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */
