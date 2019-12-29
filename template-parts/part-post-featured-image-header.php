@@ -21,7 +21,7 @@ use Gridd\Style;
 	$style = Style::get_instance( 'post-featured-image-header' );
 	$style->add_file( get_theme_file_path( 'assets/css/core/featured-image-post-header.min.css' ) );
 	$padding = get_theme_mod(
-		'gridd_grid_content_padding',
+		'content_padding',
 		[
 			'top'    => 0,
 			'bottom' => 0,

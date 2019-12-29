@@ -6,7 +6,6 @@
  */
 
 use Gridd\Grid_Part\ReusableBlock;
-use Gridd\Customizer;
 use Gridd\Customizer\Sanitize;
 
 /**
@@ -41,7 +40,7 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 	 * Add Customizer Sections.
 	 */
 	new \Kirki\Section(
-		"grid_part_details_reusable_block_$id",
+		"reusable_block_$id",
 		[
 			/* translators: The navigation number. */
 			'title'           => sprintf( esc_html__( 'Block: %s', 'gridd' ), esc_html( get_the_title( $id ) ) ),
@@ -57,7 +56,7 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 	new \Kirki\Field\Checkbox_Switch(
 		[
 			'settings'  => "reusable_block_{$id}_custom_options",
-			'section'   => "grid_part_details_reusable_block_$id",
+			'section'   => "reusable_block_$id",
 			'default'   => false,
 			'transport' => 'refresh',
 			'priority'  => -999,
@@ -70,19 +69,19 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 
 	new \Kirki\Field\Custom(
 		[
-			'settings'    => "gridd_grid_reusable_block_{$id}_help",
+			'settings'    => "reusable_block_{$id}_help",
 			'description' => '<a href="' . esc_url( admin_url( 'edit.php?post_type=wp_block' ) ) . '" target="_blank">' . esc_html__( ' Manage reusable blocks', 'gridd' ) . '</a>',
-			'section'     => "grid_part_details_reusable_block_$id",
+			'section'     => "reusable_block_$id",
 			'default'     => '',
 		]
 	);
 
 	new \Kirki\Field\Dimension(
 		[
-			'settings'        => "gridd_grid_reusable_block_{$id}_padding",
+			'settings'        => "reusable_block_{$id}_padding",
 			'label'           => esc_html__( 'Padding', 'gridd' ),
 			'description'     => esc_html__( 'Use any valid CSS value.', 'gridd' ),
-			'section'         => "grid_part_details_reusable_block_$id",
+			'section'         => "reusable_block_$id",
 			'default'         => '1em',
 			'transport'       => 'auto',
 			'output'          => [
@@ -100,8 +99,8 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 	new \Kirki\Field\ReactColor(
 		[
 			'label'           => esc_html__( 'Background Color', 'gridd' ),
-			'settings'        => "gridd_grid_reusable_block_{$id}_bg_color",
-			'section'         => "grid_part_details_reusable_block_$id",
+			'settings'        => "reusable_block_{$id}_bg_color",
+			'section'         => "reusable_block_$id",
 			'default'         => '#ffffff',
 			'transport'       => 'auto',
 			'output'          => [
@@ -122,10 +121,10 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 
 	new \WPLemon\Field\WCAGTextColor(
 		[
-			'settings'          => "gridd_grid_reusable_block_{$id}_color",
-			'section'           => "grid_part_details_reusable_block_$id",
+			'settings'          => "reusable_block_{$id}_color",
+			'section'           => "reusable_block_$id",
 			'choices'           => [
-				'backgroundColor' => "gridd_grid_reusable_block_{$id}_bg_color",
+				'backgroundColor' => "reusable_block_{$id}_bg_color",
 				'appearance'      => 'hidden',
 			],
 			'label'             => esc_html__( 'Text Color', 'gridd' ),
@@ -144,9 +143,9 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 
 	new \WPLemon\Field\WCAGLinkColor(
 		[
-			'settings'          => "gridd_grid_reusable_block_{$id}_links_color",
+			'settings'          => "reusable_block_{$id}_links_color",
 			'label'             => esc_html__( 'Links Color', 'gridd' ),
-			'section'           => "grid_part_details_reusable_block_$id",
+			'section'           => "reusable_block_$id",
 			'default'           => '#0f5e97',
 			'priority'          => 40,
 			'choices'           => [
@@ -160,8 +159,8 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 				],
 			],
 			'choices'           => [
-				'backgroundColor' => "gridd_grid_reusable_block_{$id}_bg_color",
-				'textColor'       => "gridd_grid_reusable_block_{$id}_color",
+				'backgroundColor' => "reusable_block_{$id}_bg_color",
+				'textColor'       => "reusable_block_{$id}_color",
 				'linksUnderlined' => true,
 				'forceCompliance' => get_theme_mod( 'target_color_compliance', 'auto' ),
 			],

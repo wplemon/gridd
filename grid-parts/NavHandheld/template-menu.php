@@ -18,7 +18,7 @@ Navigation::print_styles(
 );
 $style = Style::get_instance( 'grid-part/nav-handheld/menu' );
 $style->the_css( 'gridd-inline-css-nav-handheld-menu' );
-$label_class = get_theme_mod( 'gridd_grid_nav-handheld_hide_labels', false ) ? 'screen-reader-text' : 'label';
+$label_class = get_theme_mod( 'nav-handheld_hide_labels', false ) ? 'screen-reader-text' : 'label';
 ?>
 <nav id="gridd-handheld-nav" class="gridd-nav-vertical">
 	<?php

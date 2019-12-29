@@ -73,7 +73,7 @@ new \Kirki\Field\Checkbox_Switch(
 
 new \Kirki\Field\ReactColor(
 	[
-		'settings'        => 'gridd_grid_header_branding_background_color',
+		'settings'        => 'header_branding_background_color',
 		'label'           => esc_html__( 'Background Color', 'gridd' ),
 		'section'         => 'title_tagline',
 		'priority'        => 200,
@@ -97,7 +97,7 @@ new \Kirki\Field\ReactColor(
 
 new \Kirki\Field\Dimension(
 	[
-		'settings'          => 'gridd_grid_header_branding_padding',
+		'settings'          => 'header_branding_padding',
 		'label'             => esc_html__( 'Padding', 'gridd' ),
 		'description'       => esc_html__( 'Use any valid CSS value.', 'gridd' ),
 		'section'           => 'title_tagline',
@@ -276,7 +276,7 @@ new \Kirki\Field\Slider(
 
 new \Kirki\Field\RadioButtonset(
 	[
-		'settings'          => 'gridd_grid_header_branding_horizontal_align',
+		'settings'          => 'header_branding_horizontal_align',
 		'label'             => esc_html__( 'Horizontal Alignment', 'gridd' ),
 		'section'           => 'title_tagline',
 		'priority'          => 280,
@@ -302,7 +302,7 @@ new \Kirki\Field\RadioButtonset(
 
 new \Kirki\Field\RadioButtonset(
 	[
-		'settings'          => 'gridd_grid_header_branding_vertical_align',
+		'settings'          => 'header_branding_vertical_align',
 		'label'             => esc_html__( 'Vertical Alignment', 'gridd' ),
 		'section'           => 'title_tagline',
 		'priority'          => 290,

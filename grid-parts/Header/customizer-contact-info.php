@@ -12,7 +12,7 @@ use Gridd\Customizer\Sanitize;
 $sanitization = new Sanitize();
 
 new \Kirki\Section(
-	'grid_part_details_header_contact_info',
+	'header_contact_info',
 	[
 		'title'           => esc_html__( 'Header Contact Info', 'gridd' ),
 		'panel'           => 'theme_options',
@@ -27,7 +27,7 @@ new \Kirki\Section(
 new \Kirki\Field\Checkbox_Switch(
 	[
 		'settings'  => 'header_contact_info_custom_options',
-		'section'   => 'grid_part_details_header_contact_info',
+		'section'   => 'header_contact_info',
 		'default'   => false,
 		'transport' => 'refresh',
 		'priority'  => -999,
@@ -40,10 +40,10 @@ new \Kirki\Field\Checkbox_Switch(
 
 new \Kirki\Field\Textarea(
 	[
-		'settings'          => 'grid_part_details_header_contact_info',
+		'settings'          => 'header_contact_info',
 		'label'             => esc_html__( 'Content', 'gridd' ),
 		'description'       => esc_html__( 'Enter any text you want - usually your contact info or important announcements that you want your visitors to see.', 'gridd' ),
-		'section'           => 'grid_part_details_header_contact_info',
+		'section'           => 'header_contact_info',
 		'default'           => __( 'Email: <a href="mailto:contact@example.com">contact@example.com</a>. Phone: +1-541-754-3010', 'gridd' ),
 		'transport'         => 'postMessage',
 		'js_vars'           => [
@@ -64,7 +64,7 @@ new \Kirki\Field\ReactColor(
 	[
 		'settings'        => 'header_contact_info_background_color',
 		'label'           => esc_html__( 'Background Color', 'gridd' ),
-		'section'         => 'grid_part_details_header_contact_info',
+		'section'         => 'header_contact_info',
 		'default'         => '#ffffff',
 		'transport'       => 'auto',
 		'output'          => [
@@ -88,7 +88,7 @@ new \WPLemon\Field\WCAGTextColor(
 	[
 		'label'             => esc_html__( 'Text Color', 'gridd' ),
 		'settings'          => 'header_contact_info_text_color',
-		'section'           => 'grid_part_details_header_contact_info',
+		'section'           => 'header_contact_info',
 		'choices'           => [
 			'backgroundColor' => 'header_contact_info_background_color',
 			'appearance'      => 'hidden',
@@ -114,7 +114,7 @@ new \Kirki\Field\Slider(
 		'settings'        => 'header_contact_info_font_size',
 		'label'           => esc_html__( 'Font Size', 'gridd' ),
 		'description'     => esc_html__( 'The value selected here is relative to your body font-size, so a value of 1em will be the same size as your content.', 'gridd' ),
-		'section'         => 'grid_part_details_header_contact_info',
+		'section'         => 'header_contact_info',
 		'default'         => .85,
 		'transport'       => 'auto',
 		'output'          => [
@@ -141,7 +141,7 @@ new \Kirki\Field\Dimension(
 		'settings'        => 'header_contact_info_padding',
 		'label'           => esc_html__( 'Padding', 'gridd' ),
 		'description'     => esc_html__( 'Use any valid CSS value', 'gridd' ),
-		'section'         => 'grid_part_details_header_contact_info',
+		'section'         => 'header_contact_info',
 		'default'         => '1em',
 		'transport'       => 'auto',
 		'output'          => [
@@ -161,7 +161,7 @@ new \Kirki\Field\RadioButtonset(
 	[
 		'settings'          => 'header_contact_text_align',
 		'label'             => esc_html__( 'Text Align', 'gridd' ),
-		'section'           => 'grid_part_details_header_contact_info',
+		'section'           => 'header_contact_info',
 		'default'           => 'flex-start',
 		'transport'         => 'auto',
 		'output'            => [

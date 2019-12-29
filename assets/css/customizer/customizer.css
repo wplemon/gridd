@@ -30,36 +30,36 @@
   grid-gap: 2px;
 }
 
-#customize-control-gridd_grid_footer_background .background-wrapper {
+#customize-control-footer_background .background-wrapper {
   padding: 1em;
   border: 1px solid #ccc;
 }
 
-#input_gridd_grid_nav-primary_justify_content {
+#input_nav-primary_justify_content {
   display: grid;
   grid-gap: 1em;
   grid-template-columns: 1fr 1fr;
 }
-#input_gridd_grid_nav-primary_justify_content > label {
+#input_nav-primary_justify_content > label {
   display: block;
   flex-wrap: wrap;
   padding: 5px;
   border: 1px solid #ccc;
 }
-#input_gridd_grid_nav-primary_justify_content > label > * {
+#input_nav-primary_justify_content > label > * {
   width: 100%;
   order: 2;
 }
-#input_gridd_grid_nav-primary_justify_content > label .image-label {
+#input_nav-primary_justify_content > label .image-label {
   display: block;
   position: relative;
   order: 1;
   background: none;
 }
-#input_gridd_grid_nav-primary_justify_content img {
+#input_nav-primary_justify_content img {
   height: 40px;
 }
-#input_gridd_grid_nav-primary_justify_content input:checked + label {
+#input_nav-primary_justify_content input:checked + label {
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.25);
   border: 1px solid #3498db;
 }
@@ -73,11 +73,11 @@
   width: 100%;
 }
 
-#input_gridd_grid_nav_1_expand_icon .switch-label svg {
+#input_nav_1_expand_icon .switch-label svg {
   width: 1em;
   height: 1em;
 }
-#input_gridd_grid_nav_1_expand_icon .switch-input:checked + .switch-label svg {
+#input_nav_1_expand_icon .switch-input:checked + .switch-label svg {
   fill: #fff;
 }
 
@@ -97,203 +97,203 @@ h3.gridd-customizer-section-title {
   box-sizing: border-box;
 }
 
-#input_gridd_grid_nav_1_expand_icon_position {
+#input_nav_1_expand_icon_position {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
-#input_gridd_grid_nav_1_expand_icon_position > label {
+#input_nav_1_expand_icon_position > label {
   line-height: 2.5;
 }
 
-#input_gridd_grid_nav_1_expand_icon > label svg {
+#input_nav_1_expand_icon > label svg {
   height: 20px;
   width: 20px;
 }
-#input_gridd_grid_nav_1_expand_icon .switch-input:checked + label svg {
+#input_nav_1_expand_icon .switch-input:checked + label svg {
   fill: #fff;
 }
 
-#customize-control-gridd_grid_nav_1_justify_content input:checked + label svg {
+#customize-control-nav_1_justify_content input:checked + label svg {
   fill: #fff;
 }
 
-#input_gridd_grid_nav_2_expand_icon_position {
+#input_nav_2_expand_icon_position {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
-#input_gridd_grid_nav_2_expand_icon_position > label {
+#input_nav_2_expand_icon_position > label {
   line-height: 2.5;
 }
 
-#input_gridd_grid_nav_2_expand_icon > label svg {
+#input_nav_2_expand_icon > label svg {
   height: 20px;
   width: 20px;
 }
-#input_gridd_grid_nav_2_expand_icon .switch-input:checked + label svg {
+#input_nav_2_expand_icon .switch-input:checked + label svg {
   fill: #fff;
 }
 
-#customize-control-gridd_grid_nav_2_justify_content input:checked + label svg {
+#customize-control-nav_2_justify_content input:checked + label svg {
   fill: #fff;
 }
 
-#input_gridd_grid_nav_3_expand_icon_position {
+#input_nav_3_expand_icon_position {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
-#input_gridd_grid_nav_3_expand_icon_position > label {
+#input_nav_3_expand_icon_position > label {
   line-height: 2.5;
 }
 
-#input_gridd_grid_nav_3_expand_icon > label svg {
+#input_nav_3_expand_icon > label svg {
   height: 20px;
   width: 20px;
 }
-#input_gridd_grid_nav_3_expand_icon .switch-input:checked + label svg {
+#input_nav_3_expand_icon .switch-input:checked + label svg {
   fill: #fff;
 }
 
-#customize-control-gridd_grid_nav_3_justify_content input:checked + label svg {
+#customize-control-nav_3_justify_content input:checked + label svg {
   fill: #fff;
 }
 
-#input_gridd_grid_nav_4_expand_icon_position {
+#input_nav_4_expand_icon_position {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
-#input_gridd_grid_nav_4_expand_icon_position > label {
+#input_nav_4_expand_icon_position > label {
   line-height: 2.5;
 }
 
-#input_gridd_grid_nav_4_expand_icon > label svg {
+#input_nav_4_expand_icon > label svg {
   height: 20px;
   width: 20px;
 }
-#input_gridd_grid_nav_4_expand_icon .switch-input:checked + label svg {
+#input_nav_4_expand_icon .switch-input:checked + label svg {
   fill: #fff;
 }
 
-#customize-control-gridd_grid_nav_4_justify_content input:checked + label svg {
+#customize-control-nav_4_justify_content input:checked + label svg {
   fill: #fff;
 }
 
-#input_gridd_grid_nav_5_expand_icon_position {
+#input_nav_5_expand_icon_position {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
-#input_gridd_grid_nav_5_expand_icon_position > label {
+#input_nav_5_expand_icon_position > label {
   line-height: 2.5;
 }
 
-#input_gridd_grid_nav_5_expand_icon > label svg {
+#input_nav_5_expand_icon > label svg {
   height: 20px;
   width: 20px;
 }
-#input_gridd_grid_nav_5_expand_icon .switch-input:checked + label svg {
+#input_nav_5_expand_icon .switch-input:checked + label svg {
   fill: #fff;
 }
 
-#customize-control-gridd_grid_nav_5_justify_content input:checked + label svg {
+#customize-control-nav_5_justify_content input:checked + label svg {
   fill: #fff;
 }
 
-#input_gridd_grid_nav_6_expand_icon_position {
+#input_nav_6_expand_icon_position {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
-#input_gridd_grid_nav_6_expand_icon_position > label {
+#input_nav_6_expand_icon_position > label {
   line-height: 2.5;
 }
 
-#input_gridd_grid_nav_6_expand_icon > label svg {
+#input_nav_6_expand_icon > label svg {
   height: 20px;
   width: 20px;
 }
-#input_gridd_grid_nav_6_expand_icon .switch-input:checked + label svg {
+#input_nav_6_expand_icon .switch-input:checked + label svg {
   fill: #fff;
 }
 
-#customize-control-gridd_grid_nav_6_justify_content input:checked + label svg {
+#customize-control-nav_6_justify_content input:checked + label svg {
   fill: #fff;
 }
 
-#input_gridd_grid_nav_7_expand_icon_position {
+#input_nav_7_expand_icon_position {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
-#input_gridd_grid_nav_7_expand_icon_position > label {
+#input_nav_7_expand_icon_position > label {
   line-height: 2.5;
 }
 
-#input_gridd_grid_nav_7_expand_icon > label svg {
+#input_nav_7_expand_icon > label svg {
   height: 20px;
   width: 20px;
 }
-#input_gridd_grid_nav_7_expand_icon .switch-input:checked + label svg {
+#input_nav_7_expand_icon .switch-input:checked + label svg {
   fill: #fff;
 }
 
-#customize-control-gridd_grid_nav_7_justify_content input:checked + label svg {
+#customize-control-nav_7_justify_content input:checked + label svg {
   fill: #fff;
 }
 
-#input_gridd_grid_nav_8_expand_icon_position {
+#input_nav_8_expand_icon_position {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
-#input_gridd_grid_nav_8_expand_icon_position > label {
+#input_nav_8_expand_icon_position > label {
   line-height: 2.5;
 }
 
-#input_gridd_grid_nav_8_expand_icon > label svg {
+#input_nav_8_expand_icon > label svg {
   height: 20px;
   width: 20px;
 }
-#input_gridd_grid_nav_8_expand_icon .switch-input:checked + label svg {
+#input_nav_8_expand_icon .switch-input:checked + label svg {
   fill: #fff;
 }
 
-#customize-control-gridd_grid_nav_8_justify_content input:checked + label svg {
+#customize-control-nav_8_justify_content input:checked + label svg {
   fill: #fff;
 }
 
-#input_gridd_grid_nav_9_expand_icon_position {
+#input_nav_9_expand_icon_position {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
-#input_gridd_grid_nav_9_expand_icon_position > label {
+#input_nav_9_expand_icon_position > label {
   line-height: 2.5;
 }
 
-#input_gridd_grid_nav_9_expand_icon > label svg {
+#input_nav_9_expand_icon > label svg {
   height: 20px;
   width: 20px;
 }
-#input_gridd_grid_nav_9_expand_icon .switch-input:checked + label svg {
+#input_nav_9_expand_icon .switch-input:checked + label svg {
   fill: #fff;
 }
 
-#customize-control-gridd_grid_nav_9_justify_content input:checked + label svg {
+#customize-control-nav_9_justify_content input:checked + label svg {
   fill: #fff;
 }
 
-#input_gridd_grid_nav_10_expand_icon_position {
+#input_nav_10_expand_icon_position {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
-#input_gridd_grid_nav_10_expand_icon_position > label {
+#input_nav_10_expand_icon_position > label {
   line-height: 2.5;
 }
 
-#input_gridd_grid_nav_10_expand_icon > label svg {
+#input_nav_10_expand_icon > label svg {
   height: 20px;
   width: 20px;
 }
-#input_gridd_grid_nav_10_expand_icon .switch-input:checked + label svg {
+#input_nav_10_expand_icon .switch-input:checked + label svg {
   fill: #fff;
 }
 
-#customize-control-gridd_grid_nav_10_justify_content input:checked + label svg {
+#customize-control-nav_10_justify_content input:checked + label svg {
   fill: #fff;
 }
 
@@ -348,7 +348,7 @@ h3.gridd-customizer-section-title {
   fill: #fff;
 }
 
-#accordion-section-grid_part_details_content {
+#accordion-section-content {
   border-top: none !important;
 }
 
@@ -357,7 +357,7 @@ h3.gridd-customizer-section-title {
   margin-bottom: 0;
 }
 
-#customize-control-gridd_grid_load_order .visibility {
+#customize-control-load_order .visibility {
   display: none;
 }
 
@@ -372,26 +372,26 @@ h3.gridd-customizer-section-title {
   border-bottom: 1px solid rgba(0, 0, 0, 0.07);
 }
 
-#input_gridd_grid_nav_1_justify_content {
+#input_nav_1_justify_content {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
-#input_gridd_grid_nav_1_justify_content .switch-label {
+#input_nav_1_justify_content .switch-label {
   padding: 0.5em;
 }
 
-#sub-accordion-section-grid_part_details_content .customize-section-title,
-#sub-accordion-section-grid_part_details_header .customize-section-title,
+#sub-accordion-section-content .customize-section-title,
+#sub-accordion-section-header .customize-section-title,
 #sub-accordion-section-footer .customize-section-title,
 #sub-accordion-section-header_social .customize-section-title,
-#sub-accordion-section-grid_part_details_footer_copyright .customize-section-title,
+#sub-accordion-section-footer_copyright .customize-section-title,
 #sub-accordion-section-breadcrumbs .customize-section-title,
-#sub-accordion-section-grid_part_details_footer_social_media .customize-section-title,
-#sub-accordion-section-grid_part_details_header_contact_info .customize-section-title,
-#sub-accordion-section-grid_part_details_header_search .customize-section-title,
+#sub-accordion-section-footer_social_media .customize-section-title,
+#sub-accordion-section-header_contact_info .customize-section-title,
+#sub-accordion-section-header_search .customize-section-title,
 #sub-accordion-section-title_tagline .customize-section-title,
-ul[id^=sub-accordion-section-grid_part_details_nav_] .customize-section-title,
+ul[id^=sub-accordion-section-nav_] .customize-section-title,
 ul[id^=sub-accordion-section-sidebar-widgets-sidebar-] .customize-section-title,
-ul[id^=sub-accordion-section-grid_part_details_reusable_block_] .customize-section-title,
+ul[id^=sub-accordion-section-reusable_block_] .customize-section-title,
 ul[id^=sub-accordion-section-sidebar-widgets-footer_sidebar_] .customize-section-title {
   padding-bottom: 30px;
 }
@@ -399,7 +399,7 @@ ul[id^=sub-accordion-section-sidebar-widgets-footer_sidebar_] .customize-section
 #customize-control-main_grid_advanced,
 #customize-control-content_custom_options,
 #customize-control-header_custom_options,
-#customize-control-header_social_advanced,
+#customize-control-header_social_custom_options,
 #customize-control-footer_advanced,
 #customize-control-footer_copyright_advanced,
 #customize-control-footer_social_media_advanced,
@@ -413,7 +413,7 @@ ul[id^=sub-accordion-section-sidebar-widgets-footer_sidebar_] .customize-section
 #customize-control-header_search_custom_options,
 #customize-control-footer_custom_options,
 li[id^=customize-control-nav_][id$=_custom_options],
-li[id^=customize-control-gridd_grid_sidebar_][id$=_custom_options],
+li[id^=customize-control-sidebar_][id$=_custom_options],
 li[id^=customize-control-reusable_block_][id$=_custom_options],
 li[id^=customize-control-footer_sidebar_][id$=_custom_options] {
   position: absolute;
@@ -421,7 +421,7 @@ li[id^=customize-control-footer_sidebar_][id$=_custom_options] {
 }
 
 #customize-control-branding_custom_options,
-li[id^=customize-control-gridd_grid_sidebar_][id$=_custom_options],
+li[id^=customize-control-sidebar_][id$=_custom_options],
 li[id^=customize-control-footer_sidebar_][id$=_custom_options] {
   top: 60px;
 }
@@ -438,11 +438,11 @@ li[id^=customize-control-footer_sidebar_][id$=_custom_options] {
 
 #sub-accordion-section-gridd_grid .customize-section-title,
 #sub-accordion-section-gridd_typography .customize-section-title,
-#sub-accordion-section-grid_part_details_content .customize-section-title,
-#sub-accordion-section-grid_part_details_header .customize-section-title,
-#sub-accordion-section-grid_part_details_footer .customize-section-title,
+#sub-accordion-section-content .customize-section-title,
+#sub-accordion-section-header .customize-section-title,
+#sub-accordion-section-footer .customize-section-title,
 #accordion-section-breadcrumbs .customize-section-title,
-#accordion-section-grid_part_details_footer_social_media .customize-section-title {
+#accordion-section-footer_social_media .customize-section-title {
   margin-bottom: 12px;
 }
 

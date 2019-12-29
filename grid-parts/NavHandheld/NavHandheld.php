@@ -137,7 +137,7 @@ class NavHandheld extends Grid_Part {
 	 * @return array
 	 */
 	public function grid_parts_order( $parts ) {
-		if ( ! get_theme_mod( 'gridd_grid_nav-handheld_enable', true ) ) {
+		if ( ! get_theme_mod( 'nav-handheld_enable', true ) ) {
 			return $parts;
 		}
 		$final_parts = [];

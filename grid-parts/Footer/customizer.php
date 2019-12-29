@@ -64,7 +64,7 @@ Customizer::add_field(
 
 new \Kirki\Field\Dimension(
 	[
-		'settings'        => 'gridd_grid_footer_max_width',
+		'settings'        => 'footer_max_width',
 		'label'           => esc_html__( 'Footer Maximum Width', 'gridd' ),
 		'section'         => 'footer',
 		'default'         => '100%',
@@ -84,7 +84,7 @@ new \Kirki\Field\Dimension(
 
 new \Kirki\Field\Dimension(
 	[
-		'settings'        => 'gridd_grid_footer_grid_gap',
+		'settings'        => 'footer_grid_gap',
 		'label'           => esc_html__( 'Grid Gap', 'gridd' ),
 		'description'     => __( 'Adds a gap between your grid-parts, both horizontally and vertically. For more information please read <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
 		'section'         => 'footer_grid',
@@ -105,7 +105,7 @@ new \Kirki\Field\Dimension(
 
 new \Kirki\Field\Dimension(
 	[
-		'settings'        => 'gridd_grid_footer_padding',
+		'settings'        => 'footer_padding',
 		'label'           => esc_html__( 'Padding', 'gridd' ),
 		'description'     => esc_html__( 'Inner padding for all parts in the footer.', 'gridd' ),
 		'section'         => 'footer',
@@ -126,7 +126,7 @@ new \Kirki\Field\Dimension(
 
 new \Kirki\Field\ReactColor(
 	[
-		'settings'        => 'gridd_grid_footer_background_color',
+		'settings'        => 'footer_background_color',
 		'label'           => esc_html__( 'Background Color', 'gridd' ),
 		'section'         => 'footer',
 		'default'         => '#ffffff',
@@ -150,10 +150,10 @@ new \Kirki\Field\ReactColor(
 
 new \WPLemon\Field\WCAGTextColor(
 	[
-		'settings'          => 'gridd_grid_footer_color',
+		'settings'          => 'footer_color',
 		'section'           => 'footer',
 		'choices'           => [
-			'backgroundColor' => 'gridd_grid_footer_background_color',
+			'backgroundColor' => 'footer_background_color',
 			'appearance'      => 'hidden',
 		],
 		'label'             => esc_html__( 'Text Color', 'gridd' ),
@@ -175,7 +175,7 @@ new \WPLemon\Field\WCAGTextColor(
 
 new \WPLemon\Field\WCAGLinkColor(
 	[
-		'settings'          => 'gridd_grid_footer_links_color',
+		'settings'          => 'footer_links_color',
 		'label'             => esc_html__( 'Links Color', 'gridd' ),
 		'section'           => 'footer',
 		'default'           => '#0f5e97',
@@ -191,8 +191,8 @@ new \WPLemon\Field\WCAGLinkColor(
 			],
 		],
 		'choices'           => [
-			'backgroundColor' => 'gridd_grid_footer_background_color',
-			'textColor'       => 'gridd_grid_footer_color',
+			'backgroundColor' => 'footer_background_color',
+			'textColor'       => 'footer_color',
 			'linksUnderlined' => true,
 			'forceCompliance' => get_theme_mod( 'target_color_compliance', 'auto' ),
 		],
@@ -205,7 +205,7 @@ new \WPLemon\Field\WCAGLinkColor(
 
 new \Kirki\Field\Slider(
 	[
-		'settings'  => 'gridd_grid_footer_border_top_width',
+		'settings'  => 'footer_border_top_width',
 		'label'     => esc_html__( 'Border-Top Width', 'gridd' ),
 		'section'   => 'footer',
 		'default'   => 0,
@@ -229,7 +229,7 @@ new \Kirki\Field\Slider(
 
 new \Kirki\Field\ReactColor(
 	[
-		'settings'        => 'gridd_grid_footer_border_top_color',
+		'settings'        => 'footer_border_top_color',
 		'label'           => esc_html__( 'Top Border Color', 'gridd' ),
 		'section'         => 'footer',
 		'default'         => '',
@@ -247,7 +247,7 @@ new \Kirki\Field\ReactColor(
 		],
 		'active_callback' => [
 			[
-				'setting'  => 'gridd_grid_footer_border_top_width',
+				'setting'  => 'footer_border_top_width',
 				'operator' => '!=',
 				'value'    => 0,
 			],

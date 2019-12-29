@@ -318,40 +318,40 @@ class Customizer {
 	public static function get_grid_parts_sections() {
 		$sections = [
 			'breadcrumbs'         => 'breadcrumbs',
-			'footer_copyright'    => 'grid_part_details_footer_copyright',
-			'footer_social_media' => 'grid_part_details_footer_social_media',
+			'footer_copyright'    => 'footer_copyright',
+			'footer_social_media' => 'footer_social_media',
 			'header_branding'     => 'title_tagline',
-			'header_search'       => 'grid_part_details_header_search',
-			'header_contact_info' => 'grid_part_details_header_contact_info',
+			'header_search'       => 'header_search',
+			'header_contact_info' => 'header_contact_info',
 			'social_media'        => 'header_social',
 		];
 		/**
 		 * These are core but we don't want them in this array.
 		 *
-		'content'             => 'grid_part_details_content',
-		'footer'              => 'grid_part_details_footer',
-		'header'              => 'grid_part_details_header',
+		'content'             => 'content',
+		'footer'              => 'footer',
+		'header'              => 'header',
 		'nav-handheld'        => 'gridd_mobile',
 		*/
 
 		$nav_nr = \Gridd\Grid_Part\Navigation::get_number_of_nav_menus();
 		for ( $i = 1; $i <= $nav_nr; $i++ ) {
-			$sections[ "nav_$i" ] = "grid_part_details_nav_$i";
+			$sections[ "nav_$i" ] = "nav_$i";
 		}
 
 		$reusable_blocks = \Gridd\Grid_Part\ReusableBlock::get_reusable_blocks();
 		foreach ( $reusable_blocks as $block ) {
-			$sections[ "reusable_block_{$block->ID}" ] = "grid_part_details_reusable_block_{$block->ID}";
+			$sections[ "reusable_block_{$block->ID}" ] = "reusable_block_{$block->ID}";
 		}
 
 		$sidebars_nr = \Gridd\Grid_Part\Sidebar::get_number_of_sidebars();
 		for ( $i = 1; $i <= $sidebars_nr; $i++ ) {
-			$sections[ "sidebar_$i" ] = "grid_part_details_sidebar_$i";
+			$sections[ "sidebar_$i" ] = "sidebar_$i";
 		}
 
 		$footer_sidebars_nr = \Gridd\Grid_Part\Footer::get_number_of_sidebars();
 		for ( $i = 1; $i <= $footer_sidebars_nr; $i++ ) {
-			$sections[ "footer_sidebar_$i" ] = "grid_part_details_footer_sidebar_$i";
+			$sections[ "footer_sidebar_$i" ] = "footer_sidebar_$i";
 		}
 
 		return apply_filters( 'gridd_get_grid_parts_sections', $sections );

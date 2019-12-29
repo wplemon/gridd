@@ -10,11 +10,11 @@ use Gridd\Grid_Part\Navigation;
 use Gridd\Theme;
 
 
-$responsive_mode = get_theme_mod( "gridd_grid_nav_{$id}_responsive_behavior", 'desktop-normal mobile-hidden' );
-$is_vertical_nav = get_theme_mod( "gridd_grid_nav_{$id}_vertical", false );
+$responsive_mode = get_theme_mod( "nav_{$id}_responsive_behavior", 'desktop-normal mobile-hidden' );
+$is_vertical_nav = get_theme_mod( "nav_{$id}_vertical", false );
 
 $wrapper_class  = "gridd-tp gridd-tp-nav gridd-tp-nav_$id";
-$wrapper_class .= ' gridd-menu-collapse-position-' . get_theme_mod( "gridd_grid_nav_{$id}_expand_icon_position", 'center-right' );
+$wrapper_class .= ' gridd-menu-collapse-position-' . get_theme_mod( "nav_{$id}_expand_icon_position", 'center-right' );
 if ( get_theme_mod( "nav_{$id}_custom_options", false ) ) {
 	$wrapper_class .= ' custom-options';
 }
@@ -34,8 +34,8 @@ foreach ( $responsive_mode_parts as $responsive_mode_part ) {
 			 * Add the toggle button.
 			 */
 			$icons = Navigation::get_expand_svgs();
-			$icon  = get_theme_mod( "gridd_grid_nav_{$id}_expand_icon", 'menu-1' );
-			$label = trim( get_theme_mod( "gridd_grid_nav_{$id}_expand_label", 'MENU' ) );
+			$icon  = get_theme_mod( "nav_{$id}_expand_icon", 'menu-1' );
+			$label = trim( get_theme_mod( "nav_{$id}_expand_label", 'MENU' ) );
 			if ( ! empty( $label ) ) {
 				$label = '<span class="gridd-menu-toggle-label">' . $label . '</span><span style="display:block;width:1em;"></span>';
 			}

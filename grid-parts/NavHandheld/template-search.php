@@ -8,7 +8,7 @@
 
 use Gridd\Theme;
 
-$label_class = get_theme_mod( 'gridd_grid_nav-handheld_hide_labels', false ) ? 'screen-reader-text' : 'label';
+$label_class = get_theme_mod( 'nav-handheld_hide_labels', false ) ? 'screen-reader-text' : 'label';
 ?>
 <div id="gridd-handheld-search">
 	<?php

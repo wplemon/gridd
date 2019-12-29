@@ -41,7 +41,7 @@ function gridd_nav_customizer_options( $id ) {
 	 * Add Customizer Sections.
 	 */
 	new \Kirki\Section(
-		"grid_part_details_nav_$id",
+		"nav_$id",
 		[
 			/* translators: The navigation number. */
 			'title'           => sprintf( esc_html__( 'Navigation %d', 'gridd' ), absint( $id ) ),
@@ -57,7 +57,7 @@ function gridd_nav_customizer_options( $id ) {
 	new \Kirki\Field\Checkbox_Switch(
 		[
 			'settings'  => "nav_{$id}_custom_options",
-			'section'   => "grid_part_details_nav_$id",
+			'section'   => "nav_$id",
 			'default'   => false,
 			'transport' => 'refresh',
 			'priority'  => -999,
@@ -70,10 +70,10 @@ function gridd_nav_customizer_options( $id ) {
 
 	new \Kirki\Field\Radio(
 		[
-			'settings'          => "gridd_grid_nav_{$id}_responsive_behavior",
+			'settings'          => "nav_{$id}_responsive_behavior",
 			'label'             => esc_html__( 'Responsive Behavior', 'gridd' ),
 			'description'       => __( 'Select how this navigation should behave in smaller screens.', 'gridd' ),
-			'section'           => "grid_part_details_nav_$id",
+			'section'           => "nav_$id",
 			'default'           => 'desktop-normal mobile-hidden',
 			'choices'           => [
 				'desktop-normal mobile-normal' => esc_html__( 'Always visible', 'gridd' ),
@@ -92,10 +92,10 @@ function gridd_nav_customizer_options( $id ) {
 
 	new \Kirki\Field\Dimension(
 		[
-			'settings'        => "gridd_grid_nav_{$id}_padding",
+			'settings'        => "nav_{$id}_padding",
 			'label'           => esc_html__( 'Padding', 'gridd' ),
 			'description'     => esc_html__( 'Use any valid CSS value.', 'gridd' ),
-			'section'         => "grid_part_details_nav_$id",
+			'section'         => "nav_$id",
 			'default'         => '1em',
 			'transport'       => 'auto',
 			'output'          => [
@@ -113,8 +113,8 @@ function gridd_nav_customizer_options( $id ) {
 	new \Kirki\Field\ReactColor(
 		[
 			'label'           => esc_html__( 'Background Color', 'gridd' ),
-			'settings'        => "gridd_grid_nav_{$id}_bg_color",
-			'section'         => "grid_part_details_nav_$id",
+			'settings'        => "nav_{$id}_bg_color",
+			'section'         => "nav_$id",
 			'default'         => '#ffffff',
 			'transport'       => 'auto',
 			'output'          => [
@@ -136,10 +136,10 @@ function gridd_nav_customizer_options( $id ) {
 	new \WPLemon\Field\WCAGTextColor(
 		[
 			'label'             => esc_html__( 'Items Color', 'gridd' ),
-			'settings'          => "gridd_grid_nav_{$id}_items_color",
-			'section'           => "grid_part_details_nav_$id",
+			'settings'          => "nav_{$id}_items_color",
+			'section'           => "nav_$id",
 			'choices'           => [
-				'backgroundColor' => "gridd_grid_nav_{$id}_bg_color",
+				'backgroundColor' => "nav_{$id}_bg_color",
 				'appearance'      => 'hidden',
 			],
 			'default'           => '#000000',
@@ -161,8 +161,8 @@ function gridd_nav_customizer_options( $id ) {
 		[
 			'label'             => esc_html__( 'Accent Color', 'gridd' ),
 			'description'       => esc_html__( 'Select the hue for you active item. The color will be auto-calculated to ensure maximum readability.', 'gridd' ),
-			'settings'          => "gridd_grid_nav_{$id}_accent_color",
-			'section'           => "grid_part_details_nav_$id",
+			'settings'          => "nav_{$id}_accent_color",
+			'section'           => "nav_$id",
 			'default'           => '#0f5e97',
 			'transport'         => 'auto',
 			'output'            => [
@@ -172,8 +172,8 @@ function gridd_nav_customizer_options( $id ) {
 				],
 			],
 			'choices'           => [
-				'backgroundColor' => "gridd_grid_nav_{$id}_bg_color",
-				'textColor'       => "gridd_grid_nav_{$id}_items_color",
+				'backgroundColor' => "nav_{$id}_bg_color",
+				'textColor'       => "nav_{$id}_items_color",
 				'linksUnderlined' => true,
 				'forceCompliance' => get_theme_mod( 'target_color_compliance', 'auto' ),
 			],
@@ -186,14 +186,14 @@ function gridd_nav_customizer_options( $id ) {
 
 	new \Kirki\Field\Checkbox(
 		[
-			'settings'        => "gridd_grid_nav_{$id}_vertical",
+			'settings'        => "nav_{$id}_vertical",
 			'label'           => esc_html__( 'Enable Vertical Menu Mode', 'gridd' ),
 			'description'     => esc_html__( 'If your layout is column-based and you want a vertical side-navigation enable this option.', 'gridd' ),
-			'section'         => "grid_part_details_nav_$id",
+			'section'         => "nav_$id",
 			'default'         => false,
 			'active_callback' => [
 				[
-					'setting'  => "gridd_grid_nav_{$id}_responsive_behavior",
+					'setting'  => "nav_{$id}_responsive_behavior",
 					'value'    => 'desktop-icon mobile-icon',
 					'operator' => '!==',
 				],
@@ -203,10 +203,10 @@ function gridd_nav_customizer_options( $id ) {
 
 	new \Kirki\Field\RadioButtonset(
 		[
-			'settings'          => "gridd_grid_nav_{$id}_justify_content",
+			'settings'          => "nav_{$id}_justify_content",
 			'label'             => esc_html__( 'Justify Items', 'gridd' ),
 			'description'       => esc_html__( 'Choose how menu items will be spread horizontally inside the menu container.', 'gridd' ),
-			'section'           => "grid_part_details_nav_$id",
+			'section'           => "nav_$id",
 			'default'           => 'center',
 			'transport'         => 'auto',
 			'output'            => [
@@ -217,12 +217,12 @@ function gridd_nav_customizer_options( $id ) {
 			],
 			'active_callback'   => [
 				[
-					'setting'  => "gridd_grid_nav_{$id}_vertical",
+					'setting'  => "nav_{$id}_vertical",
 					'operator' => '!==',
 					'value'    => true,
 				],
 				[
-					'setting'  => "gridd_grid_nav_{$id}_responsive_behavior",
+					'setting'  => "nav_{$id}_responsive_behavior",
 					'value'    => 'desktop-icon mobile-icon',
 					'operator' => '!==',
 				],
@@ -247,19 +247,19 @@ function gridd_nav_customizer_options( $id ) {
 
 	new \Kirki\Field\Text(
 		[
-			'settings'          => "gridd_grid_nav_{$id}_expand_label",
+			'settings'          => "nav_{$id}_expand_label",
 			'label'             => esc_html__( 'Expand Label', 'gridd' ),
-			'section'           => "grid_part_details_nav_$id",
+			'section'           => "nav_$id",
 			'default'           => esc_html__( 'MENU', 'gridd' ),
 			'transport'         => 'refresh',
 			'active_callback'   => [
 				[
-					'setting'  => "gridd_grid_nav_{$id}_responsive_behavior",
+					'setting'  => "nav_{$id}_responsive_behavior",
 					'value'    => 'desktop-normal mobile-normal',
 					'operator' => '!==',
 				],
 				[
-					'setting'  => "gridd_grid_nav_{$id}_responsive_behavior",
+					'setting'  => "nav_{$id}_responsive_behavior",
 					'value'    => 'desktop-normal mobile-hidden',
 					'operator' => '!==',
 				],
@@ -273,21 +273,21 @@ function gridd_nav_customizer_options( $id ) {
 
 	new \Kirki\Field\RadioButtonset(
 		[
-			'settings'          => "gridd_grid_nav_{$id}_expand_icon",
+			'settings'          => "nav_{$id}_expand_icon",
 			'label'             => esc_html__( 'Expand Icon', 'gridd' ),
-			'section'           => "grid_part_details_nav_$id",
+			'section'           => "nav_$id",
 			'default'           => 'menu-1',
 			'transport'         => 'refresh',
 			'choices'           => Navigation::get_expand_svgs(),
 			'hide_input'        => true,
 			'active_callback'   => [
 				[
-					'setting'  => "gridd_grid_nav_{$id}_responsive_behavior",
+					'setting'  => "nav_{$id}_responsive_behavior",
 					'value'    => 'desktop-normal mobile-normal',
 					'operator' => '!==',
 				],
 				[
-					'setting'  => "gridd_grid_nav_{$id}_responsive_behavior",
+					'setting'  => "nav_{$id}_responsive_behavior",
 					'value'    => 'desktop-normal mobile-hidden',
 					'operator' => '!==',
 				],
@@ -303,9 +303,9 @@ function gridd_nav_customizer_options( $id ) {
 
 	new \Kirki\Field\RadioButtonset(
 		[
-			'settings'          => "gridd_grid_nav_{$id}_expand_icon_position",
+			'settings'          => "nav_{$id}_expand_icon_position",
 			'label'             => esc_html__( 'Expand Icon Position', 'gridd' ),
-			'section'           => "grid_part_details_nav_$id",
+			'section'           => "nav_$id",
 			'default'           => 'center-right',
 			'transport'         => 'refresh',
 			'choices'           => [
@@ -321,12 +321,12 @@ function gridd_nav_customizer_options( $id ) {
 			],
 			'active_callback'   => [
 				[
-					'setting'  => "gridd_grid_nav_{$id}_responsive_behavior",
+					'setting'  => "nav_{$id}_responsive_behavior",
 					'value'    => 'desktop-normal mobile-normal',
 					'operator' => '!==',
 				],
 				[
-					'setting'  => "gridd_grid_nav_{$id}_responsive_behavior",
+					'setting'  => "nav_{$id}_responsive_behavior",
 					'value'    => 'desktop-normal mobile-hidden',
 					'operator' => '!==',
 				],
@@ -347,9 +347,9 @@ function gridd_nav_customizer_options( $id ) {
 	 * WIP
 	new \Kirki\Field\RadioButtonset(
 		[
-			'settings'          => "gridd_grid_nav_{$id}_style",
+			'settings'          => "nav_{$id}_style",
 			'label'             => esc_html__( 'Hover/Focus Styles', 'gridd' ),
-			'section'           => "grid_part_details_nav_$id",
+			'section'           => "nav_$id",
 			'default'           => 'default',
 			'transport'         => 'refresh',
 			'choices'           => [

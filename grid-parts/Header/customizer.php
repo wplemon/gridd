@@ -27,7 +27,7 @@ add_action(
 );
 
 new \Kirki\Section(
-	'grid_part_details_header',
+	'header',
 	[
 		'title'    => esc_html__( 'Header', 'gridd' ),
 		'priority' => 21,
@@ -37,7 +37,7 @@ new \Kirki\Section(
 );
 
 new \Kirki\Section(
-	'grid_part_details_header_grid',
+	'header_grid',
 	[
 		'title'    => esc_html__( 'Header Grid', 'gridd' ),
 		'priority' => 10,
@@ -49,7 +49,7 @@ new \Kirki\Section(
 new \Kirki\Field\Checkbox_Switch(
 	[
 		'settings'  => 'header_custom_options',
-		'section'   => 'grid_part_details_header',
+		'section'   => 'header',
 		'default'   => false,
 		'transport' => 'refresh',
 		'priority'  => -999,
@@ -63,7 +63,7 @@ new \Kirki\Field\Checkbox_Switch(
 Customizer::add_field(
 	[
 		'settings'          => 'gridd_header_grid',
-		'section'           => 'grid_part_details_header_grid',
+		'section'           => 'header_grid',
 		'type'              => 'gridd_grid',
 		'grid-part'         => 'header',
 		'label'             => esc_html__( 'Header Grid', 'gridd' ),
@@ -95,7 +95,7 @@ new \Kirki\Field\Dimension(
 	[
 		'settings'        => 'header_max_width',
 		'label'           => esc_html__( 'Header Maximum Width', 'gridd' ),
-		'section'         => 'grid_part_details_header',
+		'section'         => 'header',
 		'default'         => '100%',
 		'priority'        => 20,
 		'transport'       => 'auto',
@@ -113,9 +113,9 @@ new \Kirki\Field\Dimension(
 
 new \Kirki\Field\Dimension(
 	[
-		'settings'        => 'gridd_grid_header_padding',
+		'settings'        => 'header_padding',
 		'label'           => esc_html__( 'Header Padding', 'gridd' ),
-		'section'         => 'grid_part_details_header',
+		'section'         => 'header',
 		'default'         => '0',
 		'priority'        => 30,
 		'transport'       => 'auto',
@@ -133,10 +133,10 @@ new \Kirki\Field\Dimension(
 
 new \Kirki\Field\Dimension(
 	[
-		'settings'        => 'gridd_grid_header_grid_gap',
+		'settings'        => 'header_grid_gap',
 		'label'           => esc_html__( 'Grid Gap', 'gridd' ),
 		'description'     => __( 'Adds a gap between your grid-parts, both horizontally and vertically. For more information please read <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
-		'section'         => 'grid_part_details_header',
+		'section'         => 'header',
 		'default'         => '0',
 		'priority'        => 40,
 		'transport'       => 'auto',
@@ -156,7 +156,7 @@ new \Kirki\Field\ReactColor(
 	[
 		'settings'        => 'header_background_color',
 		'label'           => esc_html__( 'Background Color', 'gridd' ),
-		'section'         => 'grid_part_details_header',
+		'section'         => 'header',
 		'default'         => '#ffffff',
 		'priority'        => 50,
 		'transport'       => 'auto',
@@ -180,7 +180,7 @@ new \WPLemon\Field\WCAGTextColor(
 	[
 		'settings'          => 'header_text_color',
 		'label'             => esc_html__( 'Text Color', 'gridd' ),
-		'section'           => 'grid_part_details_header',
+		'section'           => 'header',
 		'priority'          => 51,
 		'default'           => '#000000',
 		'output'            => [
@@ -203,7 +203,7 @@ new \WPLemon\Field\WCAGLinkColor(
 		'settings'          => 'header_links_color',
 		'label'             => esc_html__( 'Links Color', 'gridd' ),
 		'description'       => esc_html__( 'Select the hue for you links. The color will be auto-calculated to ensure maximum readability according to WCAG.', 'gridd' ),
-		'section'           => 'grid_part_details_header',
+		'section'           => 'header',
 		'transport'         => 'auto',
 		'priority'          => 52,
 		'choices'           => [
@@ -235,10 +235,10 @@ new \WPLemon\Field\WCAGLinkColor(
 
 new \Kirki\Field\RadioButtonset(
 	[
-		'settings'          => 'gridd_grid_header_box_shadow',
+		'settings'          => 'header_box_shadow',
 		'label'             => esc_html__( 'Drop Shadow Intensity', 'gridd' ),
 		'description'       => esc_html__( 'Set to "None" to disable the shadow, or increase the intensity for a more dramatic effect.', 'gridd' ),
-		'section'           => 'grid_part_details_header',
+		'section'           => 'header',
 		'default'           => 'none',
 		'transport'         => 'postMessage',
 		'transport'         => 'auto',
@@ -266,7 +266,7 @@ new \Kirki\Field\Checkbox_Toggle(
 		'settings'    => 'gridd_header_sticky',
 		'label'       => esc_html__( 'Sticky on Large Devices', 'gridd' ),
 		'description' => esc_html__( 'Enable to stick this area to the top of the page when users scroll-down on devices larger than the breakpoint you defined in your main grid.', 'gridd' ),
-		'section'     => 'grid_part_details_header',
+		'section'     => 'header',
 		'default'     => false,
 		'transport'   => 'refresh',
 		'priority'    => 80,

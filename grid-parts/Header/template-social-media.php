@@ -25,7 +25,7 @@ $style = Style::get_instance( 'grid-part/header/social-media' );
 $style->add_file( get_theme_file_path( 'grid-parts/Header/styles-social-icons.min.css' ) );
 
 $grid_part_classes  = 'gridd-tp gridd-tp-social_media';
-$grid_part_classes .= ( get_theme_mod( 'header_social_advanced' ) ) ? ' custom-options' : '';
+$grid_part_classes .= ( get_theme_mod( 'header_social_custom_options' ) ) ? ' custom-options' : '';
 ?>
 
 <div <?php Theme::print_attributes( [ 'class' => $grid_part_classes ], 'wrapper-social_media' ); ?>>

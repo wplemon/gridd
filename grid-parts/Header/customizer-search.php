@@ -9,7 +9,7 @@ use Gridd\Grid_Part\Header;
 use Gridd\Customizer;
 
 new \Kirki\Section(
-	'grid_part_details_header_search',
+	'header_search',
 	[
 		'title'           => esc_html__( 'Header Search', 'gridd' ),
 		'panel'           => 'theme_options',
@@ -24,7 +24,7 @@ new \Kirki\Section(
 new \Kirki\Field\Checkbox_Switch(
 	[
 		'settings'  => 'header_search_custom_options',
-		'section'   => 'grid_part_details_header_search',
+		'section'   => 'header_search',
 		'default'   => false,
 		'transport' => 'refresh',
 		'priority'  => -999,
@@ -39,7 +39,7 @@ new \Kirki\Field\RadioButtonset(
 	[
 		'settings'  => 'header_search_mode',
 		'label'     => esc_html__( 'Search Mode', 'gridd' ),
-		'section'   => 'grid_part_details_header_search',
+		'section'   => 'header_search',
 		'default'   => 'form',
 		'transport' => 'refresh',
 		'choices'   => [
@@ -54,7 +54,7 @@ new \Kirki\Field\ReactColor(
 	[
 		'settings'        => 'header_search_background_color',
 		'label'           => esc_html__( 'Background Color', 'gridd' ),
-		'section'         => 'grid_part_details_header_search',
+		'section'         => 'header_search',
 		'default'         => '#ffffff',
 		'transport'       => 'auto',
 		'output'          => [
@@ -78,7 +78,7 @@ new \WPLemon\Field\WCAGTextColor(
 	[
 		'settings'        => 'header_search_color',
 		'label'           => esc_html__( 'Text Color', 'gridd' ),
-		'section'         => 'grid_part_details_header_search',
+		'section'         => 'header_search',
 		'default'         => '#000000',
 		'transport'       => 'auto',
 		'output'          => [
@@ -101,7 +101,7 @@ new \Kirki\Field\Slider(
 	[
 		'settings'        => 'header_search_padding',
 		'label'           => esc_html__( 'Horizontal Padding', 'gridd' ),
-		'section'         => 'grid_part_details_header_search',
+		'section'         => 'header_search',
 		'default'         => 1,
 		'transport'       => 'auto',
 		'output'          => [
@@ -129,7 +129,7 @@ new \Kirki\Field\Slider(
 		'settings'        => 'header_search_font_size',
 		'label'           => esc_html__( 'Font Size', 'gridd' ),
 		'description'     => esc_html__( 'The value selected here is relative to your body font-size, so a value of 1em will be the same size as your content.', 'gridd' ),
-		'section'         => 'grid_part_details_header_search',
+		'section'         => 'header_search',
 		'default'         => 1,
 		'output'          => [
 			[

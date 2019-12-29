@@ -22,7 +22,7 @@ add_filter(
 			$nav_id = str_replace( 'navigation-', '', $filter_context );
 			if ( is_numeric( $nav_id ) ) {
 				$nav_id = (int) $nav_id;
-				$mode   = get_theme_mod( "gridd_grid_nav_{$nav_id}_vertical", false ) ? 'vertical' : 'horizontal';
+				$mode   = get_theme_mod( "nav_{$nav_id}_vertical", false ) ? 'vertical' : 'horizontal';
 				// See https://amp-wp.org/documentation/playbooks/toggling-hamburger-menus/.
 				$atts['[class]']         = "'navigation gridd-nav-{$mode}' + ( navMenuExpanded{$nav_id} ? ' active' : '' )";
 				$atts['[aria-expanded]'] = "navMenuExpanded{$nav_id} ? 'true' : 'false'";

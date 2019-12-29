@@ -27,10 +27,10 @@ function gridd_sidebar_customizer_options( $id ) {
 	$sanitization = new Sanitize();
 
 	/* translators: The number of the widget area. */
-	$label = get_theme_mod( "gridd_grid_widget_area_{$id}_name", sprintf( esc_html__( 'Widget Area %d', 'gridd' ), intval( $id ) ) );
+	$label = get_theme_mod( "widget_area_{$id}_name", sprintf( esc_html__( 'Widget Area %d', 'gridd' ), intval( $id ) ) );
 
 	new \Kirki\Section(
-		"grid_part_details_sidebar_$id",
+		"sidebar_$id",
 		[
 			'panel'           => 'theme_options',
 			'title'           => $label,
@@ -40,8 +40,8 @@ function gridd_sidebar_customizer_options( $id ) {
 
 	new \Kirki\Field\Checkbox_Switch(
 		[
-			'settings'  => "gridd_grid_sidebar_{$id}_custom_options",
-			'section'   => "grid_part_details_sidebar_$id",
+			'settings'  => "sidebar_{$id}_custom_options",
+			'section'   => "sidebar_$id",
 			'default'   => false,
 			'transport' => 'refresh',
 			'priority'  => -999,
@@ -54,9 +54,9 @@ function gridd_sidebar_customizer_options( $id ) {
 
 	new \Kirki\Field\ReactColor(
 		[
-			'settings'        => "gridd_grid_sidebar_{$id}_background_color",
+			'settings'        => "sidebar_{$id}_background_color",
 			'label'           => esc_html__( 'Background Color', 'gridd' ),
-			'section'         => "grid_part_details_sidebar_$id",
+			'section'         => "sidebar_$id",
 			'default'         => '#ffffff',
 			'priority'        => 10,
 			'choices'         => [
@@ -74,20 +74,20 @@ function gridd_sidebar_customizer_options( $id ) {
 				'colors'        => \Gridd\Theme::get_colorpicker_palette(),
 			],
 			'active_callback' => function() use ( $id ) {
-				return get_theme_mod( "gridd_grid_sidebar_{$id}_custom_options", false );
+				return get_theme_mod( "sidebar_{$id}_custom_options", false );
 			},
 		]
 	);
 
 	new \WPLemon\Field\WCAGTextColor(
 		[
-			'settings'          => "gridd_grid_sidebar_{$id}_color",
+			'settings'          => "sidebar_{$id}_color",
 			'label'             => esc_html__( 'Text Color', 'gridd' ),
-			'section'           => "grid_part_details_sidebar_$id",
+			'section'           => "sidebar_$id",
 			'default'           => '#000000',
 			'priority'          => 20,
 			'choices'           => [
-				'backgroundColor' => "gridd_grid_sidebar_{$id}_background_color",
+				'backgroundColor' => "sidebar_{$id}_background_color",
 				'appearance'      => 'hidden',
 			],
 			'transport'         => 'auto',
@@ -99,16 +99,16 @@ function gridd_sidebar_customizer_options( $id ) {
 			],
 			'sanitize_callback' => [ $sanitization, 'color_hex' ],
 			'active_callback'   => function() use ( $id ) {
-				return get_theme_mod( "gridd_grid_sidebar_{$id}_custom_options", false );
+				return get_theme_mod( "sidebar_{$id}_custom_options", false );
 			},
 		]
 	);
 
 	new \WPLemon\Field\WCAGLinkColor(
 		[
-			'settings'          => "gridd_grid_sidebar_{$id}_links_color",
+			'settings'          => "sidebar_{$id}_links_color",
 			'label'             => esc_html__( 'Links Color', 'gridd' ),
-			'section'           => "grid_part_details_sidebar_$id",
+			'section'           => "sidebar_$id",
 			'default'           => '#0f5e97',
 			'priority'          => 30,
 			'choices'           => [
@@ -122,44 +122,44 @@ function gridd_sidebar_customizer_options( $id ) {
 				],
 			],
 			'choices'           => [
-				'backgroundColor' => "gridd_grid_sidebar_{$id}_background_color",
-				'textColor'       => "gridd_grid_sidebar_{$id}_color",
+				'backgroundColor' => "sidebar_{$id}_background_color",
+				'textColor'       => "sidebar_{$id}_color",
 				'linksUnderlined' => true,
 				'forceCompliance' => get_theme_mod( 'target_color_compliance', 'auto' ),
 			],
 			'sanitize_callback' => [ $sanitization, 'color_hex' ],
 			'active_callback'   => function() use ( $id ) {
-				return get_theme_mod( "gridd_grid_sidebar_{$id}_custom_options", false );
+				return get_theme_mod( "sidebar_{$id}_custom_options", false );
 			},
 		]
 	);
 
 	new \Kirki\Field\Dimension(
 		[
-			'settings'        => "gridd_grid_sidebar_{$id}_padding",
+			'settings'        => "sidebar_{$id}_padding",
 			'label'           => esc_html__( 'Padding', 'gridd' ),
 			'description'     => esc_html__( 'Use any valid CSS value.', 'gridd' ),
-			'section'         => "grid_part_details_sidebar_$id.custom-options",
+			'section'         => "sidebar_$id",
 			'priority'        => 40,
 			'default'         => '1em',
 			'transport'       => 'auto',
 			'output'          => [
 				[
-					'element'  => ".gridd-tp-sidebar_$id",
+					'element'  => ".gridd-tp-sidebar_$id.custom-options",
 					'property' => '--pd',
 				],
 			],
 			'active_callback' => function() use ( $id ) {
-				return get_theme_mod( "gridd_grid_sidebar_{$id}_custom_options", false );
+				return get_theme_mod( "sidebar_{$id}_custom_options", false );
 			},
 		]
 	);
 
 	new \Kirki\Field\Dimension(
 		[
-			'settings'        => "gridd_grid_sidebar_{$id}_widgets_margin",
+			'settings'        => "sidebar_{$id}_widgets_margin",
 			'label'           => esc_html__( 'Margin between widgets', 'gridd' ),
-			'section'         => "grid_part_details_sidebar_$id",
+			'section'         => "sidebar_$id",
 			'priority'        => 43,
 			'default'         => '1em',
 			'transport'       => 'auto',
@@ -170,7 +170,7 @@ function gridd_sidebar_customizer_options( $id ) {
 				],
 			],
 			'active_callback' => function() use ( $id ) {
-				return get_theme_mod( "gridd_grid_sidebar_{$id}_custom_options", false );
+				return get_theme_mod( "sidebar_{$id}_custom_options", false );
 			},
 		]
 	);

@@ -16,13 +16,13 @@ $parts = [
 
 new \Kirki\Field\Checkbox(
 	[
-		'settings'        => 'gridd_grid_nav-handheld_enable',
+		'settings'        => 'nav-handheld_enable',
 		'label'           => esc_html__( 'Enable Mobile Navigation', 'gridd' ),
 		'section'         => 'gridd_mobile',
 		'default'         => true,
 		'transport'       => 'postMessage',
 		'partial_refresh' => [
-			'gridd_grid_nav_handheld_enable_template_enable' => [
+			'nav_handheld_enable_template_enable' => [
 				'selector'            => '.gridd-tp-nav-handheld',
 				'container_inclusive' => true,
 				'render_callback'     => function() {
@@ -35,7 +35,7 @@ new \Kirki\Field\Checkbox(
 
 new \Kirki\Field\Sortable(
 	[
-		'settings'        => 'gridd_grid_nav-handheld_parts',
+		'settings'        => 'nav-handheld_parts',
 		'label'           => esc_html__( 'Mobile Navigation active parts & order', 'gridd' ),
 		'section'         => 'gridd_mobile',
 		'default'         => [ 'menu', 'home', 'search' ],
@@ -52,7 +52,7 @@ new \Kirki\Field\Sortable(
 		],
 		'active_callback' => [
 			[
-				'setting'  => 'gridd_grid_nav-handheld_enable',
+				'setting'  => 'nav-handheld_enable',
 				'operator' => '===',
 				'value'    => true,
 			],
@@ -62,14 +62,14 @@ new \Kirki\Field\Sortable(
 
 new \Kirki\Field\Checkbox(
 	[
-		'settings'        => 'gridd_grid_nav-handheld_hide_labels',
+		'settings'        => 'nav-handheld_hide_labels',
 		'label'           => esc_attr__( 'Hide Labels', 'gridd' ),
 		'description'     => __( 'Enable this option if you want to hide the button labels. Hidden labels only become available to screen-readers.', 'gridd' ),
 		'section'         => 'gridd_mobile',
 		'default'         => false,
 		'transport'       => 'postMessage',
 		'partial_refresh' => [
-			'gridd_grid_nav_handheld_hide_labels_rendered' => [
+			'nav_handheld_hide_labels_rendered' => [
 				'selector'            => '.gridd-tp-nav-handheld',
 				'container_inclusive' => true,
 				'render_callback'     => function() {
@@ -79,7 +79,7 @@ new \Kirki\Field\Checkbox(
 		],
 		'active_callback' => [
 			[
-				'setting'  => 'gridd_grid_nav-handheld_enable',
+				'setting'  => 'nav-handheld_enable',
 				'operator' => '===',
 				'value'    => true,
 			],

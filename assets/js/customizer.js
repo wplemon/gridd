@@ -66,22 +66,22 @@
 
 				// Loop parts in the sub-grid.
 				_.each( parts, function( part ) {
-					var section = jQuery( '#sub-accordion-section-grid_part_details_' + part ),
+					var section = jQuery( '#sub-accordion-section-' + part ),
 						backBtn = section.find( '.customize-section-back' );
 
 					// Change the behavior of the back button.
 					jQuery( backBtn ).click( function( e ) {
 						if ( 'gridd_header_grid' === grid ) {
-							wp.customize.section( 'grid_part_details_header' ).focus();
+							wp.customize.section( 'header' ).focus();
 							e.preventDefault();
 						} else if ( 'gridd_footer_grid' === grid ) {
-							wp.customize.section( 'grid_part_details_footer' ).focus();
+							wp.customize.section( 'footer' ).focus();
 							e.preventDefault();
-						} else if ( nestedParts[ grid ] && wp.customize.section( 'grid_part_details_' + nestedParts[ grid ] ) ) {
-							wp.customize.section( 'grid_part_details_' + nestedParts[ grid ] ).focus();
+						} else if ( nestedParts[ grid ] && wp.customize.section( nestedParts[ grid ] ) ) {
+							wp.customize.section( nestedParts[ grid ] ).focus();
 							e.preventDefault();
-						} else if ( griddTemplatePreviewScript.nestedGrids[ grid ] && wp.customize.section( 'grid_part_details_' + griddTemplatePreviewScript.nestedGrids[ grid ] ) ) {
-							wp.customize.section( 'grid_part_details_' + griddTemplatePreviewScript.nestedGrids[ grid ] ).focus();
+						} else if ( griddTemplatePreviewScript.nestedGrids[ grid ] && wp.customize.section( griddTemplatePreviewScript.nestedGrids[ grid ] ) ) {
+							wp.customize.section( griddTemplatePreviewScript.nestedGrids[ grid ] ).focus();
 							e.preventDefault();
 						}
 					});
@@ -155,16 +155,16 @@
 		});
 
 		// Move widget-area settings.
-		griddMoveSectionControlsOnDemand( 'sidebar-widgets-footer_sidebar_1', 'grid_part_details_footer_sidebar_1' );
-		griddMoveSectionControlsOnDemand( 'sidebar-widgets-footer_sidebar_2', 'grid_part_details_footer_sidebar_2' );
-		griddMoveSectionControlsOnDemand( 'sidebar-widgets-footer_sidebar_3', 'grid_part_details_footer_sidebar_3' );
-		griddMoveSectionControlsOnDemand( 'sidebar-widgets-footer_sidebar_4', 'grid_part_details_footer_sidebar_4' );
-		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-1', 'grid_part_details_sidebar_1' );
-		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-2', 'grid_part_details_sidebar_2' );
-		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-3', 'grid_part_details_sidebar_3' );
-		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-4', 'grid_part_details_sidebar_4' );
-		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-5', 'grid_part_details_sidebar_5' );
-		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-6', 'grid_part_details_sidebar_6' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-footer_sidebar_1', 'footer_sidebar_1' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-footer_sidebar_2', 'footer_sidebar_2' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-footer_sidebar_3', 'footer_sidebar_3' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-footer_sidebar_4', 'footer_sidebar_4' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-1', 'sidebar_1' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-2', 'sidebar_2' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-3', 'sidebar_3' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-4', 'sidebar_4' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-5', 'sidebar_5' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-6', 'sidebar_6' );
 		griddMoveSectionControlsOnDemand( 'sidebar-widgets-offcanvas-sidebar', 'gridd_plus_offcanvas_sidebar' );
 	});
 

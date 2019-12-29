@@ -14,7 +14,7 @@ $attrs = [
 	'role'  => 'complementary',
 ];
 
-if ( get_theme_mod( "gridd_grid_sidebar_{$sidebar_id}_custom_options", false ) ) {
+if ( get_theme_mod( "sidebar_{$sidebar_id}_custom_options", false ) ) {
 	$attrs['class'] .= ' custom-options';
 }
 ?>

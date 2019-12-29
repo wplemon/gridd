@@ -101,7 +101,7 @@ class Content extends Grid_Part {
 	 */
 	public static function print_styles() {
 		$padding = get_theme_mod(
-			'gridd_grid_content_padding',
+			'content_padding',
 			[
 				'top'    => 0,
 				'bottom' => 0,

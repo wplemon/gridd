@@ -39,7 +39,7 @@ new \Kirki\Field\Checkbox_Switch(
 
 new \Kirki\Field\ReactColor(
 	[
-		'settings'        => 'gridd_grid_breadcrumbs_background_color',
+		'settings'        => 'breadcrumbs_background_color',
 		'label'           => esc_html__( 'Background Color', 'gridd' ),
 		'section'         => 'breadcrumbs',
 		'default'         => '#ffffff',
@@ -64,7 +64,7 @@ new \Kirki\Field\ReactColor(
 
 new \Kirki\Field\Dimension(
 	[
-		'settings'        => 'gridd_grid_breadcrumbs_padding',
+		'settings'        => 'breadcrumbs_padding',
 		'label'           => esc_html__( 'Padding', 'gridd' ),
 		'section'         => 'breadcrumbs',
 		'default'         => '1em',
@@ -84,7 +84,7 @@ new \Kirki\Field\Dimension(
 
 new \Kirki\Field\Dimension(
 	[
-		'settings'        => 'gridd_grid_breadcrumbs_max_width',
+		'settings'        => 'breadcrumbs_max_width',
 		'label'           => esc_html__( 'Breadcrumbs Maximum Width', 'gridd' ),
 		'section'         => 'breadcrumbs',
 		'default'         => '100%',
@@ -104,7 +104,7 @@ new \Kirki\Field\Dimension(
 
 new \WPLemon\Field\WCAGTextColor(
 	[
-		'settings'          => 'gridd_grid_breadcrumbs_color',
+		'settings'          => 'breadcrumbs_color',
 		'label'             => esc_html__( 'Text Color', 'gridd' ),
 		'section'           => 'breadcrumbs',
 		'default'           => '#000000',
@@ -116,7 +116,7 @@ new \WPLemon\Field\WCAGTextColor(
 			],
 		],
 		'choices'           => [
-			'backgroundColor' => 'gridd_grid_breadcrumbs_background_color',
+			'backgroundColor' => 'breadcrumbs_background_color',
 			'appearance'      => 'hidden',
 		],
 		'active_callback'   => function() {
@@ -128,7 +128,7 @@ new \WPLemon\Field\WCAGTextColor(
 
 new \Kirki\Field\RadioButtonset(
 	[
-		'settings'          => 'gridd_grid_breadcrumbs_text_align',
+		'settings'          => 'breadcrumbs_text_align',
 		'label'             => esc_html__( 'Alignment', 'gridd' ),
 		'section'           => 'breadcrumbs',
 		'default'           => 'center',

@@ -725,7 +725,8 @@ smallest { /* stylelint-disable-line */
 	width: 100%;
 	max-width: var(--mw, 100%);
 	margin: auto;
-	min-height: 100vh;
+  min-height: 100vh;
+  grid-gap: var(--gg, 0);
 }
 
 .gridd-tp {

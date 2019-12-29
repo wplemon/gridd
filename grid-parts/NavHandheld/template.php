@@ -17,11 +17,11 @@ $style->add_string( '@media only screen and (min-width:' . get_theme_mod( 'gridd
 
 <div <?php Theme::print_attributes( [ 'class' => 'gridd-tp gridd-tp-nav-handheld' ], 'wrapper-nav-handheld' ); ?>>
 	<?php
-	if ( get_theme_mod( 'gridd_grid_nav-handheld_enable', true ) ) {
+	if ( get_theme_mod( 'nav-handheld_enable', true ) ) {
 
 		// Get the array of parts we want to show.
 		$default = class_exists( 'WooCommerce' ) ? [ 'menu', 'home', 'search', 'woo-cart' ] : [ 'menu', 'home', 'search' ];
-		$parts   = get_theme_mod( 'gridd_grid_nav-handheld_parts', $default );
+		$parts   = get_theme_mod( 'nav-handheld_parts', $default );
 
 		// Check that we want to show something.
 		if ( ! empty( $parts ) ) {

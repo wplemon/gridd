@@ -13,7 +13,7 @@ use Gridd\Customizer;
 require_once get_template_directory() . '/inc/social-icons.php';
 
 new \Kirki\Section(
-	'grid_part_details_footer_social_media',
+	'footer_social_media',
 	[
 		'title'           => esc_html__( 'Footer Social Media', 'gridd' ),
 		'priority'        => 100,
@@ -28,7 +28,7 @@ new \Kirki\Section(
 new \Kirki\Field\Checkbox_Switch(
 	[
 		'settings'  => 'footer_social_media_custom_options',
-		'section'   => 'grid_part_details_footer_social_media',
+		'section'   => 'footer_social_media',
 		'default'   => false,
 		'transport' => 'refresh',
 		'priority'  => -999,
@@ -44,7 +44,7 @@ new \Kirki\Field\Repeater(
 		'settings'        => 'footer_social_icons',
 		'label'           => esc_html__( 'Social Media Links', 'gridd' ),
 		'description'     => esc_html__( 'Add, remove and reorder your social links.', 'gridd' ),
-		'section'         => 'grid_part_details_footer_social_media',
+		'section'         => 'footer_social_media',
 		'default'         => [],
 		'row_label'       => [
 			'type'  => 'field',
@@ -68,7 +68,7 @@ new \Kirki\Field\Repeater(
 		],
 		'transport'       => 'postMessage',
 		'partial_refresh' => [
-			'grid_part_details_footer_social_icons_template' => [
+			'footer_social_icons_template' => [
 				'selector'            => '.gridd-tp-footer_social_media',
 				'container_inclusive' => false,
 				'render_callback'     => function() {
@@ -84,7 +84,7 @@ new \Kirki\Field\ReactColor(
 	[
 		'settings'        => 'footer_social_icons_background_color',
 		'label'           => esc_html__( 'Background Color', 'gridd' ),
-		'section'         => 'grid_part_details_footer_social_media',
+		'section'         => 'footer_social_media',
 		'default'         => '#ffffff',
 		'transport'       => 'auto',
 		'output'          => [
@@ -108,7 +108,7 @@ new \Kirki\Field\ReactColor(
 	[
 		'settings'        => 'footer_social_icons_icons_color',
 		'label'           => esc_html__( 'Icons Color', 'gridd' ),
-		'section'         => 'grid_part_details_footer_social_media',
+		'section'         => 'footer_social_media',
 		'default'         => '#000000',
 		'transport'       => 'auto',
 		'output'          => [
@@ -132,7 +132,7 @@ new \Kirki\Field\Slider(
 	[
 		'settings'        => 'footer_social_icons_size',
 		'label'           => esc_html__( 'Size', 'gridd' ),
-		'section'         => 'grid_part_details_footer_social_media',
+		'section'         => 'footer_social_media',
 		'default'         => 1,
 		'transport'       => 'postMessage',
 		'transport'       => 'auto',
@@ -160,7 +160,7 @@ new \Kirki\Field\Slider(
 		'settings'        => 'footer_social_icons_padding',
 		'label'           => esc_html__( 'Padding', 'gridd' ),
 		'description'     => esc_html__( 'Controls how large the clickable area will be, and also the spacing between icons.', 'gridd' ),
-		'section'         => 'grid_part_details_footer_social_media',
+		'section'         => 'footer_social_media',
 		'default'         => .5,
 		'transport'       => 'auto',
 		'output'          => [
@@ -186,7 +186,7 @@ new \Kirki\Field\RadioButtonset(
 	[
 		'settings'          => 'footer_social_icons_icons_text_align',
 		'label'             => esc_html__( 'Icons Alignment', 'gridd' ),
-		'section'           => 'grid_part_details_footer_social_media',
+		'section'           => 'footer_social_media',
 		'default'           => 'flex-end',
 		'transport'         => 'auto',
 		'output'            => [

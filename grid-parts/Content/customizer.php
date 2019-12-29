@@ -11,7 +11,7 @@ use Gridd\Customizer\Sanitize;
 $sanitization = new Sanitize();
 
 new \Kirki\Section(
-	'grid_part_details_content',
+	'content',
 	[
 		/* translators: The grid-part label. */
 		'title'    => esc_html__( 'Content', 'gridd' ),
@@ -24,7 +24,7 @@ new \Kirki\Section(
 new \Kirki\Field\Checkbox_Switch(
 	[
 		'settings'  => 'content_custom_options',
-		'section'   => 'grid_part_details_content',
+		'section'   => 'content',
 		'default'   => false,
 		'transport' => 'refresh',
 		'priority'  => -999,
@@ -39,7 +39,7 @@ new \Kirki\Field\ReactColor(
 	[
 		'settings'        => 'content_background_color',
 		'label'           => esc_html__( 'Background Color', 'gridd' ),
-		'section'         => 'grid_part_details_content',
+		'section'         => 'content',
 		'default'         => '#F5F7F9',
 		'output'          => [
 			[
@@ -68,7 +68,7 @@ new \WPLemon\Field\WCAGTextColor(
 	[
 		'settings'          => 'gridd_text_color',
 		'label'             => esc_html__( 'Text Color', 'gridd' ),
-		'section'           => 'grid_part_details_content',
+		'section'           => 'content',
 		'priority'          => 20,
 		'default'           => '#000000',
 		'output'            => [
@@ -99,7 +99,7 @@ new \WPLemon\Field\WCAGLinkColor(
 		'settings'          => 'gridd_links_color',
 		'label'             => esc_html__( 'Links Color', 'gridd' ),
 		'description'       => esc_html__( 'Select the hue for you links. The color will be auto-calculated to ensure maximum readability according to WCAG.', 'gridd' ),
-		'section'           => 'grid_part_details_content',
+		'section'           => 'content',
 		'transport'         => 'auto',
 		'priority'          => 30,
 		'choices'           => [
@@ -134,7 +134,7 @@ new \Kirki\Field\Dimension(
 	[
 		'settings'  => 'content_max_width',
 		'label'     => esc_html__( 'Content Maximum Width', 'gridd' ),
-		'section'   => 'grid_part_details_content',
+		'section'   => 'content',
 		'default'   => '45em',
 		'output'    => [
 			[
@@ -151,7 +151,7 @@ new \Kirki\Field\Slider(
 	[
 		'settings'        => 'content_padding_horizontal',
 		'label'           => esc_html__( 'Horizontal Content Padding', 'gridd' ),
-		'section'         => 'grid_part_details_content',
+		'section'         => 'content',
 		'default'         => 1,
 		'output'          => [
 			[
@@ -178,7 +178,7 @@ new \Kirki\Field\Slider(
 	[
 		'settings'        => 'content_padding_top',
 		'label'           => esc_html__( 'Top Content Padding', 'gridd' ),
-		'section'         => 'grid_part_details_content',
+		'section'         => 'content',
 		'default'         => 1,
 		'output'          => [
 			[
@@ -205,7 +205,7 @@ new \Kirki\Field\Slider(
 	[
 		'settings'        => 'content_padding_bottom',
 		'label'           => esc_html__( 'Bottom Content Padding', 'gridd' ),
-		'section'         => 'grid_part_details_content',
+		'section'         => 'content',
 		'default'         => 1,
 		'output'          => [
 			[

@@ -119,7 +119,7 @@ class Sidebar extends Grid_Part {
 		$number = self::get_number_of_sidebars();
 		for ( $i = 1; $i <= $number; $i++ ) {
 			/* translators: The number of the widget area. */
-			$label   = get_theme_mod( "gridd_grid_widget_area_{$i}_name", sprintf( esc_html__( 'Widget Area %d', 'gridd' ), intval( $i ) ) );
+			$label   = get_theme_mod( "widget_area_{$i}_name", sprintf( esc_html__( 'Widget Area %d', 'gridd' ), intval( $i ) ) );
 			$parts[] = [
 				/* translators: The number of the navigation. */
 				'label'    => $label,
@@ -166,7 +166,7 @@ class Sidebar extends Grid_Part {
 		for ( $i = 1; $i <= $number; $i++ ) {
 
 			/* translators: The number of the widget area. */
-			$label = get_theme_mod( "gridd_grid_widget_area_{$i}_name", sprintf( esc_html__( 'Widget Area %d', 'gridd' ), intval( $i ) ) );
+			$label = get_theme_mod( "widget_area_{$i}_name", sprintf( esc_html__( 'Widget Area %d', 'gridd' ), intval( $i ) ) );
 
 			register_sidebar(
 				[
@@ -195,7 +195,7 @@ class Sidebar extends Grid_Part {
 		for ( $i = 1; $i <= $number; $i++ ) {
 
 			/* translators: The number of the widget area. */
-			$label = get_theme_mod( "gridd_grid_widget_area_{$i}_name", sprintf( esc_html__( 'Widget Area %d', 'gridd' ), intval( $i ) ) );
+			$label = get_theme_mod( "widget_area_{$i}_name", sprintf( esc_html__( 'Widget Area %d', 'gridd' ), intval( $i ) ) );
 
 			Rest::register_partial(
 				[

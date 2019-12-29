@@ -36,14 +36,14 @@ Customizer::add_field(
 		'sanitize_callback' => [ $sanitization, 'grid' ],
 		'choices'           => [
 			'parts'     => Grid_Parts::get_instance()->get_parts(),
-			'duplicate' => 'gridd_grid_mobile',
+			'duplicate' => 'mobile',
 		],
 	]
 );
 
 new \Kirki\Field\Dimension(
 	[
-		'settings'    => 'gridd_grid_gap',
+		'settings'    => 'gap',
 		'label'       => esc_html__( 'Grid Container Gap', 'gridd' ),
 		'description' => __( 'Adds a gap between your grid-parts, both horizontally and vertically. For more information please read <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
 		'section'     => 'gridd_grid',
@@ -53,7 +53,7 @@ new \Kirki\Field\Dimension(
 		'output'      => [
 			[
 				'element'  => '.gridd-site-wrapper',
-				'property' => 'grid-gap',
+				'property' => '--gg',
 			],
 		],
 	]
@@ -61,7 +61,7 @@ new \Kirki\Field\Dimension(
 
 new \Kirki\Field\Dimension(
 	[
-		'settings'    => 'gridd_grid_max_width',
+		'settings'    => 'max_width',
 		'label'       => esc_html__( 'Site Maximum Width', 'gridd' ),
 		'description' => esc_html__( 'Set the value to something other than 100% to use a boxed layout.', 'gridd' ),
 		'section'     => 'gridd_grid',

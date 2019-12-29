@@ -30,7 +30,7 @@ new \Kirki\Section(
 
 new \Kirki\Field\Checkbox_Switch(
 	[
-		'settings'  => 'header_social_advanced',
+		'settings'  => 'header_social_custom_options',
 		'section'   => 'header_social',
 		'default'   => false,
 		'transport' => 'refresh',
@@ -72,7 +72,7 @@ new \Kirki\Field\Repeater(
 		],
 		'transport'       => 'postMessage',
 		'partial_refresh' => [
-			'grid_part_details_social_icons_template' => [
+			'social_icons_template' => [
 				'selector'            => '.gridd-tp-social_media',
 				'container_inclusive' => false,
 				'render_callback'     => function() {
@@ -102,7 +102,7 @@ new \Kirki\Field\ReactColor(
 		],
 		'priority'        => 20,
 		'active_callback' => function() {
-			return get_theme_mod( 'header_social_advanced' );
+			return get_theme_mod( 'header_social_custom_options' );
 		},
 	]
 );
@@ -126,7 +126,7 @@ new \Kirki\Field\ReactColor(
 		],
 		'priority'        => 30,
 		'active_callback' => function() {
-			return get_theme_mod( 'header_social_advanced' );
+			return get_theme_mod( 'header_social_custom_options' );
 		},
 	]
 );
@@ -152,7 +152,7 @@ new \Kirki\Field\Slider(
 			'suffix' => 'em',
 		],
 		'active_callback' => function() {
-			return get_theme_mod( 'header_social_advanced' );
+			return get_theme_mod( 'header_social_custom_options' );
 		},
 	]
 );
@@ -179,7 +179,7 @@ new \Kirki\Field\Slider(
 			'suffix' => 'em',
 		],
 		'active_callback' => function() {
-			return get_theme_mod( 'header_social_advanced' );
+			return get_theme_mod( 'header_social_custom_options' );
 		},
 	]
 );
@@ -207,7 +207,7 @@ new \Kirki\Field\RadioButtonset(
 			return ( 'flex-start' !== $value && 'flex-end' !== $value && 'center' !== $value ) ? 'flex-end' : $value;
 		},
 		'active_callback'   => function() {
-			return get_theme_mod( 'header_social_advanced' );
+			return get_theme_mod( 'header_social_custom_options' );
 		},
 	]
 );

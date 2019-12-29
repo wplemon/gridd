@@ -88,8 +88,8 @@ class Navigation extends Grid_Part {
 				self::print_styles(
 					".gridd-tp-nav_{$id}",
 					[
-						'responsive_mode' => get_theme_mod( "gridd_grid_nav_{$id}_responsive_behavior", 'desktop-normal mobile-hidden' ),
-						'vertical'        => get_theme_mod( "gridd_grid_nav_{$id}_vertical", false ),
+						'responsive_mode' => get_theme_mod( "nav_{$id}_responsive_behavior", 'desktop-normal mobile-hidden' ),
+						'vertical'        => get_theme_mod( "nav_{$id}_vertical", false ),
 					]
 				);
 			}

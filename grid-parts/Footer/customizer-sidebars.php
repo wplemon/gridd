@@ -28,7 +28,7 @@ function gridd_add_footer_widget_area_options( $id ) {
 
 	// Add section.
 	new \Kirki\Section(
-		"grid_part_details_footer_sidebar_$id",
+		"footer_sidebar_$id",
 		[
 			/* translators: The number of the footer widget area. */
 			'title'           => sprintf( esc_html__( 'Footer Sidebar %d', 'gridd' ), absint( $id ) ),
@@ -39,7 +39,7 @@ function gridd_add_footer_widget_area_options( $id ) {
 	new \Kirki\Field\Checkbox_Switch(
 		[
 			'settings'  => "footer_sidebar_{$id}_custom_options",
-			'section'   => "grid_part_details_footer_sidebar_$id",
+			'section'   => "footer_sidebar_$id",
 			'default'   => false,
 			'transport' => 'refresh',
 			'priority'  => -999,
@@ -53,9 +53,9 @@ function gridd_add_footer_widget_area_options( $id ) {
 	// Background Color.
 	new \Kirki\Field\ReactColor(
 		[
-			'settings'        => "gridd_grid_footer_sidebar_{$id}_bg_color",
+			'settings'        => "footer_sidebar_{$id}_bg_color",
 			'label'           => esc_html__( 'Background Color', 'gridd' ),
-			'section'         => "grid_part_details_footer_sidebar_$id",
+			'section'         => "footer_sidebar_$id",
 			'default'         => '#ffffff',
 			'transport'       => 'auto',
 			'output'          => [
@@ -77,9 +77,9 @@ function gridd_add_footer_widget_area_options( $id ) {
 	// Text Color.
 	new \WPLemon\Field\WCAGTextColor(
 		[
-			'settings'          => "gridd_grid_footer_sidebar_{$id}_color",
+			'settings'          => "footer_sidebar_{$id}_color",
 			'label'             => esc_html__( 'Text Color', 'gridd' ),
-			'section'           => "grid_part_details_footer_sidebar_$id",
+			'section'           => "footer_sidebar_$id",
 			'default'           => '#000000',
 			'transport'         => 'auto',
 			'output'            => [
@@ -89,7 +89,7 @@ function gridd_add_footer_widget_area_options( $id ) {
 				],
 			],
 			'choices'           => [
-				'backgroundColor' => "gridd_grid_footer_sidebar_{$id}_bg_color",
+				'backgroundColor' => "footer_sidebar_{$id}_bg_color",
 				'appearance'      => 'hidden',
 			],
 			'sanitize_callback' => [ $sanitization, 'color_hex' ],
@@ -102,9 +102,9 @@ function gridd_add_footer_widget_area_options( $id ) {
 	// Links Color.
 	new \WPLemon\Field\WCAGLinkColor(
 		[
-			'settings'          => "gridd_grid_footer_sidebar_{$id}_links_color",
+			'settings'          => "footer_sidebar_{$id}_links_color",
 			'label'             => esc_html__( 'Links Color', 'gridd' ),
-			'section'           => "grid_part_details_footer_sidebar_$id",
+			'section'           => "footer_sidebar_$id",
 			'default'           => '#0f5e97',
 			'transport'         => 'auto',
 			'output'            => [
@@ -115,8 +115,8 @@ function gridd_add_footer_widget_area_options( $id ) {
 			],
 			'priority'          => 20,
 			'choices'           => [
-				'backgroundColor' => "gridd_grid_footer_sidebar_{$id}_bg_color",
-				'textColor'       => "gridd_grid_footer_sidebar_{$id}_color",
+				'backgroundColor' => "footer_sidebar_{$id}_bg_color",
+				'textColor'       => "footer_sidebar_{$id}_color",
 				'linksUnderlined' => true,
 				'forceCompliance' => get_theme_mod( 'target_color_compliance', 'auto' ),
 			],
