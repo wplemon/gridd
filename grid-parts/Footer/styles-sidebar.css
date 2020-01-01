@@ -1,5 +1,4 @@
 .gridd-tp-footer_sidebar {
-	background-color: var(--bg, #fff);
 	padding: var(--pd, 1em);
 	flex-direction: column;
 	justify-content: flex-start;

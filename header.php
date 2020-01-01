@@ -38,8 +38,7 @@ use Gridd\Grid_Parts;
  *
  * @since 1.0
  */
-$style = Style::get_instance( 'main-grid' );
-$style->add_string(
+\Gridd\CSS::add_string(
 	Grid::get_styles_responsive(
 		[
 			'context'    => 'main',
@@ -55,12 +54,6 @@ $style->add_string(
 <div id="page" class="site gridd-site-wrapper">
 	<?php
 	/**
-	 * Print styles.
-	 */
-	$style->the_css( 'gridd-inline-css-main-grid' );
-	?>
-	<?php
-	/**
 	 * Add grid parts above the content.
 	 */
 	$active_parts     = Grid_Parts::get_instance()->get_active();
@@ -74,12 +67,4 @@ $style->add_string(
 	}
 	?>
 	<div id="content" class="site-content gridd-tp gridd-tp-content<?php echo get_theme_mod( 'content_custom_options' ) ? ' custom-options' : ''; ?>">
-		<?php
-		/**
-		 * Add styles for the content.
-		 *
-		 * @since 1.0
-		 */
-		Content::print_styles();
-		?>
 		<main id="main" class="site-main inner">

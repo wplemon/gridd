@@ -6,13 +6,10 @@
  * @since 1.0
  */
 
-use Gridd\Style;
 use Gridd\Theme;
 
-$style = Style::get_instance( 'grid-part/header/branding' );
-$style->add_string( ':root{--header-textcolor:#' . esc_attr( trim( get_header_textcolor(), '#' ) ) . ';}' );
-$style->add_file( get_theme_file_path( 'grid-parts/Header/styles-branding.min.css' ) );
-$style->the_css( 'gridd-inline-css-header-branding' );
+\Gridd\CSS::add_string( ':root{--header-textcolor:#' . esc_attr( trim( get_header_textcolor(), '#' ) ) . ';}' );
+\Gridd\CSS::add_file( get_theme_file_path( 'grid-parts/Header/styles-branding.min.css' ) );
 
 $wrapper_class  = 'gridd-tp gridd-tp-header_branding';
 $wrapper_class .= get_theme_mod( 'gridd_branding_inline', false ) ? ' inline' : ' vertical';

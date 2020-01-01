@@ -104,9 +104,7 @@ class ReusableBlock extends Grid_Part {
 			include get_theme_file_path( 'grid-parts/ReusableBlock/template.php' );
 
 			if ( ! self::$styles_added ) {
-				Style::get_instance( 'grid-part/reusable_block' )
-					->add_file( __DIR__ . '/styles.min.css' )
-					->the_css( 'gridd-inline-css-reusable-block' );
+				\Gridd\CSS::add_file( __DIR__ . '/styles.min.css' );
 
 				self::$styles_added = true;
 			}

@@ -1,5 +1,4 @@
 .gridd-tp-header_contact_info.gridd-tp {
-	background-color: var(--bg, #fff);
 	font-size: calc(var(--fsr, 0.85) * 1em);
 	justify-content: var(--ta, flex-start);
 	width: 100%;

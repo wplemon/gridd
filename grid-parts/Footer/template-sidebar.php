@@ -6,17 +6,10 @@
  * @since 1.0
  */
 
-use Gridd\Style;
 use Gridd\Theme;
 
 // Print the styles.
-if ( ! \Gridd\Grid_Part\Footer::$footer_sidebar_styles_printed ) {
-	Style::get_instance( "grid-part/footer/sidebar/$sidebar_id" )
-		->add_file( get_theme_file_path( 'grid-parts/Footer/styles-sidebar.min.css' ) )
-		->the_css( 'gridd-inline-css-footer-sidebar' );
-
-	\Gridd\Grid_Part\Footer::$footer_sidebar_styles_printed = true;
-}
+\Gridd\CSS::add_file( get_theme_file_path( 'grid-parts/Footer/styles-sidebar.min.css' ) );
 
 $attributes = [
 	'class' => 'gridd-tp gridd-tp-footer_sidebar gridd-tp-footer_sidebar_' . $sidebar_id,

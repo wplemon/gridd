@@ -7,17 +7,10 @@
  */
 
 use Gridd\Theme;
-use Gridd\Style;
-use Gridd\Grid_Part\Navigation;
 
-Navigation::print_styles(
-	'#gridd-handheld-menu-wrapper',
-	[
-		'vertical' => true,
-	]
-);
-$style = Style::get_instance( 'grid-part/nav-handheld/menu' );
-$style->the_css( 'gridd-inline-css-nav-handheld-menu' );
+\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/nav.min.css' ) );
+\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/nav-vertical.min.css' ) );
+
 $label_class = get_theme_mod( 'nav-handheld_hide_labels', false ) ? 'screen-reader-text' : 'label';
 ?>
 <nav id="gridd-handheld-nav" class="gridd-nav-vertical">

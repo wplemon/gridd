@@ -99,7 +99,7 @@ new \Kirki\Field\Slider(
 		'output'          => [
 			[
 				'element'  => '.gridd-tp-footer_copyright.custom-options',
-				'property' => '--fs',
+				'property' => '--fsr',
 			],
 		],
 		'priority'        => 40,

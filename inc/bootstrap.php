@@ -134,6 +134,11 @@ new Upgrade();
 new Editor();
 
 /**
+ * Styles.
+ */
+new \Gridd\CSS();
+
+/**
  * Integrates WPBakery Builder in the theme.
  *
  * @since 1.0

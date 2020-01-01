@@ -6,7 +6,6 @@ a.custom-logo-link:active {
 }
 
 .gridd-tp-header_branding.gridd-tp {
-	background-color: var(--bg, #fff);
 	display: flex;
 	width: 100%;
 	padding: var(--pd, 0);

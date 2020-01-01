@@ -71,7 +71,6 @@ class Scripts {
 
 		add_action( 'wp_print_footer_scripts', [ $this, 'inline_scripts' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'scripts' ] );
-		add_action( 'wp_footer', [ $this, 'print_late_styles' ] );
 
 		add_action( 'wp_head', [ $this, 'inline_styles' ] );
 
@@ -92,6 +91,8 @@ class Scripts {
 		 * and enque the CSS needed for them.
 		 */
 		add_filter( 'render_block', [ $this, 'render_block' ], 10, 2 );
+
+		add_filter( 'kirki_global_dynamic_css', [ $this, 'add_vars_defaults' ] );
 	}
 
 	/**
@@ -166,96 +167,86 @@ class Scripts {
 	 */
 	public function inline_styles() {
 
-		$style = Style::get_instance( 'main-styles' );
-
-		$style->add_file( get_theme_file_path( 'assets/css/styles.min.css' ) );
+		\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/styles.min.css' ) );
+		\Gridd\CSS::add_file(
+			get_theme_file_path( 'assets/css/styles-small.min.css' ),
+			'only screen and (max-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . ')'
+		);
+		\Gridd\CSS::add_file(
+			get_theme_file_path( 'assets/css/styles-large.min.css' ),
+			'only screen and (min-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . ')'
+		);
 
 		if ( is_rtl() ) {
-			$style->add_file( get_theme_file_path( 'assets/css/styles-rtl.min.css' ) );
+			\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/styles-rtl.min.css' ) );
 		}
 
 		// Styles specific to the customizer preview pane.
 		if ( is_customize_preview() ) {
-			$style->add_file( get_theme_file_path( 'assets/css/customizer/preview.min.css' ) );
+			\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/customizer/preview.min.css' ) );
 		}
 
 		// Adminbar.
 		if ( is_admin_bar_showing() ) {
-			$style->add_file( get_theme_file_path( 'assets/css/adminbar.min.css' ) );
+			\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/adminbar.min.css' ) );
 		}
 
 		// Comments.
 		if ( is_singular() && comments_open() ) {
-			$style->add_file( get_theme_file_path( 'assets/css/core/comments.min.css' ) );
+			\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/core/comments.min.css' ) );
 
 			if ( class_exists( 'Akismet' ) ) {
-				$style->add_file( get_theme_file_path( 'assets/css/plugins/akismet.min.css' ) );
+				\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/plugins/akismet.min.css' ) );
 			}
 		}
 
 		// Post-formats for singular posts.
 		if ( is_singular() && has_post_format( [ 'aside', 'chat', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio' ] ) ) {
-			$style->add_file( get_theme_file_path( 'assets/css/core/singular-post-formats.min.css' ) );
+			\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/core/singular-post-formats.min.css' ) );
 		}
 
 		// Post-formats for post-archives.
 		if ( is_post_type_archive( 'post' ) || is_home() ) {
-			$style->add_file( get_theme_file_path( 'assets/css/core/archive-post-formats.min.css' ) );
+			\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/core/archive-post-formats.min.css' ) );
 		}
 
 		// Infinite-scroll.
 		if ( class_exists( 'Jetpack' ) && \Jetpack::is_module_active( 'infinite-scroll' ) ) {
-			$style->add_file( get_theme_file_path( 'assets/css/core/infinite-scroll.min.css' ) );
+			\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/core/infinite-scroll.min.css' ) );
 		}
 
 		// WPBakery (Visual Composer).
 		if ( class_exists( 'Vc_Manager' ) ) {
-			$style->add_file( get_theme_file_path( 'assets/css/plugins/vc.min.css' ) );
+			\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/plugins/vc.min.css' ) );
 			if ( current_user_can( 'edit_posts' ) ) {
-				$style->add_file( get_theme_file_path( 'assets/css/plugins/vc-edit.min.css' ) );
+				\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/plugins/vc-edit.min.css' ) );
 			}
 		}
 
 		// Elementor.
 		if ( class_exists( 'Elementor\Plugin' ) ) {
-			$style->add_file( get_theme_file_path( 'assets/css/plugins/elementor.min.css' ) );
+			\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/plugins/elementor.min.css' ) );
 			if ( current_user_can( 'edit_posts' ) ) {
-				$style->add_file( get_theme_file_path( 'assets/css/plugins/elementor-editor.min.css' ) );
+				\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/plugins/elementor-editor.min.css' ) );
 			}
 		}
 
 		// Additional styles if the current user can edit a post.
 		if ( current_user_can( 'edit_posts' ) ) {
-			$style->add_file( get_theme_file_path( 'assets/css/core/can-edit-post.min.css' ) );
+			\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/core/can-edit-post.min.css' ) );
 		}
 
-		$style->the_css( 'gridd-inline-css-main-styles' );
-	}
-
-	/**
-	 * Adds non-critical styles to the footer.
-	 *
-	 * @access
-	 * @since 1.0
-	 */
-	public function print_late_styles() {
-		$style = Style::get_instance( 'footer-late-styles' );
-
-		$style->add_file( get_theme_file_path( 'assets/css/core/inline-icons.min.css' ) );
-		$style->add_file( get_theme_file_path( 'assets/css/buttons.min.css' ) );
-		$style->add_file( get_theme_file_path( 'assets/css/core/media.min.css' ) );
-		$style->add_file( get_theme_file_path( 'assets/css/core/nav-links.min.css' ) );
-
-		$style->the_css( 'gridd-inline-css-late-styles' );
+		\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/core/inline-icons.min.css' ) );
+		\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/buttons.min.css' ) );
+		\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/core/media.min.css' ) );
+		\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/core/nav-links.min.css' ) );
 
 		// Add blocks styles.
-		$style  = Style::get_instance( 'blocks-styles' );
 		$blocks = $this->get_blocks();
 		foreach ( $blocks as $block ) {
 			$block = str_replace( 'core/', '', $block );
-			$style->add_file( get_theme_file_path( "assets/css/blocks/$block.min.css" ) );
+			\Gridd\CSS::add_file( get_theme_file_path( "assets/css/blocks/$block.min.css" ) );
 		}
-		$style->the_css( 'blocks-styles' );
 	}
 
 	/**
@@ -303,36 +294,23 @@ class Scripts {
 		}
 
 		$styles = '';
-		$style  = Style::get_instance( "widget/$widget_id_base/$sidebar_id/$widget_id" );
 
 		switch ( $widget_id_base ) {
 			case 'nav_menu':
-				ob_start();
-				Navigation::print_styles(
-					"#{$widget_id}",
-					[
-						'vertical' => true,
-					]
-				);
-				$styles = ob_get_clean();
-				$style->add_string( $styles );
+				\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/nav.min.css' ) );
+				\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/nav-vertical.min.css' ) );
 				break;
 
 			default:
-				$style->add_file( get_theme_file_path( 'assets/css/widgets/widget-' . str_replace( '_', '-', $widget_id_base ) . '.min.css' ) );
-		}
-
-		$css = $style->get_css();
-
-		if ( $css ) {
-			$styles .= '<style id="gridd-widget-styles-' . $widget_id_base . '">' . $css . '</style>';
+				$style_path = get_theme_file_path( 'assets/css/widgets/widget-' . str_replace( '_', '-', $widget_id_base ) . '.min.css' );
+				if ( file_exists( $style_path ) ) {
+					\Gridd\CSS::add_file( $style_path );
+				}
 		}
 
 		// If this is the 1st widget we're adding, include the global styles for widgets.
 		if ( empty( self::$widgets ) ) {
-			$style = Style::get_instance( 'widgets' );
-			$style->add_file( get_theme_file_path( 'assets/css/widgets/widgets.min.css' ) );
-			$styles .= '<style id="gridd-widget-styles-global">' . $style->get_css() . '</style>';
+			\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/widgets/widgets.min.css' ) );
 		}
 
 		// Add the widget to the array of available widgets to prevent adding multiple instances of this CSS.
@@ -367,6 +345,18 @@ class Scripts {
 	 */
 	public function get_blocks() {
 		return array_unique( self::$blocks );
+	}
+
+	/**
+	 * Add css-vars defaults.
+	 *
+	 * @access public
+	 * @since 3.0.0
+	 * @param string $styles The kirki dynamic styles.
+	 * @return string
+	 */
+	public function add_vars_defaults( $styles ) {
+		return file_get_contents( get_theme_file_path( 'assets/css/vars.min.css' ) ) . $styles;
 	}
 }
 

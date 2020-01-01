@@ -8,9 +8,6 @@
 namespace Gridd;
 
 use Gridd\Customizer;
-use Gridd\Template;
-use Gridd\Grid;
-use Gridd\Widget_Areas;
 use Gridd\Blog;
 use Gridd\Scripts;
 use Gridd\Jetpack;
@@ -610,25 +607,26 @@ class Theme {
 	 */
 	public function add_color_palette_styles() {
 		$palette = self::get_color_palette();
-
-		$style = Style::get_instance( 'blocks-styles' );
+		$styles  = '';
 
 		// Add the css-variables.
-		$style->add_string( ':root{' );
+		$styles .= ':root{';
 		foreach ( $palette as $item ) {
-			$style->add_string( '--' . $item['slug'] . ':' . esc_html( $item['color'] ) . ';' );
+			$styles .= '--' . $item['slug'] . ':' . esc_html( $item['color'] ) . ';';
 		}
-		$style->add_string( '}' );
+		$styles .= '}';
 
 		// Add color & background-color styles.
 		foreach ( $palette as $item ) {
-			$style->add_string( '.has-' . $item['slug'] . '-color.has-' . $item['slug'] . '-color{--element-color:var(--' . $item['slug'] . ');}' );
-			$style->add_string( '.has-' . $item['slug'] . '-background-color.has-' . $item['slug'] . '-background-color{--element-background-color:var(--' . $item['slug'] . ');}' );
+			$styles .= '.has-' . $item['slug'] . '-color.has-' . $item['slug'] . '-color{--element-color:var(--' . $item['slug'] . ');}';
+			$styles .= '.has-' . $item['slug'] . '-background-color.has-' . $item['slug'] . '-background-color{--element-background-color:var(--' . $item['slug'] . ');}';
 		}
 
 		// Add globals.
-		$style->add_string( '.has-text-color{color:var(--element-color);}' );
-		$style->add_string( '.has-background{background-color:var(--element-background-color);border-color:var(--element-background-color);}' );
+		$styles .= '.has-text-color{color:var(--element-color);}';
+		$styles .= '.has-background{background-color:var(--element-background-color);border-color:var(--element-background-color);}';
+
+		\Gridd\CSS::add_string( $styles );
 	}
 
 	/**

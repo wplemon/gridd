@@ -6,13 +6,10 @@
  * @since 1.0
  */
 
-use Gridd\Style;
 use Gridd\Theme;
 
 // Add styles.
-Style::get_instance( 'grid-part/footer/copyright' )
-	->add_file( get_theme_file_path( 'grid-parts/Footer/styles-copyright.min.css' ) )
-	->the_css( 'gridd-inline-css-footer-copyright' );
+\Gridd\CSS::add_file( get_theme_file_path( 'grid-parts/Footer/styles-copyright.min.css' ) );
 
 $attributes = [
 	'class' => 'gridd-tp gridd-tp-footer_copyright',

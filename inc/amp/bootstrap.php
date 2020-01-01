@@ -5,8 +5,6 @@
  * @package gridd
  */
 
-use Gridd\Style;
-
 /**
  * Filter element attributes.
  *
@@ -40,19 +38,13 @@ add_filter(
  * @since 1.0.0
  * @return void
  */
-add_action(
-	'wp_head',
-	function() {
-		$style = Style::get_instance( 'main-styles' );
-		$style->add_file( get_template_directory() . '/inc/amp/assets/css/amp.css' );
-		if ( class_exists( 'Easy_Digital_Downloads' ) ) {
-			$style->add_file( get_template_directory() . '/inc/amp/assets/css/amp-edd.css' );
-		}
-		if ( class_exists( 'WooCommerce' ) ) {
-			$style->add_file( get_template_directory() . '/inc/amp/assets/css/amp-woo.css' );
-		}
-	}
-);
+\Gridd\CSS::add_file( get_template_directory() . '/inc/amp/assets/css/amp.css' );
+if ( class_exists( 'Easy_Digital_Downloads' ) ) {
+	\Gridd\CSS::add_file( get_template_directory() . '/inc/amp/assets/css/amp-edd.css' );
+}
+if ( class_exists( 'WooCommerce' ) ) {
+	\Gridd\CSS::add_file( get_template_directory() . '/inc/amp/assets/css/amp-woo.css' );
+}
 
 /**
  * Add body class.

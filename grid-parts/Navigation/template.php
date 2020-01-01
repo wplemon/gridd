@@ -9,14 +9,37 @@
 use Gridd\Grid_Part\Navigation;
 use Gridd\Theme;
 
+\Gridd\CSS::add_file( get_theme_file_path( 'grid-parts/Navigation/styles.min.css' ) );
+\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/nav.min.css' ) );
 
 $responsive_mode = get_theme_mod( "nav_{$id}_responsive_behavior", 'desktop-normal mobile-hidden' );
 $is_vertical_nav = get_theme_mod( "nav_{$id}_vertical", false );
 
+if ( $is_vertical_nav ) {
+	\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/nav-vertical.min.css' ) );
+}
+
 $wrapper_class  = "gridd-tp gridd-tp-nav gridd-tp-nav_$id";
 $wrapper_class .= ' gridd-menu-collapse-position-' . get_theme_mod( "nav_{$id}_expand_icon_position", 'center-right' );
+
 if ( get_theme_mod( "nav_{$id}_custom_options", false ) ) {
 	$wrapper_class .= ' custom-options';
+}
+
+if ( false !== strpos( $responsive_mode, 'icon' ) ) {
+	\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/nav-collapse.min.css' ) );
+	$wrapper_class .= ' gridd-nav-collapse';
+
+	if ( false !== strpos( $responsive_mode, 'desktop-normal' ) ) {
+		\Gridd\CSS::add_string(
+			".gridd-tp-nav_$id .gridd-toggle-navigation{display:none;}.gridd-tp-nav_$id .navigation{display:block;}",
+			'only screen and (min-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . ')'
+		);
+	}
+}
+
+if ( false !== strpos( $responsive_mode, 'mobile-hidden' ) ) {
+	$wrapper_class .= ' hide-on-small';
 }
 
 $responsive_mode_parts = explode( ' ', $responsive_mode );

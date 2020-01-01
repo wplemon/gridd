@@ -1,0 +1,15 @@
+.gridd-tp-nav {
+	overflow: visible;
+	position: relative;
+	font-size: var(--fs);
+}
+
+.gridd-tp-nav .inner {
+	padding: var(--pd);
+	width: 100%;
+	display: flex;
+}
+
+.gridd-tp-nav nav {
+	width: 100%;
+}

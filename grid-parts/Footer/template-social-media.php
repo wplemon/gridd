@@ -6,7 +6,6 @@
  * @since 1.0
  */
 
-use Gridd\Style;
 use Gridd\Theme;
 
 $setting = get_theme_mod( 'footer_social_icons', [] );
@@ -18,9 +17,7 @@ if ( ! function_exists( 'gridd_social_icons_svg' ) ) {
 $icons = gridd_social_icons_svg();
 
 // Add styles.
-Style::get_instance( 'grid-part/footer/social-media' )
-	->add_file( get_theme_file_path( 'grid-parts/Footer/styles-social-icons.min.css' ) )
-	->the_css( 'gridd-inline-css-footer-social-icons' );
+\Gridd\CSS::add_file( get_theme_file_path( 'grid-parts/Footer/styles-social-icons.min.css' ) );
 
 $attributes = [
 	'class' => 'gridd-tp gridd-tp-footer_social_media',

@@ -114,10 +114,6 @@
 	width: calc(100% + 2 * var(--pd-h, 1em));
 }
 
-.gridd-tp-content {
-	background-color: var(--bg);
-}
-
 .gridd-tp-content select {
 	background-color: var(--bg);
 }

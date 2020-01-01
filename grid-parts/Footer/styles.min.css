@@ -1,1 +1,1 @@
-.gridd-tp-footer.gridd-tp{background-color:var(--bg,#fff);border-top:calc(var(--bt-w,1) * 1px) solid var(--bt-cl,rgba(0,0,0,.1));padding-top:var(--gg,0)}.gridd-tp-footer.gridd-tp .inner{display:grid;grid-gap:var(--gg,0);width:100%;max-width:var(--mw,100%)}
+.gridd-tp-footer.gridd-tp{border-top:calc(var(--bt-w,1) * 1px) solid var(--bt-cl,rgba(0,0,0,.1));padding-top:var(--gg,0)}.gridd-tp-footer.gridd-tp .inner{display:grid;grid-gap:var(--gg,0);width:100%;max-width:var(--mw,100%)}

@@ -6,8 +6,6 @@
  * @since 1.0
  */
 
-use Gridd\Grid_Part\Header;
-use Gridd\Style;
 use Gridd\Theme;
 
 $header_search_mode  = get_theme_mod( 'header_search_mode', 'form' );
@@ -16,26 +14,11 @@ if ( get_theme_mod( 'header_search_custom_options', false ) ) {
 	$header_search_class .= ' custom-options';
 }
 
-$padding = get_theme_mod(
-	'header_search_padding',
-	[
-		'left'  => '1em',
-		'right' => '1em',
-	]
-);
+\Gridd\CSS::add_file( get_theme_file_path( 'grid-parts/Header/styles-header-search.min.css' ) );
+\Gridd\CSS::add_file( get_theme_file_path( "grid-parts/Header/styles-header-search-$header_search_mode.min.css" ) );
 ?>
 
 <div <?php Theme::print_attributes( [ 'class' => $header_search_class ], 'wrapper-header_search' ); ?>>
-	<?php
-	/**
-	 * Print styles.
-	 */
-	Style::get_instance( 'grid-part/header/search' )
-		->add_file( get_theme_file_path( 'grid-parts/Header/styles-header-search.min.css' ) )
-		->add_file( get_theme_file_path( "grid-parts/Header/styles-header-search-$header_search_mode.min.css" ) )
-		->the_css( 'gridd-inline-css-header-search' );
-	?>
-
 	<div class="gridd-header-search inner" style="display:flex;align-items:center;width:100%;">
 		<?php if ( 'slide-up' === $header_search_mode ) : ?>
 			<?php

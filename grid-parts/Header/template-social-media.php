@@ -6,8 +6,6 @@
  * @since 1.0
  */
 
-use Gridd\Grid_Part\Header;
-use Gridd\Style;
 use Gridd\Theme;
 
 $setting = get_theme_mod( 'header_social_icons', [] );
@@ -18,11 +16,7 @@ if ( ! function_exists( 'gridd_social_icons_svg' ) ) {
 }
 $icons = gridd_social_icons_svg();
 
-// Init Style class.
-$style = Style::get_instance( 'grid-part/header/social-media' );
-
-// Add stylesheet.
-$style->add_file( get_theme_file_path( 'grid-parts/Header/styles-social-icons.min.css' ) );
+\Gridd\CSS::add_file( get_theme_file_path( 'grid-parts/Header/styles-social-icons.min.css' ) );
 
 $grid_part_classes  = 'gridd-tp gridd-tp-social_media';
 $grid_part_classes .= ( get_theme_mod( 'header_social_custom_options' ) ) ? ' custom-options' : '';
@@ -30,11 +24,6 @@ $grid_part_classes .= ( get_theme_mod( 'header_social_custom_options' ) ) ? ' cu
 
 <div <?php Theme::print_attributes( [ 'class' => $grid_part_classes ], 'wrapper-social_media' ); ?>>
 	<?php
-	/**
-	 * Print styles.
-	 */
-	$style->the_css( 'gridd-inline-css-header-social-media' );
-
 	foreach ( $setting as $icon ) {
 		if ( ! empty( $icon['url'] ) && ! empty( $icon['icon'] ) && isset( $icons[ $icon['icon'] ] ) ) {
 			$url = ( 'mail' === $icon['icon'] ) ? 'mailto:' . antispambot( $icon['url'] ) : $icon['url'];

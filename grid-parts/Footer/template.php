@@ -14,10 +14,7 @@ use Gridd\Style;
 // Get the grid settings.
 $settings = Grid::get_options( 'footer_grid', Footer::get_grid_defaults() );
 
-$style = Style::get_instance( 'grid-part/footer' );
-
-// Add the main grid styles.
-$style->add_string(
+\Gridd\CSS::add_string(
 	Grid::get_styles_responsive(
 		[
 			'context'    => 'footer',
@@ -30,7 +27,7 @@ $style->add_string(
 );
 
 // Add the stylesheet.
-$style->add_file( get_theme_file_path( 'grid-parts/Footer/styles.min.css' ) );
+\Gridd\CSS::add_file( get_theme_file_path( 'grid-parts/Footer/styles.min.css' ) );
 
 $attrs = [
 	'class' => 'gridd-tp gridd-tp-footer',
@@ -43,12 +40,6 @@ if ( get_theme_mod( 'footer_custom_options', false ) ) {
 ?>
 
 <div <?php Theme::print_attributes( $attrs, 'wrapper-footer' ); ?>>
-	<?php
-	/**
-	 * Print the styles.
-	 */
-	$style->the_css( 'gridd-inline-css-footer' );
-	?>
 	<div class="inner">
 		<?php
 		if ( isset( $settings['areas'] ) ) {

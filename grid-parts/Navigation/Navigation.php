@@ -80,17 +80,6 @@ class Navigation extends Grid_Part {
 				 * We use include() here because we need to pass the $id var to the template.
 				 */
 				include 'template.php';
-
-				/**
-				 * Print styles.
-				 */
-				self::print_styles(
-					".gridd-tp-nav_{$id}",
-					[
-						'responsive_mode' => get_theme_mod( "nav_{$id}_responsive_behavior", 'desktop-normal mobile-hidden' ),
-						'vertical'        => get_theme_mod( "nav_{$id}_vertical", false ),
-					]
-				);
 			}
 		}
 	}
@@ -255,70 +244,12 @@ class Navigation extends Grid_Part {
 	 *
 	 * @access public
 	 * @since 2.0.0
+	 * @deprecated 3.0.0
 	 * @param string $container The navigation's container.
 	 * @param array  $args      An array of arguments.
 	 * @return void
 	 */
-	public static function print_styles( $container, $args = [] ) {
-
-		$style = Style::get_instance( 'grid-part/navigation/' . sanitize_key( $container ) );
-
-		$args = wp_parse_args(
-			$args,
-			[
-				'vertical'        => false,
-				'responsive_mode' => 'desktop-normal mobile-normal',
-			]
-		);
-
-		// Add global styles if they have not already been included.
-		if ( ! self::$global_styles_already_included ) {
-			$style->add_file( __DIR__ . '/styles-global.min.css' );
-			self::$global_styles_already_included = true;
-		}
-
-		$breakpoint = get_theme_mod( 'gridd_mobile_breakpoint', '992px' );
-
-		if ( $args['vertical'] ) {
-			$style->add_file( __DIR__ . '/styles-vertical.min.css' );
-		}
-
-		// Check if we need to add desktop styles.
-		if ( false !== strpos( $args['responsive_mode'], 'desktop-normal' ) ) {
-			$style->add_string( "@media only screen and (min-width:{$breakpoint}){{$container} .gridd-toggle-navigation{display:none;}}" );
-		}
-
-		// Add collapsed styles if needed.
-		if ( false !== strpos( $args['responsive_mode'], 'icon' ) ) {
-
-			// Add the media-query.
-			if ( false !== strpos( $args['responsive_mode'], 'desktop-normal' ) ) {
-				$style->add_string( "@media only screen and (max-width:{$breakpoint}){" );
-			}
-
-			// Add styles.
-			$style->add_file( __DIR__ . '/styles-collapsed.min.css' );
-			if ( ! $args['vertical'] ) {
-				$style->add_file( __DIR__ . '/styles-vertical.min.css' );
-			}
-
-			// Close the media-query.
-			if ( false !== strpos( $args['responsive_mode'], 'desktop-normal' ) ) {
-				$style->add_string( '}' );
-			}
-		}
-
-		// Hide on mobile.
-		if ( false !== strpos( $args['responsive_mode'], 'mobile-hidden' ) ) {
-			$style->add_string( "@media only screen and (max-width:{$breakpoint}){{$container}.gridd-mobile-hidden{display:none;}}" );
-		}
-
-		// Replace ID with $id.
-		$style->replace( '.containerID', $container );
-
-		// Print styles.
-		$style->the_css( 'gridd-inline-css-navigation-' . sanitize_key( $container ) );
-	}
+	public static function print_styles() {}
 }
 
 new Navigation();

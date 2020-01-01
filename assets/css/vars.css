@@ -1,0 +1,33 @@
+/*
+These styles need to be on a separate file because they get added via a filter.
+*/
+:root {
+	--fs: var(--fs, 18);
+	--fsr: 1;
+	--fs-px: calc(var(--fs) * 1px);
+	--ts: var(--gridd-typo-scale, 1.26);
+	--tr: var(--gridd-typo-ratio, 0.25);
+	--fs-tr: calc(var(--fs-px) + var(--tr) * 1vw);
+
+	--acl: var(--lc);
+	--fs-4x-ts-tr: calc(var(--ts) * var(--ts) * var(--ts) * var(--ts) * var(--fs-tr));
+	--fs-3x-ts-tr: calc(var(--ts) * var(--ts) * var(--ts) * var(--fs-tr));
+	--fs-2x-ts-tr: calc(var(--ts) * var(--ts) * var(--fs-tr));
+	--fs-1x-ts-tr: calc(var(--ts) * var(--fs-tr));
+	--fs-0x-ts-tr: var(--fs-tr);
+	--fs-1d-ts-tr: calc(var(--fs-tr) / var(--ts));
+	--fs-2d-ts-tr: calc(var(--fs-tr) / var(--ts) / var(--ts));
+	--fs-3d-ts-tr: calc(var(--fs-tr) / var(--ts) / var(--ts) / var(--ts));
+	--fs-4d-ts-tr: calc(var(--fs-tr) / var(--ts) / var(--ts) / var(--ts) / var(--ts));
+
+	--system-fonts: -apple-system, blinkmacsystemfont, "Segoe UI", roboto, oxygen-sans, ubuntu, cantarell, "Helvetica Neue", sans-serif;
+	--monospace-fonts: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+
+	--pd: 1em;
+	--pdr: 1;
+	--gg: 0;
+	--bg: #f5f7f9;
+  --cl: #000;
+
+  --mw-c: var(--mw, 45em);
+}

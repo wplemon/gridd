@@ -15,8 +15,7 @@ use Gridd\Style;
 $settings = Grid::get_options( 'header_grid', Header::get_grid_defaults() );
 
 // Add styles.
-$style = Style::get_instance( 'grid-part/header' );
-$style->add_string(
+\Gridd\CSS::add_string(
 	Grid::get_styles_responsive(
 		[
 			'context'    => 'header',
@@ -28,31 +27,25 @@ $style->add_string(
 		]
 	)
 );
-$style->add_file( get_theme_file_path( 'grid-parts/Header/styles.min.css' ) );
-$style->add_string( '@media only screen and (min-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . '){' );
-$style->add_file( get_theme_file_path( 'grid-parts/Header/styles-large.min.css' ) );
+\Gridd\CSS::add_file( get_theme_file_path( 'grid-parts/Header/styles.min.css' ) );
+\Gridd\CSS::add_file(
+	get_theme_file_path( 'grid-parts/Header/styles-large.min.css' ),
+	'only screen and (min-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . ')'
+);
 
 // If we're on an archive and we want to use cards, add extra styles.
 if ( ( is_archive() || is_home() ) && 'card' === get_theme_mod( 'archive_post_mode', 'default' ) ) {
-	$style->add_file( get_theme_file_path( 'assets/css/core/archive-cards.min.css' ) );
+	\Gridd\CSS::add_file(
+		get_theme_file_path( 'assets/css/core/archive-cards.min.css' ),
+		'only screen and (min-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . ')'
+	);
 }
 
-$style->add_string( '}' );
 if ( true === get_theme_mod( 'gridd_header_sticky', false ) ) {
-	$style->add_string( '@media only screen and (max-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . '){.gridd-tp.gridd-tp-header.gridd-sticky{position:relative;}.admin-bar .gridd-tp.gridd-sticky{--adminbar-height:0;}}' );
-}
-
-// Get the header image.
-$styles        = '';
-$header_bg_img = get_header_image();
-if ( $header_bg_img ) {
-	// If we have a header image, add it as a background.
-	$style->add_string( '.gridd-tp.gridd-tp-header{background-image:url(\'' . esc_url_raw( $header_bg_img ) . '\');background-size:cover;background-position:center center;}' );
-}
-
-// Force-override parts background images.
-if ( get_theme_mod( 'header_parts_background_override', false ) ) {
-	$style->add_string( '.gridd-tp.gridd-tp-header .gridd-tp:not(.custom-options),.gridd-tp.gridd-tp-header .gridd-tp:not(.custom-options) .inner{background:transparent !important;background-color:none !important;}' );
+	\Gridd\CSS::add_string(
+		'.gridd-tp.gridd-tp-header.gridd-sticky{position:relative;}.admin-bar .gridd-tp.gridd-sticky{--adminbar-height:0;}',
+		'only screen and (max-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . ')'
+	);
 }
 
 $wrapper_class  = 'gridd-tp gridd-tp-header';
@@ -65,12 +58,6 @@ $attrs          = [
 ?>
 
 <div <?php Theme::print_attributes( $attrs, 'wrapper-header' ); ?>>
-	<?php
-	/**
-	 * Print styles.
-	 */
-	$style->the_css( 'gridd-inline-css-header' );
-	?>
 	<div class="inner">
 		<?php
 		if ( isset( $settings['areas'] ) ) {

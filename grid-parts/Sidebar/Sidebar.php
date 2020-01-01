@@ -19,16 +19,6 @@ use Gridd\Style;
 class Sidebar extends Grid_Part {
 
 	/**
-	 * Have the global styles already been added?
-	 *
-	 * @static
-	 * @access public
-	 * @since 1.0.8
-	 * @var bool
-	 */
-	public static $styles_added = false;
-
-	/**
 	 * Hooks & extra operations.
 	 *
 	 * @access public
@@ -79,14 +69,7 @@ class Sidebar extends Grid_Part {
 				return;
 			}
 			$this->the_partial( $part );
-
-			if ( ! self::$styles_added ) {
-				Style::get_instance( 'grid-part/sidebar' )
-					->add_file( __DIR__ . '/styles.min.css' )
-					->the_css( 'gridd-inline-css-sidebar' );
-
-				self::$styles_added = true;
-			}
+			\Gridd\CSS::add_file( __DIR__ . '/styles.min.css' );
 		}
 	}
 

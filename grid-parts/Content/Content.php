@@ -8,7 +8,6 @@
 namespace Gridd\Grid_Part;
 
 use Gridd\Grid_Part;
-use Gridd\Style;
 
 /**
  * The Gridd\Grid_Part\Content object.
@@ -40,6 +39,9 @@ class Content extends Grid_Part {
 
 		// Add script.
 		add_filter( 'gridd_footer_inline_script_paths', [ $this, 'footer_inline_script_paths' ] );
+
+		// Add styles.
+		$this->print_styles();
 	}
 
 	/**
@@ -100,26 +102,14 @@ class Content extends Grid_Part {
 	 * @return void
 	 */
 	public static function print_styles() {
-		$padding = get_theme_mod(
-			'content_padding',
-			[
-				'top'    => 0,
-				'bottom' => 0,
-				'left'   => '20px',
-				'right'  => '20px',
-			]
-		);
-		Style::get_instance( 'grid-part/content' )
-			->add_string( ':root{--mw-c:var(--mw, 45em);}' )
-			->add_file( get_theme_file_path( 'grid-parts/Content/styles.min.css' ) )
-			/**
-			 * This CSS is just a hack to overcome a bug in the CSS minifier
-			 * that strips units from zero valus, making the calc() function invalid.
-			 * The same CSS is commented-out in the default.scss file for reference.
-			 * Once the bug in the minifier is fixed we can remove this.
-			 */
-			->add_string( '.site-main .entry-content .alignfull,.site-main .entry-footer .alignfull,.site-main .entry-header .alignfull,.site-main .gridd-contain .alignfull{transform:translateX(calc(0px - var(--pd-h, 1em)));}' )
-			->the_css( 'gridd-inline-css-content' );
+		\Gridd\CSS::add_file( get_theme_file_path( 'grid-parts/Content/styles.min.css' ) );
+		/**
+		 * This CSS is just a hack to overcome a bug in the CSS minifier
+		 * that strips units from zero valus, making the calc() function invalid.
+		 * The same CSS is commented-out in the default.scss file for reference.
+		 * Once the bug in the minifier is fixed we can remove this.
+		 */
+		\Gridd\CSS::add_string( '.site-main .entry-content .alignfull,.site-main .entry-footer .alignfull,.site-main .entry-header .alignfull,.site-main .gridd-contain .alignfull{transform:translateX(calc(0px - var(--pd-h, 1em)));}' );
 	}
 
 	/**
