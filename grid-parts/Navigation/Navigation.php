@@ -245,8 +245,6 @@ class Navigation extends Grid_Part {
 	 * @access public
 	 * @since 2.0.0
 	 * @deprecated 3.0.0
-	 * @param string $container The navigation's container.
-	 * @param array  $args      An array of arguments.
 	 * @return void
 	 */
 	public static function print_styles() {}

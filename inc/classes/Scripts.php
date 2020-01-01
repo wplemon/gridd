@@ -356,7 +356,7 @@ class Scripts {
 	 * @return string
 	 */
 	public function add_vars_defaults( $styles ) {
-		return file_get_contents( get_theme_file_path( 'assets/css/vars.min.css' ) ) . $styles;
+		return file_get_contents( get_theme_file_path( 'assets/css/vars.min.css' ) ) . $styles; // phpcs:ignore WordPress.WP.AlternativeFunctions
 	}
 }
 

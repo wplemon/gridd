@@ -1,5 +1,6 @@
 /* global griddGridControl, DragSelect */
 /* jshint -W024 */
+/* eslint-disable no-unused-vars */
 wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 
 	gridVal: {

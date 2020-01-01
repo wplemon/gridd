@@ -60,14 +60,14 @@
 }
 
 .gridd-nav-collapse .gridd-toggle-navigation.toggled-on ~ nav {
-  position: absolute;
-  bottom: 0;
-  transform: translateY(100%);
-  background-color: var(--bg);
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.16);
-  width: 15em;
-  max-width: 350px;
-  z-index: 9;
+	position: absolute;
+	bottom: 0;
+	transform: translateY(100%);
+	background-color: var(--bg);
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.16);
+	width: 15em;
+	max-width: 350px;
+	z-index: 9;
 }
 
 .gridd-nav-collapse .gridd-toggle-navigation.toggled-on ~ nav,

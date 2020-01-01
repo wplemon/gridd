@@ -4,3 +4,4 @@ vendor/
 packages/
 node_modules/
 inc/kirki/
+assets/css/blocks/**/*.js

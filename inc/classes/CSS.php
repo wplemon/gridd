@@ -116,7 +116,7 @@ class CSS {
 		if ( $media ) {
 			self::$css .= "@media $media{";
 		}
-		self::$css .= file_get_contents( $path );
+		self::$css .= file_get_contents( $path ); // phpcs:ignore WordPress.WP.AlternativeFunctions
 		if ( $media ) {
 			self::$css .= '}';
 		}
