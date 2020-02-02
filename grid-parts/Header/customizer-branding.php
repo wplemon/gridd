@@ -93,6 +93,8 @@ new \Kirki\Field\ReactColor(
 	]
 );
 
+/**
+ * Deprecate option for now.
 new \Kirki\Field\Dimension(
 	[
 		'settings'          => 'header_branding_padding',
@@ -114,6 +116,7 @@ new \Kirki\Field\Dimension(
 		},
 	]
 );
+ */
 
 new \Kirki\Field\Slider(
 	[

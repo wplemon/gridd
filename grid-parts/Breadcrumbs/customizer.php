@@ -61,6 +61,8 @@ new \Kirki\Field\ReactColor(
 	]
 );
 
+/**
+ * Deprecate option for now.
 new \Kirki\Field\Dimension(
 	[
 		'settings'        => 'breadcrumbs_padding',
@@ -80,6 +82,7 @@ new \Kirki\Field\Dimension(
 		'priority'        => 20,
 	]
 );
+ */
 
 new \Kirki\Field\Dimension(
 	[

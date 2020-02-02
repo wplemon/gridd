@@ -147,6 +147,8 @@ new \Kirki\Field\Dimension(
 	]
 );
 
+/**
+ * Deprecate option for now.
 new \Kirki\Field\Slider(
 	[
 		'settings'        => 'content_padding_horizontal',
@@ -173,7 +175,6 @@ new \Kirki\Field\Slider(
 		},
 	]
 );
-
 new \Kirki\Field\Slider(
 	[
 		'settings'        => 'content_padding_top',
@@ -200,7 +201,6 @@ new \Kirki\Field\Slider(
 		},
 	]
 );
-
 new \Kirki\Field\Slider(
 	[
 		'settings'        => 'content_padding_bottom',
@@ -227,5 +227,6 @@ new \Kirki\Field\Slider(
 		},
 	]
 );
+ */
 
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */

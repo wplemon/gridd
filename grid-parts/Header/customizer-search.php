@@ -94,6 +94,8 @@ new \WPLemon\Field\WCAGTextColor(
 	]
 );
 
+/**
+ * Deprecate option for now.
 new \Kirki\Field\Slider(
 	[
 		'settings'        => 'header_search_padding',
@@ -120,6 +122,7 @@ new \Kirki\Field\Slider(
 		},
 	]
 );
+ */
 
 new \Kirki\Field\Slider(
 	[

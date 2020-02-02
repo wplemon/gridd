@@ -134,6 +134,8 @@ new \Kirki\Field\Slider(
 	]
 );
 
+/**
+ * Deprecate option for now.
 new \Kirki\Field\Dimension(
 	[
 		'settings'        => 'header_contact_info_padding',
@@ -154,6 +156,7 @@ new \Kirki\Field\Dimension(
 		},
 	]
 );
+ */
 
 new \Kirki\Field\RadioButtonset(
 	[

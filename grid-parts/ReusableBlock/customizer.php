@@ -76,6 +76,8 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 		]
 	);
 
+	/**
+	 * Deprecate option for now.
 	new \Kirki\Field\Dimension(
 		[
 			'settings'        => "reusable_block_{$id}_padding",
@@ -95,6 +97,7 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 			},
 		]
 	);
+	 */
 
 	new \Kirki\Field\ReactColor(
 		[

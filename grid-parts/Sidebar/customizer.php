@@ -133,6 +133,8 @@ function gridd_sidebar_customizer_options( $id ) {
 		]
 	);
 
+	/**
+	 * Deprecate option for now.
 	new \Kirki\Field\Dimension(
 		[
 			'settings'        => "sidebar_{$id}_padding",
@@ -153,6 +155,7 @@ function gridd_sidebar_customizer_options( $id ) {
 			},
 		]
 	);
+	 */
 
 	new \Kirki\Field\Dimension(
 		[

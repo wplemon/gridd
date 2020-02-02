@@ -110,6 +110,8 @@ new \Kirki\Field\Dimension(
 	]
 );
 
+/**
+ * Deprecate option for now.
 new \Kirki\Field\Dimension(
 	[
 		'settings'        => 'header_padding',
@@ -129,6 +131,7 @@ new \Kirki\Field\Dimension(
 		},
 	]
 );
+ */
 
 new \Kirki\Field\Dimension(
 	[
