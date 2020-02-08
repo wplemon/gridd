@@ -122,14 +122,18 @@ class Version_3_0_0 {
 			],
 		];
 
-		$number = \Gridd\Grid_Part\Navigation::get_number_of_nav_menus();
-		for ( $i = 1; $i <= $number; $i++ ) {
-			$deprecated[ "gridd_grid_nav_{$i}_padding" ] = [
-				".gridd-tp-nav_{$i}{padding:%s;}",
-				"/* CSS added via the Gridd v3.0 update to avoid breaking changes for deprecated setting: Nav $i padding. */",
-				"/* End Gridd 3.0 Nav $i padding CSS */",
-			];
-		}
+		/**
+		 * Disable padding upgeade for navigation grid-parts.
+		 * Tests have shown that the majority of users add padding here to accomodate for wrongly-set grid dimensions.
+		 */
+		// $number = \Gridd\Grid_Part\Navigation::get_number_of_nav_menus();
+		// for ( $i = 1; $i <= $number; $i++ ) {
+		// 	$deprecated[ "gridd_grid_nav_{$i}_padding" ] = [
+		// 		".gridd-tp-nav_{$i}{padding:%s;}",
+		// 		"/* CSS added via the Gridd v3.0 update to avoid breaking changes for deprecated setting: Nav $i padding. */",
+		// 		"/* End Gridd 3.0 Nav $i padding CSS */",
+		// 	];
+		// }
 
 		$reusable_blocks = \Gridd\Grid_Part\ReusableBlock::get_reusable_blocks();
 		if ( $reusable_blocks ) {
