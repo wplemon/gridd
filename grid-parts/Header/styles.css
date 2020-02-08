@@ -10,5 +10,4 @@
 	width: 100%;
 	max-width: var(--mw, 100%);
 	grid-gap: var(--gg, 0);
-	padding: var(--pd, 0 1em);
 }
