@@ -16,7 +16,7 @@ new \Kirki\Section(
 		/* translators: The grid-part label. */
 		'title'    => esc_html__( 'Content', 'gridd' ),
 		'priority' => 20,
-		'type'     => 'kirki-expanded',
+		// 'type'     => 'kirki-expanded',
 		'panel'    => 'theme_options',
 	]
 );

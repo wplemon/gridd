@@ -45,7 +45,7 @@ function gridd_reusable_blocks_customizer_options( $id ) {
 			/* translators: The navigation number. */
 			'title'           => sprintf( esc_html__( 'Block: %s', 'gridd' ), esc_html( get_the_title( $id ) ) ),
 			'priority'        => 80,
-			'type'            => 'kirki-expanded',
+			// 'type'            => 'kirki-expanded',
 			'panel'           => 'theme_options',
 			'active_callback' => function() use ( $id ) {
 				return \Gridd\Customizer::is_section_active_part( "reusable_block_$id" );

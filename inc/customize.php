@@ -63,7 +63,7 @@ new \Kirki\Section(
 	[
 		'title'    => esc_html__( 'General Options', 'gridd' ),
 		'priority' => -100,
-		'type'     => 'kirki-expanded',
+		// 'type'     => 'kirki-expanded',
 		'panel'    => 'theme_options',
 	]
 );
@@ -73,7 +73,7 @@ new \WPLemon\Field\PaletteBuilder(
 		'settings'          => 'custom_color_palette',
 		'label'             => esc_attr__( 'Color Palette', 'gridd' ),
 		'description'       => esc_html__( 'Colors selected here will affect the palette available in all controls, as well as the palette in the WordPress editor.', 'gridd' ),
-		'section'           => 'theme_options',
+		'section'           => 'colors',
 		'default'           => \Gridd\Theme::get_color_palette( true ),
 		'priority'          => 10,
 		'sanitize_callback' => function( $val ) {
@@ -97,7 +97,7 @@ new \Kirki\Field\ReactColor(
 	[
 		'settings'          => 'background_color',
 		'label'             => esc_html__( 'Background Color', 'gridd' ),
-		'section'           => 'theme_options',
+		'section'           => 'colors',
 		'default'           => '#F5F7F9',
 		'transport'         => 'postMessage',
 		'priority'          => 20,
@@ -136,7 +136,7 @@ new \WPLemon\Field\WCAGTextColor(
 	[
 		'settings'          => 'text_color',
 		'label'             => esc_html__( 'Text Color', 'gridd' ),
-		'section'           => 'theme_options',
+		'section'           => 'colors',
 		'priority'          => 30,
 		'default'           => '#000000',
 		'output'            => [
@@ -164,7 +164,7 @@ new \WPLemon\Field\WCAGLinkColor(
 		'settings'          => 'links_color',
 		'label'             => esc_html__( 'Links Color', 'gridd' ),
 		'description'       => esc_html__( 'Select the hue for you links. The color will be auto-calculated to ensure maximum readability according to WCAG.', 'gridd' ),
-		'section'           => 'theme_options',
+		'section'           => 'colors',
 		'transport'         => 'auto',
 		'priority'          => 40,
 		'choices'           => [
@@ -203,7 +203,7 @@ new \Kirki\Field\RadioButtonset(
 			__( '<strong>AAA</strong>: Targeting for "AAA" compliance results in less intense but easier to read colors.', 'gridd' ),
 			__( '<strong>AA</strong>: Targeting for "AA" compliance will result in more vibrant colors while still maintaining a readable color contrast.', 'gridd' )
 		),
-		'section'           => 'theme_options',
+		'section'           => 'colors',
 		'default'           => 'auto',
 		'transport'         => 'postMessage',
 		'priority'          => 50,
@@ -222,7 +222,7 @@ new \Kirki\Field\ReactColor(
 	[
 		'settings'          => 'background_color',
 		'label'             => esc_html__( 'Background Color', 'gridd' ),
-		'section'           => 'theme_options',
+		'section'           => 'colors',
 		'default'           => '#ffffff',
 		'transport'         => 'postMessage',
 		'priority'          => 60,

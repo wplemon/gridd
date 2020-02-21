@@ -34,6 +34,7 @@ class Customizer {
 	public function __construct() {
 		add_filter( 'kirki_gridd_css_skip_hidden', '__return_false' );
 		add_action( 'customize_controls_enqueue_scripts', [ $this, 'enqueue' ] );
+		add_action( 'customize_controls_print_styles', [ $this, 'customize_controls_print_styles' ] );
 		add_action( 'customize_controls_print_scripts', [ $this, 'extra_customizer_scripts' ], 9999 );
 		add_action( 'customize_preview_init', [ $this, 'preview_customizer_scripts' ] );
 		add_action( 'after_setup_theme', [ $this, 'setup_grid_filters' ] );
@@ -76,6 +77,21 @@ class Customizer {
 			$value = json_decode( $value, true );
 		}
 		return $value;
+	}
+
+	/**
+	 * Adds custom styles to the customizer.
+	 *
+	 * @access public
+	 * @since 1.0
+	 * @return void
+	 */
+	public function customize_controls_print_styles() {
+		?>
+		<style id="gridd-customizer-styles">
+			<?php include get_template_directory() . '/assets/css/customizer/customizer.css'; ?>
+		</style>
+		<?php
 	}
 
 	/**
