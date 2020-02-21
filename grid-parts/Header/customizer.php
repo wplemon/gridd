@@ -31,7 +31,7 @@ new \Kirki\Section(
 		'title'    => esc_html__( 'Header', 'gridd' ),
 		'priority' => 21,
 		'panel'    => 'theme_options',
-		// 'type'     => 'kirki-expanded',
+		'type'     => 'kirki-expanded',
 	]
 );
 
@@ -41,7 +41,7 @@ new \Kirki\Section(
 		'title'    => esc_html__( 'Header Grid', 'gridd' ),
 		'priority' => 10,
 		'panel'    => 'layout_options',
-		// 'type'     => 'kirki-expanded',
+		'type'     => 'kirki-expanded',
 	]
 );
 

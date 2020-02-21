@@ -14,7 +14,7 @@ new \Kirki\Section(
 	[
 		'title'           => esc_html__( 'Header Contact Info', 'gridd' ),
 		'panel'           => 'theme_options',
-		// 'type'            => 'kirki-expanded',
+		'type'            => 'kirki-expanded',
 		'priority'        => 50,
 		'active_callback' => function() {
 			return \Gridd\Customizer::is_section_active_part( 'header_contact_info' );

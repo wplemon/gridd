@@ -16,7 +16,7 @@ new \Kirki\Section(
 		'title'    => esc_html__( 'Typography', 'gridd' ),
 		'priority' => 10,
 		'panel'    => 'theme_options',
-		// 'type'     => 'kirki-expanded',
+		'type'     => 'kirki-expanded',
 	]
 );
 

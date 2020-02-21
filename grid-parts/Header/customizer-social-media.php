@@ -18,7 +18,7 @@ new \Kirki\Section(
 	[
 		'panel'           => 'theme_options',
 		'title'           => esc_html__( 'Header Social Media', 'gridd' ),
-		// 'type'            => 'kirki-expanded',
+		'type'            => 'kirki-expanded',
 		'priority'        => 60,
 		'active_callback' => function() {
 			return \Gridd\Customizer::is_section_active_part( 'social_media' );

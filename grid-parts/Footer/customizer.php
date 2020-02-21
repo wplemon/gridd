@@ -17,7 +17,7 @@ new \Kirki\Section(
 		'title'    => esc_html__( 'Footer', 'gridd' ),
 		'priority' => 22,
 		'panel'    => 'theme_options',
-		// 'type'     => 'kirki-expanded',
+		'type'     => 'kirki-expanded',
 	]
 );
 
@@ -27,7 +27,7 @@ new \Kirki\Section(
 		'title'    => esc_html__( 'Footer Grid', 'gridd' ),
 		'priority' => 20,
 		'panel'    => 'layout_options',
-		// 'type'     => 'kirki-expanded',
+		'type'     => 'kirki-expanded',
 	]
 );
 
