@@ -39,34 +39,26 @@
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
 .wp-block-calendar {
-  text-align: center;
-}
-.wp-block-calendar th,
-.wp-block-calendar tbody td {
-  padding: 4px;
-  border: 1px solid #e2e4e7;
-}
-.wp-block-calendar tfoot td {
-  border: none;
-}
-.wp-block-calendar table {
-  width: 100%;
-  border-collapse: collapse;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-}
-.wp-block-calendar table th {
-  font-weight: 400;
-  background: #edeff0;
-}
-.wp-block-calendar a {
-  text-decoration: underline;
-}
-.wp-block-calendar tfoot a {
-  color: #00739c;
-}
-.wp-block-calendar table tbody,
-.wp-block-calendar table caption {
-  color: #40464d;
-}
+  text-align: center; }
+  .wp-block-calendar th,
+  .wp-block-calendar tbody td {
+    padding: 4px;
+    border: 1px solid #e2e4e7; }
+  .wp-block-calendar tfoot td {
+    border: none; }
+  .wp-block-calendar table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
+  .wp-block-calendar table th {
+    font-weight: 400;
+    background: #edeff0; }
+  .wp-block-calendar a {
+    text-decoration: underline; }
+  .wp-block-calendar tfoot a {
+    color: #00739c; }
+  .wp-block-calendar table tbody,
+  .wp-block-calendar table caption {
+    color: #40464d; }
 
 /*# sourceMappingURL=calendar.css.map */

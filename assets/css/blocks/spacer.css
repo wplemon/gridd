@@ -39,7 +39,6 @@
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
 .wp-block-spacer {
-  clear: both;
-}
+  clear: both; }
 
 /*# sourceMappingURL=spacer.css.map */
