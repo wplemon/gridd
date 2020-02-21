@@ -63,7 +63,7 @@ new \Kirki\Section(
 	[
 		'title'    => esc_html__( 'General Options', 'gridd' ),
 		'priority' => -100,
-		'type'     => 'expanded',
+		'type'     => 'kirki-expanded',
 		'panel'    => 'theme_options',
 	]
 );
