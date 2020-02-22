@@ -122,6 +122,8 @@ class Theme {
 		// Loads the WooCommerce class.
 		$this->wc = new WooCommerce();
 
+		new \Gridd\Block_Styles();
+
 		add_filter( 'body_class', [ $this, 'body_class' ] );
 		add_action( 'after_setup_theme', [ $this, 'setup' ] );
 		add_action( 'after_setup_theme', [ $this, 'content_width' ], 0 );

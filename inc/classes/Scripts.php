@@ -18,15 +18,6 @@ use Gridd\Grid_Part\Navigation;
 class Scripts {
 
 	/**
-	 * Whether we're debugging scripts or not.
-	 *
-	 * @access private
-	 * @since 1.0
-	 * @var bool
-	 */
-	private $script_debug = false;
-
-	/**
 	 * An array of async scripts.
 	 *
 	 * @access private
@@ -48,23 +39,12 @@ class Scripts {
 	private static $widgets = [];
 
 	/**
-	 * An array of blocks used in this page.
-	 *
-	 * @static
-	 * @access private
-	 * @since 1.0.2
-	 * @var array
-	 */
-	private static $blocks = [];
-
-	/**
 	 * Constructor.
 	 *
 	 * @since 1.0
 	 * @access public
 	 */
 	public function __construct() {
-		$this->script_debug  = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG );
 		$this->async_scripts = apply_filters( 'gridd_async_scripts', $this->async_scripts );
 
 		add_filter( 'script_loader_tag', [ $this, 'add_async_attribute' ], 10, 2 );
@@ -84,13 +64,6 @@ class Scripts {
 
 		// Add widget styles.
 		add_filter( 'gridd_widget_output', [ $this, 'widget_output' ], 10, 4 );
-
-		/**
-		 * Use a filter to figure out which blocks are used.
-		 * We'll use this to populate the $blocks property of this object
-		 * and enque the CSS needed for them.
-		 */
-		add_filter( 'render_block', [ $this, 'render_block' ], 10, 2 );
 
 		add_filter( 'kirki_global_dynamic_css', [ $this, 'add_vars_defaults' ] );
 	}
@@ -125,19 +98,6 @@ class Scripts {
 			}
 		}
 		echo '</script>';
-	}
-
-	/**
-	 * Enqueue scripts.
-	 *
-	 * @access public
-	 * @since 1.0
-	 */
-	public function scripts() {
-
-		// Dequeue wp-core blocks styles. These will be added inline.
-		wp_dequeue_style( 'wp-block-library' );
-		wp_dequeue_style( 'wp-block-library-theme' );
 	}
 
 	/**
@@ -240,13 +200,6 @@ class Scripts {
 		\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/buttons.min.css' ) );
 		\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/core/media.min.css' ) );
 		\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/core/nav-links.min.css' ) );
-
-		// Add blocks styles.
-		$blocks = $this->get_blocks();
-		foreach ( $blocks as $block ) {
-			$block = str_replace( 'core/', '', $block );
-			\Gridd\CSS::add_file( get_theme_file_path( "assets/css/blocks/$block.min.css" ) );
-		}
 	}
 
 	/**
@@ -318,33 +271,6 @@ class Scripts {
 
 		// Return the widget output, with the CSS prepended.
 		return $styles . $widget_output;
-	}
-
-	/**
-	 * Filters the content of a single block.
-	 *
-	 * @since 1.0.2
-	 * @access public
-	 * @param string $block_content The block content about to be appended.
-	 * @param array  $block         The full block, including name and attributes.
-	 * @return string               Returns $block_content unaltered.
-	 */
-	public function render_block( $block_content, $block ) {
-		if ( $block['blockName'] ) {
-			self::$blocks[] = $block['blockName'];
-		}
-		return $block_content;
-	}
-
-	/**
-	 * Get an array of blocks used in this page.
-	 *
-	 * @access public
-	 * @since 1.0.2
-	 * @return array
-	 */
-	public function get_blocks() {
-		return array_unique( self::$blocks );
 	}
 
 	/**
