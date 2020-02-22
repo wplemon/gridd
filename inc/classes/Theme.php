@@ -269,6 +269,7 @@ class Theme {
 				'assets/css/blocks/core/search.min.css',
 				'assets/css/blocks/core/audio.min.css',
 				'assets/css/blocks/core/calendar.min.css',
+				'assets/css/blocks/core/file.min.css',
 			]
 		);
 		add_theme_support( 'editor-color-palette', self::get_color_palette() );
