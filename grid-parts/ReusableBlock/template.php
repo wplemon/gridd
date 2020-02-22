@@ -27,9 +27,8 @@ $attributes = [
 			/**
 			 * Note to reviewer:
 			 *
+			 * The way this is structured is similar to what WP-Core does.
 			 * Using wp_kses_post inside the contents here is safe.
-			 * The way this is structured is similar to what WP-Core does,
-			 * and it is safe.
 			 */
 			echo do_blocks( wp_kses_post( $gridd_reusable_block->post_content ) ); // phpcs:ignore WordPress.Security.EscapeOutput
 		}
