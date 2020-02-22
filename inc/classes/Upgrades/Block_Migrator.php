@@ -69,6 +69,11 @@ abstract class Block_Migrator {
 			return;
 		}
 
+		// Early exit if we don't want to migrate.
+		if ( ! $this->should_migrate() ) {
+			return;
+		}
+
 		$block_id = wp_insert_post(
 			[
 				'post_content' => $this->get_content(),
@@ -83,6 +88,17 @@ abstract class Block_Migrator {
 		if ( $block_id && ! is_wp_error( $block_id ) ) {
 			$this->after_block_migration( $block_id );
 		}
+	}
+
+	/**
+	 * Whether we should run the upgrade or not.
+	 *
+	 * @access protected
+	 * @since 3.0.0
+	 * @return bool
+	 */
+	protected function should_migrate() {
+		return true;
 	}
 
 	/**
