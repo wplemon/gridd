@@ -263,10 +263,14 @@ class Theme {
 			}
 		}
 		add_theme_support( 'responsive-embeds' );
-		add_editor_style( 'assets/css/admin/editor.min.css' );
-		add_editor_style( 'assets/css/blocks/core/search.min.css' );
-		add_editor_style( 'assets/css/blocks/core/audio.min.css' );
-		add_editor_style( 'assets/css/blocks/core/calendar.min.css' );
+		add_editor_style(
+			[
+				'assets/css/admin/editor.min.css',
+				'assets/css/blocks/core/search.min.css',
+				'assets/css/blocks/core/audio.min.css',
+				'assets/css/blocks/core/calendar.min.css',
+			]
+		);
 		add_theme_support( 'editor-color-palette', self::get_color_palette() );
 
 		// Starter Content.
