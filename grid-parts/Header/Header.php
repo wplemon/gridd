@@ -53,7 +53,6 @@ class Header extends Grid_Part {
 	 * @return void
 	 */
 	public function init() {
-		add_filter( 'gridd_get_grid_part_specs_header_contact_info', [ $this, 'get_grid_part_specs_header_contact_info' ] );
 		add_filter( 'gridd_get_grid_part_specs_social_media', [ $this, 'get_grid_part_specs_social_media' ] );
 		add_action( 'gridd_the_grid_part', [ $this, 'render' ] );
 		add_filter( 'get_custom_logo', [ $this, 'get_custom_logo' ] );
@@ -101,19 +100,6 @@ class Header extends Grid_Part {
 				'columns' => [ 'auto' ],
 			],
 		];
-	}
-
-	/**
-	 * Filter the grid-part specs.
-	 * Necessary for pugged-in grid-parts with no dedicated templates.
-	 *
-	 * @access public
-	 * @since 1.0
-	 * @return array
-	 */
-	public function get_grid_part_specs_header_contact_info() {
-		$grid = Grid::get_options( 'header_grid' );
-		return self::format_specs_from_grid_value( 'header_contact_info', $grid );
 	}
 
 	/**
@@ -176,14 +162,6 @@ class Header extends Grid_Part {
 			'priority' => 200,
 			'hidden'   => false,
 			'id'       => 'header_search',
-		];
-
-		$header_grid_parts[] = [
-			'label'    => esc_html__( 'Contact Information', 'gridd' ),
-			'color'    => [ '#D4E157', '#000' ],
-			'priority' => 1000,
-			'hidden'   => false,
-			'id'       => 'header_contact_info',
 		];
 
 		$header_grid_parts[] = [

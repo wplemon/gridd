@@ -74,12 +74,6 @@ $attrs          = [
 					 */
 					Theme::get_template_part( 'grid-parts/Header/template-search' );
 
-				} elseif ( 'header_contact_info' === $part && apply_filters( 'gridd_render_grid_part', true, 'header_contact_info' ) ) {
-					/**
-					 * Contact Info.
-					 */
-					Theme::get_template_part( 'grid-parts/Header/template-contact-info' );
-
 				} elseif ( 'social_media' === $part && apply_filters( 'gridd_render_grid_part', true, 'social_media' ) ) {
 					/**
 					 * Social Media.
