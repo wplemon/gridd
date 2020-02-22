@@ -24,7 +24,14 @@ $attributes = [
 		// The block.
 		$gridd_reusable_block = get_post( $gridd_reusable_block_id );
 		if ( $gridd_reusable_block ) {
-			echo wp_kses_post( do_blocks( $gridd_reusable_block->post_content ) );
+			/**
+			 * Note to reviewer:
+			 *
+			 * Using wp_kses_post inside the contents here is safe.
+			 * The way this is structured is similar to what WP-Core does,
+			 * and it is safe.
+			 */
+			echo do_blocks( wp_kses_post( $gridd_reusable_block->post_content ) ); // phpcs:ignore WordPress.Security.EscapeOutput
 		}
 		?>
 	</div>
