@@ -34,6 +34,8 @@ class Editor {
 	 */
 	public function block_editor_styles() {
 		wp_enqueue_style( 'gridd-editor', get_template_directory_uri() . '/assets/css/admin/editor.min.css', [], GRIDD_VERSION );
+		wp_enqueue_style( 'gridd-editor-search', get_template_directory_uri() . '/assets/css/blocks/core/search.min.css', [], GRIDD_VERSION );
+		wp_enqueue_style( 'gridd-editor-audio', get_template_directory_uri() . '/assets/css/blocks/core/audio.min.css', [], GRIDD_VERSION );
 	}
 }
 
