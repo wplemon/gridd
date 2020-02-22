@@ -40,11 +40,7 @@ class Version_3_0_0 {
 		$this->rename_mods();
 
 		new \Gridd\Upgrades\Block\Header_Contact_Info();
-
-		/**
-		 * WIP: Deprecate grid-parts.
-		$this->deprecate_footer_copyright();
-		 */
+		new \Gridd\Upgrades\Block\Footer_Copyright();
 	}
 
 	/**
@@ -268,50 +264,6 @@ $args[2]";
 			if ( '__UNSET' !== $old_val ) {
 				set_theme_mod( $new, $old_val );
 			}
-		}
-	}
-
-	/**
-	 * Migrate footer-copyright to a reusable block.
-	 *
-	 * @access private
-	 * @since 3.0.0
-	 * @return void
-	 */
-	private function deprecate_footer_copyright() {
-		$footer_grid = get_theme_mod( 'footer_grid', \Gridd\Grid_Part\Footer::get_grid_defaults() );
-
-		// Sanity check.
-		if ( ! $footer_grid || ! isset( $footer_grid['areas'] ) || ! isset( $footer_grid['areas']['footer_copyright'] ) ) {
-			return;
-		}
-
-		$copyright_content = get_theme_mod(
-			'gridd_copyright_text',
-			sprintf(
-				/* translators: 1: CMS name, i.e. WordPress. 2: Theme name, 3: Theme author. */
-				__( 'Proudly powered by %1$s | Theme: %2$s by %3$s.', 'gridd' ),
-				'<a href="https://wordpress.org/">WordPress</a>',
-				'Gridd',
-				'<a href="https://wplemon.com/">wplemon.com</a>'
-			)
-		);
-
-		// Create the reusable block.
-		$block_id = wp_insert_post(
-			[
-				'post_content' => $copyright_content,
-				'post_title'   => esc_html__( 'Gridd: Footer Copyright', 'gridd' ),
-				'post_status'  => 'publish',
-				'post_type'    => 'wp_block',
-			]
-		);
-
-		// Update the option.
-		if ( $block_id && ! is_wp_error( $block_id ) ) {
-			$footer_grid['areas'][ $block_id ] = $footer_grid['areas']['footer_copyright'];
-			unset( $footer_grid['areas']['footer_copyright'] );
-			set_theme_mod( 'footer_grid', $footer_grid );
 		}
 	}
 }

@@ -61,12 +61,6 @@ if ( get_theme_mod( 'footer_custom_options', false ) ) {
 					 */
 					Theme::get_template_part( 'grid-parts/Footer/template-social-media' );
 
-				} elseif ( 'footer_copyright' === $part && apply_filters( 'gridd_render_grid_part', true, 'footer_copyright' ) ) {
-					/**
-					 * Copyright.
-					 */
-					Theme::get_template_part( 'grid-parts/Footer/template-copyright' );
-
 				} else {
 					do_action( 'gridd_the_grid_part', $part );
 				}

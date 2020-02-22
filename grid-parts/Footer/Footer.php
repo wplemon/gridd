@@ -116,9 +116,6 @@ class Footer extends Grid_Part {
 				'footer_sidebar_3' => [
 					'cells' => [ [ 1, 3 ] ],
 				],
-				'footer_copyright' => [
-					'cells' => [ [ 2, 1 ], [ 2, 2 ], [ 2, 3 ] ],
-				],
 			],
 			'gridTemplate' => [
 				'rows'    => [ 'auto', 'auto' ],
@@ -187,13 +184,6 @@ class Footer extends Grid_Part {
 	 */
 	public static function get_footer_grid_parts() {
 		$footer_grid_parts = [
-			[
-				'label'    => esc_html__( 'Copyright Area', 'gridd' ),
-				'color'    => [ '#A5D6A7', '#000' ],
-				'priority' => 100,
-				'hidden'   => false,
-				'id'       => 'footer_copyright',
-			],
 			[
 				'label'    => esc_html__( 'Social Media', 'gridd' ),
 				'color'    => [ '#8BC34A', '#000' ],
