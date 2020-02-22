@@ -45,6 +45,8 @@
   @media (min-width: 782px) {
     .wp-block-columns {
       flex-wrap: nowrap; } }
+  .wp-block-columns.has-background {
+    padding: 20px 30px; }
 
 .wp-block-column {
   flex-grow: 1;
@@ -56,13 +58,18 @@
       flex-basis: 100% !important; } }
   @media (min-width: 600px) {
     .wp-block-column {
-      flex-basis: calc(50% - var(--fs-tr));
+      flex-basis: calc(50% - 16px);
       flex-grow: 0; }
       .wp-block-column:nth-child(even) {
         margin-left: calc($grid-size-large * 2); } }
   @media (min-width: 782px) {
-    .wp-block-column:not(:first-child) {
-      margin-left: calc($grid-size-large * 2); } }
+    .wp-block-column {
+      flex-basis: 0;
+      flex-grow: 1; }
+      .wp-block-column[style] {
+        flex-grow: 0; }
+      .wp-block-column:not(:first-child) {
+        margin-left: calc($grid-size-large * 2); } }
 
 /**
  * All Columns Alignment

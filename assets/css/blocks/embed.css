@@ -38,8 +38,8 @@
 /**
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
-.block-editor-block-list__block[data-type="core/embed"][data-align="left"] .block-editor-block-list__block-edit,
-.block-editor-block-list__block[data-type="core/embed"][data-align="right"] .block-editor-block-list__block-edit,
+.block-editor-block-list__block[data-type="core/embed"][data-align="left"],
+.block-editor-block-list__block[data-type="core/embed"][data-align="right"],
 .wp-block-embed.alignleft,
 .wp-block-embed.alignright {
   max-width: 360px;
