@@ -63,7 +63,7 @@ class Header_Search extends \Gridd\Upgrades\Block_Migrator {
 
 		// Get the final content from our HTML file.
 		ob_start();
-		include 'header-search.html';
+		include 'group-with-content.html';
 		$final_content = ob_get_clean();
 
 		// Replace placeholders with actual values.
