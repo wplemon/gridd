@@ -39,6 +39,8 @@ class Version_3_0_0 {
 		$this->custom_options();
 		$this->rename_mods();
 
+		new \Gridd\Upgrades\Block\Header_Contact_Info();
+
 		/**
 		 * WIP: Deprecate grid-parts.
 		$this->deprecate_footer_copyright();
