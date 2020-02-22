@@ -400,10 +400,30 @@ li[id^="customize-control-footer_sidebar_"][id$="_custom_options"] {
 
 	.customize-section-description-container,
 	.customize-control-notifications-container {
-		display: none;
+		display: none !important;
 	}
 }
 
-#accordion-section-gridd_reusable_block_instructions {
+#sub-accordion-section-gridd_reusable_block_instructions.control-section {
+	padding: 0 !important;
+	margin-top: -15px;
+}
+
+#accordion-section-gridd_reusable_block_instructions,
+#customize-control-gridd_reusable_block_instructions.customize-control {
 	border-top: none !important;
+	padding: 0 !important;
+	margin-bottom: 0 !important;
+
+	label,
+	span {
+		margin-bottom: 0 !important;
+	}
+
+	p.notice {
+		margin: 0 !important;
+		border-top: none;
+		border-bottom: none;
+		border-right: none;
+	}
 }

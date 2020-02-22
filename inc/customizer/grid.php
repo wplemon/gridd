@@ -29,7 +29,7 @@ new \Kirki\Field\Custom(
 		'label'       => '',
 		'description' => sprintf(
 			/* Translators: 1: URL to create a new reusable block. 2: URL to edit existing blocks. */
-			__( 'Use reusable blocks to add more functionality and grid-parts to your site. You can <a href="%1$s" target="_blank">Add a new reusable block</a>, or <a href="%2$s" target="_blank">Edit existing reusable blocks</a>.', 'gridd' ),
+			'<p class="notice notice-info notice-alt" style="padding:12px">' . __( 'Use reusable blocks to add more functionality and grid-parts to your site. You can <a href="%1$s" target="_blank">Add a new reusable block</a>, or <a href="%2$s" target="_blank">Edit existing reusable blocks</a>.', 'gridd' ) . '</p>',
 			esc_url( admin_url( 'post-new.php?post_type=wp_block' ) ),
 			esc_url( admin_url( 'edit.php?post_type=wp_block' ) )
 		),
