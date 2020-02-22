@@ -353,4 +353,14 @@ li[id^="customize-control-footer_sidebar_"][id$="_custom_options"] {
   #sub-accordion-section-theme_options .customize-section-title {
     display: none; }
 
+#sub-accordion-section-gridd_reusable_block_instructions {
+  border-top: none !important;
+  padding-top: 0 !important; }
+  #sub-accordion-section-gridd_reusable_block_instructions .customize-section-description-container,
+  #sub-accordion-section-gridd_reusable_block_instructions .customize-control-notifications-container {
+    display: none; }
+
+#accordion-section-gridd_reusable_block_instructions {
+  border-top: none !important; }
+
 /*# sourceMappingURL=customizer.css.map */

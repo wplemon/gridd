@@ -396,3 +396,17 @@ li[id^="customize-control-footer_sidebar_"][id$="_custom_options"] {
 		display: none;
 	}
 }
+
+#sub-accordion-section-gridd_reusable_block_instructions {
+	border-top: none !important;
+	padding-top: 0 !important;
+
+	.customize-section-description-container,
+	.customize-control-notifications-container {
+		display: none;
+	}
+}
+
+#accordion-section-gridd_reusable_block_instructions {
+	border-top: none !important;
+}

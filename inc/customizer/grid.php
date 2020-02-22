@@ -14,6 +14,30 @@ $sanitization = new Sanitize();
 $grid_parts   = Grid_Parts::get_instance()->get_parts();
 
 new \Kirki\Section(
+	'gridd_reusable_block_instructions',
+	[
+		'title'    => '',
+		'priority' => -999,
+		'panel'    => 'layout_options',
+		'type'     => 'kirki-expanded',
+	]
+);
+
+new \Kirki\Field\Custom(
+	[
+		'settings'    => 'gridd_reusable_block_instructions',
+		'label'       => '',
+		'description' => sprintf(
+			/* Translators: 1: URL to create a new reusable block. 2: URL to edit existing blocks. */
+			__( 'Use reusable blocks to add more functionality and grid-parts to your site. You can <a href="%1$s" target="_blank">Add a new reusable block</a>, or <a href="%2$s" target="_blank">Edit existing reusable blocks</a>.', 'gridd' ),
+			esc_url( admin_url( 'post-new.php?post_type=wp_block' ) ),
+			esc_url( admin_url( 'edit.php?post_type=wp_block' ) )
+		),
+		'section'     => 'gridd_reusable_block_instructions',
+	]
+);
+
+new \Kirki\Section(
 	'gridd_grid',
 	[
 		'title'    => esc_html__( 'Main Grid Layout', 'gridd' ),
