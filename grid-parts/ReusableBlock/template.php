@@ -12,10 +12,6 @@ use Gridd\Blog;
 $attributes = [
 	'class' => "gridd-tp gridd-tp-reusable-block gridd-tp-reusable_block_$gridd_reusable_block_id",
 ];
-
-if ( get_theme_mod( "reusable_block_{$gridd_reusable_block_id}_custom_options", false ) ) {
-	$attributes['class'] .= ' custom-options';
-}
 ?>
 
 <div <?php Theme::print_attributes( $attributes, "reusable_block_$gridd_reusable_block_id" ); ?>>

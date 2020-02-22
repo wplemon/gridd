@@ -29,7 +29,6 @@ require_once __DIR__ . '/Header/customizer-social-media.php';
 require_once __DIR__ . '/Header/customizer.php';
 require_once __DIR__ . '/NavHandheld/customizer.php';
 require_once __DIR__ . '/Navigation/customizer.php';
-require_once __DIR__ . '/ReusableBlock/customizer.php';
 require_once __DIR__ . '/Sidebar/customizer.php';
 
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */
