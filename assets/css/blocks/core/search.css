@@ -1,6 +1,6 @@
 .wp-block-search {
 	display: flex;
-	flex-wrap: wrap;
+	/* flex-wrap: wrap; */
 }
 
 .wp-block-search .wp-block-search__label {
@@ -9,10 +9,11 @@
 }
 
 .wp-block-search .wp-block-search__input {
-	flex-grow: 1;
-	max-width: 22em;
+  flex-grow: 1;
+  width: 100%;
+	/* max-width: 22em; */
 }
 
 .wp-block-search .wp-block-search__button {
-	margin: 0 0.5em;
+	margin-left: 0.5em;
 }
