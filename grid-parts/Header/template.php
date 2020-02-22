@@ -68,12 +68,6 @@ $attrs          = [
 					 */
 					Theme::get_template_part( 'grid-parts/Header/template-branding' );
 
-				} elseif ( 'header_search' === $part && apply_filters( 'gridd_render_grid_part', true, 'header_search' ) ) {
-					/**
-					 * Search.
-					 */
-					Theme::get_template_part( 'grid-parts/Header/template-search' );
-
 				} elseif ( 'social_media' === $part && apply_filters( 'gridd_render_grid_part', true, 'social_media' ) ) {
 					/**
 					 * Social Media.

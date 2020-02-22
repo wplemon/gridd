@@ -56,9 +56,6 @@ class Header extends Grid_Part {
 		add_filter( 'gridd_get_grid_part_specs_social_media', [ $this, 'get_grid_part_specs_social_media' ] );
 		add_action( 'gridd_the_grid_part', [ $this, 'render' ] );
 		add_filter( 'get_custom_logo', [ $this, 'get_custom_logo' ] );
-
-		// Add script.
-		add_filter( 'gridd_footer_inline_script_paths', [ $this, 'footer_inline_script_paths' ] );
 	}
 
 	/**
@@ -157,14 +154,6 @@ class Header extends Grid_Part {
 		];
 
 		$header_grid_parts[] = [
-			'label'    => esc_html__( 'Search', 'gridd' ),
-			'color'    => [ '#CFD8DC', '#000' ],
-			'priority' => 200,
-			'hidden'   => false,
-			'id'       => 'header_search',
-		];
-
-		$header_grid_parts[] = [
 			'label'    => esc_html__( 'Social Media', 'gridd' ),
 			'color'    => [ '#009688', '#fff' ],
 			'priority' => 2000,
@@ -173,25 +162,6 @@ class Header extends Grid_Part {
 		];
 
 		return apply_filters( 'gridd_header_grid_parts', $header_grid_parts );
-	}
-
-	/**
-	 * Adds the script to the footer.
-	 *
-	 * @access public
-	 * @since 1.0
-	 * @param array $paths Paths to scripts we want to load.
-	 * @return array
-	 */
-	public function footer_inline_script_paths( $paths ) {
-		$settings = Grid::get_options( 'header_grid', self::get_grid_defaults() );
-		if ( isset( $settings['areas'] ) && isset( $settings['areas']['header_search'] ) && apply_filters( 'gridd_render_grid_part', true, 'header_search' ) ) {
-			$header_search_mode = get_theme_mod( 'header_search_mode', 'form' );
-			if ( 'slide-up' === $header_search_mode ) {
-				$paths[] = __DIR__ . '/header-search.min.js';
-			}
-		}
-		return $paths;
 	}
 }
 
