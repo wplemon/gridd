@@ -21,6 +21,7 @@ packages/kirki-framework/**/composer.json
 packages/kirki-framework/**/.gitignore
 packages/kirki-framework/**/package.json
 packages/kirki-framework/**/**/*.scss
+
 packages/bin/
 packages/dealerdirect/
 packages/phpcompatibility/
@@ -28,6 +29,7 @@ packages/squizlabs/
 packages/wp-coding-standards/
 packages/wptrt/wpthemereview/
 packages/composer/installers/
+
 assets/css/blocks/block-library/**/*.js
 assets/css/blocks/block-library/**/*.json
 assets/css/blocks/block-library/**/editor.scss
@@ -55,3 +57,5 @@ assets/css/blocks/block-library/.npmrc
 assets/css/blocks/block-library/CHANGELOG.md
 
 assets/css/blocks/block-library/README.md
+
+assets/css/blocks/block-library/search

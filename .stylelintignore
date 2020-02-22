@@ -2,6 +2,7 @@
 /packages
 *.min.css
 *.min.js
+*.js
 *.map
 /grid-parts/styles/
 *.php
