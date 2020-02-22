@@ -50,7 +50,6 @@ class Scripts {
 		add_filter( 'script_loader_tag', [ $this, 'add_async_attribute' ], 10, 2 );
 
 		add_action( 'wp_print_footer_scripts', [ $this, 'inline_scripts' ] );
-		add_action( 'wp_enqueue_scripts', [ $this, 'scripts' ] );
 
 		add_action( 'wp_head', [ $this, 'inline_styles' ] );
 
