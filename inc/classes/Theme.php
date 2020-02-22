@@ -268,6 +268,7 @@ class Theme {
 				'assets/css/admin/editor.min.css',
 				'assets/css/blocks/core/audio.min.css',
 				'assets/css/blocks/core/calendar.min.css',
+				'assets/css/blocks/core/categories.min.css',
 				'assets/css/blocks/core/code.min.css',
 				'assets/css/blocks/core/file.min.css',
 				'assets/css/blocks/core/search.min.css',
