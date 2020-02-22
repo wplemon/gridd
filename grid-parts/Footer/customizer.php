@@ -82,27 +82,6 @@ new \Kirki\Field\Dimension(
 	]
 );
 
-new \Kirki\Field\Dimension(
-	[
-		'settings'        => 'footer_grid_gap',
-		'label'           => esc_html__( 'Grid Gap', 'gridd' ),
-		'description'     => __( 'Adds a gap between your grid-parts, both horizontally and vertically. For more information please read <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/gap" target="_blank" rel="nofollow">this article</a>.', 'gridd' ),
-		'section'         => 'footer_grid',
-		'default'         => '0',
-		'transport'       => 'auto',
-		'output'          => [
-			[
-				'element'  => '.gridd-tp-footer.custom-options',
-				'property' => '--gg',
-			],
-		],
-		'priority'        => 30,
-		'active_callback' => function() {
-			return get_theme_mod( 'footer_custom_options', false );
-		},
-	]
-);
-
 /**
  * Deprecate option for now.
 new \Kirki\Field\Dimension(
