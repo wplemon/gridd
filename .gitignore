@@ -30,14 +30,6 @@ packages/wp-coding-standards/
 packages/wptrt/wpthemereview/
 packages/composer/installers/
 
-assets/css/blocks/block-library/**/*.js
-assets/css/blocks/block-library/**/*.json
-assets/css/blocks/block-library/**/editor.scss
-assets/css/blocks/block-library/**/*.php
-assets/css/blocks/block-library/**/*.snap
-assets/css/blocks/block-library/**/*.native.scss
-assets/css/blocks/block-library/style.scss
-assets/css/blocks/block-library/theme.scss
 packages/wplemon/control-palette-builder/src/PaletteBuilderForm.js
 packages/wplemon/control-palette-builder/src/PaletteBuilderControl.js
 packages/wplemon/control-palette-builder/src/index.js
@@ -51,16 +43,3 @@ packages/wplemon/control-palette-builder/.eslintignore
 packages/wplemon/control-palette-builder/.babelrc
 
 FUNDING.yml
-
-assets/css/blocks/block-library/.npmrc
-
-assets/css/blocks/block-library/CHANGELOG.md
-
-assets/css/blocks/block-library/README.md
-
-assets/css/blocks/block-library/audio
-assets/css/blocks/block-library/calendar
-assets/css/blocks/block-library/categories
-assets/css/blocks/block-library/code
-assets/css/blocks/block-library/file
-assets/css/blocks/block-library/search

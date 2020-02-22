@@ -22,5 +22,4 @@ LICENSE
 /assets/css/core/*.min.css
 /assets/css/admin/*.css
 /assets/css/customizer/*.css
-/assets/css/blocks/block-library/**/*.scss
 assets/css/**/*.js

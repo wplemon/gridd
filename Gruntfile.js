@@ -9,7 +9,7 @@ module.exports = function( grunt ) {
 				files: [ {
 					expand: true,
 					cwd: 'assets/css/',
-					src: [ '**/*.scss', '!blocks/block-library/**/*.scss' ],
+					src: [ '**/*.scss' ],
 					dest: 'assets/css',
 					ext: '.css',
 					extDot: 'first'

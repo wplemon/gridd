@@ -1,0 +1,88 @@
+.wp-block-table {
+	overflow-x: auto;
+	border-collapse: collapse;
+	min-width: 30em;
+}
+
+.wp-block-table table {
+	width: 100%;
+}
+
+.wp-block-table .has-fixed-layout {
+	table-layout: fixed;
+	width: 100%;
+}
+
+.wp-block-table td,
+.wp-block-table th {
+	padding: 0.5em;
+	border: 1px solid;
+	word-break: normal;
+}
+
+.wp-block-table .has-fixed-layout td,
+.wp-block-table .has-fixed-layout th {
+	word-break: break-word;
+}
+
+.wp-block-table.alignleft,
+.wp-block-table.aligncenter,
+.wp-block-table.alignright {
+	display: table;
+	width: auto;
+}
+
+.wp-block-table.alignleft td,
+.wp-block-table.alignleft th,
+.wp-block-table.aligncenter td,
+.wp-block-table.aligncenter th,
+.wp-block-table.alignright td,
+.wp-block-table.alignright th {
+	word-break: break-word;
+}
+
+.wp-block-table.is-style-stripes {
+	border-spacing: 0;
+	border-collapse: inherit;
+	background-color: transparent;
+	border-bottom: 1px solid #f3f4f5;
+}
+
+.wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+.wp-block-table.is-style-stripes.has-subtle-light-gray-background-color tbody tr:nth-child(odd) {
+	background-color: #f3f4f5;
+}
+
+.wp-block-table.is-style-stripes.has-subtle-pale-green-background-color tbody tr:nth-child(odd) {
+	background-color: #e9fbe5;
+}
+
+.wp-block-table.is-style-stripes.has-subtle-pale-blue-background-color tbody tr:nth-child(odd) {
+	background-color: #e7f5fe;
+}
+
+.wp-block-table.is-style-stripes.has-subtle-pale-pink-background-color tbody tr:nth-child(odd) {
+	background-color: #fcf0ef;
+}
+
+.wp-block-table.is-style-stripes th,
+.wp-block-table.is-style-stripes td {
+	border-color: transparent;
+}
+
+.wp-block-table thead {
+	border-bottom: 3px solid;
+}
+
+.wp-block-table tfoot {
+	border-top: 3px solid;
+}
+
+.wp-block-table figcaption {
+	color: #555d66;
+	font-size: var(--fs-tr);
+	text-align: center;
+}
