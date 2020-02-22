@@ -71,9 +71,8 @@ class Footer_Copyright extends \Gridd\Upgrades\Block_Migrator {
 		$text_color       = get_theme_mod( 'footer_copyright_color', '#000000' );
 
 		// Get the final content from our HTML file.
-		ob_start();
-		include 'group-with-content.html';
-		$final_content = ob_get_clean();
+		// Not a remote URL, we can safely use file_get_contents.
+		$final_content .= file_get_contents( __DIR__ . '/group-with-content.html' ); // phpcs:ignore WordPress.WP.AlternativeFunctions
 
 		// Replace placeholders with actual values.
 		$final_content = str_replace( 'BACKGROUND_COLOR', esc_attr( $background_color ), $final_content );
