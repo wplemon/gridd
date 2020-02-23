@@ -42,6 +42,7 @@ class Block_Styles {
 		 */
 		add_filter( 'render_block', [ $this, 'add_inline_styles' ], 10, 2 );
 		add_filter( 'render_block', [ $this, 'convert_columns_to_grid' ], 10, 2 );
+		add_filter( 'render_block', [ $this, 'cover_styles' ], 10, 2 );
 	}
 
 	/**
@@ -114,6 +115,32 @@ class Block_Styles {
 			$block_content = str_replace(
 				'class="wp-block-columns"',
 				'class="wp-block-columns" style="grid-template-columns:' . implode( ' ', $grid_template_columns ) . ';"',
+				$block_content
+			);
+		}
+		return $block_content;
+	}
+
+	/**
+	 * Filters the content of a single block.
+	 *
+	 * Add CSS-Variables to the cover block.
+	 *
+	 * @since 3.0.0
+	 * @access public
+	 * @param string $block_content The block content about to be appended.
+	 * @param array  $block         The full block, including name and attributes.
+	 * @return string               Returns $block_content with our modifications.
+	 */
+	public function cover_styles( $block_content, $block ) {
+		if ( 'core/cover' === $block['blockName'] ) {
+			$extra_styles = '';
+			if ( isset( $block['attrs'] ) && isset( $block['attrs']['dimRatio'] ) ) {
+				$extra_styles = '--dimRatio:' . ( absint( $block['attrs']['dimRatio'] ) / 100 ) . ';';
+			}
+			$block_content = str_replace(
+				'style="',
+				'style="' . $extra_styles,
 				$block_content
 			);
 		}
