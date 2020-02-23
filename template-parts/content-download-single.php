@@ -11,7 +11,7 @@ use Gridd\Blog;
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> aria-label="<?php echo esc_attr( get_the_title() ); ?>">
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="contentinfo" aria-label="<?php echo esc_attr( get_the_title() ); ?>">
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', Blog::get_the_edit_link() . '</h1>' ); ?>
 	</header>
