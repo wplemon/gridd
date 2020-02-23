@@ -106,7 +106,7 @@ class Widget_Area extends \Gridd\Upgrades\Block_Migrator {
 		$content = '';
 
 		// Get the block settings.
-		$settings = $class->get_settings()[ absint( str_replace( 'categories-', '', $widget_id ) ) ];
+		$settings = $class->get_settings()[ absint( str_replace( 'archives-', '', $widget_id ) ) ];
 
 		// Build the arguments.
 		$args = [
