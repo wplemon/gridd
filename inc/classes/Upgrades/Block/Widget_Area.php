@@ -220,4 +220,29 @@ class Widget_Area extends \Gridd\Upgrades\Block_Migrator {
 
 		return $content;
 	}
+
+	/**
+	 * Gets the block contents for WP_Widget_Categories.
+	 *
+	 * @access protected
+	 * @since 3.0.0
+	 * @param string               $widget_id The widget-ID.
+	 * @param WP_Widget_Categories $class     The widget class.
+	 * @return string
+	 */
+	protected function get_contents_wp_widget_custom_html( $widget_id, $class ) {
+		$content = '';
+
+		// Get the block settings.
+		$settings = $class->get_settings()[ absint( str_replace( 'custom_html-', '', $widget_id ) ) ];
+
+		// Add the title.
+		if ( isset( $settings['title'] ) && ! empty( trim( $settings['title'] ) ) ) {
+			$content = '<!-- wp:heading {"level":3} --><h3>' . $settings['title'] . '</h3><!-- /wp:heading -->';
+		}
+
+		$content .= '<!-- wp:html -->' . $settings['content'] . '<!-- /wp:html -->';
+
+		return $content;
+	}
 }
