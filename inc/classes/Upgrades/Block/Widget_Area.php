@@ -37,6 +37,7 @@ class Widget_Area extends \Gridd\Upgrades\Block_Migrator {
 	 * Constructor.
 	 *
 	 * @access public
+	 * @param array $args The constructor arguments.
 	 * @since 3.0.0
 	 */
 	public function __construct( $args ) {
