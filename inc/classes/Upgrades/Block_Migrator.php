@@ -45,8 +45,9 @@ abstract class Block_Migrator {
 	 *
 	 * @access public
 	 * @since 3.0.0
+	 * @param array $args An array of arguments. Child classes may use it.
 	 */
-	public function __construct() {
+	public function __construct( $args = [] ) {
 		add_action( 'wp', [ $this, 'migrate_content' ] );
 	}
 
