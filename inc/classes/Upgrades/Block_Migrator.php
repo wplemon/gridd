@@ -47,7 +47,7 @@ abstract class Block_Migrator {
 	 * @since 3.0.0
 	 */
 	public function __construct() {
-		$this->migrate_content();
+		add_action( 'wp', [ $this, 'migrate_content' ] );
 	}
 
 	/**
