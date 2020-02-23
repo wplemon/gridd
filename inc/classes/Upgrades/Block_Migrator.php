@@ -34,6 +34,15 @@ abstract class Block_Migrator {
 	protected $title;
 
 	/**
+	 * An array of arguments passed-on to the constructor.
+	 *
+	 * @access protected
+	 * @since 3.0.0
+	 * @var array
+	 */
+	protected $args = [];
+
+	/**
 	 * The post-type where we'll be storing our migrated blocks.
 	 *
 	 * @var string
@@ -48,6 +57,7 @@ abstract class Block_Migrator {
 	 * @param array $args An array of arguments. Child classes may use it.
 	 */
 	public function __construct( $args = [] ) {
+		$this->args = $args;
 		add_action( 'wp', [ $this, 'migrate_content' ] );
 	}
 
@@ -58,7 +68,7 @@ abstract class Block_Migrator {
 	 * @since 3.0.0
 	 * @return void
 	 */
-	protected function migrate_content() {
+	public function migrate_content() {
 
 		// Sanity check.
 		if ( ! $this->slug ) {
@@ -79,7 +89,7 @@ abstract class Block_Migrator {
 			[
 				'post_content' => $this->get_content(),
 				'post_title'   => $this->title,
-				'guid'         => $this->slug,
+				'post_name'    => $this->slug,
 				'post_type'    => self::POST_TYPE,
 				'post_status'  => 'publish',
 			]
@@ -109,11 +119,14 @@ abstract class Block_Migrator {
 	 * @since 3.0.0
 	 * @return bool
 	 */
-	protected function block_exists() {
-		$args  = [
-			'post_name__in' => [ $this->slug ],
-			'post_type'     => self::POST_TYPE,
-		];
+	protected function block_exists( $args = [] ) {
+		$args  = wp_parse_args(
+			$args,
+			[
+				'post_name__in' => [ $this->slug ],
+				'post_type'     => self::POST_TYPE,
+			]
+		);
 		$query = new \WP_Query( $args );
 
 		return ( $query->posts && isset( $query->posts[0] ) && isset( $query->posts[0]->ID ) && $query->posts[0]->ID );
