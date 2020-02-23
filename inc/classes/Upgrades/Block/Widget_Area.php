@@ -232,4 +232,34 @@ class Widget_Area extends \Gridd\Upgrades\Block_Migrator {
 
 		return $content;
 	}
+
+	/**
+	 * Gets the block contents for WP_Widget_Categories.
+	 *
+	 * @access protected
+	 * @since 3.0.0
+	 * @param string               $widget_id The widget-ID.
+	 * @param WP_Widget_Categories $class     The widget class.
+	 * @return string
+	 */
+	protected function get_contents_wp_widget_media_gallery( $widget_id, $class ) {
+
+		// Get the block settings.
+		$settings = $class->get_settings()[ absint( str_replace( 'media_gallery-', '', $widget_id ) ) ];
+
+		$content  = $this->get_widget_title( $settings );
+		$content .= '<!-- wp:gallery ' . wp_json_encode( [ 'ids' => $settings['ids'] ] ) . ' -->';
+		$content .= '<figure class="wp-block-gallery columns-' . $settings['columns'] . ' is-cropped">';
+		$content .= '<ul class="blocks-gallery-grid">';
+		foreach ( $settings['ids'] as $img_id ) {
+			$meta = wp_get_attachment_metadata( $img_id );
+
+			$content .= '<li class="blocks-gallery-item"><figure>';
+			$content .= '<img src="' . $meta['sizes'][ $settings['size'] ] . '" alt="" data-id="' . $img_id . '" data-full-url="' . wp_get_attachment_url( $img_id ) . '" data-link="' . wp_get_attachment_url( $img_id ) . '" class="wp-image-' . $img_id . '"/>';
+			$content .= '</figure></li>';
+		}
+		$content .= '</ul></figure><!-- /wp:gallery -->';
+
+		return $content;
+	}
 }

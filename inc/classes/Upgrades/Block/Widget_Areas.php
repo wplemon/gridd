@@ -68,11 +68,12 @@ class Widget_Areas {
 				}
 
 				$widget_blocks = [
-					'WP_Widget_Archives'    => 'core/archives',
-					'WP_Widget_Media_Audio' => 'core/audio',
-					'WP_Widget_Calendar'    => 'core/calendar',
-					'WP_Widget_Categories'  => 'core/categories',
-					'WP_Widget_Custom_HTML' => 'core/html',
+					'WP_Widget_Archives'      => 'core/archives',
+					'WP_Widget_Media_Audio'   => 'core/audio',
+					'WP_Widget_Calendar'      => 'core/calendar',
+					'WP_Widget_Categories'    => 'core/categories',
+					'WP_Widget_Custom_HTML'   => 'core/html',
+					'WP_Widget_Media_Gallery' => 'core/gallery',
 				];
 
 				// Check if this is a widget we can migrate.
