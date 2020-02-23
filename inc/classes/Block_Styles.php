@@ -3,6 +3,7 @@
  * Print block styles.
  *
  * @package Gridd
+ * @since 3.0.0
  */
 
 namespace Gridd;
@@ -10,7 +11,7 @@ namespace Gridd;
 /**
  * Template handler.
  *
- * @since 1.0
+ * @since 3.0.0
  */
 class Block_Styles {
 
@@ -19,7 +20,7 @@ class Block_Styles {
 	 *
 	 * @static
 	 * @access private
-	 * @since 1.0.2
+	 * @since 3.0.0
 	 * @var array
 	 */
 	private static $block_styles_added = [];
@@ -27,7 +28,7 @@ class Block_Styles {
 	/**
 	 * Constructor.
 	 *
-	 * @since 1.0
+	 * @since 3.0.0
 	 * @access public
 	 */
 	public function __construct() {
@@ -39,7 +40,7 @@ class Block_Styles {
 		 * We'll use this to populate the $blocks property of this object
 		 * and enque the CSS needed for them.
 		 */
-		add_filter( 'render_block', [ $this, 'render_block' ], 10, 2 );
+		add_filter( 'render_block', [ $this, 'add_inline_styles' ], 10, 2 );
 		add_filter( 'render_block', [ $this, 'convert_columns_to_grid' ], 10, 2 );
 	}
 
@@ -47,7 +48,7 @@ class Block_Styles {
 	 * Enqueue scripts.
 	 *
 	 * @access public
-	 * @since 1.0
+	 * @since 3.0.0
 	 */
 	public function scripts() {
 
@@ -59,13 +60,15 @@ class Block_Styles {
 	/**
 	 * Filters the content of a single block.
 	 *
-	 * @since 1.0.2
+	 * Adds inline styles to blocks. Styles will only be added the 1st time we encounter the block.
+	 *
+	 * @since 3.0.0
 	 * @access public
 	 * @param string $block_content The block content about to be appended.
 	 * @param array  $block         The full block, including name and attributes.
-	 * @return string               Returns $block_content unaltered.
+	 * @return string               Returns $block_content with our modifications.
 	 */
-	public function render_block( $block_content, $block ) {
+	public function add_inline_styles( $block_content, $block ) {
 		if ( $block['blockName'] ) {
 			if ( ! in_array( $block['blockName'], self::$block_styles_added, true ) ) {
 				self::$block_styles_added[] = $block['blockName'];
