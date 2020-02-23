@@ -90,6 +90,21 @@ class Widget_Area extends \Gridd\Upgrades\Block_Migrator {
 	}
 
 	/**
+	 * Get the widget title.
+	 *
+	 * @access protected
+	 * @since 3.0.0
+	 * @param array $args The widget arguments.
+	 * @return string
+	 */
+	protected function get_widget_title( $args ) {
+		if ( isset( $args['title'] ) && ! empty( trim( $args['title'] ) ) ) {
+			return '<!-- wp:heading {"level":3} --><h3>' . $args['title'] . '</h3><!-- /wp:heading -->';
+		}
+		return '';
+	}
+
+	/**
 	 * Gets the block contents for WP_Widget_Categories.
 	 *
 	 * @access protected
@@ -99,7 +114,6 @@ class Widget_Area extends \Gridd\Upgrades\Block_Migrator {
 	 * @return string
 	 */
 	protected function get_contents_wp_widget_archives( $widget_id, $class ) {
-		$content = '';
 
 		// Get the block settings.
 		$settings = $class->get_settings()[ absint( str_replace( 'archives-', '', $widget_id ) ) ];
@@ -110,12 +124,7 @@ class Widget_Area extends \Gridd\Upgrades\Block_Migrator {
 			'showPostCounts'    => ( isset( $settings['count'] ) && $settings['count'] ),
 		];
 
-		// Add the title.
-		if ( isset( $settings['title'] ) && ! empty( trim( $settings['title'] ) ) ) {
-			$content = '<!-- wp:heading {"level":3} --><h3>' . $settings['title'] . '</h3><!-- /wp:heading -->';
-		}
-
-		// Add the archives block.
+		$content  = $this->get_widget_title( $settings );
 		$content .= '<!-- wp:archives ' . wp_json_encode( $args ) . ' /-->';
 
 		return $content;
@@ -131,7 +140,6 @@ class Widget_Area extends \Gridd\Upgrades\Block_Migrator {
 	 * @return string
 	 */
 	protected function get_contents_wp_widget_categories( $widget_id, $class ) {
-		$content = '';
 
 		// Get the block settings.
 		$settings = $class->get_settings()[ absint( str_replace( 'categories-', '', $widget_id ) ) ];
@@ -143,12 +151,7 @@ class Widget_Area extends \Gridd\Upgrades\Block_Migrator {
 			'showPostCounts'    => ( isset( $settings['count'] ) && $settings['count'] ),
 		];
 
-		// Add the title.
-		if ( isset( $settings['title'] ) && ! empty( trim( $settings['title'] ) ) ) {
-			$content = '<!-- wp:heading {"level":3} --><h3>' . $settings['title'] . '</h3><!-- /wp:heading -->';
-		}
-
-		// Add the categories block.
+		$content  = $this->get_widget_title( $settings );
 		$content .= '<!-- wp:categories ' . wp_json_encode( $args ) . ' /-->';
 
 		return $content;
@@ -164,15 +167,9 @@ class Widget_Area extends \Gridd\Upgrades\Block_Migrator {
 	 * @return string
 	 */
 	protected function get_contents_wp_widget_media_audio( $widget_id, $class ) {
-		$content = '';
 
 		// Get the block settings.
 		$settings = $class->get_settings()[ absint( str_replace( 'media_audio-', '', $widget_id ) ) ];
-
-		// Add the title.
-		if ( isset( $settings['title'] ) && ! empty( trim( $settings['title'] ) ) ) {
-			$content = '<!-- wp:heading {"level":3} --><h3>' . $settings['title'] . '</h3><!-- /wp:heading -->';
-		}
 
 		$url = false;
 		foreach ( [ 'mp3', 'ogg', 'flac', 'm4a', 'wav' ] as $filetype ) {
@@ -181,7 +178,7 @@ class Widget_Area extends \Gridd\Upgrades\Block_Migrator {
 			}
 		}
 
-		// Add the audio block.
+		$content  = $this->get_widget_title( $settings );
 		$content .= '<!-- wp:audio {"id":' . $settings['attachment_id'] . '} -->';
 		$content .= '<figure class="wp-block-audio">';
 		$content .= '<audio controls src="' . $url . '" autoplay';
@@ -206,16 +203,11 @@ class Widget_Area extends \Gridd\Upgrades\Block_Migrator {
 	 * @return string
 	 */
 	protected function get_contents_wp_widget_calendar( $widget_id, $class ) {
-		$content = '';
 
 		// Get the block settings.
 		$settings = $class->get_settings()[ absint( str_replace( 'calendar-', '', $widget_id ) ) ];
 
-		// Add the title.
-		if ( isset( $settings['title'] ) && ! empty( trim( $settings['title'] ) ) ) {
-			$content = '<!-- wp:heading {"level":3} --><h3>' . $settings['title'] . '</h3><!-- /wp:heading -->';
-		}
-
+		$content  = $this->get_widget_title( $settings );
 		$content .= '<!-- wp:calendar /-->';
 
 		return $content;
@@ -231,16 +223,11 @@ class Widget_Area extends \Gridd\Upgrades\Block_Migrator {
 	 * @return string
 	 */
 	protected function get_contents_wp_widget_custom_html( $widget_id, $class ) {
-		$content = '';
 
 		// Get the block settings.
 		$settings = $class->get_settings()[ absint( str_replace( 'custom_html-', '', $widget_id ) ) ];
 
-		// Add the title.
-		if ( isset( $settings['title'] ) && ! empty( trim( $settings['title'] ) ) ) {
-			$content = '<!-- wp:heading {"level":3} --><h3>' . $settings['title'] . '</h3><!-- /wp:heading -->';
-		}
-
+		$content  = $this->get_widget_title( $settings );
 		$content .= '<!-- wp:html -->' . $settings['content'] . '<!-- /wp:html -->';
 
 		return $content;
