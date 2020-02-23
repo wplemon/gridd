@@ -40,6 +40,7 @@ class Block_Styles {
 		 * and enque the CSS needed for them.
 		 */
 		add_filter( 'render_block', [ $this, 'render_block' ], 10, 2 );
+		add_filter( 'render_block', [ $this, 'convert_columns_to_grid' ], 10, 2 );
 	}
 
 	/**
@@ -77,6 +78,41 @@ class Block_Styles {
 					$block_content .= '</style>';
 				}
 			}
+		}
+		return $block_content;
+	}
+
+	/**
+	 * Filters the content of a single block.
+	 *
+	 * Takes care of the "grid-template-columns" property for columns
+	 * so we can properly use a css-grid layout instead of css-flexbox.
+	 *
+	 * @since 3.0.0
+	 * @access public
+	 * @param string $block_content The block content about to be appended.
+	 * @param array  $block         The full block, including name and attributes.
+	 * @return string               Returns $block_content with our modifications.
+	 */
+	public function convert_columns_to_grid( $block_content, $block ) {
+		if ( 'core/columns' === $block['blockName'] ) {
+			$grid_template_columns = [];
+			foreach ( $block['innerBlocks'] as $column ) {
+				$column_width = 'minmax(7em, 1fr)';
+				if ( isset( $column['attrs'] ) && isset( $column['attrs']['width'] ) ) {
+					$column_width = 'minmax(7em, ' . $column['attrs']['width'] . ')';
+					if ( is_numeric( $column['attrs']['width'] ) ) {
+						$column_width = 'minmax(7em, ' . $column['attrs']['width'] . 'fr)';
+					}
+				}
+				$grid_template_columns[] = $column_width;
+			}
+
+			$block_content = str_replace(
+				'class="wp-block-columns"',
+				'class="wp-block-columns" style="grid-template-columns:' . implode( ' ', $grid_template_columns ) . ';"',
+				$block_content
+			);
 		}
 		return $block_content;
 	}
