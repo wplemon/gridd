@@ -71,6 +71,7 @@ class Widget_Areas {
 					'WP_Widget_Archives'    => 'core/archives',
 					'WP_Widget_Media_Audio' => 'core/audio',
 					'WP_Widget_Categories'  => 'core/categories',
+					'WP_Widget_Calendar'    => 'core/calendar',
 				];
 
 				// Check if this is a widget we can migrate.
