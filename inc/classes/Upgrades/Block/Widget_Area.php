@@ -105,12 +105,12 @@ class Widget_Area extends \Gridd\Upgrades\Block_Migrator {
 	}
 
 	/**
-	 * Gets the block contents for WP_Widget_Categories.
+	 * Gets the block contents for WP_Widget_Archives.
 	 *
 	 * @access protected
 	 * @since 3.0.0
-	 * @param string               $widget_id The widget-ID.
-	 * @param WP_Widget_Categories $class     The widget class.
+	 * @param string             $widget_id The widget-ID.
+	 * @param WP_Widget_Archives $class     The widget class.
 	 * @return string
 	 */
 	protected function get_contents_wp_widget_archives( $widget_id, $class ) {
@@ -158,12 +158,12 @@ class Widget_Area extends \Gridd\Upgrades\Block_Migrator {
 	}
 
 	/**
-	 * Gets the block contents for WP_Widget_Categories.
+	 * Gets the block contents for WP_Widget_Media_Audio.
 	 *
 	 * @access protected
 	 * @since 3.0.0
-	 * @param string               $widget_id The widget-ID.
-	 * @param WP_Widget_Categories $class     The widget class.
+	 * @param string                $widget_id The widget-ID.
+	 * @param WP_Widget_Media_Audio $class     The widget class.
 	 * @return string
 	 */
 	protected function get_contents_wp_widget_media_audio( $widget_id, $class ) {
@@ -194,12 +194,12 @@ class Widget_Area extends \Gridd\Upgrades\Block_Migrator {
 	}
 
 	/**
-	 * Gets the block contents for WP_Widget_Categories.
+	 * Gets the block contents for WP_Widget_Calendar.
 	 *
 	 * @access protected
 	 * @since 3.0.0
-	 * @param string               $widget_id The widget-ID.
-	 * @param WP_Widget_Categories $class     The widget class.
+	 * @param string             $widget_id The widget-ID.
+	 * @param WP_Widget_Calendar $class     The widget class.
 	 * @return string
 	 */
 	protected function get_contents_wp_widget_calendar( $widget_id, $class ) {
@@ -214,12 +214,12 @@ class Widget_Area extends \Gridd\Upgrades\Block_Migrator {
 	}
 
 	/**
-	 * Gets the block contents for WP_Widget_Categories.
+	 * Gets the block contents for WP_Widget_Custom_HTML.
 	 *
 	 * @access protected
 	 * @since 3.0.0
-	 * @param string               $widget_id The widget-ID.
-	 * @param WP_Widget_Categories $class     The widget class.
+	 * @param string                $widget_id The widget-ID.
+	 * @param WP_Widget_Custom_HTML $class     The widget class.
 	 * @return string
 	 */
 	protected function get_contents_wp_widget_custom_html( $widget_id, $class ) {
@@ -234,12 +234,12 @@ class Widget_Area extends \Gridd\Upgrades\Block_Migrator {
 	}
 
 	/**
-	 * Gets the block contents for WP_Widget_Categories.
+	 * Gets the block contents for WP_Widget_Media_Gallery.
 	 *
 	 * @access protected
 	 * @since 3.0.0
-	 * @param string               $widget_id The widget-ID.
-	 * @param WP_Widget_Categories $class     The widget class.
+	 * @param string                  $widget_id The widget-ID.
+	 * @param WP_Widget_Media_Gallery $class     The widget class.
 	 * @return string
 	 */
 	protected function get_contents_wp_widget_media_gallery( $widget_id, $class ) {
