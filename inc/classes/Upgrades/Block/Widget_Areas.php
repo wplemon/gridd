@@ -67,25 +67,24 @@ class Widget_Areas {
 					continue;
 				}
 
+				$widget_blocks = [
+					'WP_Widget_Archives'    => 'core/archives',
+					'WP_Widget_Media_Audio' => 'core/audio',
+					'WP_Widget_Categories'  => 'core/categories',
+				];
+
 				// Check if this is a widget we can migrate.
 				$class_name = get_class( $class );
-				switch ( $class_name ) {
-					case 'WP_Widget_Archives':
-						if ( isset( $registered_blocks['core/archives'] ) ) {
-							$can_migrate[]        = true;
-							$widgets_to_migrate[] = $widget_id;
-							break;
-						}
+
+				if ( isset( $widget_blocks[ $class_name ] ) ) {
+					if ( isset( $registered_blocks[ $widget_blocks[ $class_name ] ] ) ) {
+						$can_migrate[]        = true;
+						$widgets_to_migrate[] = $widget_id;
+					} else {
 						$can_migrate[] = false;
-						break;
-					case 'WP_Widget_Categories':
-						if ( isset( $registered_blocks['core/categories'] ) ) {
-							$can_migrate[]        = true;
-							$widgets_to_migrate[] = $widget_id;
-							break;
-						}
-						$can_migrate[] = false;
-						break;
+					}
+				} else {
+					$can_migrate[] = false;
 				}
 			}
 

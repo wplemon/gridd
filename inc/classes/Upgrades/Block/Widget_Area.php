@@ -76,17 +76,12 @@ class Widget_Area extends \Gridd\Upgrades\Block_Migrator {
 		// Loop widget areas.
 		foreach ( $this->widgets as $widget_id ) {
 
-			$class      = $wp_registered_widgets[ $widget_id ]['callback'][0];
-			$class_name = get_class( $class );
+			$class       = $wp_registered_widgets[ $widget_id ]['callback'][0];
+			$class_name  = get_class( $class );
+			$method_name = 'get_contents_' . strtolower( $class_name );
 
-			switch ( $class_name ) {
-				case 'WP_Widget_Archives':
-					$content .= $this->get_contents_wp_widget_archives( $widget_id, $class );
-					break;
-
-				case 'WP_Widget_Categories':
-					$content .= $this->get_contents_wp_widget_categories( $widget_id, $class );
-					break;
+			if ( is_callable( [ $this, $method_name ] ) ) {
+				$content .= $this->$method_name( $widget_id, $class );
 			}
 		}
 
@@ -154,6 +149,48 @@ class Widget_Area extends \Gridd\Upgrades\Block_Migrator {
 
 		// Add the categories block.
 		$content .= '<!-- wp:categories ' . wp_json_encode( $args ) . ' /-->';
+
+		return $content;
+	}
+
+	/**
+	 * Gets the block contents for WP_Widget_Categories.
+	 *
+	 * @access protected
+	 * @since 3.0.0
+	 * @param string               $widget_id The widget-ID.
+	 * @param WP_Widget_Categories $class     The widget class.
+	 * @return string
+	 */
+	protected function get_contents_wp_widget_media_audio( $widget_id, $class ) {
+		$content = '';
+
+		// Get the block settings.
+		$settings = $class->get_settings()[ absint( str_replace( 'media_audio-', '', $widget_id ) ) ];
+
+		// Add the title.
+		if ( isset( $settings['title'] ) && ! empty( trim( $settings['title'] ) ) ) {
+			$content = '<!-- wp:heading {"level":3} --><h3>' . $settings['title'] . '</h3><!-- /wp:heading -->';
+		}
+
+		$url = false;
+		foreach ( [ 'mp3', 'ogg', 'flac', 'm4a', 'wav' ] as $filetype ) {
+			if ( isset( $settings[ $filetype ] ) && ! empty( $settings[ $filetype ] ) ) {
+				$url = $settings[ $filetype ];
+			}
+		}
+
+		// Add the audio block.
+		$content .= '<!-- wp:audio {"id":' . $settings['attachment_id'] . '} -->';
+		$content .= '<figure class="wp-block-audio">';
+		$content .= '<audio controls src="' . $url . '" autoplay';
+		if ( isset( $settings['loop'] ) && $settings['loop'] ) {
+			$content .= ' loop';
+		}
+		if ( isset( $settings['preload'] ) ) {
+			$content .= ' preload="' . $settings['preload'] . '">';
+		}
+		$content .= '</audio></figure><!-- /wp:audio -->';
 
 		return $content;
 	}
