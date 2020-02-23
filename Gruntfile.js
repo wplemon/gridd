@@ -9,7 +9,7 @@ module.exports = function( grunt ) {
 				files: [ {
 					expand: true,
 					cwd: 'assets/css/',
-					src: [ '**/*.scss' ],
+					src: [ '**/*.scss', '!blocks/block-library/**/*.scss' ],
 					dest: 'assets/css',
 					ext: '.css',
 					extDot: 'first'
@@ -121,6 +121,13 @@ module.exports = function( grunt ) {
 					'assets/css/**/*.scss'
                 ],
                 tasks: [ 'sass:main', 'cssmin' ]
+			},
+            cssCoreBlocks: {
+                files: [
+					'assets/css/blocks/core/*.css',
+					'!assets/css/blocks/core/*.min.css'
+                ],
+                tasks: [ 'cssmin' ]
 			},
             cssGridParts: {
                 files: [
