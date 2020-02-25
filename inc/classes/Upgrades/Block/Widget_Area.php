@@ -262,4 +262,83 @@ class Widget_Area extends \Gridd\Upgrades\Block_Migrator {
 
 		return $content;
 	}
+
+	/**
+	 * Gets the block contents for WP_Widget_Media_Image.
+	 *
+	 * @access protected
+	 * @since 3.0.0
+	 * @param string                $widget_id The widget-ID.
+	 * @param WP_Widget_Media_Image $class     The widget class.
+	 * @return string
+	 */
+	protected function get_contents_wp_widget_media_image( $widget_id, $class ) {
+
+		// Get the block settings.
+		$settings = $class->get_settings()[ absint( str_replace( 'media_image-', '', $widget_id ) ) ];
+
+		$image_args = [
+			'id'       => $settings['attachment_id'],
+			'width'    => $settings['width'],
+			'height'   => $settings['height'],
+			'sizeSlug' => $settings['size']
+		];
+
+		$content  = $this->get_widget_title( $settings );
+		$content .= '<!-- wp:image ' . wp_json_encode( $image_args ) . ' -->';
+		$content .= '<figure class="wp-block-image size-' . $settings['size'] . ' is-resized">';
+		if ( $settings['link_url'] ) {
+			$content .= '<a href="' . $settings['link_url'] . '">';
+		}
+		$content .= '<img src="' . $settings['url'] . '" alt="' . $settings['alt'] . '" class="wp-image-' . $settings['attachment_id'] . '" width="' . $settings['width'] . '" height="' . $settings['height'] . '"/>';
+		if ( $settings['link_url'] ) {
+			$content .= '</a>';
+		}
+		if ( $settings['caption'] ) {
+			$content .= '<figcaption>' . $settings['caption'] . '</figcaption>';
+		}
+		$content .= '</figure><!-- /wp:image -->';
+
+		return $content;
+	}
+
+	/**
+	 * Gets the block contents for WP_Widget_Recent_Comments.
+	 *
+	 * @access protected
+	 * @since 3.0.0
+	 * @param string                    $widget_id The widget-ID.
+	 * @param WP_Widget_Recent_Comments $class     The widget class.
+	 * @return string
+	 */
+	protected function get_contents_wp_widget_recent_comments( $widget_id, $class ) {
+
+		// Get the block settings.
+		$settings = $class->get_settings()[ absint( str_replace( 'recent-comments-', '', $widget_id ) ) ];
+		return '<!-- wp:latest-comments {"commentsToShow":' . $settings['number'] . '} /-->';
+	}
+
+	/**
+	 * Gets the block contents for WP_Widget_RSS.
+	 *
+	 * @access protected
+	 * @since 3.0.0
+	 * @param string        $widget_id The widget-ID.
+	 * @param WP_Widget_RSS $class     The widget class.
+	 * @return string
+	 */
+	protected function get_contents_wp_widget_rss( $widget_id, $class ) {
+
+		// Get the block settings.
+		$settings = $class->get_settings()[ absint( str_replace( 'rss-', '', $widget_id ) ) ];
+		$args     = [
+			'feedURL'        => $settings['url'],
+			'itemsToShow'    => $settings['items'],
+			'displayExcerpt' => (bool) $settings['show_summary'],
+			'displayAuthor'  => (bool) $settings['show_author'],
+			'displayDate'    => (bool) $settings['show_date'],
+			'excerptLength'  => 50,
+		];
+		return '<!-- wp:rss ' . wp_json_encode( $args ) . ' /-->';
+	}
 }
