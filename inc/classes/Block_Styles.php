@@ -113,8 +113,8 @@ class Block_Styles {
 			}
 
 			$block_content = str_replace(
-				'class="wp-block-columns"',
-				'class="wp-block-columns" style="grid-template-columns:' . implode( ' ', $grid_template_columns ) . ';"',
+				'class="wp-block-columns',
+				'style="grid-template-columns:' . implode( ' ', $grid_template_columns ) . ';" class="wp-block-columns',
 				$block_content
 			);
 		}
