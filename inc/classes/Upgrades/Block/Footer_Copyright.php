@@ -57,32 +57,28 @@ class Footer_Copyright extends \Gridd\Upgrades\Block_Migrator {
 	 * @return string
 	 */
 	protected function get_content() {
-		$content = get_theme_mod(
+
+		$group_args = [
+			'customBackgroundColor' => get_theme_mod( 'footer_copyright_bg_color', '#ffffff' ),
+			'customTextColor'       => get_theme_mod( 'footer_copyright_color', '#000000' ),
+			'align'                 => 'full',
+		];
+
+		$content  = '<!-- wp:group ' . wp_json_encode( $group_args ) . ' -->';
+		$content .= '<div class="wp-block-group alignfull has-text-color has-background">';
+		$content .= '<div class="wp-block-group__inner-container">';
+		$content .= get_theme_mod(
 			'gridd_copyright_text',
 			sprintf(
-				/* translators: 1: CMS name, i.e. WordPress. 2: Theme name, 3: Theme author. */
+			/* translators: 1: CMS name, i.e. WordPress. 2: Theme name, 3: Theme author. */
 				__( 'Proudly powered by %1$s | Theme: %2$s by %3$s.', 'gridd' ),
 				'<a href="https://wordpress.org/">WordPress</a>',
 				'Gridd',
 				'<a href="https://wplemon.com/">wplemon.com</a>'
 			)
 		);
-		$content = wpautop( $content );
-		$content = '<!-- wp:freeform -->' . $content . '<!-- /wp:freeform -->';
-
-		$background_color = get_theme_mod( 'footer_copyright_bg_color', '#ffffff' );
-		$text_color       = get_theme_mod( 'footer_copyright_color', '#000000' );
-
-		// Get the final content from our HTML file.
-		// Not a remote URL, we can safely use file_get_contents.
-		$final_content .= file_get_contents( __DIR__ . '/group-with-content.html' ); // phpcs:ignore WordPress.WP.AlternativeFunctions
-
-		// Replace placeholders with actual values.
-		$final_content = str_replace( 'BACKGROUND_COLOR', esc_attr( $background_color ), $final_content );
-		$final_content = str_replace( 'TEXT_COLOR', esc_attr( $text_color ), $final_content );
-		$final_content = str_replace( 'CONTENT', $content, $final_content );
-
-		return $final_content;
+		$content .= '</div></div><!-- /wp:group -->';
+		return $content;
 	}
 
 	/**
