@@ -63,7 +63,7 @@ class Header_Search extends \Gridd\Upgrades\Block_Migrator {
 
 		// Get the final content from our HTML file.
 		// Not a remote URL, we can safely use file_get_contents.
-		$final_content .= file_get_contents( __DIR__ . '/group-with-content.html' ); // phpcs:ignore WordPress.WP.AlternativeFunctions
+		$final_content = file_get_contents( __DIR__ . '/group-with-content.html' ); // phpcs:ignore WordPress.WP.AlternativeFunctions
 
 		// Replace placeholders with actual values.
 		$final_content = str_replace( 'BACKGROUND_COLOR', esc_attr( $background_color ), $final_content );
