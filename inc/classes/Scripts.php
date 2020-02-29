@@ -7,9 +7,6 @@
 
 namespace Gridd;
 
-use Gridd\Style;
-use Gridd\Grid_Part\Navigation;
-
 /**
  * Template handler.
  *

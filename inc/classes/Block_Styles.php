@@ -43,6 +43,54 @@ class Block_Styles {
 		add_filter( 'render_block', [ $this, 'add_inline_styles' ], 10, 2 );
 		add_filter( 'render_block', [ $this, 'convert_columns_to_grid' ], 10, 2 );
 		add_filter( 'render_block', [ $this, 'cover_styles' ], 10, 2 );
+
+		/**
+		 * Add admin styles for blocks.
+		 */
+		add_action( 'enqueue_block_assets', [ $this, 'enqueue_block_assets' ] );
+	}
+
+	/**
+	 * Get an array of block styles.
+	 *
+	 * @static
+	 * @access public
+	 * @since 3.0.0
+	 * @return array
+	 */
+	public static function get_styled_blocks() {
+		return [
+			'core/audio',
+			'core/button',
+			'core/buttons',
+			'core/calendar',
+			'core/columns',
+			'core/cover',
+			'core/embed',
+			'core/file',
+			'core/gallery',
+			'core/group',
+			'core/image',
+			'core/latest-comments',
+			'core/latest-posts',
+			'core/media-text',
+			'core/navigation-menu',
+			'core/navigation',
+			'core/paragraph',
+			'core/preformatted',
+			'core/pullquote',
+			'core/quote',
+			'core/rss',
+			'core/search',
+			'core/separator',
+			'core/social-links',
+			'core/spacer',
+			'core/subhead',
+			'core/table',
+			'core/text-columns',
+			'core/verse',
+			'core/video',
+		];
 	}
 
 	/**
@@ -145,6 +193,34 @@ class Block_Styles {
 			);
 		}
 		return $block_content;
+	}
+
+	/**
+	 * Enqueue block assets.
+	 *
+	 * @access public
+	 * @since 3.0.0
+	 * @return void
+	 */
+	public function enqueue_block_assets() {
+
+		// We only need this in the editor.
+		if ( ! is_admin() ) {
+			return;
+		}
+
+		// Get an array of blocks.
+		$blocks = self::get_styled_blocks();
+
+		// Add blocks styles.
+		foreach ( $blocks as $block ) {
+			wp_enqueue_style(
+				"gridd-$block",
+				get_theme_file_uri( "assets/css/blocks/$block.min.css" ),
+				[],
+				GRIDD_VERSION
+			);
+		}
 	}
 }
 
