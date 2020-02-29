@@ -281,7 +281,7 @@ class Widget_Area extends \Gridd\Upgrades\Block_Migrator {
 			'id'       => $settings['attachment_id'],
 			'width'    => $settings['width'],
 			'height'   => $settings['height'],
-			'sizeSlug' => $settings['size']
+			'sizeSlug' => $settings['size'],
 		];
 
 		$content  = $this->get_widget_title( $settings );
