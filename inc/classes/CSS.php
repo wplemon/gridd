@@ -109,7 +109,7 @@ class CSS {
 	 */
 	public static function add_file( $path, $media = '' ) {
 
-		if ( isset( self::$enqueued_files[ $path ] ) && $media === self::$enqueued_files[ $media ] ) {
+		if ( isset( self::$enqueued_files[ $path ] ) && $media === self::$enqueued_files[ $path ] ) {
 			return;
 		}
 
