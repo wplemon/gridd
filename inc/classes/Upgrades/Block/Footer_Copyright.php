@@ -67,6 +67,9 @@ class Footer_Copyright extends \Gridd\Upgrades\Block_Migrator {
 				'<a href="https://wplemon.com/">wplemon.com</a>'
 			)
 		);
+		$content = wpautop( $content );
+		$content = '<!-- wp:freeform -->' . $content . '<!-- /wp:freeform -->';
+
 		$background_color = get_theme_mod( 'footer_copyright_bg_color', '#ffffff' );
 		$text_color       = get_theme_mod( 'footer_copyright_color', '#000000' );
 
@@ -77,7 +80,7 @@ class Footer_Copyright extends \Gridd\Upgrades\Block_Migrator {
 		// Replace placeholders with actual values.
 		$final_content = str_replace( 'BACKGROUND_COLOR', esc_attr( $background_color ), $final_content );
 		$final_content = str_replace( 'TEXT_COLOR', esc_attr( $text_color ), $final_content );
-		$final_content = str_replace( 'CONTENT', wpautop( $content ), $final_content );
+		$final_content = str_replace( 'CONTENT', $content, $final_content );
 
 		return $final_content;
 	}

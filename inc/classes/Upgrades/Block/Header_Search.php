@@ -57,7 +57,7 @@ class Header_Search extends \Gridd\Upgrades\Block_Migrator {
 	 * @return string
 	 */
 	protected function get_content() {
-		$content          = '<!-- wp:search /-->';
+		$content          = '<!-- wp:search {"label":""} /-->';
 		$background_color = get_theme_mod( 'header_search_background_color', '#ffffff' );
 		$text_color       = get_theme_mod( 'header_search_color', '#000000' );
 
@@ -68,7 +68,7 @@ class Header_Search extends \Gridd\Upgrades\Block_Migrator {
 		// Replace placeholders with actual values.
 		$final_content = str_replace( 'BACKGROUND_COLOR', esc_attr( $background_color ), $final_content );
 		$final_content = str_replace( 'TEXT_COLOR', esc_attr( $text_color ), $final_content );
-		$final_content = str_replace( 'CONTENT', wpautop( $content ), $final_content );
+		$final_content = str_replace( 'CONTENT', $content, $final_content );
 
 		return $final_content;
 	}
