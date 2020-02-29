@@ -69,7 +69,8 @@ class Header_Search extends \Gridd\Upgrades\Block_Migrator {
 	 * @return void
 	 */
 	public function after_block_migration( $block_id ) {
-		$header_grid = get_theme_mod( 'header_grid', \Gridd\Grid_Part\Header::get_grid_defaults() );
+		$defaults    = get_theme_mod( 'gridd_header_grid', \Gridd\Grid_Part\Header::get_grid_defaults() );
+		$header_grid = get_theme_mod( 'header_grid', $defaults );
 
 		// Replace footer-copyright with the new, reusable block.
 		$header_grid['areas'][ sanitize_key( 'reusable_block_' . $block_id ) ] = $header_grid['areas']['header_search'];

@@ -43,7 +43,8 @@ class Footer_Copyright extends \Gridd\Upgrades\Block_Migrator {
 	protected function should_migrate() {
 
 		// Get the footer grid.
-		$footer_grid = get_theme_mod( 'footer_grid', \Gridd\Grid_Part\Footer::get_grid_defaults() );
+		$defaults    = get_theme_mod( 'gridd_footer_grid', \Gridd\Grid_Part\Footer::get_grid_defaults() );
+		$footer_grid = get_theme_mod( 'footer_grid', $defaults );
 
 		// Check if we have a footer-copyright part in our footer grid.
 		return ( $footer_grid && isset( $footer_grid['areas'] ) && isset( $footer_grid['areas']['footer_copyright'] ) );
