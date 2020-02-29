@@ -57,20 +57,7 @@ class Header_Search extends \Gridd\Upgrades\Block_Migrator {
 	 * @return string
 	 */
 	protected function get_content() {
-		$content          = '<!-- wp:search {"label":""} /-->';
-		$background_color = get_theme_mod( 'header_search_background_color', '#ffffff' );
-		$text_color       = get_theme_mod( 'header_search_color', '#000000' );
-
-		// Get the final content from our HTML file.
-		// Not a remote URL, we can safely use file_get_contents.
-		$final_content = file_get_contents( __DIR__ . '/group-with-content.html' ); // phpcs:ignore WordPress.WP.AlternativeFunctions
-
-		// Replace placeholders with actual values.
-		$final_content = str_replace( 'BACKGROUND_COLOR', esc_attr( $background_color ), $final_content );
-		$final_content = str_replace( 'TEXT_COLOR', esc_attr( $text_color ), $final_content );
-		$final_content = str_replace( 'CONTENT', $content, $final_content );
-
-		return $final_content;
+		return '<!-- wp:search {"label":""} /-->';
 	}
 
 	/**
