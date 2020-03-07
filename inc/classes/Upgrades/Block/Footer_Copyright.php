@@ -43,7 +43,31 @@ class Footer_Copyright extends \Gridd\Upgrades\Block_Migrator {
 	protected function should_migrate() {
 
 		// Get the footer grid.
-		$defaults    = get_theme_mod( 'gridd_footer_grid', \Gridd\Grid_Part\Footer::get_grid_defaults() );
+		$defaults    = get_theme_mod(
+			'gridd_footer_grid',
+			[
+				'rows'         => 2,
+				'columns'      => 3,
+				'areas'        => [
+					'footer_sidebar_1' => [
+						'cells' => [ [ 1, 1 ] ],
+					],
+					'footer_sidebar_2' => [
+						'cells' => [ [ 1, 2 ] ],
+					],
+					'footer_sidebar_3' => [
+						'cells' => [ [ 1, 3 ] ],
+					],
+					'footer_copyright' => [
+						'cells' => [ [ 2, 1 ], [ 2, 2 ], [ 2, 3 ] ],
+					],
+				],
+				'gridTemplate' => [
+					'rows'    => [ 'auto', 'auto' ],
+					'columns' => [ '1fr', '1fr', '1fr', '1fr' ],
+				],
+			]
+		);
 		$footer_grid = get_theme_mod( 'footer_grid', $defaults );
 
 		// Check if we have a footer-copyright part in our footer grid.
@@ -91,7 +115,32 @@ class Footer_Copyright extends \Gridd\Upgrades\Block_Migrator {
 	 * @return void
 	 */
 	public function after_block_migration( $block_id ) {
-		$footer_grid = get_theme_mod( 'footer_grid', \Gridd\Grid_Part\Header::get_grid_defaults() );
+		$defaults    = get_theme_mod(
+			'gridd_footer_grid',
+			[
+				'rows'         => 2,
+				'columns'      => 3,
+				'areas'        => [
+					'footer_sidebar_1' => [
+						'cells' => [ [ 1, 1 ] ],
+					],
+					'footer_sidebar_2' => [
+						'cells' => [ [ 1, 2 ] ],
+					],
+					'footer_sidebar_3' => [
+						'cells' => [ [ 1, 3 ] ],
+					],
+					'footer_copyright' => [
+						'cells' => [ [ 2, 1 ], [ 2, 2 ], [ 2, 3 ] ],
+					],
+				],
+				'gridTemplate' => [
+					'rows'    => [ 'auto', 'auto' ],
+					'columns' => [ '1fr', '1fr', '1fr', '1fr' ],
+				],
+			]
+		);
+		$footer_grid = get_theme_mod( 'footer_grid', $defaults );
 
 		// Replace footer-copyright with the new, reusable block.
 		$footer_grid['areas'][ sanitize_key( 'reusable_block_' . $block_id ) ] = $footer_grid['areas']['footer_copyright'];

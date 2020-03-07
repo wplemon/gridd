@@ -85,7 +85,25 @@ class Header_Contact_Info extends \Gridd\Upgrades\Block_Migrator {
 	 * @return void
 	 */
 	public function after_block_migration( $block_id ) {
-		$defaults    = get_theme_mod( 'gridd_header_grid', \Gridd\Grid_Part\Header::get_grid_defaults() );
+		$defaults    = get_theme_mod(
+			'gridd_header_grid',
+			[
+				'rows'         => 1,
+				'columns'      => 2,
+				'areas'        => [
+					'header_branding' => [
+						'cells' => [ [ 1, 1 ] ],
+					],
+					'nav_1'           => [
+						'cells' => [ [ 1, 2 ] ],
+					],
+				],
+				'gridTemplate' => [
+					'rows'    => [ 'auto' ],
+					'columns' => [ 'auto', 'auto' ],
+				],
+			]
+		);
 		$header_grid = get_theme_mod( 'header_grid', $defaults );
 
 		// Replace header-contact-info with the new, reusable block.

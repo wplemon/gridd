@@ -42,8 +42,27 @@ class Header_Search extends \Gridd\Upgrades\Block_Migrator {
 	 */
 	protected function should_migrate() {
 
-		// Get the footer grid.
-		$header_grid = get_theme_mod( 'header_grid', \Gridd\Grid_Part\Header::get_grid_defaults() );
+		// Get the header grid.
+		$defaults    = get_theme_mod(
+			'gridd_header_grid',
+			[
+				'rows'         => 1,
+				'columns'      => 2,
+				'areas'        => [
+					'header_branding' => [
+						'cells' => [ [ 1, 1 ] ],
+					],
+					'nav_1'           => [
+						'cells' => [ [ 1, 2 ] ],
+					],
+				],
+				'gridTemplate' => [
+					'rows'    => [ 'auto' ],
+					'columns' => [ 'auto', 'auto' ],
+				],
+			]
+		);
+		$header_grid = get_theme_mod( 'header_grid', $defaults );
 
 		// Check if we have a header-search part in our header grid.
 		return ( $header_grid && isset( $header_grid['areas'] ) && isset( $header_grid['areas']['header_search'] ) );
@@ -69,7 +88,25 @@ class Header_Search extends \Gridd\Upgrades\Block_Migrator {
 	 * @return void
 	 */
 	public function after_block_migration( $block_id ) {
-		$defaults    = get_theme_mod( 'gridd_header_grid', \Gridd\Grid_Part\Header::get_grid_defaults() );
+		$defaults    = get_theme_mod(
+			'gridd_header_grid',
+			[
+				'rows'         => 1,
+				'columns'      => 2,
+				'areas'        => [
+					'header_branding' => [
+						'cells' => [ [ 1, 1 ] ],
+					],
+					'nav_1'           => [
+						'cells' => [ [ 1, 2 ] ],
+					],
+				],
+				'gridTemplate' => [
+					'rows'    => [ 'auto' ],
+					'columns' => [ 'auto', 'auto' ],
+				],
+			]
+		);
 		$header_grid = get_theme_mod( 'header_grid', $defaults );
 
 		// Replace footer-copyright with the new, reusable block.
