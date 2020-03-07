@@ -35,9 +35,9 @@ class Editor {
 	public function block_editor_styles() {
 		wp_enqueue_style( 'gridd-editor', get_template_directory_uri() . '/assets/css/admin/editor.min.css', [], GRIDD_VERSION );
 
-		$styled_blocks = [ 'audio', 'button', 'buttons', 'calendar', 'categories', 'code', 'columns', 'cover', 'embed', 'file', 'gallery', 'group', 'image', 'latest-comments', 'latest-posts', 'media-text', 'navigation-menu', 'navigation', 'paragraph', 'preformatted', 'pullquote', 'quote', 'rss', 'search', 'separator', 'social-links', 'spacer', 'subhead', 'table', 'text-columns', 'verse', 'video' ];
+		$styled_blocks = \Gridd\Block_Styles::get_styled_blocks();
 		foreach ( $styled_blocks as $block ) {
-			wp_enqueue_style( "gridd-editor-$block", get_template_directory_uri() . "assets/css/blocks/core/$block.min.css", [], GRIDD_VERSION );
+			wp_enqueue_style( "gridd-editor-$block", get_template_directory_uri() . "/assets/css/blocks/$block.min.css", [], GRIDD_VERSION );
 		}
 	}
 }
