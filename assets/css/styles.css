@@ -154,25 +154,24 @@ hr {
 }
 
 pre {
-	overflow: auto;
-	color: #000;
-	background: #eee;
+  overflow: auto;
 	font-family: var(--monospace-fonts);
 	font-size: 0.9375em;
 	line-height: 1.6;
 	margin-bottom: 1.6em;
 	max-width: 100%;
 	padding: 1.6em;
-	border-radius: 4px;
+  border-radius: 3px;
 }
 
 code,
 kbd,
 pre,
 samp {
+	color: var(--bg);
+	background: var(--cl);
 	font-family: monospace;
 	font-size: 1em;
-	background: rgba(0, 0, 0, 0.1);
 }
 
 input,
