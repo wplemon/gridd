@@ -9,7 +9,10 @@
 use Gridd\Theme;
 
 // Add styles.
-\Gridd\CSS::add_file( get_theme_file_path( 'grid-parts/NavHandheld/styles.min.css' ) );
+\Gridd\CSS::add_file(
+	get_theme_file_path( 'grid-parts/NavHandheld/styles.min.css' ),
+	'only screen and (max-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . ')'
+);
 ?>
 
 <div <?php Theme::print_attributes( [ 'class' => 'gridd-tp gridd-tp-nav-handheld hide-on-large' ], 'wrapper-nav-handheld' ); ?>>
