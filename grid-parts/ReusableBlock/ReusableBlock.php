@@ -8,7 +8,6 @@
 namespace Gridd\Grid_Part;
 
 use Gridd\Grid_Part;
-use Gridd\Style;
 use Gridd\Rest;
 
 /**

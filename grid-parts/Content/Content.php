@@ -96,12 +96,11 @@ class Content extends Grid_Part {
 	/**
 	 * Prints the styles.
 	 *
-	 * @static
 	 * @access public
 	 * @since 1.0
 	 * @return void
 	 */
-	public static function print_styles() {
+	public function print_styles() {
 		\Gridd\CSS::add_file( get_theme_file_path( 'grid-parts/Content/styles.min.css' ) );
 		/**
 		 * This CSS is just a hack to overcome a bug in the CSS minifier

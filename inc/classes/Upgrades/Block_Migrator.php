@@ -117,6 +117,7 @@ abstract class Block_Migrator {
 	 *
 	 * @access protected
 	 * @since 3.0.0
+	 * @param array $args The query arguments, passed-on to WP_Query.
 	 * @return bool
 	 */
 	protected function block_exists( $args = [] ) {

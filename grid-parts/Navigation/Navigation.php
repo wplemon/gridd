@@ -17,16 +17,6 @@ use Gridd\Grid_Part;
 class Navigation extends Grid_Part {
 
 	/**
-	 * Whether the global navigation styles have been included or not.
-	 *
-	 * @static
-	 * @access public
-	 * @since 1.0
-	 * @var bool
-	 */
-	public static $global_styles_already_included = false;
-
-	/**
 	 * Constructor.
 	 *
 	 * @access public
@@ -246,7 +236,7 @@ class Navigation extends Grid_Part {
 	 * @deprecated 3.0.0
 	 * @return void
 	 */
-	public static function print_styles() {}
+	public function print_styles() {}
 }
 
 new Navigation();
