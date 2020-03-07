@@ -1,12 +1,12 @@
 .wp-block-columns {
-  display: block;
+	display: block;
 	margin-bottom: 1.5em;
-  grid-gap: 1em 1.5em;
-  align-items: stretch;
+	grid-gap: 1em 1.5em;
+	align-items: stretch;
 }
 
 .wp-column {
-  width: 100%;
+	width: 100%;
 }
 
 .wp-block-columns.has-background {
@@ -57,7 +57,7 @@
 @media (min-width: 782px) {
 
 	.wp-block-columns {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(7em, 1fr));
-  }
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(7em, 1fr));
+	}
 }

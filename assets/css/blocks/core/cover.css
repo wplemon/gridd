@@ -58,7 +58,7 @@
 .wp-block-cover.has-background-dim:not(.has-background-gradient)::before,
 .wp-block-cover-image.has-background-dim .wp-block-cover__gradient-background,
 .wp-block-cover.has-background-dim .wp-block-cover__gradient-background {
-  opacity: var(--dimRatio, 0.5);
+	opacity: var(--dimRatio, 0.5);
 }
 
 .wp-block-cover-image.alignleft,
