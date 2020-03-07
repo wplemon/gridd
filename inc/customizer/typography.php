@@ -133,7 +133,7 @@ new \Kirki\Field\Typography(
 			],
 		],
 		'active_callback' => function() {
-			return get_theme_mod( 'custom_headers_typography' );
+			return get_theme_mod( 'custom_headers_typography', false );
 		},
 	]
 );
