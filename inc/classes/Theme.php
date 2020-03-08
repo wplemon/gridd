@@ -514,81 +514,90 @@ class Theme {
 				'slug'  => 'custom-color-2',
 				'color' => '#f5f7f9',
 			],
-			// [
-			// 'name'  => '',
-			// 'slug'  => 'custom-color-3',
-			// 'color' => '#f4f4e1'
-			// ],
+			/**
+			 * Thinking about it.
+			[
+			'name'  => '',
+			'slug'  => 'custom-color-3',
+			'color' => '#f4f4e1'
+			],
+			*/
 			[
 				'name'  => '',
 				'slug'  => 'custom-color-4',
 				'color' => '#f0f3f6',
 			],
-			// [
-			// 	'name'  => esc_html__( 'Very Light Gray', 'gridd' ),
-			// 	'slug'  => 'very-light-gray',
-			// 	'color' => '#eeeeee',
-			// ],
-			// [
-			// 'name'  => esc_html__( 'Cyan Bluish Gray', 'gridd' ),
-			// 'slug'  => 'cyan-bluish-gray',
-			// 'color' => '#abb8c3',
-			// ],
-			// [
-			// 	'name'  => esc_html__( 'Very Dark Gray', 'gridd' ),
-			// 	'slug'  => 'very-dark-gray',
-			// 	'color' => '#313131',
-			// ],
-			// [
-			// 'name'  => '',
-			// 'slug'  => 'custom-color-5',
-			// 'color' => '#1a1a1d'
-			// ],
+			/**
+			 * Disable default colors?
+			[
+				'name'  => esc_html__( 'Very Light Gray', 'gridd' ),
+				'slug'  => 'very-light-gray',
+				'color' => '#eeeeee',
+			],
+			[
+			'name'  => esc_html__( 'Cyan Bluish Gray', 'gridd' ),
+			'slug'  => 'cyan-bluish-gray',
+			'color' => '#abb8c3',
+			],
+			[
+				'name'  => esc_html__( 'Very Dark Gray', 'gridd' ),
+				'slug'  => 'very-dark-gray',
+				'color' => '#313131',
+			],
+			[
+			'name'  => '',
+			'slug'  => 'custom-color-5',
+			'color' => '#1a1a1d'
+			],
+			*/
 			[
 				'name'  => '',
 				'slug'  => 'custom-color-6',
 				'color' => '#000000',
 			],
-			// [
-			// 	'name'  => esc_html__( 'Pale Pink', 'gridd' ),
-			// 	'slug'  => 'pale-pink',
-			// 	'color' => '#f78da7',
-			// ],
-			// [
-			// 	'name'  => esc_html__( 'Vivid Red', 'gridd' ),
-			// 	'slug'  => 'vivid-red',
-			// 	'color' => '#cf2e2e',
-			// ],
-			// [
-			// 	'name'  => esc_html__( 'Luminous Vivid Orange', 'gridd' ),
-			// 	'slug'  => 'luminous-vivid-orange',
-			// 	'color' => '#ff6900',
-			// ],
-			// [
-			// 	'name'  => esc_html__( 'Luminous Vivid Amber', 'gridd' ),
-			// 	'slug'  => 'luminous-vivid-amber',
-			// 	'color' => '#fcb900',
-			// ],
-			// [
-			// 	'name'  => esc_html__( 'Light Green Cyan', 'gridd' ),
-			// 	'slug'  => 'light-green-cyan',
-			// 	'color' => '#7bdcb5',
-			// ],
-			// [
-			// 	'name'  => esc_html__( 'Vivid Green Cyan', 'gridd' ),
-			// 	'slug'  => 'vivid-green-cyan',
-			// 	'color' => '#00d084',
-			// ],
-			// [
-			// 	'name'  => esc_html__( 'Pale Cyan Blue', 'gridd' ),
-			// 	'slug'  => 'pale-cyan-blue',
-			// 	'color' => '#8ed1fc',
-			// ],
-			// [
-			// 	'name'  => esc_html__( 'Vivid Cyan Blue', 'gridd' ),
-			// 	'slug'  => 'vivid-cyan-blue',
-			// 	'color' => '#0693e3',
-			// ],
+			/**
+			 * Disable default colors?
+			[
+				'name'  => esc_html__( 'Pale Pink', 'gridd' ),
+				'slug'  => 'pale-pink',
+				'color' => '#f78da7',
+			],
+			[
+				'name'  => esc_html__( 'Vivid Red', 'gridd' ),
+				'slug'  => 'vivid-red',
+				'color' => '#cf2e2e',
+			],
+			[
+				'name'  => esc_html__( 'Luminous Vivid Orange', 'gridd' ),
+				'slug'  => 'luminous-vivid-orange',
+				'color' => '#ff6900',
+			],
+			[
+				'name'  => esc_html__( 'Luminous Vivid Amber', 'gridd' ),
+				'slug'  => 'luminous-vivid-amber',
+				'color' => '#fcb900',
+			],
+			[
+				'name'  => esc_html__( 'Light Green Cyan', 'gridd' ),
+				'slug'  => 'light-green-cyan',
+				'color' => '#7bdcb5',
+			],
+			[
+				'name'  => esc_html__( 'Vivid Green Cyan', 'gridd' ),
+				'slug'  => 'vivid-green-cyan',
+				'color' => '#00d084',
+			],
+			[
+				'name'  => esc_html__( 'Pale Cyan Blue', 'gridd' ),
+				'slug'  => 'pale-cyan-blue',
+				'color' => '#8ed1fc',
+			],
+			[
+				'name'  => esc_html__( 'Vivid Cyan Blue', 'gridd' ),
+				'slug'  => 'vivid-cyan-blue',
+				'color' => '#0693e3',
+			],
+			*/
 		];
 
 		// phpcs:enable Squiz.PHP.CommentedOutCode
