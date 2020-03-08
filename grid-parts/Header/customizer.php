@@ -229,9 +229,7 @@ new \WPLemon\Field\WCAGLinkColor(
 			],
 		],
 		'sanitize_callback' => [ $sanitization, 'color_hex' ],
-		'active_callback'   => function() {
-			return get_theme_mod( 'header_custom_options', false );
-		},
+		'active_callback'   => '__return_false',
 	]
 );
 

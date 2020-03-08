@@ -180,9 +180,7 @@ function gridd_nav_customizer_options( $id ) {
 				'forceCompliance' => get_theme_mod( 'target_color_compliance', 'auto' ),
 			],
 			'sanitize_callback' => [ $sanitization, 'color_hex' ],
-			'active_callback'   => function() use ( $id ) {
-				return get_theme_mod( "nav_{$id}_custom_options", false );
-			},
+			'active_callback'   => '__return_false',
 		]
 	);
 

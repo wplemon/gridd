@@ -179,9 +179,7 @@ new \WPLemon\Field\WCAGLinkColor(
 			'forceCompliance' => get_theme_mod( 'target_color_compliance', 'auto' ),
 		],
 		'sanitize_callback' => [ $sanitization, 'color_hex' ],
-		'active_callback'   => function() {
-			return get_theme_mod( 'footer_custom_options', false );
-		},
+		'active_callback'   => '__return_false',
 	]
 );
 

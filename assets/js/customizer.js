@@ -198,4 +198,26 @@
 			newSection.expand();
 		});
 	}
+
+	/**
+	 * Link link-color colorpickers hues.
+	 *
+	 * @since 2.0.0
+	 */
+	wp.customize( 'links_color', function( value ) {
+		value.bind( function( to ) { // eslint-disable-line no-unused-vars
+			var mainLinksHue = wp.customize.control( 'links_color' ).getHue();
+
+			wp.customize.control.each( function( control ) {
+				if ( wp.hooks.applyFilters( 'griddLinksColorSkipGlobalHueChange', false, control ) ) {
+					return;
+				}
+
+				if ( ( 'links_color' !== control.id ) && ( 'kirki-wcag-link-color' === control.params.type || 'kirki-wcag-lc' === control.params.type ) ) {
+					control.setHue( mainLinksHue );
+					control.setting.set( control.getAutoColor( 'hsl(' + mainLinksHue + ',50%,50%)', true ) );
+				}
+			});
+		});
+	});
 }() );
