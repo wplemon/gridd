@@ -253,7 +253,7 @@ new \Kirki\Field\Checkbox(
 new \Kirki\Field\Slider(
 	[
 		'settings'        => 'gridd_branding_inline_spacing',
-		'label'           => esc_html__( 'Spacing between elements', 'gridd' ),
+		'label'           => esc_html__( 'Spacing Between Elements', 'gridd' ),
 		'description'     => esc_html__( 'This value is relative to the site-title font-size.', 'gridd' ),
 		'section'         => 'title_tagline',
 		'priority'        => 270,
@@ -266,8 +266,8 @@ new \Kirki\Field\Slider(
 			],
 		],
 		'choices'         => [
-			'min'    => 0,
-			'max'    => 5,
+			'min'    => -20,
+			'max'    => 20,
 			'step'   => 0.01,
 			'suffix' => 'em',
 		],
