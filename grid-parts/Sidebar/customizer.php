@@ -131,30 +131,6 @@ function gridd_sidebar_customizer_options( $id ) {
 		]
 	);
 
-	/**
-	 * Deprecate option for now.
-	new \Kirki\Field\Dimension(
-		[
-			'settings'        => "sidebar_{$id}_padding",
-			'label'           => esc_html__( 'Padding', 'gridd' ),
-			'description'     => esc_html__( 'Use any valid CSS value.', 'gridd' ),
-			'section'         => "sidebar_$id",
-			'priority'        => 40,
-			'default'         => '1em',
-			'transport'       => 'auto',
-			'output'          => [
-				[
-					'element'  => ".gridd-tp-sidebar_$id.custom-options",
-					'property' => '--pd',
-				],
-			],
-			'active_callback' => function() use ( $id ) {
-				return get_theme_mod( "sidebar_{$id}_custom_options", false );
-			},
-		]
-	);
-	 */
-
 	new \Kirki\Field\Dimension(
 		[
 			'settings'        => "sidebar_{$id}_widgets_margin",
