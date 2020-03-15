@@ -18,11 +18,11 @@ class Deprecator {
 	/**
 	 * Capability required to access the page and do the migrations.
 	 *
-	 * @access protected
+	 * @access public
 	 * @since 3.0.0
 	 * @var string
 	 */
-	protected $capability = 'edit_theme_options';
+	public $capability = 'edit_theme_options';
 
 	/**
 	 * Init the object.
@@ -33,7 +33,7 @@ class Deprecator {
 	 */
 	public function init() {
 		add_action( 'admin_menu', [ $this, 'add_theme_page' ] );
-		add_action( 'wp', [ $this, 'run_migration' ] );
+		add_action( 'init', [ $this, 'run_migration' ] );
 	}
 
 	/**
@@ -54,6 +54,13 @@ class Deprecator {
 		);
 	}
 
+	/**
+	 * Add the admin page.
+	 *
+	 * @access public
+	 * @since 3.0.0
+	 * @return void
+	 */
 	public function admin_page() {
 		include_once get_template_directory() . '/inc/deprecator-admin-page.php';
 	}
@@ -67,31 +74,42 @@ class Deprecator {
 	 */
 	public function get_migrations_array() {
 		$parts = [
-			'header_contact_info' => [
-				'name'   => esc_html__( 'Header Contact Info', 'gridd' ),
-				'class'  => '\Gridd\Ugrades\Block\Header_Contact_Info',
-				'status' => $this->get_status( 'header_contact_info' ),
-				'info'   => sprintf(
-					/* Translators: %1$s: grid-part name. %2$s: Theme version. */
-					esc_html__( 'The "%1$s" grid-part was deprecated in version %2$s. If you were using it in a previous version, migrating will create a new reusable block that will automatically replace the previous implementation.', 'gridd' ),
-					esc_html__( 'Header Contact Info', 'gridd' ),
-					'3.0.0',
-				),
-			],
 			'footer_copyright'    => [
 				'name'   => esc_html__( 'Footer Copyright', 'gridd' ) . '</strong>',
-				'class'  => '\Gridd\Ugrades\Block\Footer_Copyright',
+				'class'  => '\Gridd\Upgrades\Block\Footer_Copyright',
 				'status' => $this->get_status( 'footer_copyright' ),
 				'info'   => sprintf(
 					/* Translators: %1$s: grid-part name. %2$s: Theme version. */
 					esc_html__( 'The "%1$s" grid-part was deprecated in version %2$s. If you were using it in a previous version, migrating will create a new reusable block that will automatically replace the previous implementation.', 'gridd' ),
 					esc_html__( 'Footer Copyright', 'gridd' ),
-					'3.0.0',
+					'3.0.0'
+				),
+			],
+			'header_contact_info' => [
+				'name'   => esc_html__( 'Header Contact Info', 'gridd' ),
+				'class'  => '\Gridd\Upgrades\Block\Header_Contact_Info',
+				'status' => $this->get_status( 'header_contact_info' ),
+				'info'   => sprintf(
+					/* Translators: %1$s: grid-part name. %2$s: Theme version. */
+					esc_html__( 'The "%1$s" grid-part was deprecated in version %2$s. If you were using it in a previous version, migrating will create a new reusable block that will automatically replace the previous implementation.', 'gridd' ),
+					esc_html__( 'Header Contact Info', 'gridd' ),
+					'3.0.0'
+				),
+			],
+			'header_search'       => [
+				'name'   => esc_html__( 'Header Search', 'gridd' ),
+				'class'  => '\Gridd\Upgrades\Block\Header_Search',
+				'status' => $this->get_status( 'header_search' ),
+				'info'   => sprintf(
+					/* Translators: %1$s: grid-part name. %2$s: Theme version. */
+					esc_html__( 'The "%1$s" grid-part was deprecated in version %2$s. If you were using it in a previous version, migrating will create a new reusable block that will automatically replace the previous implementation.', 'gridd' ),
+					esc_html__( 'Header Search', 'gridd' ),
+					'3.0.0'
 				),
 			],
 		];
 
-		return $parts;
+		return apply_filters( 'gridd_get_deprecator_parts', $parts );
 	}
 
 	/**
@@ -99,15 +117,43 @@ class Deprecator {
 	 *
 	 * @access public
 	 * @since 3.0.0
-	 * @param $id The part-ID.
+	 * @param string $id The part-ID.
 	 * @return string
 	 */
 	public function get_status( $id ) {
-		$migrated_parts = get_option( 'gridd_migrated_parts', [] );
-
-		$status = in_array( $id, $migrated_parts, true ) ? 'migrated' : 'not-migrated';
+		$status         = 'not-migrated';
+		$migrated_parts = $this->get_migrated_parts();
+		if ( isset( $migrated_parts[ $id ] ) && ! $migrated_parts[ $id ]['error'] ) {
+			$status = 'migrated';
+		}
 
 		return apply_filters( 'gridd_get_deprecator_status', $status, $id );
+	}
+
+	/**
+	 * Get migrated_parts.
+	 *
+	 * @access public
+	 * @since 3.0.0
+	 * @return array
+	 */
+	public function get_migrated_parts() {
+		return get_option( 'gridd_migrated_parts', [] );
+	}
+
+	/**
+	 * Set migrated part.
+	 *
+	 * @access public
+	 * @since 3.0.0
+	 * @param string $id   The part-ID.
+	 * @param array  $args The arguments to set.
+	 * @return void
+	 */
+	public function set_migrated_part( $id, $args ) {
+		$migrated        = $this->get_migrated_parts();
+		$migrated[ $id ] = $args;
+		update_option( 'gridd_migrated_parts', $migrated );
 	}
 
 	/**
@@ -120,7 +166,7 @@ class Deprecator {
 	public function run_migration() {
 
 		// Sanity check: early exit if not an admin call.
-		if ( ! is_admin() || DOING_AJAX ) {
+		if ( ! is_admin() || ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
 			return;
 		}
 
@@ -129,9 +175,43 @@ class Deprecator {
 			return;
 		}
 
+		// Sanity check: Early exit if we're not migrating.
+		if ( ! isset( $_GET['action'] ) || 'gridd-migrate-part' !== sanitize_text_field( wp_unslash( $_GET['action'] ) ) ) {
+			return;
+		}
+
 		// Security check: nonce. Early exit if invalid or not set.
 		if ( ! isset( $_GET['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ) ) ) {
 			return;
+		}
+
+		// Get the part-id.
+		$part_id = ( isset( $_GET['part-id'] ) ) ? sanitize_text_field( wp_unslash( $_GET['part-id'] ) ) : false;
+
+		// Early exit if part wasn't defined or if we don't have something to do.
+		if ( ! $part_id || ! isset( $this->get_migrations_array()[ $part_id ] ) ) {
+			return;
+		}
+
+		// If we got this far, run the migration.
+		$class_name = $this->get_migrations_array()[ $part_id ]['class'];
+		if ( class_exists( $class_name ) ) {
+
+			// Init the migration.
+			$migration = new $class_name();
+
+			// Run the migration.
+			$migration->run();
+
+			// Update the migrated-parts options.
+			$this->set_migrated_part(
+				$part_id,
+				[
+					'date'     => gmdate( 'U' ),
+					'error'    => $migration->get_error(),
+					'block_id' => $migration->get_block_id(),
+				]
+			);
 		}
 	}
 }

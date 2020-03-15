@@ -43,6 +43,24 @@ abstract class Block_Migrator {
 	protected $args = [];
 
 	/**
+	 * An error message (if one exists).
+	 *
+	 * @access protected
+	 * @since 3.0.0
+	 * @var bool
+	 */
+	protected $error = false;
+
+	/**
+	 * The block-ID.
+	 *
+	 * @access protected
+	 * @since 3.0.0
+	 * @var int
+	 */
+	protected $block_id;
+
+	/**
 	 * The post-type where we'll be storing our migrated blocks.
 	 *
 	 * @var string
@@ -58,7 +76,17 @@ abstract class Block_Migrator {
 	 */
 	public function __construct( $args = [] ) {
 		$this->args = $args;
-		add_action( 'wp', [ $this, 'migrate_content' ] );
+	}
+
+	/**
+	 * Run the migration.
+	 *
+	 * @access public
+	 * @since 3.0.0
+	 * @return void
+	 */
+	public function run() {
+		$this->migrate_content();
 	}
 
 	/**
@@ -98,7 +126,34 @@ abstract class Block_Migrator {
 		// Success! Run additional processes if needed.
 		if ( $block_id && ! is_wp_error( $block_id ) ) {
 			$this->after_block_migration( $block_id );
+
+			// Set the block-ID.
+			$this->block_id = $block_id;
 		}
+
+		$this->error = true;
+	}
+
+	/**
+	 * Get the error status.
+	 *
+	 * @access public
+	 * @since 3.0.0
+	 * @return bool
+	 */
+	public function get_error() {
+		return $this->error;
+	}
+
+	/**
+	 * Get the block-ID.
+	 *
+	 * @access public
+	 * @since 3.0.0
+	 * @return int|null
+	 */
+	public function get_block_id() {
+		return $this->block_id;
 	}
 
 	/**
