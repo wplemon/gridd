@@ -161,4 +161,12 @@ add_action(
 	10
 );
 
+/**
+ * Init the deprecator.
+ *
+ * @since 3.0.0
+ */
+$gridd_deprecator = new \Gridd\Deprecator();
+$gridd_deprecator->init();
+
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */
