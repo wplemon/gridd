@@ -192,11 +192,11 @@ abstract class Block_Migrator {
 	 * Get the contents of the block we want to add.
 	 *
 	 * @abstract
-	 * @access protected
+	 * @access public
 	 * @since 3.0.0
 	 * @return string
 	 */
-	abstract protected function get_content();
+	abstract public function get_content();
 
 	/**
 	 * Additional things to run after the block migration.

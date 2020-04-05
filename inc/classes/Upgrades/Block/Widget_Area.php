@@ -65,11 +65,11 @@ class Widget_Area extends \Gridd\Upgrades\Block_Migrator {
 	/**
 	 * Get the contents of the block we want to add.
 	 *
-	 * @access protected
+	 * @access public
 	 * @since 3.0.0
 	 * @return string
 	 */
-	protected function get_content() {
+	public function get_content() {
 		global $wp_registered_widgets;
 
 		$content = '';
