@@ -7,7 +7,13 @@ $gridd_migrated_parts   = $gridd_deprecator->get_migrated_parts();
 <div class="wrap">
 	<h1><?php esc_html_e( 'Deprecations & Migrations', 'gridd' ); ?></h1>
 
-	<table class="widefat striped">
+	<p>
+		<a href="<?php echo esc_url( admin_url( 'edit.php?post_type=wp_block' ) ); ?>" class="button">
+			<?php esc_html_e( 'Edit Reusable BLocks', 'gridd' ); ?>
+		</a>
+	</p>
+
+	<table class="widefat striped" style="margin-top: 2em;">
 		<thead>
 			<tr>
 				<th><?php esc_html_e( 'Name', 'gridd' ); ?></th>

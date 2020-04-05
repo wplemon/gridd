@@ -46,7 +46,7 @@ class Deprecator {
 	public function add_theme_page() {
 		add_theme_page(
 			esc_html__( 'Deprecator', 'gridd' ),
-			esc_html__( 'Menu Title', 'gridd' ),
+			esc_html__( 'Gridd', 'gridd' ),
 			$this->capability,
 			'gridd_deprecator',
 			[ $this, 'admin_page' ],
