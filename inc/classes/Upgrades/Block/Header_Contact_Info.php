@@ -61,9 +61,6 @@ class Header_Contact_Info extends \Gridd\Upgrades\Block_Migrator {
 		$background_color = get_theme_mod( 'header_contact_info_background_color', '#ffffff' );
 		$text_color       = get_theme_mod( 'header_contact_info_text_color', '#000000' );
 
-		$content = wpautop( $content );
-		$content = '<!-- wp:freeform -->' . $content . '<!-- /wp:freeform -->';
-
 		// Get the final content from our HTML file.
 		// Not a remote URL, we can safely use file_get_contents.
 		$final_content .= file_get_contents( __DIR__ . '/group-with-content.html' ); // phpcs:ignore WordPress.WP.AlternativeFunctions
@@ -71,7 +68,7 @@ class Header_Contact_Info extends \Gridd\Upgrades\Block_Migrator {
 		// Replace placeholders with actual values.
 		$final_content = str_replace( 'BACKGROUND_COLOR', esc_attr( $background_color ), $final_content );
 		$final_content = str_replace( 'TEXT_COLOR', esc_attr( $text_color ), $final_content );
-		$final_content = str_replace( 'CONTENT', $content, $final_content );
+		$final_content = str_replace( 'CONTENT', '<!-- wp:freeform -->' . wpautop( $content ) . '<!-- /wp:freeform -->', $final_content );
 
 		return $final_content;
 	}
