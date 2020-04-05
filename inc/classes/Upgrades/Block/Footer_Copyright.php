@@ -90,10 +90,10 @@ class Footer_Copyright extends \Gridd\Upgrades\Block_Migrator {
 		];
 
 		$content  = '<!-- wp:group ' . wp_json_encode( $group_args ) . ' -->';
-		$content .= '<div class="wp-block-group alignfull has-text-color has-background">';
+		$content .= '<div class="wp-block-group alignfull has-text-color has-background" style="background-color:' . $group_args['customBackgroundColor'] . ';color:' . $group_args['customTextColor'] . '">';
 		$content .= '<div class="wp-block-group__inner-container">';
 		$content .= '<!-- wp:freeform -->';
-		$content .= '<p style="text-align: center;">';
+		$content .= '<p>';
 		$content .= get_theme_mod(
 			'gridd_copyright_text',
 			sprintf(
