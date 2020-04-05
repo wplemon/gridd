@@ -258,7 +258,13 @@ class Theme {
 		add_theme_support( 'wp-block-styles' );
 		if ( ! get_theme_mod( 'disable_editor_styles' ) ) {
 			add_theme_support( 'editor-styles' );
-			if ( 50 > \ariColor::newColor( get_theme_mod( 'content_background_color', '#ffffff' ) )->lightness ) {
+
+			$is_dark = ( 50 > \ariColor::newColor( get_theme_mod( 'background_color', '#ffffff' ) )->lightness );
+			if ( get_theme_mod( 'content_custom_options' ) ) {
+				$is_dark = ( 50 > \ariColor::newColor( get_theme_mod( 'content_background_color', '#ffffff' ) )->lightness );
+			}
+
+			if ( $is_dark ) {
 				add_theme_support( 'dark-editor-style' );
 			}
 		}

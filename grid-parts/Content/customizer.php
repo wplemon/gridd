@@ -5,7 +5,6 @@
  * @package Gridd
  */
 
-use Gridd\Customizer;
 use Gridd\Customizer\Sanitize;
 
 $sanitization = new Sanitize();
@@ -46,11 +45,11 @@ new \Kirki\Field\ReactColor(
 				'element'  => '.gridd-tp-content.custom-options',
 				'property' => '--bg',
 			],
-			[
+			get_theme_mod( 'content_custom_options' ) ? [
 				'element'  => '.block-editor .edit-post-visual-editor.editor-styles-wrapper,.edit-post-visual-editor.editor-styles-wrapper',
 				'property' => '--bg',
 				'context'  => [ 'editor' ],
-			],
+			] : [],
 		],
 		'transport'       => 'auto',
 		'priority'        => 10,
@@ -76,11 +75,11 @@ new \WPLemon\Field\WCAGTextColor(
 				'element'  => '.gridd-tp-content.custom-options',
 				'property' => '--cl',
 			],
-			[
+			get_theme_mod( 'content_custom_options' ) ? [
 				'element'  => '.block-editor .edit-post-visual-editor.editor-styles-wrapper,.edit-post-visual-editor.editor-styles-wrapper',
 				'property' => '--cl',
 				'context'  => [ 'editor' ],
-			],
+			] : [],
 		],
 		'transport'         => 'auto',
 		'choices'           => [
@@ -117,11 +116,11 @@ new \WPLemon\Field\WCAGLinkColor(
 				'element'  => '.gridd-tp-content.custom-options',
 				'property' => '--lc',
 			],
-			[
+			get_theme_mod( 'content_custom_options' ) ? [
 				'element'  => '.block-editor .edit-post-visual-editor.editor-styles-wrapper,.edit-post-visual-editor.editor-styles-wrapper',
 				'property' => '--lc',
 				'context'  => [ 'editor' ],
-			],
+			] : [],
 		],
 		'sanitize_callback' => [ $sanitization, 'color_hex' ],
 		'active_callback'   => '__return_false',
