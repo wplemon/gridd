@@ -127,6 +127,31 @@ class Deprecator {
 			$status = 'migrated';
 		}
 
+		if ( 'migrated' !== $status ) {
+			switch ( $id ) {
+				case 'footer_copyright':
+					$part_migration = new \Gridd\Upgrades\Block\Footer_Copyright();
+					if ( ! $part_migration->should_migrate() ) {
+						$status = 'not-applicable';
+					}
+					break;
+
+				case 'header_contact_info':
+					$part_migration = new \Gridd\Upgrades\Block\Header_Contact_Info();
+					if ( ! $part_migration->should_migrate() ) {
+						$status = 'not-applicable';
+					}
+					break;
+
+				case 'header_search':
+					$part_migration = new \Gridd\Upgrades\Block\Header_Search();
+					if ( ! $part_migration->should_migrate() ) {
+						$status = 'not-applicable';
+					}
+					break;
+			}
+		}
+
 		return apply_filters( 'gridd_get_deprecator_status', $status, $id );
 	}
 

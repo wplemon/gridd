@@ -159,11 +159,11 @@ abstract class Block_Migrator {
 	/**
 	 * Whether we should run the upgrade or not.
 	 *
-	 * @access protected
+	 * @access public
 	 * @since 3.0.0
 	 * @return bool
 	 */
-	protected function should_migrate() {
+	public function should_migrate() {
 		return true;
 	}
 
