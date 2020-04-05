@@ -77,11 +77,11 @@ class Footer_Copyright extends \Gridd\Upgrades\Block_Migrator {
 	/**
 	 * Get the contents of the block we want to add.
 	 *
-	 * @access public
+	 * @access protected
 	 * @since 3.0.0
 	 * @return string
 	 */
-	public function get_content() {
+	protected function get_content() {
 
 		$group_args = [
 			'customBackgroundColor' => get_theme_mod( 'footer_copyright_bg_color', '#ffffff' ),

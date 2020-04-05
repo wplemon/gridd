@@ -71,11 +71,11 @@ class Header_Search extends \Gridd\Upgrades\Block_Migrator {
 	/**
 	 * Get the contents of the block we want to add.
 	 *
-	 * @access public
+	 * @access protected
 	 * @since 3.0.0
 	 * @return string
 	 */
-	public function get_content() {
+	protected function get_content() {
 		return '<!-- wp:search {"label":""} /-->';
 	}
 

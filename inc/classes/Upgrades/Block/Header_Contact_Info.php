@@ -52,11 +52,11 @@ class Header_Contact_Info extends \Gridd\Upgrades\Block_Migrator {
 	/**
 	 * Get the contents of the block we want to add.
 	 *
-	 * @access public
+	 * @access protected
 	 * @since 3.0.0
 	 * @return string
 	 */
-	public function get_content() {
+	protected function get_content() {
 		$content          = get_theme_mod( 'header_contact_info', __( 'Email: <a href="mailto:contact@example.com">contact@example.com</a>. Phone: +1-541-754-3010', 'gridd' ) );
 		$background_color = get_theme_mod( 'header_contact_info_background_color', '#ffffff' );
 		$text_color       = get_theme_mod( 'header_contact_info_text_color', '#000000' );
