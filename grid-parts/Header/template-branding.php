@@ -22,19 +22,11 @@ $wrapper_class .= ( has_custom_logo() ) ? ' has-logo' : '';
 		<?php the_custom_logo(); ?>
 	<?php endif; ?>
 
-	<?php if ( is_front_page() && is_home() ) : ?>
-		<h1 class="site-title h3<?php echo ( ! display_header_text() ) ? ' hidden' : ''; ?>">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-				<?php bloginfo( 'name' ); ?>
-			</a>
-		</h1>
-	<?php else : ?>
-		<p class="site-title h3<?php echo ( ! display_header_text() ) ? ' hidden' : ''; ?>">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-				<?php bloginfo( 'name' ); ?>
-			</a>
-		</p>
-	<?php endif; ?>
+	<h1 class="site-title h3<?php echo ( ! display_header_text() ) ? ' hidden' : ''; ?>">
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+			<?php bloginfo( 'name' ); ?>
+		</a>
+	</h1>
 	<?php $description = get_bloginfo( 'description', 'display' ); ?>
 	<?php if ( $description || is_customize_preview() ) : ?>
 		<p class="site-description<?php echo ( ! display_header_text() ) ? ' hidden' : ''; ?>"><?php echo wp_kses_post( $description ); ?></p>
