@@ -123,10 +123,18 @@ class Block_Styles {
 
 				$styles_path = get_theme_file_path( "assets/css/blocks/{$block['blockName']}.min.css" );
 				if ( file_exists( $styles_path ) ) {
-					$block_content .= '<style id="gridd-block-styles-' . esc_attr( str_replace( '/', '-', $block['blockName'] ) ) . '">';
-					// Not a remote URL, we can safely use file_get_contents.
-					$block_content .= file_get_contents( $styles_path ); // phpcs:ignore WordPress.WP.AlternativeFunctions
-					$block_content .= '</style>';
+
+					if ( 'core/navigation' === $block['blockName'] ) {
+						echo '<style id="gridd-block-styles-' . esc_attr( str_replace( '/', '-', $block['blockName'] ) ) . '">';
+						include $styles_path;
+						echo '</style>';
+					} else {
+
+						$block_content .= '<style id="gridd-block-styles-' . esc_attr( str_replace( '/', '-', $block['blockName'] ) ) . '">';
+						// Not a remote URL, we can safely use file_get_contents.
+						$block_content .= file_get_contents( $styles_path ); // phpcs:ignore WordPress.WP.AlternativeFunctions
+						$block_content .= '</style>';
+					}
 				}
 			}
 		}
