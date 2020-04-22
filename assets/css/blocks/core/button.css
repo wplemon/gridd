@@ -57,3 +57,7 @@
 	color: var(--element-background-color);
 	border-color: var(--element-color);
 }
+
+.wp-block-buttons .wp-block-button {
+  display: inline-block;
+}
