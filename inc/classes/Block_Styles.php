@@ -26,6 +26,16 @@ class Block_Styles {
 	private static $block_styles_added = [];
 
 	/**
+	 * A string containing all blocks styles
+	 *
+	 * @static
+	 * @access private
+	 * @since 3.0.0
+	 * @var string
+	 */
+	private static $footer_block_styles = '';
+
+	/**
 	 * Constructor.
 	 *
 	 * @since 3.0.0
@@ -48,6 +58,11 @@ class Block_Styles {
 		 * Add admin styles for blocks.
 		 */
 		add_action( 'enqueue_block_assets', [ $this, 'enqueue_block_assets' ] );
+
+		/**
+		 * Add some styles in the footer.
+		 */
+		add_action( 'wp_footer', [ $this, 'footer_styles' ] );
 	}
 
 	/**
@@ -124,17 +139,14 @@ class Block_Styles {
 				$styles_path = get_theme_file_path( "assets/css/blocks/{$block['blockName']}.min.css" );
 				if ( file_exists( $styles_path ) ) {
 
-					if ( 'core/navigation' === $block['blockName'] ) {
-						echo '<style id="gridd-block-styles-' . esc_attr( str_replace( '/', '-', $block['blockName'] ) ) . '">';
-						include $styles_path;
-						echo '</style>';
-					} else {
-
-						$block_content .= '<style id="gridd-block-styles-' . esc_attr( str_replace( '/', '-', $block['blockName'] ) ) . '">';
-						// Not a remote URL, we can safely use file_get_contents.
-						$block_content .= file_get_contents( $styles_path ); // phpcs:ignore WordPress.WP.AlternativeFunctions
-						$block_content .= '</style>';
-					}
+					self::$footer_block_styles .= Theme::get_fcontents( $styles_path, true );
+					/**
+					 * WIP method, doesn't work for all blocks yet.
+					$block_content .= '<style id="gridd-block-styles-' . esc_attr( str_replace( '/', '-', $block['blockName'] ) ) . '">';
+					// Not a remote URL, we can safely use file_get_contents.
+					$block_content .= Theme::get_fcontents( $styles_path );
+					$block_content .= '</style>';
+					*/
 				}
 			}
 		}
@@ -228,6 +240,17 @@ class Block_Styles {
 				GRIDD_VERSION
 			);
 		}
+	}
+
+	/**
+	 * Print some styles in the footer.
+	 *
+	 * @access public
+	 * @since 3.0.0
+	 * @return void
+	 */
+	public function footer_styles() {
+		echo '<style>' . esc_html( self::$footer_block_styles ) . '</style>';
 	}
 }
 
