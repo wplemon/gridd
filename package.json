@@ -38,6 +38,7 @@
   "scripts": {
     "blockStyles:getNew": "bash bin/update-gutenberg-styles.sh",
     "blockStyles:update": "mv bin/dist/*.css assets/css/blocks/defaults/core/",
-    "blockStyles": "npm run blockStyles:getNew && npm run blockStyles:update"
+    "blockStyles": "npm run blockStyles:getNew && npm run blockStyles:update",
+    "build": "npm run blockStyles && grunt"
   }
 }
