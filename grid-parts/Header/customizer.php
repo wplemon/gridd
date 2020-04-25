@@ -39,8 +39,8 @@ new \Kirki\Section(
 	'header_grid',
 	[
 		'title'    => esc_html__( 'Header Grid', 'gridd' ),
-		'priority' => 10,
-		'panel'    => 'layout_options',
+		'priority' => 1,
+		'panel'    => 'theme_options',
 		'type'     => 'kirki-expanded',
 	]
 );

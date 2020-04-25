@@ -33,19 +33,6 @@ add_action(
 );
 
 /**
- * Add the layout_options panel.
- *
- * @since 3.0.0
- */
-new \Kirki\Panel(
-	'layout_options',
-	[
-		'title'    => esc_html__( 'Grid Layout', 'gridd' ),
-		'priority' => 4,
-	]
-);
-
-/**
  * Add the "Theme Options" panel.
  *
  * @since 2.0.0
