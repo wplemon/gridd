@@ -26,15 +26,3 @@ window.addEventListener( 'resize', function() {
 	passive: true
 } : false );
 griddComputeEm();
-
-/**
- * Announce external links to screen-readers.
- *
- * @since 3.0.0
- */
-document.querySelectorAll( 'a[target="_blank"]' ).forEach( function( el ) {
-	var screenReaderText = document.createElement( 'span' );
-	screenReaderText.classList.add( 'screen-reader-text' );
-	screenReaderText.innerHTML = '<?php esc_html_e( "(Opens Link in new tab)", "gridd" ); ?>';
-	el.appendChild( screenReaderText );
-});

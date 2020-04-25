@@ -2,21 +2,6 @@
 	padding: var(--pd-t, 0) var(--pd-h, 1em) var(--pd-b, 0) var(--pd-h, 1em);
 }
 
-.site-main a[target="_blank"]::after {
-	content: "↗";
-	background: var(--lc, --cl);
-	color: var(--bg);
-	border-radius: 2px;
-	padding: 0 0.2em;
-	display: inline;
-	margin: 0 0.2em;
-	opacity: 0.35;
-}
-
-.site-main a[target="_blank"]:hover::after {
-	opacity: 1;
-}
-
 .site-main header,
 .site-main footer:not(.comment-meta),
 .site-main .gridd-contain {
