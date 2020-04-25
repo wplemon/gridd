@@ -38,6 +38,10 @@ h4 a {
 	text-decoration: none;
 }
 
+a:hover {
+  outline: 0.5px dotted;
+}
+
 a:focus,
 a:active {
 	outline: 2px solid;
@@ -48,7 +52,6 @@ a:hover,
 a:active,
 a:focus {
 	text-decoration-thickness: 0.1em;
-	text-decoration-color: var(--cl);
 }
 
 h1 a:hover,
