@@ -107,7 +107,7 @@ class Block_Styles {
 		$block_styles['default'] = array_diff( $block_styles['default'], $empty );
 
 		// Iterate on block styles overrides.
-		$iterator = new \DirectoryIterator( get_template_directory() . '/assets/css/blocks/defaults/core/' );
+		$iterator = new \DirectoryIterator( get_template_directory() . '/assets/css/blocks/overrides/core/' );
 		foreach ( $iterator as $file_info ) {
 
 			// Skip dot files.
