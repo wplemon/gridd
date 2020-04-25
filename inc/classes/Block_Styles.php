@@ -159,8 +159,14 @@ class Block_Styles {
 				$defaults_path  = get_theme_file_path( "assets/css/blocks/defaults/{$block['blockName']}.min.css" );
 				$overrides_path = get_theme_file_path( "assets/css/blocks/overrides/{$block['blockName']}.min.css" );
 
-				self::$footer_block_styles .= Theme::get_fcontents( $defaults_path, true );
-				self::$footer_block_styles .= Theme::get_fcontents( $overrides_path, true );
+				ob_start();
+				if ( file_exists( $defaults_path ) ) {
+					include $defaults_path;
+				}
+				if ( file_exists( $overrides_path ) ) {
+					include $overrides_path;
+				}
+				self::$footer_block_styles .= ob_get_clean();
 			}
 		}
 		return $block_content;
