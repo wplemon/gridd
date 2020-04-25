@@ -19,6 +19,7 @@
 .wp-block-button.is-style-outline .wp-block-button__link,
 .wp-block-button__link.is-style-outline,
 .wp-block-button__link {
+  font-size: 1em;
 	text-decoration: none !important;
 	border-radius: 4px;
 	padding: 0.35em 1.25em;
