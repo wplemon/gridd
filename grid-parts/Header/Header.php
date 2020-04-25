@@ -53,7 +53,6 @@ class Header extends Grid_Part {
 	 * @return void
 	 */
 	public function init() {
-		add_filter( 'gridd_get_grid_part_specs_social_media', [ $this, 'get_grid_part_specs_social_media' ] );
 		add_action( 'gridd_the_grid_part', [ $this, 'render' ] );
 		add_filter( 'get_custom_logo', [ $this, 'get_custom_logo' ] );
 	}
@@ -100,19 +99,6 @@ class Header extends Grid_Part {
 	}
 
 	/**
-	 * Filter the grid-part specs.
-	 * Necessary for pugged-in grid-parts with no dedicated templates.
-	 *
-	 * @access public
-	 * @since 1.0
-	 * @return array
-	 */
-	public function get_grid_part_specs_social_media() {
-		$grid = Grid::get_options( 'header_grid' );
-		return self::format_specs_from_grid_value( 'social_media', $grid );
-	}
-
-	/**
 	 * Filter the get_custom_logo HTML and remove width & height.
 	 * This fixes an issue on android devices where images don't get properly resized.
 	 *
@@ -151,14 +137,6 @@ class Header extends Grid_Part {
 			'priority' => 0,
 			'hidden'   => false,
 			'id'       => 'header_branding',
-		];
-
-		$header_grid_parts[] = [
-			'label'    => esc_html__( 'Social Media', 'gridd' ),
-			'color'    => [ '#009688', '#fff' ],
-			'priority' => 2000,
-			'hidden'   => false,
-			'id'       => 'social_media',
 		];
 
 		return apply_filters( 'gridd_header_grid_parts', $header_grid_parts );

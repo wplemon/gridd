@@ -23,7 +23,6 @@ require_once __DIR__ . '/Footer/customizer-sidebars.php';
 require_once __DIR__ . '/Footer/customizer-social-media.php';
 require_once __DIR__ . '/Footer/customizer.php';
 require_once __DIR__ . '/Header/customizer-branding.php';
-require_once __DIR__ . '/Header/customizer-social-media.php';
 require_once __DIR__ . '/Header/customizer.php';
 require_once __DIR__ . '/NavHandheld/customizer.php';
 require_once __DIR__ . '/Navigation/customizer.php';

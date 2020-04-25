@@ -110,6 +110,17 @@ class Deprecator {
 					'3.0.0'
 				),
 			],
+			'social_media'       => [
+				'name'   => esc_html__( 'Header Social Media', 'gridd' ),
+				'class'  => '\Gridd\Upgrades\Block\Header_Social_Media',
+				'status' => $this->get_status( 'social_media' ),
+				'info'   => sprintf(
+					/* Translators: %1$s: grid-part name. %2$s: Theme version. */
+					esc_html__( 'The "%1$s" grid-part was deprecated in version %2$s. If you were using it in a previous version, migrating will create a new reusable block that will automatically replace the previous implementation.', 'gridd' ),
+					esc_html__( 'Header Social Media', 'gridd' ),
+					'3.0.0'
+				),
+			],
 		];
 
 		return apply_filters( 'gridd_get_deprecator_parts', $parts );

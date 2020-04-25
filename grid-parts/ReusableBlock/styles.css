@@ -1,6 +1,4 @@
 .gridd-tp-reusable-block {
-	padding: var(--pd, 1em);
-	position: relative;
 	overflow: visible; /* tweak for the nav block dropdowns. */
 }
 
@@ -11,11 +9,4 @@
 .gridd-tp-reusable-block .wp-block-cover {
 	margin-bottom: 0;
 	margin-top: 0;
-}
-
-.gridd-tp-reusable-block a,
-.gridd-tp-reusable-block a:visited,
-.gridd-tp-reusable-block a:hover,
-.gridd-tp-reusable-block a:focus {
-	color: var(--lc, #0f5e97);
 }
