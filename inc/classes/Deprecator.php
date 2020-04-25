@@ -121,6 +121,17 @@ class Deprecator {
 					'3.0.0'
 				),
 			],
+			'footer_social_media'       => [
+				'name'   => esc_html__( 'Footer Social Media', 'gridd' ),
+				'class'  => '\Gridd\Upgrades\Block\Footer_Social_Media',
+				'status' => $this->get_status( 'footer_social_media' ),
+				'info'   => sprintf(
+					/* Translators: %1$s: grid-part name. %2$s: Theme version. */
+					esc_html__( 'The "%1$s" grid-part was deprecated in version %2$s. If you were using it in a previous version, migrating will create a new reusable block that will automatically replace the previous implementation.', 'gridd' ),
+					esc_html__( 'Footer Social Media', 'gridd' ),
+					'3.0.0'
+				),
+			],
 		];
 
 		return apply_filters( 'gridd_get_deprecator_parts', $parts );
@@ -159,6 +170,20 @@ class Deprecator {
 
 				case 'header_search':
 					$part_migration = new \Gridd\Upgrades\Block\Header_Search();
+					if ( ! $part_migration->should_migrate() ) {
+						$status = 'not-applicable';
+					}
+					break;
+
+				case 'social_media':
+					$part_migration = new \Gridd\Upgrades\Block\Header_Social_Media();
+					if ( ! $part_migration->should_migrate() ) {
+						$status = 'not-applicable';
+					}
+					break;
+
+				case 'footer_social_media':
+					$part_migration = new \Gridd\Upgrades\Block\Footer_Social_Media();
 					if ( ! $part_migration->should_migrate() ) {
 						$status = 'not-applicable';
 					}

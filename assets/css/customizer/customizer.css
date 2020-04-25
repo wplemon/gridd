@@ -296,7 +296,6 @@ h3.gridd-customizer-section-title {
 #sub-accordion-section-header_social .customize-section-title,
 #sub-accordion-section-footer_copyright .customize-section-title,
 #sub-accordion-section-breadcrumbs .customize-section-title,
-#sub-accordion-section-footer_social_media .customize-section-title,
 #sub-accordion-section-title_tagline .customize-section-title,
 ul[id^="sub-accordion-section-nav_"] .customize-section-title,
 ul[id^="sub-accordion-section-sidebar-widgets-sidebar-"] .customize-section-title,
@@ -310,10 +309,8 @@ ul[id^="sub-accordion-section-sidebar-widgets-footer_sidebar_"] .customize-secti
 #customize-control-header_social_custom_options,
 #customize-control-footer_advanced,
 #customize-control-footer_copyright_advanced,
-#customize-control-footer_social_media_advanced,
 #customize-control-breadcrumbs_custom_options,
 #customize-control-footer_copyright_custom_options,
-#customize-control-footer_social_media_custom_options,
 #customize-control-branding_custom_options,
 #customize-control-footer_custom_options,
 li[id^="customize-control-nav_"][id$="_custom_options"],
@@ -340,8 +337,7 @@ li[id^="customize-control-footer_sidebar_"][id$="_custom_options"] {
 #sub-accordion-section-content .customize-section-title,
 #sub-accordion-section-header .customize-section-title,
 #sub-accordion-section-footer .customize-section-title,
-#accordion-section-breadcrumbs .customize-section-title,
-#accordion-section-footer_social_media .customize-section-title {
+#accordion-section-breadcrumbs .customize-section-title {
   margin-bottom: 12px; }
 
 #sub-accordion-section-theme_options {

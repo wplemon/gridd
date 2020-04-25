@@ -55,12 +55,6 @@ if ( get_theme_mod( 'footer_custom_options', false ) ) {
 						 */
 						include get_theme_file_path( 'grid-parts/Footer/template-sidebar.php' );
 					}
-				} elseif ( 'footer_social_media' === $part && apply_filters( 'gridd_render_grid_part', true, 'footer_social_media' ) ) {
-					/**
-					 * Social Media.
-					 */
-					Theme::get_template_part( 'grid-parts/Footer/template-social-media' );
-
 				} else {
 					do_action( 'gridd_the_grid_part', $part );
 				}

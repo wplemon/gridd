@@ -321,7 +321,6 @@ h3.gridd-customizer-section-title {
 #sub-accordion-section-header_social,
 #sub-accordion-section-footer_copyright,
 #sub-accordion-section-breadcrumbs,
-#sub-accordion-section-footer_social_media,
 #sub-accordion-section-title_tagline,
 ul[id^="sub-accordion-section-nav_"],
 ul[id^="sub-accordion-section-sidebar-widgets-sidebar-"],
@@ -339,10 +338,8 @@ ul[id^="sub-accordion-section-sidebar-widgets-footer_sidebar_"] {
 #customize-control-header_social_custom_options,
 #customize-control-footer_advanced,
 #customize-control-footer_copyright_advanced,
-#customize-control-footer_social_media_advanced,
 #customize-control-breadcrumbs_custom_options,
 #customize-control-footer_copyright_custom_options,
-#customize-control-footer_social_media_custom_options,
 #customize-control-branding_custom_options,
 #customize-control-footer_custom_options,
 li[id^="customize-control-nav_"][id$="_custom_options"],
@@ -377,8 +374,7 @@ li[id^="customize-control-footer_sidebar_"][id$="_custom_options"] {
 #sub-accordion-section-content,
 #sub-accordion-section-header,
 #sub-accordion-section-footer,
-#accordion-section-breadcrumbs,
-#accordion-section-footer_social_media {
+#accordion-section-breadcrumbs {
 
 	.customize-section-title {
 		margin-bottom: 12px;

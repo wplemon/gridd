@@ -56,7 +56,6 @@ class Footer extends Grid_Part {
 	public function init() {
 		$this->register_rest_api_partials();
 		add_action( 'widgets_init', [ $this, 'register_footer_sidebars' ], 30 );
-		add_action( 'gridd_get_grid_part_specs_footer_social_media', [ $this, 'get_grid_part_specs_footer_social_media' ] );
 		add_action( 'gridd_the_grid_part', [ $this, 'render' ] );
 		add_action( 'gridd_the_partial', [ $this, 'the_partial' ] );
 	}
@@ -151,19 +150,6 @@ class Footer extends Grid_Part {
 	}
 
 	/**
-	 * Filter the grid-part specs.
-	 * Necessary for pugged-in grid-parts with no dedicated templates.
-	 *
-	 * @access public
-	 * @since 1.0
-	 * @return array
-	 */
-	public function get_grid_part_specs_footer_social_media() {
-		$grid = Grid::get_options( 'footer_grid' );
-		return self::format_specs_from_grid_value( 'footer_social_media', $grid );
-	}
-
-	/**
 	 * Gets the number of widget-areas in the footer.
 	 *
 	 * @static
@@ -183,15 +169,7 @@ class Footer extends Grid_Part {
 	 * @return array
 	 */
 	public static function get_footer_grid_parts() {
-		$footer_grid_parts = [
-			[
-				'label'    => esc_html__( 'Social Media', 'gridd' ),
-				'color'    => [ '#8BC34A', '#000' ],
-				'priority' => 200,
-				'hidden'   => false,
-				'id'       => 'footer_social_media',
-			],
-		];
+		$footer_grid_parts = [];
 
 		$sidebars_nr = self::get_number_of_sidebars();
 		for ( $i = 1; $i <= $sidebars_nr; $i++ ) {
