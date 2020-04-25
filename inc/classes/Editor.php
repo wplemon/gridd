@@ -37,12 +37,13 @@ class Editor {
 
 		$styled_blocks = \Gridd\Block_Styles::get_styled_blocks();
 		foreach ( $styled_blocks['defaults'] as $block ) {
+		foreach ( $styled_blocks['default'] as $block ) {
 			wp_enqueue_style( "gridd-editor-$block-default", get_template_directory_uri() . "/assets/css/blocks/defaults/$block.min.css", [], GRIDD_VERSION );
 			if ( file_exists( get_theme_file_path( "assets/css/blocks/defaults/$block-editor.min.css" ) ) ) {
 				wp_enqueue_style( "gridd-editor-$block-default-editor", get_template_directory_uri() . "/assets/css/blocks/defaults/$block-editor.min.css", [], GRIDD_VERSION );
 			}
 		}
-		foreach ( $styled_blocks['overrides'] as $block ) {
+		foreach ( $styled_blocks['override'] as $block ) {
 			wp_enqueue_style( "gridd-editor-$block-override", get_template_directory_uri() . "/assets/css/blocks/overrides/$block.min.css", [], GRIDD_VERSION );
 			if ( file_exists( get_theme_file_path( "assets/css/blocks/overrides/$block-editor.min.css" ) ) ) {
 				wp_enqueue_style( "gridd-editor-$block-override-editor", get_template_directory_uri() . "/assets/css/blocks/overrides/$block-editor.min.css", [], GRIDD_VERSION );
