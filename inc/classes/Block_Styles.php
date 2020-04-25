@@ -74,37 +74,57 @@ class Block_Styles {
 	 * @return array
 	 */
 	public static function get_styled_blocks() {
-		return [
-			'core/audio',
-			'core/button',
-			'core/buttons',
-			'core/calendar',
-			'core/columns',
-			'core/cover',
-			'core/embed',
-			'core/file',
-			'core/gallery',
-			'core/group',
-			'core/image',
-			'core/latest-comments',
-			'core/latest-posts',
-			'core/media-text',
-			'core/navigation',
-			'core/paragraph',
-			'core/preformatted',
-			'core/pullquote',
-			'core/quote',
-			'core/rss',
-			'core/search',
-			'core/separator',
-			'core/social-links',
-			'core/spacer',
-			'core/subhead',
-			'core/table',
-			'core/text-columns',
-			'core/verse',
-			'core/video',
+		$block_styles = [
+			'default'  => [],
+			'override' => [],
 		];
+
+		$empty = [];
+
+		// Iterate on default block styles.
+		$iterator = new \DirectoryIterator( get_template_directory() . '/assets/css/blocks/defaults/core/' );
+		foreach ( $iterator as $file_info ) {
+
+			// Skip dot files.
+			if ( $file_info->isDot() ) {
+				continue;
+			}
+
+			// The block name.
+			$block_name = str_replace( '.min', '', pathinfo( $file_info->getFilename() )['filename'] );
+
+			// If the file is empty add to the $empty array.
+			if ( 0 === filesize( $file_info->getPathname() ) ) {
+				$empty[] = "core/$block_name";
+			}
+
+			// Add the block-name to our array.
+			if ( ! strpos( $file_info->getFilename(), '.min.css' ) ) {
+				$block_styles['default'][] = "core/$block_name";
+			}
+		}
+
+		$block_styles['default'] = array_diff( $block_styles['default'], $empty );
+
+		// Iterate on block styles overrides.
+		$iterator = new \DirectoryIterator( get_template_directory() . '/assets/css/blocks/defaults/core/' );
+		foreach ( $iterator as $file_info ) {
+
+			// Skip dot files.
+			if ( $file_info->isDot() ) {
+				continue;
+			}
+
+			// The block name.
+			$block_name = str_replace( '.min', '', pathinfo( $file_info->getFilename() )['filename'] );
+
+			// Add the block-name to our array.
+			if ( ! strpos( $file_info->getFilename(), '.min.css' ) ) {
+				$block_styles['override'][] = "core/$block_name";
+			}
+		}
+
+		return $block_styles;
 	}
 
 	/**
@@ -136,18 +156,11 @@ class Block_Styles {
 			if ( ! in_array( $block['blockName'], self::$block_styles_added, true ) ) {
 				self::$block_styles_added[] = $block['blockName'];
 
-				$styles_path = get_theme_file_path( "assets/css/blocks/{$block['blockName']}.min.css" );
-				if ( file_exists( $styles_path ) ) {
+				$defaults_path  = get_theme_file_path( "assets/css/blocks/defaults/{$block['blockName']}.min.css" );
+				$overrides_path = get_theme_file_path( "assets/css/blocks/overrides/{$block['blockName']}.min.css" );
 
-					self::$footer_block_styles .= Theme::get_fcontents( $styles_path, true );
-					/**
-					 * WIP method, doesn't work for all blocks yet.
-					$block_content .= '<style id="gridd-block-styles-' . esc_attr( str_replace( '/', '-', $block['blockName'] ) ) . '">';
-					// Not a remote URL, we can safely use file_get_contents.
-					$block_content .= Theme::get_fcontents( $styles_path );
-					$block_content .= '</style>';
-					*/
-				}
+				self::$footer_block_styles .= Theme::get_fcontents( $defaults_path, true );
+				self::$footer_block_styles .= Theme::get_fcontents( $overrides_path, true );
 			}
 		}
 		return $block_content;
@@ -232,10 +245,18 @@ class Block_Styles {
 		$blocks = self::get_styled_blocks();
 
 		// Add blocks styles.
-		foreach ( $blocks as $block ) {
+		foreach ( $blocks['default'] as $block ) {
 			wp_enqueue_style(
-				"gridd-$block",
-				get_theme_file_uri( "assets/css/blocks/$block.min.css" ),
+				"gridd-$block-default",
+				get_theme_file_uri( "assets/css/blocks/defaults/$block.min.css" ),
+				[],
+				GRIDD_VERSION
+			);
+		}
+		foreach ( $blocks['override'] as $block ) {
+			wp_enqueue_style(
+				"gridd-$block-override",
+				get_theme_file_uri( "assets/css/blocks/overrides/$block.min.css" ),
 				[],
 				GRIDD_VERSION
 			);
