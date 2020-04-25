@@ -53,3 +53,11 @@ packages/wplemon/**/composer.json
 
 
 FUNDING.yml
+
+bin/gutenberg-master/
+
+bin/master.zip
+
+bin/temp-styles/
+
+bin/dist/
