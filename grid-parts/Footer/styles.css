@@ -3,7 +3,7 @@
 	padding-top: var(--gg, 0);
 }
 
-.gridd-tp-footer.gridd-tp .inner {
+.gridd-tp-footer.gridd-tp > .inner {
 	display: grid;
 	grid-gap: var(--gg, 0);
 	width: 100%;
