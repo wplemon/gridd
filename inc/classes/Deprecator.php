@@ -34,6 +34,9 @@ class Deprecator {
 	public function init() {
 		add_action( 'admin_menu', [ $this, 'add_theme_page' ] );
 		add_action( 'init', [ $this, 'run_migration' ] );
+
+		add_filter( 'wptrt_admin_notices_allowed_html', [ $this, 'wptrt_admin_notices_allowed_html' ] );
+		$this->admin_notices();
 	}
 
 	/**
@@ -75,7 +78,7 @@ class Deprecator {
 	public function get_migrations_array() {
 		$parts = [
 			'footer_copyright'    => [
-				'name'   => esc_html__( 'Footer Copyright', 'gridd' ) . '</strong>',
+				'name'   => esc_html__( 'Footer Copyright', 'gridd' ),
 				'class'  => '\Gridd\Upgrades\Block\Footer_Copyright',
 				'status' => $this->get_status( 'footer_copyright' ),
 				'info'   => sprintf(
@@ -238,5 +241,55 @@ class Deprecator {
 				]
 			);
 		}
+	}
+
+	/**
+	 * Add admin notices.
+	 *
+	 * @access protected
+	 * @since 3.0.0
+	 * @return void
+	 */
+	protected function admin_notices() {
+		$admin_notices    = new \WPTRT\AdminNotices\Notices();
+		$migrations_array = $this->get_migrations_array();
+
+		foreach ( $migrations_array as $id => $args ) {
+			if ( ! isset( $args['status'] ) || 'not-migrated' !== $args['status'] ) {
+				continue;
+			}
+
+			$go_button = '<p><a class="button button-primary" href="' . esc_url( admin_url( 'themes.php?page=gridd_deprecator' ) ) . '">' . esc_html__( 'Migrate Now', 'gridd' ) . '</a></p>';
+			$admin_notices->add(
+				"gridd_deprecated_part_$id",
+				sprintf(
+					/* Translators: %s: The deprecated part's name. */
+					esc_html__( 'Your Attention is Required: Deprecated "%s".', 'gridd' ),
+					esc_html( $args['name'] )
+				),
+				$args['info'] . $go_button,
+				[
+					'type'      => 'warning',
+					'alt_style' => true,
+				]
+			);
+		}
+
+		$admin_notices->boot();
+	}
+
+	/**
+	 * Allow adding classes to <a> elements in notices.
+	 *
+	 * Fixes button styling.
+	 *
+	 * @access public
+	 * @since 3.0.0
+	 * @param array $allowed_html An array of allowed HTML elements and their props.
+	 * @return array
+	 */
+	public function wptrt_admin_notices_allowed_html( $allowed_html ) {
+		$allowed_html['a']['class'] = [];
+		return $allowed_html;
 	}
 }

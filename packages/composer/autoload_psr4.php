@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'WPTRT\\AdminNotices\\' => array($vendorDir . '/wptrt/admin-notices/src'),
     'WPLemon\\Field\\' => array($vendorDir . '/wplemon/control-palette-builder/src/Field', $vendorDir . '/wplemon/control-wcag-auto-linkcolor/src/Field', $vendorDir . '/wplemon/control-wcag-auto-textcolor/src/Field'),
     'WPLemon\\Control\\' => array($vendorDir . '/wplemon/control-palette-builder/src/Control', $vendorDir . '/wplemon/control-wcag-auto-linkcolor/src/Control', $vendorDir . '/wplemon/control-wcag-auto-textcolor/src/Control'),
     'Kirki\\Util\\' => array($vendorDir . '/kirki-framework/util/src'),
@@ -17,4 +18,6 @@ return array(
     'Kirki\\Compatibility\\' => array($vendorDir . '/kirki-framework/compatibility/src'),
     'Kirki\\' => array($vendorDir . '/kirki-framework/field/src', $vendorDir . '/kirki-framework/googlefonts/src', $vendorDir . '/kirki-framework/l10n/src', $vendorDir . '/kirki-framework/module-panels/src', $vendorDir . '/kirki-framework/module-sections/src', $vendorDir . '/kirki-framework/url-getter/src'),
     'Hybrid\\Breadcrumbs\\' => array($vendorDir . '/justintadlock/hybrid-breadcrumbs/src'),
+    'Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\' => array($vendorDir . '/dealerdirect/phpcodesniffer-composer-installer/src'),
+    'Composer\\Installers\\' => array($vendorDir . '/composer/installers/src/Composer/Installers'),
 );

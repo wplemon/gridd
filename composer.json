@@ -55,7 +55,8 @@
     "wplemon/control-wcag-auto-textcolor": "dev-master",
     "wplemon/control-wcag-auto-linkcolor": "dev-master",
     "wplemon/control-palette-builder": "dev-master",
-    "justintadlock/hybrid-breadcrumbs": "^1.0"
+    "justintadlock/hybrid-breadcrumbs": "^1.0",
+    "wptrt/admin-notices": "^1.0"
   },
   "require-dev": {
     "composer/installers": "~1.0",

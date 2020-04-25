@@ -9,6 +9,7 @@ class ComposerStaticInit732835aa44a0bf9e82f02a841da89611
     public static $prefixLengthsPsr4 = array (
         'W' => 
         array (
+            'WPTRT\\AdminNotices\\' => 19,
             'WPLemon\\Field\\' => 14,
             'WPLemon\\Control\\' => 16,
         ),
@@ -27,9 +28,21 @@ class ComposerStaticInit732835aa44a0bf9e82f02a841da89611
         array (
             'Hybrid\\Breadcrumbs\\' => 19,
         ),
+        'D' => 
+        array (
+            'Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\' => 55,
+        ),
+        'C' => 
+        array (
+            'Composer\\Installers\\' => 20,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'WPTRT\\AdminNotices\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/wptrt/admin-notices/src',
+        ),
         'WPLemon\\Field\\' => 
         array (
             0 => __DIR__ . '/..' . '/wplemon/control-palette-builder/src/Field',
@@ -126,6 +139,14 @@ class ComposerStaticInit732835aa44a0bf9e82f02a841da89611
         'Hybrid\\Breadcrumbs\\' => 
         array (
             0 => __DIR__ . '/..' . '/justintadlock/hybrid-breadcrumbs/src',
+        ),
+        'Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dealerdirect/phpcodesniffer-composer-installer/src',
+        ),
+        'Composer\\Installers\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
         ),
     );
 
