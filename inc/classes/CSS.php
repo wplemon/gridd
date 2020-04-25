@@ -89,8 +89,9 @@ class CSS {
 		$css = apply_filters( 'gridd_css', self::$css );
 
 		if ( is_child_theme() && apply_filters( 'gridd_load_child_theme_styles', true ) ) {
-			// Note to code reviewers: wp_strip_all_tags here is sufficient escape to ensure everything is interpreted as CSS.
-			$css .= file_get_contents( get_stylesheet_directory() . '/style.css', true );
+			ob_start();
+			include get_stylesheet_directory() . '/style.css';
+			$css .= ob_get_clean();
 		}
 
 		// Note to code reviewers: wp_strip_all_tags here is sufficient escape to ensure everything is interpreted as CSS.
@@ -116,7 +117,10 @@ class CSS {
 		if ( $media ) {
 			self::$css .= "@media $media{";
 		}
-		self::$css .= file_get_contents( $path ); // phpcs:ignore WordPress.WP.AlternativeFunctions
+		ob_start();
+		include $path;
+		self::$css .= ob_get_clean();
+
 		if ( $media ) {
 			self::$css .= '}';
 		}
