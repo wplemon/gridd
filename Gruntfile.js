@@ -124,8 +124,10 @@ module.exports = function( grunt ) {
 			},
             cssCoreBlocks: {
                 files: [
-					'assets/css/blocks/core/*.css',
-					'!assets/css/blocks/core/*.min.css'
+					'assets/css/blocks/defaults/core/*.css',
+					'!assets/css/blocks/defaults/core/*.min.css',
+					'assets/css/blocks/overrides/core/*.css',
+					'!assets/css/blocks/overrides/core/*.min.css'
                 ],
                 tasks: [ 'cssmin' ]
 			},
