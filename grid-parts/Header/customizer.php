@@ -110,29 +110,6 @@ new \Kirki\Field\Dimension(
 	]
 );
 
-/**
- * Deprecate option for now.
-new \Kirki\Field\Dimension(
-	[
-		'settings'        => 'header_padding',
-		'label'           => esc_html__( 'Header Padding', 'gridd' ),
-		'section'         => 'header',
-		'default'         => '0',
-		'priority'        => 30,
-		'transport'       => 'auto',
-		'output'          => [
-			[
-				'element'  => '.gridd-tp-header.custom-options',
-				'property' => '--pd',
-			],
-		],
-		'active_callback' => function() {
-			return get_theme_mod( 'header_custom_options', false );
-		},
-	]
-);
- */
-
 new \Kirki\Field\Dimension(
 	[
 		'settings'        => 'header_grid_gap',

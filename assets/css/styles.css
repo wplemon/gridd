@@ -289,9 +289,9 @@ dd {
 }
 
 .post-thumbnail.alignfull {
-	margin-left: calc(0 - var(--pd-h, 1em));
-	margin-right: calc(0 - var(--pd-h, 1em));
-	width: calc(100% + 2 * var(--pd-h, 1em));
+	margin-left: -1em;
+	margin-right: -1em;
+	width: calc(100% + 2em);
 }
 
 table td,
@@ -712,7 +712,7 @@ smallest { /* stylelint-disable-line */
 	flex-wrap: nowrap;
 	overflow: hidden;
 	color: var(--cl);
-	background: var(--bg);
+  background: var(--bg);
 }
 
 .gridd-sticky {

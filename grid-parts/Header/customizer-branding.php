@@ -93,31 +93,6 @@ new \Kirki\Field\ReactColor(
 	]
 );
 
-/**
- * Deprecate option for now.
-new \Kirki\Field\Dimension(
-	[
-		'settings'          => 'header_branding_padding',
-		'label'             => esc_html__( 'Padding', 'gridd' ),
-		'description'       => esc_html__( 'Use any valid CSS value.', 'gridd' ),
-		'section'           => 'title_tagline',
-		'priority'          => 210,
-		'default'           => '0',
-		'transport'         => 'auto',
-		'output'            => [
-			[
-				'element'  => '.gridd-tp-header_branding.custom-options',
-				'property' => '--pd',
-			],
-		],
-		'sanitize_callback' => 'esc_attr', // Though not exactly accurate, in this case it sanitizes the CSS value properly.
-		'active_callback'   => function() {
-			return get_theme_mod( 'branding_custom_options', false );
-		},
-	]
-);
- */
-
 new \Kirki\Field\Slider(
 	[
 		'settings'        => 'gridd_logo_max_width',

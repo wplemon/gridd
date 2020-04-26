@@ -8,7 +8,7 @@ a.custom-logo-link:active {
 .gridd-tp-header_branding.gridd-tp {
 	display: flex;
 	width: 100%;
-	padding: var(--pd, 0);
+	padding: 1em;
 	justify-content: var(--ha, left);
 	align-items: var(--va, center);
 }

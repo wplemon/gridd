@@ -1,7 +1,7 @@
 .gridd-tp-sidebar {
 	flex-direction: var(--fd, column);
 	justify-content: flex-start;
-	padding: var(--pd, 1em);
+	padding: 1em;
 }
 
 .gridd-tp-sidebar .widget {

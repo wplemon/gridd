@@ -82,30 +82,6 @@ new \Kirki\Field\Dimension(
 	]
 );
 
-/**
- * Deprecate option for now.
-new \Kirki\Field\Dimension(
-	[
-		'settings'        => 'footer_padding',
-		'label'           => esc_html__( 'Padding', 'gridd' ),
-		'description'     => esc_html__( 'Inner padding for all parts in the footer.', 'gridd' ),
-		'section'         => 'footer',
-		'default'         => '1em',
-		'transport'       => 'auto',
-		'output'          => [
-			[
-				'element'  => '.gridd-tp-footer.custom-options',
-				'property' => '--pd',
-			],
-		],
-		'priority'        => 40,
-		'active_callback' => function() {
-			return get_theme_mod( 'footer_custom_options', false );
-		},
-	]
-);
- */
-
 new \Kirki\Field\ReactColor(
 	[
 		'settings'        => 'footer_background_color',

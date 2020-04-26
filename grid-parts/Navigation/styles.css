@@ -5,7 +5,7 @@
 }
 
 .gridd-tp-nav .inner {
-	padding: var(--pd);
+	padding: 1em;
 	width: 100%;
 	display: flex;
 }

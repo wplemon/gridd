@@ -61,29 +61,6 @@ new \Kirki\Field\ReactColor(
 	]
 );
 
-/**
- * Deprecate option for now.
-new \Kirki\Field\Dimension(
-	[
-		'settings'        => 'breadcrumbs_padding',
-		'label'           => esc_html__( 'Padding', 'gridd' ),
-		'section'         => 'breadcrumbs',
-		'default'         => '1em',
-		'transport'       => 'auto',
-		'output'          => [
-			[
-				'element'  => '.gridd-tp-breadcrumbs.custom-options',
-				'property' => '--pd',
-			],
-		],
-		'active_callback' => function() {
-			return get_theme_mod( 'breadcrumbs_custom_options', false );
-		},
-		'priority'        => 20,
-	]
-);
- */
-
 new \Kirki\Field\Dimension(
 	[
 		'settings'        => 'breadcrumbs_max_width',

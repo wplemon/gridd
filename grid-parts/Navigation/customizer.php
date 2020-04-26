@@ -89,29 +89,6 @@ function gridd_nav_customizer_options( $id ) {
 		]
 	);
 
-	/**
-	 * Deprecate option for now.
-	new \Kirki\Field\Dimension(
-		[
-			'settings'        => "nav_{$id}_padding",
-			'label'           => esc_html__( 'Padding', 'gridd' ),
-			'description'     => esc_html__( 'Use any valid CSS value.', 'gridd' ),
-			'section'         => "nav_$id",
-			'default'         => '1em',
-			'transport'       => 'auto',
-			'output'          => [
-				[
-					'element'  => ".gridd-tp-nav_{$id}.custom-options",
-					'property' => '--pd',
-				],
-			],
-			'active_callback' => function() use ( $id ) {
-				return get_theme_mod( "nav_{$id}_custom_options", false );
-			},
-		]
-	);
-	 */
-
 	new \Kirki\Field\ReactColor(
 		[
 			'label'           => esc_html__( 'Background Color', 'gridd' ),
