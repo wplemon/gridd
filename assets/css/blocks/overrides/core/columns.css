@@ -45,6 +45,11 @@
 	align-self: end;
 }
 
+.wp-block-columns.alignfull {
+	padding-left: var(--pd-h, 1em);
+	padding-right: var(--pd-h, 1em);
+}
+
 .site-main .entry-content > .wp-block-columns:not(.alignfull):not(.alignwide):not(.alignleft):not(.alignright) {
 	max-width: calc(var(--mw-c, 700px) + 2em);
 }

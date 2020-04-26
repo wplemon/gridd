@@ -144,4 +144,86 @@ new \Kirki\Field\Dimension(
 	]
 );
 
+/**
+ * Deprecate option for now.
+new \Kirki\Field\Slider(
+	[
+		'settings'        => 'content_padding_horizontal',
+		'label'           => esc_html__( 'Horizontal Content Padding', 'gridd' ),
+		'section'         => 'content',
+		'default'         => 1,
+		'output'          => [
+			[
+				'element'       => '.gridd-tp-content.custom-options',
+				'property'      => '--pd-h',
+				'value_pattern' => '$em',
+			],
+		],
+		'choices'         => [
+			'min'    => 0,
+			'max'    => 10,
+			'step'   => 0.01,
+			'suffix' => 'em',
+		],
+		'transport'       => 'auto',
+		'priority'        => 60,
+		'active_callback' => function() {
+			return get_theme_mod( 'content_custom_options', false );
+		},
+	]
+);
+new \Kirki\Field\Slider(
+	[
+		'settings'        => 'content_padding_top',
+		'label'           => esc_html__( 'Top Content Padding', 'gridd' ),
+		'section'         => 'content',
+		'default'         => 1,
+		'output'          => [
+			[
+				'element'       => '.gridd-tp-content.custom-options',
+				'property'      => '--pd-t',
+				'value_pattern' => '$em',
+			],
+		],
+		'choices'         => [
+			'min'    => 0,
+			'max'    => 10,
+			'step'   => 0.01,
+			'suffix' => 'em',
+		],
+		'transport'       => 'auto',
+		'priority'        => 70,
+		'active_callback' => function() {
+			return get_theme_mod( 'content_custom_options', false );
+		},
+	]
+);
+new \Kirki\Field\Slider(
+	[
+		'settings'        => 'content_padding_bottom',
+		'label'           => esc_html__( 'Bottom Content Padding', 'gridd' ),
+		'section'         => 'content',
+		'default'         => 1,
+		'output'          => [
+			[
+				'element'       => '.gridd-tp-content.custom-options',
+				'property'      => '--pd-b',
+				'value_pattern' => '$em',
+			],
+		],
+		'choices'         => [
+			'min'    => 0,
+			'max'    => 10,
+			'step'   => 0.01,
+			'suffix' => 'em',
+		],
+		'transport'       => 'auto',
+		'priority'        => 80,
+		'active_callback' => function() {
+			return get_theme_mod( 'content_custom_options', false );
+		},
+	]
+);
+ */
+
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */
