@@ -102,13 +102,6 @@ class Content extends Grid_Part {
 	 */
 	public function print_styles() {
 		\Gridd\CSS::add_file( get_theme_file_path( 'grid-parts/Content/styles.min.css' ) );
-		/**
-		 * This CSS is just a hack to overcome a bug in the CSS minifier
-		 * that strips units from zero valus, making the calc() function invalid.
-		 * The same CSS is commented-out in the default.scss file for reference.
-		 * Once the bug in the minifier is fixed we can remove this.
-		 */
-		\Gridd\CSS::add_string( '.site-main .entry-content .alignfull,.site-main .entry-footer .alignfull,.site-main .entry-header .alignfull,.site-main .gridd-contain .alignfull{transform:translateX(calc(0px - var(--pd-h, 1em)));}' );
 	}
 
 	/**
