@@ -139,16 +139,6 @@ new Editor();
 new \Gridd\CSS();
 
 /**
- * Integrates WPBakery Builder in the theme.
- *
- * @since 1.0
- */
-if ( function_exists( 'vc_set_as_theme' ) ) {
-	add_action( 'vc_before_init', 'vc_set_as_theme' );
-	add_filter( 'vc_nav_front_logo', '__return_empty_string' );
-}
-
-/**
  * Custom CSS should be at the end of everything else in order to override existing styles.
  * We need to unhook it from wp_head and hook it in wp_footer.
  */

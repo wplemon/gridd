@@ -171,14 +171,6 @@ class Scripts {
 			\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/core/infinite-scroll.min.css' ) );
 		}
 
-		// WPBakery (Visual Composer).
-		if ( class_exists( 'Vc_Manager' ) ) {
-			\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/plugins/vc.min.css' ) );
-			if ( current_user_can( 'edit_posts' ) ) {
-				\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/plugins/vc-edit.min.css' ) );
-			}
-		}
-
 		// Elementor.
 		if ( class_exists( 'Elementor\Plugin' ) ) {
 			\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/plugins/elementor.min.css' ) );
