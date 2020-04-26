@@ -1,5 +1,5 @@
 <?php
-$gridd_deprecator       = new \Gridd\Deprecator();
+$gridd_deprecator       = new \Gridd\Admin();
 $gridd_deprecator_parts = $gridd_deprecator->get_migrations_array();
 $gridd_migrated_parts   = $gridd_deprecator->get_migrated_parts();
 ?>

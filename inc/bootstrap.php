@@ -78,13 +78,6 @@ Theme::get_instance();
 Widget_Output_Filters::get_instance();
 
 /**
- * Load admin tweaks.
- *
- * @since 1.0
- */
-new Admin();
-
-/**
  * Load EDD mods.
  *
  * @since 1.0
@@ -152,11 +145,11 @@ add_action(
 );
 
 /**
- * Init the deprecator.
+ * Init the admin.
  *
  * @since 3.0.0
  */
-$gridd_deprecator = new \Gridd\Deprecator();
-$gridd_deprecator->init();
+$gridd_admin = new \Gridd\Admin();
+$gridd_admin->init();
 
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */
