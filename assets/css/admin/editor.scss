@@ -143,13 +143,13 @@
 	}
 }
 
-.wp-block {
+// .wp-block {
 
-	&:not([data-align="full"]) {
-		max-width: var(--mw-c, 700px);
-	}
+// 	&:not([data-align="full"]) {
+// 		max-width: var(--mw-c, 700px);
+// 	}
 
-	&[data-align="wide"] {
-		max-width: calc(var(--mw-c, 700px) + 25%);
-	}
-}
+// 	&[data-align="wide"] {
+// 		max-width: calc(var(--mw-c, 700px) + 25%);
+// 	}
+// }

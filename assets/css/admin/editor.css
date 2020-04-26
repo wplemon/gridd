@@ -122,9 +122,4 @@
 .wp-block-freeform.block-library-rich-text__tinymce a {
   color: var(--lc, #0f5e97); }
 
-.wp-block:not([data-align="full"]) {
-  max-width: var(--mw-c, 700px); }
-.wp-block[data-align="wide"] {
-  max-width: calc(var(--mw-c, 700px) + 25%); }
-
 /*# sourceMappingURL=editor.css.map */
