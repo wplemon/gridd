@@ -30,6 +30,27 @@ document.querySelectorAll( '.gridd-navigation ul.sub-menu' ).forEach( function( 
 	}, true );
 });
 
+function griddDebounce( func, wait, immediate ) {
+	var timeout;
+	return function() {
+		var context = this,
+			args = arguments, // eslint-disable-line prefer-rest-params
+			later = function() {
+				timeout = null;
+				if ( ! immediate ) {
+					func.apply( context, args );
+				}
+			},
+			callNow = immediate && ! timeout;
+
+		clearTimeout( timeout );
+		timeout = setTimeout( later, wait );
+		if ( callNow ) {
+			func.apply( context, args );
+		}
+	};
+}
+
 function griddNavShouldCollapse() {
 	document.querySelectorAll( '.gridd-tp-nav' ).forEach( function( navWrapper ) {
 		var nav = navWrapper.querySelector( 'nav' ),
@@ -50,5 +71,12 @@ function griddNavShouldCollapse() {
 		}
 	});
 }
+
+function griddNavShouldCollapseDebounced() {
+	griddDebounce( function() {
+		griddNavShouldCollapse();
+	}, 250 );
+}
+
 griddNavShouldCollapse();
-window.onresize = griddNavShouldCollapse;
+window.onresize = griddNavShouldCollapseDebounced;
