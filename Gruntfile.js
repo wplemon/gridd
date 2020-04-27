@@ -118,6 +118,8 @@ module.exports = function( grunt ) {
             cssMain: {
                 files: [
 					'assets/css/*.scss',
+					'assets/css/*.css',
+					'!assets/css/*.min.css',
 					'assets/css/**/*.scss'
                 ],
                 tasks: [ 'sass:main', 'cssmin' ]
