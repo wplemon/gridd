@@ -29,3 +29,26 @@ document.querySelectorAll( '.gridd-navigation ul.sub-menu' ).forEach( function( 
 		}
 	}, true );
 });
+
+function griddNavShouldCollapse() {
+	document.querySelectorAll( '.gridd-tp-nav' ).forEach( function( navWrapper ) {
+		var nav = navWrapper.querySelector( 'nav' ),
+			navLis = nav.querySelector( 'ul' ).children,
+			wrapperBounds = navWrapper.getBoundingClientRect(),
+			wrapperL = wrapperBounds.left,
+			wrapperR = wrapperBounds.right,
+			navStartL = navLis[ 0 ].getBoundingClientRect().left,
+			navStartR = navLis[ 0 ].getBoundingClientRect().right,
+			navEndL = navLis[ navLis.length - 1 ].getBoundingClientRect().left,
+			navEndR = navLis[ navLis.length - 1 ].getBoundingClientRect().right,
+			shouldCollapse = ( navStartL < wrapperL || navEndL < wrapperL || navStartR > wrapperR || navEndR > wrapperR );
+
+		if ( shouldCollapse ) {
+			navWrapper.classList.add( 'should-collapse' );
+		} else {
+			navWrapper.classList.remove( 'should-collapse' );
+		}
+	});
+}
+griddNavShouldCollapse();
+window.onresize = griddNavShouldCollapse;
