@@ -117,8 +117,8 @@
 	padding-left: 0;
 }
 
-.gridd-tp-nav:not(.should-collapse) .gridd-toggle-navigation{
-  display: none;
+.gridd-tp-nav:not(.should-collapse) .gridd-toggle-navigation {
+	display: none;
 }
 
 .should-collapse nav {

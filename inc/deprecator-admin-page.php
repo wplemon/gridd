@@ -1,4 +1,11 @@
 <?php
+/**
+ * Admin page.
+ *
+ * @package Gridd
+ * @since 3.0.0
+ */
+
 $gridd_deprecator       = new \Gridd\Admin();
 $gridd_deprecator_parts = $gridd_deprecator->get_migrations_array();
 $gridd_migrated_parts   = $gridd_deprecator->get_migrated_parts();

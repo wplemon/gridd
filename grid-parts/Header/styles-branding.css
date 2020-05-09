@@ -41,8 +41,8 @@ a.custom-logo-link:active {
 .gridd-tp-header_branding.gridd-tp .site-title a:visited,
 .gridd-tp-header_branding.gridd-tp .site-title a:hover,
 .gridd-tp-header_branding.gridd-tp .site-title a:visited:hover {
-  color: var(--header-textcolor, #000);
-  white-space: nowrap;
+	color: var(--header-textcolor, #000);
+	white-space: nowrap;
 }
 
 .gridd-tp-header_branding.gridd-tp .site-title,
@@ -56,7 +56,7 @@ a.custom-logo-link:active {
 }
 
 .gridd-tp-header_branding.gridd-tp.inline .site-description {
-  transform: translateX(calc(var(--epd) * 1em));
+	transform: translateX(calc(var(--epd) * 1em));
 }
 
 .gridd-tp-header_branding.gridd-tp.vertical {
@@ -70,7 +70,7 @@ a.custom-logo-link:active {
 }
 
 .gridd-tp-header_branding.gridd-tp.vertical .site-description {
-  transform: translateY(calc(var(--epd) * 1em));
+	transform: translateY(calc(var(--epd) * 1em));
 }
 
 .gridd-tp-header_branding.gridd-tp .site-description {

@@ -110,7 +110,7 @@ class Admin {
 					'3.0.0'
 				),
 			],
-			'social_media'       => [
+			'social_media'        => [
 				'name'   => esc_html__( 'Header Social Media', 'gridd' ),
 				'class'  => '\Gridd\Upgrades\Block\Header_Social_Media',
 				'status' => $this->get_status( 'social_media' ),
@@ -121,7 +121,7 @@ class Admin {
 					'3.0.0'
 				),
 			],
-			'footer_social_media'       => [
+			'footer_social_media' => [
 				'name'   => esc_html__( 'Footer Social Media', 'gridd' ),
 				'class'  => '\Gridd\Upgrades\Block\Footer_Social_Media',
 				'status' => $this->get_status( 'footer_social_media' ),

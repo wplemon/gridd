@@ -39,7 +39,7 @@ h4 a {
 }
 
 a:hover {
-  outline: 0.5px dotted;
+	outline: 0.5px dotted;
 }
 
 a:focus,
@@ -157,14 +157,14 @@ hr {
 }
 
 pre {
-  overflow: auto;
+	overflow: auto;
 	font-family: var(--monospace-fonts);
 	font-size: 0.9375em;
 	line-height: 1.6;
 	margin-bottom: 1.6em;
 	max-width: 100%;
 	padding: 1.6em;
-  border-radius: 3px;
+	border-radius: 3px;
 }
 
 code,
@@ -712,7 +712,7 @@ smallest { /* stylelint-disable-line */
 	flex-wrap: nowrap;
 	overflow: hidden;
 	color: var(--cl);
-  background: var(--bg);
+	background: var(--bg);
 }
 
 .gridd-sticky {

@@ -9,9 +9,9 @@
 .wp-block-cover-image.alignright,
 .wp-block-cover.alignleft,
 .wp-block-cover.alignright {
-  max-width: calc(var(--mw-c, 700px) / 2);
-  margin-left: auto;
-  margin-right: auto;
+	max-width: calc(var(--mw-c, 700px) / 2);
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .wp-block-cover-image p:not(.has-text-color),
@@ -41,8 +41,8 @@
 .wp-block-cover .wp-block-cover-text {
 	max-width: var(--mw-c, 700px);
 	padding: 1em;
-  margin-left: auto;
-  margin-right: auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .wp-block-cover-image .wp-block-cover__inner-container > *,

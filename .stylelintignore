@@ -19,6 +19,8 @@ LICENSE
 /assets/css/plugins/*.css
 /assets/css/widgets/*.css
 /assets/css/core/*.min.css
+/assets/css/blocks/defaults/core/*.css
+/inc/classes/Upgrades/Block/group-with-content.html
 /assets/css/admin/*.css
 /assets/css/customizer/*.css
 assets/css/**/*.js
