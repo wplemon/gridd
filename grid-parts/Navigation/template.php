@@ -26,18 +26,6 @@ if ( get_theme_mod( "nav_{$id}_custom_options", false ) ) {
 	$wrapper_class .= ' custom-options';
 }
 
-if ( false !== strpos( $responsive_mode, 'icon' ) ) {
-	\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/nav-collapse.min.css' ) );
-	$wrapper_class .= ' gridd-nav-collapse';
-
-	if ( false !== strpos( $responsive_mode, 'desktop-normal' ) ) {
-		\Gridd\CSS::add_string(
-			".gridd-tp-nav_$id .gridd-toggle-navigation{display:none;}.gridd-tp-nav_$id .navigation{display:block;}",
-			'only screen and (min-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . ')'
-		);
-	}
-}
-
 if ( false !== strpos( $responsive_mode, 'mobile-hidden' ) ) {
 	$wrapper_class .= ' hide-on-small';
 }

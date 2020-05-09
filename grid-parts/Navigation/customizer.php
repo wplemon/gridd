@@ -73,16 +73,15 @@ function gridd_nav_customizer_options( $id ) {
 			'label'             => esc_html__( 'Responsive Behavior', 'gridd' ),
 			'description'       => __( 'Select how this navigation should behave in smaller screens.', 'gridd' ),
 			'section'           => "nav_$id",
-			'default'           => 'desktop-normal mobile-hidden',
+			'default'           => 'desktop-normal mobile-icon',
 			'choices'           => [
-				'desktop-normal mobile-normal' => esc_html__( 'Always visible', 'gridd' ),
-				'desktop-normal mobile-icon'   => esc_html__( 'Collapse to icon on mobile', 'gridd' ),
-				'desktop-icon mobile-icon'     => esc_html__( 'Always collapsed', 'gridd' ),
-				'desktop-normal mobile-hidden' => esc_html__( 'Hide on mobile', 'gridd' ),
+				'desktop-normal mobile-icon'   => esc_html__( 'Default', 'gridd' ),
+				'desktop-icon mobile-icon'     => esc_html__( 'Collapsed', 'gridd' ),
+				'desktop-normal mobile-hidden' => esc_html__( 'Hide on Mobile', 'gridd' ),
 			],
 			'sanitize_callback' => function( $value ) {
-				if ( 'desktop-normal mobile-normal' !== $value && 'desktop-normal mobile-icon' !== $value && 'desktop-icon mobile-icon' !== $value && 'desktop-normal mobile-hidden' !== $value ) {
-					return 'desktop-normal mobile-hidden';
+				if ( 'desktop-normal mobile-icon' !== $value && 'desktop-icon mobile-icon' !== $value && 'desktop-normal mobile-hidden' !== $value ) {
+					return 'desktop-normal mobile-icon';
 				}
 				return $value;
 			},
@@ -232,11 +231,6 @@ function gridd_nav_customizer_options( $id ) {
 			'active_callback'   => [
 				[
 					'setting'  => "nav_{$id}_responsive_behavior",
-					'value'    => 'desktop-normal mobile-normal',
-					'operator' => '!==',
-				],
-				[
-					'setting'  => "nav_{$id}_responsive_behavior",
 					'value'    => 'desktop-normal mobile-hidden',
 					'operator' => '!==',
 				],
@@ -258,11 +252,6 @@ function gridd_nav_customizer_options( $id ) {
 			'choices'           => Navigation::get_expand_svgs(),
 			'hide_input'        => true,
 			'active_callback'   => [
-				[
-					'setting'  => "nav_{$id}_responsive_behavior",
-					'value'    => 'desktop-normal mobile-normal',
-					'operator' => '!==',
-				],
 				[
 					'setting'  => "nav_{$id}_responsive_behavior",
 					'value'    => 'desktop-normal mobile-hidden',
@@ -297,11 +286,6 @@ function gridd_nav_customizer_options( $id ) {
 				'bottom-right'  => esc_html__( 'Bottom Right', 'gridd' ),
 			],
 			'active_callback'   => [
-				[
-					'setting'  => "nav_{$id}_responsive_behavior",
-					'value'    => 'desktop-normal mobile-normal',
-					'operator' => '!==',
-				],
 				[
 					'setting'  => "nav_{$id}_responsive_behavior",
 					'value'    => 'desktop-normal mobile-hidden',

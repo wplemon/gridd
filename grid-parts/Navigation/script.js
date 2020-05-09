@@ -30,41 +30,45 @@ document.querySelectorAll( '.gridd-navigation ul.sub-menu' ).forEach( function( 
 	}, true );
 });
 
-function griddDebounce( func, wait, immediate ) {
-	var timeout;
-	return function() {
-		var context = this,
-			args = arguments, // eslint-disable-line prefer-rest-params
-			later = function() {
-				timeout = null;
-				if ( ! immediate ) {
-					func.apply( context, args );
-				}
-			},
-			callNow = immediate && ! timeout;
-
-		clearTimeout( timeout );
-		timeout = setTimeout( later, wait );
-		if ( callNow ) {
-			func.apply( context, args );
-		}
-	};
-}
-
 function griddNavShouldCollapse() {
 	document.querySelectorAll( '.gridd-tp-nav' ).forEach( function( navWrapper ) {
 		var nav = navWrapper.querySelector( 'nav' ),
-			navLis = nav.querySelector( 'ul' ).children,
-			wrapperBounds = navWrapper.getBoundingClientRect(),
-			wrapperL = wrapperBounds.left,
-			wrapperR = wrapperBounds.right,
-			navStartL = navLis[ 0 ].getBoundingClientRect().left,
-			navStartR = navLis[ 0 ].getBoundingClientRect().right,
-			navEndL = navLis[ navLis.length - 1 ].getBoundingClientRect().left,
-			navEndR = navLis[ navLis.length - 1 ].getBoundingClientRect().right,
-			shouldCollapse = ( navStartL < wrapperL || navEndL < wrapperL || navStartR > wrapperR || navEndR > wrapperR );
+			navLis,
+			wrapperBounds,
+			wrapperL,
+			wrapperR,
+			navStartL,
+			navStartR,
+			navEndL,
+			navEndR,
+			navCollapseWidth,
+			navStoredCollapseWidth,
+			shouldCollapse;
 
-		if ( shouldCollapse ) {
+		if ( nav.classList.contains( 'gridd-desktop-icon' ) ) {
+			if ( ! nav.classList.contains( 'should-collapse' ) ) {
+				nav.classList.add( 'should_collapse' );
+			}
+			return;
+		}
+		navLis = nav.querySelector( 'ul' ).children;
+		wrapperBounds = navWrapper.getBoundingClientRect();
+		wrapperL = wrapperBounds.left;
+		wrapperR = wrapperBounds.right;
+		navStartL = navLis[ 0 ].getBoundingClientRect().left;
+		navStartR = navLis[ 0 ].getBoundingClientRect().right;
+		navEndL = navLis[ navLis.length - 1 ].getBoundingClientRect().left;
+		navEndR = navLis[ navLis.length - 1 ].getBoundingClientRect().right;
+		navCollapseWidth = parseInt( Math.max( navEndR - navStartL, navStartR - navEndL ), 10 );
+
+		navStoredCollapseWidth = nav.getAttribute( 'data-collapse-width' );
+		if ( ! navStoredCollapseWidth || navStoredCollapseWidth < navCollapseWidth ) {
+			nav.setAttribute( 'data-collapse-width', parseInt( navCollapseWidth, 10 ) );
+		}
+
+		shouldCollapse = ( navStartL < wrapperL || navEndL < wrapperL || navStartR > wrapperR || navEndR > wrapperR );
+
+		if ( shouldCollapse || wrapperBounds.width < navStoredCollapseWidth ) {
 			navWrapper.classList.add( 'should-collapse' );
 		} else {
 			navWrapper.classList.remove( 'should-collapse' );
@@ -73,9 +77,12 @@ function griddNavShouldCollapse() {
 }
 
 function griddNavShouldCollapseDebounced() {
-	griddDebounce( function() {
-		griddNavShouldCollapse();
-	}, 250 );
+	if ( ! window.resizeDebouncedTimeout ) {
+		window.resizeDebouncedTimeout = setTimeout( function() {
+			window.resizeDebouncedTimeout = null;
+			griddNavShouldCollapse();
+		}, 200 );
+	}
 }
 
 griddNavShouldCollapse();
