@@ -74,3 +74,9 @@ do
 		rm -Rf dist/${blockName}
 	fi
 done
+
+# Cleanup.
+rm -f *.zip
+rm -Rf temp-styles
+rm -Rf gutenberg-master
+rm -Rf dist
