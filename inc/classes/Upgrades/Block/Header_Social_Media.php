@@ -96,9 +96,9 @@ class Header_Social_Media extends \Gridd\Upgrades\Block_Migrator {
 		$final_content = ob_get_clean();
 
 		// Replace placeholders with actual values.
-		$final_content = str_replace( 'BACKGROUND_COLOR', esc_attr( $background_color ), $final_content );
-		$final_content = str_replace( 'TEXT_COLOR', esc_attr( $text_color ), $final_content );
-		$final_content = str_replace( 'CONTENT', $icons_html, $final_content );
+		$final_content = str_replace( 'REPLACE_BACKGROUND_COLOR', esc_attr( $background_color ), $final_content );
+		$final_content = str_replace( 'REPLACE_TEXT_COLOR', esc_attr( $text_color ), $final_content );
+		$final_content = str_replace( 'REPLACE_CONTENT', $icons_html, $final_content );
 
 		return $final_content;
 	}
