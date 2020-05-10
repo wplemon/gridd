@@ -21,6 +21,7 @@ unzip -u -o master.zip
 
 # Create temp folder for the styles.
 mkdir temp-styles
+mkdir dist
 
 # Copy the base styles.
 cp -r gutenberg-master/packages/base-styles temp-styles/base-styles
@@ -74,9 +75,3 @@ do
 		rm -Rf dist/${blockName}
 	fi
 done
-
-# Cleanup.
-rm -f *.zip
-rm -Rf temp-styles
-rm -Rf gutenberg-master
-rm -Rf dist
