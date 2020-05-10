@@ -75,20 +75,31 @@
 
 .has-child .wp-block-navigation__container {
   border: 1px solid rgba(0, 0, 0, 0.15);
-  padding: 6px 16px;
+  padding: 6px 0;
   background-color: inherit;
   color: inherit;
   position: absolute;
   left: 0;
   top: 100%;
+  width: fit-content;
   z-index: 1;
   opacity: 0;
   transition: opacity 0.1s linear;
   visibility: hidden; }
+  .has-child .wp-block-navigation__container > .wp-block-navigation-link {
+    font-size: 15px; }
+    .has-child .wp-block-navigation__container > .wp-block-navigation-link > .wp-block-navigation-link__content {
+      flex-grow: 1; }
+    .has-child .wp-block-navigation__container > .wp-block-navigation-link > .wp-block-navigation-link__submenu-icon {
+      padding-right: 8px; }
   @media (min-width: 782px) {
-    .has-child .wp-block-navigation__container .wp-block-navigation__container {
-      left: 100%;
-      top: -1px; } }
+    .has-child .wp-block-navigation__container {
+      left: 24px; }
+      .has-child .wp-block-navigation__container .wp-block-navigation__container {
+        left: 100%;
+        top: -7px; }
+      .has-child .wp-block-navigation__container .wp-block-navigation-link__submenu-icon svg {
+        transform: rotate(0); } }
 
 .has-child:hover {
   cursor: pointer; }
@@ -107,21 +118,25 @@
     flex-direction: column; }
 
 .wp-block-navigation-link__content {
+  text-decoration: none;
   padding: 6px 16px; }
   .has-text-color .wp-block-navigation-link__content {
     color: inherit; }
 
 .wp-block-navigation-link__label {
+  font-size: 17px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   word-break: normal;
   overflow-wrap: break-word; }
 
 .wp-block-navigation-link__submenu-icon {
+  height: inherit;
   padding: 6px 16px; }
   .wp-block-navigation-link__submenu-icon svg {
     fill: currentColor; }
     @media (min-width: 782px) {
       .wp-block-navigation-link__submenu-icon svg {
-        transform: rotate(0); } }
+        transform: rotate(90deg); } }
 
 .wp-block-navigation-link:not(.has-text-color) .wp-block-navigation-link__content,
 .is-style-light .wp-block-navigation-link:not(.has-text-color) .wp-block-navigation-link__content {
