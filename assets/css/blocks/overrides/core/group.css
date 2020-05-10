@@ -11,3 +11,8 @@
 	margin-left: auto;
 	margin-right: auto;
 }
+
+.wp-block-group__inner-container {
+  display: flex;
+  justify-content: center;
+}
