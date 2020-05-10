@@ -53,6 +53,7 @@ class Block_Styles {
 		add_filter( 'render_block', [ $this, 'add_inline_styles' ], 10, 2 );
 		add_filter( 'render_block', [ $this, 'convert_columns_to_grid' ], 10, 2 );
 		add_filter( 'render_block', [ $this, 'cover_styles' ], 10, 2 );
+		add_filter( 'render_block', [ $this, 'button_styles' ], 10, 2 );
 
 		/**
 		 * Add admin styles for blocks.
@@ -229,6 +230,42 @@ class Block_Styles {
 				'style="' . $extra_styles,
 				$block_content
 			);
+		}
+		return $block_content;
+	}
+
+	/**
+	 * Filters the content of a single block.
+	 *
+	 * Add CSS-Variables to the cover block.
+	 *
+	 * @since 3.0.0
+	 * @access public
+	 * @param string $block_content The block content about to be appended.
+	 * @param array  $block         The full block, including name and attributes.
+	 * @return string               Returns $block_content with our modifications.
+	 */
+	public function button_styles( $block_content, $block ) {
+		if ( 'core/button' === $block['blockName'] ) {
+			if ( isset( $block['attrs'] ) && isset( $block['attrs']['style'] ) ) {
+				if ( isset( $block['attrs']['style']['color'] ) && isset( $block['attrs']['style']['color']['text'] ) ) {
+					$block_content = str_replace(
+						"color:{$block['attrs']['style']['color']['text']}",
+						"--bg:{$block['attrs']['style']['color']['text']}",
+						$block_content
+					);
+				}
+				if ( isset( $block['attrs']['style']['color'] ) && isset( $block['attrs']['style']['color']['background'] ) ) {
+					$block_content = str_replace(
+						[
+							"background:{$block['attrs']['style']['color']['background']}",
+							"background-color:{$block['attrs']['style']['color']['background']}",
+						],
+						"--cl:{$block['attrs']['style']['color']['background']}",
+						$block_content
+					);
+				}
+			}
 		}
 		return $block_content;
 	}
