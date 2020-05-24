@@ -49,7 +49,6 @@ class Init {
 		add_action( 'admin_init', [ $this, 'dismiss_nag' ] );
 
 		new Values();
-		new \Kirki\Util\Telemetry();
 	}
 
 	/**

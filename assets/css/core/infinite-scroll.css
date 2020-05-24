@@ -1,44 +1,54 @@
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer {
-  display: none; }
+	display: none;
+}
 
 .infinity-end.neverending .site-footer {
-  display: block; }
+	display: block;
+}
 
 body #infinite-handle {
-  text-align: center;
-  margin-top: 1em;
-  margin-bottom: 2em; }
-  body #infinite-handle span {
-    background: none;
-    border-radius: 0;
-    color: currentColor;
-    cursor: pointer;
-    font-size: 1em;
-    padding: 0; }
-    body #infinite-handle span button {
-      text-decoration: none !important;
-      border-radius: 4px;
-      padding: 0.35em 1.25em;
-      border: 2px solid var(--element-background-color);
-      cursor: pointer;
-      display: inline-block;
-      margin: 0;
-      text-align: center;
-      overflow-wrap: break-word;
-      color: var(--element-color);
-      background-color: var(--element-background-color);
-      border-color: var(--cl);
-      background: var(--cl);
-      color: var(--bg); }
-      body #infinite-handle span button:active, body #infinite-handle span button:hover, body #infinite-handle span button:focus {
-        outline: none !important;
-        background: var(--element-color);
-        color: var(--element-background-color);
-        border-color: var(--element-background-color); }
-      body #infinite-handle span button:focus, body #infinite-handle span button:active {
-        background: var(--bg);
-        color: var(--cl);
-        box-shadow: none; }
+	text-align: center;
+	margin-top: 1em;
+	margin-bottom: 2em;
+}
 
-/*# sourceMappingURL=infinite-scroll.css.map */
+body #infinite-handle span {
+	background: none;
+	border-radius: 0;
+	color: currentColor;
+	cursor: pointer;
+	font-size: 1em;
+	padding: 0;
+}
+
+body #infinite-handle span button {
+	text-decoration: none !important;
+	border-radius: 4px;
+	padding: 0.35em 1.25em;
+	border: 2px solid var(--element-background-color);
+	cursor: pointer;
+	display: inline-block;
+	margin: 0;
+	text-align: center;
+	overflow-wrap: break-word;
+	border-color: var(--cl);
+	background: var(--cl);
+	color: var(--bg);
+}
+
+body #infinite-handle span button:active,
+body #infinite-handle span button:hover,
+body #infinite-handle span button:focus {
+	outline: none !important;
+	background: var(--element-color);
+	color: var(--element-background-color);
+	border-color: var(--element-background-color);
+}
+
+body #infinite-handle span button:focus,
+body #infinite-handle span button:active {
+	background: var(--bg);
+	color: var(--cl);
+	box-shadow: none;
+}

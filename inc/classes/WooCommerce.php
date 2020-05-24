@@ -88,22 +88,17 @@ class WooCommerce {
 	 */
 	public function inline_styles() {
 
-		$style = Style::get_instance( 'woocommerce' );
-
-		// Add the main woo styles.
-		$style->add_file( get_theme_file_path( 'assets/css/plugins/woocommerce.min.css' ) );
+		\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/plugins/woocommerce.min.css' ) );
 
 		// Account page styles.
 		if ( ! function_exists( 'is_account_page' ) || is_account_page() ) {
-			$style->add_file( get_theme_file_path( '/assets/css/plugins/woo-account.min.css' ) );
+			\Gridd\CSS::add_file( get_theme_file_path( '/assets/css/plugins/woo-account.min.css' ) );
 		}
 
 		// Cart styles.
 		if ( ! function_exists( 'is_cart' ) || is_cart() ) {
-			$style->add_file( get_theme_file_path( '/assets/css/plugins/woo-cart.min.css' ) );
+			\Gridd\CSS::add_file( get_theme_file_path( '/assets/css/plugins/woo-cart.min.css' ) );
 		}
-
-		$style->the_css( 'gridd-inline-css-wc' );
 	}
 
 	/**
@@ -169,7 +164,7 @@ class WooCommerce {
 	 * @return void
 	 */
 	public function wrapper_before() {
-		echo '<div id="primary" class="content-area"><main id="main" class="site-main" role="main">';
+		echo '<div id="primary" class="content-area"><main id="main" class="site-main">';
 	}
 
 	/**

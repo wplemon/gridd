@@ -207,12 +207,12 @@ class Style {
 	 * @return void
 	 */
 	public function the_css( $id ) {
-		echo ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? "\r\n<style id=\"" . esc_attr( $id ) . "\">\r\n" : '<style id="' . esc_attr( $id ) . '">';
+		echo '<style id="' . esc_attr( $id ) . '">';
 		/**
 		 * This is CSS, do not escape. Nothing here is unescaped user input, everything has already been sanitized properly.
 		 */
 		echo $this->get_css(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		echo ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? "\r\n</style>\r\n" : '</style>';
+		echo '</style>';
 	}
 }
 

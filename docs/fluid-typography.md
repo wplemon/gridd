@@ -23,10 +23,10 @@ You don't need to sit down with a pen and paper doing all the math, we do all th
 The font-size is then calculated using the following CSS:
 
 ```css
-font-size: calc(var(--gridd-font-size) + var(--gridd-responsive-typo-ratio) * 1vw);
+font-size: calc(var(--fs) + var(--gridd-responsive-typo-ratio) * 1vw);
 ```
 
-In the above CSS, `var(--gridd-font-size)` is the font-size you have defined, and `var(--gridd-responsive-typo-ratio)` is the defined ratio.
+In the above CSS, `var(--fs)` is the font-size you have defined, and `var(--gridd-responsive-typo-ratio)` is the defined ratio.
 
 
 `1vw` is defined in CSS as 1/100th of the screen-width, so if you set ratio to `1`, then for every 100px of screen-width your users will gain 1px for the font-size. The slider allows for extreme fine-tuning of the ratio value, so you can define a value of `0.25` for example. This will add 1px of font-size for every 400px of screen-width.

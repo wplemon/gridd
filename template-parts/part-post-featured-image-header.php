@@ -10,28 +10,10 @@
  */
 
 use Gridd\Theme;
-use Gridd\Style;
 
+\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/core/featured-image-post-header.min.css' ) );
 ?>
 <?php if ( has_post_thumbnail() ) : ?>
-	<?php
-	/**
-	 * Add styles.
-	 */
-	$style = Style::get_instance( 'post-featured-image-header' );
-	$style->add_file( get_theme_file_path( 'assets/css/core/featured-image-post-header.min.css' ) );
-	$padding = get_theme_mod(
-		'gridd_grid_content_padding',
-		[
-			'top'    => 0,
-			'bottom' => 0,
-			'left'   => '20px',
-			'right'  => '20px',
-		]
-	);
-	$style->the_css( 'post-featured-image-header' );
-	?>
-
 	<div class="gridd-featured-image-post-header">
 		<div class="gridd-featured-image-post-header-image-wrapper"><?php the_post_thumbnail(); ?></div>
 		<div class="gridd-featured-image-post-header-overlay"></div>

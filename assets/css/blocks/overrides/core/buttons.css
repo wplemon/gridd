@@ -1,0 +1,8 @@
+.wp-block-buttons .wp-block-button.wp-block-button {
+	margin-right: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.wp-block-buttons.alignright .wp-block-button {
+	margin-left: 0.5em;
+}

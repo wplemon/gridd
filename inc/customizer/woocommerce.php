@@ -12,9 +12,8 @@ if ( ! class_exists( 'WooCommerce' ) ) {
 	return;
 }
 
-Customizer::add_field(
+new \Kirki\Field\Dimension(
 	[
-		'type'        => 'dimension',
 		'settings'    => 'gridd_woocommerce_product_catalog_min_width',
 		'label'       => esc_html__( 'Products min-width', 'gridd' ),
 		'description' => esc_html__( 'The minimum width of your products in product-grids.', 'gridd' ),
@@ -30,9 +29,8 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
-		'type'     => 'slider',
 		'settings' => 'gridd_woocommerce_product_catalog_per_page',
 		'label'    => esc_html__( 'Products per page', 'gridd' ),
 		'section'  => 'woocommerce_product_catalog',

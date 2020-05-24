@@ -1,0 +1,118 @@
+/**
+ * Breakpoints & Media Queries
+ */
+/**
+ * Colors
+ */
+/**
+ * Breakpoint mixins
+ */
+/**
+ * Long content fade mixin
+ *
+ * Creates a fading overlay to signify that the content is longer
+ * than the space allows.
+ */
+/**
+ * Focus styles.
+ */
+/**
+ * Applies editor left position to the selector passed as argument
+ */
+/**
+ * Styles that are reused verbatim in a few places
+ */
+/**
+ * Allows users to opt-out of animations via OS-level preferences.
+ */
+/**
+ * Reset default styles for JavaScript UI based pages.
+ * This is a WP-admin agnostic reset
+ */
+/**
+ * Reset the WP Admin page styles for Gutenberg-like pages.
+ */
+/**
+ * Colors
+ */
+/**
+ * Fonts & basic variables.
+ */
+/**
+ * Grid System.
+ * https://make.wordpress.org/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
+ */
+/**
+ * Dimensions.
+ */
+/**
+ * Shadows.
+ */
+/**
+ * Editor widths.
+ */
+/**
+ * Block UI.
+ */
+/**
+ * Border radii.
+ */
+.wp-block-columns {
+  display: flex;
+  margin-bottom: 28px;
+  flex-wrap: wrap; }
+  @media (min-width: 782px) {
+    .wp-block-columns {
+      flex-wrap: nowrap; } }
+  .wp-block-columns.has-background {
+    padding: 20px 38px; }
+
+.wp-block-column {
+  flex-grow: 1;
+  min-width: 0;
+  word-break: break-word;
+  overflow-wrap: break-word; }
+  @media (max-width: 599px) {
+    .wp-block-column {
+      flex-basis: 100% !important; } }
+  @media (min-width: 600px) and (max-width: 781px) {
+    .wp-block-column {
+      flex-basis: calc(50% - 16px) !important;
+      flex-grow: 0; }
+      .wp-block-column:nth-child(even) {
+        margin-left: 32px; } }
+  @media (min-width: 782px) {
+    .wp-block-column {
+      flex-basis: 0;
+      flex-grow: 1; }
+      .wp-block-column[style*="flex-basis"] {
+        flex-grow: 0; }
+      .wp-block-column:not(:first-child) {
+        margin-left: 32px; } }
+
+/**
+ * All Columns Alignment
+ */
+.wp-block-columns.are-vertically-aligned-top {
+  align-items: flex-start; }
+
+.wp-block-columns.are-vertically-aligned-center {
+  align-items: center; }
+
+.wp-block-columns.are-vertically-aligned-bottom {
+  align-items: flex-end; }
+
+/**
+ * Individual Column Alignment
+ */
+.wp-block-column.is-vertically-aligned-top {
+  align-self: flex-start; }
+
+.wp-block-column.is-vertically-aligned-center {
+  align-self: center; }
+
+.wp-block-column.is-vertically-aligned-bottom {
+  align-self: flex-end; }
+
+.wp-block-column.is-vertically-aligned-top, .wp-block-column.is-vertically-aligned-center, .wp-block-column.is-vertically-aligned-bottom {
+  width: 100%; }

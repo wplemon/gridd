@@ -1,13 +1,16 @@
 .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current-menu-ancestor .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current-menu-item .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current-menu-parent .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current-page-ancestor .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current-page-item .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current-page-parent .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current_page_ancestor .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current_page_item .gridd-toggle, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current_page_parent .gridd-toggle {
-  display: none; }
+  display: none;
+}
 .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current-menu-ancestor ul::after, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current-menu-item ul::after, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current-menu-parent ul::after, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current-page-ancestor ul::after, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current-page-item ul::after, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current-page-parent ul::after, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current_page_ancestor ul::after, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current_page_item ul::after, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation li.current_page_parent ul::after {
   content: "";
   width: 100%;
   display: block;
   border-bottom: 1px solid currentColor;
-  opacity: 0.2; }
+  opacity: 0.2;
+}
 .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a:hover, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a:focus, .gridd-tp-sidebar_ID .widget_nav_menu .gridd-navigation a:active {
   color: var(--bg);
-  background: var(--cl); }
+  background: var(--cl);
+}
 
 /*# sourceMappingURL=widget-navigation-menu.css.map */

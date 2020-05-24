@@ -1,7 +1,6 @@
 # Exclude from release archives.
 
 /docs/                            export-ignore
-/assets/css/blocks/block-library/ export-ignore
 /node_modules/                    export-ignore
 /inc/kirki/controls/js/src/       export-ignore
 /inc/kirki/controls/scss/         export-ignore

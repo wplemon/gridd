@@ -8,9 +8,8 @@
 
 use Gridd\Customizer;
 
-Customizer::add_field(
+new \Kirki\Field\Checkbox(
 	[
-		'type'            => 'checkbox',
 		'settings'        => 'gridd_hide_home_title',
 		'label'           => esc_attr__( 'Hide Homepage Title', 'gridd' ),
 		'section'         => 'static_front_page',

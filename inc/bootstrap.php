@@ -78,13 +78,6 @@ Theme::get_instance();
 Widget_Output_Filters::get_instance();
 
 /**
- * Load admin tweaks.
- *
- * @since 1.0
- */
-new Admin();
-
-/**
  * Load EDD mods.
  *
  * @since 1.0
@@ -134,14 +127,9 @@ new Upgrade();
 new Editor();
 
 /**
- * Integrates WPBakery Builder in the theme.
- *
- * @since 1.0
+ * Styles.
  */
-if ( function_exists( 'vc_set_as_theme' ) ) {
-	add_action( 'vc_before_init', 'vc_set_as_theme' );
-	add_filter( 'vc_nav_front_logo', '__return_empty_string' );
-}
+new \Gridd\CSS();
 
 /**
  * Custom CSS should be at the end of everything else in order to override existing styles.
@@ -155,5 +143,13 @@ add_action(
 	},
 	10
 );
+
+/**
+ * Init the admin.
+ *
+ * @since 3.0.0
+ */
+$gridd_admin = new \Gridd\Admin();
+$gridd_admin->init();
 
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */

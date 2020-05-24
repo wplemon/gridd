@@ -2,13 +2,17 @@
   list-style: none;
   list-style-type: none;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 .widget_recent_entries li {
   padding: 0.25em 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
-  .widget_recent_entries li:last-child {
-    border-bottom: none; }
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.widget_recent_entries li:last-child {
+  border-bottom: none;
+}
 .widget_recent_entries .post-date {
-  font-size: var(--fs-1d-ts-tr); }
+  font-size: var(--fs-1d-ts-tr);
+}
 
 /*# sourceMappingURL=widget-recent-posts.css.map */

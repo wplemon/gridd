@@ -10,21 +10,20 @@ use Gridd\Customizer\Sanitize;
 
 $sanitization = new Sanitize();
 
-/**
- * Add the Theme-Options panel.
- */
-Customizer::add_section(
+new \Kirki\Section(
 	'gridd_typography',
 	[
 		'title'    => esc_html__( 'Typography', 'gridd' ),
-		'priority' => -90,
+		'priority' => 10,
+		'panel'    => 'theme_options',
+		'type'     => 'kirki-expanded',
 	]
 );
 
 /**
  * Body typography switch.
  */
-Customizer::add_field(
+new \Kirki\Field\Checkbox(
 	[
 		'type'     => 'checkbox',
 		'settings' => 'custom_body_typography',
@@ -38,9 +37,8 @@ Customizer::add_field(
 /**
  * Body typography.
  */
-Customizer::add_field(
+new \Kirki\Field\Typography(
 	[
-		'type'            => 'typography',
 		'settings'        => 'gridd_body_typography',
 		'label'           => esc_html__( 'Body Typography', 'gridd' ),
 		'section'         => 'gridd_typography',
@@ -74,9 +72,8 @@ Customizer::add_field(
 /**
  * Body typography switch.
  */
-Customizer::add_field(
+new \Kirki\Field\Checkbox(
 	[
-		'type'     => 'checkbox',
 		'settings' => 'custom_headers_typography',
 		'label'    => esc_html__( 'Custom Headers Typography', 'gridd' ),
 		'section'  => 'gridd_typography',
@@ -88,9 +85,8 @@ Customizer::add_field(
 /**
  * Headers typography.
  */
-Customizer::add_field(
+new \Kirki\Field\Typography(
 	[
-		'type'            => 'typography',
 		'settings'        => 'gridd_headers_typography',
 		'label'           => esc_html__( 'Headers Typography', 'gridd' ),
 		'section'         => 'gridd_typography',
@@ -137,7 +133,7 @@ Customizer::add_field(
 			],
 		],
 		'active_callback' => function() {
-			return get_theme_mod( 'custom_headers_typography' );
+			return get_theme_mod( 'custom_headers_typography', false );
 		},
 	]
 );
@@ -145,9 +141,8 @@ Customizer::add_field(
 /**
  * Body typography.
  */
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
-		'type'        => 'slider',
 		'settings'    => 'gridd_body_font_size',
 		'label'       => esc_html__( 'Body Font-Size', 'gridd' ),
 		'description' => esc_html__( 'We recommend you a font-size greater than 18px to ensure greater readability.', 'gridd' ),
@@ -158,11 +153,11 @@ Customizer::add_field(
 		'output'      => [
 			[
 				'element'  => ':root',
-				'property' => '--gridd-font-size',
+				'property' => '--fs',
 			],
 			get_theme_mod( 'disable_editor_styles' ) ? [] : [
 				'element'  => '.edit-post-visual-editor.editor-styles-wrapper',
-				'property' => '--gridd-font-size',
+				'property' => '--fs',
 				'context'  => [ 'editor' ],
 			],
 		],
@@ -175,21 +170,11 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
-		'type'        => 'slider',
 		'settings'    => 'gridd_fluid_typography_ratio',
 		'label'       => esc_html__( 'Fluid Typography Ratio', 'gridd' ),
-		'description' => Customizer::get_control_description(
-			[
-				'short'   => '',
-				'details' => sprintf(
-					/* Translators: link attributes. */
-					__( 'Defines by how much your font-size will change depending on the screen-size. Larger values will increase the font-size more on bigger screens. Set to 0 if you do not want the font-size to change depending on the screen-size. Need more Information? <a %s>Read this article</a>', 'gridd' ),
-					'href="https://wplemon.github.io/gridd/fluid-typography.html" target="_blank"'
-				),
-			]
-		),
+		'description' => esc_html__( 'Controls how your site\'s font-size changes depending on screen-size.', 'gridd' ),
 		'section'     => 'gridd_typography',
 		'default'     => 0.25,
 		'priority'    => 70,
@@ -216,10 +201,9 @@ Customizer::add_field(
 /**
  * Type Scale
  */
-Customizer::add_field(
+new \Kirki\Field\Radio(
 	[
 		'settings'          => 'gridd_type_scale',
-		'type'              => 'radio',
 		'label'             => esc_attr__( 'Typography Scale', 'gridd' ),
 		'description'       => esc_attr__( 'Controls the size relations between your headers and your main typography font-size.', 'gridd' ),
 		'section'           => 'gridd_typography',
@@ -239,11 +223,11 @@ Customizer::add_field(
 		'priority'          => 80,
 		'choices'           => [
 			/* Translators: Numeric representation of the scale. */
-			'1.149' => sprintf( esc_attr__( '%s - Musical Pentatonic (classic)', 'gridd' ), '1.149' ),
+			'1.149' => sprintf( esc_attr__( '%s - Subtle', 'gridd' ), '1.149' ),
 			/* Translators: Numeric representation of the scale. */
-			'1.26'  => sprintf( esc_attr__( '%s - Musical Tritonic', 'gridd' ), '1.26' ),
+			'1.26'  => sprintf( esc_attr__( '%s - Normal', 'gridd' ), '1.26' ),
 			/* Translators: Numeric representation of the scale. */
-			'1.333' => sprintf( esc_attr__( '%s - Perfect Fourth', 'gridd' ), '1.333' ),
+			'1.333' => sprintf( esc_attr__( '%s - Big', 'gridd' ), '1.333' ),
 		],
 		'priority'          => 80,
 		'sanitize_callback' => function( $value ) {

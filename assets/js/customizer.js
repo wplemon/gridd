@@ -66,22 +66,22 @@
 
 				// Loop parts in the sub-grid.
 				_.each( parts, function( part ) {
-					var section = jQuery( '#sub-accordion-section-grid_part_details_' + part ),
+					var section = jQuery( '#sub-accordion-section-' + part ),
 						backBtn = section.find( '.customize-section-back' );
 
 					// Change the behavior of the back button.
 					jQuery( backBtn ).click( function( e ) {
-						if ( 'gridd_header_grid' === grid ) {
-							wp.customize.section( 'grid_part_details_header' ).focus();
+						if ( 'header_grid' === grid ) {
+							wp.customize.section( 'header' ).focus();
 							e.preventDefault();
-						} else if ( 'gridd_footer_grid' === grid ) {
-							wp.customize.section( 'grid_part_details_footer' ).focus();
+						} else if ( 'footer_grid' === grid ) {
+							wp.customize.section( 'footer' ).focus();
 							e.preventDefault();
-						} else if ( nestedParts[ grid ] && wp.customize.section( 'grid_part_details_' + nestedParts[ grid ] ) ) {
-							wp.customize.section( 'grid_part_details_' + nestedParts[ grid ] ).focus();
+						} else if ( nestedParts[ grid ] && wp.customize.section( nestedParts[ grid ] ) ) {
+							wp.customize.section( nestedParts[ grid ] ).focus();
 							e.preventDefault();
-						} else if ( griddTemplatePreviewScript.nestedGrids[ grid ] && wp.customize.section( 'grid_part_details_' + griddTemplatePreviewScript.nestedGrids[ grid ] ) ) {
-							wp.customize.section( 'grid_part_details_' + griddTemplatePreviewScript.nestedGrids[ grid ] ).focus();
+						} else if ( griddTemplatePreviewScript.nestedGrids[ grid ] && wp.customize.section( griddTemplatePreviewScript.nestedGrids[ grid ] ) ) {
+							wp.customize.section( griddTemplatePreviewScript.nestedGrids[ grid ] ).focus();
 							e.preventDefault();
 						}
 					});
@@ -129,32 +129,6 @@
 		});
 
 		/**
-		 * Link link-color colorpickers hues.
-		 *
-		 * @since 2.0.0
-		 */
-		wp.customize( 'gridd_links_color', function( value ) {
-			value.bind( function( to ) { // eslint-disable-line no-unused-vars
-				var mainLinksHue;
-				if ( ! wp.customize.control( 'same_linkcolor_hues' ).setting.get() ) {
-					return;
-				}
-
-				mainLinksHue = wp.customize.control( 'gridd_links_color' ).getHue();
-
-				wp.customize.control.each( function( control ) {
-					if (
-						( 'gridd_links_color' !== control.id ) &&
-						( 'kirki-wcag-link-color' === control.params.type || 'kirki-wcag-lc' === control.params.type )
-					) {
-						control.setHue( mainLinksHue );
-						control.setting.set( control.getAutoColor( 'hsl(' + mainLinksHue + ',50%,50%)', true ) );
-					}
-				});
-			});
-		});
-
-		/**
 		 * Handle palette changes.
 		 *
 		 * @since 2.0.0
@@ -180,62 +154,17 @@
 			});
 		});
 
-		/**
-		 * Move the main links-color control to the typography setting if needed.
-		 *
-		 * @since 2.0.0
-		 */
-		if ( wp.customize.control( 'same_linkcolor_hues' ).setting.get() ) {
-			wp.customize.control( 'gridd_links_color' ).section( 'color_options' );
-		}
-
-		/**
-		 * Change all linkcolor hues when the switch is turned on.
-		 *
-		 * @since 2.0.0
-		 */
-		wp.customize( 'same_linkcolor_hues', function( value ) {
-			value.bind( function( to ) {
-				var mainLinksHue;
-				if ( ! to ) {
-					wp.customize.control( 'gridd_links_color' ).section( 'grid_part_details_content' );
-					wp.customize.control.each( function( control ) {
-						if (
-							( 'gridd_links_color' !== control.id ) &&
-							( 'kirki-wcag-link-color' === control.params.type || 'kirki-wcag-lc' === control.params.type )
-						) {
-							control.activate();
-						}
-					});
-				} else {
-					wp.customize.control( 'gridd_links_color' ).section( 'color_options' );
-					mainLinksHue = wp.customize.control( 'gridd_links_color' ).getHue();
-
-					wp.customize.control.each( function( control ) {
-						if (
-							( 'gridd_links_color' !== control.id ) &&
-							( 'kirki-wcag-link-color' === control.params.type || 'kirki-wcag-lc' === control.params.type )
-						) {
-							control.setHue( mainLinksHue );
-							control.setting.set( control.getAutoColor( 'hsl(' + mainLinksHue + ',50%,50%)', true ) );
-							control.deactivate();
-						}
-					});
-				}
-			});
-		});
-
 		// Move widget-area settings.
-		griddMoveSectionControlsOnDemand( 'sidebar-widgets-footer_sidebar_1', 'grid_part_details_footer_sidebar_1' );
-		griddMoveSectionControlsOnDemand( 'sidebar-widgets-footer_sidebar_2', 'grid_part_details_footer_sidebar_2' );
-		griddMoveSectionControlsOnDemand( 'sidebar-widgets-footer_sidebar_3', 'grid_part_details_footer_sidebar_3' );
-		griddMoveSectionControlsOnDemand( 'sidebar-widgets-footer_sidebar_4', 'grid_part_details_footer_sidebar_4' );
-		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-1', 'grid_part_details_sidebar_1' );
-		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-2', 'grid_part_details_sidebar_2' );
-		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-3', 'grid_part_details_sidebar_3' );
-		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-4', 'grid_part_details_sidebar_4' );
-		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-5', 'grid_part_details_sidebar_5' );
-		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-6', 'grid_part_details_sidebar_6' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-footer_sidebar_1', 'footer_sidebar_1' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-footer_sidebar_2', 'footer_sidebar_2' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-footer_sidebar_3', 'footer_sidebar_3' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-footer_sidebar_4', 'footer_sidebar_4' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-1', 'sidebar_1' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-2', 'sidebar_2' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-3', 'sidebar_3' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-4', 'sidebar_4' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-5', 'sidebar_5' );
+		griddMoveSectionControlsOnDemand( 'sidebar-widgets-sidebar-6', 'sidebar_6' );
 		griddMoveSectionControlsOnDemand( 'sidebar-widgets-offcanvas-sidebar', 'gridd_plus_offcanvas_sidebar' );
 	});
 
@@ -246,28 +175,49 @@
 	 */
 	function griddMoveSectionControlsOnDemand( newSectionID, oldSectionID ) {
 		var newSection = wp.customize.section( newSectionID ),
-			oldSection = wp.customize.section( oldSectionID ),
-			moveSectionControls = function( newSection, oldSection ) {
-				oldSection.controls().forEach( function( control ) {
-					control.section( newSection.id );
-				});
-				setTimeout( function() {
-					oldSection.activate( true );
-					oldSection.expanded.bind( function() {
-						newSection.expand();
-					});
-				}, 1000 );
-			};
+			oldSection = wp.customize.section( oldSectionID );
 
 		if ( ! newSection || ! oldSection ) {
 			return;
 		}
 
+		window.alreadyProcessedSectionMoves = window.alreadyProcessedSectionMoves || {};
 		newSection.expanded.bind( function() {
-			moveSectionControls( newSection, oldSection );
+			if ( ! window.alreadyProcessedSectionMoves[ oldSection.id ] ) {
+				oldSection.activate( true );
+				oldSection.expand();
+				oldSection.controls().forEach( function( control ) {
+					control.section( newSection.id );
+				});
+				oldSection.activate( false );
+				newSection.expand();
+			}
+			window.alreadyProcessedSectionMoves[ oldSection.id ] = true;
 		});
 		oldSection.expanded.bind( function() {
 			newSection.expand();
 		});
 	}
+
+	/**
+	 * Link link-color colorpickers hues.
+	 *
+	 * @since 2.0.0
+	 */
+	wp.customize( 'links_color', function( value ) {
+		value.bind( function( to ) { // eslint-disable-line no-unused-vars
+			var mainLinksHue = wp.customize.control( 'links_color' ).getHue();
+
+			wp.customize.control.each( function( control ) {
+				if ( wp.hooks.applyFilters( 'griddLinksColorSkipGlobalHueChange', false, control ) ) {
+					return;
+				}
+
+				if ( ( 'links_color' !== control.id ) && ( 'kirki-wcag-link-color' === control.params.type || 'kirki-wcag-lc' === control.params.type ) ) {
+					control.setHue( mainLinksHue );
+					control.setting.set( control.getAutoColor( 'hsl(' + mainLinksHue + ',50%,50%)', true ) );
+				}
+			});
+		});
+	});
 }() );

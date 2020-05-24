@@ -9,43 +9,28 @@
 use Gridd\Customizer;
 use Gridd\Customizer\Sanitize;
 use Gridd\Rest;
-use Gridd\Grid_Part\Sidebar;
 
 $sanitization = new Sanitize();
 
-Customizer::add_section(
-	'gridd_features_global',
-	[
-		'title'    => esc_attr__( 'Global Settings', 'gridd' ),
-		'priority' => 1,
-		'panel'    => 'theme_settings',
-	]
-);
-
-Customizer::add_section(
+new \Kirki\Section(
 	'gridd_features_archive',
 	[
-		'title'    => esc_attr__( 'Post Archives Options', 'gridd' ),
-		'priority' => 1,
-		'panel'    => 'theme_settings',
+		'title' => esc_attr__( 'Post Archives Options', 'gridd' ),
 	]
 );
 
-Customizer::add_section(
+new \Kirki\Section(
 	'gridd_features_single_post',
 	[
-		'title'    => esc_attr__( 'Single Posts Options', 'gridd' ),
-		'priority' => 1,
-		'panel'    => 'theme_settings',
+		'title' => esc_attr__( 'Single Posts Options', 'gridd' ),
 	]
 );
 
 /**
  * Options for post-archives.
  */
-Customizer::add_field(
+new \Kirki\Field\Radio_Image(
 	[
-		'type'              => 'radio-image',
 		'settings'          => 'archive_post_mode',
 		'label'             => esc_attr__( 'Posts Mode', 'gridd' ),
 		'description'       => esc_html__( 'Please note that changes may not be visible if your posts don\'t have a featured image, and on mobiles they will fall-back to the default mode.', 'gridd' ),
@@ -63,7 +48,7 @@ Customizer::add_field(
 	]
 );
 
-new \Kirki\Field\Select(
+new \Kirki\Field\RadioButtonset(
 	[
 		'settings'          => 'gridd_featured_image_mode_archive',
 		'label'             => esc_attr__( 'Featured Images Mode in Archives', 'gridd' ),
@@ -89,9 +74,8 @@ new \Kirki\Field\Select(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Checkbox(
 	[
-		'type'            => 'checkbox',
 		'settings'        => 'gridd_archives_display_full_post',
 		'label'           => esc_attr__( 'Show full post in archives', 'gridd' ),
 		'description'     => '',
@@ -118,9 +102,8 @@ $post_types = get_post_types(
 );
 
 foreach ( $post_types as $post_type_id => $post_type_obj ) {
-	Customizer::add_field(
+	new \Kirki\Field\Checkbox(
 		[
-			'type'      => 'checkbox',
 			'settings'  => "gridd_archive_display_grid_$post_type_id",
 			'label'     => sprintf(
 				/* translators: The post-type name. */
@@ -167,26 +150,21 @@ foreach ( $post_types as $post_type_id => $post_type_obj ) {
 	);
 }
 
-Customizer::add_field(
+new \Kirki\Field\Textarea(
 	[
-		'type'        => 'code',
 		'settings'    => 'excerpt_read_more',
 		'label'       => esc_attr__( 'Read More link', 'gridd' ),
-		'description' => esc_html__( 'If you want to include the post title in your read-more link, you can use "%s" (without the quotes) and it will be replaced with the post\'s title.', 'gridd' ), // phpcs:ignore WordPress.WP.I18n.MissingTranslatorsComment
+		'description' => esc_html__( 'If you want to include the post title in your read-more link, you can use "%s" and it will be replaced with the post\'s title.', 'gridd' ), // phpcs:ignore WordPress.WP.I18n.MissingTranslatorsComment
 		'section'     => 'gridd_features_archive',
 		'priority'    => 50,
 		/* translators: %s: Name of current post. Only visible to screen readers */
 		'default'     => __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'gridd' ),
 		'transport'   => 'refresh',
-		'choices'     => [
-			'language' => 'html',
-		],
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Slider(
 	[
-		'type'            => 'slider',
 		'settings'        => 'archive_card_image_width',
 		'label'           => esc_attr__( 'Image Width', 'gridd' ),
 		'description'     => esc_html__( 'Width of the featured image in relation to the global width (percentage).', 'gridd' ),
@@ -220,7 +198,7 @@ Customizer::add_field(
 /**
  * Options for single posts.
  */
-new \Kirki\Field\Select(
+new \Kirki\Field\Radio(
 	[
 		'settings'          => 'gridd_featured_image_mode_singular',
 		'label'             => esc_attr__( 'Featured Images Mode in Single Posts', 'gridd' ),
@@ -247,9 +225,8 @@ new \Kirki\Field\Select(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Checkbox(
 	[
-		'type'            => 'checkbox',
 		'settings'        => 'gridd_featured_image_overlay_color_from_image',
 		'label'           => esc_html__( 'Use Image Colors', 'gridd' ),
 		'section'         => 'gridd_features_single_post',
@@ -262,7 +239,7 @@ Customizer::add_field(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Dimension(
 	[
 		'type'            => 'dimension',
 		'settings'        => 'gridd_featured_image_overlay_min_height',
@@ -332,7 +309,7 @@ new \WPLemon\Field\WCAGTextColor(
 	]
 );
 
-Customizer::add_field(
+new \Kirki\Field\Checkbox(
 	[
 		'type'      => 'checkbox',
 		'settings'  => 'gridd_show_next_prev',
@@ -344,20 +321,26 @@ Customizer::add_field(
 	]
 );
 
+/**
+ * Disable Global Settings section & options.
+ *
+ * WIP
+new \Kirki\Section(
+	'gridd_features_global',
+	[
+		'title'    => esc_attr__( 'Global Settings', 'gridd' ),
+		'priority' => 1,
+	]
+);
+
 add_action(
 	'init',
 	function() {
-		Customizer::add_field(
+		new \Kirki\Field\Multicheck(
 			[
-				'type'        => 'multicheck',
 				'settings'    => 'gridd_rest_api_partials',
 				'label'       => esc_attr__( 'Deferred Parts', 'gridd' ),
-				'description' => Customizer::get_control_description(
-					[
-						'short'   => '',
-						'details' => esc_html__( 'Select the parts that should be loaded after the initial request. Non-essential parts can be added here. This can speed-up the initial page-load and users on slower connections can start consuming your content faster.', 'gridd' ),
-					]
-				),
+				'description' => esc_html__( 'Select the parts that should be loaded after the initial request. Non-essential parts can be added here. This can speed-up the initial page-load and users on slower connections can start consuming your content faster.', 'gridd' ),
 				'section'     => 'gridd_features_global',
 				'priority'    => 70,
 				'multiple'    => 999,
@@ -369,12 +352,8 @@ add_action(
 	}
 );
 
-/**
- * Disabled control.
- *
-Customizer::add_field(
+new \Kirki\Field\Checkbox(
 	[
-		'type'        => 'checkbox',
 		'settings'    => 'disable_editor_styles',
 		'label'       => esc_html__( 'Disable Editor Styles', 'gridd' ),
 		'description' => esc_html__( 'Enable this option to prevent the theme from styling the posts editor to match your options, and instead uses the default WordPress styles for the editor.', 'gridd' ),

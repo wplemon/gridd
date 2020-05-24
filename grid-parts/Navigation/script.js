@@ -29,3 +29,76 @@ document.querySelectorAll( '.gridd-navigation ul.sub-menu' ).forEach( function( 
 		}
 	}, true );
 });
+
+function griddNavShouldCollapse() {
+	document.querySelectorAll( '.gridd-tp-nav' ).forEach( function( navWrapper ) {
+		var nav = navWrapper.querySelector( 'nav' ),
+			isHorizontal = nav.classList.contains( 'gridd-nav-horizontal' ) || nav.classList.contains( 'gridd-nav-default-horizontal' ),
+			navLis,
+			wrapperBounds,
+			wrapperL,
+			wrapperR,
+			navStartL,
+			navStartR,
+			navEndL,
+			navEndR,
+			navCollapseWidth,
+			navStoredCollapseWidth,
+			shouldCollapse;
+
+		if ( nav.classList.contains( 'gridd-desktop-icon' ) ) {
+			if ( ! nav.classList.contains( 'should-collapse' ) ) {
+				nav.classList.add( 'should-collapse' );
+			}
+			return;
+		}
+		navLis = nav.querySelector( 'ul' ).children;
+		wrapperBounds = navWrapper.getBoundingClientRect();
+		wrapperL = wrapperBounds.left;
+		wrapperR = wrapperBounds.right;
+		navStartL = navLis[ 0 ].getBoundingClientRect().left;
+		navStartR = navLis[ 0 ].getBoundingClientRect().right;
+		navEndL = navLis[ navLis.length - 1 ].getBoundingClientRect().left;
+		navEndR = navLis[ navLis.length - 1 ].getBoundingClientRect().right;
+		navCollapseWidth = parseInt( Math.max( navEndR - navStartL, navStartR - navEndL ), 10 );
+
+		navStoredCollapseWidth = nav.getAttribute( 'data-collapse-width' );
+		if ( ! navStoredCollapseWidth || navStoredCollapseWidth < navCollapseWidth ) {
+			nav.setAttribute( 'data-collapse-width', parseInt( navCollapseWidth, 10 ) );
+		}
+
+		shouldCollapse = ( navStartL < wrapperL || navEndL < wrapperL || navStartR > wrapperR || navEndR > wrapperR );
+
+		if ( isHorizontal ) {
+			nav.classList.add( 'gridd-nav-default-horizontal' );
+		}
+
+		if ( shouldCollapse || wrapperBounds.width < navStoredCollapseWidth ) {
+			navWrapper.classList.add( 'should-collapse' );
+
+			if ( isHorizontal ) {
+				nav.classList.remove( 'gridd-nav-horizontal' );
+				nav.classList.add( 'gridd-nav-vertical' );
+			}
+		} else {
+			navWrapper.classList.remove( 'should-collapse' );
+
+			if ( isHorizontal ) {
+				nav.classList.add( 'gridd-nav-horizontal' );
+				nav.classList.remove( 'gridd-nav-vertical' );
+			}
+		}
+	});
+}
+
+function griddNavShouldCollapseDebounced() {
+	if ( ! window.resizeDebouncedTimeout ) {
+		window.resizeDebouncedTimeout = setTimeout( function() {
+			window.resizeDebouncedTimeout = null;
+			griddNavShouldCollapse();
+		}, 200 );
+	}
+}
+
+griddNavShouldCollapse();
+window.onresize = griddNavShouldCollapseDebounced;

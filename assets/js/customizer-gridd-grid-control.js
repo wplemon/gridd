@@ -1,5 +1,6 @@
 /* global griddGridControl, DragSelect */
 /* jshint -W024 */
+/* eslint-disable no-unused-vars */
 wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 
 	gridVal: {
@@ -89,8 +90,8 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 
 		// Toggle zoom.
 		control.container.find( '.gridd-grid-zoom-in' ).on( 'click', function( e ) {
-			control.container.toggleClass( 'fixed-position' );
-			e.preventDefault();
+			// control.container.toggleClass( 'fixed-position' );
+			// e.preventDefault();
 		});
 	},
 
@@ -434,7 +435,7 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 		// Focus on section.
 		control.container.find( '.button-gridd-focus' ).on( 'click', function( e ) {
 			var part      = jQuery( this ).data( 'part' ),
-				sectionID = 'grid_part_details_' + part;
+				sectionID = part;
 			if ( wp.customize.section( part ) ) {
 				sectionID = wp.customize.section.part;
 			}
@@ -471,7 +472,7 @@ wp.customize.controlConstructor.gridd_grid = wp.customize.Control.extend({
 		html  = '<div class="actions">';
 
 		if ( ! control.params.choices.disablePartButtons || -1 === control.params.choices.disablePartButtons.indexOf( 'edit' ) ) {
-			html += editButton;
+			// html += editButton;
 		}
 		if ( ! control.params.choices.disablePartButtons || -1 === control.params.choices.disablePartButtons.indexOf( 'resize' ) ) {
 			html += resizeButton;

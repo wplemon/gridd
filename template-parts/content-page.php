@@ -12,7 +12,7 @@ use Gridd\Theme;
 $parts = Blog::get_post_parts();
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>">
 	<?php foreach ( $parts as $part ) : ?>
 		<?php Theme::get_template_part( 'template-parts/part-' . $part ); ?>
 	<?php endforeach; ?>

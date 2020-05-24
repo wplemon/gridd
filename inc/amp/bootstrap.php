@@ -5,8 +5,6 @@
  * @package gridd
  */
 
-use Gridd\Style;
-
 /**
  * Filter element attributes.
  *
@@ -22,7 +20,7 @@ add_filter(
 			$nav_id = str_replace( 'navigation-', '', $filter_context );
 			if ( is_numeric( $nav_id ) ) {
 				$nav_id = (int) $nav_id;
-				$mode   = get_theme_mod( "gridd_grid_nav_{$nav_id}_vertical", false ) ? 'vertical' : 'horizontal';
+				$mode   = get_theme_mod( "nav_{$nav_id}_vertical", false ) ? 'vertical' : 'horizontal';
 				// See https://amp-wp.org/documentation/playbooks/toggling-hamburger-menus/.
 				$atts['[class]']         = "'navigation gridd-nav-{$mode}' + ( navMenuExpanded{$nav_id} ? ' active' : '' )";
 				$atts['[aria-expanded]'] = "navMenuExpanded{$nav_id} ? 'true' : 'false'";
@@ -40,19 +38,13 @@ add_filter(
  * @since 1.0.0
  * @return void
  */
-add_action(
-	'wp_head',
-	function() {
-		$style = Style::get_instance( 'main-styles' );
-		$style->add_file( get_template_directory() . '/inc/amp/assets/css/amp.css' );
-		if ( class_exists( 'Easy_Digital_Downloads' ) ) {
-			$style->add_file( get_template_directory() . '/inc/amp/assets/css/amp-edd.css' );
-		}
-		if ( class_exists( 'WooCommerce' ) ) {
-			$style->add_file( get_template_directory() . '/inc/amp/assets/css/amp-woo.css' );
-		}
-	}
-);
+\Gridd\CSS::add_file( get_template_directory() . '/inc/amp/assets/css/amp.css' );
+if ( class_exists( 'Easy_Digital_Downloads' ) ) {
+	\Gridd\CSS::add_file( get_template_directory() . '/inc/amp/assets/css/amp-edd.css' );
+}
+if ( class_exists( 'WooCommerce' ) ) {
+	\Gridd\CSS::add_file( get_template_directory() . '/inc/amp/assets/css/amp-woo.css' );
+}
 
 /**
  * Add body class.

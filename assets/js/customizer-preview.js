@@ -29,7 +29,7 @@
 	});
 
 	_.each( [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ], function( i ) {
-		var setting = 'gridd_grid_nav_' + i + '_bg_color',
+		var setting = 'nav_' + i + '_bg_color',
 			cssVar  = '--nv-' + i + '-sbg';
 
 		wp.customize( setting, function( value ) {

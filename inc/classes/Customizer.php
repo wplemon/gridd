@@ -7,7 +7,6 @@
 
 namespace Gridd;
 
-use Gridd\Theme;
 use Gridd\Grid_Parts;
 
 /**
@@ -55,16 +54,6 @@ class Customizer {
 	}
 
 	/**
-	 * Enqueue related scripts & styles for the plus section.
-	 *
-	 * @access public
-	 */
-	public function plus_section_scripts() {
-		wp_enqueue_script( 'gridd-plus-section', get_template_directory_uri() . '/assets/js/customizer-plus-section.js', [ 'customize-controls' ], GRIDD_VERSION, false );
-		wp_enqueue_style( 'gridd-plus-section', get_template_directory_uri() . '/assets/css/customizer/plus-section.css', [], GRIDD_VERSION );
-	}
-
-	/**
 	 * Setup yhe grid filters.
 	 *
 	 * @access public
@@ -98,31 +87,9 @@ class Customizer {
 	 * @return void
 	 */
 	public function customize_controls_print_styles() {
-		$grid_parts_sections = self::get_grid_parts_sections();
 		?>
 		<style id="gridd-customizer-styles">
 			<?php include get_template_directory() . '/assets/css/customizer/customizer.css'; ?>
-			<?php foreach ( self::get_grid_parts_sections() as $section ) : ?>
-				#accordion-section-<?php echo esc_attr( $section ); ?> .accordion-section-title {
-					/* padding-top: 5px; */
-					/* padding-bottom: 4px; */
-					/* border-bottom-color: transparent; */
-					/* border-bottom-color: #e3e8ee; */
-					/* background-color: #f7f9fb; */
-					/* color: #999; */
-				}
-				#accordion-section-<?php echo esc_attr( $section ); ?> .accordion-section-title:after {
-					/* content: "\f540" */
-					/* content: "\f100" */
-					/* content: "\f111" */
-					/* content: "\f139" */
-				}
-				#accordion-section-<?php echo esc_attr( $section ); ?> .accordion-section-title:hover {
-					background-color: #e3e8ee;
-					/* background-color: #f7f7f7; */
-				}
-			<?php endforeach; ?>
-		}
 		</style>
 		<?php
 	}
@@ -167,28 +134,9 @@ class Customizer {
 	 * @static
 	 * @access public
 	 * @since 1.0
-	 * @param array $args The description parameters.
-	 * @return string
+	 * @deprecated 3.0.0
 	 */
-	public static function get_control_description( $args ) {
-		$description = '';
-
-		if ( is_array( $args ) ) {
-			if ( isset( $args['short'] ) ) {
-				$description .= $args['short'];
-			}
-			if ( isset( $args['details'] ) ) {
-				$label = esc_html__( 'Details', 'gridd' );
-				if ( isset( $args['label'] ) ) {
-					$label = $args['label'];
-				}
-				$description .= '<details><summary style="color:#0085ba">' . $label . '</summary>';
-				$description .= $args['details'];
-				$description .= '</details>';
-			}
-		}
-		return $description;
-	}
+	public static function get_control_description() {}
 
 	/**
 	 * This is only kept here for backwards-compatibility
@@ -198,13 +146,8 @@ class Customizer {
 	 * @access public
 	 * @since 1.0
 	 * @deprecated 1.1.16
-	 * @param string $id   The section-ID.
-	 * @param array  $args The arguments [pro=>[''], docs=>'', tip=>''].
-	 * @return string      The final HTML.
 	 */
-	public static function section_description( $id, $args ) {
-		return '';
-	}
+	public static function section_description() {}
 
 	/**
 	 * Proxy function for Kirki.
@@ -212,35 +155,13 @@ class Customizer {
 	 * @static
 	 * @access public
 	 * @since 1.0
-	 * @param string $id   The section ID.
-	 * @param array  $args The field arguments.
-	 * @return void
-	 */
-	public static function add_panel( $id, $args ) {
-		// WIP: Disable icons.
-		if ( isset( $args['icon'] ) ) {
-			unset( $args['icon'] );
-		}
-		\Kirki::add_panel( $id, $args );
-	}
-
-	/**
-	 * Proxy function for Kirki.
-	 *
-	 * @static
-	 * @access public
-	 * @since 1.0
+	 * @deprecated 3.0.0
 	 * @param string $id   The section ID.
 	 * @param array  $args The field arguments.
 	 * @return void
 	 */
 	public static function add_section( $id, $args ) {
-		// WIP: Disable icons.
-		if ( isset( $args['icon'] ) ) {
-			unset( $args['icon'] );
-		}
-
-		\Kirki::add_section( $id, apply_filters( 'gridd_section_args', $args ) );
+		\Kirki::add_section( $id, $args );
 	}
 
 	/**
@@ -250,31 +171,10 @@ class Customizer {
 	 * @static
 	 * @access public
 	 * @since 1.0.3
-	 * @param string $section_id The section ID.
-	 * @param array  $args       The field arguments.
+	 * @deprecated 3.0.0
 	 * @return void
 	 */
-	public static function add_outer_section( $section_id, $args ) {
-		$args['panel'] = 'layout_blocks';
-		unset( $args['section'] );
-		$args['active_callback'] = function() use ( $section_id ) {
-			$grid_parts_sections = self::get_grid_parts_sections();
-			$main_grids          = [ 'gridd_grid', 'gridd_header_grid', 'gridd_footer_grid' ];
-			$id                  = array_search( $section_id, $grid_parts_sections, true );
-			if ( false !== strpos( $section_id, 'grid_part_details' ) && $id ) {
-				$is_active = false;
-				foreach ( $main_grids as $grid ) {
-					if ( \Gridd\Grid_Parts::is_grid_part_active( $id, $grid ) ) {
-						$is_active = true;
-					}
-				}
-				return $is_active;
-			}
-
-			return true;
-		};
-		self::add_section( $section_id, $args );
-	}
+	public static function add_outer_section() {}
 
 	/**
 	 * Proxy function for Kirki.
@@ -313,48 +213,35 @@ class Customizer {
 	 * @static
 	 * @access public
 	 * @since 2.0.0
-	 * @return array
+	 * @deprecated 3.0.0
 	 */
-	public static function get_grid_parts_sections() {
-		$sections = [
-			'breadcrumbs'         => 'grid_part_details_breadcrumbs',
-			'footer_copyright'    => 'grid_part_details_footer_copyright',
-			'footer_social_media' => 'grid_part_details_footer_social_media',
-			'header_branding'     => 'title_tagline',
-			'header_search'       => 'grid_part_details_header_search',
-			'header_contact_info' => 'grid_part_details_header_contact_info',
-			'social_media'        => 'grid_part_details_social_media',
-		];
-		/**
-		 * These are core but we don't want them in this array.
-		 *
-		'content'             => 'grid_part_details_content',
-		'footer'              => 'grid_part_details_footer',
-		'header'              => 'grid_part_details_header',
-		'nav-handheld'        => 'gridd_mobile',
-		*/
+	public static function get_grid_parts_sections() {}
 
-		$nav_nr = \Gridd\Grid_Part\Navigation::get_number_of_nav_menus();
-		for ( $i = 1; $i <= $nav_nr; $i++ ) {
-			$sections[ "nav_$i" ] = "grid_part_details_nav_$i";
+	/**
+	 * Check if a grid-part is active.
+	 *
+	 * Used as an active_callback for sections & controls.
+	 *
+	 * @static
+	 * @access public
+	 * @since 3.0.0
+	 * @param string $id The grid-part ID.
+	 * @return bool
+	 */
+	public static function is_section_active_part( $id ) {
+		// Check the main grid.
+		if ( \Gridd\Grid_Parts::is_grid_part_active( $id, 'gridd_grid' ) ) {
+			return true;
 		}
 
-		$reusable_blocks = \Gridd\Grid_Part\Reusable_Block::get_reusable_blocks();
-		foreach ( $reusable_blocks as $block ) {
-			$sections[ "reusable_block_{$block->ID}" ] = "grid_part_details_reusable_block_{$block->ID}";
+		// Check sub-grids.
+		$grids = \Gridd\Grid_Parts::get_instance()->get_grids();
+		foreach ( $grids as $grid ) {
+			if ( \Gridd\Grid_Parts::is_grid_part_active( $id, $grid ) ) {
+				return true;
+			}
 		}
-
-		$sidebars_nr = \Gridd\Grid_Part\Sidebar::get_number_of_sidebars();
-		for ( $i = 1; $i <= $sidebars_nr; $i++ ) {
-			$sections[ "sidebar_$i" ] = "grid_part_details_sidebar_$i";
-		}
-
-		$footer_sidebars_nr = \Gridd\Grid_Part\Footer::get_number_of_sidebars();
-		for ( $i = 1; $i <= $footer_sidebars_nr; $i++ ) {
-			$sections[ "footer_sidebar_$i" ] = "grid_part_details_footer_sidebar_$i";
-		}
-
-		return apply_filters( 'gridd_get_grid_parts_sections', $sections );
+		return false;
 	}
 }
 

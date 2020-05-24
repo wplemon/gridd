@@ -32,14 +32,21 @@ module.exports = function( grunt ) {
 						sourceMap: false
 					},
 					files: [
-					{
-						expand: true,
-						cwd: 'assets/css',
-						src: [ '**/*.css', '!**/*.min.css' ],
-						dest: 'assets/css',
-						ext: '.min.css'
-					},
-					{
+						{
+							expand: true,
+							cwd: 'assets/css',
+							src: [ '**/*.css', '!**/*.min.css' ],
+							dest: 'assets/css',
+							ext: '.min.css'
+						},
+						{
+							expand: true,
+							cwd: 'assets/css',
+							src: [ '*.css', '!**/*.min.css' ],
+							dest: 'assets/css',
+							ext: '.min.css'
+						},
+						{
 						expand: true,
 						cwd: 'grid-parts',
 						src: [ '**/*.css', '!**/*.min.css' ],
@@ -79,14 +86,52 @@ module.exports = function( grunt ) {
 			}
 		},
 
+		// Replace textdomains.
+		addtextdomain: {
+			options: {
+				textdomain: 'gridd',
+				updateDomains: [
+					'hybrid-core',
+					'kirki-pro'
+				]
+			},
+			target: {
+				files: {
+					src: [
+						'packages/justintadlock/*.php',
+						'packages/justintadlock/**/*.php',
+						'packages/justintadlock/**/**/*.php',
+						'packages/justintadlock/**/**/**/*.php',
+						'packages/justintadlock/**/**/**/**/**/*.php',
+						'packages/justintadlock/**/**/**/**/**/**/*.php',
+						'packages/wplemon/**/*.php',
+						'packages/wplemon/**/**/*.php',
+						'packages/wplemon/**/**/**/*.php',
+						'packages/wplemon/**/**/**/**/*.php'
+					]
+				}
+			}
+		},
+
 		// Watch task (run with "grunt watch")
         watch: {
             cssMain: {
                 files: [
 					'assets/css/*.scss',
+					'assets/css/*.css',
+					'!assets/css/*.min.css',
 					'assets/css/**/*.scss'
                 ],
                 tasks: [ 'sass:main', 'cssmin' ]
+			},
+            cssCoreBlocks: {
+                files: [
+					'assets/css/blocks/defaults/core/*.css',
+					'!assets/css/blocks/defaults/core/*.min.css',
+					'assets/css/blocks/overrides/core/*.css',
+					'!assets/css/blocks/overrides/core/*.min.css'
+                ],
+                tasks: [ 'cssmin' ]
 			},
             cssGridParts: {
                 files: [
@@ -104,15 +149,16 @@ module.exports = function( grunt ) {
                 ],
                 tasks: [ 'uglify' ]
 			}
-        }
+		}
     });
 
     grunt.loadNpmTasks( 'grunt-contrib-sass' );
     grunt.loadNpmTasks( 'grunt-contrib-uglify' );
     grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
 	grunt.loadNpmTasks( 'grunt-contrib-watch' );
+	grunt.loadNpmTasks( 'grunt-wp-i18n' );
 
-	grunt.registerTask( 'default', [ 'sass:main', 'sass:gridParts', 'cssmin', 'uglify' ] );
+	grunt.registerTask( 'default', [ 'sass:main', 'sass:gridParts', 'cssmin', 'uglify', 'addtextdomain' ] );
 	grunt.registerTask( 'css', [ 'sass:main', 'sass:gridParts', 'cssmin' ] );
 	grunt.registerTask( 'js', [ 'uglify' ] );
 };

@@ -8,9 +8,6 @@
 namespace Gridd;
 
 use Gridd\Customizer;
-use Gridd\Template;
-use Gridd\Grid;
-use Gridd\Widget_Areas;
 use Gridd\Blog;
 use Gridd\Scripts;
 use Gridd\Jetpack;
@@ -125,11 +122,14 @@ class Theme {
 		// Loads the WooCommerce class.
 		$this->wc = new WooCommerce();
 
+		new \Gridd\Block_Styles();
+
 		add_filter( 'body_class', [ $this, 'body_class' ] );
 		add_action( 'after_setup_theme', [ $this, 'setup' ] );
 		add_action( 'after_setup_theme', [ $this, 'content_width' ], 0 );
 		add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_block_editor_assets' ], 1, 1 );
 		add_action( 'wp_head', [ $this, 'add_color_palette_styles' ] );
+		add_filter( 'kirki_path_url', [ $this, 'filter_kirki_url_path' ], 1, 2 );
 	}
 
 	/**
@@ -258,12 +258,22 @@ class Theme {
 		add_theme_support( 'wp-block-styles' );
 		if ( ! get_theme_mod( 'disable_editor_styles' ) ) {
 			add_theme_support( 'editor-styles' );
-			if ( 50 > \ariColor::newColor( get_theme_mod( 'content_background_color', '#ffffff' ) )->lightness ) {
+
+			$is_dark = ( 50 > \ariColor::newColor( get_theme_mod( 'background_color', '#ffffff' ) )->lightness );
+			if ( get_theme_mod( 'content_custom_options' ) ) {
+				$is_dark = ( 50 > \ariColor::newColor( get_theme_mod( 'content_background_color', '#ffffff' ) )->lightness );
+			}
+
+			if ( $is_dark ) {
 				add_theme_support( 'dark-editor-style' );
 			}
 		}
 		add_theme_support( 'responsive-embeds' );
-		add_editor_style( 'assets/css/admin/editor.min.css' );
+		add_editor_style(
+			[
+				'assets/css/admin/editor.min.css',
+			]
+		);
 		add_theme_support( 'editor-color-palette', self::get_color_palette() );
 
 		// Starter Content.
@@ -468,7 +478,7 @@ class Theme {
 	 * @return void
 	 */
 	public function enqueue_block_editor_assets() {
-		wp_enqueue_script( 'gridd-block-editor-script', get_theme_file_uri( '/assets/js/editor-script-block.js' ), array( 'wp-blocks', 'wp-dom' ), GRIDD_VERSION, true );
+		wp_enqueue_script( 'gridd-block-editor-script', get_theme_file_uri( '/assets/js/editor-script-block.js' ), [ 'wp-blocks', 'wp-dom' ], GRIDD_VERSION, true );
 	}
 
 	/**
@@ -510,41 +520,49 @@ class Theme {
 				'slug'  => 'custom-color-2',
 				'color' => '#f5f7f9',
 			],
-			// [
-			// 'name'  => '',
-			// 'slug'  => 'custom-color-3',
-			// 'color' => '#f4f4e1'
-			// ],
+			/**
+			 * Thinking about it.
+			[
+			'name'  => '',
+			'slug'  => 'custom-color-3',
+			'color' => '#f4f4e1'
+			],
+			*/
 			[
 				'name'  => '',
 				'slug'  => 'custom-color-4',
 				'color' => '#f0f3f6',
 			],
+			/**
+			 * Disable default colors?
 			[
 				'name'  => esc_html__( 'Very Light Gray', 'gridd' ),
 				'slug'  => 'very-light-gray',
 				'color' => '#eeeeee',
 			],
-			// [
-			// 'name'  => esc_html__( 'Cyan Bluish Gray', 'gridd' ),
-			// 'slug'  => 'cyan-bluish-gray',
-			// 'color' => '#abb8c3',
-			// ],
+			[
+			'name'  => esc_html__( 'Cyan Bluish Gray', 'gridd' ),
+			'slug'  => 'cyan-bluish-gray',
+			'color' => '#abb8c3',
+			],
 			[
 				'name'  => esc_html__( 'Very Dark Gray', 'gridd' ),
 				'slug'  => 'very-dark-gray',
 				'color' => '#313131',
 			],
-			// [
-			// 'name'  => '',
-			// 'slug'  => 'custom-color-5',
-			// 'color' => '#1a1a1d'
-			// ],
+			[
+			'name'  => '',
+			'slug'  => 'custom-color-5',
+			'color' => '#1a1a1d'
+			],
+			*/
 			[
 				'name'  => '',
 				'slug'  => 'custom-color-6',
 				'color' => '#000000',
 			],
+			/**
+			 * Disable default colors?
 			[
 				'name'  => esc_html__( 'Pale Pink', 'gridd' ),
 				'slug'  => 'pale-pink',
@@ -585,6 +603,7 @@ class Theme {
 				'slug'  => 'vivid-cyan-blue',
 				'color' => '#0693e3',
 			],
+			*/
 		];
 
 		// phpcs:enable Squiz.PHP.CommentedOutCode
@@ -609,25 +628,43 @@ class Theme {
 	 */
 	public function add_color_palette_styles() {
 		$palette = self::get_color_palette();
-
-		$style = Style::get_instance( 'blocks-styles' );
+		$styles  = '';
 
 		// Add the css-variables.
-		$style->add_string( ':root{' );
+		$styles .= ':root{';
 		foreach ( $palette as $item ) {
-			$style->add_string( '--' . $item['slug'] . ':' . esc_html( $item['color'] ) . ';' );
+			$styles .= '--' . $item['slug'] . ':' . esc_html( $item['color'] ) . ';';
 		}
-		$style->add_string( '}' );
+		$styles .= '}';
 
 		// Add color & background-color styles.
 		foreach ( $palette as $item ) {
-			$style->add_string( '.has-' . $item['slug'] . '-color.has-' . $item['slug'] . '-color{--element-color:var(--' . $item['slug'] . ');}' );
-			$style->add_string( '.has-' . $item['slug'] . '-background-color.has-' . $item['slug'] . '-background-color{--element-background-color:var(--' . $item['slug'] . ');}' );
+			$styles .= '.has-' . $item['slug'] . '-color.has-' . $item['slug'] . '-color{--element-color:var(--' . $item['slug'] . ');}';
+			$styles .= '.has-' . $item['slug'] . '-background-color.has-' . $item['slug'] . '-background-color{--element-background-color:var(--' . $item['slug'] . ');}';
 		}
 
 		// Add globals.
-		$style->add_string( '.has-text-color{color:var(--element-color);}' );
-		$style->add_string( '.has-background{background-color:var(--element-background-color);border-color:var(--element-background-color);}' );
+		$styles .= '.has-text-color{color:var(--element-color);}';
+		$styles .= '.has-background{background-color:var(--element-background-color);border-color:var(--element-background-color);}';
+
+		\Gridd\CSS::add_string( $styles );
+	}
+
+	/**
+	 * Filters Kirki framework to load correctly the assets URL
+	 * depending the themes directory path.
+	 *
+	 * @access public
+	 *
+	 * @param string $url Kirki framework assets URL.
+	 * @param string $path Kirki framework asset path.
+	 *
+	 * @return string Url for kirki framework assets.
+	 */
+	public function filter_kirki_url_path( $url, $path ) {
+		$url = preg_replace( '/.+?(?=packages)/', get_template_directory_uri() . '/', $url );
+
+		return( $url );
 	}
 }
 

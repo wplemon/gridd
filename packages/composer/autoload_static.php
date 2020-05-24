@@ -9,7 +9,7 @@ class ComposerStaticInit732835aa44a0bf9e82f02a841da89611
     public static $prefixLengthsPsr4 = array (
         'W' => 
         array (
-            'WPTRT\\Customize\\Control\\' => 24,
+            'WPTRT\\AdminNotices\\' => 19,
             'WPLemon\\Field\\' => 14,
             'WPLemon\\Control\\' => 16,
         ),
@@ -24,12 +24,16 @@ class ComposerStaticInit732835aa44a0bf9e82f02a841da89611
             'Kirki\\Compatibility\\' => 20,
             'Kirki\\' => 6,
         ),
+        'H' => 
+        array (
+            'Hybrid\\Breadcrumbs\\' => 19,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'WPTRT\\Customize\\Control\\' => 
+        'WPTRT\\AdminNotices\\' => 
         array (
-            0 => __DIR__ . '/..' . '/wptrt/control-color-alpha/src',
+            0 => __DIR__ . '/..' . '/wptrt/admin-notices/src',
         ),
         'WPLemon\\Field\\' => 
         array (
@@ -123,6 +127,10 @@ class ComposerStaticInit732835aa44a0bf9e82f02a841da89611
             3 => __DIR__ . '/..' . '/kirki-framework/module-panels/src',
             4 => __DIR__ . '/..' . '/kirki-framework/module-sections/src',
             5 => __DIR__ . '/..' . '/kirki-framework/url-getter/src',
+        ),
+        'Hybrid\\Breadcrumbs\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/justintadlock/hybrid-breadcrumbs/src',
         ),
     );
 

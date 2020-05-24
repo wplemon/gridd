@@ -39,7 +39,6 @@ class Rest {
 			return;
 		}
 		add_action( 'wp_footer', [ $this, 'add_assets' ], PHP_INT_MAX );
-		add_action( 'gridd_the_partial', [ $this, 'the_partial_styles_blocks' ] );
 	}
 
 	/**
@@ -88,7 +87,11 @@ class Rest {
 	 * @return array
 	 */
 	public static function get_partials() {
+		return [];
+		/**
+		 * Disable deferred parts.
 		return get_theme_mod( 'gridd_rest_api_partials', [] );
+		*/
 	}
 
 	/**
@@ -130,32 +133,6 @@ class Rest {
 			echo '<style>';
 			include get_theme_file_path( 'assets/css/core/skeleton.min.css' );
 			echo '</style>';
-		}
-	}
-
-	/**
-	 * Prints styles for blocks used inside this partial.
-	 *
-	 * @access public
-	 * @since 1.1
-	 * @param string $part The partial ID.
-	 * @return void
-	 */
-	public function the_partial_styles_blocks( $part ) {
-
-		// Get the blocks used in this partial.
-		$script = new Scripts();
-		$blocks = $script->get_blocks();
-
-		if ( ! empty( $blocks ) ) {
-
-			// Add styles.
-			$style = Style::get_instance( 'blocks-styles' );
-			foreach ( $blocks as $block ) {
-				$block = str_replace( 'core/', '', $block );
-				$style->add_file( get_theme_file_path( "assets/css/blocks/$block.min.css" ) );
-			}
-			$style->the_css( "block-styles-$part" );
 		}
 	}
 }

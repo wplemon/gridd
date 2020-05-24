@@ -8,7 +8,6 @@ mv ../gridd2 ./gridd
 
 # Remove extra files.
 rm -rf gridd/vendor
-rm -rf gridd/assets/css/blocks/block-library
 rm -rf gridd/.sass-cache
 rm -rf gridd/node_modules
 rm -rf gridd/.git
