@@ -12,7 +12,7 @@ use Gridd\Theme;
 \Gridd\CSS::add_file( get_theme_file_path( 'grid-parts/Navigation/styles.min.css' ) );
 \Gridd\CSS::add_file( get_theme_file_path( 'assets/css/nav.min.css' ) );
 
-$responsive_mode = get_theme_mod( "nav_{$id}_responsive_behavior", 'desktop-normal mobile-hidden' );
+$responsive_mode = get_theme_mod( "nav_{$id}_responsive_behavior", 'desktop-normal mobile-icon' );
 $is_vertical_nav = get_theme_mod( "nav_{$id}_vertical", false );
 
 if ( $is_vertical_nav ) {
