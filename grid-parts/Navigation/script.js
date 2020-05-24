@@ -33,6 +33,7 @@ document.querySelectorAll( '.gridd-navigation ul.sub-menu' ).forEach( function( 
 function griddNavShouldCollapse() {
 	document.querySelectorAll( '.gridd-tp-nav' ).forEach( function( navWrapper ) {
 		var nav = navWrapper.querySelector( 'nav' ),
+			isHorizontal = nav.classList.contains( 'gridd-nav-horizontal' ) || nav.classList.contains( 'gridd-nav-default-horizontal' ),
 			navLis,
 			wrapperBounds,
 			wrapperL,
@@ -68,10 +69,24 @@ function griddNavShouldCollapse() {
 
 		shouldCollapse = ( navStartL < wrapperL || navEndL < wrapperL || navStartR > wrapperR || navEndR > wrapperR );
 
+		if ( isHorizontal ) {
+			nav.classList.add( 'gridd-nav-default-horizontal' );
+		}
+
 		if ( shouldCollapse || wrapperBounds.width < navStoredCollapseWidth ) {
 			navWrapper.classList.add( 'should-collapse' );
+
+			if ( isHorizontal ) {
+				nav.classList.remove( 'gridd-nav-horizontal' );
+				nav.classList.add( 'gridd-nav-vertical' );
+			}
 		} else {
 			navWrapper.classList.remove( 'should-collapse' );
+
+			if ( isHorizontal ) {
+				nav.classList.add( 'gridd-nav-horizontal' );
+				nav.classList.remove( 'gridd-nav-vertical' );
+			}
 		}
 	});
 }

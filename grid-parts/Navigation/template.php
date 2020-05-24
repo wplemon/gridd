@@ -15,7 +15,7 @@ use Gridd\Theme;
 $responsive_mode = get_theme_mod( "nav_{$id}_responsive_behavior", 'desktop-normal mobile-icon' );
 $is_vertical_nav = get_theme_mod( "nav_{$id}_vertical", false );
 
-if ( $is_vertical_nav ) {
+if ( $is_vertical_nav || false !== strpos( $responsive_mode, 'icon' ) ) {
 	\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/nav-vertical.min.css' ) );
 }
 
