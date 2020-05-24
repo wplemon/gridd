@@ -47,7 +47,7 @@ function griddNavShouldCollapse() {
 
 		if ( nav.classList.contains( 'gridd-desktop-icon' ) ) {
 			if ( ! nav.classList.contains( 'should-collapse' ) ) {
-				nav.classList.add( 'should_collapse' );
+				nav.classList.add( 'should-collapse' );
 			}
 			return;
 		}
