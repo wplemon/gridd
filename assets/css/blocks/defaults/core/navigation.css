@@ -72,6 +72,8 @@
   position: relative;
   margin: 0;
   padding: 8px; }
+  .wp-block-navigation-link .wp-block-navigation__container:empty {
+    display: none; }
 
 .has-child .wp-block-navigation__container {
   border: 1px solid rgba(0, 0, 0, 0.15);
@@ -96,8 +98,16 @@
     .has-child .wp-block-navigation__container {
       left: 24px; }
       .has-child .wp-block-navigation__container .wp-block-navigation__container {
-        left: 100%;
+        left: calc(100% + 8px);
         top: -7px; }
+        .has-child .wp-block-navigation__container .wp-block-navigation__container::before {
+          content: "";
+          position: absolute;
+          right: 100%;
+          height: 100%;
+          display: block;
+          width: 8px;
+          background: transparent; }
       .has-child .wp-block-navigation__container .wp-block-navigation-link__submenu-icon svg {
         transform: rotate(0); } }
 
@@ -138,17 +148,18 @@
       .wp-block-navigation-link__submenu-icon svg {
         transform: rotate(90deg); } }
 
-.wp-block-navigation-link:not(.has-text-color) .wp-block-navigation-link__content,
-.is-style-light .wp-block-navigation-link:not(.has-text-color) .wp-block-navigation-link__content {
+.wp-block-navigation .wp-block-navigation-link:not(.has-text-color),
+.wp-block-navigation.is-style-light .wp-block-navigation-link:not(.has-text-color) {
   color: #111; }
 
-.is-style-light:not(.has-background) .wp-block-navigation__container {
+.wp-block-navigation:not(.has-background) .wp-block-navigation__container,
+.wp-block-navigation.is-style-light:not(.has-background) .wp-block-navigation__container {
   background-color: #fff; }
 
-.is-style-dark .wp-block-navigation-link:not(.has-text-color) .wp-block-navigation-link__content {
+.wp-block-navigation.is-style-dark .wp-block-navigation-link:not(.has-text-color) {
   color: #fff; }
 
-.is-style-dark:not(.has-background) .wp-block-navigation__container {
+.wp-block-navigation.is-style-dark:not(.has-background) .wp-block-navigation__container {
   background-color: #333; }
 
 .items-justified-left > ul {

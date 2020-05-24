@@ -68,7 +68,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; }
+  padding: 16px; }
   .wp-block-cover-image.has-parallax,
   .wp-block-cover.has-parallax {
     background-attachment: fixed; }
@@ -204,6 +204,46 @@
   .wp-block-cover h6:not(.has-text-color),
   .wp-block-cover .wp-block-subhead:not(.has-text-color) {
     color: inherit; }
+  .wp-block-cover-image.is-position-top-left,
+  .wp-block-cover.is-position-top-left {
+    align-items: flex-start;
+    justify-content: flex-start; }
+  .wp-block-cover-image.is-position-top-center,
+  .wp-block-cover.is-position-top-center {
+    align-items: flex-start;
+    justify-content: center; }
+  .wp-block-cover-image.is-position-top-right,
+  .wp-block-cover.is-position-top-right {
+    align-items: flex-start;
+    justify-content: flex-end; }
+  .wp-block-cover-image.is-position-center-left,
+  .wp-block-cover.is-position-center-left {
+    align-items: center;
+    justify-content: flex-start; }
+  .wp-block-cover-image.is-position-center-center,
+  .wp-block-cover.is-position-center-center {
+    align-items: center;
+    justify-content: center; }
+  .wp-block-cover-image.is-position-center-right,
+  .wp-block-cover.is-position-center-right {
+    align-items: center;
+    justify-content: flex-end; }
+  .wp-block-cover-image.is-position-bottom-left,
+  .wp-block-cover.is-position-bottom-left {
+    align-items: flex-end;
+    justify-content: flex-start; }
+  .wp-block-cover-image.is-position-bottom-center,
+  .wp-block-cover.is-position-bottom-center {
+    align-items: flex-end;
+    justify-content: center; }
+  .wp-block-cover-image.is-position-bottom-right,
+  .wp-block-cover.is-position-bottom-right {
+    align-items: flex-end;
+    justify-content: flex-end; }
+  .wp-block-cover-image.has-custom-content-position.has-custom-content-position .wp-block-cover__inner-container,
+  .wp-block-cover.has-custom-content-position.has-custom-content-position .wp-block-cover__inner-container {
+    margin: 0;
+    width: auto; }
 
 .wp-block-cover__video-background {
   position: absolute;
