@@ -1,5 +1,6 @@
 # Exclude from release archives.
 
+/bin/                             export-ignore
 /docs/                            export-ignore
 /node_modules/                    export-ignore
 /inc/kirki/controls/js/src/       export-ignore
