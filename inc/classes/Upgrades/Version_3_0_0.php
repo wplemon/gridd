@@ -42,7 +42,10 @@ class Version_3_0_0 {
 		new \Gridd\Upgrades\Block\Header_Contact_Info();
 		new \Gridd\Upgrades\Block\Footer_Copyright();
 		new \Gridd\Upgrades\Block\Header_Search();
+		/**
+		 * WIP
 		new \Gridd\Upgrades\Block\Widget_Areas();
+		 */
 	}
 
 	/**
