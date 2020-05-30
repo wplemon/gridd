@@ -142,7 +142,7 @@ new \Kirki\Field\Dimension(
 				'element'  => '.wp-block',
 				'property' => 'max-width',
 				'context'  => [ 'editor' ],
-			]
+			],
 		],
 		'transport' => 'auto',
 		'priority'  => 50,
