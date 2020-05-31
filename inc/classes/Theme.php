@@ -639,13 +639,9 @@ class Theme {
 
 		// Add color & background-color styles.
 		foreach ( $palette as $item ) {
-			$styles .= '.has-' . $item['slug'] . '-color.has-' . $item['slug'] . '-color{--element-color:var(--' . $item['slug'] . ');}';
-			$styles .= '.has-' . $item['slug'] . '-background-color.has-' . $item['slug'] . '-background-color{--element-background-color:var(--' . $item['slug'] . ');}';
+			$styles .= '.has-' . $item['slug'] . '-color.has-' . $item['slug'] . '-color{color:' . $item['color'] . ';}';
+			$styles .= '.has-' . $item['slug'] . '-background-color.has-' . $item['slug'] . '-background-color{background-color:' . $item['color'] . ';}';
 		}
-
-		// Add globals.
-		$styles .= '.has-text-color{color:var(--element-color);}';
-		$styles .= '.has-background{background-color:var(--element-background-color);border-color:var(--element-background-color);}';
 
 		\Gridd\CSS::add_string( $styles );
 	}

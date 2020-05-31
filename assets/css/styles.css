@@ -408,8 +408,6 @@ input.search-field:focus + .gridd-search-icon {
 .search-submit.search-submit {
 	border: none;
 	padding: 0 0.5em;
-	--element-color: var(--cl);
-	--element-background-color: var(--bg);
 }
 
 /* Text meant only for screen readers. */

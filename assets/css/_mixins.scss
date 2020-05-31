@@ -58,22 +58,16 @@
 	text-decoration: none !important;
 	border-radius: 4px;
 	padding: 0.35em 1.25em;
-	border: 2px solid var(--element-background-color);
 	cursor: pointer;
 	display: inline-block;
 	margin: 0;
 	text-align: center;
 	overflow-wrap: break-word;
-	color: var(--element-color);
-	background-color: var(--element-background-color);
 
 	&:active,
 	&:hover,
 	&:focus {
 		outline: none !important;
-		background: var(--element-color);
-		color: var(--element-background-color);
-		border-color: var(--element-background-color);
 	}
 }
 

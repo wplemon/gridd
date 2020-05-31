@@ -6,19 +6,14 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	--element-color: var(--bg);
-	--element-background-color: var(--cl);
 	text-decoration: none !important;
 	border-radius: 4px;
 	padding: 0.35em 1.25em;
-	border: 2px solid var(--element-background-color);
 	cursor: pointer;
 	display: inline-block;
 	margin: 0;
 	text-align: center;
 	overflow-wrap: break-word;
-	color: var(--element-color);
-	background-color: var(--element-background-color);
 }
 
 .button:active,
@@ -46,7 +41,4 @@ input[type="submit"]:active,
 input[type="submit"]:hover,
 input[type="submit"]:focus {
 	outline: none !important;
-	background: var(--element-color);
-	color: var(--element-background-color);
-	border-color: var(--element-background-color);
 }
