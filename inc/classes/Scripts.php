@@ -78,6 +78,7 @@ class Scripts {
 			get_theme_file_path( 'assets/js/skip-link.min.js' ),
 			get_theme_file_path( 'assets/js/nav.min.js' ),
 			get_theme_file_path( 'assets/js/responsive-videos.min.js' ),
+			get_theme_file_path( 'assets/js/inline-css-to-vars.min.js' ),
 		];
 
 		// Comments.
@@ -188,6 +189,13 @@ class Scripts {
 		\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/buttons.min.css' ) );
 		\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/core/media.min.css' ) );
 		\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/core/nav-links.min.css' ) );
+
+		echo '<script>window.griddPalette={};';
+		$palette = Theme::get_color_palette();
+		foreach ( $palette as $color ) {
+			echo 'window.griddPalette["' . esc_attr( $color['slug'] ) . '"]="' . esc_attr( $color['color'] ) . '";';
+		}
+		echo '</script>';
 	}
 
 	/**
