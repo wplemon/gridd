@@ -53,24 +53,6 @@
 	}
 }
 
-// Buttons
-@mixin button() {
-	text-decoration: none !important;
-	border-radius: 4px;
-	padding: 0.35em 1.25em;
-	cursor: pointer;
-	display: inline-block;
-	margin: 0;
-	text-align: center;
-	overflow-wrap: break-word;
-
-	&:active,
-	&:hover,
-	&:focus {
-		outline: none !important;
-	}
-}
-
 @mixin widget-list {
 
 	ul {
