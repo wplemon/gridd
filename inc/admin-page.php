@@ -99,4 +99,10 @@ $gridd_migrated_parts   = $gridd_deprecator->get_migrated_parts();
 			<?php endforeach; ?>
 		</table>
 	</div>
+
+	<?php
+	require_once __DIR__ . '/classes/PayItForward.php';
+	$sponsors = new \Aristath\PayItForward();
+	$sponsors->sponsors_details();
+	?>
 </div>
