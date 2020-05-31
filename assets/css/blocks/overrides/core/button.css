@@ -5,12 +5,4 @@
 	border-radius: 4px;
 	padding: 0.35em 1.25em;
 	margin: 0;
-	border-color: currentColor;
-}
-
-.wp-block-button.is-style-outline .wp-block-button__link,
-.wp-block-button__link.is-style-outline,
-.is-style-outline .wp-block-button__link {
-	background-color: transparent;
-	border-color: currentColor;
 }
