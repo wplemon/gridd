@@ -7,12 +7,14 @@ document.querySelectorAll( '[style]' ).forEach( function( el ) {
 			el.style.setProperty( '--cl', rule.split( ':' )[ 1 ] );
 		}
 	});
-	Object.keys( window.griddPalette ).forEach( function( color ) {
-		if ( el.classList.contains( 'has-' + color + '-color' ) ) {
-			el.style.setProperty( '--cl', window.griddPalette[ color ] );
-		}
-		if ( el.classList.contains( 'has-' + color + '-background-color' ) ) {
-			el.style.setProperty( '--bg', window.griddPalette[ color ] );
-		}
+});
+
+Object.keys( window.griddPalette ).forEach( function( color ) {
+	document.querySelectorAll( '.has-' + color + '-color' ).forEach( function( el ) {
+		el.style.setProperty( '--cl', window.griddPalette[ color ] );
+	});
+
+	document.querySelectorAll( '.has-' + color + '-background-color' ).forEach( function( el ) {
+		el.style.setProperty( '--bg', window.griddPalette[ color ] );
 	});
 });
