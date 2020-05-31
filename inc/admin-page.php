@@ -20,8 +20,8 @@ $gridd_migrated_parts   = $gridd_deprecator->get_migrated_parts();
 		</a>
 	</p>
 
-	<div class="postbox" style="padding: 1em;">
-		<h2><?php esc_html_e( 'Deprecations & Migrations', 'gridd' ); ?></h2>
+	<details class="postbox" style="padding: 1em;">
+		<summary style="font-size:2em"><?php esc_html_e( 'Deprecations & Migrations', 'gridd' ); ?></h2></summary>
 
 		<table class="widefat striped" style="margin-top: 2em;">
 			<thead>
@@ -98,7 +98,7 @@ $gridd_migrated_parts   = $gridd_deprecator->get_migrated_parts();
 				</tr>
 			<?php endforeach; ?>
 		</table>
-	</div>
+	</details>
 
 	<?php
 	require_once __DIR__ . '/classes/PayItForward.php';
