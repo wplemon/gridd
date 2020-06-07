@@ -19,15 +19,11 @@ if ( $is_vertical_nav || false !== strpos( $responsive_mode, 'icon' ) ) {
 	\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/nav-vertical.min.css' ) );
 }
 
-$wrapper_class  = "gridd-tp gridd-tp-nav gridd-tp-nav_$id";
+$wrapper_class  = "gridd-tp gridd-tp-nav gridd-tp-nav_$id $responsive_mode";
 $wrapper_class .= ' gridd-menu-collapse-position-' . get_theme_mod( "nav_{$id}_expand_icon_position", 'center-right' );
 
 if ( get_theme_mod( "nav_{$id}_custom_options", false ) ) {
 	$wrapper_class .= ' custom-options';
-}
-
-if ( false !== strpos( $responsive_mode, 'mobile-hidden' ) ) {
-	$wrapper_class .= ' hide-on-small';
 }
 
 $responsive_mode_parts = explode( ' ', $responsive_mode );
