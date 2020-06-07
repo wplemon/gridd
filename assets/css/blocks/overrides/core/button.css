@@ -1,69 +1,27 @@
-.wp-block-button__link {
-	--element-background-color: var(--cl);
-}
-
-.wp-block-button__link {
-	--element-color: var(--bg);
-}
-
-.wp-block-button.is-style-outline .wp-block-button__link,
-.wp-block-button__link.is-style-outline,
-.is-style-outline .wp-block-button__link {
-	--element-color: var(--cl);
-}
-
-.is-style-outline .wp-block-button__link {
-	--element-background-color: var(--bg);
-}
-
 .wp-block-button.is-style-outline .wp-block-button__link,
 .wp-block-button__link.is-style-outline,
 .wp-block-button__link {
 	font-size: 1em;
 	border-radius: 4px;
 	padding: 0.35em 1.25em;
-	border: 2px solid var(--element-background-color);
-	margin: 0;
-	color: var(--element-color);
-	background-color: var(--element-background-color);
+  margin: 0;
+  border-color: currentColor;
 }
 
-.wp-block-button.is-style-outline .wp-block-button__link:active,
-.wp-block-button.is-style-outline .wp-block-button__link:hover,
-.wp-block-button.is-style-outline .wp-block-button__link:focus,
-.wp-block-button.is-style-outline .wp-block-button__link:visited,
-.wp-block-button__link.is-style-outline:active,
-.wp-block-button__link.is-style-outline:hover,
-.wp-block-button__link.is-style-outline:focus,
-.wp-block-button__link.is-style-outline:visited,
-.wp-block-button__link:active,
-.wp-block-button__link:hover,
-.wp-block-button__link:focus,
-.wp-block-button__link:visited {
-	background: var(--element-color);
-	color: var(--element-background-color);
-	border-color: var(--element-background-color);
+.wp-block-button__link:not(.has-text-color) {
+  color: var(--cl);
 }
 
-.wp-block-button.is-style-outline .wp-block-button__link,
-.wp-block-button__link.is-style-outline,
-.is-style-outline .wp-block-button__link {
-	background-color: transparent;
-	border-color: currentColor;
+.wp-block-button__link:not(.has-background) {
+  background-color: var(--bg);
 }
 
-.wp-block-button.is-style-outline .wp-block-button__link:active,
-.wp-block-button.is-style-outline .wp-block-button__link:hover,
-.wp-block-button.is-style-outline .wp-block-button__link:focus,
-.wp-block-button.is-style-outline .wp-block-button__link:visited,
-.wp-block-button__link.is-style-outline:active,
-.wp-block-button__link.is-style-outline:hover,
-.wp-block-button__link.is-style-outline:focus,
-.wp-block-button__link.is-style-outline:visited,
-.is-style-outline .wp-block-button__link:hover,
-.is-style-outline .wp-block-button__link:focus,
-.is-style-outline .wp-block-button__link:active {
-	background: var(--element-color);
-	color: var(--element-background-color);
-	border-color: var(--element-color);
+.wp-block-button__link:not(.has-text-color):not(.has-background):hover,
+.wp-block-button__link:not(.has-text-color):not(.has-background):focus,
+.wp-block-button__link:not(.has-text-color):not(.has-background):active,
+.wp-block-button__link.has-text-color.has-background:hover,
+.wp-block-button__link.has-text-color.has-background:focus,
+.wp-block-button__link.has-text-color.has-background:active {
+  color: var(--bg);
+  background-color: var(--cl);
 }

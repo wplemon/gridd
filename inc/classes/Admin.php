@@ -65,7 +65,7 @@ class Admin {
 	 * @return void
 	 */
 	public function admin_page() {
-		include_once get_template_directory() . '/inc/deprecator-admin-page.php';
+		include_once get_template_directory() . '/inc/admin-page.php';
 	}
 
 	/**

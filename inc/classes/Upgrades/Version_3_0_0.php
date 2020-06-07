@@ -42,7 +42,10 @@ class Version_3_0_0 {
 		new \Gridd\Upgrades\Block\Header_Contact_Info();
 		new \Gridd\Upgrades\Block\Footer_Copyright();
 		new \Gridd\Upgrades\Block\Header_Search();
+		/**
+		 * WIP
 		new \Gridd\Upgrades\Block\Widget_Areas();
+		 */
 	}
 
 	/**
@@ -209,7 +212,10 @@ $args[2]";
 		];
 
 		foreach ( $custom_options as $name ) {
+			/**
+			 * WIP
 			set_theme_mod( $name, true );
+			 */
 		}
 
 		$number = \Gridd\Grid_Part\Navigation::get_number_of_nav_menus();

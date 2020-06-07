@@ -42,8 +42,6 @@ class Upgrade {
 	 * @var array
 	 */
 	private $versions_upgrades = [
-		'1.1.18',
-		'2.0.0',
 		'3.0.0',
 	];
 

@@ -138,6 +138,11 @@ new \Kirki\Field\Dimension(
 				'element'  => ':root',
 				'property' => '--cmw',
 			],
+			[
+				'element'  => '.wp-block',
+				'property' => 'max-width',
+				'context'  => [ 'editor' ],
+			],
 		],
 		'transport' => 'auto',
 		'priority'  => 50,
