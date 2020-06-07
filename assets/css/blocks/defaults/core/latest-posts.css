@@ -90,7 +90,8 @@
   .wp-block-latest-posts.columns-6 li {
     width: calc((100% / 6) - 20px); } }
 
-.wp-block-latest-posts__post-date {
+.wp-block-latest-posts__post-date,
+.wp-block-latest-posts__post-author {
   display: block;
   color: #6c7781;
   font-size: 13px; }
