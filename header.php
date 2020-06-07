@@ -31,6 +31,7 @@ use Gridd\Grid_Parts;
 
 <body <?php body_class(); ?>>
 <?php do_action( 'wp_body_open' ); ?>
+<progress id="gridd-progress-indicator" value="0"></progress>
 <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'gridd' ); ?></a>
 <?php
 /**

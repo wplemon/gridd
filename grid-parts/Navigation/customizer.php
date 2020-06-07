@@ -228,13 +228,6 @@ function gridd_nav_customizer_options( $id ) {
 			'section'           => "nav_$id",
 			'default'           => esc_html__( 'MENU', 'gridd' ),
 			'transport'         => 'refresh',
-			'active_callback'   => [
-				[
-					'setting'  => "nav_{$id}_responsive_behavior",
-					'value'    => 'desktop-normal mobile-hidden',
-					'operator' => '!==',
-				],
-			],
 			'sanitize_callback' => 'esc_html',
 			'active_callback'   => function() use ( $id ) {
 				return get_theme_mod( "nav_{$id}_custom_options", false );
@@ -251,13 +244,6 @@ function gridd_nav_customizer_options( $id ) {
 			'transport'         => 'refresh',
 			'choices'           => Navigation::get_expand_svgs(),
 			'hide_input'        => true,
-			'active_callback'   => [
-				[
-					'setting'  => "nav_{$id}_responsive_behavior",
-					'value'    => 'desktop-normal mobile-hidden',
-					'operator' => '!==',
-				],
-			],
 			'sanitize_callback' => function( $value ) {
 				return in_array( $value, array_keys( Navigation::get_expand_svgs() ), true ) ? $value : 'menu-1';
 			},
@@ -284,13 +270,6 @@ function gridd_nav_customizer_options( $id ) {
 				'bottom-left'   => esc_html__( 'Bottom Left', 'gridd' ),
 				'bottom-center' => esc_html__( 'Bottom Center', 'gridd' ),
 				'bottom-right'  => esc_html__( 'Bottom Right', 'gridd' ),
-			],
-			'active_callback'   => [
-				[
-					'setting'  => "nav_{$id}_responsive_behavior",
-					'value'    => 'desktop-normal mobile-hidden',
-					'operator' => '!==',
-				],
 			],
 			'sanitize_callback' => function( $value ) {
 				if ( ! in_array( $value, [ 'top-left', 'top-center', 'top-right', 'center-left', 'center-center', 'center-right', 'bottom-left', 'bottom-center', 'bottom-right' ], true ) ) {

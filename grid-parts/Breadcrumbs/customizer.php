@@ -42,7 +42,6 @@ new \Kirki\Field\ReactColor(
 		'label'           => esc_html__( 'Background Color', 'gridd' ),
 		'section'         => 'breadcrumbs',
 		'default'         => '#ffffff',
-		'transport'       => 'postMessage',
 		'transport'       => 'auto',
 		'output'          => [
 			[

@@ -229,7 +229,6 @@ new \Kirki\Field\Radio(
 			/* Translators: Numeric representation of the scale. */
 			'1.333' => sprintf( esc_attr__( '%s - Big', 'gridd' ), '1.333' ),
 		],
-		'priority'          => 80,
 		'sanitize_callback' => function( $value ) {
 			return is_numeric( $value ) ? $value : '1.26';
 		},

@@ -211,12 +211,12 @@ $args[2]";
 			'header_custom_options',
 		];
 
+		/* phpcs:ignore Squiz.PHP.CommentedOutCode.Found
+		WIP
 		foreach ( $custom_options as $name ) {
-			/**
-			 * WIP
 			set_theme_mod( $name, true );
-			 */
 		}
+		*/
 
 		$number = \Gridd\Grid_Part\Navigation::get_number_of_nav_menus();
 		for ( $i = 1; $i <= $number; $i++ ) {

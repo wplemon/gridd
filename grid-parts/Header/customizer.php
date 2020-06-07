@@ -185,9 +185,6 @@ new \WPLemon\Field\WCAGLinkColor(
 		'section'           => 'header',
 		'transport'         => 'auto',
 		'priority'          => 52,
-		'choices'           => [
-			'alpha' => false,
-		],
 		'default'           => '#0f5e97',
 		'choices'           => [
 			'backgroundColor' => 'header_background_color',
@@ -217,7 +214,6 @@ new \Kirki\Field\RadioButtonset(
 		'description'       => esc_html__( 'Set to "None" to disable the shadow, or increase the intensity for a more dramatic effect.', 'gridd' ),
 		'section'           => 'header',
 		'default'           => 'none',
-		'transport'         => 'postMessage',
 		'transport'         => 'auto',
 		'output'            => [
 			[

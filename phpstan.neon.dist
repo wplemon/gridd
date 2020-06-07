@@ -1,0 +1,34 @@
+includes:
+    - packages/szepeviktor/phpstan-wordpress/extension.neon
+parameters:
+    level: max
+    inferPrivatePropertyTypeFromConstructor: true
+    # TODO Add array types
+    checkMissingIterableValueType: false
+    autoload_files:
+        - packages/autoload.php
+        - inc/bootstrap-compatibility.php
+        - packages/kirki-framework/compatibility/src/Kirki.php
+        - inc/social-icons.php
+        - inc/class-aricolor.php
+        - grid-parts/Footer/customizer-sidebars.php
+        - grid-parts/Navigation/customizer.php
+        - grid-parts/Sidebar/customizer.php
+    paths:
+        - ./
+    excludes_analyse:
+        - packages/
+        # TODO Use PSR-4 autoloading
+        - inc/bootstrap.php
+        - inc/kirki.php
+        # TODO Add WC stubs
+        - inc/classes/WooCommerce.php
+        # TODO Add AMP stubs
+        - inc/classes/AMP.php
+    ignoreErrors:
+        # Core globals
+        - '#^Undefined variable: \$post$#'
+        # TODO Add EDD stubs
+        - '#^Function edd_\S+ not found\.$#'
+        # TODO Template globals
+        - '#^Undefined variable: \$(id|sidebar_id|gridd_reusable_block_id)$#'

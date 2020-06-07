@@ -10,6 +10,8 @@
 
 namespace Gridd;
 
+use WP_Error;
+
 /**
  * The Image handling class
  */
