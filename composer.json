@@ -66,7 +66,7 @@
     "szepeviktor/phpstan-wordpress": "^0.6.0"
   },
   "scripts": {
-    "build": "git archive --format=zip -o gridd.zip --prefix=gridd/ origin/master ."
+    "build": "git archive --format=zip -o gridd.zip --prefix=gridd/ origin/master .",
     "ci:syntax": "find . -type f -not -path './packages/*' -name '*.php' -print0|xargs -0 -P 4 -L 1 -- php -l",
     "ci:coding-standars": "phpcs --parallel=4",
     "ci:static-analysis": "phpstan analyze",
