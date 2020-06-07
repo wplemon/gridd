@@ -138,9 +138,6 @@ new \WPLemon\Field\WCAGLinkColor(
 		'section'           => 'footer',
 		'default'           => '#0f5e97',
 		'priority'          => 40,
-		'choices'           => [
-			'alpha' => false,
-		],
 		'transport'         => 'auto',
 		'output'            => [
 			[
@@ -172,7 +169,6 @@ new \Kirki\Field\Slider(
 				'property' => '--bt-w',
 			],
 		],
-		'priority'  => 50,
 		'choices'   => [
 			'min'    => 0,
 			'max'    => 30,
@@ -189,7 +185,6 @@ new \Kirki\Field\ReactColor(
 		'label'           => esc_html__( 'Top Border Color', 'gridd' ),
 		'section'         => 'footer',
 		'default'         => '',
-		'priority'        => 60,
 		'transport'       => 'auto',
 		'output'          => [
 			[

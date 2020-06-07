@@ -58,9 +58,6 @@ function gridd_sidebar_customizer_options( $id ) {
 			'section'         => "sidebar_$id",
 			'default'         => '#ffffff',
 			'priority'        => 10,
-			'choices'         => [
-				'alpha' => true,
-			],
 			'transport'       => 'auto',
 			'output'          => [
 				[
@@ -110,9 +107,6 @@ function gridd_sidebar_customizer_options( $id ) {
 			'section'           => "sidebar_$id",
 			'default'           => '#0f5e97',
 			'priority'          => 30,
-			'choices'           => [
-				'alpha' => true,
-			],
 			'transport'         => 'auto',
 			'output'            => [
 				[

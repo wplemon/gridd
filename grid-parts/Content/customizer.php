@@ -101,9 +101,6 @@ new \WPLemon\Field\WCAGLinkColor(
 		'section'           => 'content',
 		'transport'         => 'auto',
 		'priority'          => 30,
-		'choices'           => [
-			'alpha' => false,
-		],
 		'default'           => '#0f5e97',
 		'choices'           => [
 			'backgroundColor' => 'content_background_color',

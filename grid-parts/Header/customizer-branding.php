@@ -257,7 +257,6 @@ new \Kirki\Field\RadioButtonset(
 		'section'           => 'title_tagline',
 		'priority'          => 280,
 		'default'           => 'center',
-		'transport'         => 'auto',
 		'output'            => [
 			[
 				'element'  => '.gridd-tp-header_branding',
@@ -283,7 +282,6 @@ new \Kirki\Field\RadioButtonset(
 		'section'           => 'title_tagline',
 		'priority'          => 290,
 		'default'           => 'center',
-		'transport'         => 'auto',
 		'output'            => [
 			[
 				'element'  => '.gridd-tp-header_branding',
