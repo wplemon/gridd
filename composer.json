@@ -65,9 +65,6 @@
     "wptrt/wpthemereview": "*",
     "szepeviktor/phpstan-wordpress": "^0.6.0"
   },
-  "autoload": {
-    "classmap": ["inc/classes/", "grid-parts/"]
-  },
   "scripts": {
     "ci:syntax": "find . -type f -not -path './packages/*' -name '*.php' -print0|xargs -0 -P 4 -L 1 -- php -l",
     "ci:coding-standars": "phpcs --parallel=4",
