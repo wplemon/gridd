@@ -1,0 +1,44 @@
+#gridd-progress-indicator {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 5px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  background-color: transparent;
+  color: red;
+  color: var(--lc);
+  z-index: 999999;
+  transition: all 200ms;
+}
+
+.admin-bar #gridd-progress-indicator {
+  top: 32px;
+}
+
+@media screen and (max-width: 782px) {
+  .admin-bar #gridd-progress-indicator {
+    top: 46px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .admin-bar #gridd-progress-indicator {
+    top: 0;
+  }
+}
+
+#gridd-progress-indicator::-webkit-progress-bar {
+  background-color: transparent;
+}
+
+#gridd-progress-indicator::-webkit-progress-value {
+  background-color: var(--lc);;
+}
+
+#gridd-progress-indicator::-moz-progress-bar {
+  background-color: var(--lc);;
+}

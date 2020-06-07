@@ -79,6 +79,7 @@ class Scripts {
 			get_theme_file_path( 'assets/js/nav.min.js' ),
 			get_theme_file_path( 'assets/js/responsive-videos.min.js' ),
 			get_theme_file_path( 'assets/js/inline-css-to-vars.min.js' ),
+			get_theme_file_path( 'assets/js/read-progress.js' ),
 		];
 
 		// Comments.
@@ -125,6 +126,7 @@ class Scripts {
 	public function inline_styles() {
 
 		\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/styles.min.css' ) );
+		\Gridd\CSS::add_file( get_theme_file_path( 'assets/css/read-progress.min.css' ) );
 		\Gridd\CSS::add_file(
 			get_theme_file_path( 'assets/css/styles-small.min.css' ),
 			'only screen and (max-width:' . get_theme_mod( 'gridd_mobile_breakpoint', '992px' ) . ')'
