@@ -10,6 +10,8 @@
 namespace Gridd;
 
 use Gridd\Customizer\Sanitize;
+use Kirki\Compatibility\Kirki;
+
 $sanitization = new Sanitize();
 
 /**
@@ -154,9 +156,6 @@ new \WPLemon\Field\WCAGLinkColor(
 		'section'           => 'colors',
 		'transport'         => 'auto',
 		'priority'          => 40,
-		'choices'           => [
-			'alpha' => false,
-		],
 		'default'           => '#0f5e97',
 		'choices'           => [
 			'backgroundColor' => 'background_color',
@@ -225,7 +224,7 @@ new \Kirki\Field\ReactColor(
 /**
  * Add the config.
  */
-\Kirki::add_config(
+Kirki::add_config(
 	'gridd',
 	[
 		'capability'  => 'edit_theme_options',

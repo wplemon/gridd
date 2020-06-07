@@ -8,6 +8,7 @@
 namespace Gridd;
 
 use Gridd\Grid_Parts;
+use Kirki\Compatibility\Kirki;
 
 /**
  * Extra methods and actions for the customizer.
@@ -161,7 +162,7 @@ class Customizer {
 	 * @return void
 	 */
 	public static function add_section( $id, $args ) {
-		\Kirki::add_section( $id, $args );
+		Kirki::add_section( $id, $args );
 	}
 
 	/**
@@ -188,7 +189,7 @@ class Customizer {
 	public static function add_field( $args ) {
 		$args = apply_filters( 'gridd_field_args', $args );
 
-		\Kirki::add_field( 'gridd', $args );
+		Kirki::add_field( 'gridd', $args );
 		if ( 'gridd_grid' === $args['type'] ) {
 			self::$grid_controls[ $args['settings'] ] = $args;
 		}

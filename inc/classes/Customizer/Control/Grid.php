@@ -9,13 +9,14 @@
 namespace Gridd\Customizer\Control;
 
 use Gridd\Grid_Parts;
+use Kirki\Control\Base;
 
 /**
  * The grid control.
  *
  * @since 1.0
  */
-class Grid extends \Kirki_Control_Base {
+class Grid extends Base {
 
 	/**
 	 * The control type.

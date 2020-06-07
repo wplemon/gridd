@@ -245,7 +245,6 @@ new \Kirki\Field\Dimension(
 		'settings'        => 'gridd_featured_image_overlay_min_height',
 		'label'           => esc_attr__( 'Featured image minimum height', 'gridd' ),
 		'section'         => 'gridd_features_single_post',
-		'default'         => 'overlay',
 		'transport'       => 'postMessage',
 		'priority'        => 30,
 		'default'         => '87vh',
