@@ -63,5 +63,8 @@
     "dealerdirect/phpcodesniffer-composer-installer": "*",
     "wp-coding-standards/wpcs": "*",
     "wptrt/wpthemereview": "*"
+  },
+  "script": {
+    "build": "git archive --format=zip -o gridd.zip --prefix=gridd/ origin/master ."
   }
 }
