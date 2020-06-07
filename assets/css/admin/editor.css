@@ -17,7 +17,6 @@
   --system-fonts: -apple-system, blinkmacsystemfont, "Segoe UI", roboto, oxygen-sans, ubuntu, cantarell, "Helvetica Neue", sans-serif;
   margin: 0;
   background: #fff;
-  overflow-x: hidden;
   font-size: var(--fs-tr);
   color: var(--cl, #000);
   font-family: var(--system-fonts);
