@@ -70,7 +70,5 @@
 /**
  * Border radii.
  */
-.wp-block-group.has-background {
-  padding: 20px 30px;
-  margin-top: 0;
-  margin-bottom: 0; }
+.wp-block-custom-logo .aligncenter {
+  display: table; }

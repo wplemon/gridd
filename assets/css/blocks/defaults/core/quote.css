@@ -5,6 +5,10 @@
  * Colors
  */
 /**
+ * Deprecated colors.
+ * Please avoid using these.
+ */
+/**
  * Breakpoint mixins
  */
 /**
@@ -32,8 +36,17 @@
 /**
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
+:root {
+  --wp-admin-theme-color: #007cba;
+  --wp-admin-theme-color-darker-10: #006ba1;
+  --wp-admin-theme-color-darker-20: #005a87; }
+
 /**
  * Colors
+ */
+/**
+ * Deprecated colors.
+ * Please avoid using these.
  */
 /**
  * Fonts & basic variables.
@@ -81,12 +94,12 @@
     margin-top: 1em;
     position: relative;
     font-style: normal; }
-  .wp-block-quote.has-text-align-right, .wp-block-quote.has-text-align-right {
+  .wp-block-quote.has-text-align-right {
     border-left: none;
     border-right: 4px solid #000;
     padding-left: 0;
     padding-right: 1em; }
-  .wp-block-quote.has-text-align-center, .wp-block-quote.has-text-align-center {
+  .wp-block-quote.has-text-align-center {
     border: none;
     padding-left: 0; }
   .wp-block-quote.is-style-large, .wp-block-quote.is-large {
