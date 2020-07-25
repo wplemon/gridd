@@ -101,7 +101,9 @@ $gridd_migrated_parts   = $gridd_deprecator->get_migrated_parts();
 	</details>
 
 	<?php
-	require_once __DIR__ . '/classes/PayItForward.php';
+	if ( ! class_exists( '\Aristath\PayItForward' ) ) {
+		require_once __DIR__ . '/classes/PayItForward.php';
+	}
 	$sponsors = new \Aristath\PayItForward();
 	$sponsors->sponsors_details();
 	?>
