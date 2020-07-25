@@ -132,6 +132,54 @@ class Admin {
 					'3.0.0'
 				),
 			],
+			// 'nav_1'               => [
+			// 	'name'   => esc_html__( 'Navigation 1', 'gridd' ),
+			// 	'class'  => '\Gridd\Upgrades\Block\Navigation',
+			// 	'args'   => [
+			// 		'nav_location' => 'menu-1',
+			// 		'orientation'  => get_theme_mod( 'nav_1_vertical', false ) ? 'vertical' : 'horizontal',
+			// 	],
+			// 	'status' => $this->get_status( 'nav_1' ),
+			// 	'info'   => sprintf(
+			// 		/* Translators: %1$s: grid-part name. %2$s: Theme version. */
+			// 		esc_html__( 'The "%1$s" grid-part was deprecated in version %2$s. If you were using it in a previous version, migrating will create a new reusable block that will automatically replace the previous implementation.', 'gridd' ),
+			// 		/* Translators: %d: Navigation number. */
+			// 		sprintf( esc_html__( 'Navigation %d', 'gridd' ), 1 ),
+			// 		'3.1.0'
+			// 	),
+			// ],
+			// 'nav_2'               => [
+			// 	'name'   => esc_html__( 'Navigation 2', 'gridd' ),
+			// 	'class'  => '\Gridd\Upgrades\Block\Navigation',
+			// 	'args'   => [
+			// 		'nav_location' => 'menu-2',
+			// 		'orientation'  => get_theme_mod( 'nav_2_vertical', false ) ? 'vertical' : 'horizontal',
+			// 	],
+			// 	'status' => $this->get_status( 'nav_2' ),
+			// 	'info'   => sprintf(
+			// 		/* Translators: %1$s: grid-part name. %2$s: Theme version. */
+			// 		esc_html__( 'The "%1$s" grid-part was deprecated in version %2$s. If you were using it in a previous version, migrating will create a new reusable block that will automatically replace the previous implementation.', 'gridd' ),
+			// 		/* Translators: %d: Navigation number. */
+			// 		sprintf( esc_html__( 'Navigation %d', 'gridd' ), 2 ),
+			// 		'3.1.0'
+			// 	),
+			// ],
+			// 'nav_3'               => [
+			// 	'name'   => esc_html__( 'Navigation 3', 'gridd' ),
+			// 	'class'  => '\Gridd\Upgrades\Block\Navigation',
+			// 	'args'   => [
+			// 		'nav_location' => 'menu-3',
+			// 		'orientation'  => get_theme_mod( 'nav_3_vertical', false ) ? 'vertical' : 'horizontal',
+			// 	],
+			// 	'status' => $this->get_status( 'nav_3' ),
+			// 	'info'   => sprintf(
+			// 		/* Translators: %1$s: grid-part name. %2$s: Theme version. */
+			// 		esc_html__( 'The "%1$s" grid-part was deprecated in version %2$s. If you were using it in a previous version, migrating will create a new reusable block that will automatically replace the previous implementation.', 'gridd' ),
+			// 		/* Translators: %d: Navigation number. */
+			// 		sprintf( esc_html__( 'Navigation %d', 'gridd' ), 3 ),
+			// 		'3.1.0'
+			// 	),
+			// ],
 		];
 
 		return apply_filters( 'gridd_get_deprecator_parts', $parts );
@@ -188,6 +236,42 @@ class Admin {
 						$status = 'not-applicable';
 					}
 					break;
+
+				// case 'nav_1':
+				// 	$part_migration = new \Gridd\Upgrades\Block\Navigation(
+				// 		[
+				// 			'nav_location' => 'menu-1',
+				// 			'orientation'  => get_theme_mod( 'nav_1_vertical', false ) ? 'vertical' : 'horizontal',
+				// 		]
+				// 	);
+				// 	if ( ! $part_migration->should_migrate() ) {
+				// 		$status = 'not-applicable';
+				// 	}
+				// 	break;
+
+				// case 'nav_2':
+				// 	$part_migration = new \Gridd\Upgrades\Block\Navigation(
+				// 		[
+				// 			'nav_location' => 'menu-2',
+				// 			'orientation'  => get_theme_mod( 'nav_2_vertical', false ) ? 'vertical' : 'horizontal',
+				// 		]
+				// 	);
+				// 	if ( ! $part_migration->should_migrate() ) {
+				// 		$status = 'not-applicable';
+				// 	}
+				// 	break;
+
+				// case 'nav_3':
+				// 	$part_migration = new \Gridd\Upgrades\Block\Navigation(
+				// 		[
+				// 			'nav_location' => 'menu-3',
+				// 			'orientation'  => get_theme_mod( 'nav_3_vertical', false ) ? 'vertical' : 'horizontal',
+				// 		]
+				// 	);
+				// 	if ( ! $part_migration->should_migrate() ) {
+				// 		$status = 'not-applicable';
+				// 	}
+				// 	break;
 			}
 		}
 
@@ -262,7 +346,8 @@ class Admin {
 		if ( class_exists( $class_name ) ) {
 
 			// Init the migration.
-			$migration = new $class_name();
+			$constructor_args = isset( $this->get_migrations_array()[ $part_id ]['args'] ) ? $this->get_migrations_array()[ $part_id ]['args'] : false;
+			$migration        = $constructor_args ? new $class_name( $constructor_args ) : new $class_name();
 
 			// Run the migration.
 			$migration->run();
