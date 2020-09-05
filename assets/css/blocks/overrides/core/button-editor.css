@@ -2,7 +2,6 @@
 .wp-block-button__link:focus {
 	text-decoration: none !important;
 	border-radius: 4px !important;
-	padding: 0.35em 1.25em !important;
 	cursor: pointer !important;
 	display: inline-block !important;
 	margin: 0 !important;

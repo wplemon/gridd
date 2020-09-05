@@ -1,15 +1,4 @@
-.wp-block-calendar th,
-.wp-block-calendar tbody td {
-	padding: 0.25em;
-	border: 1px solid;
-}
-
-.wp-block-calendar table {
-	font-family: inherit;
-}
-
 .wp-block-calendar table th {
-	font-weight: inherit;
 	background: none;
 }
 
