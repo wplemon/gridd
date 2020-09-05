@@ -36,11 +36,6 @@
 /**
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
-:root {
-  --wp-admin-theme-color: #007cba;
-  --wp-admin-theme-color-darker-10: #006ba1;
-  --wp-admin-theme-color-darker-20: #005a87; }
-
 /**
  * Colors
  */
@@ -70,6 +65,9 @@
 /**
  * Border radii.
  */
+/**
+ * Block paddings.
+ */
 .wp-block-post-author {
   display: flex;
   flex-wrap: wrap; }
@@ -79,9 +77,9 @@
     margin-bottom: 0;
     font-size: 0.5em; }
   .wp-block-post-author__avatar {
-    margin-right: 16px; }
+    margin-right: 1em; }
   .wp-block-post-author__bio {
-    margin-bottom: 8px;
+    margin-bottom: 0.7em;
     font-size: 0.7em; }
   .wp-block-post-author__content {
     flex-grow: 1;
@@ -89,7 +87,3 @@
   .wp-block-post-author__name {
     font-weight: bold;
     margin: 0; }
-
-.wp-block-post-author.has-link-color a,
-.wp-block-post-author.has-background.has-link-color a {
-  color: var(--wp--style--color--link); }

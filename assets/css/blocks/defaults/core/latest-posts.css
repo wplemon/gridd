@@ -36,11 +36,6 @@
 /**
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
-:root {
-  --wp-admin-theme-color: #007cba;
-  --wp-admin-theme-color-darker-10: #006ba1;
-  --wp-admin-theme-color-darker-20: #005a87; }
-
 /**
  * Colors
  */
@@ -70,6 +65,9 @@
 /**
  * Border radii.
  */
+/**
+ * Block paddings.
+ */
 .wp-block-latest-posts.alignleft {
   /*rtl:ignore*/
   margin-right: 2em; }
@@ -88,30 +86,33 @@
   flex-wrap: wrap;
   padding: 0; }
   .wp-block-latest-posts.is-grid li {
-    margin: 0 20px 20px 0;
+    margin: 0 1.25em 1.25em 0;
     width: 100%; }
 
 @media (min-width: 600px) {
   .wp-block-latest-posts.columns-2 li {
-    width: calc((100% / 2) - 20px); }
+    width: calc((100% / 2) - 1.25em); }
   .wp-block-latest-posts.columns-3 li {
-    width: calc((100% / 3) - 20px); }
+    width: calc((100% / 3) - 1.25em); }
   .wp-block-latest-posts.columns-4 li {
-    width: calc((100% / 4) - 20px); }
+    width: calc((100% / 4) - 1.25em); }
   .wp-block-latest-posts.columns-5 li {
-    width: calc((100% / 5) - 20px); }
+    width: calc((100% / 5) - 1.25em); }
   .wp-block-latest-posts.columns-6 li {
-    width: calc((100% / 6) - 20px); } }
+    width: calc((100% / 6) - 1.25em); } }
 
 .wp-block-latest-posts__post-date,
 .wp-block-latest-posts__post-author {
   display: block;
   color: #6c7781;
-  font-size: 13px; }
+  font-size: 0.8125em; }
 
 .wp-block-latest-posts__post-excerpt {
-  margin-top: 8px;
-  margin-bottom: 16px; }
+  margin-top: 0.5em;
+  margin-bottom: 1em; }
+
+.wp-block-latest-posts__featured-image a {
+  display: inline-block; }
 
 .wp-block-latest-posts__featured-image img {
   height: auto;
@@ -129,5 +130,9 @@
   margin-bottom: 1em;
   text-align: center; }
 
-.edit-post-visual-editor .wp-block-latest-posts.is-grid li {
-  margin-bottom: 20px; }
+.block-editor-image-alignment-control__row .components-base-control__field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .block-editor-image-alignment-control__row .components-base-control__field .components-base-control__label {
+    margin-bottom: 0; }

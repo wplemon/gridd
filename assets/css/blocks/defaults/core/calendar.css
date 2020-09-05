@@ -36,11 +36,6 @@
 /**
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
-:root {
-  --wp-admin-theme-color: #007cba;
-  --wp-admin-theme-color-darker-10: #006ba1;
-  --wp-admin-theme-color-darker-20: #005a87; }
-
 /**
  * Colors
  */
@@ -70,25 +65,25 @@
 /**
  * Border radii.
  */
+/**
+ * Block paddings.
+ */
 .wp-block-calendar {
   text-align: center; }
   .wp-block-calendar th,
   .wp-block-calendar tbody td {
-    padding: 4px;
+    padding: 0.25em;
     border: 1px solid #ddd; }
   .wp-block-calendar tfoot td {
     border: none; }
   .wp-block-calendar table {
     width: 100%;
-    border-collapse: collapse;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
+    border-collapse: collapse; }
   .wp-block-calendar table th {
     font-weight: 400;
     background: #ddd; }
   .wp-block-calendar a {
     text-decoration: underline; }
-  .wp-block-calendar tfoot a {
-    color: var(--wp-admin-theme-color); }
   .wp-block-calendar table tbody,
   .wp-block-calendar table caption {
     color: #40464d; }

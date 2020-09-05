@@ -36,11 +36,6 @@
 /**
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
-:root {
-  --wp-admin-theme-color: #007cba;
-  --wp-admin-theme-color-darker-10: #006ba1;
-  --wp-admin-theme-color-darker-20: #005a87; }
-
 /**
  * Colors
  */
@@ -70,12 +65,15 @@
 /**
  * Border radii.
  */
+/**
+ * Block paddings.
+ */
 .wp-block-text-columns {
   display: flex; }
   .wp-block-text-columns.aligncenter {
     display: flex; }
   .wp-block-text-columns .wp-block-column {
-    margin: 0 16px;
+    margin: 0 1em;
     padding: 0; }
     .wp-block-text-columns .wp-block-column:first-child {
       margin-left: 0; }

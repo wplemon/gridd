@@ -36,11 +36,6 @@
 /**
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
-:root {
-  --wp-admin-theme-color: #007cba;
-  --wp-admin-theme-color-darker-10: #006ba1;
-  --wp-admin-theme-color-darker-20: #005a87; }
-
 /**
  * Colors
  */
@@ -69,6 +64,9 @@
  */
 /**
  * Border radii.
+ */
+/**
+ * Block paddings.
  */
 .wp-block-media-text {
   /*!rtl:begin:ignore*/
@@ -158,10 +156,4 @@
       grid-row: 1; }
     .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content {
       grid-column: 1;
-      grid-row: 2; }
-  .wp-block-media-text.is-stacked-on-mobile.has-media-on-the-right .wp-block-media-text__media {
-    grid-column: 1;
-    grid-row: 2; }
-  .wp-block-media-text.is-stacked-on-mobile.has-media-on-the-right .wp-block-media-text__content {
-    grid-column: 1;
-    grid-row: 1; } }
+      grid-row: 2; } }

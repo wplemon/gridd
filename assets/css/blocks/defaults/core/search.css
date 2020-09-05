@@ -36,11 +36,6 @@
 /**
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
-:root {
-  --wp-admin-theme-color: #007cba;
-  --wp-admin-theme-color-darker-10: #006ba1;
-  --wp-admin-theme-color-darker-20: #005a87; }
-
 /**
  * Colors
  */
@@ -70,16 +65,44 @@
 /**
  * Border radii.
  */
-.wp-block-search {
+/**
+ * Block paddings.
+ */
+.wp-block-search .wp-block-search__inside-wrapper {
   display: flex;
-  flex-wrap: wrap; }
-  .wp-block-search .wp-block-search__label {
-    width: 100%; }
-  .wp-block-search .wp-block-search__input {
-    flex-grow: 1;
-    max-width: 360px; }
-  .wp-block-search .wp-block-search__button {
-    margin-left: 10px; }
+  flex: auto;
+  flex-wrap: nowrap;
+  max-width: 100%; }
+
+.wp-block-search .wp-block-search__label {
+  width: 100%; }
+
+.wp-block-search .wp-block-search__input {
+  flex-grow: 1;
+  min-width: 3em;
+  border: 1px solid #7e8993; }
+
+.wp-block-search .wp-block-search__button {
+  margin-left: 0.625em;
+  word-break: normal; }
+  .wp-block-search .wp-block-search__button svg {
+    min-width: 1.5em;
+    min-height: 1.5em; }
+
+.wp-block-search.wp-block-search__button-only .wp-block-search__button {
+  margin-left: 0; }
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
+  padding: 4px;
+  border: 1px solid #7e8993; }
+  .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__input {
+    border-radius: 0;
+    border: none;
+    padding: 0 0 0 0.25em; }
+    .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__input:focus {
+      outline: none; }
+  .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button {
+    padding: 0.125em 0.5em; }
 
 .wp-block-search .wp-block-search__label {
   font-weight: bold; }

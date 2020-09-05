@@ -36,11 +36,6 @@
 /**
  * Reset the WP Admin page styles for Gutenberg-like pages.
  */
-:root {
-  --wp-admin-theme-color: #007cba;
-  --wp-admin-theme-color-darker-10: #006ba1;
-  --wp-admin-theme-color-darker-20: #005a87; }
-
 /**
  * Colors
  */
@@ -70,6 +65,9 @@
 /**
  * Border radii.
  */
+/**
+ * Block paddings.
+ */
 .wp-block-gallery,
 .blocks-gallery-grid {
   display: flex;
@@ -81,7 +79,7 @@
   .wp-block-gallery .blocks-gallery-item,
   .blocks-gallery-grid .blocks-gallery-image,
   .blocks-gallery-grid .blocks-gallery-item {
-    margin: 0 16px 16px 0;
+    margin: 0 1em 1em 0;
     display: flex;
     flex-grow: 1;
     flex-direction: column;
@@ -128,11 +126,12 @@
       width: 100%;
       max-height: 100%;
       overflow: auto;
-      padding: 40px 10px 9px;
+      padding: 3em 0.77em 0.7em;
       color: #fff;
       text-align: center;
-      font-size: 13px;
-      background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0, rgba(0, 0, 0, 0.3) 70%, transparent); }
+      font-size: 0.8em;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0, rgba(0, 0, 0, 0.3) 70%, transparent);
+      box-sizing: border-box; }
       .wp-block-gallery .blocks-gallery-image figcaption img,
       .wp-block-gallery .blocks-gallery-item figcaption img,
       .blocks-gallery-grid .blocks-gallery-image figcaption img,
@@ -163,7 +162,7 @@
   .wp-block-gallery .blocks-gallery-item,
   .blocks-gallery-grid .blocks-gallery-image,
   .blocks-gallery-grid .blocks-gallery-item {
-    width: calc(50% - 16px); }
+    width: calc(50% - 1em); }
     .wp-block-gallery .blocks-gallery-image:nth-of-type(even),
     .wp-block-gallery .blocks-gallery-item:nth-of-type(even),
     .blocks-gallery-grid .blocks-gallery-image:nth-of-type(even),
@@ -180,38 +179,38 @@
     .wp-block-gallery.columns-3 .blocks-gallery-item,
     .blocks-gallery-grid.columns-3 .blocks-gallery-image,
     .blocks-gallery-grid.columns-3 .blocks-gallery-item {
-      width: calc(33.33333% - 10.66667px);
-      margin-right: 16px; }
+      width: calc(33.33333% - 0.66667em);
+      margin-right: 1em; }
     .wp-block-gallery.columns-4 .blocks-gallery-image,
     .wp-block-gallery.columns-4 .blocks-gallery-item,
     .blocks-gallery-grid.columns-4 .blocks-gallery-image,
     .blocks-gallery-grid.columns-4 .blocks-gallery-item {
-      width: calc(25% - 12px);
-      margin-right: 16px; }
+      width: calc(25% - 0.75em);
+      margin-right: 1em; }
     .wp-block-gallery.columns-5 .blocks-gallery-image,
     .wp-block-gallery.columns-5 .blocks-gallery-item,
     .blocks-gallery-grid.columns-5 .blocks-gallery-image,
     .blocks-gallery-grid.columns-5 .blocks-gallery-item {
-      width: calc(20% - 12.8px);
-      margin-right: 16px; }
+      width: calc(20% - 0.8em);
+      margin-right: 1em; }
     .wp-block-gallery.columns-6 .blocks-gallery-image,
     .wp-block-gallery.columns-6 .blocks-gallery-item,
     .blocks-gallery-grid.columns-6 .blocks-gallery-image,
     .blocks-gallery-grid.columns-6 .blocks-gallery-item {
-      width: calc(16.66667% - 13.33333px);
-      margin-right: 16px; }
+      width: calc(16.66667% - 0.83333em);
+      margin-right: 1em; }
     .wp-block-gallery.columns-7 .blocks-gallery-image,
     .wp-block-gallery.columns-7 .blocks-gallery-item,
     .blocks-gallery-grid.columns-7 .blocks-gallery-image,
     .blocks-gallery-grid.columns-7 .blocks-gallery-item {
-      width: calc(14.28571% - 13.71429px);
-      margin-right: 16px; }
+      width: calc(14.28571% - 0.85714em);
+      margin-right: 1em; }
     .wp-block-gallery.columns-8 .blocks-gallery-image,
     .wp-block-gallery.columns-8 .blocks-gallery-item,
     .blocks-gallery-grid.columns-8 .blocks-gallery-image,
     .blocks-gallery-grid.columns-8 .blocks-gallery-item {
-      width: calc(12.5% - 14px);
-      margin-right: 16px; }
+      width: calc(12.5% - 0.875em);
+      margin-right: 1em; }
     .wp-block-gallery.columns-1 .blocks-gallery-image:nth-of-type(1n),
     .wp-block-gallery.columns-1 .blocks-gallery-item:nth-of-type(1n),
     .blocks-gallery-grid.columns-1 .blocks-gallery-image:nth-of-type(1n),
