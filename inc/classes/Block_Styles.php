@@ -277,7 +277,7 @@ class Block_Styles {
 	 * @return void
 	 */
 	public function footer_styles() {
-		echo '<style>' . esc_html( self::$footer_block_styles ) . '</style>';
+		echo '<style>' . wp_strip_all_tags( self::$footer_block_styles ) . '</style>'; // phpcs:ignore WordPress.Security.EscapeOutput
 	}
 }
 
