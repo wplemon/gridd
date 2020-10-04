@@ -78,7 +78,7 @@ class Navigation extends \Gridd\Upgrades\Block_Migrator {
 	 * @access public
 	 * @since 3.1.0
 	 * @param string $nav_location The menu location.
-	 * @param string $orienation   Can be horizontal|vertical.
+	 * @param string $orientation  Can be horizontal|vertical.
 	 * @return string Returns Block markup.
 	 */
 	public function generate_block_from_menu( $nav_location, $orientation = 'horizontal' ) {
@@ -93,10 +93,10 @@ class Navigation extends \Gridd\Upgrades\Block_Migrator {
 			return '';
 		}
 
-		$menu_items = wp_get_nav_menu_items( $menu->term_id, array( 'update_post_term_cache' => false ) );
+		$menu_items = wp_get_nav_menu_items( $menu->term_id, [ 'update_post_term_cache' => false ] );
 
-		$sorted_menu_items        = array();
-		$menu_items_with_children = array();
+		$sorted_menu_items        = [];
+		$menu_items_with_children = [];
 		foreach ( (array) $menu_items as $menu_item ) {
 			$sorted_menu_items[ $menu_item->menu_order ] = $menu_item;
 			if ( $menu_item->menu_item_parent ) {
@@ -131,10 +131,10 @@ class Navigation extends \Gridd\Upgrades\Block_Migrator {
 		$block_markup = '<!-- wp:navigation {"orientation":"' . $orientation . '"} -->';
 		foreach ( $sorted_menu_items as $menu_item ) {
 			$prev_child_of = $child_of;
-			$has_children  = ( in_array( 'menu-item-has-children', $menu_item->classes ) );
+			$has_children  = ( in_array( 'menu-item-has-children', $menu_item->classes, true ) );
 			$child_of      = $menu_item->menu_item_parent;
 
-			if ( $prev_child_of !== $child_of && $child_of != $prev_id ) {
+			if ( $prev_child_of !== $child_of && $child_of != $prev_id ) { // phpcs:ignore WordPress.PHP.StrictComparisons
 				$block_markup .= '<!-- /wp:navigation-link -->';
 			}
 
@@ -196,7 +196,7 @@ class Navigation extends \Gridd\Upgrades\Block_Migrator {
 		foreach ( [
 			'gridd_grid'  => [],
 			'header_grid' => \Gridd\Grid_Part\Header::get_grid_defaults(),
-			'footer_grid' => []
+			'footer_grid' => [],
 		] as $theme_mod => $defaults ) {
 			$grid      = get_theme_mod( 'header_grid', $defaults );
 			$grid_part = str_replace( 'menu-', '', $this->nav_location );
