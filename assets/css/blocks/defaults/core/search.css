@@ -5,10 +5,6 @@
  * Colors
  */
 /**
- * Deprecated colors.
- * Please avoid using these.
- */
-/**
  * Breakpoint mixins
  */
 /**
@@ -38,10 +34,6 @@
  */
 /**
  * Colors
- */
-/**
- * Deprecated colors.
- * Please avoid using these.
  */
 /**
  * Fonts & basic variables.
@@ -80,7 +72,7 @@
 .wp-block-search .wp-block-search__input {
   flex-grow: 1;
   min-width: 3em;
-  border: 1px solid #7e8993; }
+  border: 1px solid #949494; }
 
 .wp-block-search .wp-block-search__button {
   margin-left: 0.625em;
@@ -94,7 +86,7 @@
 
 .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
   padding: 4px;
-  border: 1px solid #7e8993; }
+  border: 1px solid #949494; }
   .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__input {
     border-radius: 0;
     border: none;

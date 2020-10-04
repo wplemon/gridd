@@ -5,10 +5,6 @@
  * Colors
  */
 /**
- * Deprecated colors.
- * Please avoid using these.
- */
-/**
  * Breakpoint mixins
  */
 /**
@@ -38,10 +34,6 @@
  */
 /**
  * Colors
- */
-/**
- * Deprecated colors.
- * Please avoid using these.
  */
 /**
  * Fonts & basic variables.
@@ -87,7 +79,7 @@
   padding-left: 1em; }
   .wp-block-quote cite,
   .wp-block-quote footer, .wp-block-quote__citation {
-    color: #6c7781;
+    color: #555;
     font-size: 0.8125em;
     margin-top: 1em;
     position: relative;

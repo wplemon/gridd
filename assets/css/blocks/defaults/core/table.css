@@ -5,10 +5,6 @@
  * Colors
  */
 /**
- * Deprecated colors.
- * Please avoid using these.
- */
-/**
  * Breakpoint mixins
  */
 /**
@@ -38,10 +34,6 @@
  */
 /**
  * Colors
- */
-/**
- * Deprecated colors.
- * Please avoid using these.
  */
 /**
  * Fonts & basic variables.
@@ -125,6 +117,6 @@
     border: 1px solid;
     word-break: normal; }
   .wp-block-table figcaption {
-    color: #555d66;
+    color: #555;
     font-size: 13px;
     text-align: center; }

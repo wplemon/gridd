@@ -5,10 +5,6 @@
  * Colors
  */
 /**
- * Deprecated colors.
- * Please avoid using these.
- */
-/**
  * Breakpoint mixins
  */
 /**
@@ -38,10 +34,6 @@
  */
 /**
  * Colors
- */
-/**
- * Deprecated colors.
- * Please avoid using these.
  */
 /**
  * Fonts & basic variables.
@@ -79,7 +71,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1em; }
+  padding: 1em;
+  box-sizing: border-box; }
   .wp-block-cover-image.has-parallax,
   .wp-block-cover.has-parallax {
     background-attachment: fixed; }
@@ -195,7 +188,6 @@
     display: flex; }
   .wp-block-cover-image .wp-block-cover__inner-container,
   .wp-block-cover .wp-block-cover__inner-container {
-    width: calc(100% - 4.375em);
     z-index: 1;
     color: #fff; }
   .wp-block-cover-image p:not(.has-text-color),

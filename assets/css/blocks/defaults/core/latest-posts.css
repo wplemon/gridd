@@ -5,10 +5,6 @@
  * Colors
  */
 /**
- * Deprecated colors.
- * Please avoid using these.
- */
-/**
  * Breakpoint mixins
  */
 /**
@@ -38,10 +34,6 @@
  */
 /**
  * Colors
- */
-/**
- * Deprecated colors.
- * Please avoid using these.
  */
 /**
  * Fonts & basic variables.
@@ -91,20 +83,30 @@
 
 @media (min-width: 600px) {
   .wp-block-latest-posts.columns-2 li {
-    width: calc((100% / 2) - 1.25em); }
+    width: calc((100% / 2) - 1.25em + (1.25em / 2)); }
+    .wp-block-latest-posts.columns-2 li:nth-child(2n) {
+      margin-right: 0; }
   .wp-block-latest-posts.columns-3 li {
-    width: calc((100% / 3) - 1.25em); }
+    width: calc((100% / 3) - 1.25em + (1.25em / 3)); }
+    .wp-block-latest-posts.columns-3 li:nth-child(3n) {
+      margin-right: 0; }
   .wp-block-latest-posts.columns-4 li {
-    width: calc((100% / 4) - 1.25em); }
+    width: calc((100% / 4) - 1.25em + (1.25em / 4)); }
+    .wp-block-latest-posts.columns-4 li:nth-child(4n) {
+      margin-right: 0; }
   .wp-block-latest-posts.columns-5 li {
-    width: calc((100% / 5) - 1.25em); }
+    width: calc((100% / 5) - 1.25em + (1.25em / 5)); }
+    .wp-block-latest-posts.columns-5 li:nth-child(5n) {
+      margin-right: 0; }
   .wp-block-latest-posts.columns-6 li {
-    width: calc((100% / 6) - 1.25em); } }
+    width: calc((100% / 6) - 1.25em + (1.25em / 6)); }
+    .wp-block-latest-posts.columns-6 li:nth-child(6n) {
+      margin-right: 0; } }
 
 .wp-block-latest-posts__post-date,
 .wp-block-latest-posts__post-author {
   display: block;
-  color: #6c7781;
+  color: #555;
   font-size: 0.8125em; }
 
 .wp-block-latest-posts__post-excerpt {

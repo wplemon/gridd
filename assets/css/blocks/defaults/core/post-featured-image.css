@@ -5,10 +5,6 @@
  * Colors
  */
 /**
- * Deprecated colors.
- * Please avoid using these.
- */
-/**
  * Breakpoint mixins
  */
 /**
@@ -40,10 +36,6 @@
  * Colors
  */
 /**
- * Deprecated colors.
- * Please avoid using these.
- */
-/**
  * Fonts & basic variables.
  */
 /**
@@ -68,3 +60,5 @@
 /**
  * Block paddings.
  */
+.wp-block-post-featured-image a {
+  display: inline-block; }

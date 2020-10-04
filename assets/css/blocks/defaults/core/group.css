@@ -5,10 +5,6 @@
  * Colors
  */
 /**
- * Deprecated colors.
- * Please avoid using these.
- */
-/**
  * Breakpoint mixins
  */
 /**
@@ -40,10 +36,6 @@
  * Colors
  */
 /**
- * Deprecated colors.
- * Please avoid using these.
- */
-/**
  * Fonts & basic variables.
  */
 /**
@@ -68,6 +60,9 @@
 /**
  * Block paddings.
  */
+.wp-block-group {
+  box-sizing: border-box; }
+
 .wp-block-group.has-background {
   padding: 20px 30px;
   margin-top: 0;
