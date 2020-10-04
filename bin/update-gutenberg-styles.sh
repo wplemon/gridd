@@ -64,14 +64,14 @@ do
 
 				# Import the file in our block styles.
 				echo "@import \"${blockName}/${fileName}\";" >> temp-styles/${blockName}.scss
+
+				# Compile file.
+				node-sass -o dist/${blockName} temp-styles/${blockName}.scss
+
+				# Move file.
+				mv dist/${blockName}/${blockName}.css dist/${blockName}.css
 			fi
 		done
-
-		# Compile file.
-		node-sass -o dist/${blockName} temp-styles/${blockName}.scss
-
-		# Move file.
-		mv dist/${blockName}/${blockName}.css dist/${blockName}.css
 		rm -Rf dist/${blockName}
 	fi
 done
