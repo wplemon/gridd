@@ -234,7 +234,7 @@ new \Kirki\Field\Checkbox(
 		'transport'       => 'refresh',
 		'priority'        => 20,
 		'active_callback' => function() {
-			return 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' ) && function_exists( 'jetpack_require_lib' );
+			return 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' ) && defined( 'JETPACK__VERSION' );
 		},
 	]
 );
@@ -278,7 +278,7 @@ new \Kirki\Field\ReactColor(
 			'formComponent' => 'ChromePicker',
 		],
 		'active_callback' => function() {
-			return 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' ) && ( ! get_theme_mod( 'gridd_featured_image_overlay_color_from_image', true ) || ! function_exists( 'jetpack_require_lib' ) );
+			return 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' ) && ( ! get_theme_mod( 'gridd_featured_image_overlay_color_from_image', true ) || ! defined( 'JETPACK__VERSION' ) );
 		},
 	]
 );
@@ -303,7 +303,7 @@ new \WPLemon\Field\WCAGTextColor(
 		],
 		'sanitize_callback' => [ $sanitization, 'color_hex' ],
 		'active_callback'   => function() {
-			return 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' ) && ( ! get_theme_mod( 'gridd_featured_image_overlay_color_from_image', true ) || ! function_exists( 'jetpack_require_lib' ) );
+			return 'overlay' === get_theme_mod( 'gridd_featured_image_mode_singular', 'overlay' ) && ( ! get_theme_mod( 'gridd_featured_image_overlay_color_from_image', true ) || ! defined( 'JETPACK__VERSION' ) );
 		},
 	]
 );
